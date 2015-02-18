@@ -1,0 +1,51 @@
+// turn off anti-aliasing for these elements
+ul.dropdown-menu, UL.nav {
+  -webkit-font-smoothing: auto;
+}
+// add bold to compensate for sharper text
+span.label {
+  font-weight: bold;
+}
+
+/* new css*/
+h3 {
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 5px 0px;
+
+    &.description {
+        font-size: 0.9em;
+    }
+}
+
+h4.list-title {
+    color: rgb(153,153,153);
+    text-transform: uppercase;
+    font-weight: normal;
+    padding-left: $spacing-small;
+    margin-bottom: $spacing-xsmall;
+    font-size: 0.8em;
+}
+
+// Bourbon Neat Grid Settings
+$column: 70px;
+$gutter: 30px;
+$grid-columns: 13;
+$max-width: 1024px;
+$visual-grid: true;
+
+.panel {
+    @include outer-container;
+}
+
+.panel-content {
+    @include span-columns(10);
+    background-color: white;
+    box-sizing: border-box;
+
+    .panel-content-inner {
+        padding: $spacing-large;
+    }
+}

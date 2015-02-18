@@ -1,0 +1,86 @@
+// Buttons
+//
+// Buttons come in 3 primary 'importances'.
+//
+// Default buttons should be used in most cases for less important actions.
+//
+// Markup:
+// <a class='button {$modifiers}' href='#'>Button Text</a>
+//
+// .important       - Important buttons should be limited to key calls to actions and limited to 1 per page generally.
+// .primary         - Primary buttons are used for default or key actions on things
+//
+// Styleguide 2.button
+
+$succcess-button-background : $success-color;
+$succcess-button-background-hover : darken($succcess-button-background, 10%);
+$text-button-color : #999999;
+$text-button-color-hover : darken($text-button-color, 10%);
+
+.button,
+button {
+  margin:0;
+  border-radius: $theme-border-radius;
+  background-color: $theme-color-primary;
+  color: $theme-color-background;
+  text-decoration: none;
+  white-space: nowrap;
+  border: solid 1px $theme-color-primary-hover;
+  padding: $spacing-small $spacing-large;
+  text-align: center;
+
+
+  @include transition (background-color 0.15s ease-in-out);
+
+  &:hover {
+    //@include transition (background-color 0.2s ease-in-out);
+    text-decoration:none;
+    background-color: $theme-color-primary-hover;
+    color: $theme-color-background;
+  }
+
+  &.important {
+    text-decoration:none;
+    border-style: none;
+    color: white;
+    background-color: $theme-color-secondary;
+    &:hover {
+      background-color: $theme-color-secondary-hover;
+    }
+  }
+
+  &.primary {
+    text-decoration:none;
+    min-height:inherit;
+    border-style: none;
+    color: white;
+
+    &:hover {
+      background-color: $theme-color-primary-hover;
+    }
+  }
+
+  &.success {
+    background-color: $succcess-button-background;
+    border-style: none;
+
+    &:hover {
+      background-color: $succcess-button-background-hover;
+    }
+  }
+
+  &.text {
+    background-color: transparent;
+    border: none;
+    color: $text-button-color;
+    @include transition (color 0.15s ease-in-out);
+
+    &:hover {
+      color: $text-button-color-hover;
+    }
+  }
+
+  &.secondary {
+    margin-right:0.5em;
+  }
+}

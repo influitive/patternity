@@ -7,13 +7,13 @@
     $TABLE OF CONTENTS
 \*------------------------------------*/
 /**
- * VARIABLES..............................Declarations of Sass variables 
+ * VARIABLES..............................Declarations of Sass variables
  * .....Colors
  * .....Typography
  * .....Layout
  * .....Defaults
  * .....Breakpoints
- * MIXINS.................................Sass mixins 
+ * MIXINS.................................Sass mixins
  * RESET..................................Set reset defaults
  * GLOBAL CLASSES.........................Set reset defaults
  * GLOBAL ELEMENTS........................Establish global styles
@@ -33,16 +33,15 @@
 
 @import "scss/generic/variables";
 @import "scss/generic/mixins";
-@import "scss/generic/reset";
 
 
-
+@import "../../../infl-styles/styleguide";
 
 
 /*------------------------------------*\
     $GLOBAL ELEMENTS
 \*------------------------------------*/
-@import "scss/base/global-classes";
+/*@import "scss/base/global-classes";
 @import "scss/base/main";
 @import "scss/base/links";
 @import "scss/base/headings";
@@ -51,46 +50,44 @@
 @import "scss/base/media";
 @import "scss/base/forms";
 @import "scss/base/tables";
-@import "scss/base/animation";
-
-
-
+@import "scss/base/animation";*/
 
 
 /*------------------------------------*\
     $LAYOUT
 \*------------------------------------*/
-@import "scss/objects/layout";
+
+/*@import "scss/objects/layout";*/
 
 
 /*------------------------------------*\
     $PAGE STRUCTURE
 \*------------------------------------*/
-@import "scss/objects/header";
-@import "scss/objects/nav";
-@import "scss/objects/main";
-@import "scss/objects/footer";
+/*@import "scss/objects/header";*/
+/*@import "scss/objects/nav";*/
+/*@import "scss/objects/main";*/
+/*@import "scss/objects/footer";*/
 
 
 
 /*------------------------------------*\
     $TEXT Styles
 \*------------------------------------*/
-@import "scss/objects/text";
+/*@import "scss/objects/text";*/
 
 
 /*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/
-@import "scss/objects/icons";
-@import "scss/objects/buttons";
-@import "scss/objects/blocks";
-@import "scss/objects/lists";
-@import "scss/objects/tooltip";
-@import "scss/objects/accordion";
-@import "scss/objects/tabs";
-@import "scss/objects/sections";
-@import "scss/objects/article";
-@import "scss/objects/comments";
+/*@import "scss/objects/icons";*/
+/*@import "scss/objects/buttons";*/
+/*@import "scss/objects/blocks";*/
+/*@import "scss/objects/lists";*/
+/*@import "scss/objects/tooltip";*/
+/*@import "scss/objects/accordion";*/
+/*@import "scss/objects/tabs";*/
+/*@import "scss/objects/sections";*/
+/*@import "scss/objects/article";*/
+/*@import "scss/objects/comments";*/
 
 
