@@ -574,6 +574,10 @@ th {
   border-width: 1px;
 }
 
+.theme-font {
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+
 .border-radius-1 {
   border-radius: 1px;
 }
