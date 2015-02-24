@@ -8,7 +8,6 @@ $theme-color-quinary: #269dbb; /* Light green */
 
 $success-color : #8BC53F;
 
-
 // TEXT COLOR
 $theme-color-foreground: #333;
 .background-color-foreground { background-color:$theme-color-foreground; }
@@ -77,6 +76,9 @@ $theme-font-size-4 : 13px;   // size of H4
 $theme-font-size-3 : 18px;   // size of H3
 $theme-font-size-2 : 24px;   // size of H2
 $theme-font-size-1 : 30px;   // size of H1
+
+$baseline: 24px;
+$baseline-font-size: 16px;
 
 $theme-font-size: $theme-font-size-4;
 $theme-line-height: 22px;

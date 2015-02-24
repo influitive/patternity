@@ -8,9 +8,13 @@ span.label {
 }
 
 /* new css*/
-h3 {
-    margin-bottom: 5px;
-}
+
+// Bourbon Neat Grid Settings
+$column: 70px;
+$gutter: 30px;
+$grid-columns: 13;
+$max-width: 1024px;
+$visual-grid: true;
 
 p {
     margin: 5px 0px;
@@ -29,13 +33,6 @@ h4.list-title {
     font-size: 0.8em;
 }
 
-// Bourbon Neat Grid Settings
-$column: 70px;
-$gutter: 30px;
-$grid-columns: 13;
-$max-width: 1024px;
-$visual-grid: true;
-
 .panel {
     @include outer-container;
 }
@@ -49,3 +46,8 @@ $visual-grid: true;
         padding: $spacing-large;
     }
 }
+
+/*body {
+    font-size: $baseline-font-size !important;
+    line-height: $baseline;
+}*/
