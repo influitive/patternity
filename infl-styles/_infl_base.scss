@@ -15,6 +15,7 @@ $gutter: 30px;
 $grid-columns: 13;
 $max-width: 1024px;
 $visual-grid: true;
+$mobile: new-breakpoint(max-width 640px);
 
 p {
     margin: 5px 0px;
@@ -44,6 +45,12 @@ h4.list-title {
 
     .panel-content-inner {
         padding: $spacing-large;
+    }
+
+    @include media($mobile) {
+      @include row();
+      float: none;
+      width: 100%;
     }
 }
 
