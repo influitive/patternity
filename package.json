@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/influitive/patternity/issues"
   },
-  "homepage": "https://github.com/influitive/patternity"
+  "homepage": "https://github.com/influitive/patternity",
+  "dependencies": {
+    "node-bourbon": "~1.2.3",
+    "es5-shim": "^4.1.0",
+    "lodash": "^3.1.0",
+    "react": "^0.12.2"
+  },
 }
