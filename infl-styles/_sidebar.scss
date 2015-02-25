@@ -1,0 +1,31 @@
+.panel-sidebar {
+  box-sizing: border-box;
+  @include span-columns(3);
+
+  .panel-sidebar-inner {
+    background:white;
+    border-radius:$theme-border-radius;
+    padding: $spacing-large;
+
+     .panel-block {
+      border-top: 1px solid rgb(204,204,204);
+      margin-top:$spacing-large;
+      padding-top: $spacing-large;
+      position: relative;
+
+      &:first-child {
+        border-top: 0;
+        margin-top:0;
+        padding-top: 0;
+      }
+
+      h1, h2, h3, h4 {
+        margin: $spacing-small 0px;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
