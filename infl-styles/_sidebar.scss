@@ -2,6 +2,10 @@
   box-sizing: border-box;
   @include span-columns(3);
 
+  @include media($mobile) {
+      display: none;
+    }
+
   .panel-sidebar-inner {
     background:white;
     border-radius:$theme-border-radius;
