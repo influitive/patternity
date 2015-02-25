@@ -1,0 +1,27 @@
+{
+  "name": "patternity",
+  "version": "1.0.0",
+  "description": "Patternity is the pattern library and style guide for all Influitive apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/influitive/patternity.git"
+  },
+  "keywords": [
+    "Pattern",
+    "Lab",
+    "Style",
+    "Guide",
+    "Infl-Styles",
+    "Infl-Components"
+  ],
+  "author": "Influitive Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/influitive/patternity/issues"
+  },
+  "homepage": "https://github.com/influitive/patternity"
+}
