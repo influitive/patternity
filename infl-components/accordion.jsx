@@ -1,5 +1,5 @@
-var React = require('react/addons'),
-    ClassSet = React.addons.classSet;
+var React = require('react/addons');
+var classNames = require('classnames');
 
 var Accordion = React.createClass({
   getDefaultProps: function() {
@@ -72,7 +72,7 @@ var AccordionHeader = React.createClass({
     }
   },
   _determineCSSClasses: function(){
-    return ClassSet({
+    return classNames({
       'section-heading': true,
       'open': this.props.open,
       'disabled': this.props.isEnabled === false
