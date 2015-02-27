@@ -4,7 +4,7 @@ var es5Shim   = require('es5-shim'),
     TestUtils = require('react/addons').addons.TestUtils,
     simulate  = TestUtils.Simulate;
 
-var Accordion = require('components/accordion');
+var Accordion = require('accordion');
 
 describe('Accordion', function() {
   function buildSections(numberOfSections) {

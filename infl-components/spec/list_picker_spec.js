@@ -4,7 +4,7 @@ var es5Shim   = require('es5-shim'),
     TestUtils = require('react/addons').addons.TestUtils,
     simulate  = TestUtils.Simulate;
 
-var ListPicker = require('components/list_picker');
+var ListPicker = require('list_picker');
 
 describe('ListPicker', function() {
   var key = "testKey",
