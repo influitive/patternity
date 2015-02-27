@@ -78,7 +78,8 @@ gulp.task('sass', function(){
 	return gulp.src('./source/css/*.scss')
 		.pipe(sass({
 			outputStyle: 'nested',
-			precision: 8
+			precision: 8,
+      includePaths: require('node-neat').includePaths
 		}))
 		.pipe(gulp.dest('./public/css'));
 })
