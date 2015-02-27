@@ -104,6 +104,113 @@ gulp.task('w:patterns', function(){
 		})
 });
 
+//compile react
+/* browserify task
+   ---------------
+   Bundle javascripty things with browserify!
+
+   If the watch task is running, this uses watchify instead
+   of browserify for faster bundling using caching.
+*/
+
+var browserify   = require('browserify');
+var source       = require('vinyl-source-stream');
+var reactify     = require('reactify');
+var buffer       = require('vinyl-buffer');
+var uglify       = require('gulp-uglify');
+var gulpIf       = require('gulp-if');
+var gutil        = require('gulp-util');
+var prettyHrtime = require('pretty-hrtime');
+var startTime;
+var taskName;
+
+var env = process.env.NODE_ENV || 'development';
+var digest = process.env.ASSETS_DIGEST || false;
+var path = process.env.ASSETS_PREFIX || '/assets-build';
+if(path) {
+  path = path.slice(1, path.length)
+}
+
+
+var assetsConfig = {
+  digest: digest,
+  path: path,
+  compress: (env != 'development' && env != 'qa')
+}
+
+var bundleLogger = function(task) {
+  var taskName = task;
+
+  return {
+    start: function() {
+      startTime = process.hrtime();
+      gutil.log('Running', gutil.colors.green("'" + taskName + "'") + '...');
+    },
+
+    end: function() {
+      var taskTime = process.hrtime(startTime);
+      var prettyTime = prettyHrtime(taskTime);
+      gutil.log('Finished', gutil.colors.green("'" + taskName + "'"), 'in', gutil.colors.magenta(prettyTime));
+    }
+  };
+};
+
+var notify = require('gulp-notify');
+
+var handleErrors = function() {
+  var args = Array.prototype.slice.call(arguments);
+
+  notify.onError({
+    title: 'Compile Error',
+    message: "<%= error.message %>"
+  }).apply(this, args);
+
+  this.emit('end');
+};
+
+gulp.task('browserify', function() {
+  var bundler = browserify({
+    // Required watchify args
+    cache: {}, packageCache: {}, fullPaths: true,
+    // Specify the entry point of your app
+    entries: ['./source/js/application.js'],
+    paths: [
+      './node_modules',
+      './source/',
+      './infl-components/'
+    ],
+    noParse: [
+      'jquery',
+      'underscore'
+    ]
+  });
+
+  var bundle = function() {
+    // Log when bundling starts
+    var logger = new bundleLogger('browserify');
+    logger.start();
+
+    return bundler
+      .transform(reactify)
+      .bundle()
+      // Report compile errors
+      .on('error', handleErrors)
+      // Use vinyl-source-stream to make the
+      // stream gulp compatible. Specifiy the
+      // desired output filename here.
+      .pipe(source('infl-components.js'))
+      // uglify if compress is set
+      .pipe(buffer())
+      .pipe(gulpIf(assetsConfig.compress, uglify()))
+      // Specify the output destination
+      .pipe(gulp.dest('./source/js'))
+      // Log when bundling completes!
+      .on('end', logger.end);
+  };
+
+  return bundle();
+});
+
 
 
 gulp.task('default', ['lab', 'watch']);
