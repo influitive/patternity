@@ -1,0 +1,207 @@
+/* dark blue */
+/* orange */
+/* Blue green */
+/* Light green */
+/* Light green */
+.background-color-foreground {
+  background-color: #333;
+}
+
+.background-color-background {
+  background-color: #fff;
+}
+
+/* lighter orange */
+/* lightest orange */
+/* dark orange */
+.background-color-primary {
+  background-color: #197097;
+}
+
+.background-color-primary.hover {
+  background-color: #2090c3;
+}
+
+.background-color-primary.focus {
+  background-color: #12506b;
+}
+
+.background-color-primary.shadow {
+  background-color: #184d65;
+}
+
+.background-color-primary.disabled {
+  background-color: #63899a;
+}
+
+.background-color-primary.inverse {
+  background-color: #e1e1e1;
+}
+
+.background-color-secondary {
+  background-color: #fc9c24;
+}
+
+.background-color-secondary.hover {
+  background-color: #fdb356;
+}
+
+.background-color-secondary.focus {
+  background-color: #fdc989;
+}
+
+.background-color-secondary.shadow {
+  background-color: #e58001;
+}
+
+.background-color-secondary.disabled {
+  background-color: #eddecc;
+}
+
+.background-color-secondary.inverse {
+  background-color: #111;
+}
+
+.background-color-tertiary {
+  background-color: #55b48c;
+}
+
+.background-color-quaternary {
+  background-color: #97c343;
+}
+
+.background-color-quinary {
+  background-color: #269dbb;
+}
+
+.font-color-primary {
+  color: #197097;
+}
+
+.font-color-secondary {
+  color: #fc9c24;
+}
+
+.font-color-tertiary {
+  color: #55b48c;
+}
+
+.font-color-quaternary {
+  color: #97c343;
+}
+
+.font-color-quinary {
+  color: #269dbb;
+}
+
+.border-color-primary {
+  border-color: #197097;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.border-color-secondary {
+  border-color: #fc9c24;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.border-color-tertiary {
+  border-color: #55b48c;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.border-color-quaternary {
+  border-color: #97c343;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.border-color-quinary {
+  border-color: #269dbb;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.theme-font {
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+
+.border-radius-1 {
+  border-radius: 1px;
+}
+
+.border-radius-2 {
+  border-radius: 2px;
+}
+
+.border-radius-3 {
+  border-radius: 6px;
+}
+
+.border-radius-4 {
+  border-radius: 9px;
+}
+
+.border-radius-5 {
+  border-radius: 12px;
+}
+
+.border-radius-6 {
+  border-radius: 16px;
+}
+
+.margin-top {
+  margin-top: 1em;
+}
+
+.margin-top-large {
+  margin-top: 1.5em;
+}
+
+.margin-bottom {
+  margin-bottom: 1em;
+}
+
+.margin-bottom-large {
+  margin-bottom: 1.5em;
+}
+
+.margin-left {
+  margin-left: 1em;
+}
+
+.margin-left-large {
+  margin-left: 1.5em;
+}
+
+.margin-right {
+  margin-right: 1em;
+}
+
+.margin-right-large {
+  margin-right: 1.5em;
+}
+
+.padding-top {
+  padding-top: 1em;
+}
+
+.padding-bottom {
+  padding-bottom: 1em;
+}
+
+.padding-left {
+  padding-left: 1em;
+}
+
+.padding-right {
+  padding-right: 1em;
+}
+
+.content-page-container {
+  margin: 1.5em;
+}
+
+/*# sourceMappingURL=style.css.map */
