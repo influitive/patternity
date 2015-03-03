@@ -18,7 +18,9 @@
     "grunt-gulp": "^0.1.0",
     "html-entities": "^1.1.1",
     "matchdep": "^0.3.0",
-    "mustache": "^1.0.0"
+    "mustache": "^1.0.0",
+    "node-bourbon": "^4.2.1-beta1",
+    "node-neat": "^1.7.1-beta1"
   },
   "keywords": [
     "Pattern Lab",

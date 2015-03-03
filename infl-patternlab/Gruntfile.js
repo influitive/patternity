@@ -85,7 +85,8 @@ module.exports = function(grunt) {
 			build: {
 				options: {
 					style: 'expanded',
-					precision: 8
+					precision: 8,
+					loadPath: require('node-neat').includePaths
 				},
 				files: {
 					'./source/css/style.css': './source/css/style.scss',
