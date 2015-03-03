@@ -1,19 +1,23 @@
-<div class="accordion">
-	<ul>
-		<li>
-			<a href="#" class="acc-handle">Accordion 1</a>
-			<div class="acc-panel">
-			</div>
-		</li>
-		<li>
-			<a href="#" class="acc-handle">Accordion 2</a>
-			<div class="acc-panel">
-			</div>
-		</li>
-		<li>
-			<a href="#" class="acc-handle">Accordion 3</a>
-			<div class="acc-panel">
-			</div>
-		</li>
-	</ul>
-</div>
+<div id="accordion-pattern"></div>
+
+<script type="text/javascript">
+	(function() {
+		var sections = [{
+      "header" : "test",
+      "body" : "test",
+      "key" : "test-1",
+      "isEnabled" : true
+    },{
+      "header" : "test 2",
+      "body" : "test 2",
+      "key" : "test-2",
+      "isEnabled" : true
+    }];
+
+    var props = {sections:sections, key:"accordion-pattern-1"};
+
+    var accordion = React.createElement(Accordion, props);
+
+    React.render(accordion, document.getElementById("accordion-pattern"));
+	})();
+</script>
