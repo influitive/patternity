@@ -10,7 +10,8 @@ var Notice = React.createClass({
   },
   propTypes : {
     title: React.PropTypes.string,
-    type: React.PropTypes.string
+    type: React.PropTypes.oneOf(['success', 'error', '']),
+    body: React.PropTypes.node
   },
   getInitialState: function() {
     return {showNotice: true};
@@ -27,19 +28,21 @@ var Notice = React.createClass({
   },
   _noticeTemplate: function(){
     return (
-        <div className={"notice " + this.props.type}>
+        <div className={"notice " + this.props.type} ref="notice">
           {this._closeable()}
-          <h4>
+          <h4 className="notice-title" ref="title">
             {this._icon()}
             <span>{this.props.title}</span>
           </h4>
-          {this.props.body}
+          <div className="notice-body" ref="body">
+            {this.props.body}
+          </div>
         </div>
       );
   },
   _closeable: function(){
     if(this.props.closeable) {
-      return (<span className="close fa fa-times" onClick={this._close}></span>);
+      return (<span className="close fa fa-times" onClick={this._close} ref="close"></span>);
     } else {
       return "";
     }
