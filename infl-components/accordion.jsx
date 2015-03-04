@@ -67,6 +67,7 @@ var AccordionHeader = React.createClass({
     isEnabled: React.PropTypes.bool
   },
   _toggleContent: function(){
+    alert("test");
     if(this.props.isEnabled){
       this.props.toggleOne(this.props.index);
     }
