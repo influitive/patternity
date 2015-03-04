@@ -1,0 +1,35 @@
+.notice {
+  padding: 10px;
+  border-radius: $theme-border-radius-2;
+
+  h4 {
+    color: $success-color;
+    margin: 0px 0px 10px 0px;
+    line-height: 24px;
+    font-size: 18px;
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  &.success {
+    background-color: lighten($success-color, 40%);
+
+    h4 {
+      color: $success-color;
+    }
+  }
+
+  &.error {
+    background-color: lighten($error-color, 40%);
+
+    h4 {
+      color: $error-color;
+    }
+  }
+
+  .notice-icon {
+    font-size: 24px;
+  }
+}
