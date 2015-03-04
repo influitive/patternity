@@ -2,6 +2,7 @@
   padding: 10px;
   border-radius: $theme-border-radius-2;
   background-color: lighten($notice-color, 40%);
+  position: relative;
 
   h4 {
     color: $notice-color;
@@ -32,5 +33,11 @@
 
   .notice-icon {
     font-size: 24px;
+  }
+
+  .close {
+    padding: 10px;
+    color: #999999;
+    position: absolute;
   }
 }
