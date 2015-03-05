@@ -16,6 +16,9 @@ var Notice = React.createClass({
   getInitialState: function() {
     return {showNotice: true};
   },
+  componentWillReceiveProps : function(nextProps) {
+    alert("something changed");
+  },
   render : function(){
     return <div>{this._renderNotice()}</div>;
   },
