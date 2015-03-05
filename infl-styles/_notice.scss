@@ -42,5 +42,10 @@
     position: absolute;
     right: 5px;
     top: 2px;
+    cursor: pointer;
+
+    &:hover {
+      color: #666666;
+    }
   }
 }
