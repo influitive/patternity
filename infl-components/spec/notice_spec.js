@@ -76,7 +76,7 @@ describe('Notice', function() {
       expect(subject.refs.close).to.equal(undefined);
     });
 
-    xit('will have a close action if it is closeable', function(){
+    it('will have a close action if it is closeable', function(){
       var subject = TestUtils.renderIntoDocument(<Notice type="error" title={title} body={body} closeable={true} />);
 
       expect(subject.refs.close).to.not.equal(undefined);
