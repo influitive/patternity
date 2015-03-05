@@ -69,4 +69,3 @@ var Notice = React.createClass({
 });
 
 module.exports = Notice;
-window.Notice = Notice;
