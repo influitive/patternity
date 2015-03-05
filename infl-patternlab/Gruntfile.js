@@ -190,7 +190,8 @@ module.exports = function(grunt) {
 			    noParse: [
 			      'jquery',
 			      'underscore'
-			    ]
+			    ],
+			    standalone : "inflComp"
 			  });
 
 			  var bundle = function() {
