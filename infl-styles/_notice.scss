@@ -46,6 +46,7 @@
 
     &:hover {
       color: #666666;
+      @include transition(color $transition-out-time ease-out)
     }
   }
 }
