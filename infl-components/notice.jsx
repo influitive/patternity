@@ -48,9 +48,7 @@ var Notice = React.createClass({
     }
   },
   _close: function(){
-    this.setState({showNotice: false}, function(){
-      alert("changed");
-    });
+    this.setState({showNotice: false});
   },
   _icon: function(){
     if(this.props.showIcon) {
