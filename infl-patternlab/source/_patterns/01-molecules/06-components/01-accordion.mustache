@@ -1,5 +1,4 @@
 <div id="accordion-pattern"></div>
-
 <script type="text/javascript">
 	(function() {
 		var sections = [{
@@ -21,8 +20,9 @@
 
     var props = {sections:sections, key:"accordion-pattern-1"};
 
-    var accordion = React.createElement(Accordion, props);
-
-    React.render(accordion, document.getElementById("accordion-pattern"));
+    inflComp.React.render(
+      inflComp.React.createElement(inflComp.Accordion, props),
+      document.getElementById("accordion-pattern")
+    );
 	})();
 </script>
