@@ -867,4 +867,8 @@ div.clear {
   padding: 5px 10px 0px;
 }
 
+.sg-view {
+  display: none;
+}
+
 /*# sourceMappingURL=styleguide.css.map */
