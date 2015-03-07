@@ -48,7 +48,7 @@
 $sg-font : "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 
 /* Style Guide Interface Colors */
-$sg-primary : #197097;
+$sg-primary : #08a5c5;
 $sg-secondary : #cccccc;
 $sg-tertiary : #ddd;
 $sg-quaternary : #fff;
@@ -428,7 +428,7 @@ $animate-quick: 0.2s;
 	margin: -2px 0 0 0;
 	padding: 0;
 	border: 0;
-	background-color: #197097;
+	background-color: $sg-primary;
 	color: white;
 	width: 25px;
 	text-align: right;
@@ -966,6 +966,9 @@ div.clear {
 
 		h3 {
 			margin: 0px;
+			font-weight: lighter;
+			font-variant: small-caps;
+			letter-spacing: 1px;
 		}
 	}
 }
