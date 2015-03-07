@@ -154,7 +154,7 @@ $animate-quick: 0.2s;
 	font-family: $sg-font;
 	text-transform: uppercase;
 	position: fixed;
-	top: 75px;
+	top: 0px;
 	left: 0;
 	z-index: 2;
 	width: 100%;
@@ -528,7 +528,7 @@ span.sg-pattern-state:before {
 	text-align: center;
 	width: 100%;
 	position: fixed;
-	top: 108px;
+	top: 34px;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -975,12 +975,24 @@ div.clear {
 }
 
 .infl-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 2;
-	width: 100%;
-	padding: 5px 10px 0px;
+	padding-left: 40px;
+	border-bottom: 1px solid #cccccc;
+	width: calc(100% - 40px);
+
+	&:before {
+		content: "";
+		display: block;
+		height: 33px;
+		width: 40px;
+		background-image: url("../../images/influitive_logo.png");
+		background-repeat: no-repeat;
+		background-size: 20px 20px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-color: white;
+		background-position: center;
+	}
 }
 
 .sg-view {

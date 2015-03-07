@@ -35,7 +35,7 @@ var Notice = React.createClass({
             <span>{this.props.title}</span>
           </h4>
           <div className="notice-body" ref="body">
-            {this.props.body}
+            {this.props.children}
           </div>
         </div>
       );

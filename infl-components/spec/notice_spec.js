@@ -22,14 +22,14 @@ describe('Notice', function() {
   });
 
   it('will display the body that is provided', function () {
-    var subject = TestUtils.renderIntoDocument(<Notice title={title} body={body} />);
+    var subject = TestUtils.renderIntoDocument(<Notice title={title}>{body}</Notice>);
 
     expect(subject.refs.body.getDOMNode().firstChild.nodeValue).to.equal(body);
   });
 
   describe("Icon", function(){
     it("will not display an icon if it isn't told to", function(){
-      var subject = TestUtils.renderIntoDocument(<Notice title={title} body={body} />);
+      var subject = TestUtils.renderIntoDocument(<Notice title={title} />);
 
       expect(subject.refs.title.getDOMNode().firstChild.className.indexOf(noticeIconClass)).to.equal(-1);
     });

@@ -15,11 +15,11 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Default Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-pattern")
       );
     })();
@@ -34,12 +34,12 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Default Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         showIcon: true
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-icon-pattern")
       );
     })();
@@ -54,12 +54,12 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Default Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         closeable: true
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-closeable-pattern")
       );
     })();
@@ -75,12 +75,12 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Success Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         type: "success"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-success-pattern")
       );
     })();
@@ -95,13 +95,13 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Success Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         showIcon: true,
         type: "success"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-success-icon-pattern")
       );
     })();
@@ -116,13 +116,13 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Success Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         closeable: true,
         type: "success"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-success-closeable-pattern")
       );
     })();
@@ -138,12 +138,12 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Error Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         type: "error"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-error-pattern")
       );
     })();
@@ -158,13 +158,13 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Error Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         showIcon: true,
         type: "error"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-error-icon-pattern")
       );
     })();
@@ -179,13 +179,13 @@
       var props = {
         key: "notice-" + Math.random(),
         title : "Error Notice",
-        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         closeable: true,
         type: "error"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
+        inflComp.React.createElement(inflComp.Notice, props, props.children),
         document.getElementById("notice-error-closeable-pattern")
       );
     })();
@@ -196,9 +196,15 @@
   <h5>JSX</h5>
   <pre class="code">
     <code>
-      &lt;Notice {...this.props} /&gt;
+      &lt;Notice {...this.props}&gt;
+        &lt;p&gt;Your Body&lt;/p&gt;
+        &lt;p&gt;Your Body&lt;/p&gt;
+      &lt;/Notice&gt;
 
-      &lt;Notice title="Your Title" body="Your Body" /&gt;
+      &lt;Notice title="Your Title" &gt;
+        &lt;p&gt;Your Body&lt;/p&gt;
+        &lt;p&gt;Your Body&lt;/p&gt;
+      &lt;/Notice&gt;
     </code>
   </pre>
 
@@ -206,7 +212,7 @@
   <pre class="code">
     <code>
       React.render(
-        React.createElement(Notice, props),
+        React.createElement(Notice, props, children),
         {DOM element to append notice to}
       );
     </code>
@@ -218,9 +224,9 @@
     <code>
       {
         title : "Your Title",
-        body  : "Your Body Text", // or React Element
         showIcon : boolean,       // optional defaults to false
-        closeable : boolean       // optional defaults to false
+        closeable : boolean,      // optional defaults to false
+        children: [...]           // array of text, html, react elements
       }
     </code>
   </pre>

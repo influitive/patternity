@@ -232,7 +232,7 @@ var Notice = React.createClass({displayName: "Notice",
             React.createElement("span", null, this.props.title)
           ), 
           React.createElement("div", {className: "notice-body", ref: "body"}, 
-            this.props.body
+            this.props.children
           )
         )
       );
