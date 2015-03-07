@@ -535,7 +535,7 @@ th {
 }
 
 .theme-font {
-  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-family: "Proxima Nova Light", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
 .border-radius-1 {
@@ -697,12 +697,12 @@ category: basics
 ```
 */
 body {
-  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-family: "Proxima Nova Light", "Helvetica Neue", Helvetica, arial, sans-serif;
   font-size: 13px;
 }
 
 .font-default {
-  font-family: "Helvetica Neue", Helvetica, arial, sans-serif, sans-serif;
+  font-family: "Proxima Nova Light", "Helvetica Neue", Helvetica, arial, sans-serif, sans-serif;
 }
 
 h1 {
