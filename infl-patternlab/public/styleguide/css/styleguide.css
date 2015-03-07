@@ -2,22 +2,22 @@
     $PATTERN LAB STYLES
 \*------------------------------------*/
 /**
- * NOTE: These styles are specific to Pattern Lab and should not be modified. 
+ * NOTE: These styles are specific to Pattern Lab and should not be modified.
  * Edit all project styles in /source/css/
- * 
- * Second note: Any important declarations are to prevent brand styles from overriding style guide 
+ *
+ * Second note: Any important declarations are to prevent brand styles from overriding style guide
  */
 /*------------------------------------*\
     $CONTENTS
 \*------------------------------------*/
 /**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables 
+ * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
  * -----Font
  * -----Colors
  * -----Typography
  * -----Defaults
  * -----Breakpoints
- * MIXINS---------------------------------Sass mixins 
+ * MIXINS---------------------------------Sass mixins
  * GLOBAL ELEMENTS------------------------Establish global styles
  * -----Main
  * -----Headings
@@ -35,7 +35,7 @@
  * -----Icon Fonts
  */
 /*------------------------------------*\
-    $PATTERN LAB VARIABLES 
+    $PATTERN LAB VARIABLES
 \*------------------------------------*/
 /*Fonts*/
 /* Style Guide Interface Colors */
@@ -44,15 +44,15 @@
 /* Dimensions */
 /* Breakpoints */
 /*------------------------------------*\
-    $PATTERN LAB MIXINS 
+    $PATTERN LAB MIXINS
 \*------------------------------------*/
 /*------------------------------------*\
-    $PATTERN LAB INTERFACE 
+    $PATTERN LAB INTERFACE
 \*------------------------------------*/
 #patternlab-html, #patternlab-body {
   margin: 0;
   padding: 0;
-  background: #ddd;
+  background: white;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -83,16 +83,16 @@
 }
 
 /*------------------------------------*\
-    $PATTERN LAB HEADER 
+    $PATTERN LAB HEADER
 \*------------------------------------*/
 /* Header */
 .sg-header {
-  background: #222;
-  color: #fff;
+  background: #197097;
+  color: #333;
   font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
   position: fixed;
-  top: 0;
+  top: 75px;
   left: 0;
   z-index: 2;
   width: 100%;
@@ -112,7 +112,7 @@
 }
 .sg-header a {
   font-size: 70%;
-  color: #808080;
+  color: #fff;
   text-decoration: none;
   display: block;
   line-height: 1;
@@ -129,7 +129,7 @@
   transition: color 0.15s ease-out;
 }
 .sg-header a:hover, .sg-header a:focus, .sg-header a.active {
-  color: #fff;
+  color: #cccccc;
   background: rgba(255, 255, 255, 0.05);
 }
 .sg-header ol ol ol a {
@@ -233,7 +233,7 @@
   transition: max-height 0.1s ease-out;
 }
 .sg-acc-panel li {
-  background: #222;
+  background: #197097;
 }
 .sg-acc-panel.active {
   max-height: 120em;
@@ -302,7 +302,7 @@
 
 .sg-current-size {
   font-size: 70%;
-  color: #808080;
+  color: #cccccc;
   padding: 0.85em 0.7em;
 }
 .sg-current-size:hover .sg-input {
@@ -357,8 +357,8 @@
   margin: -2px 0 0 0;
   padding: 0;
   border: 0;
-  background-color: #222;
-  color: gray;
+  background-color: #197097;
+  color: white;
   width: 25px;
   text-align: right;
 }
@@ -443,7 +443,7 @@ span.sg-pattern-state:before {
   text-align: center;
   width: 100%;
   position: fixed;
-  top: 2em;
+  top: 108px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -547,7 +547,7 @@ span.sg-pattern-state:before {
 }
 
 /*------------------------------------*\
-    $PATTERN LAB CONTENT 
+    $PATTERN LAB CONTENT
 \*------------------------------------*/
 /* Section Pattern */
 .sg-pattern {
@@ -557,21 +557,22 @@ span.sg-pattern-state:before {
 
 /* Section Head */
 .sg-pattern-head {
+  display: none;
   margin: 2em 0;
   font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-  font-size: 70%;
+  font-size: 24px;
   font-weight: normal;
-  padding: 1em 0;
-  border-bottom: 1px solid #808080;
+  padding: 1em 10px;
+  border-bottom: 1px solid #cccccc;
 }
 .sg-pattern-head a {
   display: block;
-  color: #808080;
+  color: #cccccc;
   text-decoration: none;
   cursor: pointer;
 }
 .sg-pattern-head a:hover {
-  color: #222;
+  color: #197097;
 }
 
 .sg-view-container {
@@ -581,8 +582,8 @@ span.sg-pattern-state:before {
   font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   line-height: 1.4;
   font-size: 90%;
-  background: #222;
-  color: #808080;
+  background: #197097;
+  color: #cccccc;
   position: fixed;
   top: auto;
   padding: 1em;
@@ -624,16 +625,16 @@ span.sg-pattern-state:before {
 
 .has-annotation {
   cursor: help !important;
-  box-shadow: 0 0 10px #808080;
+  box-shadow: 0 0 10px #cccccc;
 }
 .has-annotation a, .has-annotation input {
   cursor: help !important;
 }
 .has-annotation:hover {
-  box-shadow: 0 0 10px #222;
+  box-shadow: 0 0 10px #197097;
 }
 .has-annotation.active {
-  box-shadow: inset 0 0 20px #808080;
+  box-shadow: inset 0 0 20px #cccccc;
 }
 
 .annotation-tip {
@@ -672,7 +673,7 @@ span.sg-pattern-state:before {
 .sg-code, .sg-annotations {
   clear: both;
   background: #ddd;
-  color: #222;
+  color: #197097;
   padding: 1em 0.5em;
   margin: 1em 0;
 }
@@ -693,7 +694,7 @@ span.sg-pattern-state:before {
 .sg-code-contains {
   margin-bottom: 1rem;
   font-size: 85%;
-  color: #808080;
+  color: #cccccc;
 }
 .sg-code-contains code {
   padding: 0.2em;
@@ -704,7 +705,7 @@ span.sg-pattern-state:before {
 }
 
 .sg-code-head {
-  color: #808080;
+  color: #cccccc;
   font-size: 1em;
 }
 
@@ -839,5 +840,31 @@ div.clear {
 
 /******************************************************************/
 /* End Pattern Lab Interface code */
+.pattern-section {
+  padding: 10px;
+}
+.pattern-section header {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px;
+  background-color: #666666;
+  color: white;
+  margin-bottom: 30px;
+}
+.pattern-section header h3 {
+  margin: 0px;
+}
+
+.code {
+  background-color: #ececec;
+}
+
+.infl-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 5px 10px 0px;
+}
 
 /*# sourceMappingURL=styleguide.css.map */

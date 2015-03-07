@@ -792,4 +792,50 @@ h6 {
   padding: 1.5em;
 }
 
+.notice {
+  padding: 10px 20px;
+  border-radius: 2px;
+  background-color: #f7f1e8;
+  position: relative;
+}
+.notice h4 {
+  color: #C09853;
+  margin: 0px 0px 10px 0px;
+  line-height: 24px;
+  font-size: 18px;
+}
+.notice h4 span {
+  vertical-align: middle;
+}
+.notice.success {
+  background-color: #eaf4dc;
+}
+.notice.success h4 {
+  color: #8BC53F;
+}
+.notice.error {
+  background-color: #f3c1c3;
+}
+.notice.error h4 {
+  color: #C1272D;
+}
+.notice .notice-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.notice .close {
+  padding: 10px;
+  color: #999999;
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  cursor: pointer;
+}
+.notice .close:hover {
+  color: #666666;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+
 /*# sourceMappingURL=style.css.map */
