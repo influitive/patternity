@@ -1,28 +1,77 @@
-<div id="accordion-pattern"></div>
-<script type="text/javascript">
-	(function() {
-		var sections = [{
-      "header" : "Enabled Section",
-      "body" : "test 2",
-      "key" : "test-2",
-      "isEnabled" : true
-    },{
-      "header" : "Disabled Section",
-      "body" : "",
-      "key" : "test-3",
-      "isEnabled" : false
-    },{
-      "header" : "Enabled Section",
-      "body" : "test",
-      "key" : "test-1",
-      "isEnabled" : true
-    }];
+<section class="pattern-section">
+  <header>
+    <h3>Accordion</h3>
+  </header>
 
-    var props = {sections:sections, key:"accordion-pattern-1"};
+  <p>The accordion is exactly what it sounds like, and accordion. Accordion sections have two states, enabled and disabled.</p>
 
-    inflComp.React.render(
-      inflComp.React.createElement(inflComp.Accordion, props),
-      document.getElementById("accordion-pattern")
-    );
-	})();
-</script>
+  <div id="accordion-pattern"></div>
+  <script type="text/javascript">
+  	(function() {
+  		var sections = [{
+        "header" : "Enabled Section",
+        "body" : "test 2",
+        "key" : "test-2",
+        "isEnabled" : true
+      },{
+        "header" : "Disabled Section",
+        "body" : "",
+        "key" : "test-3",
+        "isEnabled" : false
+      },{
+        "header" : "Enabled Section",
+        "body" : "test",
+        "key" : "test-1",
+        "isEnabled" : true
+      }];
+
+      var props = {sections:sections, key:"accordion-pattern-1"};
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Accordion, props),
+        document.getElementById("accordion-pattern")
+      );
+  	})();
+  </script>
+
+  <h4>Code</h4>
+
+  <h5>JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Accordion sections={sections} uniqueIdentifier="unique-identfier-for-this-accordion" /&gt;
+    </code>
+  </pre>
+
+  <h5>Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Accordion, props),
+        {DOM element to append accordion to}
+      );
+    </code>
+  </pre>
+
+  <h4>Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        sections : [{
+            "header" : "Section One Header",  // or a react element
+            "body" : "Section One Body",      // or a react element
+            "key" : "section-one-key",
+            "isEnabled" : boolean
+          },
+          {
+            "header" : "Section Two Header",  // or a react element
+            "body" : "Section Two Body",      // or a react element
+            "key" : "section-two-key",
+            "isEnabled" : boolean
+        }],
+        uniqueIdentifier : "unique-identfier-for-this-accordion"
+      }
+    </code>
+  </pre>
+</section>

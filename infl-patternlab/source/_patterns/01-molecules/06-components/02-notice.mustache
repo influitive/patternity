@@ -1,0 +1,230 @@
+<section class="pattern-section">
+  <header>
+    <h3>Notice</h3>
+  </header>
+
+  <p>The notice has several states info or default, success and error.  Each Type is used for specific circumstances:</p>
+
+  <h4>Info / Default</h4>
+
+  <p>The info or default notice should be used to alert the user of actions that they should take, or to inform them that something needs their attention but aren't required to take immediate action.</p>
+
+  <div id="notice-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Default Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-pattern")
+      );
+    })();
+  </script>
+
+  <br />
+  <br />
+
+  <div id="notice-icon-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Default Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        showIcon: true
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-icon-pattern")
+      );
+    })();
+  </script>
+
+  <br />
+  <br />
+
+  <div id="notice-closeable-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Default Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        closeable: true
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-closeable-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Success</h4>
+
+  <p>The success notice should be used to confirm an action was complete successfully.</p>
+
+  <div id="notice-success-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Success Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        type: "success"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-success-pattern")
+      );
+    })();
+  </script>
+
+  <br />
+  <br />
+
+  <div id="notice-success-icon-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Success Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        showIcon: true,
+        type: "success"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-success-icon-pattern")
+      );
+    })();
+  </script>
+
+  <br />
+  <br />
+
+  <div id="notice-success-closeable-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Success Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        closeable: true,
+        type: "success"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-success-closeable-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Error</h4>
+
+  <p>The error notice should be used to show that an action failed, validation failed, etc.</p>
+
+  <div id="notice-error-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Error Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        type: "error"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-error-pattern")
+      );
+    })();
+  </script>
+
+  <br />
+  <br />
+
+  <div id="notice-error-icon-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Error Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        showIcon: true,
+        type: "error"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-error-icon-pattern")
+      );
+    })();
+  </script>
+
+  <br />
+  <br />
+
+  <div id="notice-error-closeable-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "notice-" + Math.random(),
+        title : "Error Notice",
+        body : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        closeable: true,
+        type: "error"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Notice, props),
+        document.getElementById("notice-error-closeable-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Code</h4>
+
+  <h5>JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Notice {...this.props} /&gt;
+
+      &lt;Notice title="Your Title" body="Your Body" /&gt;
+    </code>
+  </pre>
+
+  <h5>Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Notice, props),
+        {DOM element to append notice to}
+      );
+    </code>
+  </pre>
+
+  <h4>Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        title : "Your Title",
+        body  : "Your Body Text", // or React Element
+        showIcon : boolean,       // optional defaults to false
+        closeable : boolean       // optional defaults to false
+      }
+    </code>
+  </pre>
+</section>
+
+
+
