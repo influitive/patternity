@@ -10,7 +10,7 @@ var Notice = React.createClass({
   },
   propTypes : {
     title: React.PropTypes.string,
-    type: React.PropTypes.oneOf(['success', 'error', '']),
+    type: React.PropTypes.oneOf(['success', 'error', 'info', '']),
     body: React.PropTypes.node
   },
   getInitialState: function() {
