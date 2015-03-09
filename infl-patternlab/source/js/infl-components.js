@@ -8,12 +8,12 @@ inflComp.Sidebar = require("../../infl-components/sidebar.jsx");
 inflComp.SidebarHeading = require("../../infl-components/sidebar_heading.jsx");
 inflComp.ListPicker = require("../../infl-components/list_picker.jsx");
 inflComp.Accordion = require("../../infl-components/accordion.jsx");
-inflComp.Notice = require("../../infl-components/notice.jsx");
+inflComp.Alert = require("../../infl-components/alert.jsx");
 
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/notice.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/notice.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -118,7 +118,81 @@ var AccordionBody = React.createClass({displayName: "AccordionBody",
 module.exports = Accordion;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/node_modules/classnames/index.js","react/addons":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/addons.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/node_modules/classnames/index.js","react/addons":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/addons.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx":[function(require,module,exports){
+var React = require('react');
+
+var Alert = React.createClass({displayName: "Alert",
+  getDefaultProps: function() {
+    return {
+      type: "",
+      showIcon: false,
+      closeable : false
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    type: React.PropTypes.oneOf(['success', 'error', 'info', '']),
+    body: React.PropTypes.node
+  },
+  getInitialState: function() {
+    return {showAlert: true};
+  },
+  render : function(){
+    return React.createElement("div", null, this._renderAlert());
+  },
+  _renderAlert: function(){
+    if(this.state.showAlert) {
+      return this._alertTemplate();
+    } else {
+      return "";
+    }
+  },
+  _alertTemplate: function(){
+    return (
+        React.createElement("div", {className: "alert " + this.props.type, ref: "alert"}, 
+          this._closeable(), 
+          React.createElement("h4", {className: "alert-title", ref: "title"}, 
+            this._icon(), 
+            React.createElement("span", null, this.props.title)
+          ), 
+          React.createElement("div", {className: "alert-body", ref: "body"}, 
+            this.props.children
+          )
+        )
+      );
+  },
+  _closeable: function(){
+    if(this.props.closeable) {
+      return (React.createElement("span", {className: "close fa fa-times", onClick: this._close, ref: "close"}));
+    } else {
+      return "";
+    }
+  },
+  _close: function(){
+    this.setState({showAlert: false});
+  },
+  _icon: function(){
+    if(this.props.showIcon) {
+      return (React.createElement("span", {className: "alert-icon fa " + this._determineIconType()}));
+    } else {
+      return "";
+    }
+  },
+  _determineIconType: function(){
+    if(this.props.type === "success") {
+      return "fa-check-circle";
+    } else if(this.props.type === "error") {
+      return "fa-exclamation-circle";
+    } else {
+      return "fa-exclamation-triangle";
+    }
+  }
+});
+
+module.exports = Alert;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Content = React.createClass({displayName: "Content",
@@ -192,80 +266,6 @@ var ListItem = React.createClass({displayName: "ListItem",
 });
 
 module.exports = ListPicker;
-
-
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/notice.jsx":[function(require,module,exports){
-var React = require('react');
-
-var Notice = React.createClass({displayName: "Notice",
-  getDefaultProps: function() {
-    return {
-      type: "",
-      showIcon: false,
-      closeable : false
-    };
-  },
-  propTypes : {
-    title: React.PropTypes.string,
-    type: React.PropTypes.oneOf(['success', 'error', 'info', '']),
-    body: React.PropTypes.node
-  },
-  getInitialState: function() {
-    return {showNotice: true};
-  },
-  render : function(){
-    return React.createElement("div", null, this._renderNotice());
-  },
-  _renderNotice: function(){
-    if(this.state.showNotice) {
-      return this._noticeTemplate();
-    } else {
-      return "";
-    }
-  },
-  _noticeTemplate: function(){
-    return (
-        React.createElement("div", {className: "notice " + this.props.type, ref: "notice"}, 
-          this._closeable(), 
-          React.createElement("h4", {className: "notice-title", ref: "title"}, 
-            this._icon(), 
-            React.createElement("span", null, this.props.title)
-          ), 
-          React.createElement("div", {className: "notice-body", ref: "body"}, 
-            this.props.children
-          )
-        )
-      );
-  },
-  _closeable: function(){
-    if(this.props.closeable) {
-      return (React.createElement("span", {className: "close fa fa-times", onClick: this._close, ref: "close"}));
-    } else {
-      return "";
-    }
-  },
-  _close: function(){
-    this.setState({showNotice: false});
-  },
-  _icon: function(){
-    if(this.props.showIcon) {
-      return (React.createElement("span", {className: "notice-icon fa " + this._determineIconType()}));
-    } else {
-      return "";
-    }
-  },
-  _determineIconType: function(){
-    if(this.props.type === "success") {
-      return "fa-check-circle";
-    } else if(this.props.type === "error") {
-      return "fa-exclamation-circle";
-    } else {
-      return "fa-exclamation-triangle";
-    }
-  }
-});
-
-module.exports = Notice;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx":[function(require,module,exports){

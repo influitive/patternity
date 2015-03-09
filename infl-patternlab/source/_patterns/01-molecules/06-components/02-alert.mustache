@@ -1,26 +1,26 @@
 <section class="pattern-section">
   <header>
-    <h3>notice</h3>
+    <h3>Alerts</h3>
   </header>
 
-  <p>The notice has several states info or default, success and error.  Each Type is used for specific circumstances:</p>
+  <p>The alerts has several states info or default, success and error.  Each Type is used for specific circumstances:</p>
 
   <h4>Info / Default</h4>
 
-  <p>The info or default notice should be used to alert the user of actions that they should take, or to inform them that something needs their attention but aren't required to take immediate action.</p>
+  <p>The info or default alert should be used to alert the user of actions that they should take, or to inform them that something needs their attention but aren't required to take immediate action.</p>
 
-  <div id="notice-pattern"></div>
+  <div id="alert-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Default Notice",
+        key: "alert-" + Math.random(),
+        title : "Default Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-pattern")
       );
     })();
   </script>
@@ -28,19 +28,19 @@
   <br />
   <br />
 
-  <div id="notice-icon-pattern"></div>
+  <div id="alert-icon-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Default Notice",
+        key: "alert-" + Math.random(),
+        title : "Default Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         showIcon: true
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-icon-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-icon-pattern")
       );
     })();
   </script>
@@ -48,40 +48,40 @@
   <br />
   <br />
 
-  <div id="notice-closeable-pattern"></div>
+  <div id="alert-closeable-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Default Notice",
+        key: "alert-" + Math.random(),
+        title : "Default Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         closeable: true
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-closeable-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-closeable-pattern")
       );
     })();
   </script>
 
   <h4>Success</h4>
 
-  <p>The success notice should be used to confirm an action was complete successfully.</p>
+  <p>The success alert should be used to confirm an action was complete successfully.</p>
 
-  <div id="notice-success-pattern"></div>
+  <div id="alert-success-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Success Notice",
+        key: "alert-" + Math.random(),
+        title : "Success Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         type: "success"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-success-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-success-pattern")
       );
     })();
   </script>
@@ -89,20 +89,20 @@
   <br />
   <br />
 
-  <div id="notice-success-icon-pattern"></div>
+  <div id="alert-success-icon-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Success Notice",
+        key: "alert-" + Math.random(),
+        title : "Success Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         showIcon: true,
         type: "success"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-success-icon-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-success-icon-pattern")
       );
     })();
   </script>
@@ -110,41 +110,41 @@
   <br />
   <br />
 
-  <div id="notice-success-closeable-pattern"></div>
+  <div id="alert-success-closeable-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Success Notice",
+        key: "alert-" + Math.random(),
+        title : "Success Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         closeable: true,
         type: "success"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-success-closeable-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-success-closeable-pattern")
       );
     })();
   </script>
 
   <h4>Error</h4>
 
-  <p>The error notice should be used to show that an action failed, validation failed, etc.</p>
+  <p>The error alert should be used to show that an action failed, validation failed, etc.</p>
 
-  <div id="notice-error-pattern"></div>
+  <div id="alert-error-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Error Notice",
+        key: "alert-" + Math.random(),
+        title : "Error Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         type: "error"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-error-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-error-pattern")
       );
     })();
   </script>
@@ -152,20 +152,20 @@
   <br />
   <br />
 
-  <div id="notice-error-icon-pattern"></div>
+  <div id="alert-error-icon-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Error Notice",
+        key: "alert-" + Math.random(),
+        title : "Error Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         showIcon: true,
         type: "error"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-error-icon-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-error-icon-pattern")
       );
     })();
   </script>
@@ -173,20 +173,20 @@
   <br />
   <br />
 
-  <div id="notice-error-closeable-pattern"></div>
+  <div id="alert-error-closeable-pattern"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        key: "notice-" + Math.random(),
-        title : "Error Notice",
+        key: "alert-" + Math.random(),
+        title : "Error Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         closeable: true,
         type: "error"
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Notice, props),
-        document.getElementById("notice-error-closeable-pattern")
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("alert-error-closeable-pattern")
       );
     })();
   </script>
@@ -196,15 +196,15 @@
   <h5>JSX</h5>
   <pre class="code">
     <code>
-      &lt;Notice {...this.props}&gt;
+      &lt;Alert {...this.props}&gt;
         &lt;p&gt;Your Body&lt;/p&gt;
         &lt;p&gt;Your Body&lt;/p&gt;
-      &lt;/Notice&gt;
+      &lt;/Alert&gt;
 
-      &lt;Notice title="Your Title" &gt;
+      &lt;Alert title="Your Title" &gt;
         &lt;p&gt;Your Body&lt;/p&gt;
         &lt;p&gt;Your Body&lt;/p&gt;
-      &lt;/Notice&gt;
+      &lt;/Alert&gt;
     </code>
   </pre>
 
@@ -212,7 +212,7 @@
   <pre class="code">
     <code>
       React.render(
-        React.createElement(Notice, props, children),
+        React.createElement(Alert, props, children),
         {DOM element to append notice to}
       );
     </code>

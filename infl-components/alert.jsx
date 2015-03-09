@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Notice = React.createClass({
+var Alert = React.createClass({
   getDefaultProps: function() {
     return {
       type: "",
@@ -14,27 +14,27 @@ var Notice = React.createClass({
     body: React.PropTypes.node
   },
   getInitialState: function() {
-    return {showNotice: true};
+    return {showAlert: true};
   },
   render : function(){
-    return <div>{this._renderNotice()}</div>;
+    return <div>{this._renderAlert()}</div>;
   },
-  _renderNotice: function(){
-    if(this.state.showNotice) {
-      return this._noticeTemplate();
+  _renderAlert: function(){
+    if(this.state.showAlert) {
+      return this._alertTemplate();
     } else {
       return "";
     }
   },
-  _noticeTemplate: function(){
+  _alertTemplate: function(){
     return (
-        <div className={"notice " + this.props.type} ref="notice">
+        <div className={"alert " + this.props.type} ref="alert">
           {this._closeable()}
-          <h4 className="notice-title" ref="title">
+          <h4 className="alert-title" ref="title">
             {this._icon()}
             <span>{this.props.title}</span>
           </h4>
-          <div className="notice-body" ref="body">
+          <div className="alert-body" ref="body">
             {this.props.children}
           </div>
         </div>
@@ -48,11 +48,11 @@ var Notice = React.createClass({
     }
   },
   _close: function(){
-    this.setState({showNotice: false});
+    this.setState({showAlert: false});
   },
   _icon: function(){
     if(this.props.showIcon) {
-      return (<span className={"notice-icon fa " + this._determineIconType()}></span>);
+      return (<span className={"alert-icon fa " + this._determineIconType()}></span>);
     } else {
       return "";
     }
@@ -68,4 +68,4 @@ var Notice = React.createClass({
   }
 });
 
-module.exports = Notice;
+module.exports = Alert;
