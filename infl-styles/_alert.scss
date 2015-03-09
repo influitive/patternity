@@ -1,11 +1,11 @@
-.notice {
+.alert {
   padding: 10px 20px;
   border-radius: $theme-border-radius-2;
-  background-color: lighten($notice-color, 40%);
+  background-color: lighten($alert-color, 40%);
   position: relative;
 
   h4 {
-    color: $notice-color;
+    color: $alert-color;
     margin: 0px 0px 10px 0px;
     line-height: 24px;
     font-size: 18px;
@@ -31,7 +31,7 @@
     }
   }
 
-  .notice-icon {
+  .alert-icon {
     font-size: 24px;
     margin-right: 10px;
   }

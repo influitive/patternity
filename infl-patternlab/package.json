@@ -16,6 +16,7 @@
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-gulp": "^0.1.0",
+    "gulp-s3": "^0.3.0",
     "html-entities": "^1.1.1",
     "matchdep": "^0.3.0",
     "mustache": "^1.0.0",
@@ -42,6 +43,7 @@
     "node": ">=0.1"
   },
   "dependencies": {
+    "gulp-gzip": "^1.0.0",
     "gulp-if": "^1.2.5",
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.4",
