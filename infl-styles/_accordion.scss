@@ -39,8 +39,14 @@ $transition-out-time : 0.5s;
       }
 
       &.disabled {
-          color: #999999;
           cursor: auto;
+
+          a,
+          a:active,
+          a:hover,
+          a:visited {
+            color: #999999;
+          }
 
           &:hover {
             background-color: #cccccc;
