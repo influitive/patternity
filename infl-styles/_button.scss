@@ -87,7 +87,7 @@ button {
     @include transition (color 0.15s ease-in-out);
 
     &:hover {
-      color: $text-button-color-hover;
+      color: $text-button-color-hover !important;
     }
   }
 
