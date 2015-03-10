@@ -72,7 +72,7 @@ $theme-color-secondary-inverse: #111;
 //$path_to_fonts this should be set in your application.scss
 @font-face {
   font-family: 'Proxima Nova Light';
-  src: url($path_to_fonts + '/ProximaNova-Light.ttf') format('truetype');
+  src: $path_to_proxima_nova_light_font format('truetype');
 }
 
 $theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
