@@ -774,8 +774,13 @@ h6 {
   max-height: 1000px;
 }
 .accordion .accordion-section .section-heading.disabled {
-  color: #999999;
   cursor: auto;
+}
+.accordion .accordion-section .section-heading.disabled a,
+.accordion .accordion-section .section-heading.disabled a:active,
+.accordion .accordion-section .section-heading.disabled a:hover,
+.accordion .accordion-section .section-heading.disabled a:visited {
+  color: #999999;
 }
 .accordion .accordion-section .section-heading.disabled:hover {
   background-color: #cccccc;
