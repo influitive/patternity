@@ -41,18 +41,25 @@ describe('Alert', function() {
     });
 
     describe("Type", function(){
-      var successIconClass, errorIconClass, defaultIconClass;
+      var successIconClass, errorIconClass, defaultIconClass, warningIconClass;
 
       beforeEach(function(){
-        defaultIconClass = "fa-exclamation-triangle";
-        successIconClass = "fa-check-circle";
-        errorIconClass = "fa-exclamation-circle";
+        defaultIconClass = "ic-question-circle-o";
+        successIconClass = "ic-check-circle-o";
+        errorIconClass = "ic-exclamation-circle-o";
+        warningIconClass = "ic-info-circle-o";
       });
 
       it('will display the correct icon for default', function(){
         var subject = TestUtils.renderIntoDocument(<Alert title={title} body={body} showIcon={true} />);
 
         expect(subject.refs.title.getDOMNode().firstChild.className.indexOf(defaultIconClass)).to.above(-1);
+      });
+
+      it('will display the correct icon for warning', function(){
+        var subject = TestUtils.renderIntoDocument(<Alert title={title} body={body} showIcon={true} type="warning" />);
+
+        expect(subject.refs.title.getDOMNode().firstChild.className.indexOf(warningIconClass)).to.above(-1);
       });
 
       it('will display the correct icon for success', function(){

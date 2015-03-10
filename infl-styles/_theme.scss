@@ -1,14 +1,18 @@
 // COLORS
 
-$theme-color-primary: #197097;  /* dark blue */
+$theme-color-primary: #046f99;  /* dark blue */
 $theme-color-secondary: #fc9c24; /* orange */
 $theme-color-tertiary: #55b48c; /* Blue green */
 $theme-color-quaternary: #97c343; /* Light green */
 $theme-color-quinary: #269dbb; /* Light green */
 
-$success-color : #8BC53F;
-$error-color : #C1272D;
-$alert-color : #C09853;
+/* new colours */
+$color-primary: #08a5c5;  /* light blue */
+$color-secondary: #046f99; /* dark blue */
+
+$success-color : #8BC540; /* green */
+$error-color : #c54040; /* red */
+$warning-color : #ffcc00; /* yellow */
 
 // TEXT COLOR
 $theme-color-foreground: #333;
@@ -65,8 +69,12 @@ $theme-color-secondary-inverse: #111;
 .border-color-quinary { border-color: $theme-color-quinary; border-style: solid; border-width: 1px; }
 
 // FONTS
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('../fonts/ProximaNova-Light.ttf') format('truetype');
+}
 
-$theme-font-default: "Proxima Nova Light", 'Helvetica Neue', Helvetica, arial, sans-serif;
+$theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
 
 .theme-font {
   font-family: $theme-font-default;
@@ -84,6 +92,52 @@ $baseline-font-size: 16px;
 
 $theme-font-size: $theme-font-size-4;
 $theme-line-height: 22px;
+
+// ICONS
+@font-face {
+    font-family: 'influicons';
+    src: url('../fonts/influicons.ttf') format('truetype');
+}
+
+.ic {
+  font-family : 'influicons';
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+
+  &.ic-check-circle-o {
+    &:before {
+      content: '\e60a';
+    }
+  }
+
+  &.ic-info-circle-o {
+    &:before {
+      content: '\e608';
+    }
+  }
+
+  &.ic-exclamation-circle-o {
+    &:before {
+      content: '\e606';
+    }
+  }
+
+  &.ic-question-circle-o {
+    &:before {
+      content: '\e609';
+    }
+  }
+
+  &.ic-times {
+    &:before {
+      content: '\e605';
+    }
+  }
+}
 
 // BORDER
 

@@ -413,6 +413,12 @@ th {
 /* Blue green */
 /* Light green */
 /* Light green */
+/* new colours */
+/* light blue */
+/* dark blue */
+/* green */
+/* red */
+/* yellow */
 .background-color-foreground {
   background-color: #333;
 }
@@ -425,23 +431,23 @@ th {
 /* lightest orange */
 /* dark orange */
 .background-color-primary {
-  background-color: #197097;
+  background-color: #046f99;
 }
 
 .background-color-primary.hover {
-  background-color: #2090c3;
+  background-color: #0593cb;
 }
 
 .background-color-primary.focus {
-  background-color: #12506b;
+  background-color: #034b67;
 }
 
 .background-color-primary.shadow {
-  background-color: #184d65;
+  background-color: #084962;
 }
 
 .background-color-primary.disabled {
-  background-color: #63899a;
+  background-color: #408ca9;
 }
 
 .background-color-primary.inverse {
@@ -485,7 +491,7 @@ th {
 }
 
 .font-color-primary {
-  color: #197097;
+  color: #046f99;
 }
 
 .font-color-secondary {
@@ -505,7 +511,7 @@ th {
 }
 
 .border-color-primary {
-  border-color: #197097;
+  border-color: #046f99;
   border-style: solid;
   border-width: 1px;
 }
@@ -534,8 +540,41 @@ th {
   border-width: 1px;
 }
 
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url("../fonts/ProximaNova-Light.ttf") format("truetype");
+}
 .theme-font {
   font-family: "Proxima Nova Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'influicons';
+  src: url("../fonts/influicons.ttf") format("truetype");
+}
+.ic {
+  font-family: 'influicons';
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+.ic.ic-check-circle-o:before {
+  content: '\e60a';
+}
+.ic.ic-info-circle-o:before {
+  content: '\e608';
+}
+.ic.ic-exclamation-circle-o:before {
+  content: '\e606';
+}
+.ic.ic-question-circle-o:before {
+  content: '\e609';
+}
+.ic.ic-times:before {
+  content: '\e605';
 }
 
 .border-radius-1 {
@@ -624,7 +663,7 @@ span.label {
 
 /* new css*/
 p {
-  margin: 5px 0px;
+  margin: 0;
 }
 p.description {
   font-size: 0.9em;
@@ -748,15 +787,12 @@ h6 {
 }
 .accordion .accordion-section .section-heading.open .edit-section {
   opacity: 0;
-  -webkit-transition: opacity 0.3s ease-out;
-  -moz-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .accordion .accordion-section .section-heading.open + .section-details {
   max-height: 1000px;
-  -webkit-transition: max-height 0.8s ease-in;
-  -moz-transition: max-height 0.8s ease-in;
-  transition: max-height 0.8s ease-in;
 }
 .accordion .accordion-section .section-heading.disabled {
   color: #999999;
@@ -770,23 +806,20 @@ h6 {
 }
 .accordion .accordion-section .section-heading:hover {
   background-color: #e2e2e2;
-  -webkit-transition: background-color 0.3s ease-in;
-  -moz-transition: background-color 0.3s ease-in;
-  transition: background-color 0.3s ease-in;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 .accordion .accordion-section .section-heading:hover + .section-details {
   border-color: #e2e2e2;
-  -webkit-transition: border-color 0.3s ease-in;
-  -moz-transition: border-color 0.3s ease-in;
-  transition: border-color 0.3s ease-in;
 }
 .accordion .accordion-section .section-details {
   border: 1px solid #cccccc;
   max-height: 0;
-  -webkit-transition: max-height 0.3s ease-out;
-  -moz-transition: max-height 0.3s ease-out;
-  transition: max-height 0.3s ease-out;
   overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .accordion .accordion-section .section-details .section-details-inner {
   padding: 1.5em;
@@ -795,47 +828,58 @@ h6 {
 .alert {
   padding: 10px 20px;
   border-radius: 2px;
-  background-color: #f7f1e8;
+  background-color: #e7fafe;
   position: relative;
+  color: #08a5c5;
 }
 .alert h4 {
-  color: #C09853;
-  margin: 0px 0px 10px 0px;
+  margin: 0px;
   line-height: 24px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .alert h4 span {
   vertical-align: middle;
 }
-.alert.success {
-  background-color: #eaf4dc;
-}
-.alert.success h4 {
-  color: #8BC53F;
-}
-.alert.error {
-  background-color: #f3c1c3;
-}
-.alert.error h4 {
-  color: #C1272D;
-}
 .alert .alert-icon {
-  font-size: 24px;
   margin-right: 10px;
 }
 .alert .close {
   padding: 10px;
-  color: #999999;
   position: absolute;
   right: 5px;
-  top: 2px;
+  top: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 .alert .close:hover {
-  color: #666666;
-  -webkit-transition: color 0.3s ease-out;
-  -moz-transition: color 0.3s ease-out;
-  transition: color 0.3s ease-out;
+  color: #067c94;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+.alert.hasIcon .alert-body {
+  padding-left: 26px;
+}
+.alert.warning {
+  background-color: #fffae5;
+  color: #ffcc00;
+}
+.alert.warning .close:hover {
+  color: #cca300;
+}
+.alert.success {
+  background-color: #eaf5dc;
+  color: #8BC540;
+}
+.alert.success .close:hover {
+  color: #70a131;
+}
+.alert.error {
+  background-color: #f5dcdc;
+  color: #c54040;
+}
+.alert.error .close:hover {
+  color: #a13131;
 }
 
 /*# sourceMappingURL=style.css.map */

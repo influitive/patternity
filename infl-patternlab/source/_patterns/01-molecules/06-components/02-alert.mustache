@@ -1,6 +1,6 @@
 <section class="pattern-section">
   <header>
-    <h3>Alerts</h3>
+    <h3>alert</h3>
   </header>
 
   <p>The alerts has several states info or default, success and error.  Each Type is used for specific circumstances:</p>
@@ -54,13 +54,76 @@
       var props = {
         key: "alert-" + Math.random(),
         title : "Default Alert",
-        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        children : [],
         closeable: true
       };
 
       inflComp.React.render(
         inflComp.React.createElement(inflComp.Alert, props),
         document.getElementById("alert-closeable-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Warning</h4>
+
+  <p>The warning alert should be used to alert the user that something they are doing is not reommended.</p>
+
+  <div id="warning-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "warning-" + Math.random(),
+        title : "Warning Alert",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        type: "warning"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("warning-pattern")
+      );
+    })();
+  </script>
+
+  <br />
+  <br />
+
+  <div id="warning-icon-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "warning-" + Math.random(),
+        title : "Warning Alert",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        showIcon: true,
+        type: "warning"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("warning-icon-pattern")
+      );
+    })();
+  </script>
+
+  <br />
+  <br />
+
+  <div id="warning-closeable-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "warning-" + Math.random(),
+        title : "Warning Alert",
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        closeable: true,
+        type: "warning"
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Alert, props),
+        document.getElementById("warning-closeable-pattern")
       );
     })();
   </script>
@@ -226,7 +289,8 @@
         title : "Your Title",
         showIcon : boolean,       // optional defaults to false
         closeable : boolean,      // optional defaults to false
-        children: [...]           // array of text, html, react elements
+        children: [...],          // array of text, html, react elements
+        type : String             // can be success, error, warning or ''
       }
     </code>
   </pre>

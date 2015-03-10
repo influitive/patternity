@@ -1,5 +1,5 @@
-$transition-in-time : 0.8s;
-$transition-out-time : 0.3s;
+$transition-in-time : 0.5s;
+$transition-out-time : 0.5s;
 
 .accordion {
   padding: 0px;
@@ -21,13 +21,12 @@ $transition-out-time : 0.3s;
       &.open {
         .edit-section {
           opacity: 0;
-          @include transition(opacity $transition-out-time ease-out);
+          @include transition(opacity $transition-out-time ease-in-out);
         }
       }
 
       &.open + .section-details {
         max-height: 1000px;
-        @include transition(max-height $transition-in-time ease-in);
       }
 
       &.disabled {
@@ -45,19 +44,18 @@ $transition-out-time : 0.3s;
 
       &:hover {
         background-color: #e2e2e2;
-        @include transition(background-color $transition-out-time ease-in);
+        @include transition(background-color $transition-out-time ease-in-out);
       }
 
       &:hover  + .section-details{
         border-color: #e2e2e2;
-        @include transition(border-color $transition-out-time ease-in);
       }
     }
     .section-details {
       border: 1px solid #cccccc;
       max-height: 0;
-      @include transition(max-height $transition-out-time ease-out);
       overflow: hidden;
+      @include transition(all $transition-out-time);
 
       .section-details-inner {
         padding: $spacing-large;
