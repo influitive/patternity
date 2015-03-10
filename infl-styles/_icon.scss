@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'influicons';
-    src: url($path_to_fonts + '/influicons.ttf') format('truetype');
+    src: $path_to_influicons_font format('truetype');
 }
 
 .ic {
