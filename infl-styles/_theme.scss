@@ -69,9 +69,10 @@ $theme-color-secondary-inverse: #111;
 .border-color-quinary { border-color: $theme-color-quinary; border-style: solid; border-width: 1px; }
 
 // FONTS
+//$path_to_fonts this should be set in your application.scss
 @font-face {
   font-family: 'Proxima Nova Light';
-  src: url('../fonts/ProximaNova-Light.ttf') format('truetype');
+  src: url($path_to_fonts + '/ProximaNova-Light.ttf') format('truetype');
 }
 
 $theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
@@ -92,52 +93,6 @@ $baseline-font-size: 16px;
 
 $theme-font-size: $theme-font-size-4;
 $theme-line-height: 22px;
-
-// ICONS
-@font-face {
-    font-family: 'influicons';
-    src: url('../fonts/influicons.ttf') format('truetype');
-}
-
-.ic {
-  font-family : 'influicons';
-  display: inline-block;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-
-  &.ic-check-circle-o {
-    &:before {
-      content: '\e60a';
-    }
-  }
-
-  &.ic-info-circle-o {
-    &:before {
-      content: '\e608';
-    }
-  }
-
-  &.ic-exclamation-circle-o {
-    &:before {
-      content: '\e606';
-    }
-  }
-
-  &.ic-question-circle-o {
-    &:before {
-      content: '\e609';
-    }
-  }
-
-  &.ic-times {
-    &:before {
-      content: '\e605';
-    }
-  }
-}
 
 // BORDER
 
