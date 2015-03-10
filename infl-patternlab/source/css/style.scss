@@ -1,3 +1,5 @@
+$path_to_fonts : '../fonts';
+
 @import "bourbon";
 @import "neat";
 
@@ -7,3 +9,4 @@
 @import "infl-styles/typography";
 @import "infl-styles/accordion";
 @import "infl-styles/alert";
+@import "infl-styles/icon";

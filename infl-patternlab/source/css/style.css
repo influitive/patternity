@@ -548,35 +548,6 @@ th {
   font-family: "Proxima Nova Light", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
-@font-face {
-  font-family: 'influicons';
-  src: url("../fonts/influicons.ttf") format("truetype");
-}
-.ic {
-  font-family: 'influicons';
-  display: inline-block;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-.ic.ic-check-circle-o:before {
-  content: '\e60a';
-}
-.ic.ic-info-circle-o:before {
-  content: '\e608';
-}
-.ic.ic-exclamation-circle-o:before {
-  content: '\e606';
-}
-.ic.ic-question-circle-o:before {
-  content: '\e609';
-}
-.ic.ic-times:before {
-  content: '\e605';
-}
-
 .border-radius-1 {
   border-radius: 1px;
 }
@@ -880,6 +851,35 @@ h6 {
 }
 .alert.error .close:hover {
   color: #a13131;
+}
+
+@font-face {
+  font-family: 'influicons';
+  src: url("../fonts/influicons.ttf") format("truetype");
+}
+.ic {
+  font-family: 'influicons';
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+.ic.ic-check-circle-o:before {
+  content: '\e60a';
+}
+.ic.ic-info-circle-o:before {
+  content: '\e608';
+}
+.ic.ic-exclamation-circle-o:before {
+  content: '\e606';
+}
+.ic.ic-question-circle-o:before {
+  content: '\e609';
+}
+.ic.ic-times:before {
+  content: '\e605';
 }
 
 /*# sourceMappingURL=style.css.map */
