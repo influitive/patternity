@@ -24,11 +24,6 @@ describe('Accordion', function() {
     };
   }
 
-  function getSectionHeader(subject, child) {
-    var section = subject.getDOMNode()[child];
-    return section.firstChild;
-  }
-
   describe("Building", function(){
     it('will render an accordion with no sections as the default', function () {
       var subject = TestUtils.renderIntoDocument(<Accordion />);
@@ -58,7 +53,7 @@ describe('Accordion', function() {
   describe("Opening/Closing", function(){
     it("will open the body of a section when the header is clicked", function(){
       var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(1)} />);
-      var header = getSectionHeader(subject, "firstChild");
+      var header = subject.getDOMNode().firstChild.firstChild.firstChild;
       simulate.click(header);
 
       expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, "open").length).to.equal(1);
@@ -66,7 +61,7 @@ describe('Accordion', function() {
 
     it("will close a section when the header is clicked and the section is already open", function(){
       var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(1)} />);
-      var header = getSectionHeader(subject, "firstChild");
+      var header = subject.getDOMNode().firstChild.firstChild.firstChild;
       simulate.click(header);
       simulate.click(header);
 
@@ -75,12 +70,12 @@ describe('Accordion', function() {
 
     it("will close an open section when a different section is opened", function(){
       var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} />);
-      var firstHeader = getSectionHeader(subject, "firstChild");
+      var firstHeader = subject.getDOMNode().firstChild.firstChild.firstChild;
       simulate.click(firstHeader);
 
       expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, "open").length).to.equal(1);
 
-      var secondHeader = getSectionHeader(subject, "lastChild");
+      var secondHeader = subject.getDOMNode().firstChild.lastChild.firstChild;
       simulate.click(secondHeader);
 
       expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, "open").length).to.equal(1);
@@ -95,7 +90,7 @@ describe('Accordion', function() {
 
     it("will open a section details if the header is clicked and the section is enabled", function(){
       var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(1)} />);
-      var header = getSectionHeader(subject, "firstChild");
+      var header = subject.getDOMNode().firstChild.firstChild.firstChild;
       simulate.click(header);
 
       expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, "open").length).to.equal(1);
@@ -104,7 +99,7 @@ describe('Accordion', function() {
     it("will NOT open a section details if the header is clicked and the section is disabled", function(){
       var sections = buildSections(1);
       var subject = TestUtils.renderIntoDocument(<Accordion sections={disableSection(sections)} />);
-      var header = getSectionHeader(subject, "firstChild");
+      var header = subject.getDOMNode().firstChild.firstChild.firstChild;
       simulate.click(header);
 
       expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, "open").length).to.equal(0);

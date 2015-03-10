@@ -748,13 +748,21 @@ h6 {
 }
 .accordion .accordion-section .section-heading {
   background-color: #cccccc;
-  padding: 10px;
   font-size: 1.1em;
   overflow: hidden;
-  cursor: pointer;
-  color: #333333;
   margin: 0px;
   font-weight: normal;
+}
+.accordion .accordion-section .section-heading a,
+.accordion .accordion-section .section-heading a:active,
+.accordion .accordion-section .section-heading a:hover,
+.accordion .accordion-section .section-heading a:visited {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  text-decoration: none;
+  color: #333333;
 }
 .accordion .accordion-section .section-heading.open .edit-section {
   opacity: 0;
