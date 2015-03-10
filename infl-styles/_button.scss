@@ -22,7 +22,7 @@ button {
   margin:0;
   border-radius: $theme-border-radius;
   background-color: $theme-color-primary;
-  color: $theme-color-background;
+  color: $theme-color-background !important;
   text-decoration: none;
   white-space: nowrap;
   border: solid 1px $theme-color-primary-hover;
