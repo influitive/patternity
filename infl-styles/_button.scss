@@ -83,7 +83,7 @@ button {
   &.text {
     background-color: transparent;
     border: none;
-    color: $text-button-color;
+    color: $text-button-color !important;
     @include transition (color 0.15s ease-in-out);
 
     &:hover {
