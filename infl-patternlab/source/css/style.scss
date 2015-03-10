@@ -6,6 +6,9 @@ $path_to_proxima_nova_light_font : url('../fonts/ProximaNova-Light.ttf');
 
 @import "infl-styles/normalize";
 @import "infl-styles/theme";
+
+$theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
+
 @import "infl-styles/infl_base";
 @import "infl-styles/typography";
 @import "infl-styles/accordion";
