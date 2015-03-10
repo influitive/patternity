@@ -10,7 +10,7 @@ var Alert = React.createClass({
   },
   propTypes : {
     title: React.PropTypes.string,
-    type: React.PropTypes.oneOf(['success', 'error', 'info', '']),
+    type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
     body: React.PropTypes.node
   },
   getInitialState: function() {
@@ -28,7 +28,7 @@ var Alert = React.createClass({
   },
   _alertTemplate: function(){
     return (
-        <div className={"alert " + this.props.type} ref="alert">
+        <div className={"alert " + this.props.type + " " + this._hasIconClass()} ref="alert">
           {this._closeable()}
           <h4 className="alert-title" ref="title">
             {this._icon()}
@@ -42,7 +42,7 @@ var Alert = React.createClass({
   },
   _closeable: function(){
     if(this.props.closeable) {
-      return (<span className="close fa fa-times" onClick={this._close} ref="close"></span>);
+      return (<span className="close ic ic-times" onClick={this._close} ref="close"></span>);
     } else {
       return "";
     }
@@ -52,18 +52,23 @@ var Alert = React.createClass({
   },
   _icon: function(){
     if(this.props.showIcon) {
-      return (<span className={"alert-icon fa " + this._determineIconType()}></span>);
+      return (<span className={"alert-icon ic " + this._determineIconType()}></span>);
     } else {
       return "";
     }
   },
+  _hasIconClass: function(){
+    return this.props.showIcon ? "hasIcon" : "";
+  },
   _determineIconType: function(){
     if(this.props.type === "success") {
-      return "fa-check-circle";
+      return "ic-check-circle-o";
     } else if(this.props.type === "error") {
-      return "fa-exclamation-circle";
+      return "ic-exclamation-circle-o";
+    } else if(this.props.type === "warning") {
+      return "ic-info-circle-o"
     } else {
-      return "fa-exclamation-triangle";
+      return "ic-question-circle-o";
     }
   }
 });

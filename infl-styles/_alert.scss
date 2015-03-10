@@ -1,52 +1,74 @@
 .alert {
   padding: 10px 20px;
   border-radius: $theme-border-radius-2;
-  background-color: lighten($alert-color, 40%);
+  background-color: lighten($color-primary, 55%);
   position: relative;
+  color: $color-primary;
 
   h4 {
-    color: $alert-color;
-    margin: 0px 0px 10px 0px;
+    margin: 0px;
     line-height: 24px;
-    font-size: 18px;
+    font-size: 16px;
 
     span {
       vertical-align: middle;
     }
   }
 
-  &.success {
-    background-color: lighten($success-color, 40%);
-
-    h4 {
-      color: $success-color;
-    }
-  }
-
-  &.error {
-    background-color: lighten($error-color, 40%);
-
-    h4 {
-      color: $error-color;
-    }
-  }
-
   .alert-icon {
-    font-size: 24px;
     margin-right: 10px;
   }
 
   .close {
     padding: 10px;
-    color: #999999;
     position: absolute;
     right: 5px;
-    top: 2px;
+    top: 5px;
     cursor: pointer;
+    font-weight: bold;
 
     &:hover {
-      color: #666666;
+      color: darken($color-primary, 10%);
       @include transition(color $transition-out-time ease-out)
+    }
+  }
+
+  &.hasIcon {
+    .alert-body {
+      padding-left: 26px;
+    }
+  }
+
+  &.warning {
+    background-color: lighten($warning-color, 45%);
+    color: $warning-color;
+
+    .close {
+      &:hover {
+        color: darken($warning-color, 10%);
+      }
+    }
+  }
+
+  &.success {
+    background-color: lighten($success-color, 40%);
+    color: $success-color;
+
+    .close {
+      &:hover {
+        color : darken($success-color, 10%);
+      }
+    }
+  }
+
+  &.error {
+    background-color: lighten($error-color, 40%);
+    color: $error-color;
+
+    .close {
+      &:hover {
+        color : darken($error-color, 10%);
+      }
     }
   }
 }
