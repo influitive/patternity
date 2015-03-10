@@ -29,7 +29,6 @@ button {
   padding: $spacing-small $spacing-large;
   text-align: center;
 
-
   @include transition (background-color 0.15s ease-in-out);
 
   &:hover {
@@ -37,6 +36,18 @@ button {
     text-decoration:none;
     background-color: $theme-color-primary-hover;
     color: $theme-color-background;
+  }
+
+  &.disabled {
+    background-color: #cccccc !important;
+    color: #999999 !important;
+    cursor: auto !important;
+    border-style: none !important;
+
+    &:hover {
+      background-color: #cccccc !important;
+      color: #999999 !important;
+    }
   }
 
   &.important {
