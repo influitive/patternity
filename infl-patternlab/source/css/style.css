@@ -545,7 +545,7 @@ th {
   src: url("../fonts/ProximaNova-Light.ttf") format("truetype");
 }
 .theme-font {
-  font-family: "Proxima Nova Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
 .border-radius-1 {

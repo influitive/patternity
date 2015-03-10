@@ -75,7 +75,8 @@ $theme-color-secondary-inverse: #111;
   src: $path_to_proxima_nova_light_font format('truetype');
 }
 
-$theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
+$theme-font-default: 'Helvetica Neue', Helvetica, arial, sans-serif;
+//$theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
 
 .theme-font {
   font-family: $theme-font-default;
