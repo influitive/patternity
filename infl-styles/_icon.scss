@@ -1,0 +1,47 @@
+// ICONS
+//$path_to_fonts this should be set in your application.scss
+
+@font-face {
+    font-family: 'influicons';
+    src: url($path_to_fonts + '/influicons.ttf') format('truetype');
+}
+
+.ic {
+  font-family : 'influicons';
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+
+  &.ic-check-circle-o {
+    &:before {
+      content: '\e60a';
+    }
+  }
+
+  &.ic-info-circle-o {
+    &:before {
+      content: '\e608';
+    }
+  }
+
+  &.ic-exclamation-circle-o {
+    &:before {
+      content: '\e606';
+    }
+  }
+
+  &.ic-question-circle-o {
+    &:before {
+      content: '\e609';
+    }
+  }
+
+  &.ic-times {
+    &:before {
+      content: '\e605';
+    }
+  }
+}
