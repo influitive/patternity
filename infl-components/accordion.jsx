@@ -66,8 +66,7 @@ var AccordionHeader = React.createClass({
     open: React.PropTypes.bool,
     isEnabled: React.PropTypes.bool
   },
-  _toggleContent: function(event){
-    event.preventDefault();
+  _toggleContent: function(){
     if(this.props.isEnabled){
       this.props.toggleOne(this.props.index);
     }
@@ -81,10 +80,8 @@ var AccordionHeader = React.createClass({
   },
   render: function() {
     return (
-      <h3 className={this._determineCSSClasses()}>
-        <a href="#" onClick={this._toggleContent}>
+      <h3 className={this._determineCSSClasses()} onClick={this._toggleContent}>
           {this.props.header}
-        </a>
       </h3>
     );
   }

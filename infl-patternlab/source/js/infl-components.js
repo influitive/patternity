@@ -82,8 +82,7 @@ var AccordionHeader = React.createClass({displayName: "AccordionHeader",
     open: React.PropTypes.bool,
     isEnabled: React.PropTypes.bool
   },
-  _toggleContent: function(event){
-    event.preventDefault();
+  _toggleContent: function(){
     if(this.props.isEnabled){
       this.props.toggleOne(this.props.index);
     }
@@ -97,10 +96,8 @@ var AccordionHeader = React.createClass({displayName: "AccordionHeader",
   },
   render: function() {
     return (
-      React.createElement("h3", {className: this._determineCSSClasses()}, 
-        React.createElement("a", {href: "#", onClick: this._toggleContent}, 
+      React.createElement("h3", {className: this._determineCSSClasses(), onClick: this._toggleContent}, 
           this.props.header
-        )
       )
     );
   }

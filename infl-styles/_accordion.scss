@@ -14,18 +14,9 @@ $transition-out-time : 0.5s;
       overflow: hidden;
       margin: 0px;
       font-weight: normal;
-
-      a,
-      a:active,
-      a:hover,
-      a:visited {
-        display: block;
-        height: 100%;
-        width: 100%;
-        padding: 10px;
-        text-decoration: none;
-        color: #333333;
-      }
+      padding: 10px;
+      color: #333333;
+      cursor: pointer;
 
       &.open {
         .edit-section {
@@ -39,14 +30,8 @@ $transition-out-time : 0.5s;
       }
 
       &.disabled {
+          color: #999999;
           cursor: auto;
-
-          a,
-          a:active,
-          a:hover,
-          a:visited {
-            color: #999999;
-          }
 
           &:hover {
             background-color: #cccccc;

@@ -752,17 +752,9 @@ h6 {
   overflow: hidden;
   margin: 0px;
   font-weight: normal;
-}
-.accordion .accordion-section .section-heading a,
-.accordion .accordion-section .section-heading a:active,
-.accordion .accordion-section .section-heading a:hover,
-.accordion .accordion-section .section-heading a:visited {
-  display: block;
-  height: 100%;
-  width: 100%;
   padding: 10px;
-  text-decoration: none;
   color: #333333;
+  cursor: pointer;
 }
 .accordion .accordion-section .section-heading.open .edit-section {
   opacity: 0;
@@ -774,13 +766,8 @@ h6 {
   max-height: 1000px;
 }
 .accordion .accordion-section .section-heading.disabled {
-  cursor: auto;
-}
-.accordion .accordion-section .section-heading.disabled a,
-.accordion .accordion-section .section-heading.disabled a:active,
-.accordion .accordion-section .section-heading.disabled a:hover,
-.accordion .accordion-section .section-heading.disabled a:visited {
   color: #999999;
+  cursor: auto;
 }
 .accordion .accordion-section .section-heading.disabled:hover {
   background-color: #cccccc;
