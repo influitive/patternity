@@ -833,14 +833,14 @@ h6 {
 }
 .alert.warning {
   background-color: #fffae5;
-  color: #ffcc00;
+  color: #cca300;
 }
 .alert.warning .close:hover {
-  color: #cca300;
+  color: #b38f00;
 }
 .alert.success {
   background-color: #eaf5dc;
-  color: #8BC540;
+  color: #638e2b;
 }
 .alert.success .close:hover {
   color: #70a131;
@@ -950,14 +950,14 @@ button.success:hover {
 button.text {
   background-color: transparent;
   border: none;
-  color: #999999;
+  color: #999999 !important;
   -webkit-transition: color 0.15s ease-in-out;
   -moz-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
 }
 .button.text:hover,
 button.text:hover {
-  color: gray;
+  color: gray !important;
 }
 .button.secondary,
 button.secondary {

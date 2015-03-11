@@ -41,18 +41,18 @@
 
   &.warning {
     background-color: lighten($warning-color, 45%);
-    color: $warning-color;
+    color: darken($warning-color, 10%);
 
     .close {
       &:hover {
-        color: darken($warning-color, 10%);
+        color: darken($warning-color, 15%);
       }
     }
   }
 
   &.success {
     background-color: lighten($success-color, 40%);
-    color: $success-color;
+    color: darken($success-color, 15%);
 
     .close {
       &:hover {
