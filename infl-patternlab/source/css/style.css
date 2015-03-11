@@ -964,4 +964,139 @@ button.secondary {
   margin-right: 0.5em;
 }
 
+/* new colour classes*/
+.color-primary-background {
+  background-color: #08a5c5;
+}
+
+.color-secondary-background {
+  background-color: #046f99;
+}
+
+.color-success-background {
+  background-color: #8BC540;
+}
+
+.color-error-background {
+  background-color: #c54040;
+}
+
+.color-warning-background {
+  background-color: #ffcc00;
+}
+
+.color-darker-grey-background {
+  background-color: #444444;
+}
+
+.color-dark-grey-background {
+  background-color: #666666;
+}
+
+.color-light-grey-background {
+  background-color: #d0d2d3;
+}
+
+.color-lighter-grey-background {
+  background-color: #eeeeee;
+}
+
+/* add to font styling */
+@font-face {
+  font-family: 'Proxima Nova Light Bold';
+  src: url("../fonts/ProximaNova-Semibold.ttf") format("truetype");
+}
+strong {
+  font-family: 'Proxima Nova Light Bold';
+}
+
+/* welcome styling */
+#welcome {
+  background-color: #ffcc00;
+  padding: 150px 0px 50px;
+  position: relative;
+}
+#welcome:before {
+  position: absolute;
+  content: "";
+  display: none;
+  width: 0;
+  height: 0;
+  border-bottom: 300px solid #444444;
+  border-left: 200px solid transparent;
+  bottom: 0px;
+  right: 0px;
+}
+#welcome:after {
+  position: absolute;
+  content: "";
+  display: none;
+  width: 0;
+  height: 0;
+  border-bottom: 300px solid #444444;
+  border-right: 200px solid transparent;
+  bottom: 0px;
+  left: 0px;
+}
+#welcome .logo {
+  background-image: url("../images/Influitive_Logo_Text_White.png");
+  width: 430px;
+  height: 100px;
+  background-repeat: no-repeat;
+  margin: 0px auto;
+}
+#welcome .logo span {
+  display: none;
+}
+#welcome .tag-line {
+  color: #fff;
+  border-top: 1px dashed #fff;
+  border-bottom: 1px dashed #fff;
+  font-variant: small-caps;
+  width: 80%;
+  margin: 0px auto;
+  font-weight: normal;
+  padding: 10px 0px;
+  text-align: center;
+}
+#welcome .inf-pattern {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+}
+#welcome .find-pattern-icon {
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 100px;
+}
+
+#why-lab {
+  background-color: #444444;
+  padding: 50px;
+  color: #fff;
+  overflow: hidden;
+}
+#why-lab .lab-content {
+  width: 50%;
+  float: left;
+}
+#why-lab .lab-content h2 {
+  margin-top: 0px;
+}
+
+#lab-features {
+  background-color: #8BC540;
+  padding: 50px;
+  color: #fff;
+  overflow: hidden;
+}
+#lab-features .lab-content {
+  width: 50%;
+  float: right;
+}
+#lab-features .lab-content h2 {
+  margin-top: 0px;
+}
+
 /*# sourceMappingURL=style.css.map */
