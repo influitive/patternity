@@ -1,5 +1,6 @@
 $path_to_influicons_font : url('../fonts/influicons.ttf');
 $path_to_proxima_nova_light_font : url('../fonts/ProximaNova-Light.ttf');
+$path_to_proxima_nova_light_bold_font : url('../fonts/ProximaNova-Semibold.ttf');
 
 @import "bourbon";
 @import "neat";
@@ -15,3 +16,127 @@ $theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, s
 @import "infl-styles/alert";
 @import "infl-styles/icon";
 @import "infl-styles/button";
+
+/* new colour classes*/
+.color-primary-background { background-color: $color-primary; }
+.color-secondary-background { background-color: $color-secondary; }
+
+.color-success-background { background-color: $success-color; }
+.color-error-background { background-color: $error-color; }
+.color-warning-background { background-color: $warning-color; }
+
+.color-darker-grey-background { background-color: $darker-grey; }
+.color-dark-grey-background { background-color: $dark-grey; }
+.color-light-grey-background { background-color: $light-grey; }
+.color-lighter-grey-background { background-color: $lighter-grey; }
+
+/* add to font styling */
+@font-face {
+  font-family: 'Proxima Nova Light Bold';
+  src: $path_to_proxima_nova_light_bold_font format('truetype');
+}
+
+strong {
+  font-family: 'Proxima Nova Light Bold';
+}
+
+/* welcome styling */
+
+#welcome {
+  background-color: $warning-color;
+  padding: 150px 0px 50px;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    display: none;
+    width: 0;
+    height: 0;
+    border-bottom: 300px solid $darker-grey;
+    border-left: 200px solid transparent;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    display: none;
+    width: 0;
+    height: 0;
+    border-bottom: 300px solid $darker-grey;
+    border-right: 200px solid transparent;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .logo {
+    background-image: url("../images/Influitive_Logo_Text_White.png");
+    width: 430px;
+    height: 100px;
+    background-repeat: no-repeat;
+    margin: 0px auto;
+
+    span {
+      display: none;
+    }
+  }
+
+  .tag-line {
+      color: #fff;
+      border-top: 1px dashed #fff;
+      border-bottom: 1px dashed #fff;
+      font-variant: small-caps;
+      width: 80%;
+      margin: 0px auto;
+      font-weight: normal;
+      padding: 10px 0px;
+      text-align: center;
+  }
+
+  .inf-pattern {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .find-pattern-icon {
+    color: #fff;
+    display:block;
+    text-align: center;
+    font-size: 100px;
+  }
+}
+
+#why-lab {
+  background-color: $darker-grey;
+  padding: 50px;
+  color: #fff;
+  overflow: hidden;
+
+  .lab-content {
+    width: 50%;
+    float: left;
+
+    h2 {
+      margin-top: 0px;
+    }
+  }
+}
+
+#lab-features {
+  background-color: $success-color;
+  padding: 50px;
+  color: #fff;
+  overflow: hidden;
+
+  .lab-content {
+    width: 50%;
+    float: right;
+
+    h2 {
+      margin-top: 0px;
+    }
+  }
+}

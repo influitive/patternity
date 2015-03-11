@@ -64,37 +64,24 @@
 }
 .sg-colors li {
   overflow: hidden;
-  border: 1px solid #ddd;
   padding: 0.3em;
   margin: 0 0.2em 0.2em 0;
-}
-@media all and (min-width: 30em) {
-  .sg-colors li {
-    float: left;
-    width: 5em;
-  }
+  float: left;
+  width: 7em;
 }
 
 .sg-swatch {
   display: block;
   height: 1.5em;
   width: 50%;
-}
-@media all and (max-width: 30em) {
-  .sg-swatch {
-    float: left;
-    margin-right: 0.3em;
-  }
-}
-@media all and (min-width: 30em) {
-  .sg-swatch {
-    width: 100%;
-    height: 4em;
-    margin-bottom: 0.2em;
-  }
+  width: 100%;
+  height: 4em;
+  margin-bottom: 0.2em;
 }
 
-.sg-label {
+.sg-label,
+.sg-name {
+  display: block;
   line-height: 1;
 }
 
