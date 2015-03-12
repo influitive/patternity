@@ -35,7 +35,7 @@ button {
   &:hover {
     //@include transition (background-color 0.2s ease-in-out);
     text-decoration:none;
-    background-color: lighten($theme-color-primary, 3%);
+    background-color: lighten($theme-color-primary, 5%);
     color: $theme-color-background;
     box-shadow: 0px 2px $theme-color-primary;
   }
@@ -69,14 +69,15 @@ button {
 
   &.primary {
     text-decoration:none;
-    min-height:inherit;
     border-style: none;
     color: white;
     box-shadow: 0px 2px darken($theme-color-primary, 10%);
+    background-color: $theme-color-primary;
 
     &:hover {
-      background-color: $theme-color-primary-hover;
-      box-shadow: 0px 2px darken($theme-color-primary-hover, 10%);
+      background-color: lighten($theme-color-primary, 5%);
+      color: $theme-color-background;
+      box-shadow: 0px 2px $theme-color-primary;
     }
   }
 
