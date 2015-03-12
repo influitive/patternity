@@ -39,6 +39,12 @@
     }
   }
 
+  &.ic-times-circle-o {
+    &:before {
+      content: '\e607';
+    }
+  }
+
   &.ic-times {
     &:before {
       content: '\e605';
@@ -66,6 +72,12 @@
   &.ic-mail {
     &:before {
       content: '\e603';
+    }
+  }
+
+  &.ic-check {
+    &:before {
+      content: '\e604';
     }
   }
 }
