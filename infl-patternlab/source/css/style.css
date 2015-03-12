@@ -1040,7 +1040,8 @@ input[type='password'],
 input[type='url'],
 input[type='search'],
 input[type='number'],
-.select-box {
+.select-box,
+select {
   border-radius: 2px;
   border: solid 1px #d0d2d3;
   font-size: inherit;
@@ -1057,7 +1058,8 @@ input[type='password'].is-error,
 input[type='url'].is-error,
 input[type='search'].is-error,
 input[type='number'].is-error,
-.select-box.is-error {
+.select-box.is-error,
+select.is-error {
   border-color: #c54040;
   color: #c54040;
   background-color: #f5dcdc;
@@ -1070,7 +1072,8 @@ input[type='password'].is-valid,
 input[type='url'].is-valid,
 input[type='search'].is-valid,
 input[type='number'].is-valid,
-.select-box.is-valid {
+.select-box.is-valid,
+select.is-valid {
   border-color: #8BC540;
   color: #78ad34;
   background-color: #eaf5dc;
@@ -1113,6 +1116,7 @@ input[type='number'].is-valid,
   z-index: 1;
 }
 .select-box select {
+  width: 100%;
   position: relative;
   z-index: 2;
   padding: 0px 30px 0px 0px;

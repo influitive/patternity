@@ -6,7 +6,8 @@ input[type='password'],
 input[type='url'],
 input[type='search'],
 input[type='number'],
-.select-box {
+.select-box,
+select {
   border-radius: 2px;
   border: solid 1px $light-grey;
   font-size: inherit;
@@ -67,6 +68,7 @@ input[type='number'],
   }
 
   select {
+    width: 100%;
     position: relative;
     z-index: 2;
     padding: 0px 30px 0px 0px;
