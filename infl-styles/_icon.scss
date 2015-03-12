@@ -44,4 +44,28 @@
       content: '\e605';
     }
   }
+
+  &.ic-search {
+    &:before {
+      content: '\e602';
+    }
+  }
+
+  &.ic-user {
+    &:before {
+      content: '\e600';
+    }
+  }
+
+  &.ic-bell {
+    &:before {
+      content: '\e601';
+    }
+  }
+
+  &.ic-mail {
+    &:before {
+      content: '\e603';
+    }
+  }
 }

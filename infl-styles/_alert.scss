@@ -1,9 +1,9 @@
 .alert {
   padding: 10px 20px;
   border-radius: $theme-border-radius-2;
-  background-color: lighten($color-primary, 55%);
+  background-color: lighten($theme-color-primary, 55%);
   position: relative;
-  color: $color-primary;
+  color: $theme-color-primary;
 
   h4 {
     margin: 0px;
@@ -28,7 +28,7 @@
     font-weight: bold;
 
     &:hover {
-      color: darken($color-primary, 10%);
+      color: darken($theme-color-primary, 10%);
       @include transition(color $transition-out-time ease-out)
     }
   }

@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: $path_to_proxima_nova_light_font format('truetype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light Bold';
+  src: $path_to_proxima_nova_light_bold_font format('truetype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light Italic';
+  src: $path_to_proxima_nova_light_italic_font format('truetype');
+}
+
+body {
+  font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-size: 15px;
+}
+
+strong {
+  font-family: 'Proxima Nova Light Bold';
+}
+
+em {
+  font-family: 'Proxima Nova Light Italic';
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 11px;
+}
