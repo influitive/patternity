@@ -874,6 +874,9 @@ h6 {
 .ic.ic-question-circle-o:before {
   content: '\e609';
 }
+.ic.ic-times-circle-o:before {
+  content: '\e607';
+}
 .ic.ic-times:before {
   content: '\e605';
 }
@@ -888,6 +891,9 @@ h6 {
 }
 .ic.ic-mail:before {
   content: '\e603';
+}
+.ic.ic-check:before {
+  content: '\e604';
 }
 
 .button,
