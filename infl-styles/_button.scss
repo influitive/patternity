@@ -1,19 +1,3 @@
-// Buttons
-//
-// Buttons come in 3 primary 'importances'.
-//
-// Default buttons should be used in most cases for less important actions.
-//
-// Markup:
-// <a class='button {$modifiers}' href='#'>Button Text</a>
-//
-// .important       - Important buttons should be limited to key calls to actions and limited to 1 per page generally.
-// .primary         - Primary buttons are used for default or key actions on things
-//
-// Styleguide 2.button
-
-$succcess-button-background : $success-color;
-$succcess-button-background-hover : lighten($succcess-button-background, 10%);
 $text-button-color : #999999;
 $text-button-color-hover : lighten($text-button-color, 10%);
 
@@ -82,13 +66,13 @@ button {
   }
 
   &.success {
-    background-color: $succcess-button-background;
+    background-color: $success-color;
     border-style: none;
-    box-shadow: 0px 2px darken($succcess-button-background, 10%);
+    box-shadow: 0px 2px darken($success-color, 10%);
 
     &:hover {
-      background-color: $succcess-button-background-hover;
-      box-shadow: 0px 2px darken($succcess-button-background-hover, 10%);
+      background-color: lighten($success-color, 10%);
+      box-shadow: 0px 2px $success-color;
     }
   }
 
