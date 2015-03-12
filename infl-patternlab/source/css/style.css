@@ -901,7 +901,7 @@ button {
 .button:hover,
 button:hover {
   text-decoration: none;
-  background-color: #09b1d4;
+  background-color: #09bade;
   color: #fff;
   box-shadow: 0px 2px #08a5c5;
 }
@@ -935,14 +935,15 @@ button.important:hover {
 .button.primary,
 button.primary {
   text-decoration: none;
-  min-height: inherit;
   border-style: none;
   color: white;
   box-shadow: 0px 2px #067c94;
+  background-color: #08a5c5;
 }
 .button.primary:hover,
 button.primary:hover {
-  background-color: #0bcdf5;
+  background-color: #09bade;
+  color: #fff;
   box-shadow: 0px 2px #08a5c5;
 }
 .button.success,
@@ -954,7 +955,7 @@ button.success {
 .button.success:hover,
 button.success:hover {
   background-color: #a3d167;
-  box-shadow: 0px 2px #8bc540;
+  box-shadow: 0px 2px #8BC540;
 }
 .button.danger,
 button.danger {
