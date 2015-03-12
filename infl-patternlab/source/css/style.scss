@@ -1,25 +1,31 @@
 $path_to_influicons_font : url('../fonts/influicons.ttf');
 $path_to_proxima_nova_light_font : url('../fonts/ProximaNova-Light.ttf');
 $path_to_proxima_nova_light_bold_font : url('../fonts/ProximaNova-Semibold.ttf');
+$path_to_proxima_nova_light_italic_font : url('../fonts/ProximaNova-LightIt.ttf');
 
 @import "bourbon";
 @import "neat";
 
 @import "infl-styles/normalize";
 @import "infl-styles/theme";
-
-$theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
-
+@import "infl-styles/fonts";
 @import "infl-styles/infl_base";
 @import "infl-styles/typography";
 @import "infl-styles/accordion";
 @import "infl-styles/alert";
 @import "infl-styles/icon";
 @import "infl-styles/button";
+@import "infl-styles/form";
+
+//to force the styles to take affect in the pattern lab
+body {
+  font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
+  font-size: 15px !important;
+}
 
 /* new colour classes*/
-.color-primary-background { background-color: $color-primary; }
-.color-secondary-background { background-color: $color-secondary; }
+.color-primary-background { background-color: $theme-color-primary; }
+.color-secondary-background { background-color: $theme-color-secondary; }
 
 .color-success-background { background-color: $success-color; }
 .color-error-background { background-color: $error-color; }
@@ -30,17 +36,21 @@ $theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, s
 .color-light-grey-background { background-color: $light-grey; }
 .color-lighter-grey-background { background-color: $lighter-grey; }
 
-/* add to font styling */
-@font-face {
-  font-family: 'Proxima Nova Light Bold';
-  src: $path_to_proxima_nova_light_bold_font format('truetype');
-}
 
-strong {
-  font-family: 'Proxima Nova Light Bold';
-}
 
 /* welcome styling */
+
+.code-title,
+.code {
+  @media all and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.button-inverse-wrapper {
+  padding: 10px;
+  background-color: $darker-grey;
+}
 
 #welcome {
   background-color: $warning-color;
@@ -77,6 +87,12 @@ strong {
     height: 100px;
     background-repeat: no-repeat;
     margin: 0px auto;
+    background-position: bottom middle;
+
+    @media all and (max-width: 450px) {
+      width: 100%;
+      background-size: 90%;
+    }
 
     span {
       display: none;
@@ -99,6 +115,10 @@ strong {
     color: #fff;
     font-size: 40px;
     text-align: center;
+
+    @media all and (max-width: 450px) {
+      font-size: 30px;
+    }
   }
 
   .find-pattern-icon {
@@ -119,6 +139,11 @@ strong {
     width: 50%;
     float: left;
 
+    @media all and (max-width: 450px) {
+      width: 100%;
+      float: none;
+    }
+
     h2 {
       margin-top: 0px;
     }
@@ -134,6 +159,11 @@ strong {
   .lab-content {
     width: 50%;
     float: right;
+
+    @media all and (max-width: 450px) {
+      width: 100%;
+      float: none;
+    }
 
     h2 {
       margin-top: 0px;

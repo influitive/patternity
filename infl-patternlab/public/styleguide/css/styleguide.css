@@ -856,6 +856,10 @@ div.clear {
   font-variant: small-caps;
   letter-spacing: 1px;
 }
+.pattern-section .font-title {
+  display: inline-block;
+  width: 150px;
+}
 
 .code {
   background-color: #ececec;

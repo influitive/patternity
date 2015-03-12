@@ -13,9 +13,9 @@
 // Styleguide 2.button
 
 $succcess-button-background : $success-color;
-$succcess-button-background-hover : darken($succcess-button-background, 10%);
+$succcess-button-background-hover : lighten($succcess-button-background, 10%);
 $text-button-color : #999999;
-$text-button-color-hover : darken($text-button-color, 10%);
+$text-button-color-hover : lighten($text-button-color, 10%);
 
 .button,
 button {
@@ -25,17 +25,19 @@ button {
   color: $theme-color-background !important;
   text-decoration: none;
   white-space: nowrap;
-  border: solid 1px $theme-color-primary-hover;
+  border: none;
   padding: $spacing-small $spacing-large;
   text-align: center;
+  box-shadow: 0px 2px darken($theme-color-primary, 10%);
 
   @include transition (background-color 0.15s ease-in-out);
 
   &:hover {
     //@include transition (background-color 0.2s ease-in-out);
     text-decoration:none;
-    background-color: $theme-color-primary-hover;
+    background-color: lighten($theme-color-primary, 5%);
     color: $theme-color-background;
+    box-shadow: 0px 2px $theme-color-primary;
   }
 
   &.disabled {
@@ -43,10 +45,12 @@ button {
     color: #999999 !important;
     cursor: auto !important;
     border-style: none !important;
+    box-shadow: 0px 2px darken(#cccccc, 10%);
 
     &:hover {
       background-color: #cccccc !important;
       color: #999999 !important;
+      box-shadow: 0px 2px darken(#cccccc, 10%);
     }
   }
 
@@ -54,9 +58,12 @@ button {
     text-decoration:none;
     border-style: none;
     color: white;
-    background-color: $theme-color-secondary;
+    background-color: darken($warning-color, 7%);
+    box-shadow: 0px 2px darken($warning-color, 12%);
+
     &:hover {
-      background-color: $theme-color-secondary-hover;
+      background-color: darken($warning-color, 2%);
+      box-shadow: 0px 2px darken($warning-color, 5%);
     }
   }
 
@@ -65,18 +72,33 @@ button {
     min-height:inherit;
     border-style: none;
     color: white;
+    box-shadow: 0px 2px darken($theme-color-primary, 10%);
 
     &:hover {
       background-color: $theme-color-primary-hover;
+      box-shadow: 0px 2px darken($theme-color-primary-hover, 10%);
     }
   }
 
   &.success {
     background-color: $succcess-button-background;
     border-style: none;
+    box-shadow: 0px 2px darken($succcess-button-background, 10%);
 
     &:hover {
       background-color: $succcess-button-background-hover;
+      box-shadow: 0px 2px darken($succcess-button-background-hover, 10%);
+    }
+  }
+
+  &.danger {
+    background-color: $error-color;
+    border-style: none;
+    box-shadow: 0px 2px darken($error-color, 10%);
+
+    &:hover {
+      background-color: lighten($error-color, 10%);
+      box-shadow: 0px 2px $error-color;
     }
   }
 
@@ -85,13 +107,48 @@ button {
     border: none;
     color: $text-button-color !important;
     @include transition (color 0.15s ease-in-out);
+    box-shadow: none;
 
     &:hover {
       color: $text-button-color-hover !important;
+      box-shadow: none;
+      text-decoration: underline;
+    }
+
+    &.inverse {
+      color: #fff !important;
+
+      &:hover {
+        color: $light-grey !important;
+      }
     }
   }
 
   &.secondary {
-    margin-right:0.5em;
+    background-color: transparent;
+    border: 1px solid $text-button-color;
+    color: $text-button-color !important;
+    box-shadow: none;
+
+    &:hover {
+      background-color: transparent;
+      color: darken($text-button-color, 20%) !important;
+      border-color: darken($text-button-color, 20%);
+      box-shadow: none;
+    }
+
+    &.inverse {
+      border: 1px solid #fff;
+      color: #fff !important;
+      box-shadow: none;
+
+      &:hover {
+        color: $light-grey !important;
+        border-color: $light-grey;
+        box-shadow: none;
+      }
+    }
   }
+
+
 }

@@ -1,14 +1,6 @@
-// COLORS
-
-$theme-color-primary: #046f99;  /* dark blue */
-$theme-color-secondary: #fc9c24; /* orange */
-$theme-color-tertiary: #55b48c; /* Blue green */
-$theme-color-quaternary: #97c343; /* Light green */
-$theme-color-quinary: #269dbb; /* Light green */
-
 /* new colours */
-$color-primary: #08a5c5;  /* light blue */
-$color-secondary: #046f99; /* dark blue */
+$theme-color-primary : #08a5c5;
+$theme-color-secondary: #046f99;
 
 $success-color : #8BC540; /* green */
 $error-color : #c54040; /* red */
@@ -57,29 +49,13 @@ $theme-color-secondary-inverse: #111;
 .background-color-secondary.disabled { background-color:$theme-color-secondary-disabled; }
 .background-color-secondary.inverse { background-color:$theme-color-secondary-inverse; }
 
-.background-color-tertiary { background-color:$theme-color-tertiary; }
-.background-color-quaternary { background-color:$theme-color-quaternary; }
-.background-color-quinary { background-color:$theme-color-quinary; }
-
 .font-color-primary { color: $theme-color-primary; }
 .font-color-secondary { color: $theme-color-secondary; }
-.font-color-tertiary { color: $theme-color-tertiary; }
-.font-color-quaternary { color: $theme-color-quaternary; }
-.font-color-quinary { color: $theme-color-quinary; }
 
 .border-color-primary { border-color: $theme-color-primary; border-style: solid; border-width: 1px; }
 .border-color-secondary { border-color: $theme-color-secondary; border-style: solid; border-width: 1px; }
-.border-color-tertiary { border-color: $theme-color-tertiary; border-style: solid; border-width: 1px; }
-.border-color-quaternary { border-color: $theme-color-quaternary; border-style: solid; border-width: 1px; }
-.border-color-quinary { border-color: $theme-color-quinary; border-style: solid; border-width: 1px; }
 
 // FONTS
-//$path_to_fonts this should be set in your application.scss
-@font-face {
-  font-family: 'Proxima Nova Light';
-  src: $path_to_proxima_nova_light_font format('truetype');
-}
-
 $theme-font-default: 'Helvetica Neue', Helvetica, arial, sans-serif;
 //$theme-font-default: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
 
