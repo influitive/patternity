@@ -16,9 +16,10 @@
       border-radius:$theme-border-radius;
       text-decoration:none;
       font-weight:bold;
+      color: $theme-color-primary;
 
       &:hover {
-        color: $theme-color-primary;
+        color: $theme-color-secondary;
 
         .icon {
           visibility:visible;
