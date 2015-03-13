@@ -869,11 +869,12 @@ div.clear {
   padding-left: 40px;
   border-bottom: 1px solid #cccccc;
   width: calc(100% - 40px);
+  height: 34px;
 }
 .infl-header:before {
   content: "";
   display: block;
-  height: 33px;
+  height: 34px;
   width: 40px;
   background-image: url("../../images/influitive_logo.png");
   background-repeat: no-repeat;

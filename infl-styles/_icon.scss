@@ -80,4 +80,34 @@
       content: '\e604';
     }
   }
+
+  &.ic-plus {
+    &:before {
+      content: '\e60b';
+    }
+  }
+
+  &.ic-minus {
+    &:before {
+      content: '\e60c';
+    }
+  }
+
+  &.ic-coins {
+    &:before {
+      content: '\e60d';
+    }
+  }
+
+  &.ic-lock {
+    &:before {
+      content: '\e60e';
+    }
+  }
+
+  &.ic-unlock {
+    &:before {
+      content: '\e60f';
+    }
+  }
 }

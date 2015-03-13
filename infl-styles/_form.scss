@@ -80,6 +80,10 @@ select {
     -moz-appearance: none;
     appearance: none;
 
+    color: $darker-grey;
+    color: rgba(0,0,0,0);
+    text-shadow: 0 0 0 $darker-grey;
+
     &:focus {
       outline: none;
     }

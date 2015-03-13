@@ -53,7 +53,7 @@ body {
 }
 
 #welcome {
-  background-color: $warning-color;
+  background-color: darken($warning-color, 2%);
   padding: 150px 0px 50px;
   position: relative;
 

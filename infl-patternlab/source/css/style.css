@@ -586,6 +586,7 @@ th {
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-size: 15px;
+  color: #444444;
 }
 
 strong {
@@ -881,6 +882,21 @@ h6 {
 .ic.ic-check:before {
   content: '\e604';
 }
+.ic.ic-plus:before {
+  content: '\e60b';
+}
+.ic.ic-minus:before {
+  content: '\e60c';
+}
+.ic.ic-coins:before {
+  content: '\e60d';
+}
+.ic.ic-lock:before {
+  content: '\e60e';
+}
+.ic.ic-unlock:before {
+  content: '\e60f';
+}
 
 .button,
 button {
@@ -897,6 +913,13 @@ button {
   -webkit-transition: background-color 0.15s ease-in-out;
   -moz-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out;
+}
+.button .ic,
+button .ic {
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -1px;
+  margin-left: -5px;
 }
 .button:hover,
 button:hover {
@@ -995,15 +1018,15 @@ button.text.inverse:hover {
 .button.secondary,
 button.secondary {
   background-color: transparent;
-  border: 1px solid #999999;
-  color: #999999 !important;
+  color: #666666 !important;
+  border: 1px solid #666666;
   box-shadow: none;
 }
 .button.secondary:hover,
 button.secondary:hover {
   background-color: transparent;
-  color: #666666 !important;
-  border-color: #666666;
+  border: 1px solid #999999;
+  color: #999999 !important;
   box-shadow: none;
 }
 .button.secondary.inverse,
@@ -1114,6 +1137,9 @@ select.is-valid {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  color: #444444;
+  color: transparent;
+  text-shadow: 0 0 0 #444444;
 }
 .select-box select:focus {
   outline: none;
@@ -1175,7 +1201,7 @@ body {
 }
 
 #welcome {
-  background-color: #ffcc00;
+  background-color: #f5c400;
   padding: 150px 0px 50px;
   position: relative;
 }
