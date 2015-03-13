@@ -1,6 +1,8 @@
+
 .panel-sidebar {
   box-sizing: border-box;
   @include span-columns(3);
+
 
   @include media($mobile) {
       display: none;
@@ -34,3 +36,22 @@
     }
   }
 }
+
+.panel-content {
+  @include span-columns(10);
+  @include omega();
+
+  background-color: white;
+  box-sizing: border-box;
+
+  .panel-content-inner {
+    padding: $spacing-large;
+  }
+
+  @include media($mobile) {
+    @include row();
+    float: none;
+    width: 100%;
+  }
+}
+
