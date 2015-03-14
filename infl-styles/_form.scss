@@ -84,6 +84,10 @@ select {
     color: rgba(0,0,0,0);
     text-shadow: 0 0 0 $darker-grey;
 
+    &:-ms-expand {
+      display: none;
+    }
+
     &:focus {
       outline: none;
     }
