@@ -1,5 +1,3 @@
-$transition-out-time : 0.5s;
-
 .alert {
   padding: 10px 20px;
   border-radius: $theme-border-radius-2;
@@ -31,7 +29,7 @@ $transition-out-time : 0.5s;
 
     &:hover {
       color: darken($theme-color-primary, 10%);
-      @include transition(color $transition-out-time ease-out)
+      @include transition(color 0.5s ease-out)
     }
   }
 
