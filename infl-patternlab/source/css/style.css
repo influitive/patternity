@@ -897,6 +897,7 @@ button .ic {
 .button:hover,
 button:hover {
   text-decoration: none;
+  text-shadow: #666666 0 1px 0;
   background-color: #09bade;
   color: #fff;
   box-shadow: 0px 2px #08a5c5;
@@ -976,6 +977,7 @@ button.text {
 }
 .button.text:hover,
 button.text:hover {
+  text-shadow: none;
   color: #b3b3b3 !important;
   box-shadow: none;
   text-decoration: underline;
@@ -998,6 +1000,7 @@ button.secondary {
 .button.secondary:hover,
 button.secondary:hover {
   background-color: transparent;
+  text-shadow: none;
   border: 1px solid #999999;
   color: #999999 !important;
   box-shadow: none;

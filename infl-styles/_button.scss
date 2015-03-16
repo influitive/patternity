@@ -26,6 +26,7 @@ button {
   &:hover {
     //@include transition (background-color 0.2s ease-in-out);
     text-decoration:none;
+    text-shadow: #666666 0 1px 0;
     background-color: lighten($theme-color-primary, 5%);
     color: $theme-color-background;
     box-shadow: 0px 2px $theme-color-primary;
@@ -102,6 +103,7 @@ button {
     box-shadow: none;
 
     &:hover {
+      text-shadow: none;
       color: $text-button-color-hover !important;
       box-shadow: none;
       text-decoration: underline;
@@ -124,6 +126,7 @@ button {
 
     &:hover {
       background-color: transparent;
+      text-shadow: none;
       border: 1px solid $text-button-color;
       color: $text-button-color !important;
       box-shadow: none;
