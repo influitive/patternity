@@ -5,14 +5,14 @@ $text-button-color-hover : lighten($text-button-color, 10%);
 button {
   margin:0;
   border-radius: $theme-border-radius;
-  background-color: $lighter-grey;
+  background-color: $light-grey;
   color: $dark-grey;
   text-decoration: none;
   white-space: nowrap;
   border: none;
   padding: $spacing-small $spacing-large;
   text-align: center;
-  box-shadow: 0px 2px darken($lighter-grey, 10%);
+  box-shadow: 0px 2px darken($light-grey, 10%);
 
   .ic {
     vertical-align: middle;
@@ -25,9 +25,9 @@ button {
 
   &:hover {
     text-decoration:none;
-    background-color: lighten($lighter-grey, 2%);
+    background-color: $lighter-grey;
     color: $dark-grey;
-    box-shadow: 0px 2px $lighter-grey;
+    box-shadow: 0px 2px $light-grey;
   }
 
   &.disabled {
