@@ -126,7 +126,7 @@ button {
     box-shadow: none;
 
     &:hover {
-      background-color: transparent;
+      background-color: transparent !important;
       text-shadow: none;
       border: 1px solid $text-button-color;
       color: $text-button-color-hover !important;
