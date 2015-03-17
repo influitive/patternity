@@ -35,6 +35,7 @@ button {
   &.disabled {
     background-color: #cccccc !important;
     color: #999999 !important;
+    text-shadow: none;
     cursor: auto !important;
     border-style: none !important;
     box-shadow: 0px 2px darken(#cccccc, 10%);
