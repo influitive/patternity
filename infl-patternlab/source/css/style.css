@@ -885,14 +885,14 @@ h6 {
 button {
   margin: 0;
   border-radius: 2px;
-  background-color: #eeeeee;
+  background-color: #d0d2d3;
   color: #666666;
   text-decoration: none;
   white-space: nowrap;
   border: none;
   padding: 0.5em 1.5em;
   text-align: center;
-  box-shadow: 0px 2px #d4d4d4;
+  box-shadow: 0px 2px #b6b9ba;
   -webkit-transition: background-color 0.15s ease-in-out;
   -moz-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out;
@@ -907,9 +907,9 @@ button .ic {
 .button:hover,
 button:hover {
   text-decoration: none;
-  background-color: #f3f3f3;
+  background-color: #eeeeee;
   color: #666666;
-  box-shadow: 0px 2px #eeeeee;
+  box-shadow: 0px 2px #d0d2d3;
 }
 .button.disabled,
 button.disabled {
