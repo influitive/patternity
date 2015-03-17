@@ -149,7 +149,7 @@ var Alert = React.createClass({displayName: "Alert",
   },
   _alertTemplate: function(){
     return (
-        React.createElement("div", {className: "alert " + this.props.type + " " + this._hasIconClass(), ref: "alert"}, 
+        React.createElement("div", {className: "alert-msg " + this.props.type + " " + this._hasIconClass(), ref: "alert"}, 
           this._closeable(), 
           React.createElement("h4", {className: "alert-title", ref: "title"}, 
             this._icon(), 

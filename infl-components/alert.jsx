@@ -28,7 +28,7 @@ var Alert = React.createClass({
   },
   _alertTemplate: function(){
     return (
-        <div className={"alert " + this.props.type + " " + this._hasIconClass()} ref="alert">
+        <div className={"alert-msg " + this.props.type + " " + this._hasIconClass()} ref="alert">
           {this._closeable()}
           <h4 className="alert-title" ref="title">
             {this._icon()}

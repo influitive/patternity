@@ -32,6 +32,7 @@ $transition-out-time : 0.5s;
       &.disabled {
           color: #999999;
           cursor: auto;
+          opacity: 1;
 
           &:hover {
             background-color: #cccccc;
