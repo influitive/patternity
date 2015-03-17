@@ -1,4 +1,4 @@
-.alert {
+.alert-msg {
   padding: 10px 20px;
   border-radius: $theme-border-radius-2;
   background-color: lighten($theme-color-primary, 55%);
@@ -44,6 +44,8 @@
     color: darken($warning-color, 10%);
 
     .close {
+      color: darken($warning-color, 10%);
+
       &:hover {
         color: darken($warning-color, 15%);
       }
@@ -55,6 +57,8 @@
     color: darken($success-color, 15%);
 
     .close {
+      color: darken($success-color, 15%);
+
       &:hover {
         color : darken($success-color, 10%);
       }
@@ -66,6 +70,8 @@
     color: $error-color;
 
     .close {
+      color: $error-color;
+
       &:hover {
         color : darken($error-color, 10%);
       }
