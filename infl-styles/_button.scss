@@ -24,9 +24,7 @@ button {
   @include transition (background-color 0.15s ease-in-out);
 
   &:hover {
-    //@include transition (background-color 0.2s ease-in-out);
     text-decoration:none;
-    text-shadow: #666666 0 1px 0;
     background-color: lighten($theme-color-primary, 5%);
     color: $theme-color-background;
     box-shadow: 0px 2px $theme-color-primary;
@@ -35,7 +33,6 @@ button {
   &.disabled {
     background-color: #cccccc !important;
     color: #999999 !important;
-    text-shadow: none;
     cursor: auto !important;
     border-style: none !important;
     box-shadow: 0px 2px darken(#cccccc, 10%);
