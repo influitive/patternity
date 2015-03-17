@@ -885,14 +885,14 @@ h6 {
 button {
   margin: 0;
   border-radius: 2px;
-  background-color: #08a5c5;
-  color: #fff !important;
+  background-color: #eeeeee;
+  color: #666666;
   text-decoration: none;
   white-space: nowrap;
   border: none;
   padding: 0.5em 1.5em;
   text-align: center;
-  box-shadow: 0px 2px #067c94;
+  box-shadow: 0px 2px #d4d4d4;
   -webkit-transition: background-color 0.15s ease-in-out;
   -moz-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out;
@@ -907,10 +907,9 @@ button .ic {
 .button:hover,
 button:hover {
   text-decoration: none;
-  text-shadow: #666666 0 1px 0;
-  background-color: #09bade;
-  color: #fff;
-  box-shadow: 0px 2px #08a5c5;
+  background-color: #f3f3f3;
+  color: #666666;
+  box-shadow: 0px 2px #eeeeee;
 }
 .button.disabled,
 button.disabled {
@@ -987,6 +986,7 @@ button.text {
 }
 .button.text:hover,
 button.text:hover {
+  background-color: transparent;
   text-shadow: none;
   color: #b3b3b3 !important;
   box-shadow: none;
@@ -995,10 +995,12 @@ button.text:hover {
 .button.text.inverse,
 button.text.inverse {
   color: #fff !important;
+  background-color: transparent;
 }
 .button.text.inverse:hover,
 button.text.inverse:hover {
   color: #d0d2d3 !important;
+  background-color: transparent;
 }
 .button.secondary,
 button.secondary {
@@ -1009,10 +1011,10 @@ button.secondary {
 }
 .button.secondary:hover,
 button.secondary:hover {
-  background-color: transparent;
+  background-color: transparent !important;
   text-shadow: none;
   border: 1px solid #999999;
-  color: #999999 !important;
+  color: #b3b3b3 !important;
   box-shadow: none;
 }
 .button.secondary.inverse,
@@ -1020,12 +1022,14 @@ button.secondary.inverse {
   border: 1px solid #fff;
   color: #fff !important;
   box-shadow: none;
+  background-color: transparent;
 }
 .button.secondary.inverse:hover,
 button.secondary.inverse:hover {
   color: #d0d2d3 !important;
   border-color: #d0d2d3;
   box-shadow: none;
+  background-color: transparent;
 }
 
 input[type='email'],
