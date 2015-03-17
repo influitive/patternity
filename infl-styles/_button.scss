@@ -47,11 +47,12 @@ button {
   &.important {
     text-decoration:none;
     border-style: none;
-    color: white;
+    color: white !important;
     background-color: darken($warning-color, 7%);
     box-shadow: 0px 2px darken($warning-color, 12%);
 
     &:hover {
+      color: white !important;
       background-color: darken($warning-color, 2%);
       box-shadow: 0px 2px darken($warning-color, 5%);
     }
@@ -60,13 +61,13 @@ button {
   &.primary {
     text-decoration:none;
     border-style: none;
-    color: white;
+    color: white !important;
     box-shadow: 0px 2px darken($theme-color-primary, 10%);
     background-color: $theme-color-primary;
 
     &:hover {
       background-color: lighten($theme-color-primary, 5%);
-      color: $theme-color-background;
+      color: white !important;
       box-shadow: 0px 2px $theme-color-primary;
     }
   }
@@ -75,8 +76,10 @@ button {
     background-color: $success-color;
     border-style: none;
     box-shadow: 0px 2px darken($success-color, 10%);
+    color: white !important;
 
     &:hover {
+      color: white !important;
       background-color: lighten($success-color, 10%);
       box-shadow: 0px 2px $success-color;
     }
@@ -86,8 +89,10 @@ button {
     background-color: $error-color;
     border-style: none;
     box-shadow: 0px 2px darken($error-color, 10%);
+    color: white !important;
 
     &:hover {
+      color: white !important;
       background-color: lighten($error-color, 10%);
       box-shadow: 0px 2px $error-color;
     }
