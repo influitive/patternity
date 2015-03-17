@@ -101,6 +101,7 @@ button {
     box-shadow: none;
 
     &:hover {
+      background-color: transparent;
       text-shadow: none;
       color: $text-button-color-hover !important;
       box-shadow: none;
@@ -109,9 +110,11 @@ button {
 
     &.inverse {
       color: #fff !important;
+      background-color: transparent;
 
       &:hover {
         color: $light-grey !important;
+        background-color: transparent;
       }
     }
   }
@@ -134,11 +137,13 @@ button {
       border: 1px solid #fff;
       color: #fff !important;
       box-shadow: none;
+      background-color: transparent;
 
       &:hover {
         color: $light-grey !important;
         border-color: $light-grey;
         box-shadow: none;
+        background-color: transparent;
       }
     }
   }
