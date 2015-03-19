@@ -8,5 +8,6 @@ inflComp.SidebarHeading = require("../../infl-components/sidebar_heading.jsx");
 inflComp.ListPicker = require("../../infl-components/list_picker.jsx");
 inflComp.Accordion = require("../../infl-components/accordion.jsx");
 inflComp.Alert = require("../../infl-components/alert.jsx");
+inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 
 module.exports = inflComp;

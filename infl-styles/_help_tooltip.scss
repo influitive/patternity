@@ -1,0 +1,49 @@
+.help-tooltip {
+  position: relative;
+
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+
+  .close {
+    position: absolute;
+    right: 5px;
+    padding: 10px;
+    top: 5px;
+    font-size:20px;
+    cursor: pointer;
+  }
+
+  .tooltip {
+    padding: 15px 15px 30px 15px;
+    position: absolute;
+    background-color: $darker-grey;// rgba(68, 68, 68, 0.9); // $darker-grey with opacity change
+    color: #fff;
+    bottom: 42px;
+    width: 300px;
+    margin-left: calc(-150px + 20px);
+    font-size: 15px;
+    opacity: 0.9;
+
+    &:before {
+      position: absolute;
+      bottom: -10px;
+      left: calc((300px / 2) - 10px);
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid $darker-grey; //rgba(68, 68, 68, 0.9); // $darker-grey with opacity change
+    }
+  }
+
+  .help {
+    font-size: 20px;
+    color: $darker-grey;
+    cursor: pointer;
+    padding: 10px;
+  }
+}

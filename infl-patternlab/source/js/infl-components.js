@@ -9,11 +9,12 @@ inflComp.SidebarHeading = require("../../infl-components/sidebar_heading.jsx");
 inflComp.ListPicker = require("../../infl-components/list_picker.jsx");
 inflComp.Accordion = require("../../infl-components/accordion.jsx");
 inflComp.Alert = require("../../infl-components/alert.jsx");
+inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -213,6 +214,69 @@ var Content = React.createClass({displayName: "Content",
 });
 
 module.exports = Content;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx":[function(require,module,exports){
+var React = require('react');
+
+var HelpTooltip = React.createClass({displayName: "HelpTooltip",
+  getInitialState: function() {
+    return {
+      showTooltip: false,
+      showClose: false,
+      wasClicked: false
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "help-tooltip"}, 
+        this._renderTooltip(), 
+        React.createElement("span", {className: "help ic ic-question-circle-o", onClick: this._clickShowTooltip, onMouseEnter: this._hoverToggleTooltip, onMouseLeave: this._hoverToggleTooltip})
+      )
+    );
+  },
+  _renderTooltip : function(){
+    if(this.state.showTooltip){
+      return (
+        React.createElement("div", {className: "tooltip"}, 
+          this._renderClose(), 
+          React.createElement("h3", null, this.props.title), 
+          this.props.children
+        )
+      );
+    }
+  },
+  _renderClose: function(){
+    if(this.state.showClose){
+      return (React.createElement("span", {className: "close ic ic-times", onClick: this._clickCloseTooltip}));
+    }
+  },
+  _hoverToggleTooltip : function(){
+    if(!this.state.wasClicked){
+      this.setState({
+        showTooltip: !this.state.showTooltip,
+        showClose: false,
+        wasClicked: false
+      });
+    }
+  },
+  _clickShowTooltip : function() {
+    this.setState({
+      showTooltip: true,
+      showClose: true,
+      wasClicked: true
+    });
+  },
+  _clickCloseTooltip : function(){
+    this.setState({
+      showTooltip: false,
+      showClose: true,
+      wasClicked: false
+    });
+  }
+});
+
+module.exports = HelpTooltip;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx":[function(require,module,exports){
