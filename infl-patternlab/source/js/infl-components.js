@@ -10,11 +10,12 @@ inflComp.ListPicker = require("../../infl-components/list_picker.jsx");
 inflComp.Accordion = require("../../infl-components/accordion.jsx");
 inflComp.Alert = require("../../infl-components/alert.jsx");
 inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
+inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
 
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -407,6 +408,51 @@ var SidebarHeading = React.createClass({displayName: "SidebarHeading",
 });
 
 module.exports = SidebarHeading;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx":[function(require,module,exports){
+var React = require('react');
+
+var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
+  getDefaultProps: function() {
+    return {
+      on: false,
+      callback: function(){}
+    };
+  },
+  getInitialState: function() {
+    return {
+      on: this.props.on
+    };
+  },
+  propTypes : {
+    on: React.PropTypes.bool,
+    callback : React.PropTypes.func
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "toggle-swtich " + this._switchState()}, 
+        React.createElement("span", {className: "switch", onClick: this._updateSwitch, onTouchStart: this._updateSwitch})
+      )
+    );
+  },
+  _setInitialState : function(){
+    this.setState({
+      on : this.props.on
+    });
+  },
+  _switchState : function(){
+    return this.state.on ? "on" : "off";
+  },
+  _updateSwitch : function(){
+    this.setState({
+      on : !this.state.on
+    });
+    this.props.callback(!this.state.on);
+  }
+});
+
+module.exports = ToggleSwitch;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
