@@ -1203,6 +1203,48 @@ select.is-valid {
   padding: 10px;
 }
 
+.toggle-swtich {
+  width: 50px;
+  height: 30px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: inline-block;
+  position: relative;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.toggle-swtich.off {
+  background-color: #eeeeee;
+  border: 1px solid #d0d2d3;
+}
+.toggle-swtich.off .switch {
+  left: -1px;
+}
+.toggle-swtich.on {
+  background-color: #a3d167;
+  border: 1px solid #d0d2d3;
+}
+.toggle-swtich.on .switch {
+  left: 19px;
+}
+.toggle-swtich .switch {
+  display: block;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  top: -1px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #d0d2d3;
+  -webkit-transition: left 0.3s ease-in-out;
+  -moz-transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
+}
+
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;

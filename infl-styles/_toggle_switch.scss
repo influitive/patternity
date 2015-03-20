@@ -1,0 +1,44 @@
+.toggle-swtich {
+  width: 50px;
+  height:30px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: inline-block;
+  position: relative;
+
+  @include transition(background-color 0.3s ease-in-out);
+
+  &.off {
+    background-color: $lighter-grey;
+    border: 1px solid $light-grey;
+
+    .switch {
+      left: -1px;
+    }
+  }
+
+  &.on {
+    background-color: lighten($success-color, 10%);
+    border: 1px solid $light-grey;
+
+    .switch {
+      left: 19px;
+    }
+  }
+
+  .switch {
+    display: block;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    top: -1px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid $light-grey;
+
+    @include transition(left 0.3s ease-in-out);
+  }
+}

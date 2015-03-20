@@ -1,0 +1,54 @@
+<section class="pattern-section">
+  <header>
+    <h3>toggle switch</h3>
+  </header>
+
+  <p>The toggle switch form element can be used in place of a checkbox to better visually indicate that a feature is turned on or off</p>
+
+  <div id="toggle-switch-pattern" style="margin-top: 10px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        on: false,
+        callback : function(newValue) {
+          console.log(newValue);
+        }
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.ToggleSwitch, props),
+        document.getElementById("toggle-switch-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;ToggleSwitch on={false} callback={callback_function} /&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(ToggleSwitch, props),
+        {DOM element to append toggle switch to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        on : boolean,
+        callback : function   // the callback will be called with the current state of on as a boolean
+      }
+    </code>
+  </pre>
+</section>
