@@ -760,6 +760,9 @@ h6 {
   position: relative;
   color: #08a5c5;
 }
+.alert-msg.hide {
+  display: none;
+}
 .alert-msg h4 {
   margin: 0px;
   line-height: 24px;

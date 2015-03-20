@@ -140,28 +140,21 @@ var Alert = React.createClass({displayName: "Alert",
     return {showAlert: true};
   },
   render : function(){
-    return React.createElement("div", null, this._renderAlert());
-  },
-  _renderAlert: function(){
-    if(this.state.showAlert) {
-      return this._alertTemplate();
-    } else {
-      return "";
-    }
-  },
-  _alertTemplate: function(){
     return (
-        React.createElement("div", {className: "alert-msg " + this.props.type + " " + this._hasIconClass(), ref: "alert"}, 
-          this._closeable(), 
-          React.createElement("h4", {className: "alert-title", ref: "title"}, 
-            this._icon(), 
-            React.createElement("span", null, this.props.title)
-          ), 
-          React.createElement("div", {className: "alert-body", ref: "body"}, 
-            this.props.children
-          )
+      React.createElement("div", {className: "alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert(), ref: "alert"}, 
+        this._closeable(), 
+        React.createElement("h4", {className: "alert-title", ref: "title"}, 
+          this._icon(), 
+          React.createElement("span", null, this.props.title)
+        ), 
+        React.createElement("div", {className: "alert-body", ref: "body"}, 
+          this.props.children
         )
-      );
+      )
+    );
+  },
+  _showAlert: function(){
+    return this.state.showAlert ? "" : "hide";
   },
   _closeable: function(){
     if(this.props.closeable) {

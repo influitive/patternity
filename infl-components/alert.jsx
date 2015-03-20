@@ -17,28 +17,21 @@ var Alert = React.createClass({
     return {showAlert: true};
   },
   render : function(){
-    return <div>{this._renderAlert()}</div>;
-  },
-  _renderAlert: function(){
-    if(this.state.showAlert) {
-      return this._alertTemplate();
-    } else {
-      return "";
-    }
-  },
-  _alertTemplate: function(){
     return (
-        <div className={"alert-msg " + this.props.type + " " + this._hasIconClass()} ref="alert">
-          {this._closeable()}
-          <h4 className="alert-title" ref="title">
-            {this._icon()}
-            <span>{this.props.title}</span>
-          </h4>
-          <div className="alert-body" ref="body">
-            {this.props.children}
-          </div>
+      <div className={"alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert()} ref="alert">
+        {this._closeable()}
+        <h4 className="alert-title" ref="title">
+          {this._icon()}
+          <span>{this.props.title}</span>
+        </h4>
+        <div className="alert-body" ref="body">
+          {this.props.children}
         </div>
-      );
+      </div>
+    );
+  },
+  _showAlert: function(){
+    return this.state.showAlert ? "" : "hide";
   },
   _closeable: function(){
     if(this.props.closeable) {
