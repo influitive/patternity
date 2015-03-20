@@ -1157,6 +1157,10 @@ select.is-valid {
   top: 5px;
   font-size: 20px;
   cursor: pointer;
+  display: block;
+}
+.help-tooltip .close.hide {
+  display: none;
 }
 .help-tooltip .tooltip {
   padding: 15px 15px 30px 15px;
@@ -1168,6 +1172,10 @@ select.is-valid {
   margin-left: calc(-150px + 20px);
   font-size: 15px;
   opacity: 0.9;
+  display: block;
+}
+.help-tooltip .tooltip.hide {
+  display: none;
 }
 .help-tooltip .tooltip:before {
   position: absolute;
