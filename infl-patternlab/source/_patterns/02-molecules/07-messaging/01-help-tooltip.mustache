@@ -8,9 +8,14 @@
   <div id="help-tooltip-pattern" style="margin-top:200px; margin-left: 200px;"></div>
   <script type="text/javascript">
     (function() {
+      var link = inflComp.React.createElement('a', {
+        href : "#",
+        key : "link-1",
+        children : ["Test Link"]
+      });
       var props = {
         title: "Tooltip Title",
-        children: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "<a href'#'>test</a>"]
+        children: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  ", link]
       };
 
       inflComp.React.render(
