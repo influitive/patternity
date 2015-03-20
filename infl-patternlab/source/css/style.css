@@ -1204,12 +1204,9 @@ select.is-valid {
 }
 
 .toggle-swtich {
-  width: 50px;
+  width: 80px;
   height: 30px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-radius: 2px;
   display: inline-block;
   position: relative;
   -webkit-transition: background-color 0.3s ease-in-out;
@@ -1217,32 +1214,61 @@ select.is-valid {
   transition: background-color 0.3s ease-in-out;
 }
 .toggle-swtich.off {
-  background-color: #eeeeee;
-  border: 1px solid #d0d2d3;
+  background-color: #c54040;
+  box-shadow: 0px -1px #a13131;
 }
 .toggle-swtich.off .switch {
-  left: -1px;
+  left: 2px;
+}
+.toggle-swtich.off .toggle-text {
+  right: 9px;
 }
 .toggle-swtich.on {
-  background-color: #a3d167;
-  border: 1px solid #d0d2d3;
+  background-color: #8BC540;
+  box-shadow: 0px -1px #70a131;
 }
 .toggle-swtich.on .switch {
-  left: 19px;
+  left: 38px;
+}
+.toggle-swtich.on .toggle-text {
+  left: 9px;
+}
+.toggle-swtich .toggle-text {
+  color: #fff;
+  position: absolute;
+  top: 6px;
+  font-size: 15px;
 }
 .toggle-swtich .switch {
   display: block;
   position: absolute;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  top: -1px;
+  height: 28px;
+  width: 40px;
+  border-radius: 2px;
+  top: 0px;
   cursor: pointer;
-  background-color: #fff;
-  border: 1px solid #d0d2d3;
+  background-color: #eeeeee;
+  box-shadow: 0px 1px #666666;
   -webkit-transition: left 0.3s ease-in-out;
   -moz-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease-in-out;
+}
+.toggle-swtich .switch .switch-line {
+  width: 1px;
+  height: 15px;
+  background-color: #d0d2d3;
+  position: absolute;
+  top: 6px;
+  left: 20px;
+}
+.toggle-swtich .switch .switch-line:first-child {
+  left: 12px;
+}
+.toggle-swtich .switch .switch-line:last-child {
+  left: 28px;
+}
+.toggle-swtich .toggle-checkbox {
+  visibility: hidden;
 }
 
 body {
