@@ -1177,7 +1177,14 @@ select.is-valid {
 .help-tooltip .tooltip.hide {
   display: none;
 }
-.help-tooltip .tooltip:before {
+.help-tooltip .tooltip a {
+  color: #08a5c5;
+  text-decoration: none;
+}
+.help-tooltip .tooltip a:hover {
+  text-decoration: underline;
+}
+.help-tooltip .tooltip:after {
   position: absolute;
   bottom: -10px;
   left: calc((300px / 2) - 10px);
