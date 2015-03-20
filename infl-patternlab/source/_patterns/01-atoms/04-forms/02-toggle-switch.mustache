@@ -9,10 +9,11 @@
   <script type="text/javascript">
     (function() {
       var props = {
-        on: false,
-        callback : function(newValue) {
+        enabled: false,
+        onChange : function(newValue) {
           console.log(newValue);
-        }
+        },
+        inputName: "test-name"
       };
 
       inflComp.React.render(
@@ -27,7 +28,7 @@
   <h5 class="code-title">JSX</h5>
   <pre class="code">
     <code>
-      &lt;ToggleSwitch on={false} callback={callback_function} /&gt;
+      &lt;ToggleSwitch enabled={false} onChange={callback_function} inputName={form_element_name} /&gt;
     </code>
   </pre>
 
@@ -46,8 +47,9 @@
   <pre class="code">
     <code>
       {
-        on : boolean,
-        callback : function   // the callback will be called with the current state of on as a boolean
+        enabled : boolean,    // defaults to false
+        onChange : function,  // the onChange will be called with the current state of on as a boolean
+        inputName : string    // name of the checkbox input to be used in a form
       }
     </code>
   </pre>
