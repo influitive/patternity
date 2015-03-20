@@ -227,33 +227,36 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
       wasClicked: false
     };
   },
+  propTypes : {
+    title: React.PropTypes.string,
+    children: React.PropTypes.array
+  },
   render : function(){
     return (
       React.createElement("div", {className: "help-tooltip"}, 
-        this._renderTooltip(), 
-        React.createElement("span", {className: "help ic ic-question-circle-o", onClick: this._clickShowTooltip, onMouseEnter: this._hoverToggleTooltip, onMouseLeave: this._hoverToggleTooltip})
+        React.createElement("div", {className: "tooltip " + this._showTooltip()}, 
+          React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this._clickCloseTooltip}), 
+          React.createElement("h3", null, this.props.title), 
+          this.props.children
+        ), 
+        React.createElement("span", {className: "help ic ic-question-circle-o", 
+          onClick: this._clickShowTooltip, 
+          onTouchStart: this._clickShowTooltip, 
+          onMouseEnter: this._hoverToggleTooltip, 
+          onMouseLeave: this._hoverToggleTooltip}
+        )
       )
     );
   },
-  _renderTooltip : function(){
-    if(this.state.showTooltip){
-      return (
-        React.createElement("div", {className: "tooltip"}, 
-          this._renderClose(), 
-          React.createElement("h3", null, this.props.title), 
-          this.props.children
-        )
-      );
-    }
+  _showTooltip : function(){
+    return this.state.showTooltip ? "" : "hide";
   },
-  _renderClose: function(){
-    if(this.state.showClose){
-      return (React.createElement("span", {className: "close ic ic-times", onClick: this._clickCloseTooltip}));
-    }
+  _showClose: function(){
+    return this.state.showClose ? "" : "hide";
   },
   _hoverToggleTooltip : function(){
     if(!this.state.wasClicked){
-      this.setState({
+      this._updateState({
         showTooltip: !this.state.showTooltip,
         showClose: false,
         wasClicked: false
@@ -261,18 +264,21 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
     }
   },
   _clickShowTooltip : function() {
-    this.setState({
+    this._updateState({
       showTooltip: true,
       showClose: true,
       wasClicked: true
     });
   },
   _clickCloseTooltip : function(){
-    this.setState({
+    this._updateState({
       showTooltip: false,
       showClose: true,
       wasClicked: false
     });
+  },
+  _updateState : function(newState){
+    this.setState(newState);
   }
 });
 

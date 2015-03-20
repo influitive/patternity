@@ -13,6 +13,11 @@
     top: 5px;
     font-size:20px;
     cursor: pointer;
+    display: block;
+
+    &.hide {
+      display: none;
+    }
   }
 
   .tooltip {
@@ -25,6 +30,11 @@
     margin-left: calc(-150px + 20px);
     font-size: 15px;
     opacity: 0.9;
+    display: block;
+
+    &.hide {
+      display: none;
+    }
 
     &:before {
       position: absolute;

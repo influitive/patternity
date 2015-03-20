@@ -8,33 +8,36 @@ var HelpTooltip = React.createClass({
       wasClicked: false
     };
   },
+  propTypes : {
+    title: React.PropTypes.string,
+    children: React.PropTypes.array
+  },
   render : function(){
     return (
       <div className="help-tooltip">
-        {this._renderTooltip()}
-        <span className="help ic ic-question-circle-o" onClick={this._clickShowTooltip} onMouseEnter={this._hoverToggleTooltip} onMouseLeave={this._hoverToggleTooltip}></span>
-      </div>
-    );
-  },
-  _renderTooltip : function(){
-    if(this.state.showTooltip){
-      return (
-        <div className="tooltip">
-          {this._renderClose()}
+        <div className={"tooltip " + this._showTooltip()}>
+          <span className={"close ic ic-times " + this._showClose()} onClick={this._clickCloseTooltip}></span>
           <h3>{this.props.title}</h3>
           {this.props.children}
         </div>
-      );
-    }
+        <span className="help ic ic-question-circle-o"
+          onClick={this._clickShowTooltip}
+          onTouchStart={this._clickShowTooltip}
+          onMouseEnter={this._hoverToggleTooltip}
+          onMouseLeave={this._hoverToggleTooltip}>
+        </span>
+      </div>
+    );
   },
-  _renderClose: function(){
-    if(this.state.showClose){
-      return (<span className="close ic ic-times" onClick={this._clickCloseTooltip}></span>);
-    }
+  _showTooltip : function(){
+    return this.state.showTooltip ? "" : "hide";
+  },
+  _showClose: function(){
+    return this.state.showClose ? "" : "hide";
   },
   _hoverToggleTooltip : function(){
     if(!this.state.wasClicked){
-      this.setState({
+      this._updateState({
         showTooltip: !this.state.showTooltip,
         showClose: false,
         wasClicked: false
@@ -42,18 +45,21 @@ var HelpTooltip = React.createClass({
     }
   },
   _clickShowTooltip : function() {
-    this.setState({
+    this._updateState({
       showTooltip: true,
       showClose: true,
       wasClicked: true
     });
   },
   _clickCloseTooltip : function(){
-    this.setState({
+    this._updateState({
       showTooltip: false,
       showClose: true,
       wasClicked: false
     });
+  },
+  _updateState : function(newState){
+    this.setState(newState);
   }
 });
 
