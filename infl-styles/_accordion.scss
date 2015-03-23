@@ -56,7 +56,7 @@ $transition-out-time : 0.5s;
       border: 1px solid #cccccc;
       max-height: 0;
       overflow: hidden;
-      @include transition(all $transition-out-time);
+      @include transition(all $transition-out-time ease-in-out);
 
       .section-details-inner {
         padding: $spacing-large;

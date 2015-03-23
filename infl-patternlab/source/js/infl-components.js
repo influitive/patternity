@@ -11,11 +11,12 @@ inflComp.Accordion = require("../../infl-components/accordion.jsx");
 inflComp.Alert = require("../../infl-components/alert.jsx");
 inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
+inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
 
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -190,6 +191,78 @@ var Alert = React.createClass({displayName: "Alert",
 });
 
 module.exports = Alert;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx":[function(require,module,exports){
+var React = require('react');
+
+var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
+  getInitialState: function() {
+    return {
+      isDropdownOpen: false
+    };
+  },
+  getDefaultProps: function() {
+    return {
+      title: "",
+      children : []
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    children : React.PropTypes.array
+  },
+  componentDidMount: function() {
+    document.addEventListener("click", this._hideDropdownOptions);
+  },
+  componentWillUnmount: function() {
+    document.removeEventListener("click", this._hideDropdownOptions);
+  },
+  _hideDropdownOptions: function(){
+    this.setState({ isDropdownOpen : false });
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "button-dropdown"}, 
+        React.createElement("button", {className: this.props.type, onClick: this._toggleDropdownOptions}, 
+          React.createElement("span", null, this.props.title), 
+          React.createElement("span", {className: "arrow ic ic-chevron-down"})
+        ), 
+        React.createElement("ul", {className: "options " + this._isDropdownOpen()}, 
+          this._buildDropdown()
+        )
+      )
+    );
+  },
+  _toggleDropdownOptions: function(event){
+    console.log(event.relatedTarget);
+    event.stopPropagation();
+    this.setState({ isDropdownOpen : !this.state.isDropdownOpen });
+  },
+  _isDropdownOpen : function(){
+    return this.state.isDropdownOpen ? "show" : "";
+  },
+  _buildDropdown : function(){
+    return this._populateOptions().map(this._buildOption);
+  },
+  _populateOptions : function(){
+    return this.props.children.length > 0 ? this.props.children : this.props.options;
+  },
+  _buildOption : function(option, index){
+    return (React.createElement("li", {className: "option", key: "option-" + index}, option));
+  }
+});
+
+module.exports = ButtonDropdown;
+
+// GOAL
+// <ButtonDropDown title=‘info” onChange={callback}>
+//     <SomeOptionThing>
+//     <SomeOtherOptionThing>
+// </ButtonDropDown>
+
+// or:
+// <ButtonDropDown title=‘info” onChange={callback} dropdown={dropdownOptions} />
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){

@@ -110,4 +110,10 @@
       content: '\e60f';
     }
   }
+
+  &.ic-chevron-down {
+    &:before {
+      content: '\e610';
+    }
+  }
 }
