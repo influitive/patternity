@@ -153,3 +153,37 @@ button {
     }
   }
 }
+
+.button-dropdown {
+  position: relative;
+
+  button {
+    position: relative;
+    padding-right: 3em;
+
+    .arrow {
+      font-size: 22px;
+      position: absolute;
+      top: 6px;
+      right: 9px;
+    }
+  }
+
+  .options {
+    max-height: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+
+    &.show {
+      max-height: 400px;
+    }
+
+    li {
+      list-style-type: none;
+    }
+  }
+}

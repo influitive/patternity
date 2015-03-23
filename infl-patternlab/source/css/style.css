@@ -745,9 +745,9 @@ h6 {
   border: 1px solid #cccccc;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .accordion .accordion-section .section-details .section-details-inner {
   padding: 1.5em;
@@ -882,6 +882,9 @@ h6 {
 }
 .ic.ic-unlock:before {
   content: '\e60f';
+}
+.ic.ic-chevron-down:before {
+  content: '\e610';
 }
 
 .button,
@@ -1038,6 +1041,35 @@ button.secondary.inverse:hover {
   border-color: #d0d2d3;
   box-shadow: none;
   background-color: transparent;
+}
+
+.button-dropdown {
+  position: relative;
+}
+.button-dropdown button {
+  position: relative;
+  padding-right: 3em;
+}
+.button-dropdown button .arrow {
+  font-size: 22px;
+  position: absolute;
+  top: 6px;
+  right: 9px;
+}
+.button-dropdown .options {
+  max-height: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.button-dropdown .options.show {
+  max-height: 400px;
+}
+.button-dropdown .options li {
+  list-style-type: none;
 }
 
 input[type='email'],
