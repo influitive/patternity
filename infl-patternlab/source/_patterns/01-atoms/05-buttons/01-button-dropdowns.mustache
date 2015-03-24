@@ -7,7 +7,7 @@
 
   <h4>Single Button Dropdowns</h4>
 
-  <div id="single-button-dropdown-pattern"></div>
+  <div id="single-button-dropdown-important-pattern" style="display: inline-block; margin-right:20px;"></div>
   <script type="text/javascript">
     (function() {
       var props = {
@@ -16,13 +16,93 @@
         options : [
           inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "option-1", children : ["Option 1"]}),
           inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "option-2", children : ["Option 2"]})
+        ],
+        onChange : function(key){
+          console.log(key);
+        }
+      };
+
+      inflComp.buttonDropdown(props, "single-button-dropdown-important-pattern");
+    })();
+  </script>
+
+  <div id="single-button-dropdown-default-pattern" style="display: inline-block; margin-right:20px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        title : "Button Title",
+        type : "",
+        options : [
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-1", children : ["Option 1"]}),
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-2", children : ["Option 2"]})
         ]
       };
 
-      inflComp.React.render(
-        inflComp.React.createElement(inflComp.ButtonDropdown, props),
-        document.getElementById("single-button-dropdown-pattern")
-      );
+      inflComp.buttonDropdown(props, "single-button-dropdown-default-pattern");
+    })();
+  </script>
+
+  <div id="single-button-dropdown-primary-pattern" style="display: inline-block; margin-right:20px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        title : "Button Title",
+        type : "primary",
+        options : [
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-1", children : ["Option 1"]}),
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-2", children : ["Option 2"]})
+        ]
+      };
+
+      inflComp.buttonDropdown(props, "single-button-dropdown-primary-pattern");
+    })();
+  </script>
+
+  <div id="single-button-dropdown-danger-pattern" style="display: inline-block; margin-right:20px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        title : "Button Title",
+        type : "danger",
+        options : [
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-1", children : ["Option 1"]}),
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-2", children : ["Option 2"]})
+        ]
+      };
+
+      inflComp.buttonDropdown(props, "single-button-dropdown-danger-pattern");
+    })();
+  </script>
+
+  <div id="single-button-dropdown-success-pattern" style="display: inline-block; margin-right:20px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        title : "Button Title",
+        type : "success",
+        options : [
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-1", children : ["Option 1"]}),
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-2", children : ["Option 2"]})
+        ]
+      };
+
+      inflComp.buttonDropdown(props, "single-button-dropdown-success-pattern");
+    })();
+  </script>
+
+  <div id="single-button-dropdown-secondary-pattern" style="display: inline-block; margin-right:20px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        title : "Button Title",
+        type : "secondary",
+        options : [
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-1", children : ["Option 1"]}),
+          inflComp.React.createElement("a", {href: "http://google.ca", target: "_blank", key : "default-option-2", children : ["Option 2"]})
+        ]
+      };
+
+      inflComp.buttonDropdown(props, "single-button-dropdown-secondary-pattern");
     })();
   </script>
 

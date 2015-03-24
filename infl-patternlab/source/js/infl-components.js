@@ -13,6 +13,13 @@ inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
 inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
 
+inflComp.buttonDropdown = function(props, elementId){
+  inflComp.React.render(
+    inflComp.React.createElement(inflComp.ButtonDropdown, props),
+    document.getElementById(elementId)
+  );
+};
+
 module.exports = inflComp;
 
 
@@ -205,37 +212,40 @@ var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
   getDefaultProps: function() {
     return {
       title: "",
-      children : []
+      type : "",
+      options : [],
+    children : [],
     };
   },
   propTypes : {
     title: React.PropTypes.string,
-    children : React.PropTypes.array
+    type: React.PropTypes.oneOf(['success', 'danger', 'primary', 'important', 'secondary', '']),
+    options : React.PropTypes.array,
+    children : React.PropTypes.array,
   },
-  componentDidMount: function() {
-    document.addEventListener("click", this._hideDropdownOptions);
-  },
-  componentWillUnmount: function() {
-    document.removeEventListener("click", this._hideDropdownOptions);
-  },
-  _hideDropdownOptions: function(){
-    this.setState({ isDropdownOpen : false });
-  },
+  // componentDidMount: function() {
+  //   document.addEventListener("click", this._hideDropdownOptions);
+  // },
+  // componentWillUnmount: function() {
+  //   document.removeEventListener("click", this._hideDropdownOptions);
+  // },
+  // _hideDropdownOptions: function(){
+  //   this.setState({ isDropdownOpen : false });
+  // },
   render : function(){
     return (
-      React.createElement("div", {className: "button-dropdown"}, 
+      React.createElement("div", {className: "button-dropdown " + this._isDropdownOpen()}, 
         React.createElement("button", {className: this.props.type, onClick: this._toggleDropdownOptions}, 
           React.createElement("span", null, this.props.title), 
           React.createElement("span", {className: "arrow ic ic-chevron-down"})
         ), 
-        React.createElement("ul", {className: "options " + this._isDropdownOpen()}, 
+        React.createElement("ul", {className: "options"}, 
           this._buildDropdown()
         )
       )
     );
   },
   _toggleDropdownOptions: function(event){
-    console.log(event.relatedTarget);
     event.stopPropagation();
     this.setState({ isDropdownOpen : !this.state.isDropdownOpen });
   },
@@ -249,20 +259,14 @@ var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
     return this.props.children.length > 0 ? this.props.children : this.props.options;
   },
   _buildOption : function(option, index){
-    return (React.createElement("li", {className: "option", key: "option-" + index}, option));
+    return (React.createElement("li", {className: "option", onClick: this._handleChange, key: "option-" + index}, option));
+  },
+  _handleChange : function(key){
+    this.props.onChange(key);
   }
 });
 
 module.exports = ButtonDropdown;
-
-// GOAL
-// <ButtonDropDown title=‘info” onChange={callback}>
-//     <SomeOptionThing>
-//     <SomeOtherOptionThing>
-// </ButtonDropDown>
-
-// or:
-// <ButtonDropDown title=‘info” onChange={callback} dropdown={dropdownOptions} />
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
@@ -500,12 +504,12 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
   render : function(){
     return (
       React.createElement("span", {className: "toggle-swtich " + this._switchState()}, 
-        React.createElement("span", {className: "toggle-text"}, this._toggleText()), 
         React.createElement("span", {className: "switch", onClick: this._toggleCheck, onTouchStart: this._toggleCheck}, 
           React.createElement("span", {className: "switch-line"}), 
           React.createElement("span", {className: "switch-line"}), 
           React.createElement("span", {className: "switch-line"})
         ), 
+        React.createElement("span", {className: "toggle-text"}, this._toggleText()), 
         React.createElement("input", {type: "checkbox", ref: "checkbox", className: "toggle-checkbox", checked: this._isChecked(), name: this.props.inputName, onChange: this._toggleCheck})
       )
     );

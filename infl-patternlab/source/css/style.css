@@ -1046,9 +1046,43 @@ button.secondary.inverse:hover {
 .button-dropdown {
   position: relative;
 }
+.button-dropdown.show .options {
+  max-height: 400px;
+}
+.button-dropdown.show button {
+  background-color: #f3f3f3;
+  box-shadow: 0px 2px #eeeeee;
+}
+.button-dropdown.show button.important {
+  background-color: #f5c400;
+  box-shadow: 0px 2px #e6b800;
+}
+.button-dropdown.show button.primary {
+  background-color: #09bade;
+  box-shadow: 0px 2px #08a5c5;
+}
+.button-dropdown.show button.danger {
+  background-color: #d16767;
+  box-shadow: 0px 2px #c54040;
+}
+.button-dropdown.show button.success {
+  background-color: #a3d167;
+  box-shadow: 0px 2px #8BC540;
+}
+.button-dropdown.show button.secondary {
+  background-color: transparent !important;
+  text-shadow: none;
+  box-shadow: none;
+  color: #b3b3b3 !important;
+  border: 1px solid #999999;
+}
+.button-dropdown.show button.secondary + .options {
+  border: 1px solid #999999;
+}
 .button-dropdown button {
   position: relative;
   padding-right: 3em;
+  outline: none;
 }
 .button-dropdown button .arrow {
   font-size: 22px;
@@ -1056,20 +1090,81 @@ button.secondary.inverse:hover {
   top: 6px;
   right: 9px;
 }
+.button-dropdown button.important + .options {
+  background-color: #e6b800;
+}
+.button-dropdown button.important + .options .option a {
+  color: #fff;
+}
+.button-dropdown button.important + .options .option:hover {
+  background-color: #f5c400;
+}
+.button-dropdown button.primary + .options {
+  background-color: #08a5c5;
+}
+.button-dropdown button.primary + .options .option a {
+  color: #fff;
+}
+.button-dropdown button.primary + .options .option:hover {
+  background-color: #09bade;
+}
+.button-dropdown button.danger + .options {
+  background-color: #c54040;
+}
+.button-dropdown button.danger + .options .option a {
+  color: #fff;
+}
+.button-dropdown button.danger + .options .option:hover {
+  background-color: #d16767;
+}
+.button-dropdown button.success + .options {
+  background-color: #8BC540;
+}
+.button-dropdown button.success + .options .option a {
+  color: #fff;
+}
+.button-dropdown button.success + .options .option:hover {
+  background-color: #a3d167;
+}
+.button-dropdown button.secondary + .options {
+  background-color: #fff;
+}
+.button-dropdown button.secondary + .options .option a {
+  color: #b3b3b3 !important;
+}
+.button-dropdown button.secondary + .options .option:hover {
+  background-color: #fff;
+}
+.button-dropdown button.secondary + .options .option:hover a {
+  color: #666666 !important;
+}
 .button-dropdown .options {
   max-height: 0px;
   overflow: hidden;
   position: absolute;
-  top: 100%;
-  left: 0px;
+  top: 112%;
+  left: 2px;
   margin: 0px;
   padding: 0px;
+  border-radius: 2px;
+  min-width: 150px;
+  background-color: #eeeeee;
+  border: 1px solid inherit;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.button-dropdown .options.show {
-  max-height: 400px;
-}
-.button-dropdown .options li {
+.button-dropdown .options .option {
   list-style-type: none;
+}
+.button-dropdown .options .option:hover {
+  background-color: #f3f3f3;
+}
+.button-dropdown .options .option a {
+  color: #666666;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
 }
 
 input[type='email'],
