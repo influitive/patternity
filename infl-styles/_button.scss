@@ -35,12 +35,12 @@ button {
     color: #999999 !important;
     cursor: auto !important;
     border-style: none !important;
-    box-shadow: 0px 2px darken(#cccccc, 10%);
+    box-shadow: 0px 2px darken(#cccccc, 10%) !important;
 
     &:hover {
       background-color: #cccccc !important;
       color: #999999 !important;
-      box-shadow: 0px 2px darken(#cccccc, 10%);
+      box-shadow: 0px 2px darken(#cccccc, 10%) !important;
     }
   }
 
