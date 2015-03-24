@@ -157,9 +157,54 @@ button {
 .button-dropdown {
   position: relative;
 
+  &.show {
+
+    .options {
+      max-height: 400px;
+    }
+
+    button {
+      background-color: lighten($lighter-grey, 2%);
+      box-shadow: 0px 2px $lighter-grey;
+
+      &.important {
+        background-color: darken($warning-color, 2%);
+        box-shadow: 0px 2px darken($warning-color, 5%);
+      }
+
+      &.primary {
+        background-color: lighten($theme-color-primary, 5%);
+        box-shadow: 0px 2px $theme-color-primary;
+      }
+
+      &.danger {
+        background-color: lighten($error-color, 10%);
+        box-shadow: 0px 2px $error-color;
+      }
+
+      &.success {
+        background-color: lighten($success-color, 10%);
+        box-shadow: 0px 2px $success-color;
+      }
+
+      &.secondary {
+        background-color: transparent !important;
+        text-shadow: none;
+        box-shadow: none;
+        color: $text-button-color-hover !important;
+        border: 1px solid $text-button-color;
+      }
+
+      &.secondary + .options {
+          border: 1px solid $text-button-color;
+      }
+    }
+  }
+
   button {
     position: relative;
     padding-right: 3em;
+    outline: none;
 
     .arrow {
       font-size: 22px;
@@ -167,23 +212,110 @@ button {
       top: 6px;
       right: 9px;
     }
+
+    &.important + .options {
+      background-color: darken($warning-color, 5%);
+
+      .option {
+        a {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: darken($warning-color, 2%);
+        }
+      }
+    }
+
+    &.primary + .options {
+      background-color: $theme-color-primary;
+
+      .option {
+        a {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: lighten($theme-color-primary, 5%);
+        }
+      }
+    }
+
+    &.danger + .options {
+      background-color: $error-color;
+
+      .option {
+        a {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: lighten($error-color, 10%);
+        }
+      }
+    }
+
+    &.success + .options {
+      background-color: $success-color;
+
+      .option {
+        a {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: lighten($success-color, 10%);
+        }
+      }
+    }
+
+    &.secondary + .options {
+      background-color: #fff;
+
+      .option {
+        a {
+          color: $text-button-color-hover !important;
+        }
+
+        &:hover {
+          background-color: #fff;
+
+          a {
+            color: darken($text-button-color, 20%) !important;
+          }
+        }
+      }
+    }
   }
 
   .options {
     max-height: 0px;
     overflow: hidden;
     position: absolute;
-    top: 100%;
-    left: 0px;
+    top: 112%;
+    left: 2px;
     margin: 0px;
     padding: 0px;
+    border-radius: 2px;
+    min-width: 150px;
+    background-color: $lighter-grey;
+    border: 1px solid inherit;
 
-    &.show {
-      max-height: 400px;
-    }
+    @include transition(all 0.3s ease-in-out);
 
-    li {
+    .option {
       list-style-type: none;
+
+      &:hover {
+        background-color: lighten($lighter-grey, 2%);
+      }
+
+      a {
+        color: $dark-grey;
+        text-decoration: none;
+        padding: 5px 10px;
+        display: block;
+      }
     }
   }
 }

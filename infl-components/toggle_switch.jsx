@@ -21,12 +21,12 @@ var ToggleSwitch = React.createClass({
   render : function(){
     return (
       <span className={"toggle-swtich " + this._switchState()}>
-        <span className="toggle-text">{this._toggleText()}</span>
         <span className="switch" onClick={this._toggleCheck} onTouchStart={this._toggleCheck}>
           <span className="switch-line"></span>
           <span className="switch-line"></span>
           <span className="switch-line"></span>
         </span>
+        <span className="toggle-text">{this._toggleText()}</span>
         <input type="checkbox" ref="checkbox" className="toggle-checkbox" checked={this._isChecked()} name={this.props.inputName} onChange={this._toggleCheck} />
       </span>
     );

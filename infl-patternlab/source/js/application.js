@@ -12,4 +12,11 @@ inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
 inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
 
+inflComp.buttonDropdown = function(props, elementId){
+  inflComp.React.render(
+    inflComp.React.createElement(inflComp.ButtonDropdown, props),
+    document.getElementById(elementId)
+  );
+};
+
 module.exports = inflComp;
