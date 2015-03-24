@@ -20,7 +20,7 @@ var ToggleSwitch = React.createClass({
   },
   render : function(){
     return (
-      <span className={"toggle-swtich " + this._switchState()}>
+      <span className={"toggle-switch " + this._switchState()}>
         <span className="toggle-text">{this._toggleText()}</span>
         <span className="switch" onClick={this._toggleCheck} onTouchStart={this._toggleCheck}>
           <span className="switch-line"></span>
