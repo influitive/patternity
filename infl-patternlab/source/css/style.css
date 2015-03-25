@@ -1236,6 +1236,7 @@ select.is-valid {
 .select-box {
   display: inline-block;
   position: relative;
+  padding-right: 30px;
 }
 .select-box:after {
   content: "";
@@ -1250,27 +1251,16 @@ select.is-valid {
   right: 10px;
   z-index: 1;
 }
+.select-box:focus {
+  outline: none;
+}
 .select-box select {
   width: 100%;
-  position: relative;
+  position: absolute;
   z-index: 2;
-  padding: 0px 30px 0px 0px;
-  border: none;
-  box-shadow: none;
-  background-color: transparent;
-  background-image: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  color: #444444;
-  color: transparent;
-  text-shadow: 0 0 0 #444444;
-}
-.select-box select:-ms-expand {
-  display: none;
-}
-.select-box select:focus {
-  outline: none;
+  left: 0px;
+  border: 0px;
+  opacity: 0;
 }
 
 .help-tooltip {
