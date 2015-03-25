@@ -486,14 +486,15 @@ var React = require('react');
 var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
   getDefaultProps: function() {
     return {
-      enabled: false,
+      enabled: true,
+      isOn : false,
       onChange: function(){},
       inputName : ""
     };
   },
   getInitialState: function() {
     return {
-      enabled: this.props.enabled
+      isOn: this.props.isOn
     };
   },
   propTypes : {
@@ -503,31 +504,37 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "toggle-swtich " + this._switchState()}, 
+      React.createElement("span", {className: "toggle-switch " + this._switchState() + " " + this._isEnabled()}, 
+        React.createElement("span", {className: "toggle-text"}, this._toggleText()), 
         React.createElement("span", {className: "switch", onClick: this._toggleCheck, onTouchStart: this._toggleCheck}, 
           React.createElement("span", {className: "switch-line"}), 
           React.createElement("span", {className: "switch-line"}), 
           React.createElement("span", {className: "switch-line"})
         ), 
-        React.createElement("span", {className: "toggle-text"}, this._toggleText()), 
-        React.createElement("input", {type: "checkbox", ref: "checkbox", className: "toggle-checkbox", checked: this._isChecked(), name: this.props.inputName, onChange: this._toggleCheck})
+        React.createElement("input", {type: "checkbox", ref: "checkbox", className: "toggle-checkbox", checked: this._isChecked(), name: this.props.inputName, onChange: this._handleChange})
       )
     );
   },
   _toggleText : function(){
-    return this.state.enabled ? "On" : "Off";
+    return this.state.isOn ? "On" : "Off";
   },
   _isChecked : function(){
-    return this.state.enabled;
+    return this.state.isOn;
   },
   _switchState : function(){
-    return this.state.enabled ? "on" : "off";
+    return this.state.isOn ? "on" : "off";
+  },
+  _isEnabled : function(){
+    return this.props.enabled ? "" : "disabled";
   },
   _toggleCheck : function(){
-    this.setState({
-      enabled : !this.state.enabled
-    });
-    this.props.onChange(!this.state.enabled);
+    if(this.props.enabled){
+      console.log(this.props.enabled);
+      this.setState({enabled : !this.state.isOn});
+    }
+  },
+  _handleChange : function(){
+    this.props.onChange(this.state.isOn);
   }
 });
 
