@@ -5,11 +5,14 @@
 
   <p>The toggle switch form element can be used in place of a checkbox to better visually indicate that a feature is turned on or off.  It also still acts as a form element checkbox and can be used with a form tag and form submit.</p>
 
+  <p>It has two states enabled and disabled</p>
+
   <div id="toggle-switch-pattern" style="margin-top: 10px;"></div>
   <script type="text/javascript">
     (function() {
       var props = {
-        enabled: false,
+        enabled: true,
+        isOn : false,
         onChange : function(newValue) {
           console.log(newValue);
         },
@@ -28,7 +31,7 @@
   <h5 class="code-title">JSX</h5>
   <pre class="code">
     <code>
-      &lt;ToggleSwitch enabled={false} onChange={callback_function} inputName={form_element_name} /&gt;
+      &lt;ToggleSwitch isOn={false} enabled={true} onChange={callback_function} inputName={form_element_name} /&gt;
     </code>
   </pre>
 
@@ -47,7 +50,8 @@
   <pre class="code">
     <code>
       {
-        enabled : boolean,    // defaults to false
+        isOn : boolean,       // defaults to false.  Is the on/ off state of the toggle
+        enabled : boolean     // defaults to true.  determines if the switch is enabled or disabled
         onChange : function,  // the onChange will be called with the current state of enabled as a boolean
         inputName : string    // name of the checkbox input to be used in a form
       }

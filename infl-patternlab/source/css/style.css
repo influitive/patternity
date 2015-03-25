@@ -923,13 +923,13 @@ button.disabled {
   color: #999999 !important;
   cursor: auto !important;
   border-style: none !important;
-  box-shadow: 0px 2px #b3b3b3;
+  box-shadow: 0px 2px #b3b3b3 !important;
 }
 .button.disabled:hover,
 button.disabled:hover {
   background-color: #cccccc !important;
   color: #999999 !important;
-  box-shadow: 0px 2px #b3b3b3;
+  box-shadow: 0px 2px #b3b3b3 !important;
 }
 .button.important,
 button.important {
@@ -1333,7 +1333,7 @@ select.is-valid {
   padding: 10px;
 }
 
-.toggle-swtich {
+.toggle-switch {
   width: 80px;
   height: 30px;
   border-radius: 2px;
@@ -1343,33 +1343,40 @@ select.is-valid {
   -moz-transition: background-color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
 }
-.toggle-swtich.off {
-  background-color: #c54040;
-  box-shadow: 0px -1px #a13131;
+.toggle-switch.off {
+  background-color: #cd5b5b;
+  box-shadow: 0px -1px #c54040;
 }
-.toggle-swtich.off .switch {
+.toggle-switch.off .switch {
   left: 2px;
 }
-.toggle-swtich.off .toggle-text {
+.toggle-switch.off .toggle-text {
   right: 9px;
 }
-.toggle-swtich.on {
+.toggle-switch.on {
   background-color: #8BC540;
   box-shadow: 0px -1px #70a131;
 }
-.toggle-swtich.on .switch {
+.toggle-switch.on .switch {
   left: 38px;
 }
-.toggle-swtich.on .toggle-text {
+.toggle-switch.on .toggle-text {
   left: 9px;
 }
-.toggle-swtich .toggle-text {
+.toggle-switch.disabled {
+  background-color: #d0d2d3;
+  box-shadow: 0px -1px #666666;
+}
+.toggle-switch.disabled .toggle-text {
+  color: #666666;
+}
+.toggle-switch .toggle-text {
   color: #fff;
   position: absolute;
   top: 6px;
   font-size: 15px;
 }
-.toggle-swtich .switch {
+.toggle-switch .switch {
   display: block;
   position: absolute;
   height: 28px;
@@ -1383,7 +1390,7 @@ select.is-valid {
   -moz-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease-in-out;
 }
-.toggle-swtich .switch .switch-line {
+.toggle-switch .switch .switch-line {
   width: 1px;
   height: 15px;
   background-color: #d0d2d3;
@@ -1391,13 +1398,13 @@ select.is-valid {
   top: 6px;
   left: 20px;
 }
-.toggle-swtich .switch .switch-line:first-child {
+.toggle-switch .switch .switch-line:first-child {
   left: 12px;
 }
-.toggle-swtich .switch .switch-line:last-child {
+.toggle-switch .switch .switch-line:last-child {
   left: 28px;
 }
-.toggle-swtich .toggle-checkbox {
+.toggle-switch .toggle-checkbox {
   visibility: hidden;
 }
 
