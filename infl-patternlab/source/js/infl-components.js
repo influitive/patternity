@@ -461,25 +461,20 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     onChange : React.PropTypes.func
   },
   getInitialState: function() {
-    return {title: this.props.options[0].name};
+    return {title: this._determineTitle()};
   },
   render : function(){
     return (
-      React.createElement("span", {className: "select-box", style: this._getStyles()}, 
-        React.createElement("span", {className: "title"}, this._determineTitle()), 
+      React.createElement("span", {className: "select-box"}, 
+        React.createElement("span", {className: "title"}, this.state.title), 
         React.createElement("select", {name: this.props.name, ref: "select", onChange: this._handleChange, value: this._determineSelectedOption()}, 
             this._buildOptions()
         )
       )
     );
   },
-  _getStyles : function(){
-    return {
-      width : "200px"
-    };
-  },
   _determineTitle : function(){
-    var title = this.state.title;
+    var title = this.props.options[0].name;
     this.props.options.map(function(option){
       if(option.selected){
         title = option.name;
