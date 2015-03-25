@@ -12,6 +12,7 @@ inflComp.Alert = require("../../infl-components/alert.jsx");
 inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
 inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
+inflComp.SelectDropdown = require("../../infl-components/select_dropdown.jsx");
 
 inflComp.buttonDropdown = function(props, elementId){
   inflComp.React.render(
@@ -20,10 +21,17 @@ inflComp.buttonDropdown = function(props, elementId){
   );
 };
 
+inflComp.selectDropdown = function(props, elementId){
+  inflComp.React.render(
+    inflComp.React.createElement(inflComp.SelectDropdown, props),
+    document.getElementById(elementId)
+  );
+};
+
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -148,6 +156,9 @@ var Alert = React.createClass({displayName: "Alert",
   },
   getInitialState: function() {
     return {showAlert: this.props.showAlert};
+  },
+  componentWillReceiveProps : function(newProps){
+    this.setState({showAlert: newProps.showAlert});
   },
   render : function(){
     return (
@@ -430,6 +441,52 @@ var PanelLeftSideBar = React.createClass({displayName: "PanelLeftSideBar",
 });
 
 module.exports = PanelLeftSideBar;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx":[function(require,module,exports){
+var React = require('react');
+
+var SelectDropdown = React.createClass({displayName: "SelectDropdown",
+  getDefaultProps: function() {
+    return {
+      title : "",
+      options : [],
+      onChange : function(){},
+      name : ""
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    name: React.PropTypes.string,
+    options: React.PropTypes.array,
+    onChange : React.PropTypes.func
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "select-box"}, 
+        React.createElement("span", {className: "title"}, this._determineTitle()), 
+        React.createElement("select", {name: this.props.name, ref: "select", onChange: this._handleChange}, 
+            this._buildOptions()
+        )
+      )
+    );
+  },
+  _buildOptions : function(){
+    return this.props.options.map(function(option){
+      return (React.createElement("option", {value: option.value}, option.name));
+    });
+  },
+  _determineTitle :  function(){
+    console.log(this.refs);
+    // return React.findDOMNode(this.refs.select).value
+  },
+  _handleChange : function(event){
+    this.props.onChange(event.target.value);
+  }
+});
+
+module.exports = SelectDropdown;
+
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx":[function(require,module,exports){

@@ -4,15 +4,34 @@
   </header>
 
   <label for="select">Select:</label>
-  <span class="select-box">
-    <select name="select">
-        <optgroup label="Option Group">
-            <option>Option One</option>
-            <option>Option Two</option>
-            <option>Option Three</option>
-        </optgroup>
-    </select>
-  </span>
+  <span id="select-dropdown-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        key: "select-dropdown-" + Math.random(),
+        name : "select-dropdown",
+        onChange : function(value){
+          console.log(value);
+        },
+        options : [
+          {
+            name : "Option One",
+            value : "1"
+          },
+          {
+            name : "Option Two",
+            value : "2"
+          },
+          {
+            name : "Option Three",
+            value : "3"
+          }
+        ]
+      };
+
+      inflComp.selectDropdown(props, "select-dropdown-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
