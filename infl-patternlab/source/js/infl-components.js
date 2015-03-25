@@ -136,16 +136,18 @@ var Alert = React.createClass({displayName: "Alert",
     return {
       type: "",
       showIcon: false,
-      closeable : false
+      closeable : false,
+      showAlert : true
     };
   },
   propTypes : {
     title: React.PropTypes.string,
     type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
-    body: React.PropTypes.node
+    body: React.PropTypes.node,
+    showAlert : React.PropTypes.bool
   },
   getInitialState: function() {
-    return {showAlert: true};
+    return {showAlert: this.props.showAlert};
   },
   render : function(){
     return (
