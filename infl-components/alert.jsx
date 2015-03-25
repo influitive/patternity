@@ -18,6 +18,9 @@ var Alert = React.createClass({
   getInitialState: function() {
     return {showAlert: this.props.showAlert};
   },
+  componentWillReceiveProps : function(newProps){
+    this.setState({showAlert: newProps.showAlert});
+  },
   render : function(){
     return (
       <div className={"alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert()} ref="alert">
