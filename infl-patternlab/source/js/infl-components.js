@@ -449,7 +449,6 @@ var React = require('react');
 var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   getDefaultProps: function() {
     return {
-      title : "",
       options : [],
       onChange : function(){},
       name : ""
@@ -461,32 +460,58 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     options: React.PropTypes.array,
     onChange : React.PropTypes.func
   },
+  getInitialState: function() {
+    return {title: this.props.options[0].name};
+  },
   render : function(){
     return (
-      React.createElement("span", {className: "select-box"}, 
+      React.createElement("span", {className: "select-box", style: this._getStyles()}, 
         React.createElement("span", {className: "title"}, this._determineTitle()), 
-        React.createElement("select", {name: this.props.name, ref: "select", onChange: this._handleChange}, 
+        React.createElement("select", {name: this.props.name, ref: "select", onChange: this._handleChange, value: this._determineSelectedOption()}, 
             this._buildOptions()
         )
       )
     );
   },
+  _getStyles : function(){
+    return {
+      width : "200px"
+    };
+  },
+  _determineTitle : function(){
+    var title = this.state.title;
+    this.props.options.map(function(option){
+      if(option.selected){
+        title = option.name;
+      }
+    });
+    return title;
+  },
+  _determineSelectedOption : function(){
+    var selctedOptionValue = -1;
+    this.props.options.map(function(option){
+      if(option.selected){
+        selctedOptionValue = option.value;
+      }
+    });
+    return selctedOptionValue;
+  },
   _buildOptions : function(){
     return this.props.options.map(function(option){
-      return (React.createElement("option", {value: option.value}, option.name));
+      return (React.createElement("option", {value: option.value, key: option.value}, option.name));
     });
-  },
-  _determineTitle :  function(){
-    console.log(this.refs);
-    // return React.findDOMNode(this.refs.select).value
   },
   _handleChange : function(event){
     this.props.onChange(event.target.value);
+    this._updateTitle();
+  },
+  _updateTitle : function(){
+    var select = this.refs.select.getDOMNode();
+    this.setState({title : select.options[select.selectedIndex].text});
   }
 });
 
 module.exports = SelectDropdown;
-
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx":[function(require,module,exports){
