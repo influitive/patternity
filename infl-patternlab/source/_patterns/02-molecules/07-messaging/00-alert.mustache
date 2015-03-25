@@ -244,7 +244,8 @@
         title : "Error Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
         closeable: true,
-        type: "error"
+        type: "error",
+        showAlert : false
       };
 
       inflComp.React.render(
@@ -291,6 +292,7 @@
         closeable : boolean,      // optional defaults to false
         children: [...],          // array of text, html, react elements
         type : String             // can be success, error, warning or ''
+        showAlert : boolean       // determines if the alert is visible or not
       }
     </code>
   </pre>
