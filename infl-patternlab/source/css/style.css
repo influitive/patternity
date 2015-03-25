@@ -1252,7 +1252,7 @@ select.is-valid {
   z-index: 1;
 }
 .select-box:focus {
-  outline: none;
+  outline: auto 5px -webkit-focus-ring-color;
 }
 .select-box select {
   width: 100%;
