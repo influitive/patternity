@@ -529,8 +529,7 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
   },
   _toggleCheck : function(){
     if(this.props.enabled){
-      console.log(this.props.enabled);
-      this.setState({enabled : !this.state.isOn});
+      this.setState({isOn : !this.state.isOn});
     }
   },
   _handleChange : function(){
