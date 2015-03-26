@@ -13,9 +13,10 @@
   .close {
     position: absolute;
     right: 5px;
-    padding: 10px;
     top: 5px;
-    font-size:20px;
+    font-size:$tooltip-font-size;
+    color: #fff;
+    opacity: 0;
     cursor: pointer;
     display: block;
 
