@@ -46,7 +46,7 @@ var HelpTooltip = React.createClass({
   },
   _clickShowTooltip : function() {
     this._updateState({
-      showTooltip: true,
+      showTooltip: !this.state.showTooltip,
       showClose: true,
       wasClicked: true
     });
