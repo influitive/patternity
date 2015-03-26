@@ -1282,7 +1282,7 @@ select.is-valid {
 .help-tooltip .close.hide {
   display: none;
 }
-.help-tooltip .tooltip {
+.help-tooltip .tooltip-content {
   padding: 15px 15px 30px 15px;
   position: absolute;
   background-color: #444444;
@@ -1294,17 +1294,17 @@ select.is-valid {
   opacity: 0.9;
   display: block;
 }
-.help-tooltip .tooltip.hide {
+.help-tooltip .tooltip-content.hide {
   display: none;
 }
-.help-tooltip .tooltip a {
+.help-tooltip .tooltip-content a {
   color: #08a5c5;
   text-decoration: none;
 }
-.help-tooltip .tooltip a:hover {
+.help-tooltip .tooltip-content a:hover {
   text-decoration: underline;
 }
-.help-tooltip .tooltip:after {
+.help-tooltip .tooltip-content:after {
   position: absolute;
   bottom: -10px;
   left: calc((300px / 2) - 10px);

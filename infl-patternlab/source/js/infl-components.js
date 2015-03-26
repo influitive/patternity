@@ -318,7 +318,7 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
   render : function(){
     return (
       React.createElement("div", {className: "help-tooltip"}, 
-        React.createElement("div", {className: "tooltip " + this._showTooltip()}, 
+        React.createElement("div", {className: "tooltip-content " + this._showTooltip()}, 
           React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this._clickCloseTooltip}), 
           React.createElement("h3", null, this.props.title), 
           this.props.children
