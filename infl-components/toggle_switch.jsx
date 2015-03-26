@@ -1,4 +1,5 @@
 var React = require('react');
+var classNames = require('classnames');
 
 var ToggleSwitch = React.createClass({
   getDefaultProps: function() {
@@ -9,21 +10,17 @@ var ToggleSwitch = React.createClass({
       inputName : ""
     };
   },
-  getInitialState: function() {
-    return {
-      isOn: this.props.isOn
-    };
-  },
   propTypes : {
     enabled: React.PropTypes.bool,
+    isOn: React.PropTypes.bool,
     onChange : React.PropTypes.func,
     inputName : React.PropTypes.string
   },
   render : function(){
     return (
-      <span className={"toggle-switch " + this._switchState() + " " + this._isEnabled()}>
+      <span className={this._switchCSSClasses()} onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
         <span className="toggle-text">{this._toggleText()}</span>
-        <span className="switch" onClick={this._toggleCheck} onTouchStart={this._toggleCheck}>
+        <span className="switch">
           <span className="switch-line"></span>
           <span className="switch-line"></span>
           <span className="switch-line"></span>
@@ -33,24 +30,26 @@ var ToggleSwitch = React.createClass({
     );
   },
   _toggleText : function(){
-    return this.state.isOn ? "On" : "Off";
+    return this.props.isOn ? "On" : "Off";
   },
   _isChecked : function(){
-    return this.state.isOn;
+    return this.props.isOn;
   },
-  _switchState : function(){
-    return this.state.isOn ? "on" : "off";
+  _switchCSSClasses : function(){
+    return classNames({
+      'toggle-switch': true,
+      'on': this.props.isOn,
+      'off': !this.props.isOn,
+      'disabled': !this.props.enabled
+    });
   },
-  _isEnabled : function(){
-    return this.props.enabled ? "" : "disabled";
-  },
-  _toggleCheck : function(){
+  _clickCheckBox : function(){
     if(this.props.enabled){
-      this.setState({isOn : !this.state.isOn});
+      this.refs.checkbox.getDOMNode().click();
     }
   },
-  _handleChange : function(){
-    this.props.onChange(this.state.isOn);
+  _handleChange : function(event){
+    this.props.onChange(event);
   }
 });
 

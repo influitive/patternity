@@ -1329,6 +1329,7 @@ select.is-valid {
   border-radius: 2px;
   display: inline-block;
   position: relative;
+  cursor: pointer;
   -webkit-transition: background-color 0.3s ease-in-out;
   -moz-transition: background-color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
@@ -1373,7 +1374,6 @@ select.is-valid {
   width: 40px;
   border-radius: 2px;
   top: 0px;
-  cursor: pointer;
   background-color: #eeeeee;
   box-shadow: 0px 1px #666666;
   -webkit-transition: left 0.3s ease-in-out;
