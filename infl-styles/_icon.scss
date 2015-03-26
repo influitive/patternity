@@ -117,6 +117,12 @@
     }
   }
 
+  &.ic-chevron-up {
+    &:before {
+      content: '\e613';
+    }
+  }
+
   &.ic-chevron-left {
     &:before {
       content: '\e611';
