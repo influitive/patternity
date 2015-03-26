@@ -14,7 +14,7 @@ var HelpTooltip = React.createClass({
   },
   render : function(){
     return (
-      <div className="help-tooltip">
+      <span className="help-tooltip">
         <div className={"tooltip " + this._showTooltip()}>
           <span className={"close ic ic-times " + this._showClose()} onClick={this._clickCloseTooltip}></span>
           <h3>{this.props.title}</h3>
@@ -26,7 +26,7 @@ var HelpTooltip = React.createClass({
           onMouseEnter={this._hoverToggleTooltip}
           onMouseLeave={this._hoverToggleTooltip}>
         </span>
-      </div>
+      </span>
     );
   },
   _showTooltip : function(){
