@@ -14,7 +14,7 @@ var HelpTooltip = React.createClass({
   },
   render : function(){
     return (
-      <div className="help-tooltip">
+      <span className="help-tooltip">
         <div className={"tooltip-content " + this._showTooltip()}>
           <span className={"close ic ic-times " + this._showClose()} onClick={this._clickCloseTooltip}></span>
           <h3>{this.props.title}</h3>
