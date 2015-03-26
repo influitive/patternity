@@ -561,6 +561,7 @@ module.exports = SidebarHeading;
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx":[function(require,module,exports){
 var React = require('react');
+var classNames = require('classnames');
 
 var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
   getDefaultProps: function() {
@@ -571,21 +572,17 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
       inputName : ""
     };
   },
-  getInitialState: function() {
-    return {
-      isOn: this.props.isOn
-    };
-  },
   propTypes : {
     enabled: React.PropTypes.bool,
+    isOn: React.PropTypes.bool,
     onChange : React.PropTypes.func,
     inputName : React.PropTypes.string
   },
   render : function(){
     return (
-      React.createElement("span", {className: "toggle-switch " + this._switchState() + " " + this._isEnabled()}, 
+      React.createElement("span", {className: this._switchCSSClasses(), onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
         React.createElement("span", {className: "toggle-text"}, this._toggleText()), 
-        React.createElement("span", {className: "switch", onClick: this._toggleCheck, onTouchStart: this._toggleCheck}, 
+        React.createElement("span", {className: "switch"}, 
           React.createElement("span", {className: "switch-line"}), 
           React.createElement("span", {className: "switch-line"}), 
           React.createElement("span", {className: "switch-line"})
@@ -595,31 +592,33 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
     );
   },
   _toggleText : function(){
-    return this.state.isOn ? "On" : "Off";
+    return this.props.isOn ? "On" : "Off";
   },
   _isChecked : function(){
-    return this.state.isOn;
+    return this.props.isOn;
   },
-  _switchState : function(){
-    return this.state.isOn ? "on" : "off";
+  _switchCSSClasses : function(){
+    return classNames({
+      'toggle-switch': true,
+      'on': this.props.isOn,
+      'off': !this.props.isOn,
+      'disabled': !this.props.enabled
+    });
   },
-  _isEnabled : function(){
-    return this.props.enabled ? "" : "disabled";
-  },
-  _toggleCheck : function(){
+  _clickCheckBox : function(){
     if(this.props.enabled){
-      this.setState({isOn : !this.state.isOn});
+      this.refs.checkbox.getDOMNode().click();
     }
   },
-  _handleChange : function(){
-    this.props.onChange(this.state.isOn);
+  _handleChange : function(event){
+    this.props.onChange(event);
   }
 });
 
 module.exports = ToggleSwitch;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};

@@ -13,16 +13,23 @@
       var props = {
         enabled: true,
         isOn : false,
-        onChange : function(newValue) {
-          console.log(newValue);
-        },
+        onChange : onChange,
         inputName: "test-name"
       };
 
-      inflComp.React.render(
-        inflComp.React.createElement(inflComp.ToggleSwitch, props),
-        document.getElementById("toggle-switch-pattern")
-      );
+      function onChange(event){
+        props.isOn = !props.isOn;
+        renderToggleSwitchWithProps(props);
+      }
+
+      function renderToggleSwitchWithProps(props){
+        inflComp.React.render(
+          inflComp.React.createElement(inflComp.ToggleSwitch, props),
+          document.getElementById("toggle-switch-pattern")
+        );
+      }
+
+      renderToggleSwitchWithProps(props);
     })();
   </script>
 
