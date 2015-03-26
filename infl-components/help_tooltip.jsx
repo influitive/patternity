@@ -21,7 +21,7 @@ var HelpTooltip = React.createClass({
           {this.props.children}
         </div>
         <span className="help ic ic-question-circle-o"
-          onClick={this._clickShowTooltip}
+          onClick={this._clickTooltip}
           onTouchStart={this._clickShowTooltip}
           onMouseEnter={this._hoverToggleTooltip}
           onMouseLeave={this._hoverToggleTooltip}>
