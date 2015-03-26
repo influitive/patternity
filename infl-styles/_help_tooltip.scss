@@ -30,7 +30,7 @@
     bottom: 42px;
     width: 300px;
     margin-left: calc(-150px + 20px);
-    font-size: 15px;
+    font-size: 13px;
     opacity: 0.9;
     display: block;
 
@@ -64,6 +64,7 @@
   .help {
     font-size: 20px;
     color: $darker-grey;
+    vertical-align: middle;
     cursor: pointer;
     padding: 10px;
   }
