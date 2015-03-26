@@ -116,4 +116,10 @@
       content: '\e610';
     }
   }
+
+  &.ic-chevron-left {
+    &:before {
+      content: '\e611';
+    }
+  }
 }
