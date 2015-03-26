@@ -1,4 +1,6 @@
 .help-tooltip {
+  $tooltip-font-size: 13px;
+
   position: relative;
   display: inline-block;
   font-weight: normal;
@@ -23,14 +25,15 @@
   }
 
   .tooltip-content {
-    padding: 15px 15px 30px 15px;
+    padding: $tooltip-font-size;
+    padding-bottom: $tooltip-font-size * 2;
     position: absolute;
     background-color: $darker-grey;// rgba(68, 68, 68, 0.9); // $darker-grey with opacity change
     color: #fff;
     bottom: 42px;
     width: 300px;
     margin-left: calc(-150px + 20px);
-    font-size: 13px;
+    font-size: $tooltip-font-size;
     opacity: 0.9;
     display: block;
 
