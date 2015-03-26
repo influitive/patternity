@@ -19,6 +19,8 @@
     opacity: 0;
     cursor: pointer;
     display: block;
+    text-shadow: none;
+    font-weight: normal;
 
     &.hide {
       display: none;
