@@ -23,8 +23,8 @@ var HelpTooltip = React.createClass({
         <span className="help ic ic-question-circle-o"
           onClick={this._clickTooltip}
           onTouchStart={this._clickShowTooltip}
-          onMouseEnter={this._hoverToggleTooltip}
-          onMouseLeave={this._hoverToggleTooltip}>
+          onMouseEnter={this._hoverToggleTooltip(true)}
+          onMouseLeave={this._hoverToggleTooltip(false)}>
         </span>
       </span>
     );
@@ -35,10 +35,10 @@ var HelpTooltip = React.createClass({
   _showClose: function(){
     return this.state.showClose ? "" : "hide";
   },
-  _hoverToggleTooltip : function(){
+  _hoverToggleTooltip : function(shouldShow){
     if(!this.state.wasClicked){
       this._updateState({
-        showTooltip: !this.state.showTooltip,
+        showTooltip: shouldShow,
         showClose: false,
         wasClicked: false
       });
