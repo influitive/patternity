@@ -5,7 +5,7 @@ var SelectDropdown = React.createClass({
     return {
       options : [],
       onChange : function(){},
-      name : ""
+      name : "",
     };
   },
   propTypes : {
@@ -15,13 +15,16 @@ var SelectDropdown = React.createClass({
     onChange : React.PropTypes.func
   },
   getInitialState: function() {
-    return {title: this._determineTitle()};
+    return {
+      title: this._determineTitle(),
+      selectedValue : this._determineSelectedOption()
+    };
   },
   render : function(){
     return (
       <span className="select-box">
         <span className="title">{this.state.title}</span>
-        <select name={this.props.name} ref="select" onChange={this._handleChange} value={this._determineSelectedOption()}>
+        <select name={this.props.name} ref="select" onChange={this._handleChange} value={this.state.selectedValue}>
             {this._buildOptions()}
         </select>
       </span>
@@ -51,12 +54,15 @@ var SelectDropdown = React.createClass({
     });
   },
   _handleChange : function(event){
-    this.props.onChange(event.target.value);
-    this._updateTitle();
+    this.props.onChange(event);
+    this._updateSelectState();
   },
-  _updateTitle : function(){
+  _updateSelectState : function(){
     var select = this.refs.select.getDOMNode();
-    this.setState({title : select.options[select.selectedIndex].text});
+    this.setState({
+      title : select.options[select.selectedIndex].text,
+      selectedValue : select.options[select.selectedIndex].value
+    });
   }
 });
 

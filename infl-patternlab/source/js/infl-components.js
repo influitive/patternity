@@ -324,10 +324,10 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
           this.props.children
         ), 
         React.createElement("span", {className: "help ic ic-question-circle-o", 
-          onClick: this._clickShowTooltip, 
+          onClick: this._clickTooltip, 
           onTouchStart: this._clickShowTooltip, 
-          onMouseEnter: this._hoverToggleTooltip, 
-          onMouseLeave: this._hoverToggleTooltip}
+          onMouseEnter: this._hoverShowTooltip, 
+          onMouseLeave: this._hoverHideTooltip}
         )
       )
     );
@@ -338,13 +338,26 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
   _showClose: function(){
     return this.state.showClose ? "" : "hide";
   },
-  _hoverToggleTooltip : function(){
+  _hoverShowTooltip: function() {
+    this._hoverToggleTooltip(true);
+  },
+  _hoverHideTooltip: function() {
+    this._hoverToggleTooltip(false);
+  },
+  _hoverToggleTooltip : function(shouldShow){
     if(!this.state.wasClicked){
       this._updateState({
-        showTooltip: !this.state.showTooltip,
+        showTooltip: shouldShow,
         showClose: false,
         wasClicked: false
       });
+    }
+  },
+  _clickTooltip : function() {
+    if (this.state.showTooltip && this.state.wasClicked) {
+      this._clickCloseTooltip();
+    } else {
+      this._clickShowTooltip();
     }
   },
   _clickShowTooltip : function() {
@@ -451,7 +464,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     return {
       options : [],
       onChange : function(){},
-      name : ""
+      name : "",
     };
   },
   propTypes : {
@@ -461,13 +474,16 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     onChange : React.PropTypes.func
   },
   getInitialState: function() {
-    return {title: this._determineTitle()};
+    return {
+      title: this._determineTitle(),
+      selectedValue : this._determineSelectedOption()
+    };
   },
   render : function(){
     return (
       React.createElement("span", {className: "select-box"}, 
         React.createElement("span", {className: "title"}, this.state.title), 
-        React.createElement("select", {name: this.props.name, ref: "select", onChange: this._handleChange, value: this._determineSelectedOption()}, 
+        React.createElement("select", {name: this.props.name, ref: "select", onChange: this._handleChange, value: this.state.selectedValue}, 
             this._buildOptions()
         )
       )
@@ -497,12 +513,15 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     });
   },
   _handleChange : function(event){
-    this.props.onChange(event.target.value);
+    this.props.onChange(event);
     this._updateTitle();
   },
   _updateTitle : function(){
     var select = this.refs.select.getDOMNode();
-    this.setState({title : select.options[select.selectedIndex].text});
+    this.setState({
+      title : select.options[select.selectedIndex].text,
+      selectedValue : select.options[select.selectedIndex].value
+    });
   }
 });
 

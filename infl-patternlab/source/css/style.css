@@ -886,6 +886,12 @@ h6 {
 .ic.ic-chevron-down:before {
   content: '\e610';
 }
+.ic.ic-chevron-up:before {
+  content: '\e613';
+}
+.ic.ic-chevron-left:before {
+  content: '\e611';
+}
 
 .button,
 button {
@@ -899,6 +905,7 @@ button {
   padding: 0.5em 1.5em;
   text-align: center;
   box-shadow: 0px 2px #d4d4d4;
+  display: inline-block;
   -webkit-transition: background-color 0.15s ease-in-out;
   -moz-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out;
@@ -1265,6 +1272,8 @@ select.is-valid {
 
 .help-tooltip {
   position: relative;
+  display: inline-block;
+  font-weight: normal;
 }
 .help-tooltip h3 {
   margin-top: 0px;
@@ -1273,24 +1282,28 @@ select.is-valid {
 .help-tooltip .close {
   position: absolute;
   right: 5px;
-  padding: 10px;
   top: 5px;
-  font-size: 20px;
+  font-size: 13px;
+  color: #fff;
+  opacity: 1;
   cursor: pointer;
   display: block;
+  text-shadow: none;
+  font-weight: normal;
 }
 .help-tooltip .close.hide {
   display: none;
 }
 .help-tooltip .tooltip-content {
-  padding: 15px 15px 30px 15px;
+  padding: 13px;
+  padding-bottom: 26px;
   position: absolute;
   background-color: #444444;
   color: #fff;
   bottom: 42px;
   width: 300px;
   margin-left: calc(-150px + 20px);
-  font-size: 15px;
+  font-size: 13px;
   opacity: 0.9;
   display: block;
 }
@@ -1319,6 +1332,7 @@ select.is-valid {
 .help-tooltip .help {
   font-size: 20px;
   color: #444444;
+  vertical-align: middle;
   cursor: pointer;
   padding: 10px;
 }
