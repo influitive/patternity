@@ -493,11 +493,10 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     );
   },
   _determineSelectState : function(){
-    // var selectState = {
-    //   value : this.props.options[0].value,
-    //   title : this.props.options[0].name,
-    // };
-    var selectState = {};
+    var selectState = {
+      value : this.props.options[0].value,
+      title : this.props.options[0].name,
+    };
     this.props.options.map(function(option){
       if(option.selected){
         selectState.value = option.value;
