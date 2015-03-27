@@ -25,7 +25,8 @@
     "mustache": "^1.0.0",
     "node-bourbon": "^4.2.1-beta1",
     "node-neat": "^1.7.1-beta1",
-    "classnames": "^1.2.0"
+    "classnames": "^1.2.0",
+    "react": "^0.13.1"
   },
   "keywords": [
     "Pattern Lab",
