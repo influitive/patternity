@@ -34,22 +34,57 @@ var SelectDropdown = React.createClass({
     );
   },
   _determineSelectState : function(){
-    var selectState = {
-      value : this.props.options[0].value,
-      title : this.props.options[0].name,
-    };
-    this.props.options.map(function(option){
-      if(option.selected){
-        selectState.value = option.value;
-        selectState.title = option.name;
-      }
-    });
+    var selectState = {};
+    if(this._hasOptionGroup()){
+      selectState = {
+        value : this.props.options[0].options[0].value,
+        title : this.props.options[0].options[0].name,
+      };
+
+      this.props.options.map(function(optionGroup){
+        optionGroup.options.map(function(option){
+          if(option.selected){
+            selectState.value = option.value;
+            selectState.title = option.name;
+          }
+        });
+      });
+    } else {
+      selectState = {
+        value : this.props.options[0].value,
+        title : this.props.options[0].name,
+      };
+
+      this.props.options.map(function(option){
+        if(option.selected){
+          selectState.value = option.value;
+          selectState.title = option.name;
+        }
+      });
+    }
     return selectState;
   },
   _buildOptions : function(){
-    return this.props.options.map(function(option){
-      return (<option value={option.value} key={option.value}>{option.name}</option>);
-    });
+    if(this._hasOptionGroup()) {
+      return this.props.options.map(function(optionGroup){
+        var options = optionGroup.options.map(function(option){
+          return (<option value={option.value} key={option.value}>{option.name}</option>)
+        });
+
+        return (
+          <optgroup label={optionGroup.optionGroupLabel}>
+            {options}
+          </optgroup>
+        );
+      });
+    } else {
+      return this.props.options.map(function(option){
+        return (<option value={option.value} key={option.value}>{option.name}</option>);
+      });
+    }
+  },
+  _hasOptionGroup : function(){
+    return this.props.options[0].optionGroupLabel !== undefined;
   },
   _handleChange : function(event){
     this.props.onChange(event);
