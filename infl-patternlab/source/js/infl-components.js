@@ -465,7 +465,8 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
       children : [],
       onChange : function(){},
       name : "",
-      ref : "select"
+      ref : "select",
+      value : ""
     };
   },
   propTypes : {
@@ -477,7 +478,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   getInitialState: function() {
     return {
       title: "",
-      selectedValue : this.props.selectedValue
+      value : this.props.value
     };
   },
   componentDidMount : function(){
@@ -489,7 +490,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     return (
       React.createElement("span", {className: "select-box", ref: "select-wrapper"}, 
         React.createElement("span", {className: "title"}, this.state.title), 
-        React.createElement("select", {name: this.props.name, ref: this.props.ref, onChange: this._handleChange, onClick: this._setFocus, value: this.state.selectedValue}, 
+        React.createElement("select", {name: this.props.name, ref: this.props.ref, onChange: this._handleChange, value: this.state.value}, 
             this.props.children
         )
       )
@@ -498,9 +499,6 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   _determineSelectTitle : function(){
     return this._selectedOption().text;
   },
-  _setFocus : function(){
-    console.log(this.refs["select-wrapper"].getDOMNode());
-  },
   _handleChange : function(event){
     this.props.onChange(event);
     this._updateSelectState();
@@ -508,7 +506,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   _updateSelectState : function(){
     this.setState({
       title : this._selectedOption().text,
-      selectedValue : this._selectedOption().value
+      value : this._selectedOption().value
     });
   },
   _selectedOption : function(){

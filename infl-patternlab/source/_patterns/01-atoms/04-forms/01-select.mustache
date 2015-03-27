@@ -27,7 +27,7 @@
         onChange : function(event){
           console.log(event.target.value);
         },
-        selectedValue : "5",
+        value : "5",
         children : [
           createOptionGroup("test label", [
             createOption("1", "Option One"),
@@ -92,8 +92,9 @@
         key: string
         name : string,
         onChange : function,
-        ref : string          //ref attribute used by react
-        children : [...]      //array or react elements
+        value : {selected_value}
+        ref : string              //ref attribute used by react
+        children : [...]          //array or react elements
       }
     </code>
   </pre>
