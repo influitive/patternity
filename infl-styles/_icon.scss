@@ -1,10 +1,5 @@
 // ICONS
-//$path_to_fonts this should be set in your application.scss
-
-@font-face {
-    font-family: 'influicons';
-    src: $path_to_influicons_font format('truetype');
-}
+@import './icon_font';
 
 .ic {
   font-family : 'influicons';
