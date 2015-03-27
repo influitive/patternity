@@ -6,7 +6,8 @@ var SelectDropdown = React.createClass({
       children : [],
       onChange : function(){},
       name : "",
-      ref : "select"
+      ref : "select",
+      value : ""
     };
   },
   propTypes : {
@@ -18,7 +19,7 @@ var SelectDropdown = React.createClass({
   getInitialState: function() {
     return {
       title: "",
-      selectedValue : this.props.selectedValue
+      value : this.props.value
     };
   },
   componentDidMount : function(){
@@ -30,7 +31,7 @@ var SelectDropdown = React.createClass({
     return (
       <span className="select-box" ref="select-wrapper">
         <span className="title">{this.state.title}</span>
-        <select name={this.props.name} ref={this.props.ref} onChange={this._handleChange} value={this.state.selectedValue}>
+        <select name={this.props.name} ref={this.props.ref} onChange={this._handleChange} value={this.state.value}>
             {this.props.children}
         </select>
       </span>
@@ -46,7 +47,7 @@ var SelectDropdown = React.createClass({
   _updateSelectState : function(){
     this.setState({
       title : this._selectedOption().text,
-      selectedValue : this._selectedOption().value
+      value : this._selectedOption().value
     });
   },
   _selectedOption : function(){
