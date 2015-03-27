@@ -6,11 +6,13 @@ var SelectDropdown = React.createClass({
       options : [],
       onChange : function(){},
       name : "",
+      ref : ""
     };
   },
   propTypes : {
     title: React.PropTypes.string,
     name: React.PropTypes.string,
+    ref: React.PropTypes.string,
     options: React.PropTypes.array,
     onChange : React.PropTypes.func
   },
@@ -25,7 +27,7 @@ var SelectDropdown = React.createClass({
     return (
       <span className="select-box">
         <span className="title">{this.state.title}</span>
-        <select name={this.props.name} ref="select" onChange={this._handleChange} value={this.state.selectedValue}>
+        <select name={this.props.name} ref={this.props.ref} onChange={this._handleChange} value={this.state.selectedValue}>
             {this._buildOptions()}
         </select>
       </span>
