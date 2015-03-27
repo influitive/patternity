@@ -465,11 +465,13 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
       options : [],
       onChange : function(){},
       name : "",
+      ref : "select"
     };
   },
   propTypes : {
     title: React.PropTypes.string,
     name: React.PropTypes.string,
+    ref: React.PropTypes.string,
     options: React.PropTypes.array,
     onChange : React.PropTypes.func
   },
@@ -484,13 +486,17 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     return (
       React.createElement("span", {className: "select-box"}, 
         React.createElement("span", {className: "title"}, this.state.title), 
-        React.createElement("select", {name: this.props.name, ref: "select", onChange: this._handleChange, value: this.state.selectedValue}, 
+        React.createElement("select", {name: this.props.name, ref: this.props.ref, onChange: this._handleChange, value: this.state.selectedValue}, 
             this._buildOptions()
         )
       )
     );
   },
   _determineSelectState : function(){
+    // var selectState = {
+    //   value : this.props.options[0].value,
+    //   title : this.props.options[0].name,
+    // };
     var selectState = {};
     this.props.options.map(function(option){
       if(option.selected){
@@ -510,7 +516,8 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     this._updateSelectState();
   },
   _updateSelectState : function(){
-    var selectedOption = this.refs.select.getDOMNode().options[select.selectedIndex];
+    var select = this.refs[this.props.ref].getDOMNode();
+    var selectedOption = select.options[select.selectedIndex];
     this.setState({
       title : selectedOption.text,
       selectedValue : selectedOption.value

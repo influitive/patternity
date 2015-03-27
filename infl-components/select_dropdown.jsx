@@ -6,7 +6,7 @@ var SelectDropdown = React.createClass({
       options : [],
       onChange : function(){},
       name : "",
-      ref : ""
+      ref : "select"
     };
   },
   propTypes : {
@@ -34,6 +34,10 @@ var SelectDropdown = React.createClass({
     );
   },
   _determineSelectState : function(){
+    // var selectState = {
+    //   value : this.props.options[0].value,
+    //   title : this.props.options[0].name,
+    // };
     var selectState = {};
     this.props.options.map(function(option){
       if(option.selected){
@@ -53,7 +57,8 @@ var SelectDropdown = React.createClass({
     this._updateSelectState();
   },
   _updateSelectState : function(){
-    var selectedOption = this.refs.select.getDOMNode().options[select.selectedIndex];
+    var select = this.refs[this.props.ref].getDOMNode();
+    var selectedOption = select.options[select.selectedIndex];
     this.setState({
       title : selectedOption.text,
       selectedValue : selectedOption.value
