@@ -10,8 +10,8 @@
       var props = {
         key: "select-dropdown-" + Math.random(),
         name : "select-dropdown",
-        onChange : function(value){
-          console.log(value);
+        onChange : function(event){
+          console.log(event.target.value);
         },
         options : [
           {
@@ -34,18 +34,49 @@
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
   <pre class="code">
     <code>
-      &lt;span class="select-box"&gt;
-        &lt;select name="select"&gt;
-          &lt;optgroup label="Option Group"&gt;
-            &lt;option value="1"&gt;Option One&lt;/option&gt;
-            &lt;option value="2"&gt;Option Two&lt;/option&gt;
-            &lt;option value="3"&gt;Option Three&lt;/option&gt;
-          &lt;/optgroup&gt;
-        &lt;/select&gt;
-      &lt;/span&gt;
+      &lt;SelectDropdown key={key} name="select_name" options={options} onChange={handle_change_callback} /&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(SelectDropdown, props, children),
+        {DOM element to append notice to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        key: string
+        name : string,
+        onChange : function,
+        options : [
+          {
+            name : "Option One",
+            value : "1"
+          },
+          {
+            name : "Option Two",
+            value : "2",
+            selected : true
+          },
+          {
+            name : "Option Three",
+            value : "3"
+          }
+        ]
+      }
     </code>
   </pre>
 </section>
