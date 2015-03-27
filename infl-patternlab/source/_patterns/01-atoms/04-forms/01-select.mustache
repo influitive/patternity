@@ -7,64 +7,41 @@
   <span id="select-dropdown-pattern"></span>
   <script type="text/javascript">
     (function() {
+      function createOption(value, name){
+        return inflComp.React.createElement('option', {
+          value : value,
+          children : [name]
+        });
+      }
+
+      function createOptionGroup(label, options){
+        return inflComp.React.createElement('optgroup', {
+          label : label,
+          children : options
+        });
+      }
+
       var props = {
         key: "select-dropdown-" + Math.random(),
         name : "select-dropdown",
         onChange : function(event){
           console.log(event.target.value);
         },
-        options : [
-          {
-            name : "Option One",
-            value : "1"
-          },
-          {
-            name : "Option Two",
-            value : "2",
-            selected : true
-          },
-          {
-            name : "Option Three",
-            value : "3"
-          }
+        selectedValue : "5",
+        children : [
+          createOptionGroup("test label", [
+            createOption("1", "Option One"),
+            createOption("2", "Option Two"),
+            createOption("3", "Option Three"),
+            createOption("4", "Option Four")
+          ]),
+          createOptionGroup("test label", [
+            createOption("5", "Option Five"),
+            createOption("6", "Option Six"),
+            createOption("7", "Option Seven"),
+            createOption("8", "Option Eight")
+          ])
         ]
-        // options : [
-        //   {
-        //     optionGroupLabel : "test label",
-        //     options : [
-        //       {
-        //         name : "Option One",
-        //         value : "1"
-        //       },
-        //       {
-        //         name : "Option Two",
-        //         value : "2",
-        //         selected : true
-        //       },
-        //       {
-        //         name : "Option Three",
-        //         value : "3"
-        //       }
-        //     ]
-        //   },
-        //   {
-        //     optionGroupLabel : "test label two",
-        //     options : [
-        //       {
-        //         name : "Option Four",
-        //         value : "4"
-        //       },
-        //       {
-        //         name : "Option Five",
-        //         value : "5"
-        //       },
-        //       {
-        //         name : "Option Six",
-        //         value : "6"
-        //       }
-        //     ]
-        //   }
-        // ]
       };
 
       inflComp.selectDropdown(props, "select-dropdown-pattern");
@@ -76,7 +53,24 @@
   <h5 class="code-title">JSX</h5>
   <pre class="code">
     <code>
-      &lt;SelectDropdown key={key} name="select_name" options={options} onChange={handle_change_callback} /&gt;
+      &lt;SelectDropdown key={key} name="select_name" onChange={handle_change_callback}&gt;
+        &lt;option value={value}&gt;option name&lt;/option&gt;
+        &lt;option value={value}&gt;option name&lt;/option&gt;
+        &lt;option value={value}&gt;option name&lt;/option&gt;
+      &lt;/SelectDropdown&gt;
+
+      &lt;SelectDropdown key={key} name="select_name" onChange={handle_change_callback}&gt;
+        &lt;optgroup label={label}&gt;
+          &lt;option value={value}&gt;option name&lt;/option&gt;
+          &lt;option value={value}&gt;option name&lt;/option&gt;
+          &lt;option value={value}&gt;option name&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label={label}&gt;
+          &lt;option value={value}&gt;option name&lt;/option&gt;
+          &lt;option value={value}&gt;option name&lt;/option&gt;
+          &lt;option value={value}&gt;option name&lt;/option&gt;
+        &lt;/optgroup&gt;
+      &lt;/SelectDropdown&gt;
     </code>
   </pre>
 
@@ -98,22 +92,8 @@
         key: string
         name : string,
         onChange : function,
-        ref : string              //ref attribute used by react
-        options : [
-          {
-            name : "Option One",
-            value : "1"
-          },
-          {
-            name : "Option Two",
-            value : "2",
-            selected : true
-          },
-          {
-            name : "Option Three",
-            value : "3"
-          }
-        ]
+        ref : string          //ref attribute used by react
+        children : [...]      //array or react elements
       }
     </code>
   </pre>
