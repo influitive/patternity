@@ -31,7 +31,7 @@
         background-color:$theme-color-primary;
         color: white;
 
-        .icon {
+        .ic {
           color: white;
           visibility:visible;
         }
@@ -42,7 +42,7 @@
         font-size: 1.2em;
         float: right;
         margin-right: $spacing-small;
-        margin-top: 3px;
+        margin-top: 0px;
         visibility:hidden;
         color: #555;
       }
@@ -54,7 +54,7 @@
         background-color:$theme-color-primary;
         color: white;
 
-        .icon {
+        .ic {
           color: white;
           visibility:visible;
         }
