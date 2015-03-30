@@ -123,4 +123,10 @@
       content: '\e611';
     }
   }
+
+  &.ic-asterisk {
+    &:before {
+      content: '*';
+    }
+  }
 }

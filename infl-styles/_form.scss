@@ -1,3 +1,5 @@
+@import './icon_font';
+
 input[type='email'],
 input[type='text'],
 input[type='tel'],
@@ -29,19 +31,35 @@ select {
   }
 }
 
+.is-required {
+  position: relative;
+  display: inline-block;
+
+  .ic {
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    color: #c54040;
+    font-size: 20px;
+  }
+
+  input {
+    padding-left: 15px;
+  }
+}
+
 .search-input {
   position: relative;
   display: inline-block;
 
-  &:before {
-    font-family: 'influicons';
-    content: '\e602';
-    display: block;
+  .ic {
     position: absolute;
+    top: 9px;
+    z-index: 1;
     left: 10px;
-    font-size: 22px;
-    top: 8px;
+    font-size: 20px;
   }
+
   input[type='search'] {
       padding-left: 40px;
       height: 2.21em;
