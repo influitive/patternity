@@ -11,7 +11,7 @@ var ButtonDropdown = React.createClass({
       title: "",
       type : "",
       options : [],
-    children : [],
+      children : [],
     };
   },
   propTypes : {
@@ -20,15 +20,6 @@ var ButtonDropdown = React.createClass({
     options : React.PropTypes.array,
     children : React.PropTypes.array,
   },
-  // componentDidMount: function() {
-  //   document.addEventListener("click", this._hideDropdownOptions);
-  // },
-  // componentWillUnmount: function() {
-  //   document.removeEventListener("click", this._hideDropdownOptions);
-  // },
-  // _hideDropdownOptions: function(){
-  //   this.setState({ isDropdownOpen : false });
-  // },
   render : function(){
     return (
       <div className={"button-dropdown " + this._isDropdownOpen()}>
@@ -43,7 +34,8 @@ var ButtonDropdown = React.createClass({
     );
   },
   _toggleDropdownOptions: function(event){
-    event.stopPropagation();
+    // event.stopPropagation();
+    // event.nativeEvent.stopImmediatePropagation();
     this.setState({ isDropdownOpen : !this.state.isDropdownOpen });
   },
   _isDropdownOpen : function(){

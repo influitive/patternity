@@ -112,6 +112,12 @@
   <pre class="code">
     <code>
       &lt;ButtonDropdown title="Button Title" type="important" options={[...]} onChange={on_change_callback} /&gt;
+
+      &lt;ButtonDropdown title="Button Title" type="important" onChange={on_change_callback}&gt;
+        &lt;Link {...props} /&gt;
+        &lt;Link {...props} /&gt;
+        &lt;Link {...props} /&gt;
+      &lt;/ButtonDropdown&gt;
     </code>
   </pre>
 
@@ -130,7 +136,9 @@
   <pre class="code">
     <code>
       {
-
+        title : {button_title},   //title to appear on button
+        type : {button_type},     //success, danger, primary, important, secondary, ''
+        options : [...]           //array of react elements
       }
     </code>
   </pre>
