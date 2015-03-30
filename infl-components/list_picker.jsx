@@ -44,7 +44,7 @@ var ListItem = React.createClass({
     return (
       <li>
         <Component {...this.props.item.listItemComponentProps}>
-          <span className="icon fa fa-angle-right" />
+          <span className="icon ic ic-chevron-right" />
           {this.props.item.name}
         </Component>
       </li>
