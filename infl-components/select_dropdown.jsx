@@ -31,7 +31,7 @@ var SelectDropdown = React.createClass({
     return (
       <span className="select-box" ref="select-wrapper">
         <span className="title">{this.state.title}</span>
-        <select name={this.props.name} ref={this.props.ref} onChange={this._handleChange} value={this.state.value}>
+        <select className="default" name={this.props.name} ref={this.props.ref} onChange={this._handleChange} value={this.state.value}>
             {this.props.children}
         </select>
       </span>
