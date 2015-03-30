@@ -124,9 +124,81 @@
     }
   }
 
+  &.ic-chevron-right {
+    &:before {
+      content: '\e612';
+    }
+  }
+
   &.ic-asterisk {
     &:before {
-      content: '*';
+      content: '\e619';
+    }
+  }
+
+  &.ic-arrow-down {
+    &:before {
+      content: '\e617';
+    }
+  }
+
+  &.ic-arrow-up {
+    &:before {
+      content: '\e616';
+    }
+  }
+
+  &.ic-arrow-left {
+    &:before {
+      content: '\e614';
+    }
+  }
+
+  &.ic-arrow-right {
+    &:before {
+      content: '\e615';
+    }
+  }
+
+  &.ic-calendar {
+    &:before {
+      content: '\e618';
+    }
+  }
+
+  &.ic-speech {
+    &:before {
+      content: '\e61a';
+    }
+  }
+
+  &.ic-heart {
+    &:before {
+      content: '\e61b';
+    }
+  }
+
+  &.ic-star {
+    &:before {
+      content: '\e61c';
+    }
+  }
+
+  &.ic-pin {
+    &:before {
+      content: '\e61d';
+    }
+  }
+
+  &.ic-pencil {
+    &:before {
+      content: '\e61e';
+    }
+  }
+
+  &.ic-trash {
+    &:before {
+      content: '\e61f';
     }
   }
 }
