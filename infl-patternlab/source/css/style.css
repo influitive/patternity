@@ -1235,33 +1235,29 @@ select {
   padding-left: 5px;
   height: 2.5em;
 }
-input[type='email'].is-error,
-input[type='text'].is-error,
-input[type='tel'].is-error,
-textarea.is-error,
-input[type='password'].is-error,
-input[type='url'].is-error,
-input[type='search'].is-error,
-input[type='number'].is-error,
-.select-box.is-error,
-select.is-error {
+
+.is-error input,
+.is-error textarea,
+.is-error select,
+.is-error .select-box {
   border-color: #c54040;
   color: #c54040;
   background-color: #f5dcdc;
 }
-input[type='email'].is-valid,
-input[type='text'].is-valid,
-input[type='tel'].is-valid,
-textarea.is-valid,
-input[type='password'].is-valid,
-input[type='url'].is-valid,
-input[type='search'].is-valid,
-input[type='number'].is-valid,
-.select-box.is-valid,
-select.is-valid {
+.is-error .input-message {
+  color: #c54040;
+}
+
+.is-valid input,
+.is-valid textarea,
+.is-valid select,
+.is-valid .select-box {
   border-color: #8BC540;
   color: #78ad34;
   background-color: #eaf5dc;
+}
+.is-valid .input-message {
+  color: #8BC540;
 }
 
 .is-required {
@@ -1277,6 +1273,13 @@ select.is-valid {
 }
 .is-required input {
   padding-left: 15px;
+}
+
+.input-message {
+  display: block;
+  font-size: 11px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .search-input {

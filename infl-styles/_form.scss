@@ -17,17 +17,35 @@ select {
   line-height: 2.5em;
   padding-left: 5px;
   height: 2.5em;
+}
 
-  &.is-error {
+.is-error {
+  input,
+  textarea,
+  select,
+  .select-box {
     border-color: $error-color;
     color: $error-color;
     background-color: lighten($error-color, 40%);
   }
 
-  &.is-valid {
+  .input-message {
+    color: $error-color;
+  }
+}
+
+.is-valid {
+  input,
+  textarea,
+  select,
+  .select-box {
     border-color: $success-color;
     color: darken($success-color, 7%);
     background-color: lighten($success-color, 40%);
+  }
+
+  .input-message {
+    color: $success-color;
   }
 }
 
@@ -46,6 +64,13 @@ select {
   input {
     padding-left: 15px;
   }
+}
+
+.input-message {
+  display: block;
+  font-size: 11px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .search-input {

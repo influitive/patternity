@@ -12,6 +12,14 @@ inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
 inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
 inflComp.SelectDropdown = require("../../infl-components/select_dropdown.jsx");
+inflComp.TextInput = require("../../infl-components/text_input.jsx");
+
+inflComp.textInput = function(props, elementId){
+  inflComp.React.render(
+    inflComp.React.createElement(inflComp.TextInput, props),
+    document.getElementById(elementId)
+  );
+};
 
 inflComp.buttonDropdown = function(props, elementId){
   inflComp.React.render(

@@ -4,28 +4,54 @@
   </header>
 
   <h4>Text Input</h4>
-  <input id="text" type="text" placeholder="Text Input">
+  <span id="text-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "text",
+        placeholder : "Text Input",
+        name: "",
+        id : "",
+        pattern : "",
+        required : "",
+        error : "",
+        valid : ""
+      };
 
-  <h5 class="code-title">HTML</h5>
+      inflComp.textInput(props, "text-input-pattern");
+    })();
+  </script>
+
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
-      &lt;input id="text" type="text" placeholder="Text Input" &gt;
+      &lt;TextInput type="text" placeholder="Text Input" &gt;
     </code>
   </pre>
 
   <h4>Required Input</h4>
-  <span class="is-required">
-    <span class="ic ic-asterisk"></span>
-    <input id="text" type="text" placeholder="Text Input">
-  </span>
+  <span id="text-input-required-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "text",
+        placeholder : "Text Input",
+        name: "",
+        id : "",
+        pattern : "",
+        required : true,
+        error : "",
+        valid : ""
+      };
+
+      inflComp.textInput(props, "text-input-required-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;span class="is-required"&gt;
-        &lt;span class="ic ic-asterisk"&gt;&lt;/span&gt;
-        &lt;input id="text" type="text" placeholder="Text Input"&gt;
-      &lt;/span&gt;
+      &lt;TextInput type="text" placeholder="Text Input" required={true} &gt;
     </code>
   </pre>
 
@@ -60,18 +86,28 @@
   </pre>
 
   <h4>Search</h4>
-  <span class="search-input">
-    <span class="ic ic-search"></span>
-    <input id="search" type="search" placeholder="Enter Search Term">
-  </span>
+  <span id="search-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "search",
+        placeholder : "Enter Search Term",
+        name: "",
+        id : "",
+        pattern : "",
+        required : "",
+        error : "",
+        valid : ""
+      };
+
+      inflComp.textInput(props, "search-input-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;span class="search-input"&gt;
-        &lt;span class="ic ic-search"&gt;&lt;/span&gt;
-        &lt;input id="search" type="search" placeholder="Enter Search Term"&gt;
-      &lt;/span&gt;
+      &lt;TextInput type="search" placeholder="Enter Search Term"" &gt;
     </code>
   </pre>
 
@@ -96,12 +132,29 @@
   </pre>
 
   <h4>Error Input</h4>
-  <input class="is-error" type="text" placeholder="Text Input">
+  <span id="error-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "text",
+        placeholder : "Text Input",
+        name: "",
+        id : "",
+        pattern : "",
+        message : "Must be at least 3 characters long.",
+        required : false,
+        error : true,
+        valid : false
+      };
+
+      inflComp.textInput(props, "error-input-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;input class="is-error" type="text" placeholder="Text Input"&gt;
+      &lt;TextInput type="text" placeholder="Text Input" error={true} message="Must be at least 3 characters long." /&gt;
     </code>
   </pre>
 
