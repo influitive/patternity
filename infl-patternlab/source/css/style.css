@@ -892,8 +892,44 @@ h6 {
 .ic.ic-chevron-left:before {
   content: '\e611';
 }
+.ic.ic-chevron-right:before {
+  content: '\e612';
+}
 .ic.ic-asterisk:before {
-  content: '*';
+  content: '\e619';
+}
+.ic.ic-arrow-down:before {
+  content: '\e617';
+}
+.ic.ic-arrow-up:before {
+  content: '\e616';
+}
+.ic.ic-arrow-left:before {
+  content: '\e614';
+}
+.ic.ic-arrow-right:before {
+  content: '\e615';
+}
+.ic.ic-calendar:before {
+  content: '\e618';
+}
+.ic.ic-speech:before {
+  content: '\e61a';
+}
+.ic.ic-heart:before {
+  content: '\e61b';
+}
+.ic.ic-star:before {
+  content: '\e61c';
+}
+.ic.ic-pin:before {
+  content: '\e61d';
+}
+.ic.ic-pencil:before {
+  content: '\e61e';
+}
+.ic.ic-trash:before {
+  content: '\e61f';
 }
 
 .button,
@@ -1235,9 +1271,9 @@ select.is-valid {
 .is-required .ic {
   position: absolute;
   top: 11px;
-  left: 5px;
+  left: 2px;
   color: #c54040;
-  font-size: 20px;
+  font-size: 15px;
 }
 .is-required input {
   padding-left: 15px;
@@ -1301,9 +1337,9 @@ select.is-valid {
 }
 .help-tooltip .close {
   position: absolute;
-  right: 5px;
-  top: 5px;
-  font-size: 13px;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
   color: #fff;
   opacity: 1;
   cursor: pointer;
