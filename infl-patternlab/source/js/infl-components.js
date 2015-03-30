@@ -13,6 +13,14 @@ inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
 inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
 inflComp.SelectDropdown = require("../../infl-components/select_dropdown.jsx");
+inflComp.TextInput = require("../../infl-components/text_input.jsx");
+
+inflComp.textInput = function(props, elementId){
+  inflComp.React.render(
+    inflComp.React.createElement(inflComp.TextInput, props),
+    document.getElementById(elementId)
+  );
+};
 
 inflComp.buttonDropdown = function(props, elementId){
   inflComp.React.render(
@@ -31,7 +39,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -421,7 +429,7 @@ var ListItem = React.createClass({displayName: "ListItem",
     return (
       React.createElement("li", null, 
         React.createElement(Component, React.__spread({},  this.props.item.listItemComponentProps), 
-          React.createElement("span", {className: "icon fa fa-angle-right"}), 
+          React.createElement("span", {className: "icon ic ic-chevron-right"}), 
           this.props.item.name
         )
       )
@@ -482,7 +490,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     return (
       React.createElement("span", {className: "select-box", ref: "select-wrapper"}, 
         React.createElement("span", {className: "title"}, this.state.title), 
-        React.createElement("select", {name: this.props.name, ref: this.props.ref, onChange: this._handleChange, value: this.state.value}, 
+        React.createElement("select", {className: "default", name: this.props.name, ref: this.props.ref, onChange: this._handleChange, value: this.state.value}, 
             this.props.children
         )
       )
@@ -560,7 +568,67 @@ var SidebarHeading = React.createClass({displayName: "SidebarHeading",
 module.exports = SidebarHeading;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){
+var React = require('react');
+var classNames = require('classnames');
+
+var TextInput = React.createClass({displayName: "TextInput",
+  getDefaultProps: function() {
+    return {
+      type: "text",
+      placeholder : "",
+      name: "",
+      id : "",
+      pattern : "",
+      message : "",
+      required : false,
+      error : false,
+      valid : false,
+    };
+  },
+  propTypes : {
+    type: React.PropTypes.oneOf(['text', 'password', 'url', 'email', 'search', 'number', '']),
+    placeholder : React.PropTypes.string,
+    name: React.PropTypes.string,
+    id : React.PropTypes.string,
+    pattern : React.PropTypes.string,
+    message : React.PropTypes.string,
+    required : React.PropTypes.bool,
+    error : React.PropTypes.bool,
+    errorMessage : React.PropTypes.string,
+    valid : React.PropTypes.bool
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: this._determineInputStyling()}, 
+        this._determineInputIcon(), 
+        React.createElement("input", {type: this.props.type, placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, pattern: this.props.pattern}), 
+        React.createElement("span", {className: "input-message"}, this.props.message)
+      )
+    );
+  },
+  _determineInputStyling : function(){
+    return classNames({
+      'is-required': this.props.required,
+      'is-error': this.props.error,
+      'valid': this.props.valid,
+      'search-input': this.props.type === 'search',
+      'pt-input': true
+    });
+  },
+  _determineInputIcon : function(){
+    if(this.props.type === 'search'){
+      return (React.createElement("span", {className: "ic ic-search"}));
+    } else if(this.props.required) {
+      return (React.createElement("span", {className: "ic ic-asterisk"}));
+    }
+  }
+});
+
+module.exports = TextInput;
+
+
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
