@@ -9,13 +9,7 @@
     (function() {
       var props = {
         type: "text",
-        placeholder : "Text Input",
-        name: "",
-        id : "",
-        pattern : "",
-        required : "",
-        error : "",
-        valid : ""
+        placeholder : "Text Input"
       };
 
       inflComp.textInput(props, "text-input-pattern");
@@ -36,12 +30,7 @@
       var props = {
         type: "text",
         placeholder : "Text Input",
-        name: "",
-        id : "",
-        pattern : "",
         required : true,
-        error : "",
-        valid : ""
       };
 
       inflComp.textInput(props, "text-input-required-pattern");
@@ -56,32 +45,62 @@
   </pre>
 
   <h4>Password</h4>
-  <input id="password" type="password" placeholder="Type your Password">
+  <span id="password-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "password",
+        placeholder : "Type your Password",
+      };
+
+      inflComp.textInput(props, "password-input-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;input id="password" type="password" placeholder="Type your Password" &gt;
+      &lt;TextInput type="password" placeholder="Type your Password" &gt;
     </code>
   </pre>
 
   <h4>Web Address</h4>
-  <input id="webaddress" type="url" placeholder="http://yoursite.com">
+  <span id="webaddress-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "url",
+        placeholder : "http://yoursite.com",
+      };
+
+      inflComp.textInput(props, "webaddress-input-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;input id="webaddress" type="url" placeholder="http://yoursite.com"&gt;
+      &lt;TextInput type="url" placeholder="http://yoursite.com" &gt;
     </code>
   </pre>
 
   <h4>Email Address</h4>
-  <input id="emailaddress" type="email" placeholder="name@email.com">
+  <span id="email-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "email",
+        placeholder : "name@email.com",
+      };
+
+      inflComp.textInput(props, "email-input-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;input id="emailaddress" type="email" placeholder="name@email.com"&gt;
+      &lt;TextInput type="email" placeholder="name@email.com" &gt;
     </code>
   </pre>
 
@@ -92,12 +111,6 @@
       var props = {
         type: "search",
         placeholder : "Enter Search Term",
-        name: "",
-        id : "",
-        pattern : "",
-        required : "",
-        error : "",
-        valid : ""
       };
 
       inflComp.textInput(props, "search-input-pattern");
@@ -107,17 +120,28 @@
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;TextInput type="search" placeholder="Enter Search Term"" &gt;
+      &lt;TextInput type="search" placeholder="Enter Search Term" &gt;
     </code>
   </pre>
 
   <h4>Number Input</h4>
-  <input id="text" type="number" placeholder="Enter a Number" pattern="[0-9]*">
+  <span id="number-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "number",
+        placeholder : "Enter a Number",
+        pattern : "[0-9]*",
+      };
+
+      inflComp.textInput(props, "number-input-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;input id="text" type="number" placeholder="Enter a Number" pattern="[0-9]*"&gt;
+      &lt;TextInput type="number" placeholder="Enter a Number"  pattern="[0-9]*" &gt;
     </code>
   </pre>
 
@@ -138,13 +162,8 @@
       var props = {
         type: "text",
         placeholder : "Text Input",
-        name: "",
-        id : "",
-        pattern : "",
         message : "Must be at least 3 characters long.",
-        required : false,
         error : true,
-        valid : false
       };
 
       inflComp.textInput(props, "error-input-pattern");
@@ -159,12 +178,23 @@
   </pre>
 
   <h4>Valid</h4>
-  <input  class="is-valid" type="text" placeholder="Text Input">
+  <span id="valid-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "text",
+        placeholder : "Text Input",
+        valid : true
+      };
+
+      inflComp.textInput(props, "valid-input-pattern");
+    })();
+  </script>
 
   <h5 class="code-title">HTML</h5>
   <pre class="code">
     <code>
-      &lt;input  class="is-valid" type="text" placeholder="Text Input"&gt;
+      &lt;TextInput type="text" placeholder="Text Input" valid={true} /&gt;
     </code>
   </pre>
 
