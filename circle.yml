@@ -1,6 +1,6 @@
 dependencies:
   override:
-    - npm install --dev
+    - npm install --no-spin
 
 test:
   override:
