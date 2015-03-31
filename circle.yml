@@ -1,6 +1,6 @@
 dependencies:
   pre:
-    - npm install -g karma
+    - npm install -g karma-cli
   override:
     - npm install --no-spin
 
