@@ -251,15 +251,15 @@
     </code>
   </pre>
 
-  <h4>Label</h4>
-  <span id="label-input-pattern"></span>
+  <h4>Label - Stacked</h4>
+  <span id="label-input-stacked-pattern"></span>
   <script type="text/javascript">
     (function() {
       var inputProps = {
         type: "text",
         placeholder : "Text Input",
         name : "text-input",
-        message : "this is a test message."
+        message : "Hint: Fill in this field."
       };
 
       var props = {
@@ -268,7 +268,7 @@
         children : inflComp.React.createElement(inflComp.TextInput, inputProps)
       };
 
-      inflComp.inputLabel(props, "label-input-pattern");
+      inflComp.inputLabel(props, "label-input-stacked-pattern");
     })();
   </script>
 
@@ -276,7 +276,7 @@
   <pre class="code">
     <code>
       &lt;InputLabel layout="stacked" label="Field Label:"&gt;
-        &lt;TextInput type="text" placeholder="Text Input" /&gt;
+        &lt;TextInput type="text" placeholder="Text Input" message="Hint: Fill in this field." /&gt;
       &lt;/InputLabel&gt;
     </code>
   </pre>
@@ -289,6 +289,36 @@
         label : "Field Label:", //value of the label
         children : [...]        //input can be TextInput, SelectDropdown, ToggleSwitch, checkbox, etc.
       }
+    </code>
+  </pre>
+
+  <h4>Label - Inline</h4>
+  <span id="label-input-inline-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var inputProps = {
+        type: "text",
+        placeholder : "Text Input",
+        name : "text-input",
+        message : "Hint: Fill in this field."
+      };
+
+      var props = {
+        layout : "inline",
+        label : "Field Label:",
+        children : inflComp.React.createElement(inflComp.TextInput, inputProps)
+      };
+
+      inflComp.inputLabel(props, "label-input-inline-pattern");
+    })();
+  </script>
+
+  <h5 class="code-title">Code</h5>
+  <pre class="code">
+    <code>
+      &lt;InputLabel layout="inline" label="Field Label:"&gt;
+        &lt;TextInput type="text" placeholder="Text Input" message="Hint: Fill in this field." /&gt;
+      &lt;/InputLabel&gt;
     </code>
   </pre>
 
