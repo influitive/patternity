@@ -10,6 +10,7 @@ var TextInput = React.createClass({
       id : "",
       pattern : "",
       message : "",
+      value : "",
       required : false,
       error : false,
       valid : false,
@@ -22,6 +23,7 @@ var TextInput = React.createClass({
     id : React.PropTypes.string,
     pattern : React.PropTypes.string,
     message : React.PropTypes.string,
+    value : React.PropTypes.string,
     required : React.PropTypes.bool,
     error : React.PropTypes.bool,
     errorMessage : React.PropTypes.string,
@@ -31,7 +33,7 @@ var TextInput = React.createClass({
     return (
       <span className={this._determineInputStyling()}>
         {this._determineInputIcon()}
-        <input type={this.props.type} placeholder={this.props.placeholder} name={this.props.name} id={this.props.id} pattern={this.props.pattern} />
+        <input type={this.props.type} value={this.props.value} placeholder={this.props.placeholder} name={this.props.name} id={this.props.id} pattern={this.props.pattern} />
         <span className="input-message">{this.props.message}</span>
       </span>
     );
