@@ -275,8 +275,9 @@
   <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
-      &lt;label for="label-test"&gt;Field Label:&lt;/label&gt;
-      &lt;input id="text" name="label-test" type="text" placeholder="Text Input"&gt;
+      &lt;InputLabel layout="stacked" label="Field Label:"&gt;
+        &lt;TextInput type="text" placeholder="Text Input" /&gt;
+      &lt;/InputLabel&gt;
     </code>
   </pre>
 
@@ -286,18 +287,18 @@
       {
         layout : string,        //determines InputLabel layout is either 'stacked' or 'inline'
         label : "Field Label:", //value of the label
-        children : [...]        //the input for the label can be TextInput, SelectDropdown, ToggleSwitch, etc.
+        children : [...]        //input can be TextInput, SelectDropdown, ToggleSwitch, checkbox, etc.
       }
     </code>
   </pre>
 
   <h4>Text Area</h4>
-  <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+  <textarea rows="8" cols="48" placeholder="Enter your message here"></textarea>
 
   <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
-      &lt;textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"&gt;&lt;/textarea&gt;
+      &lt;textarea rows="8" cols="48" placeholder="Enter your message here"&gt;&lt;/textarea&gt;
     </code>
   </pre>
 
