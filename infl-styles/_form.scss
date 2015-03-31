@@ -14,9 +14,24 @@ select {
   border: solid 1px $light-grey;
   font-size: inherit;
   font-family: inherit;
-  line-height: 2.5em;
   padding-left: 5px;
   height: 2.5em;
+}
+
+input[type='email'],
+input[type='text'],
+input[type='tel'],
+input[type='password'],
+input[type='url'],
+input[type='search'],
+input[type='number'],
+.select-box,
+select {
+  line-height: 2.5em;
+}
+
+textarea {
+  padding-top: 10px;
 }
 
 .is-error {

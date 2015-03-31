@@ -581,6 +581,7 @@ var TextInput = React.createClass({displayName: "TextInput",
       id : "",
       pattern : "",
       message : "",
+      value : "",
       required : false,
       error : false,
       valid : false,
@@ -593,6 +594,7 @@ var TextInput = React.createClass({displayName: "TextInput",
     id : React.PropTypes.string,
     pattern : React.PropTypes.string,
     message : React.PropTypes.string,
+    value : React.PropTypes.string,
     required : React.PropTypes.bool,
     error : React.PropTypes.bool,
     errorMessage : React.PropTypes.string,
@@ -602,7 +604,7 @@ var TextInput = React.createClass({displayName: "TextInput",
     return (
       React.createElement("span", {className: this._determineInputStyling()}, 
         this._determineInputIcon(), 
-        React.createElement("input", {type: this.props.type, placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, pattern: this.props.pattern}), 
+        React.createElement("input", {type: this.props.type, defaultValue: this.props.value, placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, pattern: this.props.pattern}), 
         React.createElement("span", {className: "input-message"}, this.props.message)
       )
     );
@@ -611,7 +613,7 @@ var TextInput = React.createClass({displayName: "TextInput",
     return classNames({
       'is-required': this.props.required,
       'is-error': this.props.error,
-      'valid': this.props.valid,
+      'is-valid': this.props.valid,
       'search-input': this.props.type === 'search',
       'pt-input': true
     });

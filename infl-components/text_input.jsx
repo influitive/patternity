@@ -33,7 +33,7 @@ var TextInput = React.createClass({
     return (
       <span className={this._determineInputStyling()}>
         {this._determineInputIcon()}
-        <input type={this.props.type} value={this.props.value} placeholder={this.props.placeholder} name={this.props.name} id={this.props.id} pattern={this.props.pattern} />
+        <input type={this.props.type} defaultValue={this.props.value} placeholder={this.props.placeholder} name={this.props.name} id={this.props.id} pattern={this.props.pattern} />
         <span className="input-message">{this.props.message}</span>
       </span>
     );
@@ -42,7 +42,7 @@ var TextInput = React.createClass({
     return classNames({
       'is-required': this.props.required,
       'is-error': this.props.error,
-      'valid': this.props.valid,
+      'is-valid': this.props.valid,
       'search-input': this.props.type === 'search',
       'pt-input': true
     });
