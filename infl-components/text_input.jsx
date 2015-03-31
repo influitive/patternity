@@ -14,6 +14,8 @@ var TextInput = React.createClass({
       required : false,
       error : false,
       valid : false,
+      readOnly : false,
+      disabled : false,
     };
   },
   propTypes : {
@@ -27,13 +29,17 @@ var TextInput = React.createClass({
     required : React.PropTypes.bool,
     error : React.PropTypes.bool,
     errorMessage : React.PropTypes.string,
-    valid : React.PropTypes.bool
+    valid : React.PropTypes.bool,
+    readOnly : React.PropTypes.bool,
+    disabled : React.PropTypes.bool,
   },
   render : function(){
     return (
       <span className={this._determineInputStyling()}>
         {this._determineInputIcon()}
-        <input type={this.props.type} defaultValue={this.props.value} placeholder={this.props.placeholder} name={this.props.name} id={this.props.id} pattern={this.props.pattern} />
+        <input readOnly={this.props.readOnly} type={this.props.type} defaultValue={this.props.value}
+               placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
+               pattern={this.props.pattern} disabled={this.props.disabled} />
         <span className="input-message">{this.props.message}</span>
       </span>
     );
@@ -44,7 +50,8 @@ var TextInput = React.createClass({
       'is-error': this.props.error,
       'is-valid': this.props.valid,
       'search-input': this.props.type === 'search',
-      'pt-input': true
+      'pt-input': true,
+      'is-disabled' : this.props.disabled
     });
   },
   _determineInputIcon : function(){

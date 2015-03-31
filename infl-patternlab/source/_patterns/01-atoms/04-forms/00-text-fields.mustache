@@ -23,6 +23,26 @@
     </code>
   </pre>
 
+  <h5 class="code-title">Props</h5>
+  <pre class="code">
+    <code>
+      {
+        type: string,           //type of input search, text, password, number, etc.
+        placeholder : string,   //placeholder text for the input
+        name: string,           //name for the input used with form tag
+        id : string,            //html id for the input
+        pattern : regex string, //regex used to validate the input value
+        message : string,       //displayed under the input used for a hint, error, etc. text
+        value : string,         //default value of the input
+        required : boolean,     //if true input is marked as required, defaults to false
+        error : boolean,        //if true input is highlighted as an error field, defaults to false
+        valid : boolean,        //if true input is highlighted as a valid field, defaults to false
+        readOnly : boolean,     //if true input is read only but will still submit with a form, defaults to false
+        disabled : boolean      //if true input is disabled and will not submit with a form, defautls to false
+      }
+    </code>
+  </pre>
+
   <h4>Required Input</h4>
   <span id="text-input-required-pattern"></span>
   <script type="text/javascript">
@@ -30,17 +50,60 @@
       var props = {
         type: "text",
         placeholder : "Text Input",
-        required : true,
+        required : true
       };
 
       inflComp.textInput(props, "text-input-required-pattern");
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;TextInput type="text" placeholder="Text Input" required={true} &gt;
+    </code>
+  </pre>
+
+  <h4>Disabled Input</h4>
+  <span id="text-input-disabled-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "text",
+        placeholder : "Text Input",
+        disabled : true
+      };
+
+      inflComp.textInput(props, "text-input-disabled-pattern");
+    })();
+  </script>
+
+  <h5 class="code-title">Code</h5>
+  <pre class="code">
+    <code>
+      &lt;TextInput type="text" placeholder="Text Input" disabled={true} &gt;
+    </code>
+  </pre>
+
+  <h4>Read Only Input</h4>
+  <span id="text-input-read-only-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        type: "text",
+        placeholder : "Text Input",
+        readOnly : true,
+        value : "read only input"
+      };
+
+      inflComp.textInput(props, "text-input-read-only-pattern");
+    })();
+  </script>
+
+  <h5 class="code-title">Code</h5>
+  <pre class="code">
+    <code>
+      &lt;TextInput type="text" placeholder="Text Input" readOnly={true} &gt;
     </code>
   </pre>
 
@@ -57,7 +120,7 @@
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;TextInput type="password" placeholder="Type your Password" &gt;
@@ -77,7 +140,7 @@
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;TextInput type="url" placeholder="http://yoursite.com" &gt;
@@ -97,7 +160,7 @@
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;TextInput type="email" placeholder="name@email.com" &gt;
@@ -117,7 +180,7 @@
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;TextInput type="search" placeholder="Enter Search Term" &gt;
@@ -138,20 +201,10 @@
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;TextInput type="number" placeholder="Enter a Number"  pattern="[0-9]*" &gt;
-    </code>
-  </pre>
-
-  <h4>Text Area</h4>
-  <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
-
-  <h5 class="code-title">HTML</h5>
-  <pre class="code">
-    <code>
-      &lt;textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"&gt;&lt;/textarea&gt;
     </code>
   </pre>
 
@@ -170,7 +223,7 @@
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;TextInput type="text" placeholder="Text Input" error={true} message="Must be at least 3 characters long." /&gt;
@@ -191,7 +244,7 @@
     })();
   </script>
 
-  <h5 class="code-title">HTML</h5>
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;TextInput type="text" placeholder="Text Input" valid={true} /&gt;
@@ -199,14 +252,52 @@
   </pre>
 
   <h4>Label</h4>
-  <label for="label-test">Field Label:</label>
-  <input id="text" type="text" placeholder="Text Input">
+  <span id="label-input-pattern"></span>
+  <script type="text/javascript">
+    (function() {
+      var inputProps = {
+        type: "text",
+        placeholder : "Text Input",
+        name : "text-input",
+        message : "this is a test message."
+      };
 
-  <h5 class="code-title">HTML</h5>
+      var props = {
+        layout : "stacked",
+        label : "Field Label:",
+        children : inflComp.React.createElement(inflComp.TextInput, inputProps)
+      };
+
+      inflComp.inputLabel(props, "label-input-pattern");
+    })();
+  </script>
+
+  <h5 class="code-title">Code</h5>
   <pre class="code">
     <code>
       &lt;label for="label-test"&gt;Field Label:&lt;/label&gt;
       &lt;input id="text" name="label-test" type="text" placeholder="Text Input"&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Props</h5>
+  <pre class="code">
+    <code>
+      {
+        layout : string,        //determines InputLabel layout is either 'stacked' or 'inline'
+        label : "Field Label:", //value of the label
+        children : [...]        //the input for the label can be TextInput, SelectDropdown, ToggleSwitch, etc.
+      }
+    </code>
+  </pre>
+
+  <h4>Text Area</h4>
+  <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+
+  <h5 class="code-title">Code</h5>
+  <pre class="code">
+    <code>
+      &lt;textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"&gt;&lt;/textarea&gt;
     </code>
   </pre>
 

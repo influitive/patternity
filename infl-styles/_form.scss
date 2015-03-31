@@ -81,6 +81,12 @@ textarea {
   }
 }
 
+.is-disabled {
+  input {
+    background-color: $lighter-grey;
+  }
+}
+
 .input-message {
   display: block;
   font-size: 11px;
@@ -137,5 +143,30 @@ textarea {
     left: 0px;
     border: 0px;
     opacity: 0;
+  }
+}
+
+.pt-label {
+  display: inline-block;
+  line-height: 100%;
+
+  &.inline > label,
+  &.inline > span {
+    display: inline-block;
+  }
+
+  &.inline > label {
+    vertical-align: top;
+    padding-top: 12px;
+    margin-right: 10px;
+  }
+
+  &.stacked > label,
+  &.stacked > span {
+    display: block;
+  }
+
+  &.stacked > label {
+    margin-bottom: 10px;
   }
 }
