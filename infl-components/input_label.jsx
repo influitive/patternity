@@ -16,7 +16,7 @@ var InputLabel = React.createClass({
     return (
       <span className={"pt-label " + this.props.layout}>
         <label htmlFor={this.props.children.props.name}>
-          <span>{this.props.label}</span>
+          <span>{this.props.label + ":"}</span>
         </label>
         {this.props.children}
       </span>
