@@ -105,6 +105,8 @@ button {
     color: $text-button-color !important;
     @include transition (color 0.15s ease-in-out);
     box-shadow: none;
+    top: 1px;
+    position: relative;
 
     &:hover {
       background-color: transparent;
@@ -130,6 +132,8 @@ button {
     color: darken($text-button-color, 20%) !important;
     border: 1px solid darken($text-button-color, 20%);
     box-shadow: none;
+    top: 1px;
+    position: relative;
 
     &:hover {
       background-color: transparent !important;
