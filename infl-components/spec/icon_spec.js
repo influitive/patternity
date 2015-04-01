@@ -23,11 +23,5 @@ describe('Icon Component', function() {
     it('renders the remove icon', function() {
       expect(iconElement.className.split(' ')).to.have.members(['ic', 'ic-remove']);
     });
-
-    it('renders with the passed styles', function() {
-      subject = ReactTestUtils.renderIntoDocument(<Icon icon={'remove'} style={ {fontSize: '100px'} } />);
-      iconElement = subject.refs.icon.getDOMNode();
-      expect(iconElement.style.fontSize).to.eq('100px');
-    });
   });
 });

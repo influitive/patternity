@@ -7,7 +7,7 @@ var Icon = React.createClass({
   },
   render: function() {
     return (
-      <span className={this.getClassNames()} style={this.props.style} />
+      <span ref="icon" className={this.getClassNames()} />
     );
   },
 
