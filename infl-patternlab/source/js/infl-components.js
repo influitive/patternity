@@ -647,6 +647,7 @@ var TextInput = React.createClass({displayName: "TextInput",
       valid : false,
       readOnly : false,
       disabled : false,
+      onChange : function(){}
     };
   },
   propTypes : {
@@ -663,14 +664,18 @@ var TextInput = React.createClass({displayName: "TextInput",
     valid : React.PropTypes.bool,
     readOnly : React.PropTypes.bool,
     disabled : React.PropTypes.bool,
+    onChange : React.PropTypes.func
+  },
+  getInitialState: function() {
+    return {value: this.props.value};
   },
   render : function(){
     return (
       React.createElement("span", {className: this._determineInputStyling()}, 
         this._determineInputIcon(), 
-        React.createElement("input", {readOnly: this.props.readOnly, type: this.props.type, defaultValue: this.props.value, 
+        React.createElement("input", {readOnly: this.props.readOnly, type: this.props.type, value: this.state.value, 
                placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, 
-               pattern: this.props.pattern, disabled: this.props.disabled}), 
+               pattern: this.props.pattern, disabled: this.props.disabled, onChange: this._handleChange}), 
         React.createElement("span", {className: "input-message"}, this.props.message)
       )
     );
@@ -691,6 +696,10 @@ var TextInput = React.createClass({displayName: "TextInput",
     } else if(this.props.required) {
       return (React.createElement("span", {className: "ic ic-asterisk"}));
     }
+  },
+  _handleChange: function(event){
+    this.setState({value : event.target.value});
+    this.props.onChange(event.target.value);
   }
 });
 
