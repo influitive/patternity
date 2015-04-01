@@ -431,7 +431,7 @@ var InputLabel = React.createClass({displayName: "InputLabel",
     return (
       React.createElement("span", {className: "pt-label " + this.props.layout}, 
         React.createElement("label", {htmlFor: this.props.children.props.name}, 
-          React.createElement("span", null, this.props.label)
+          React.createElement("span", null, this.props.label + ":")
         ), 
         this.props.children
       )
@@ -699,7 +699,7 @@ var TextInput = React.createClass({displayName: "TextInput",
   },
   _handleChange: function(event){
     this.setState({value : event.target.value});
-    this.props.onChange(event.target.value);
+    this.props.onChange(event);
   }
 });
 
