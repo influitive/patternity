@@ -16,6 +16,7 @@ var TextInput = React.createClass({
       valid : false,
       readOnly : false,
       disabled : false,
+      onChange : function(){}
     };
   },
   propTypes : {
@@ -32,14 +33,18 @@ var TextInput = React.createClass({
     valid : React.PropTypes.bool,
     readOnly : React.PropTypes.bool,
     disabled : React.PropTypes.bool,
+    onChange : React.PropTypes.func
+  },
+  getInitialState: function() {
+    return {value: this.props.value};
   },
   render : function(){
     return (
       <span className={this._determineInputStyling()}>
         {this._determineInputIcon()}
-        <input readOnly={this.props.readOnly} type={this.props.type} defaultValue={this.props.value}
+        <input readOnly={this.props.readOnly} type={this.props.type} value={this.state.value}
                placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
-               pattern={this.props.pattern} disabled={this.props.disabled} />
+               pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange}/>
         <span className="input-message">{this.props.message}</span>
       </span>
     );
@@ -60,6 +65,10 @@ var TextInput = React.createClass({
     } else if(this.props.required) {
       return (<span className="ic ic-asterisk"></span>);
     }
+  },
+  _handleChange: function(event){
+    this.setState({value : event.target.value});
+    this.props.onChange(event.target.value);
   }
 });
 
