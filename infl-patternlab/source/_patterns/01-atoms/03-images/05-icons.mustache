@@ -75,7 +75,7 @@
         _buildIcons: function(icon) {
           lowerIcon = this.props.icons[icon];
           var sizedIcons = this.props.sizes.map(function (size) {
-            return React.createElement(Icon, { icon: lowerIcon, style: { fontSize: size + 'px' } });
+            return React.createElement(Icon, { icon: lowerIcon, className: 'size-' + size });
           });
           sizedIcons.push(React.createElement(Icon, { icon: lowerIcon }));
 

@@ -423,7 +423,7 @@ var Icon = React.createClass({displayName: "Icon",
   },
   render: function() {
     return (
-      React.createElement("span", {className: this.getClassNames(), style: this.props.style})
+      React.createElement("span", {className: this.getClassNames()})
     );
   },
 
