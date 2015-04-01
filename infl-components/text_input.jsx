@@ -68,7 +68,7 @@ var TextInput = React.createClass({
   },
   _handleChange: function(event){
     this.setState({value : event.target.value});
-    this.props.onChange(event.target.value);
+    this.props.onChange(event);
   }
 });
 
