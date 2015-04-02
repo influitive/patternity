@@ -30,8 +30,7 @@ var SelectDropdown = React.createClass({
   componentWillReceiveProps : function(newProps){
     this.setState({
       value : newProps.value
-    });
-    setTimeout(this._updateTitleAfterDOMUpdate, 0);
+    }, this._updateTitleAfterDOMUpdate);
   },
   _updateTitleAfterDOMUpdate : function(){
     this.setState({
