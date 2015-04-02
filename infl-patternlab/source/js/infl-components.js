@@ -550,8 +550,6 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     this.setState({
       value : newProps.value
     });
-  },
-  componentDidUpdate : function(){
     setTimeout(this._updateTitleAfterDOMUpdate, 0);
   },
   _updateTitleAfterDOMUpdate : function(){
