@@ -549,8 +549,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   componentWillReceiveProps : function(newProps){
     this.setState({
       value : newProps.value
-    });
-    setTimeout(this._updateTitleAfterDOMUpdate, 0);
+    }, this._updateTitleAfterDOMUpdate);
   },
   _updateTitleAfterDOMUpdate : function(){
     this.setState({
@@ -727,14 +726,16 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
       enabled: true,
       isOn : false,
       onChange: function(){},
-      inputName : ""
+      inputName : "",
+      ref : "checkbox"
     };
   },
   propTypes : {
     enabled: React.PropTypes.bool,
     isOn: React.PropTypes.bool,
     onChange : React.PropTypes.func,
-    inputName : React.PropTypes.string
+    inputName : React.PropTypes.string,
+    ref : React.PropTypes.string
   },
   render : function(){
     return (
@@ -745,7 +746,7 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
           React.createElement("span", {className: "switch-line"}), 
           React.createElement("span", {className: "switch-line"})
         ), 
-        React.createElement("input", {type: "checkbox", ref: "checkbox", className: "toggle-checkbox", checked: this._isChecked(), name: this.props.inputName, onChange: this._handleChange})
+        React.createElement("input", {type: "checkbox", ref: this.props.ref, className: "toggle-checkbox", checked: this._isChecked(), name: this.props.inputName, onChange: this._handleChange})
       )
     );
   },
@@ -765,7 +766,7 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
   },
   _clickCheckBox : function(){
     if(this.props.enabled){
-      this.refs.checkbox.getDOMNode().click();
+      this.refs[this.props.ref].getDOMNode().click();
     }
   },
   _handleChange : function(event){

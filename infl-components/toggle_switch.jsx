@@ -7,14 +7,16 @@ var ToggleSwitch = React.createClass({
       enabled: true,
       isOn : false,
       onChange: function(){},
-      inputName : ""
+      inputName : "",
+      ref : "checkbox"
     };
   },
   propTypes : {
     enabled: React.PropTypes.bool,
     isOn: React.PropTypes.bool,
     onChange : React.PropTypes.func,
-    inputName : React.PropTypes.string
+    inputName : React.PropTypes.string,
+    ref : React.PropTypes.string
   },
   render : function(){
     return (
@@ -25,7 +27,7 @@ var ToggleSwitch = React.createClass({
           <span className="switch-line"></span>
           <span className="switch-line"></span>
         </span>
-        <input type="checkbox" ref="checkbox" className="toggle-checkbox" checked={this._isChecked()} name={this.props.inputName} onChange={this._handleChange} />
+        <input type="checkbox" ref={this.props.ref} className="toggle-checkbox" checked={this._isChecked()} name={this.props.inputName} onChange={this._handleChange} />
       </span>
     );
   },
@@ -45,7 +47,7 @@ var ToggleSwitch = React.createClass({
   },
   _clickCheckBox : function(){
     if(this.props.enabled){
-      this.refs.checkbox.getDOMNode().click();
+      this.refs[this.props.ref].getDOMNode().click();
     }
   },
   _handleChange : function(event){
