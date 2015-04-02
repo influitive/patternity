@@ -546,10 +546,23 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
       title : this._determineSelectTitle()
     });
   },
+  componentWillReceiveProps : function(newProps){
+    this.setState({
+      value : newProps.value
+    });
+  },
+  componentDidUpdate : function(){
+    setTimeout(this._updateTitleAfterDOMUpdate, 0);
+  },
+  _updateTitleAfterDOMUpdate : function(){
+    this.setState({
+      title : this._determineSelectTitle()
+    });
+  },
   render : function(){
     return (
       React.createElement("span", {className: "select-box", ref: "select-wrapper"}, 
-        React.createElement("span", {className: "title"}, this.state.title), 
+        React.createElement("span", {className: "title", ref: "title"}, this.state.title), 
         React.createElement("select", {className: "default", name: this.props.name, ref: this.props.ref, onChange: this._handleChange, value: this.state.value}, 
             this.props.children
         )

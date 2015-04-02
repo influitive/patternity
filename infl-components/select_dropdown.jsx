@@ -27,10 +27,23 @@ var SelectDropdown = React.createClass({
       title : this._determineSelectTitle()
     });
   },
+  componentWillReceiveProps : function(newProps){
+    this.setState({
+      value : newProps.value
+    });
+  },
+  componentDidUpdate : function(){
+    setTimeout(this._updateTitleAfterDOMUpdate, 0);
+  },
+  _updateTitleAfterDOMUpdate : function(){
+    this.setState({
+      title : this._determineSelectTitle()
+    });
+  },
   render : function(){
     return (
       <span className="select-box" ref="select-wrapper">
-        <span className="title">{this.state.title}</span>
+        <span className="title" ref="title">{this.state.title}</span>
         <select className="default" name={this.props.name} ref={this.props.ref} onChange={this._handleChange} value={this.state.value}>
             {this.props.children}
         </select>
