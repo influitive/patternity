@@ -202,3 +202,8 @@
     }
   }
 }
+
+@mixin ic-chevron-down() {
+  font-family : 'influicons';
+  content: '\e610';
+}

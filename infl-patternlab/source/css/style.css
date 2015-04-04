@@ -1328,16 +1328,13 @@ textarea {
   padding-right: 30px;
 }
 .select-box:after {
-  content: "";
+  font-family: 'influicons';
+  content: '\e610';
   display: block;
   position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #444444;
-  top: 15px;
-  right: 10px;
+  font-size: 20px;
+  top: 0px;
+  right: 5px;
   z-index: 1;
 }
 .select-box:focus {

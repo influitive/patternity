@@ -119,16 +119,12 @@ textarea {
   padding-right: 30px;
 
   &:after {
-    content: "";
+    @include ic-chevron-down();
     display: block;
     position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid $darker-grey;
-    top: 15px;
-    right: 10px;
+    font-size: 20px;
+    top: 0px;
+    right: 5px;
     z-index: 1;
   }
 
