@@ -1,6 +1,7 @@
 var Storage = function(){
-  function getItem(key){
-    return JSON.parse(window.localStorage.getItem(key));
+  function getItem(key, defaultValue){
+    var value = JSON.parse(window.localStorage.getItem(key));
+    return value !== null ? value : defaultValue;
   }
 
   function setItem(key, value){
