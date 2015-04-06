@@ -4,14 +4,29 @@ var classNames = require('classnames');
 var Accordion = React.createClass({
   getDefaultProps: function() {
     return {
-      sections: []
+      sections: [],
+      openSectionIndex : -1
     };
   },
   propTypes : {
-    sections: React.PropTypes.array
+    sections: React.PropTypes.array,
+    openSectionIndex : React.PropTypes.number
   },
   getInitialState: function(){
-    return { openSectionIndex: -1 }
+    return { openSectionIndex: this.props.openSectionIndex }
+  },
+  componentWillReceiveProps : function(nextProps){
+    this.setState({
+      openSectionIndex : nextProps.openSectionIndex
+    });
+  },
+  render: function () {
+    this._resetAccordionState();
+    return (
+      <ul className="accordion">
+        {this._buildSections(this.props)}
+      </ul>
+    );
   },
   _buildSections: function(props){
     return props.sections.map(this._buildSection);
@@ -19,13 +34,13 @@ var Accordion = React.createClass({
   _buildSection: function (section, index) {
     return (
       <AccordionSection  key={"accordion-section-" + index}>
-        <AccordionHeader {...section} index={index} open={this._isSectionOpen(index)} toggleOne={this._toggleOne} />
+        <AccordionHeader {...section} index={index} open={this._isSectionOpen(index, section.isEnabled)} toggleOne={this._toggleOne} />
         <AccordionBody body={section.body} />
       </AccordionSection>
     );
   },
-  _isSectionOpen: function(index){
-    return index === this.state.openSectionIndex;
+  _isSectionOpen: function(index, isEnabled){
+    return (index === this.state.openSectionIndex) && isEnabled;
   },
   _toggleOne: function(id){
     if(this.state.openSectionIndex === id){
@@ -37,17 +52,9 @@ var Accordion = React.createClass({
   _uniqueIdentifier : null,
   _resetAccordionState: function(){
     if(this._uniqueIdentifier !== this.props.uniqueIdentifier){
-      this.state.openSectionIndex = -1;
+      this.state.openSectionIndex = this.props.openSectionIndex;
     }
     this._uniqueIdentifier = this.props.uniqueIdentifier;
-  },
-  render: function () {
-    this._resetAccordionState();
-    return (
-      <ul className="accordion">
-        {this._buildSections(this.props)}
-      </ul>
-    );
   }
 });
 
