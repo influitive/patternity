@@ -4,6 +4,7 @@ var classNames = require('classnames');
 var ToggleSwitch = React.createClass({
   getDefaultProps: function() {
     return {
+      id: "",
       enabled: true,
       isOn : false,
       onChange: function(){},
@@ -12,6 +13,7 @@ var ToggleSwitch = React.createClass({
     };
   },
   propTypes : {
+    id: React.PropTypes.string,
     enabled: React.PropTypes.bool,
     isOn: React.PropTypes.bool,
     onChange : React.PropTypes.func,
@@ -20,7 +22,7 @@ var ToggleSwitch = React.createClass({
   },
   render : function(){
     return (
-      <span className={this._switchCSSClasses()} onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
+      <span id={this.props.id} className={this._switchCSSClasses()} onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
         <span className="toggle-text">{this._toggleText()}</span>
         <span className="switch">
           <span className="switch-line"></span>
