@@ -6,14 +6,16 @@ var Alert = React.createClass({
       type: "",
       showIcon: false,
       closeable : false,
-      showAlert : true
+      showAlert : true,
+      closeAlertCallback : function(){}
     };
   },
   propTypes : {
     title: React.PropTypes.string,
     type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
     body: React.PropTypes.node,
-    showAlert : React.PropTypes.bool
+    showAlert : React.PropTypes.bool,
+    closeAlertCallback: React.PropTypes.func
   },
   getInitialState: function() {
     return {showAlert: this.props.showAlert};
@@ -47,6 +49,7 @@ var Alert = React.createClass({
   },
   _close: function(){
     this.setState({showAlert: false});
+    this.props.closeAlertCallback();
   },
   _icon: function(){
     if(this.props.showIcon) {
