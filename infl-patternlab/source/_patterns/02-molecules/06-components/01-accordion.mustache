@@ -25,7 +25,7 @@
         "isEnabled" : true
       }];
 
-      var props = {sections:sections, key:"accordion-pattern-1"};
+      var props = {sections:sections, key:"accordion-pattern-1", openSectionIndex:0};
 
       inflComp.React.render(
         inflComp.React.createElement(inflComp.Accordion, props),
@@ -70,7 +70,8 @@
             "key" : "section-two-key",
             "isEnabled" : boolean
         }],
-        uniqueIdentifier : "unique-identfier-for-this-accordion"
+        uniqueIdentifier : "unique-identfier-for-this-accordion",
+        openSectionIndex : integer            //will open the section indicated if enabled starts at 0
       }
     </code>
   </pre>

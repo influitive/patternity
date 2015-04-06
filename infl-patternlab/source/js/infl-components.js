@@ -54,28 +54,44 @@ var classNames = require('classnames');
 var Accordion = React.createClass({displayName: "Accordion",
   getDefaultProps: function() {
     return {
-      sections: []
+      sections: [],
+      openSectionIndex : -1
     };
   },
   propTypes : {
-    sections: React.PropTypes.array
+    sections: React.PropTypes.array,
+    openSectionIndex : React.PropTypes.number
   },
   getInitialState: function(){
-    return { openSectionIndex: -1 }
+    return { openSectionIndex: this.props.openSectionIndex }
+  },
+  componentWillReceiveProps : function(nextProps){
+    this.setState({
+      openSectionIndex : nextProps.openSectionIndex
+    });
+  },
+  render: function () {
+    this._resetAccordionState();
+    return (
+      React.createElement("ul", {className: "accordion"}, 
+        this._buildSections(this.props)
+      )
+    );
   },
   _buildSections: function(props){
     return props.sections.map(this._buildSection);
   },
   _buildSection: function (section, index) {
+    console.log(this.props.openSectionIndex);
     return (
       React.createElement(AccordionSection, {key: "accordion-section-" + index}, 
-        React.createElement(AccordionHeader, React.__spread({},  section, {index: index, open: this._isSectionOpen(index), toggleOne: this._toggleOne})), 
+        React.createElement(AccordionHeader, React.__spread({},  section, {index: index, open: this._isSectionOpen(index, section.isEnabled), toggleOne: this._toggleOne})), 
         React.createElement(AccordionBody, {body: section.body})
       )
     );
   },
-  _isSectionOpen: function(index){
-    return index === this.state.openSectionIndex;
+  _isSectionOpen: function(index, isEnabled){
+    return (index === this.state.openSectionIndex) && isEnabled;
   },
   _toggleOne: function(id){
     if(this.state.openSectionIndex === id){
@@ -87,17 +103,9 @@ var Accordion = React.createClass({displayName: "Accordion",
   _uniqueIdentifier : null,
   _resetAccordionState: function(){
     if(this._uniqueIdentifier !== this.props.uniqueIdentifier){
-      this.state.openSectionIndex = -1;
+      this.state.openSectionIndex = this.props.openSectionIndex;
     }
     this._uniqueIdentifier = this.props.uniqueIdentifier;
-  },
-  render: function () {
-    this._resetAccordionState();
-    return (
-      React.createElement("ul", {className: "accordion"}, 
-        this._buildSections(this.props)
-      )
-    );
   }
 });
 
@@ -162,7 +170,7 @@ var Alert = React.createClass({displayName: "Alert",
       showIcon: false,
       closeable : false,
       showAlert : true,
-      closeAlertCallback : function(){}
+      onClose : function(){}
     };
   },
   propTypes : {
@@ -170,7 +178,7 @@ var Alert = React.createClass({displayName: "Alert",
     type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
     body: React.PropTypes.node,
     showAlert : React.PropTypes.bool,
-    closeAlertCallback: React.PropTypes.func
+    onClose: React.PropTypes.func
   },
   getInitialState: function() {
     return {showAlert: this.props.showAlert};
@@ -204,7 +212,7 @@ var Alert = React.createClass({displayName: "Alert",
   },
   _close: function(){
     this.setState({showAlert: false});
-    this.props.closeAlertCallback();
+    this.props.onClose();
   },
   _icon: function(){
     if(this.props.showIcon) {
