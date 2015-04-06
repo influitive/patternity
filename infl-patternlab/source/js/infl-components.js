@@ -82,7 +82,6 @@ var Accordion = React.createClass({displayName: "Accordion",
     return props.sections.map(this._buildSection);
   },
   _buildSection: function (section, index) {
-    console.log(this.props.openSectionIndex);
     return (
       React.createElement(AccordionSection, {key: "accordion-section-" + index}, 
         React.createElement(AccordionHeader, React.__spread({},  section, {index: index, open: this._isSectionOpen(index, section.isEnabled), toggleOne: this._toggleOne})), 
@@ -677,11 +676,13 @@ var TextInput = React.createClass({displayName: "TextInput",
     name: React.PropTypes.string,
     id : React.PropTypes.string,
     pattern : React.PropTypes.string,
-    message : React.PropTypes.string,
+    message : React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.array
+    ]),
     value : React.PropTypes.string,
     required : React.PropTypes.bool,
     error : React.PropTypes.bool,
-    errorMessage : React.PropTypes.string,
     valid : React.PropTypes.bool,
     readOnly : React.PropTypes.bool,
     disabled : React.PropTypes.bool,
@@ -697,7 +698,7 @@ var TextInput = React.createClass({displayName: "TextInput",
         React.createElement("input", {readOnly: this.props.readOnly, type: this.props.type, value: this.state.value, 
                placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, 
                pattern: this.props.pattern, disabled: this.props.disabled, onChange: this._handleChange}), 
-        React.createElement("span", {className: "input-message"}, this.props.message)
+        this._buildMessage()
       )
     );
   },
@@ -721,6 +722,15 @@ var TextInput = React.createClass({displayName: "TextInput",
   _handleChange: function(event){
     this.setState({value : event.target.value});
     this.props.onChange(event);
+  },
+  _buildMessage: function(){
+    if(typeof this.props.message === "string"){
+      return (React.createElement("span", {className: "input-message"}, this.props.message));
+    } else {
+      return this.props.message.map(function(message){
+        return (React.createElement("span", {className: "input-message"}, message));
+      });
+    }
   }
 });
 

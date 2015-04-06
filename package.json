@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "browserify": "^8.1.3",
-    "chai": "^2.0.0",
+    "chai": "^1.9.2",
     "gulp": "^3.8.10",
     "gulp-notify": "^2.2.0",
     "jasmine-core": "^2.2.0",
@@ -44,7 +44,9 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^2.1.0",
     "reactify": "^1.0.0",
-    "strictify": "^0.2.0"
+    "strictify": "^0.2.0",
+    "sinon": "~1.12.1",
+    "sinon-chai": "~2.6.0"
   },
   "dependencies": {
     "classnames": "^1.1.4",

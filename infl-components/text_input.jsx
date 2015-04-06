@@ -25,11 +25,13 @@ var TextInput = React.createClass({
     name: React.PropTypes.string,
     id : React.PropTypes.string,
     pattern : React.PropTypes.string,
-    message : React.PropTypes.string,
+    message : React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.array
+    ]),
     value : React.PropTypes.string,
     required : React.PropTypes.bool,
     error : React.PropTypes.bool,
-    errorMessage : React.PropTypes.string,
     valid : React.PropTypes.bool,
     readOnly : React.PropTypes.bool,
     disabled : React.PropTypes.bool,
@@ -45,7 +47,7 @@ var TextInput = React.createClass({
         <input readOnly={this.props.readOnly} type={this.props.type} value={this.state.value}
                placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
                pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange}/>
-        <span className="input-message">{this.props.message}</span>
+        {this._buildMessage()}
       </span>
     );
   },
@@ -69,6 +71,15 @@ var TextInput = React.createClass({
   _handleChange: function(event){
     this.setState({value : event.target.value});
     this.props.onChange(event);
+  },
+  _buildMessage: function(){
+    if(typeof this.props.message === "string"){
+      return (<span className="input-message">{this.props.message}</span>);
+    } else {
+      return this.props.message.map(function(message){
+        return (<span className="input-message">{message}</span>);
+      });
+    }
   }
 });
 
