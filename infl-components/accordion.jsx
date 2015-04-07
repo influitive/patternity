@@ -13,12 +13,18 @@ var Accordion = React.createClass({
     openSectionIndex : React.PropTypes.number
   },
   getInitialState: function(){
-    return { openSectionIndex: this.props.openSectionIndex }
+    if(this._isOpenSectionIndexValid(this.props.openSectionIndex)){
+      return { openSectionIndex: this.props.openSectionIndex }
+    } else {
+      return { openSectionIndex: -1 }
+    }
   },
   componentWillReceiveProps : function(nextProps){
-    this.setState({
-      openSectionIndex : nextProps.openSectionIndex
-    });
+    if(this._isOpenSectionIndexValid(nextProps.openSectionIndex)){
+      this.setState({
+        openSectionIndex : nextProps.openSectionIndex
+      });
+    }
   },
   render: function () {
     this._resetAccordionState();
@@ -27,6 +33,9 @@ var Accordion = React.createClass({
         {this._buildSections(this.props)}
       </ul>
     );
+  },
+  _isOpenSectionIndexValid : function(openSectionIndex){
+    return (openSectionIndex === parseInt(openSectionIndex, 10));
   },
   _buildSections: function(props){
     return props.sections.map(this._buildSection);
