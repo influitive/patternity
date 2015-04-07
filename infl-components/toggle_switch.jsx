@@ -9,7 +9,8 @@ var ToggleSwitch = React.createClass({
       isOn : false,
       onChange: function(){},
       inputName : "",
-      ref : "checkbox"
+      ref : "checkbox",
+      id : ""
     };
   },
   propTypes : {
@@ -18,7 +19,8 @@ var ToggleSwitch = React.createClass({
     isOn: React.PropTypes.bool,
     onChange : React.PropTypes.func,
     inputName : React.PropTypes.string,
-    ref : React.PropTypes.string
+    ref : React.PropTypes.string,
+    id : React.PropTypes.string
   },
   render : function(){
     return (
@@ -29,7 +31,7 @@ var ToggleSwitch = React.createClass({
           <span className="switch-line"></span>
           <span className="switch-line"></span>
         </span>
-        <input type="checkbox" ref={this.props.ref} className="toggle-checkbox" checked={this._isChecked()} name={this.props.inputName} onChange={this._handleChange} />
+        <input type="checkbox" ref={this.props.ref} className="toggle-checkbox" checked={this._isChecked()} name={this.props.inputName} onChange={this._handleChange} id={this.props.id} />
       </span>
     );
   },

@@ -12,7 +12,7 @@ xdescribe('Storage', function() {
   var sandbox = sinon.sandbox.create();
 
   beforeEach(function(){
-    subject = new storage();
+    subject = storage;
     key = "test-key";
   });
 
@@ -28,7 +28,7 @@ xdescribe('Storage', function() {
     it('will save a key value pair', function () {
       value = "test string";
       subject.setItem(key, value);
-      expect(localStorage.setItem).to.have.been.calledWith(key, value);
+      expect(localStorage.setItem).to.have.been.calledWith(key, JSON.stringify(value));
     });
 
     it('stringify the value before storing it', function () {
