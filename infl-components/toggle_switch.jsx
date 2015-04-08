@@ -2,6 +2,11 @@ var React = require('react');
 var classNames = require('classnames');
 
 var ToggleSwitch = React.createClass({
+  getInitialState: function () {
+    return {
+      isOn: this.props.isOn
+    };
+  },
   getDefaultProps: function() {
     return {
       id: "",
@@ -33,17 +38,22 @@ var ToggleSwitch = React.createClass({
       </span>
     );
   },
+  willReceiveProps: function (newProps) {
+    this.setState({
+      isOn: newProps.isOn
+    });
+  },
   _toggleText : function(){
-    return this.props.isOn ? "On" : "Off";
+    return this.state.isOn ? "On" : "Off";
   },
   _isChecked : function(){
-    return this.props.isOn;
+    return this.state.isOn;
   },
   _switchCSSClasses : function(){
     return classNames({
       'toggle-switch': true,
-      'on': this.props.isOn,
-      'off': !this.props.isOn,
+      'on': this.state.isOn,
+      'off': !this.state.isOn,
       'disabled': !this.props.enabled
     });
   },
@@ -53,6 +63,7 @@ var ToggleSwitch = React.createClass({
     }
   },
   _handleChange : function(event){
+    this.setState({isOn: !this.state.isOn})
     this.props.onChange(event);
   }
 });
