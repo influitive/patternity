@@ -1543,7 +1543,7 @@ textarea {
 }
 .loading-spinner.is-modal {
   display: block !important;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0px;
