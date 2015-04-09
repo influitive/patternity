@@ -15,6 +15,7 @@ inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
 inflComp.SelectDropdown = require("../../infl-components/select_dropdown.jsx");
 inflComp.TextInput = require("../../infl-components/text_input.jsx");
 inflComp.InputLabel = require("../../infl-components/input_label.jsx");
+inflComp.Icon = require("../../infl-components/icon.jsx");
 
 inflComp.inputLabel = function(props, elementId){
   inflComp.React.render(
@@ -47,7 +48,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -63,12 +64,18 @@ var Accordion = React.createClass({displayName: "Accordion",
     openSectionIndex : React.PropTypes.number
   },
   getInitialState: function(){
-    return { openSectionIndex: this.props.openSectionIndex }
+    if(this._isOpenSectionIndexValid(this.props.openSectionIndex)){
+      return { openSectionIndex: this.props.openSectionIndex }
+    } else {
+      return { openSectionIndex: -1 }
+    }
   },
   componentWillReceiveProps : function(nextProps){
-    this.setState({
-      openSectionIndex : nextProps.openSectionIndex
-    });
+    if(this._isOpenSectionIndexValid(nextProps.openSectionIndex)){
+      this.setState({
+        openSectionIndex : nextProps.openSectionIndex
+      });
+    }
   },
   render: function () {
     this._resetAccordionState();
@@ -77,6 +84,9 @@ var Accordion = React.createClass({displayName: "Accordion",
         this._buildSections(this.props)
       )
     );
+  },
+  _isOpenSectionIndexValid : function(openSectionIndex){
+    return (openSectionIndex === parseInt(openSectionIndex, 10));
   },
   _buildSections: function(props){
     return props.sections.map(this._buildSection);
@@ -422,7 +432,35 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
 module.exports = HelpTooltip;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx":[function(require,module,exports){
+var React = require('react');
+var classNames = require('classnames');
+
+var Icon = React.createClass({displayName: "Icon",
+  propTypes: {
+    icon: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return (
+      React.createElement("span", {ref: "icon", className: this.getClassNames()})
+    );
+  },
+
+  getClassNames: function() {
+    var influitiveIconName = 'ic-' + this.props.icon;
+    var classes = classNames('ic', influitiveIconName);
+    if (this.props.className) {
+      classes += ' ' + this.props.className;
+    }
+
+    return classes;
+  }
+});
+
+module.exports = Icon;
+
+
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -742,27 +780,32 @@ var React = require('react');
 var classNames = require('classnames');
 
 var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
+  getInitialState: function () {
+    return {
+      isOn: this.props.isOn
+    };
+  },
   getDefaultProps: function() {
     return {
+      id: "",
       enabled: true,
       isOn : false,
       onChange: function(){},
       inputName : "",
-      ref : "checkbox",
-      id : ""
+      ref : "checkbox"
     };
   },
   propTypes : {
+    id: React.PropTypes.string,
     enabled: React.PropTypes.bool,
     isOn: React.PropTypes.bool,
     onChange : React.PropTypes.func,
     inputName : React.PropTypes.string,
-    ref : React.PropTypes.string,
-    id : React.PropTypes.string
+    ref : React.PropTypes.string
   },
   render : function(){
     return (
-      React.createElement("span", {className: this._switchCSSClasses(), onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
+      React.createElement("span", {id: this.props.id, className: this._switchCSSClasses(), onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
         React.createElement("span", {className: "toggle-text"}, this._toggleText()), 
         React.createElement("span", {className: "switch"}, 
           React.createElement("span", {className: "switch-line"}), 
@@ -773,17 +816,22 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
       )
     );
   },
+  willReceiveProps: function (newProps) {
+    this.setState({
+      isOn: newProps.isOn
+    });
+  },
   _toggleText : function(){
-    return this.props.isOn ? "On" : "Off";
+    return this.state.isOn ? "On" : "Off";
   },
   _isChecked : function(){
-    return this.props.isOn;
+    return this.state.isOn;
   },
   _switchCSSClasses : function(){
     return classNames({
       'toggle-switch': true,
-      'on': this.props.isOn,
-      'off': !this.props.isOn,
+      'on': this.state.isOn,
+      'off': !this.state.isOn,
       'disabled': !this.props.enabled
     });
   },
@@ -793,6 +841,7 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
     }
   },
   _handleChange : function(event){
+    this.setState({isOn: !this.state.isOn})
     this.props.onChange(event);
   }
 });
