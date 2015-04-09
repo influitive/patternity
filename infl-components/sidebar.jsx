@@ -12,4 +12,26 @@ var Sidebar = React.createClass({
   }
 });
 
+Sidebar.heading = React.createClass({
+  propTypes : {
+    title: React.PropTypes.string
+  },
+  render: function(){
+    var Component = this.props.headingComponent;
+    return (
+      <div className="panel-block" ref="heading">
+        <h3>
+          <Component {...this.props.headingComponentParams}>
+            {this.props.title}
+          </Component>
+        </h3>
+        {this._buildMessage()}
+      </div>
+    );
+  },
+  _buildMessage: function(){
+    return this.props.message ? (<p>{ this.props.message }</p>) : "";
+  }
+});
+
 module.exports = Sidebar;
