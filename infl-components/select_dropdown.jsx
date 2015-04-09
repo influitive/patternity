@@ -30,11 +30,6 @@ var SelectDropdown = React.createClass({
       value : newProps.value
     }, this._updateTitleAfterDOMUpdate);
   },
-  _updateTitleAfterDOMUpdate : function(){
-    this.setState({
-      title : this._determineSelectTitle()
-    });
-  },
   render : function(){
     return (
       <span className="select-box" ref="select-wrapper">
@@ -44,6 +39,11 @@ var SelectDropdown = React.createClass({
         </select>
       </span>
     );
+  },
+  _updateTitleAfterDOMUpdate : function(){
+    this.setState({
+      title : this._determineSelectTitle()
+    });
   },
   _determineSelectTitle : function(){
     return this._selectedOption().text;
