@@ -1478,6 +1478,7 @@ textarea {
   position: absolute;
   top: 6px;
   font-size: 15px;
+  font-weight: normal;
 }
 .toggle-switch .switch {
   display: block;
@@ -1675,6 +1676,22 @@ body {
 }
 #lab-features .lab-content h2 {
   margin-top: 0px;
+}
+
+#icons-container .size-100 {
+  font-size: 100px;
+}
+#icons-container .size-80 {
+  font-size: 80px;
+}
+#icons-container .size-60 {
+  font-size: 60px;
+}
+#icons-container .size-40 {
+  font-size: 40px;
+}
+#icons-container .size-20 {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
