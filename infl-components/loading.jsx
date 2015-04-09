@@ -18,7 +18,7 @@ var Loading = React.createClass({
   },
   render: function () {
     return (
-      <span className={"loading-spinner " + this.props.size + " " + this.props.type + " " + this._isModal()}></span>
+      <span className={"loading-spinner " + this.props.size + " " + this.props.type + " " + this._isModal() + " " + this._isInline()}></span>
     );
   },
   _isModal: function(){

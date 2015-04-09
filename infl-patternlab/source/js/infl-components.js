@@ -569,7 +569,7 @@ var Loading = React.createClass({displayName: "Loading",
   },
   render: function () {
     return (
-      React.createElement("span", {className: "loading-spinner " + this.props.size + " " + this.props.type + " " + this._isModal()})
+      React.createElement("span", {className: "loading-spinner " + this.props.size + " " + this.props.type + " " + this._isModal() + " " + this._isInline()})
     );
   },
   _isModal: function(){
