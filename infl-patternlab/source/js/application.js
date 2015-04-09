@@ -14,6 +14,7 @@ inflComp.SelectDropdown = require("../../infl-components/select_dropdown.jsx");
 inflComp.TextInput = require("../../infl-components/text_input.jsx");
 inflComp.InputLabel = require("../../infl-components/input_label.jsx");
 inflComp.Icon = require("../../infl-components/icon.jsx");
+inflComp.Loading = require("../../infl-components/loading.jsx");
 
 inflComp.inputLabel = function(props, elementId){
   inflComp.React.render(

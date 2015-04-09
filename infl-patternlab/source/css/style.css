@@ -951,7 +951,9 @@ button {
   transition: background-color 0.15s ease-in-out;
 }
 .button .ic,
-button .ic {
+.button .loading-spinner,
+button .ic,
+button .loading-spinner {
   vertical-align: middle;
   margin-right: 5px;
   margin-top: -1px;
@@ -1510,6 +1512,59 @@ textarea {
 }
 .toggle-switch .toggle-checkbox {
   visibility: hidden;
+}
+
+.loading-spinner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+}
+.loading-spinner.is-block {
+  display: block;
+}
+.loading-spinner.small {
+  height: 1em;
+  width: 1em;
+}
+.loading-spinner.medium {
+  height: 2em;
+  width: 2em;
+}
+.loading-spinner.large {
+  height: 4em;
+  width: 4em;
+}
+.loading-spinner.dark {
+  background-image: url("https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Grey_128.gif");
+}
+.loading-spinner.light {
+  background-image: url("https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Light_128.gif");
+}
+.loading-spinner.is-modal {
+  display: block !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.loading-spinner.is-modal.small {
+  background-size: 1em;
+}
+.loading-spinner.is-modal.medium {
+  background-size: 2em;
+}
+.loading-spinner.is-modal.large {
+  background-size: 4em;
+}
+.loading-spinner.is-modal.dark {
+  background-image: url("https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Grey_128.gif");
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.loading-spinner.is-modal.light {
+  background-image: url("https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Light_128.gif");
+  background-color: rgba(68, 68, 68, 0.9);
 }
 
 body {

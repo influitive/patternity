@@ -1,0 +1,51 @@
+<section class="pattern-section">
+  <header>
+    <h3>loading</h3>
+  </header>
+
+  <p>The loading component is basically a loading icon with a bunch of options.  It allows for block, inline, modal along with 2 colours, white and grey.</p>
+
+  <div id="loading-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {};
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Loading, props),
+        document.getElementById("loading-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Loading /&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Loading, props),
+        {DOM element to append loading to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        size : string       //one of small, medium, large
+        type: string,       //one of dark or light
+        isModal : boolean,  //determines if loading should be a modal dialog defaults to false
+        inline : boolean    //determins if loading should display inline or block defaults to true
+      }
+    </code>
+  </pre>
+</section>
