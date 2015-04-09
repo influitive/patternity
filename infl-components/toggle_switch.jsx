@@ -36,7 +36,7 @@ var ToggleSwitch = React.createClass({
       </span>
     );
   },
-  willReceiveProps: function (newProps) {
+  componentWillReceiveProps: function (newProps) {
     this.setState({
       isOn: newProps.isOn
     });
