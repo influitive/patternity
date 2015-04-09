@@ -558,7 +558,7 @@ var Loading = React.createClass({displayName: "Loading",
       size : "medium",
       type: "dark",
       isModal : false,
-      inline : true,
+      inline : true
     };
   },
   propTypes : {
@@ -581,8 +581,6 @@ var Loading = React.createClass({displayName: "Loading",
 });
 
 module.exports = Loading;
-
-//<img className="loading-icon" src="https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Grey_64.gif" />
 
 
 },{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx":[function(require,module,exports){
