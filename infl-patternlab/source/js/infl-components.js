@@ -5,7 +5,6 @@ inflComp.React = require('react');
 inflComp.PanelLeftSidebar = require("../../infl-components/pages/panel_left_sidebar.jsx");
 inflComp.Conent = require("../../infl-components/content.jsx");
 inflComp.Sidebar = require("../../infl-components/sidebar.jsx");
-inflComp.SidebarHeading = require("../../infl-components/sidebar_heading.jsx");
 inflComp.ListPicker = require("../../infl-components/list_picker.jsx");
 inflComp.Accordion = require("../../infl-components/accordion.jsx");
 inflComp.Alert = require("../../infl-components/alert.jsx");
@@ -48,7 +47,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/sidebar_heading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -597,11 +596,6 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
       value : newProps.value
     }, this._updateTitleAfterDOMUpdate);
   },
-  _updateTitleAfterDOMUpdate : function(){
-    this.setState({
-      title : this._determineSelectTitle()
-    });
-  },
   render : function(){
     return (
       React.createElement("span", {className: "select-box", ref: "select-wrapper"}, 
@@ -611,6 +605,11 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
         )
       )
     );
+  },
+  _updateTitleAfterDOMUpdate : function(){
+    this.setState({
+      title : this._determineSelectTitle()
+    });
   },
   _determineSelectTitle : function(){
     return this._selectedOption().text;
@@ -649,22 +648,9 @@ var Sidebar = React.createClass({displayName: "Sidebar",
   }
 });
 
-module.exports = Sidebar;
-
-
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar_heading.jsx":[function(require,module,exports){
-var React = require('react');
-
-var SidebarHeading = React.createClass({displayName: "SidebarHeading",
+Sidebar.heading = React.createClass({displayName: "heading",
   propTypes : {
     title: React.PropTypes.string
-  },
-  _buildMessage: function(){
-    if (this.props.message) {
-      return (React.createElement("p", null,  this.props.message));
-    } else {
-      return "";
-    }
   },
   render: function(){
     var Component = this.props.headingComponent;
@@ -678,10 +664,13 @@ var SidebarHeading = React.createClass({displayName: "SidebarHeading",
         this._buildMessage()
       )
     );
+  },
+  _buildMessage: function(){
+    return this.props.message ? (React.createElement("p", null,  this.props.message)) : "";
   }
 });
 
-module.exports = SidebarHeading;
+module.exports = Sidebar;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){

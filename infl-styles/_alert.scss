@@ -1,9 +1,9 @@
 .alert-msg {
   padding: 10px 20px;
   border-radius: $theme-border-radius-2;
-  background-color: lighten($theme-color-primary, 55%);
+  background-color: lighten($info-color, 55%);
   position: relative;
-  color: $theme-color-primary;
+  color: $info-color;
 
   &.hide {
     display: none;
@@ -32,7 +32,7 @@
     font-weight: bold;
 
     &:hover {
-      color: darken($theme-color-primary, 10%);
+      color: darken($info-color, 10%);
       @include transition(color 0.5s ease-out)
     }
   }
