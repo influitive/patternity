@@ -7,7 +7,7 @@ var Loading = React.createClass({
       size : "medium",
       type: "dark",
       isModal : false,
-      inline : true
+      isBlock : false
     };
   },
   propTypes : {
@@ -25,7 +25,7 @@ var Loading = React.createClass({
     return this.props.isModal ? "is-modal" : "";
   },
   _isInline : function(){
-    return this.props.inline ? "" : "is-block";
+    return this.props.isBlock ? "is-block" : "";
   }
 });
 
