@@ -15,7 +15,8 @@ button {
   box-shadow: 0px 2px darken($lighter-grey, 10%);
   display: inline-block;
 
-  .ic {
+  .ic,
+  .loading-spinner {
     vertical-align: middle;
     margin-right: 5px;
     margin-top: -1px;

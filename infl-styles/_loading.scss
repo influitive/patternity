@@ -1,0 +1,64 @@
+.loading-spinner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+
+  &.is-block {
+    display: block;
+  }
+
+  &.small {
+    height: 1em;
+    width: 1em;
+  }
+
+  &.medium {
+    height: 2em;
+    width: 2em;
+  }
+
+  &.large {
+    height: 4em;
+    width: 4em;
+  }
+
+  &.dark {
+    background-image: url('https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Grey_128.gif');
+  }
+
+  &.light {
+    background-image: url('https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Light_128.gif');
+  }
+
+  &.is-modal {
+    display: block !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+
+    &.small {
+      background-size: 1em;
+    }
+
+    &.medium {
+      background-size: 2em;
+    }
+
+    &.large {
+      background-size: 4em;
+    }
+
+    &.dark {
+      background-image: url('https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Grey_128.gif');
+      background-color: rgba(255, 255, 255, 0.9); // white with opacity change
+    }
+
+    &.light {
+      background-image: url('https://s3.amazonaws.com/influitive-static/Influitive_Loading_Spinner_Light_128.gif');
+      background-color: rgba(68, 68, 68, 0.9); // $darker-grey with opacity change
+    }
+  }
+}
