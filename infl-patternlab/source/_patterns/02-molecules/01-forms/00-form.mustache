@@ -1,0 +1,153 @@
+<script type="text/javascript">
+  function buildTextInput(){
+    return inflComp.React.createElement(inflComp.TextInput,{
+      name : "text-input",
+      placeholder : "Text Input"
+    });
+  }
+
+  function buildFormLabel(){
+    return inflComp.React.createElement(inflComp.InputLabel,{
+      label : "Input Label",
+      children : buildTextInput()
+    });
+  }
+
+  function buildFormRow(){
+    return inflComp.React.createElement(inflComp.Form.Row,{
+      children : buildFormLabel()
+    });
+  }
+
+  function buildFormColumn(){
+    return inflComp.React.createElement(inflComp.Form.Column,{
+      children : [buildFormRow(), buildFormRow(), buildFormRow()]
+    });
+  }
+
+  function buildFormActions(){
+    return inflComp.React.createElement(inflComp.Form.Actions,{
+      children : [
+        inflComp.React.createElement(inflComp.ButtonGroup, {
+          children : [
+            inflComp.React.createElement("button", {
+              className : "text",
+              children: ["Cancel"]
+            }),
+            inflComp.React.createElement("button", {
+              className : "success",
+              children: ["Save"]
+            })
+          ]
+        })
+      ]
+    });
+  }
+</script>
+
+<section class="pattern-section">
+  <header>
+    <h3>form</h3>
+  </header>
+
+  <p>The form component is used for wrapping form sub components and aids in the styling and layout for forms.</p>
+
+  <h4>Form - Rows</h4>
+
+  <div id="form-rows-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        children : [buildFormRow(), buildFormRow(), buildFormRow(), buildFormRow()]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Form, props),
+        document.getElementById("form-rows-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Form - Columns - 2 Columns</h4>
+
+  <div id="form-column-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        children : [buildFormColumn(), buildFormColumn()]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Form, props),
+        document.getElementById("form-column-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Form - Columns - 3 Columns</h4>
+
+  <div id="form-column-3-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        children : [buildFormColumn(), buildFormColumn(), buildFormColumn(), buildFormActions()]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Form, props),
+        document.getElementById("form-column-3-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Form - Actions</h4>
+
+  <div id="form-actions-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        children : [buildFormActions()]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Form, props),
+        document.getElementById("form-actions-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;ButtonGroup&gt;
+        &lt;button&gt;First Button&lt;/buttonGroup&gt;
+        &lt;button&gt;Second Button&lt;/buttonGroup&gt;
+        &lt;a href class="button" &gt;First Link&lt;/a&gt;
+      &lt;/ButtonGroup&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(ButtonGroup, props),
+        {DOM element to append button group to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        isVertical : boolean, // determines if the button group is vertical.  Defaults to false
+        grouped : boolean,    // determines if the button group shoul be grouped, not space between the buttons.  Defaults to false
+        children : [...]      // array of buttons or links with .button class
+      }
+    </code>
+  </pre>
+</section>

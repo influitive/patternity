@@ -17,6 +17,7 @@ inflComp.InputLabel = require("../../infl-components/input_label.jsx");
 inflComp.Icon = require("../../infl-components/icon.jsx");
 inflComp.Loading = require("../../infl-components/loading.jsx");
 inflComp.ButtonGroup = require("../../infl-components/button_group.jsx");
+inflComp.Form = require("../../infl-components/form.jsx");
 
 inflComp.inputLabel = function(props, elementId){
   inflComp.React.render(
@@ -49,7 +50,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -411,6 +412,149 @@ var Content = React.createClass({displayName: "Content",
 });
 
 module.exports = Content;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx":[function(require,module,exports){
+var React = require('react');
+
+var Form = React.createClass({displayName: "Form",
+  getDefaultProps : function(){
+    return {
+       acceptCharset : "",
+       action : "",
+       autocomplete : "",
+       enctype : "",
+       method : "",
+       name : "",
+       novalidate : "",
+       target : ""
+    };
+  },
+  propTypes : {
+    acceptCharset : React.PropTypes.string,
+    action : React.PropTypes.string,
+    autocomplete : React.PropTypes.oneOf([
+      'on',
+      'off',
+      '']
+    ),
+    enctype : React.PropTypes.oneOf([
+      'application/x-www-form-urlencoded',
+      'multipart/form-data',
+      'text/plain',
+      ''
+    ]),
+    method : React.PropTypes.oneOf([
+      'get',
+      'post',
+      ''
+    ]),
+    name : React.PropTypes.string,
+    novalidate : React.PropTypes.bool,
+    target : React.PropTypes.oneOf([
+      '_blank',
+      '_self',
+      '_parent',
+      '_top',
+      ''
+    ])
+  },
+  getInitialState : function(){
+    return {
+      numberOfColumns: ""
+    };
+  },
+  componentDidMount : function(){
+    this._determineNumberOfColumns();
+  },
+  render: function () {
+    return (
+      React.createElement("form", {className: "pt-form " + this.state.numberOfColumns, ref: "form", 
+        noValidate: this.props.novalidate, 
+        acceptCharset: this.props.acceptCharset, 
+        action: this.props.action, 
+        autoComplete: this.props.autocomplete, 
+        encType: this.props.enctype, 
+        method: this.props.method, 
+        name: this.props.name, 
+        target: this.props.target}, 
+          this.props.children
+      )
+    );
+  },
+  _determineNumberOfColumns : function(){
+    var numberOfColumns = 0;
+    for(var i = 0; i < this.refs.form.getDOMNode().children.length; i++) {
+      if(this._isFormColumn(this.refs.form.getDOMNode().children[i])){
+        numberOfColumns++;
+      }
+    }
+    this.setState({
+      numberOfColumns: this._convertNumberToWords(numberOfColumns)
+    });
+  },
+  _isFormColumn : function(child){
+    return child.className === 'pt-form-column';
+  },
+  _convertNumberToWords : function(numberOfColumns){
+    if(numberOfColumns === 2) {
+      return "two-column";
+    } else if(numberOfColumns === 3) {
+      return "three-column";
+    } else {
+      return "";
+    }
+  }
+});
+
+Form.Column = React.createClass({displayName: "Column",
+  shouldComponentUpdate : function(){
+    return false;
+  },
+  render: function () {
+    return (
+      React.createElement("div", {className: "pt-form-column"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+Form.Row = React.createClass({displayName: "Row",
+  shouldComponentUpdate : function(){
+    return false;
+  },
+  render: function () {
+    return (
+      React.createElement("div", {className: "pt-form-row"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+Form.Actions = React.createClass({displayName: "Actions",
+  getDefaultProps : function(){
+    return {
+      align: "left"
+    }
+  },
+  propTypes : {
+    align: React.PropTypes.oneOf(['left', 'center', 'right']),
+  },
+  shouldComponentUpdate : function(){
+    return false;
+  },
+  render: function () {
+    return (
+      React.createElement("div", {className: "pt-form-actions " + this.props.align}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+module.exports = Form;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx":[function(require,module,exports){
