@@ -185,7 +185,7 @@ var Alert = React.createClass({displayName: "Alert",
   propTypes : {
     title: React.PropTypes.string,
     type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
-    body: React.PropTypes.node,
+    closeable : React.PropTypes.bool,
     showAlert : React.PropTypes.bool,
     onClose: React.PropTypes.func
   },
@@ -243,6 +243,30 @@ var Alert = React.createClass({displayName: "Alert",
     } else {
       return "ic-question-circle-o";
     }
+  }
+});
+
+Alert.Detailed = React.createClass({displayName: "Detailed",
+    getDefaultProps: function() {
+    return {
+      title: "",
+      action: "",
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    action: React.PropTypes.node
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "detailed"}, 
+        React.createElement("h4", null, this.props.title), 
+        React.createElement("span", {className: "detailed-action"}, this.props.action), 
+        React.createElement("div", {className: "detailed-body"}, 
+          this.props.children
+        )
+      )
+    );
   }
 });
 

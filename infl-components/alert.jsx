@@ -13,7 +13,7 @@ var Alert = React.createClass({
   propTypes : {
     title: React.PropTypes.string,
     type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
-    body: React.PropTypes.node,
+    closeable : React.PropTypes.bool,
     showAlert : React.PropTypes.bool,
     onClose: React.PropTypes.func
   },
@@ -71,6 +71,30 @@ var Alert = React.createClass({
     } else {
       return "ic-question-circle-o";
     }
+  }
+});
+
+Alert.Detailed = React.createClass({
+    getDefaultProps: function() {
+    return {
+      title: "",
+      action: "",
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    action: React.PropTypes.node
+  },
+  render : function(){
+    return (
+      <div className="detailed">
+        <h4>{this.props.title}</h4>
+        <span className="detailed-action">{this.props.action}</span>
+        <div className="detailed-body">
+          {this.props.children}
+        </div>
+      </div>
+    );
   }
 });
 

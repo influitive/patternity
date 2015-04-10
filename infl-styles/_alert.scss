@@ -40,6 +40,10 @@
   &.hasIcon {
     .alert-body {
       padding-left: 26px;
+
+      .detailed {
+        margin-left: -26px;
+      }
     }
   }
 
@@ -79,6 +83,30 @@
       &:hover {
         color : darken($error-color, 10%);
       }
+    }
+  }
+
+  .detailed {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    color: $darker-grey;
+    margin-bottom: 10px;
+    position: relative;
+
+    h4 {
+        margin-bottom: 1.33em;
+    }
+
+    .detailed-action {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $info-color;
     }
   }
 }
