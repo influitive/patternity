@@ -1,5 +1,4 @@
 var React = require('react');
-var classNames = require('classnames');
 
 var InputLabel = React.createClass({
   getDefaultProps: function() {

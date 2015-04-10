@@ -1243,6 +1243,135 @@ button.secondary.inverse:hover {
   display: block;
 }
 
+.button-group {
+  margin: 5px;
+  display: inline-block;
+  position: relative;
+}
+.button-group.is-vertical button,
+.button-group.is-vertical .button {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  max-width: 100%;
+}
+.button-group.is-vertical button:last-child,
+.button-group.is-vertical .button:last-child {
+  margin-bottom: 0px;
+}
+.button-group.is-vertical.grouped button,
+.button-group.is-vertical.grouped .button {
+  margin-bottom: 1px;
+  border-radius: 0px;
+}
+.button-group.is-vertical.grouped button:first-child,
+.button-group.is-vertical.grouped .button:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.button-group.is-vertical.grouped button:last-child,
+.button-group.is-vertical.grouped .button:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.button-group.is-vertical.grouped button.secondary,
+.button-group.is-vertical.grouped .button.secondary {
+  margin-bottom: 0px;
+  border-bottom-width: 0px;
+}
+.button-group.is-vertical.grouped button.secondary:last-child,
+.button-group.is-vertical.grouped .button.secondary:last-child {
+  border-bottom-width: 1px;
+}
+.button-group.is-vertical.grouped button.text,
+.button-group.is-vertical.grouped .button.text {
+  margin-bottom: 0px;
+  border-bottom: 1px solid #eeeeee;
+}
+.button-group.is-vertical.grouped button.text:last-child,
+.button-group.is-vertical.grouped .button.text:last-child {
+  border-bottom-width: 0px;
+}
+.button-group.is-horizontal button,
+.button-group.is-horizontal .button {
+  margin-right: 5px;
+}
+.button-group.is-horizontal button:last-child,
+.button-group.is-horizontal .button:last-child {
+  margin-right: 0px;
+}
+.button-group.is-horizontal.grouped button,
+.button-group.is-horizontal.grouped .button {
+  margin-right: 1px;
+  border-radius: 0px;
+  position: relative;
+}
+.button-group.is-horizontal.grouped button:after,
+.button-group.is-horizontal.grouped .button:after {
+  border-left: 1px solid #d4d4d4;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: -1px;
+  height: calc(100% + 2px);
+}
+.button-group.is-horizontal.grouped button.important:after,
+.button-group.is-horizontal.grouped .button.important:after {
+  border-color: #c29b00;
+}
+.button-group.is-horizontal.grouped button.primary:after,
+.button-group.is-horizontal.grouped .button.primary:after {
+  border-color: #067c94;
+}
+.button-group.is-horizontal.grouped button.success:after,
+.button-group.is-horizontal.grouped .button.success:after {
+  border-color: #70a131;
+}
+.button-group.is-horizontal.grouped button.danger:after,
+.button-group.is-horizontal.grouped .button.danger:after {
+  border-color: #a13131;
+}
+.button-group.is-horizontal.grouped button.secondary,
+.button-group.is-horizontal.grouped .button.secondary {
+  margin-right: 0px;
+  border-right-width: 0px;
+}
+.button-group.is-horizontal.grouped button.secondary:after,
+.button-group.is-horizontal.grouped .button.secondary:after {
+  display: none;
+}
+.button-group.is-horizontal.grouped button.secondary:last-child,
+.button-group.is-horizontal.grouped .button.secondary:last-child {
+  border-right-width: 1px;
+}
+.button-group.is-horizontal.grouped button.text,
+.button-group.is-horizontal.grouped .button.text {
+  margin-right: 0px;
+  border-right: 1px solid #eeeeee;
+}
+.button-group.is-horizontal.grouped button.text:after,
+.button-group.is-horizontal.grouped .button.text:after {
+  display: none;
+}
+.button-group.is-horizontal.grouped button.text:last-child,
+.button-group.is-horizontal.grouped .button.text:last-child {
+  border-right: 0px;
+}
+.button-group.is-horizontal.grouped button:first-child,
+.button-group.is-horizontal.grouped .button:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.button-group.is-horizontal.grouped button:last-child,
+.button-group.is-horizontal.grouped .button:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.button-group.is-horizontal.grouped button:last-child:after,
+.button-group.is-horizontal.grouped .button:last-child:after {
+  border-left: 0px;
+}
+
 @font-face {
   font-family: 'influicons';
   src: url("../fonts/influicons.ttf") format("truetype");

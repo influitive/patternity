@@ -16,6 +16,7 @@ inflComp.TextInput = require("../../infl-components/text_input.jsx");
 inflComp.InputLabel = require("../../infl-components/input_label.jsx");
 inflComp.Icon = require("../../infl-components/icon.jsx");
 inflComp.Loading = require("../../infl-components/loading.jsx");
+inflComp.ButtonGroup = require("../../infl-components/button_group.jsx");
 
 inflComp.inputLabel = function(props, elementId){
   inflComp.React.render(
@@ -48,7 +49,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -334,7 +335,42 @@ var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
 module.exports = ButtonDropdown;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx":[function(require,module,exports){
+var React = require('react');
+var classNames = require('classnames');
+
+var ButtonGroup = React.createClass({displayName: "ButtonGroup",
+  getDefaultProps : function(){
+    return {
+      isVertical : false,
+      grouped : false
+    };
+  },
+  propTypes : {
+    isVertical : React.PropTypes.bool,
+    grouped : React.PropTypes.bool
+  },
+  render: function () {
+    return (
+      React.createElement("div", {className: this._determineButtonGroupStyling(), ref: "buttonGroup"}, 
+        this.props.children
+      )
+    );
+  },
+  _determineButtonGroupStyling : function(){
+    return classNames({
+      'button-group' : true,
+      'is-vertical': this.props.isVertical,
+      'is-horizontal': !this.props.isVertical,
+      'grouped' : this.props.grouped
+    });
+  }
+});
+
+module.exports = ButtonGroup;
+
+
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Content = React.createClass({displayName: "Content",
@@ -486,7 +522,6 @@ module.exports = Icon;
 
 },{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx":[function(require,module,exports){
 var React = require('react');
-var classNames = require('classnames');
 
 var InputLabel = React.createClass({displayName: "InputLabel",
   getDefaultProps: function() {
@@ -514,7 +549,7 @@ var InputLabel = React.createClass({displayName: "InputLabel",
 module.exports = InputLabel;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx":[function(require,module,exports){
 var React   = require('react');
 
 var ListPicker = React.createClass({displayName: "ListPicker",
