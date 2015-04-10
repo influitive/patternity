@@ -61,7 +61,7 @@ var ToggleSwitch = React.createClass({
     }
   },
   _handleChange : function(event){
-    this.setState({isOn: !this.state.isOn})
+    this.setState({isOn: !this.state.isOn});
     this.props.onChange(event);
   }
 });

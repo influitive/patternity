@@ -12,10 +12,34 @@
   <div id="alert-pattern"></div>
   <script type="text/javascript">
     (function() {
+      var detailed = inflComp.React.createElement(inflComp.Alert.Detailed, {
+        title: "Single Sign-On",
+        action: inflComp.React.createElement("button", {
+          className : "secondary",
+          children : "Contact Us"
+        }),
+        children : [
+          "Provide seamless sign up experience for your advocates with our Single Sign-On functionality.  ",
+          inflComp.React.createElement("a", {
+            href : "#",
+            children : ["Learn More"]
+          }),
+          inflComp.React.createElement("ul", {
+            children : [
+              inflComp.React.createElement("li", {
+                children : ["Advocates will be able to sign up and log in with their existing credentials from your company website"]
+              })
+            ]
+          })
+        ]
+      });
       var props = {
         key: "alert-" + Math.random(),
         title : "Default Alert",
-        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", detailed],
+        showIcon: true,
+        closeable: true,
+        type: "success"
       };
 
       inflComp.React.render(
