@@ -861,7 +861,7 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
       )
     );
   },
-  willReceiveProps: function (newProps) {
+  componentWillReceiveProps: function (newProps) {
     this.setState({
       isOn: newProps.isOn
     });
@@ -886,7 +886,7 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
     }
   },
   _handleChange : function(event){
-    this.setState({isOn: !this.state.isOn})
+    this.setState({isOn: !this.state.isOn});
     this.props.onChange(event);
   }
 });
