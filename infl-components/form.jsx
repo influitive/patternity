@@ -9,7 +9,7 @@ var Form = React.createClass({
        enctype : "",
        method : "",
        name : "",
-       novalidate : "",
+       novalidate : false,
        target : ""
     };
   },
@@ -117,20 +117,12 @@ Form.Row = React.createClass({
 });
 
 Form.Actions = React.createClass({
-  getDefaultProps : function(){
-    return {
-      align: "left"
-    }
-  },
-  propTypes : {
-    align: React.PropTypes.oneOf(['left', 'center', 'right']),
-  },
   shouldComponentUpdate : function(){
     return false;
   },
   render: function () {
     return (
-      <div className={"pt-form-actions " + this.props.align}>
+      <div className="pt-form-actions">
         {this.props.children}
       </div>
     );

@@ -426,7 +426,7 @@ var Form = React.createClass({displayName: "Form",
        enctype : "",
        method : "",
        name : "",
-       novalidate : "",
+       novalidate : false,
        target : ""
     };
   },
@@ -534,20 +534,12 @@ Form.Row = React.createClass({displayName: "Row",
 });
 
 Form.Actions = React.createClass({displayName: "Actions",
-  getDefaultProps : function(){
-    return {
-      align: "left"
-    }
-  },
-  propTypes : {
-    align: React.PropTypes.oneOf(['left', 'center', 'right']),
-  },
   shouldComponentUpdate : function(){
     return false;
   },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-actions " + this.props.align}, 
+      React.createElement("div", {className: "pt-form-actions"}, 
         this.props.children
       )
     );
