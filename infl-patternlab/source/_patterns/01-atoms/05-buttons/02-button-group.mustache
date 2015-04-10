@@ -1,0 +1,146 @@
+<section class="pattern-section">
+  <header>
+    <h3>button group</h3>
+  </header>
+
+  <p>Button group is a wrapper for buttons to help with styling.  It has many options:</p>
+
+  <h4>Default / Horizontal</h4>
+
+  <div id="button-group-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      function buildButtons(name){
+        return inflComp.React.createElement("button", {
+          children : [name]
+        })
+      }
+
+      var props = {
+        children : [
+          buildButtons("First Button"),
+          buildButtons("Second Button")
+        ]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.ButtonGroup, props),
+        document.getElementById("button-group-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Grouped Default / Horizontal</h4>
+
+  <div id="button-group-grouped-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      function buildButtons(name){
+        return inflComp.React.createElement("button", {
+          children : [name]
+        })
+      }
+
+      var props = {
+        grouped : true,
+        children : [
+          buildButtons("First Button"),
+          buildButtons("Second Button"),
+          buildButtons("Third Button")
+        ]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.ButtonGroup, props),
+        document.getElementById("button-group-grouped-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Vertical</h4>
+
+  <div id="button-group-vertical-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      function buildButtons(name){
+        return inflComp.React.createElement("button", {
+          children : [name]
+        })
+      }
+
+      var props = {
+        isVertical : true,
+        children : [
+          buildButtons("First Button"),
+          buildButtons("Second Button")
+        ]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.ButtonGroup, props),
+        document.getElementById("button-group-vertical-pattern")
+      );
+    })();
+  </script>
+
+  <h4>Grouped Vertial</h4>
+
+  <div id="button-group-vertical-grouped-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      function buildButtons(name){
+        return inflComp.React.createElement("button", {
+          children : [name]
+        })
+      }
+
+      var props = {
+        grouped : true,
+        isVertical : true,
+        children : [
+          buildButtons("First Button"),
+          buildButtons("Second Button"),
+          buildButtons("Third Button")
+        ]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.ButtonGroup, props),
+        document.getElementById("button-group-vertical-grouped-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;ButtonGroup&gt;
+        &lt;Button&gt;First Button&lt;/ButtonGroup&gt;
+        &lt;Button&gt;Second Button&lt;/ButtonGroup&gt;
+      &lt;/ButtonGroup&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(ButtonGroup, props),
+        {DOM element to append button group to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+
+      }
+    </code>
+  </pre>
+</section>
+

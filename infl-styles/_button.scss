@@ -325,3 +325,152 @@ button {
     }
   }
 }
+
+.button-group {
+  margin: 5px;
+  display: inline-block;
+  position: relative;
+
+  &.is-vertical {
+    button,
+    .button {
+      display:block;
+      margin-bottom: 5px;
+      width: 100%;
+      max-width: 100%;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    &.grouped {
+      button,
+      .button {
+        margin-bottom: 1px;
+        border-radius: 0px;
+
+        &:first-child {
+          border-top-left-radius: $theme-border-radius;
+          border-top-right-radius: $theme-border-radius;
+        }
+
+        &:last-child {
+          border-bottom-left-radius: $theme-border-radius;
+          border-bottom-right-radius: $theme-border-radius;
+        }
+
+        &.secondary {
+          margin-bottom: 0px;
+          border-bottom-width: 0px;
+
+          &:last-child {
+            border-bottom-width: 1px;
+          }
+        }
+
+        &.text {
+          margin-bottom: 0px;
+          border-bottom: 1px solid $lighter-grey;
+
+          &:last-child {
+            border-bottom-width: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  &.is-horizontal {
+    button,
+    .button {
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    &.grouped {
+      button,
+      .button {
+        margin-right: 1px;
+        border-radius: 0px;
+        position: relative;
+
+        &:after {
+          border-left: 1px solid darken($lighter-grey, 10%);
+          content: "";
+          position: absolute;
+          top: 0px;
+          right: -1px;
+          height: calc(100% + 2px);
+        }
+
+        &.important {
+          &:after {
+            border-color: darken($warning-color, 12%);
+          }
+        }
+
+        &.primary {
+          &:after {
+            border-color: darken($theme-color-primary, 10%);
+          }
+        }
+
+        &.success {
+          &:after {
+            border-color: darken($success-color, 10%);
+          }
+        }
+
+        &.danger {
+          &:after {
+            border-color: darken($error-color, 10%);
+          }
+        }
+
+        &.secondary {
+          margin-right: 0px;
+          border-right-width: 0px;
+
+          &:after {
+            display: none;
+          }
+
+          &:last-child {
+            border-right-width: 1px;
+          }
+        }
+
+        &.text {
+          margin-right: 0px;
+          border-right: 1px solid $lighter-grey;
+
+          &:after {
+            display: none;
+          }
+
+          &:last-child {
+            border-right: 0px;
+          }
+        }
+
+        &:first-child {
+          border-top-left-radius: $theme-border-radius;
+          border-bottom-left-radius: $theme-border-radius;
+        }
+
+        &:last-child {
+          border-top-right-radius: $theme-border-radius;
+          border-bottom-right-radius: $theme-border-radius;
+
+          &:after {
+            border-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
