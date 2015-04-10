@@ -1523,6 +1523,56 @@ textarea {
   margin-bottom: 10px;
 }
 
+.pt-form {
+  overflow: hidden;
+}
+.pt-form.two-column .pt-form-column {
+  width: calc(50% - 10px);
+}
+.pt-form.three-column .pt-form-column {
+  width: calc(33% - 10px);
+}
+.pt-form .pt-form-column {
+  float: left;
+  margin-right: 10px;
+}
+.pt-form .pt-form-column:last-child {
+  margin-right: 0px;
+}
+.pt-form .pt-form-row {
+  display: block;
+  margin: 10px 0px;
+}
+.pt-form .pt-form-row .pt-label.inline {
+  width: 100%;
+}
+.pt-form .pt-form-row .pt-label.inline label {
+  width: calc(40% - 10px);
+}
+.pt-form .pt-form-row .pt-label.inline .pt-input,
+.pt-form .pt-form-row .pt-label.inline .select-box {
+  width: 60%;
+}
+.pt-form .pt-form-row .pt-label.inline .pt-input input,
+.pt-form .pt-form-row .pt-label.inline .pt-input select,
+.pt-form .pt-form-row .pt-label.inline .select-box input,
+.pt-form .pt-form-row .pt-label.inline .select-box select {
+  width: 100%;
+}
+.pt-form .pt-form-actions {
+  margin: 10px 0px;
+  clear: left;
+}
+.pt-form .pt-form-actions.right {
+  text-align: right;
+}
+.pt-form .pt-form-actions.left {
+  text-align: left;
+}
+.pt-form .pt-form-actions.center {
+  text-align: center;
+}
+
 .help-tooltip {
   position: relative;
   display: inline-block;

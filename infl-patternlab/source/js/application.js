@@ -16,6 +16,7 @@ inflComp.InputLabel = require("../../infl-components/input_label.jsx");
 inflComp.Icon = require("../../infl-components/icon.jsx");
 inflComp.Loading = require("../../infl-components/loading.jsx");
 inflComp.ButtonGroup = require("../../infl-components/button_group.jsx");
+inflComp.Form = require("../../infl-components/form.jsx");
 
 inflComp.inputLabel = function(props, elementId){
   inflComp.React.render(

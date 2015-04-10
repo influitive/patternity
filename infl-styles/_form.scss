@@ -166,3 +166,68 @@ textarea {
     margin-bottom: 10px;
   }
 }
+
+.pt-form {
+  overflow: hidden;
+
+  &.two-column {
+    .pt-form-column {
+      width: calc(50% - 10px);
+    }
+  }
+
+  &.three-column {
+    .pt-form-column {
+      width: calc(33% - 10px);
+    }
+  }
+
+  .pt-form-column {
+    float: left;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  .pt-form-row {
+    display: block;
+    margin: 10px 0px;
+
+    .pt-label.inline {
+      width: 100%;
+
+      label {
+        width: calc(40% - 10px);
+      }
+
+      .pt-input,
+      .select-box {
+        width: 60%;
+
+        input,
+        select {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .pt-form-actions {
+    margin: 10px 0px;
+    clear: left;
+
+    &.right {
+      text-align: right;
+    }
+
+    &.left {
+      text-align: left;
+    }
+
+    &.center {
+      text-align: center;
+    }
+  }
+}
