@@ -174,11 +174,27 @@ textarea {
     .pt-form-column {
       width: calc(50% - 10px);
     }
+
+    .pt-form-actions {
+      margin-right: 0.5%;
+
+      .button-group {
+        margin-right: 5px;
+      }
+    }
   }
 
   &.three-column {
     .pt-form-column {
       width: calc(33% - 10px);
+    }
+
+    .pt-form-actions {
+      margin-right: 1.5%;
+
+      .button-group {
+        margin-right: 5px;
+      }
     }
   }
 
@@ -195,20 +211,39 @@ textarea {
     display: block;
     margin: 10px 0px;
 
-    .pt-label.inline {
+    .pt-label {
       width: 100%;
 
-      label {
-        width: calc(40% - 10px);
+      &.inline {
+        label {
+          width: 25%;
+          text-align: right;
+        }
+
+        .pt-input,
+        .select-box {
+          width: calc(75% - 10px);
+
+          input,
+          select {
+            width: 100%;
+          }
+        }
       }
 
-      .pt-input,
-      .select-box {
-        width: 60%;
-
-        input,
-        select {
+      &.stacked {
+        label {
           width: 100%;
+        }
+
+        .pt-input,
+        .select-box {
+          width: 100%;
+
+          input,
+          select {
+            width: 100%;
+          }
         }
       }
     }
@@ -217,17 +252,10 @@ textarea {
   .pt-form-actions {
     margin: 10px 0px;
     clear: left;
+    text-align: right;
 
-    &.right {
-      text-align: right;
-    }
-
-    &.left {
-      text-align: left;
-    }
-
-    &.center {
-      text-align: center;
+    .button-group {
+      margin-right: 0px;
     }
   }
 }

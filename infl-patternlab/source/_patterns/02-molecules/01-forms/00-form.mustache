@@ -52,7 +52,51 @@
 
   <p>The form component is used for wrapping form sub components and aids in the styling and layout for forms.</p>
 
+  <h4>Form</h4>
+
+  <p>Form renders a form tag.  So there isn't much to show... sorry</p>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Form&gt;
+      &lt;/Form&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Form, props),
+        {DOM element to append form to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        acceptCharset : string,    // character encodings that are to be used for the form submission
+        action : string,           // url
+        autocomplete : string,     // one of 'on', 'off' defaults to empty string
+        enctype : string,          // one of 'application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain'. defaults to empty string
+        method : string            // one of 'get', 'post'.  defaults to empty string
+        name : string,             // name of th form
+        novalidate : boolean,      // determines if html 5 validation is on.  defaults to false
+        target : string            // one of '_blank', '_self', '_parent', '_top'.  defaults to empty string
+        ])
+      }
+    </code>
+  </pre>
+
   <h4>Form - Rows</h4>
+
+  <p>Should be used with Form.  Otherwise there will be no styling</p>
 
   <div id="form-rows-pattern"></div>
   <script type="text/javascript">
@@ -68,7 +112,47 @@
     })();
   </script>
 
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Form&gt;
+        &lt;Form.Row&gt;
+          &lt;InputLabel label="Text Input" &gt;
+            &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+          &lt;/InputLabel&gt;
+        &lt;/Form.Row&gt;
+        .
+        .
+        .
+      &lt;/Form&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Form.Row, props),
+        {DOM element to append form row to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        children : [...]  //form row is best used with input label
+      }
+    </code>
+  </pre>
+
   <h4>Form - Columns - 2 Columns</h4>
+
+  <p>Should be used with Form.  Otherwise there will be no styling.  Form can handle none, 2 and 3 columns</p>
 
   <div id="form-column-pattern"></div>
   <script type="text/javascript">
@@ -83,6 +167,56 @@
       );
     })();
   </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Form&gt;
+        &lt;Form.Column&gt;
+          &lt;Form.Row&gt;
+            &lt;InputLabel label="Text Input" &gt;
+              &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+            &lt;/InputLabel&gt;
+          &lt;/Form.Row&gt;
+          .
+          .
+          .
+        &lt;/Form.Column&gt;
+        &lt;Form.Column&gt;
+          &lt;Form.Row&gt;
+            &lt;InputLabel label="Text Input" &gt;
+              &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+            &lt;/InputLabel&gt;
+          &lt;/Form.Row&gt;
+          .
+          .
+          .
+        &lt;/Form.Column&gt;
+      &lt;/Form&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Form.Column, props),
+        {DOM element to append form column to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        children : [...]  //form row is best used with Form
+      }
+    </code>
+  </pre>
 
   <h4>Form - Columns - 3 Columns</h4>
 
@@ -99,6 +233,72 @@
       );
     })();
   </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Form&gt;
+        &lt;Form.Column&gt;
+          &lt;Form.Row&gt;
+            &lt;InputLabel label="Text Input" &gt;
+              &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+            &lt;/InputLabel&gt;
+          &lt;/Form.Row&gt;
+          .
+          .
+          .
+        &lt;/Form.Column&gt;
+        &lt;Form.Column&gt;
+          &lt;Form.Row&gt;
+            &lt;InputLabel label="Text Input" &gt;
+              &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+            &lt;/InputLabel&gt;
+          &lt;/Form.Row&gt;
+          .
+          .
+          .
+        &lt;/Form.Column&gt;
+        &lt;Form.Column&gt;
+          &lt;Form.Row&gt;
+            &lt;InputLabel label="Text Input" &gt;
+              &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+            &lt;/InputLabel&gt;
+          &lt;/Form.Row&gt;
+          .
+          .
+          .
+        &lt;/Form.Column&gt;
+        &lt;Form.Actions&gt;
+          &lt;ButtonGroup&gt;
+            &lt;Button type="text"&gt;Cancel&lt;/Button&gt;
+            &lt;Button type="success"&gt;Save&lt;/Button&gt;
+          &lt;/ButtonGroup&gt;
+        &lt;/Form.Actions&gt;
+      &lt;/Form&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Form.Column, props),
+        {DOM element to append form column to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        children : [...]  //form column is best used with form
+      }
+    </code>
+  </pre>
 
   <h4>Form - Actions</h4>
 
@@ -121,11 +321,14 @@
   <h5 class="code-title">JSX</h5>
   <pre class="code">
     <code>
-      &lt;ButtonGroup&gt;
-        &lt;button&gt;First Button&lt;/buttonGroup&gt;
-        &lt;button&gt;Second Button&lt;/buttonGroup&gt;
-        &lt;a href class="button" &gt;First Link&lt;/a&gt;
-      &lt;/ButtonGroup&gt;
+      &lt;Form&gt;
+        &lt;Form.Actions&gt;
+          &lt;ButtonGroup&gt;
+            &lt;Button type="text"&gt;Cancel&lt;/Button&gt;
+            &lt;Button type="success"&gt;Save&lt;/Button&gt;
+          &lt;/ButtonGroup&gt;
+        &lt;/Form.Actions&gt;
+      &lt;/Form&gt;
     </code>
   </pre>
 
@@ -133,8 +336,8 @@
   <pre class="code">
     <code>
       React.render(
-        React.createElement(ButtonGroup, props),
-        {DOM element to append button group to}
+        React.createElement(Form.Actions, props),
+        {DOM element to append form actions to}
       );
     </code>
   </pre>
@@ -144,9 +347,7 @@
   <pre class="code">
     <code>
       {
-        isVertical : boolean, // determines if the button group is vertical.  Defaults to false
-        grouped : boolean,    // determines if the button group shoul be grouped, not space between the buttons.  Defaults to false
-        children : [...]      // array of buttons or links with .button class
+        children : [...]  // will handle and style button and .button
       }
     </code>
   </pre>
