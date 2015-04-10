@@ -3,7 +3,7 @@
     <h3>button group</h3>
   </header>
 
-  <p>Button group is a wrapper for buttons to help with styling.  It has many options:</p>
+  <p>Button group is a wrapper for buttons to help with styling groups of buttons.  It can take any button styling and make it into a group.</p>
 
   <h4>Default / Horizontal</h4>
 
@@ -72,7 +72,12 @@
         isVertical : true,
         children : [
           buildButtons("First Button"),
-          buildButtons("Second Button")
+          buildButtons("Second Button"),
+          inflComp.React.createElement("a", {
+            href: "#",
+            className : "button",
+            children: ["First Link"]
+          })
         ]
       };
 
@@ -117,8 +122,9 @@
   <pre class="code">
     <code>
       &lt;ButtonGroup&gt;
-        &lt;Button&gt;First Button&lt;/ButtonGroup&gt;
-        &lt;Button&gt;Second Button&lt;/ButtonGroup&gt;
+        &lt;button&gt;First Button&lt;/buttonGroup&gt;
+        &lt;button&gt;Second Button&lt;/buttonGroup&gt;
+        &lt;a href class="button" &gt;First Link&lt;/a&gt;
       &lt;/ButtonGroup&gt;
     </code>
   </pre>
@@ -138,7 +144,9 @@
   <pre class="code">
     <code>
       {
-
+        isVertical : boolean, // determines if the button group is vertical.  Defaults to false
+        grouped : boolean,    // determines if the button group shoul be grouped, not space between the buttons.  Defaults to false
+        children : [...]      // array of buttons or links with .button class
       }
     </code>
   </pre>
