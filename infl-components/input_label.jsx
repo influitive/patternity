@@ -14,14 +14,14 @@ var InputLabel = React.createClass({
   render : function(){
     return (
       <span className={"pt-label " + this.props.layout}>
-        <label htmlFor={this._determineFor()}>
+        <label htmlFor={this._determineLabelFor()}>
           <span>{this.props.label + ":"}</span>
         </label>
         {this.props.children}
       </span>
     );
   },
-  _determineFor : function(){
+  _determineLabelFor : function(){
     if(this.props.children.length > 0){
       return this.props.children[0].props.name;
     } else {
