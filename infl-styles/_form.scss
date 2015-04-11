@@ -170,7 +170,7 @@ textarea {
 .pt-form {
   overflow: hidden;
 
-  &.two-column {
+  &.column-num-2 {
     .pt-form-column {
       width: calc(50% - 10px);
     }
@@ -184,7 +184,7 @@ textarea {
     }
   }
 
-  &.three-column {
+  &.column-num-3 {
     .pt-form-column {
       width: calc(33% - 10px);
     }

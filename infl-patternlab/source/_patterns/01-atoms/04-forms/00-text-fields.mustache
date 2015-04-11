@@ -306,7 +306,11 @@
       var props = {
         layout : "inline",
         label : "Field Label",
-        children : inflComp.React.createElement(inflComp.TextInput, inputProps)
+        children : [
+          inflComp.React.createElement(inflComp.TextInput, inputProps),
+          inflComp.React.createElement(inflComp.TextInput, inputProps),
+          inflComp.React.createElement(inflComp.TextInput, inputProps)
+        ]
       };
 
       inflComp.inputLabel(props, "label-input-inline-pattern");
