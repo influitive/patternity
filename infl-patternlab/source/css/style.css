@@ -1526,22 +1526,22 @@ textarea {
 .pt-form {
   overflow: hidden;
 }
-.pt-form.two-column .pt-form-column {
+.pt-form.column-num-2 .pt-form-column {
   width: calc(50% - 10px);
 }
-.pt-form.two-column .pt-form-actions {
+.pt-form.column-num-2 .pt-form-actions {
   margin-right: 0.5%;
 }
-.pt-form.two-column .pt-form-actions .button-group {
+.pt-form.column-num-2 .pt-form-actions .button-group {
   margin-right: 5px;
 }
-.pt-form.three-column .pt-form-column {
+.pt-form.column-num-3 .pt-form-column {
   width: calc(33% - 10px);
 }
-.pt-form.three-column .pt-form-actions {
+.pt-form.column-num-3 .pt-form-actions {
   margin-right: 1.5%;
 }
-.pt-form.three-column .pt-form-actions .button-group {
+.pt-form.column-num-3 .pt-form-actions .button-group {
   margin-right: 5px;
 }
 .pt-form .pt-form-column {

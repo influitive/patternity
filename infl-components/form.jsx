@@ -73,20 +73,11 @@ var Form = React.createClass({
       }
     }
     this.setState({
-      numberOfColumns: this._convertNumberToWords(numberOfColumns)
+      numberOfColumns: "column-num-" + numberOfColumns
     });
   },
   _isFormColumn : function(child){
     return child.className === 'pt-form-column';
-  },
-  _convertNumberToWords : function(numberOfColumns){
-    if(numberOfColumns === 2) {
-      return "two-column";
-    } else if(numberOfColumns === 3) {
-      return "three-column";
-    } else {
-      return "";
-    }
   }
 });
 

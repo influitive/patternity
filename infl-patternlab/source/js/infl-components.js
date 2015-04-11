@@ -490,20 +490,11 @@ var Form = React.createClass({displayName: "Form",
       }
     }
     this.setState({
-      numberOfColumns: this._convertNumberToWords(numberOfColumns)
+      numberOfColumns: "column-num-" + numberOfColumns
     });
   },
   _isFormColumn : function(child){
     return child.className === 'pt-form-column';
-  },
-  _convertNumberToWords : function(numberOfColumns){
-    if(numberOfColumns === 2) {
-      return "two-column";
-    } else if(numberOfColumns === 3) {
-      return "three-column";
-    } else {
-      return "";
-    }
   }
 });
 
@@ -676,12 +667,19 @@ var InputLabel = React.createClass({displayName: "InputLabel",
   render : function(){
     return (
       React.createElement("span", {className: "pt-label " + this.props.layout}, 
-        React.createElement("label", {htmlFor: this.props.children.props.name}, 
+        React.createElement("label", {htmlFor: this._determineFor()}, 
           React.createElement("span", null, this.props.label + ":")
         ), 
         this.props.children
       )
     );
+  },
+  _determineFor : function(){
+    if(this.props.children.length > 0){
+      return this.props.children[0].props.name;
+    } else {
+      return this.props.children.props.name ? this.props.children.props.name : "";
+    }
   }
 });
 
