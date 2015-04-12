@@ -1526,24 +1526,6 @@ textarea {
 .pt-form {
   overflow: hidden;
 }
-.pt-form.column-num-2 .pt-form-column {
-  width: calc(50% - 10px);
-}
-.pt-form.column-num-2 .pt-form-actions {
-  margin-right: 0.5%;
-}
-.pt-form.column-num-2 .pt-form-actions .button-group {
-  margin-right: 5px;
-}
-.pt-form.column-num-3 .pt-form-column {
-  width: calc(33% - 10px);
-}
-.pt-form.column-num-3 .pt-form-actions {
-  margin-right: 1.5%;
-}
-.pt-form.column-num-3 .pt-form-actions .button-group {
-  margin-right: 5px;
-}
 .pt-form .pt-form-column {
   float: left;
   margin-right: 10px;
@@ -1551,20 +1533,41 @@ textarea {
 .pt-form .pt-form-column:last-child {
   margin-right: 0px;
 }
+.pt-form .pt-form-column.column-num-2 {
+  width: calc(50% - 10px);
+}
+.pt-form .pt-form-column.column-num-2 .pt-label.inline label {
+  width: 25%;
+}
+.pt-form .pt-form-column.column-num-2 .pt-label.inline .pt-input,
+.pt-form .pt-form-column.column-num-2 .pt-label.inline .select-box {
+  width: calc(73% - 10px);
+}
+.pt-form .pt-form-column.column-num-3 {
+  width: calc(33% - 10px);
+}
+.pt-form .pt-form-column.column-num-3 .pt-label.inline label {
+  width: 38.5%;
+}
+.pt-form .pt-form-column.column-num-3 .pt-label.inline .pt-input,
+.pt-form .pt-form-column.column-num-3 .pt-label.inline .select-box {
+  width: calc(61.5% - 10px);
+}
 .pt-form .pt-form-row {
   display: block;
   margin: 10px 0px;
+  clear: left;
 }
 .pt-form .pt-form-row .pt-label {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.inline label {
-  width: 25%;
+  width: 12.5%;
   text-align: right;
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input,
 .pt-form .pt-form-row .pt-label.inline .select-box {
-  width: calc(75% - 10px);
+  width: calc(85.65% - 10px);
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input input,
 .pt-form .pt-form-row .pt-label.inline .pt-input select,
@@ -1586,9 +1589,10 @@ textarea {
   width: 100%;
 }
 .pt-form .pt-form-actions {
-  margin: 10px 0px;
+  margin: 10px 1.8% 10px 0px;
   clear: left;
   text-align: right;
+  margin-right: 1.8%;
 }
 .pt-form .pt-form-actions .button-group {
   margin-right: 0px;

@@ -224,7 +224,7 @@
   <script type="text/javascript">
     (function() {
       var props = {
-        children : [buildFormColumn(), buildFormColumn(), buildFormColumn(), buildFormActions()]
+        children : [buildFormColumn(), buildFormColumn(), buildFormColumn(), buildFormRow(), buildFormColumn(), buildFormColumn(), buildFormRow(), buildFormActions()]
       };
 
       inflComp.React.render(
@@ -246,29 +246,33 @@
               &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
             &lt;/InputLabel&gt;
           &lt;/Form.Row&gt;
-          .
-          .
-          .
+          &lt;Form.Row&gt;
+            &lt;InputLabel label="Text Input" &gt;
+              &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+            &lt;/InputLabel&gt;
+          &lt;/Form.Row&gt;
+          &lt;Form.Row&gt;
+            &lt;InputLabel label="Text Input" &gt;
+              &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+            &lt;/InputLabel&gt;
+          &lt;/Form.Row&gt;
         &lt;/Form.Column&gt;
+        &lt;Form.Row&gt;
+          &lt;InputLabel label="Text Input" &gt;
+            &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+          &lt;/InputLabel&gt;
+        &lt;/Form.Row&gt;
         &lt;Form.Column&gt;
           &lt;Form.Row&gt;
             &lt;InputLabel label="Text Input" &gt;
               &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
             &lt;/InputLabel&gt;
           &lt;/Form.Row&gt;
-          .
-          .
-          .
-        &lt;/Form.Column&gt;
-        &lt;Form.Column&gt;
           &lt;Form.Row&gt;
             &lt;InputLabel label="Text Input" &gt;
               &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
             &lt;/InputLabel&gt;
           &lt;/Form.Row&gt;
-          .
-          .
-          .
         &lt;/Form.Column&gt;
         &lt;Form.Actions&gt;
           &lt;ButtonGroup&gt;
