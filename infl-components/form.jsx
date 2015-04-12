@@ -42,17 +42,12 @@ var Form = React.createClass({
       ''
     ])
   },
-  getInitialState : function(){
-    return {
-      numberOfColumns: ""
-    };
-  },
   componentDidMount : function(){
     this._determineNumberOfColumns();
   },
   render: function () {
     return (
-      <form className={"pt-form " + this.state.numberOfColumns} ref="form"
+      <form className="pt-form" ref="form"
         noValidate={this.props.novalidate}
         acceptCharset={this.props.acceptCharset}
         action={this.props.action}
@@ -66,18 +61,32 @@ var Form = React.createClass({
     );
   },
   _determineNumberOfColumns : function(){
-    var numberOfColumns = 0;
+    var columns = [];
     for(var i = 0; i < this.refs.form.getDOMNode().children.length; i++) {
       if(this._isFormColumn(this.refs.form.getDOMNode().children[i])){
-        numberOfColumns++;
+        columns.push(this.refs.form.getDOMNode().children[i]);
+      } else if(this._isFormRow(this.refs.form.getDOMNode().children[i]) || this._isFormAction(this.refs.form.getDOMNode().children[i])) {
+        this._styleColumns(columns);
+        columns = [];
       }
     }
-    this.setState({
-      numberOfColumns: "column-num-" + numberOfColumns
-    });
+    if(columns.length > 0 ){
+      this._styleColumns(columns);
+    }
   },
   _isFormColumn : function(child){
     return child.className === 'pt-form-column';
+  },
+  _isFormRow : function(child){
+    return child.className === 'pt-form-row';
+  },
+  _isFormAction : function(child) {
+
+  },
+  _styleColumns : function(columns){
+    columns.map(function(column){
+      column.className = column.className + " column-num-" + columns.length;
+    });
   }
 });
 

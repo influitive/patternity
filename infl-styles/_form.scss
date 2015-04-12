@@ -170,34 +170,6 @@ textarea {
 .pt-form {
   overflow: hidden;
 
-  &.column-num-2 {
-    .pt-form-column {
-      width: calc(50% - 10px);
-    }
-
-    .pt-form-actions {
-      margin-right: 0.5%;
-
-      .button-group {
-        margin-right: 5px;
-      }
-    }
-  }
-
-  &.column-num-3 {
-    .pt-form-column {
-      width: calc(33% - 10px);
-    }
-
-    .pt-form-actions {
-      margin-right: 1.5%;
-
-      .button-group {
-        margin-right: 5px;
-      }
-    }
-  }
-
   .pt-form-column {
     float: left;
     margin-right: 10px;
@@ -205,24 +177,59 @@ textarea {
     &:last-child {
       margin-right: 0px;
     }
+
+    &.column-num-2 {
+      width: calc(50% - 10px);
+
+      .pt-label {
+        &.inline {
+          label {
+            width: 25%;
+          }
+
+          .pt-input,
+          .select-box {
+            width: calc(73% - 10px);
+          }
+        }
+      }
+    }
+
+    &.column-num-3 {
+      width: calc(33% - 10px);
+
+      .pt-label {
+        &.inline {
+          label {
+            width: 38.5%;
+          }
+
+          .pt-input,
+          .select-box {
+            width: calc(61.5% - 10px);
+          }
+        }
+      }
+    }
   }
 
   .pt-form-row {
     display: block;
     margin: 10px 0px;
+    clear: left;
 
     .pt-label {
       width: 100%;
 
       &.inline {
         label {
-          width: 25%;
+          width: 12.5%;
           text-align: right;
         }
 
         .pt-input,
         .select-box {
-          width: calc(75% - 10px);
+          width: calc(85.65% - 10px);
 
           input,
           select {
@@ -250,9 +257,10 @@ textarea {
   }
 
   .pt-form-actions {
-    margin: 10px 0px;
+    margin: 10px 1.8% 10px 0px;
     clear: left;
     text-align: right;
+    margin-right: 1.8%;
 
     .button-group {
       margin-right: 0px;
