@@ -13,6 +13,19 @@
     });
   }
 
+  function buildFormLabelMultiInput(){
+    return inflComp.React.createElement(inflComp.InputLabel,{
+      label : "Input Label",
+      children : [buildTextInput(), buildTextInput(), buildTextInput()]
+    });
+  }
+
+  function buildFormRowMultiInput(){
+    return inflComp.React.createElement(inflComp.Form.Row,{
+      children : buildFormLabelMultiInput()
+    });
+  }
+
   function buildFormRow(){
     return inflComp.React.createElement(inflComp.Form.Row,{
       children : buildFormLabel()
@@ -224,7 +237,7 @@
   <script type="text/javascript">
     (function() {
       var props = {
-        children : [buildFormColumn(), buildFormColumn(), buildFormColumn(), buildFormRow(), buildFormColumn(), buildFormColumn(), buildFormRow(), buildFormActions()]
+        children : [buildFormColumn(), buildFormColumn(), buildFormColumn(), buildFormRow(), buildFormColumn(), buildFormColumn(), buildFormRowMultiInput(), buildFormActions()]
       };
 
       inflComp.React.render(
@@ -276,6 +289,8 @@
         &lt;/Form.Column&gt;
         &lt;Form.Row&gt;
           &lt;InputLabel label="Text Input" &gt;
+            &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
+            &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
             &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
           &lt;/InputLabel&gt;
         &lt;/Form.Row&gt;

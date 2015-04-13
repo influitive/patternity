@@ -1508,6 +1508,12 @@ textarea {
   display: inline-block;
   line-height: 100%;
 }
+.pt-label.multi-input.inline .pt-input {
+  margin-right: 5px;
+}
+.pt-label.multi-input.inline .pt-input:last-child {
+  margin-right: 0px;
+}
 .pt-label.inline > label, .pt-label.inline > span {
   display: inline-block;
 }
@@ -1515,12 +1521,17 @@ textarea {
   vertical-align: top;
   padding-top: 12px;
   margin-right: 10px;
+  line-height: 15px;
+}
+.pt-label.inline > label.multi-line {
+  padding-top: 3px;
 }
 .pt-label.stacked > label, .pt-label.stacked > span {
   display: block;
 }
 .pt-label.stacked > label {
   margin-bottom: 10px;
+  line-height: 15px;
 }
 
 .pt-form {
@@ -1574,6 +1585,10 @@ textarea {
 .pt-form .pt-form-row .pt-label.inline .select-box input,
 .pt-form .pt-form-row .pt-label.inline .select-box select {
   width: 100%;
+}
+.pt-form .pt-form-row .pt-label.inline.multi-input .pt-input,
+.pt-form .pt-form-row .pt-label.inline.multi-input .select-box {
+  width: auto;
 }
 .pt-form .pt-form-row .pt-label.stacked label {
   width: 100%;

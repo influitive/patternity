@@ -146,6 +146,18 @@ textarea {
   display: inline-block;
   line-height: 100%;
 
+  &.multi-input {
+    &.inline {
+      .pt-input {
+        margin-right: 5px;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+
   &.inline > label,
   &.inline > span {
     display: inline-block;
@@ -155,6 +167,11 @@ textarea {
     vertical-align: top;
     padding-top: 12px;
     margin-right: 10px;
+    line-height: 15px;
+
+    &.multi-line {
+      padding-top: 3px;
+    }
   }
 
   &.stacked > label,
@@ -164,6 +181,7 @@ textarea {
 
   &.stacked > label {
     margin-bottom: 10px;
+    line-height: 15px;
   }
 }
 
@@ -234,6 +252,13 @@ textarea {
           input,
           select {
             width: 100%;
+          }
+        }
+
+        &.multi-input {
+          .pt-input,
+          .select-box {
+            width: auto;
           }
         }
       }
