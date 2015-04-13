@@ -23,7 +23,10 @@ var ModalDialog = React.createClass({
   componentWillReceiveProps : function(newProps){
     this.setState({
       isModalOpen : newProps.isModalOpen
-    });
+    }, this._disableBodyScroll);
+  },
+  componentDidMount : function(){
+    this._disableBodyScroll();
   },
   render : function(){
     return (
@@ -34,6 +37,11 @@ var ModalDialog = React.createClass({
         </section>
       </div>
     );
+  },
+  _disableBodyScroll : function(){
+    if(this.state.isModalOpen){
+      this._getBodyElement().style.overflow = "hidden";
+    }
   },
   _showModal : function(){
     return this.state.isModalOpen ? "" : "close";
@@ -57,7 +65,14 @@ var ModalDialog = React.createClass({
   },
   _onClose : function(){
     this.props.onClose();
+    this._enableBodyScroll();
   },
+  _enableBodyScroll : function(){
+    this._getBodyElement().style.overflow = "auto";
+  },
+  _getBodyElement : function(){
+    return document.getElementsByTagName('body')[0];
+  }
 });
 
 ModalDialog.Header = React.createClass({
