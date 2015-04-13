@@ -18,6 +18,7 @@ inflComp.Icon = require("../../infl-components/icon.jsx");
 inflComp.Loading = require("../../infl-components/loading.jsx");
 inflComp.ButtonGroup = require("../../infl-components/button_group.jsx");
 inflComp.Form = require("../../infl-components/form.jsx");
+inflComp.ModalDialog = require("../../infl-components/modal_dialog.jsx");
 
 inflComp.inputLabel = function(props, elementId){
   inflComp.React.render(
@@ -50,7 +51,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -788,7 +789,111 @@ var Loading = React.createClass({displayName: "Loading",
 module.exports = Loading;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx":[function(require,module,exports){
+var React = require('react');
+
+var ModalDialog = React.createClass({displayName: "ModalDialog",
+  getDefaultProps : function(){
+    return {
+      id : "",
+      closeable : true,
+      size : "medium",
+      onClose : function(){},
+      isModalOpen : false
+    };
+  },
+  propTypes :{
+    id : React.PropTypes.string,
+    closeable : React.PropTypes.bool,
+    size : React.PropTypes.oneOf(['small', 'medium', 'large'])
+  },
+  getInitialState : function(){
+    return {
+      isModalOpen : this.props.isModalOpen
+    };
+  },
+  componentWillReceiveProps : function(newProps){
+    this.setState({
+      isModalOpen : newProps.isModalOpen
+    });
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-modal-dialog " + this._showModal(), onClick: this._closeDialog}, 
+        React.createElement("section", {className: "pt-modal " + this.props.size}, 
+          React.createElement("span", {className: "close-dialog ic ic-times", onClick: this._closeDialog}), 
+          this.props.children
+        )
+      )
+    );
+  },
+  _showModal : function(){
+    return this.state.isModalOpen ? "" : "close";
+  },
+  _closeDialog : function(event){
+    if(this.props.closeable && this._isClosableElement(event.target)){
+      this._dismissDialog();
+    }
+  },
+  _isClosableElement : function(target){
+    if(target.className.indexOf("close-dialog") > -1) {
+      return true;
+    } else if( target.className.indexOf("pt-modal-dialog") > -1){
+      return true;
+    }
+  },
+  _dismissDialog : function(){
+    this.setState({
+      isModalOpen : false
+    }, this._onClose);
+  },
+  _onClose : function(){
+    this.props.onClose();
+  },
+});
+
+ModalDialog.Header = React.createClass({displayName: "Header",
+  getDefaultProps : function(){
+    return {
+      title : ""
+    };
+  },
+  propTypes :{
+    title : React.PropTypes.string
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-modal-header"}, 
+        React.createElement("h3", null, this.props.title)
+      )
+    );
+  }
+});
+
+ModalDialog.Body = React.createClass({displayName: "Body",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-modal-body"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+ModalDialog.Footer = React.createClass({displayName: "Footer",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-modal-footer"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+module.exports = ModalDialog;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx":[function(require,module,exports){
 var React = require('react');
 
 var PanelLeftSideBar = React.createClass({displayName: "PanelLeftSideBar",
