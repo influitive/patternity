@@ -1,0 +1,231 @@
+<section class="pattern-section">
+  <header>
+    <h3>modal dialog</h3>
+  </header>
+
+  <p>The Modal Dialog component helps you build modal dialogs.  It has 3 sub components Header, Body and Footer.</p>
+
+  <h4>Modal Dialog</h4>
+
+  <span id="modal-dialog-pattern"></span>
+  <button onclick="dialog.showDialog(true)">Show Modal Dialog</button>
+  <script type="text/javascript">
+    var dialog = {};
+    (function() {
+      function buildHeader(){
+        return inflComp.React.createElement(inflComp.ModalDialog.Header, {
+          title : "Modal Dialog Header Title"
+        });
+      }
+
+      function buildParagraph(){
+        return inflComp.React.createElement("p", {
+          children : ['This is the modal body.', 'This is the modal body.']
+        })
+      }
+
+      function buildBody(){
+        return inflComp.React.createElement(inflComp.ModalDialog.Body, {
+          children : [
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+          ]
+        });
+      }
+
+      function buildFooter(){
+        return inflComp.React.createElement(inflComp.ModalDialog.Footer, {
+          children : [buildFormActions()]
+        });
+      }
+
+      function buildFormActions(){
+        return inflComp.React.createElement(inflComp.ButtonGroup, {
+          children : [
+            inflComp.React.createElement("button", {
+              className : "text",
+              children: ["Cancel"],
+              onClick : function(){
+                dialog.showDialog(false);
+              }
+            }),
+            inflComp.React.createElement("button", {
+              className : "success",
+              children: ["Save"]
+            })
+          ]
+        });
+      }
+
+      dialog.showDialog = function(isModalOpen){
+        inflComp.React.render(
+          inflComp.React.createElement(inflComp.ModalDialog, {
+            children : [
+              buildHeader(),
+              buildBody(),
+              buildFooter()
+            ],
+            isModalOpen : isModalOpen
+          }),
+          document.getElementById("modal-dialog-pattern"));
+      };
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;ModalDailog id="modal-id" closeable={true} size="medium" onClose={onCloseCallback} isModalOpen={true} &gt;
+        &lt;ModalDailog.Header title="Modal Dialog Header Title" /&gt;
+        &lt;ModalDailog.Body&gt;
+          &lt;p&gt;This is the modal body.  This is the modal body.&lt;/p&gt;
+          &lt;p&gt;This is the modal body.  This is the modal body.&lt;/p&gt;
+          &lt;p&gt;This is the modal body.  This is the modal body.&lt;/p&gt;
+        &lt;/ModalDailog.Body&gt;
+        &lt;ModalDailog.Footer&gt;
+          &lt;ButtonGroup&gt;
+            &lt;Button type="text"&gt;Cancel&lt;/Button&gt;
+            &lt;Button type="success"&gt;Save&lt;/Button&gt;
+          &lt;/ButtonGroup&gt;
+        &lt;/ModalDailog.Footer&gt;
+      &lt;/ModalDailog&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(ModalDialog, props, children),
+        {DOM element to append modal dialog to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        id : string,            // id of modal
+        closeable : boolean,    // determines if the modal can be closed. defaults to true
+        size : string,          // determines modal size can be small, medium or large
+        onClose : function,     // optional callback function when the modal is closed
+        isModalOpen : boolean   // determines if the modal is open or not defaults to false
+      }
+    </code>
+  </pre>
+
+  <h4>Modal Dialog - Header</h4>
+
+  <p>The Modal Dialog Header adds a styled header to the modal dialog.</p>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;ModalDailog.Header title="Modal Dialog Header Title" /&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(ModalDialog.Header, props, children),
+        {DOM element to append modal dialog header to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        title : string  // title for the modal dialog
+      }
+    </code>
+  </pre>
+
+  <h4>Modal Dialog - Body</h4>
+
+  <p>The Modal Dialog Body adds a styled content section to the modal dialog.</p>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;ModalDailog.Body&gt;
+        &lt;p&gt;This is the modal body.  This is the modal body.&lt;/p&gt;
+        &lt;p&gt;This is the modal body.  This is the modal body.&lt;/p&gt;
+        &lt;p&gt;This is the modal body.  This is the modal body.&lt;/p&gt;
+      &lt;/ModalDailog.Body&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(ModalDialog.Body, props, children),
+        {DOM element to append modal dialog body to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        children : array  // array of text, react elements or html
+      }
+    </code>
+  </pre>
+
+  <h4>Modal Dialog - Footer</h4>
+
+  <p>The Modal Dialog Footer adds a styled footer section to the modal dialog.</p>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;ModalDailog.Footer&gt;
+        &lt;ButtonGroup&gt;
+          &lt;Button type="text"&gt;Cancel&lt;/Button&gt;
+          &lt;Button type="success"&gt;Save&lt;/Button&gt;
+        &lt;/ButtonGroup&gt;
+      &lt;/ModalDailog.Footer&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(ModalDialog.Footer, props, children),
+        {DOM element to append modal dialog footer to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        children : array  // array of text, react elements or html
+      }
+    </code>
+  </pre>
+</section>

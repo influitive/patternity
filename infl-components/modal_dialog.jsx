@@ -1,0 +1,101 @@
+var React = require('react');
+
+var ModalDialog = React.createClass({
+  getDefaultProps : function(){
+    return {
+      id : "",
+      closeable : true,
+      size : "medium",
+      onClose : function(){},
+      isModalOpen : false
+    };
+  },
+  propTypes :{
+    id : React.PropTypes.string,
+    closeable : React.PropTypes.bool,
+    size : React.PropTypes.oneOf(['small', 'medium', 'large'])
+  },
+  getInitialState : function(){
+    return {
+      isModalOpen : this.props.isModalOpen
+    };
+  },
+  componentWillReceiveProps : function(newProps){
+    this.setState({
+      isModalOpen : newProps.isModalOpen
+    });
+  },
+  render : function(){
+    return (
+      <div className={"pt-modal-dialog " + this._showModal()} onClick={this._closeDialog}>
+        <section className={"pt-modal " + this.props.size}>
+          <span className="close-dialog ic ic-times" onClick={this._closeDialog}></span>
+          {this.props.children}
+        </section>
+      </div>
+    );
+  },
+  _showModal : function(){
+    return this.state.isModalOpen ? "" : "close";
+  },
+  _closeDialog : function(event){
+    if(this.props.closeable && this._isClosableElement(event.target)){
+      this._dismissDialog();
+    }
+  },
+  _isClosableElement : function(target){
+    if(target.className.indexOf("close-dialog") > -1) {
+      return true;
+    } else if( target.className.indexOf("pt-modal-dialog") > -1){
+      return true;
+    }
+  },
+  _dismissDialog : function(){
+    this.setState({
+      isModalOpen : false
+    }, this._onClose);
+  },
+  _onClose : function(){
+    this.props.onClose();
+  },
+});
+
+ModalDialog.Header = React.createClass({
+  getDefaultProps : function(){
+    return {
+      title : ""
+    };
+  },
+  propTypes :{
+    title : React.PropTypes.string
+  },
+  render : function(){
+    return (
+      <div className="pt-modal-header">
+        <h3>{this.props.title}</h3>
+      </div>
+    );
+  }
+});
+
+ModalDialog.Body = React.createClass({
+  render : function(){
+    return (
+      <div className="pt-modal-body">
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
+ModalDialog.Footer = React.createClass({
+  render : function(){
+    return (
+      <div className="pt-modal-footer">
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
+module.exports = ModalDialog;
