@@ -104,12 +104,9 @@ Form.Column = React.createClass({
 });
 
 Form.Row = React.createClass({
-  shouldComponentUpdate : function(){
-    return false;
-  },
   render: function () {
     return (
-      <div className="pt-form-row">
+      <div className="pt-form-row" ref="row">
         {this.props.children}
       </div>
     );

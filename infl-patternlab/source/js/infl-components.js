@@ -521,12 +521,9 @@ Form.Column = React.createClass({displayName: "Column",
 });
 
 Form.Row = React.createClass({displayName: "Row",
-  shouldComponentUpdate : function(){
-    return false;
-  },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-row"}, 
+      React.createElement("div", {className: "pt-form-row", ref: "row"}, 
         this.props.children
       )
     );
@@ -675,13 +672,16 @@ var InputLabel = React.createClass({displayName: "InputLabel",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "pt-label " + this.props.layout}, 
-        React.createElement("label", {htmlFor: this._determineLabelFor()}, 
+      React.createElement("span", {className: "pt-label " + this.props.layout + " " + this._multiInput()}, 
+        React.createElement("label", {htmlFor: this._determineLabelFor(), ref: "label"}, 
           React.createElement("span", null, this.props.label + ":")
         ), 
         this.props.children
       )
     );
+  },
+  _multiInput : function(){
+    return this.props.children.length > 0 ? "multi-input" : "";
   },
   _determineLabelFor : function(){
     if(this.props.children.length > 0){
