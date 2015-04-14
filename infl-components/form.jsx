@@ -67,6 +67,7 @@ var Form = React.createClass({
         columns.push(this.refs.form.getDOMNode().children[i]);
       } else if(this._isFormRow(this.refs.form.getDOMNode().children[i]) || this._isFormAction(this.refs.form.getDOMNode().children[i])) {
         this._styleColumns(columns);
+        console.log(columns);
         columns = [];
       }
     }
@@ -75,10 +76,10 @@ var Form = React.createClass({
     }
   },
   _isFormColumn : function(child){
-    return child.className === 'pt-form-column';
+    return child.className.indexOf('pt-form-column') > -1;
   },
   _isFormRow : function(child){
-    return child.className === 'pt-form-row';
+    return child.className.indexOf('pt-form-row') > -1;
   },
   _isFormAction : function(child) {
 
@@ -104,9 +105,17 @@ Form.Column = React.createClass({
 });
 
 Form.Row = React.createClass({
+  getDefaultProps : function(){
+    return {
+      inputSize : "large",
+    };
+  },
+  propTypes : {
+    inputSize : React.PropTypes.oneOf(['small', 'medium', 'large'])
+  },
   render: function () {
     return (
-      <div className="pt-form-row" ref="row">
+      <div className={"pt-form-row " + this.props.inputSize} ref="row">
         {this.props.children}
       </div>
     );
