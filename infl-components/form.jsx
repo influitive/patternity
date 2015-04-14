@@ -67,7 +67,6 @@ var Form = React.createClass({
         columns.push(this.refs.form.getDOMNode().children[i]);
       } else if(this._isFormRow(this.refs.form.getDOMNode().children[i]) || this._isFormAction(this.refs.form.getDOMNode().children[i])) {
         this._styleColumns(columns);
-        console.log(columns);
         columns = [];
       }
     }

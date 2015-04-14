@@ -1906,6 +1906,49 @@ textarea {
   text-align: right;
 }
 
+.pt-tabs {
+  with: 100%;
+}
+.pt-tabs .pt-tabs-menu {
+  width: 100%;
+  border-bottom: 1px solid #d0d2d3;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+.pt-tabs .pt-tabs-menu .pt-tab {
+  display: inline-block;
+  width: 150px;
+  list-style-type: none;
+  z-index: 3;
+  position: relative;
+  top: 2px;
+}
+.pt-tabs .pt-tabs-menu .pt-tab a {
+  display: block;
+  padding: 20px 10px;
+  text-align: center;
+  color: #666666;
+  text-decoration: none;
+}
+.pt-tabs .pt-tabs-menu .pt-tab.tab-open {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.pt-tabs .pt-tabs-menu .pt-tab.tab-open a {
+  border: 1px solid #d0d2d3;
+  border-top: 3px solid #08a5c5;
+  border-bottom: 0px;
+  position: relative;
+  color: #08a5c5;
+}
+.pt-tabs .pt-tabs-content-sections .pt-tab-content {
+  display: none;
+  padding: 20px 10px 10px;
+}
+.pt-tabs .pt-tabs-content-sections .pt-tab-content.tab-content-visible {
+  display: block;
+}
+
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;

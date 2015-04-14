@@ -19,6 +19,7 @@ inflComp.Loading = require("../../infl-components/loading.jsx");
 inflComp.ButtonGroup = require("../../infl-components/button_group.jsx");
 inflComp.Form = require("../../infl-components/form.jsx");
 inflComp.ModalDialog = require("../../infl-components/modal_dialog.jsx");
+inflComp.Tabs = require("../../infl-components/tabs.jsx");
 
 inflComp.inputLabel = function(props, elementId){
   inflComp.React.render(
@@ -51,7 +52,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -68,9 +69,9 @@ var Accordion = React.createClass({displayName: "Accordion",
   },
   getInitialState: function(){
     if(this._isOpenSectionIndexValid(this.props.openSectionIndex)){
-      return { openSectionIndex: this.props.openSectionIndex }
+      return { openSectionIndex: this.props.openSectionIndex };
     } else {
-      return { openSectionIndex: -1 }
+      return { openSectionIndex: -1 };
     }
   },
   componentWillReceiveProps : function(nextProps){
@@ -485,7 +486,6 @@ var Form = React.createClass({displayName: "Form",
         columns.push(this.refs.form.getDOMNode().children[i]);
       } else if(this._isFormRow(this.refs.form.getDOMNode().children[i]) || this._isFormAction(this.refs.form.getDOMNode().children[i])) {
         this._styleColumns(columns);
-        console.log(columns);
         columns = [];
       }
     }
@@ -1042,6 +1042,150 @@ Sidebar.heading = React.createClass({displayName: "heading",
 });
 
 module.exports = Sidebar;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx":[function(require,module,exports){
+var React = require('react');
+
+var Tabs = React.createClass({displayName: "Tabs",
+  getDefaultProps : function(){
+    return {
+      id : "",
+      key : "tabs-" + Math.random(),
+      openTabIndex : 0
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.string,
+    key : React.PropTypes.string,
+    openTabIndex : React.PropTypes.number
+  },
+  getInitialState : function(){
+    return {
+      openTabIndex : this.props.openTabIndex
+    };
+  },
+  render: function() {
+    return (
+      React.createElement("nav", {className: "pt-tabs"}, 
+        React.createElement("ul", {className: "pt-tabs-menu", key: "pt-tabs-menu-" + Math.random()}, 
+          this._buildTabs()
+        ), 
+        React.createElement("section", {className: "pt-tabs-content-sections"}, 
+          this._buildTabContentSections()
+        )
+      )
+    );
+  },
+  _buildTabs : function(){
+    var that = this;
+    return React.Children.map(this.props.children, function(tab, index){
+      return (
+        React.createElement(InternalTab, {title: tab.props.title, onClick: that._onTabChange, key: index, index: index, tabIsOpen: that._isTabOpen(index)})
+      );
+    });
+  },
+  _onTabChange : function(index){
+    this.setState({
+      openTabIndex : index
+    });
+  },
+  _isTabOpen : function(index) {
+    return (this.state.openTabIndex === index);
+  },
+  _buildTabContentSections : function(){
+    var that = this;
+    return React.Children.map(this.props.children, function(tab, index){
+      return (
+        React.createElement(InternalTabContent, {key: index, tabContentIsVisible: that._isTabOpen(index)}, 
+          tab.props.children
+        )
+      );
+    });
+  }
+});
+
+Tabs.Tab = React.createClass({displayName: "Tab",
+  getDefaultProps : function(){
+    return {
+      title : ""
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.string
+  },
+  render: function() {
+    return (
+      React.createElement("div", null, this.props.children)
+    );
+  }
+});
+
+var InternalTab = React.createClass({displayName: "InternalTab",
+  getDefaultProps : function(){
+    return {
+      title : "",
+      tabIsOpen : false,
+      index : -1,
+      onClick : function(){}
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.string,
+    tabIsOpen : React.PropTypes.bool,
+    index : React.PropTypes.number,
+    onClick : React.PropTypes.func
+  },
+  getInitialState : function(){
+    return {
+      tabIsOpen : this.props.tabIsOpen
+    };
+  },
+  componentWillReceiveProps: function(newProps){
+    console.log(newProps);
+    this.setState({
+      tabIsOpen : newProps.tabIsOpen
+    });
+  },
+  render: function() {
+    return (
+      React.createElement("li", {className: "pt-tab " + this._isTabOpen()}, 
+        React.createElement("a", {href: "#", onClick: this._handleClick}, 
+          React.createElement("span", null, this.props.title)
+        )
+      )
+    );
+  },
+  _isTabOpen : function(){
+    return this.state.tabIsOpen ? "tab-open" : "";
+  },
+  _handleClick : function(){
+    this.props.onClick(this.props.index);
+  }
+});
+
+var InternalTabContent = React.createClass({displayName: "InternalTabContent",
+  getDefaultProps : function(){
+    return {
+      tabContentIsVisible : false,
+    };
+  },
+  propTypes : {
+    tabContentIsVisible : React.PropTypes.bool
+  },
+  render: function() {
+    return (
+      React.createElement("div", {className: "pt-tab-content " + this._showTabContent()}, 
+        this.props.children
+      )
+    );
+  },
+  _showTabContent : function(){
+    return this.props.tabContentIsVisible ? "tab-content-visible" : "";
+  }
+});
+
+module.exports = Tabs;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){
