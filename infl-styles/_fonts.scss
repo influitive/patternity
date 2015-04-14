@@ -13,9 +13,11 @@
   src: $path_to_proxima_nova_light_italic_font format('truetype');
 }
 
+$body-font-size: 15px;
+
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
-  font-size: 15px;
+  font-size: $body-font-size;
   color: $darker-grey;
 }
 

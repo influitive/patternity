@@ -1922,6 +1922,7 @@ textarea {
   z-index: 3;
   position: relative;
   top: 2px;
+  font-size: 15px;
 }
 .pt-tabs .pt-tabs-menu .pt-tab a {
   display: block;
