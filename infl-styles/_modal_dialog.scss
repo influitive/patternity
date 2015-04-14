@@ -11,6 +11,35 @@
     top : -1000px;
   }
 
+  &.scrollingBody {
+    overflow: auto;
+
+    .pt-modal {
+      height: calc(100% - 60px);
+      padding-top: 78px;
+      padding-bottom: 64px;
+
+      .pt-modal-header {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+      }
+
+      .pt-modal-body {
+        overflow: scroll;
+        height: 100%;
+      }
+
+      .pt-modal-footer {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+      }
+    }
+  }
+
   .pt-modal {
     background-color: #fff;
     border-radius : $theme-border-radius;
@@ -24,6 +53,7 @@
       cursor: pointer;
       display: block;
       padding: 10px;
+      z-index: 2;
     }
 
     &.large {

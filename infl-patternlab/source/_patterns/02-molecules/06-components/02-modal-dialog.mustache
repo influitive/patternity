@@ -68,7 +68,8 @@
               buildBody(),
               buildFooter()
             ],
-            isModalOpen : isModalOpen
+            isModalOpen : isModalOpen,
+            scrollingBody : true
           }),
           document.getElementById("modal-dialog-pattern"));
       };
@@ -117,6 +118,7 @@
         size : string,          // determines modal size can be small, medium or large
         onClose : function,     // optional callback function when the modal is closed
         isModalOpen : boolean   // determines if the modal is open or not defaults to false
+        scrollingBody : boolean // controls styling to make the modal full screen height and body of the modal scroll.
       }
     </code>
   </pre>

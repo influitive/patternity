@@ -799,13 +799,15 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
       closeable : true,
       size : "medium",
       onClose : function(){},
-      isModalOpen : false
+      isModalOpen : false,
+      scrollingBody : false
     };
   },
   propTypes :{
     id : React.PropTypes.string,
     closeable : React.PropTypes.bool,
-    size : React.PropTypes.oneOf(['small', 'medium', 'large'])
+    size : React.PropTypes.oneOf(['small', 'medium', 'large']),
+    scrollingBody : React.PropTypes.bool
   },
   getInitialState : function(){
     return {
@@ -822,13 +824,16 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
   },
   render : function(){
     return (
-      React.createElement("div", {className: "pt-modal-dialog " + this._showModal(), onClick: this._closeDialog}, 
+      React.createElement("div", {className: "pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody(), onClick: this._closeDialog}, 
         React.createElement("section", {className: "pt-modal " + this.props.size}, 
           React.createElement("span", {className: "close-dialog ic ic-times", onClick: this._closeDialog}), 
           this.props.children
         )
       )
     );
+  },
+  _scrollingModalBody : function(){
+    return this.props.scrollingBody ? "scrollingBody" : "";
   },
   _disableBodyScroll : function(){
     if(this.state.isModalOpen){
@@ -844,11 +849,7 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
     }
   },
   _isClosableElement : function(target){
-    if(target.className.indexOf("close-dialog") > -1) {
-      return true;
-    } else if( target.className.indexOf("pt-modal-dialog") > -1){
-      return true;
-    }
+    return target.className.indexOf("close-dialog") > -1 || target.className.indexOf("pt-modal-dialog") > -1;
   },
   _dismissDialog : function(){
     this.setState({
