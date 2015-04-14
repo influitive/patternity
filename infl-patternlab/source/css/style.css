@@ -1547,38 +1547,62 @@ textarea {
 .pt-form .pt-form-column.column-num-2 {
   width: calc(50% - 10px);
 }
-.pt-form .pt-form-column.column-num-2 .pt-label.inline label {
-  width: 25%;
+.pt-form .pt-form-column.column-num-2 .small .pt-label.inline label,
+.pt-form .pt-form-column.column-num-2 .medium .pt-label.inline label,
+.pt-form .pt-form-column.column-num-2 .large .pt-label.inline label {
+  width: 39.5%;
 }
-.pt-form .pt-form-column.column-num-2 .pt-label.inline .pt-input,
-.pt-form .pt-form-column.column-num-2 .pt-label.inline .select-box {
-  width: calc(73% - 10px);
+.pt-form .pt-form-column.column-num-2 .small .pt-label.inline .pt-input,
+.pt-form .pt-form-column.column-num-2 .small .pt-label.inline .select-box,
+.pt-form .pt-form-column.column-num-2 .medium .pt-label.inline .pt-input,
+.pt-form .pt-form-column.column-num-2 .medium .pt-label.inline .select-box,
+.pt-form .pt-form-column.column-num-2 .large .pt-label.inline .pt-input,
+.pt-form .pt-form-column.column-num-2 .large .pt-label.inline .select-box {
+  width: calc(58.5% - 10px);
 }
 .pt-form .pt-form-column.column-num-3 {
   width: calc(33% - 10px);
 }
-.pt-form .pt-form-column.column-num-3 .pt-label.inline label {
-  width: 38.5%;
+.pt-form .pt-form-column.column-num-3 .small .pt-label.inline label,
+.pt-form .pt-form-column.column-num-3 .medium .pt-label.inline label,
+.pt-form .pt-form-column.column-num-3 .large .pt-label.inline label {
+  width: 60%;
 }
-.pt-form .pt-form-column.column-num-3 .pt-label.inline .pt-input,
-.pt-form .pt-form-column.column-num-3 .pt-label.inline .select-box {
-  width: calc(61.5% - 10px);
+.pt-form .pt-form-column.column-num-3 .small .pt-label.inline .pt-input,
+.pt-form .pt-form-column.column-num-3 .small .pt-label.inline .select-box,
+.pt-form .pt-form-column.column-num-3 .medium .pt-label.inline .pt-input,
+.pt-form .pt-form-column.column-num-3 .medium .pt-label.inline .select-box,
+.pt-form .pt-form-column.column-num-3 .large .pt-label.inline .pt-input,
+.pt-form .pt-form-column.column-num-3 .large .pt-label.inline .select-box {
+  width: calc(40% - 10px);
 }
 .pt-form .pt-form-row {
   display: block;
   margin: 10px 0px;
   clear: left;
 }
+.pt-form .pt-form-row.small .pt-label.inline .pt-input,
+.pt-form .pt-form-row.small .pt-label.inline .select-box {
+  width: calc(29% - 10px);
+}
+.pt-form .pt-form-row.medium .pt-label.inline .pt-input,
+.pt-form .pt-form-row.medium .pt-label.inline .select-box {
+  width: calc(51% - 10px);
+}
+.pt-form .pt-form-row.large .pt-label.inline .pt-input,
+.pt-form .pt-form-row.large .pt-label.inline .select-box {
+  width: calc(78.9% - 10px);
+}
 .pt-form .pt-form-row .pt-label {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.inline label {
-  width: 12.5%;
+  width: 19.3%;
   text-align: right;
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input,
 .pt-form .pt-form-row .pt-label.inline .select-box {
-  width: calc(85.65% - 10px);
+  width: calc(50% - 10px);
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input input,
 .pt-form .pt-form-row .pt-label.inline .pt-input select,
