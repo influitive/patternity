@@ -115,7 +115,7 @@ Form.Row = React.createClass({
   },
   render: function () {
     return (
-      <div className={"pt-form-row " + this.props.inputSize} ref="row">
+      <div className={"pt-form-row " + this.props.inputSize + "-input"} ref="row">
         {this.props.children}
       </div>
     );

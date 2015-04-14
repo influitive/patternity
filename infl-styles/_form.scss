@@ -199,9 +199,9 @@ textarea {
     &.column-num-2 {
       width: calc(50% - 10px);
 
-      .small,
-      .medium,
-      .large {
+      .small-input,
+      .medium-input,
+      .large-input {
         .pt-label {
           &.inline {
             label {
@@ -220,9 +220,9 @@ textarea {
     &.column-num-3 {
       width: calc(33% - 10px);
 
-      .small,
-      .medium,
-      .large {
+      .small-input,
+      .medium-input,
+      .large-input {
         .pt-label {
           &.inline {
             label {
@@ -244,7 +244,7 @@ textarea {
     margin: 10px 0px;
     clear: left;
 
-    &.small {
+    &.small-input {
       .pt-label {
         &.inline {
           .pt-input,
@@ -255,7 +255,7 @@ textarea {
       }
     }
 
-    &.medium {
+    &.medium-input {
       .pt-label {
         &.inline {
           .pt-input,
@@ -266,7 +266,7 @@ textarea {
       }
     }
 
-    &.large {
+    &.large-input {
       .pt-label {
         &.inline {
           .pt-input,
