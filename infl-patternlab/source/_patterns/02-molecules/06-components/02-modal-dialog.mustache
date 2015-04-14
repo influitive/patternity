@@ -9,6 +9,9 @@
 
   <span id="modal-dialog-pattern"></span>
   <button onclick="dialog.showDialog(true)">Show Modal Dialog</button>
+
+  <span id="modal-scrolling-body-dialog-pattern"></span>
+  <button onclick="dialog.showScrollingBodyDialog(true)">Show Scrolling Body Modal Dialog</button>
   <script type="text/javascript">
     var dialog = {};
     (function() {
@@ -20,7 +23,10 @@
 
       function buildParagraph(){
         return inflComp.React.createElement("p", {
-          children : ['This is the modal body.', 'This is the modal body.']
+          children : ['This is the modal body.', 'This is the modal body.'],
+          style : {
+            "margin-bottom" : "100px"
+          }
         })
       }
 
@@ -29,9 +35,28 @@
           children : [
             buildParagraph(),
             buildParagraph(),
+            buildParagraph()
+          ]
+        });
+      }
+
+      function buildLargeBody(){
+        return inflComp.React.createElement(inflComp.ModalDialog.Body, {
+          children : [
             buildParagraph(),
             buildParagraph(),
             buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph(),
+            buildParagraph()
           ]
         });
       }
@@ -60,19 +85,27 @@
         });
       }
 
+      dialog.showScrollingBodyDialog = function(isModalOpen) {
+        modal("modal-scrolling-body-dialog-pattern", isModalOpen, true, buildLargeBody);
+      }
+
       dialog.showDialog = function(isModalOpen){
+        modal("modal-dialog-pattern", isModalOpen, false, buildBody);
+      };
+
+      function modal(id, isModalOpen, scrollingBody, _buildBody){
         inflComp.React.render(
           inflComp.React.createElement(inflComp.ModalDialog, {
             children : [
               buildHeader(),
-              buildBody(),
+              _buildBody(),
               buildFooter()
             ],
             isModalOpen : isModalOpen,
-            scrollingBody : true
+            scrollingBody : scrollingBody
           }),
-          document.getElementById("modal-dialog-pattern"));
-      };
+          document.getElementById(id));
+      }
     })();
   </script>
 
