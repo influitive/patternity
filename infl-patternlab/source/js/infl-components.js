@@ -1159,7 +1159,8 @@ var InternalTab = React.createClass({displayName: "InternalTab",
   _isTabOpen : function(){
     return this.state.tabIsOpen ? "tab-open" : "";
   },
-  _handleClick : function(){
+  _handleClick : function(event){
+    event.preventDefault();
     this.props.onClick(this.props.index);
   }
 });
