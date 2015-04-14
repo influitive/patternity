@@ -25,12 +25,12 @@
 
       &.tab-open {
         background-color:#fff;
+        border-top: 3px solid $info-color;
         border-bottom: 1px solid #fff;
 
         a {
-          border: 1px solid $light-grey;
-          border-top: 3px solid $info-color;
-          border-bottom: 0px;
+          border-right: 1px solid $light-grey;
+          border-left: 1px solid $light-grey;
           position: relative;
           color: $info-color;
         }
