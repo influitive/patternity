@@ -132,7 +132,7 @@
   <pre class="code">
     <code>
       &lt;Form&gt;
-        &lt;Form.Row&gt;
+        &lt;Form.Row inputSize="large"&gt;
           &lt;InputLabel label="Text Input" &gt;
             &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
           &lt;/InputLabel&gt;
@@ -159,7 +159,8 @@
   <pre class="code">
     <code>
       {
-        children : [...]  //form row is best used with input label
+        children : [...]    //form row is best used with input label,
+        inputSize : string  //determines how large the input will be small, medium ro large.  defaults to large
       }
     </code>
   </pre>
