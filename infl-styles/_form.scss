@@ -165,7 +165,7 @@ textarea {
 
   &.inline > label {
     vertical-align: top;
-    padding-top: 12px;
+    padding-top: 0.7em;
     margin-right: 10px;
     line-height: 15px;
 
@@ -187,7 +187,6 @@ textarea {
 
 .pt-form {
   overflow: hidden;
-  font-size: 15px;
 
   .pt-form-column {
     float: left;
