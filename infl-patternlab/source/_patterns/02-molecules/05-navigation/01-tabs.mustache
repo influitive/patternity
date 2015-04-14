@@ -13,17 +13,25 @@
       function buildTab(tabTitle){
         return inflComp.React.createElement(inflComp.Tabs.Tab, {
           title : tabTitle,
-          children : [tabTitle, buildParagraph(), buildParagraph(), buildParagraph(), buildParagraph()]
+          children : [
+            inflComp.React.createElement("h2", {
+              children : tabTitle
+            }),
+            buildParagraph("This is the tab content for the " + tabTitle + "."),
+            buildParagraph("This is the tab content for the " + tabTitle + "."),
+            buildParagraph("This is the tab content for the " + tabTitle + "."),
+            buildParagraph("This is the tab content for the " + tabTitle + ".")
+          ]
         });
       }
 
-      function buildParagraph(){
+      function buildParagraph(text){
         return inflComp.React.createElement("p", {
-          children : ['This is the tab body.', 'This is the tab body.'],
+          children : text,
           style : {
-            "marginBottom" : "100px"
+            "marginBottom" : "10px"
           }
-        })
+        });
       }
 
       var props = {
