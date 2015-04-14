@@ -7,6 +7,7 @@ dependencies:
     - npm install -g karma-cli
     - npm install -g grunt-cli
     - sudo pip install awscli
+    - bundle install
   override:
     - npm install --no-spin
     - npm install --prefix infl-patternlab --no-spin
