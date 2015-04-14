@@ -533,7 +533,7 @@ Form.Row = React.createClass({displayName: "Row",
   },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-row " + this.props.inputSize, ref: "row"}, 
+      React.createElement("div", {className: "pt-form-row " + this.props.inputSize + "-input", ref: "row"}, 
         this.props.children
       )
     );
