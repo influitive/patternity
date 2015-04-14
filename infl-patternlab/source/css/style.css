@@ -1519,7 +1519,7 @@ textarea {
 }
 .pt-label.inline > label {
   vertical-align: top;
-  padding-top: 12px;
+  padding-top: 0.7em;
   margin-right: 10px;
   line-height: 15px;
 }
