@@ -14,9 +14,9 @@ var Accordion = React.createClass({
   },
   getInitialState: function(){
     if(this._isOpenSectionIndexValid(this.props.openSectionIndex)){
-      return { openSectionIndex: this.props.openSectionIndex }
+      return { openSectionIndex: this.props.openSectionIndex };
     } else {
-      return { openSectionIndex: -1 }
+      return { openSectionIndex: -1 };
     }
   },
   componentWillReceiveProps : function(nextProps){
