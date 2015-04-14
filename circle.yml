@@ -1,9 +1,19 @@
 dependencies:
   pre:
     - npm install -g karma-cli
+    - npm install -g grunt-cli
+    - sudo pip install awscli
   override:
     - npm install --no-spin
+    - npm install --prefix infl-patternlab --no-spin
 
 test:
   override:
     - karma start --single-run
+
+deployment:
+  aws:
+    branch: master
+    commands:
+      - grunt --gruntfile infl-patternlab/Gruntfile.js
+      - /bin/bash publish.sh
