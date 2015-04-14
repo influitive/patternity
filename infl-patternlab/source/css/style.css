@@ -1932,12 +1932,12 @@ textarea {
 }
 .pt-tabs .pt-tabs-menu .pt-tab.tab-open {
   background-color: #fff;
+  border-top: 3px solid #08a5c5;
   border-bottom: 1px solid #fff;
 }
 .pt-tabs .pt-tabs-menu .pt-tab.tab-open a {
-  border: 1px solid #d0d2d3;
-  border-top: 3px solid #08a5c5;
-  border-bottom: 0px;
+  border-right: 1px solid #d0d2d3;
+  border-left: 1px solid #d0d2d3;
   position: relative;
   color: #08a5c5;
 }
