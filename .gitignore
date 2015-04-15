@@ -1,3 +1,4 @@
 node_modules/**
 .bundle/**
 script/ruby/**
+.DS_Store
