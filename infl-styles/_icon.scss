@@ -237,3 +237,13 @@
   font-family : 'influicons';
   content: '\e610';
 }
+
+@mixin ic-quote-open() {
+  font-family : 'influicons';
+  content: '\e621';
+}
+
+@mixin ic-quote-close() {
+  font-family : 'influicons';
+  content: '\e622';
+}
