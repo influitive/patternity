@@ -201,6 +201,36 @@
       content: '\e61f';
     }
   }
+
+  &.ic-quote-open {
+    &:before {
+      content : "\e621";
+    }
+  }
+
+  &.ic-quote-close {
+    &:before {
+      content : "\e622";
+    }
+  }
+
+  &.ic-clock {
+    &:before {
+      content : "\e623";
+    }
+  }
+
+  &.ic-list {
+    &:before {
+      content : "\e624";
+    }
+  }
+
+  &.ic-grid {
+    &:before {
+      content : "\e625";
+    }
+  }
 }
 
 @mixin ic-chevron-down() {
