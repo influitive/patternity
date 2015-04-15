@@ -955,6 +955,21 @@ h6 {
 .ic.ic-trash:before {
   content: '\e61f';
 }
+.ic.ic-quote-open:before {
+  content: "\e621";
+}
+.ic.ic-quote-close:before {
+  content: "\e622";
+}
+.ic.ic-clock:before {
+  content: "\e623";
+}
+.ic.ic-list:before {
+  content: "\e624";
+}
+.ic.ic-grid:before {
+  content: "\e625";
+}
 
 .button,
 button {

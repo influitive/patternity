@@ -7,11 +7,10 @@ var Icon = React.createClass({
   },
   render: function() {
     return (
-      <span ref="icon" className={this.getClassNames()} />
+      <span ref="icon" className={this._getClassNames()} />
     );
   },
-
-  getClassNames: function() {
+  _getClassNames: function() {
     var influitiveIconName = 'ic-' + this.props.icon;
     var classes = classNames('ic', influitiveIconName);
     if (this.props.className) {
