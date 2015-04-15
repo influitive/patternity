@@ -1839,8 +1839,10 @@ textarea {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(68, 68, 68, 0.6);
   overflow: scroll;
+}
+.pt-modal-dialog.lightbox {
+  background-color: rgba(68, 68, 68, 0.6);
 }
 .pt-modal-dialog.close {
   top: -1000px;
@@ -1858,6 +1860,8 @@ textarea {
   top: 0px;
   left: 0px;
   width: 100%;
+  background-color: #fff;
+  padding-top: 24px;
 }
 .pt-modal-dialog.scrollingBody .pt-modal .pt-modal-body {
   overflow: scroll;
@@ -1868,12 +1872,16 @@ textarea {
   bottom: 0px;
   left: 0px;
   width: 100%;
+  background-color: #fff;
 }
 .pt-modal-dialog .pt-modal {
   background-color: #fff;
   border-radius: 2px;
   margin: 30px auto;
   position: relative;
+  padding-top: 24px;
+  color: #666666;
+  border: 1px solid #eeeeee;
 }
 .pt-modal-dialog .pt-modal .close-dialog {
   position: absolute;
@@ -1883,6 +1891,7 @@ textarea {
   display: block;
   padding: 10px;
   z-index: 2;
+  font-size: 30px;
 }
 .pt-modal-dialog .pt-modal.large {
   width: 80%;
@@ -1893,17 +1902,39 @@ textarea {
 .pt-modal-dialog .pt-modal.small {
   width: 25%;
 }
+.pt-modal-dialog .pt-modal.small .pt-modal-footer .button-group {
+  text-align: center;
+}
+.pt-modal-dialog .pt-modal.small .pt-modal-footer .button-group button,
+.pt-modal-dialog .pt-modal.small .pt-modal-footer .button-group .button {
+  width: calc(100% / 2 - 9px);
+}
 .pt-modal-dialog .pt-modal .pt-modal-header {
-  padding: 10px;
-  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 18px;
+  padding: 0px 24px;
+}
+.pt-modal-dialog .pt-modal .pt-modal-header h3 {
+  margin: 0px;
 }
 .pt-modal-dialog .pt-modal .pt-modal-body {
-  padding: 10px;
+  padding: 0px 24px 24px;
 }
 .pt-modal-dialog .pt-modal .pt-modal-footer {
-  padding: 10px;
   border-top: 1px solid #eeeeee;
   text-align: right;
+  padding: 12px 24px;
+}
+.pt-modal-dialog .pt-modal .pt-modal-footer .button-group {
+  margin: 0px;
+  width: 100%;
+}
+.pt-modal-dialog .pt-modal .pt-modal-footer .button-group button,
+.pt-modal-dialog .pt-modal .pt-modal-footer .button-group .button {
+  margin-right: 18px;
+}
+.pt-modal-dialog .pt-modal .pt-modal-footer .button-group button:last-child,
+.pt-modal-dialog .pt-modal .pt-modal-footer .button-group .button:last-child {
+  margin-right: 0px;
 }
 
 .pt-tabs {

@@ -809,14 +809,16 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
       size : "medium",
       onClose : function(){},
       isModalOpen : false,
-      scrollingBody : false
+      scrollingBody : false,
+      lightbox : true
     };
   },
   propTypes :{
     id : React.PropTypes.string,
     closeable : React.PropTypes.bool,
     size : React.PropTypes.oneOf(['small', 'medium', 'large']),
-    scrollingBody : React.PropTypes.bool
+    scrollingBody : React.PropTypes.bool,
+    lightbox : React.PropTypes.bool
   },
   getInitialState : function(){
     return {
@@ -833,7 +835,7 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
   },
   render : function(){
     return (
-      React.createElement("div", {className: "pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody(), onClick: this._closeDialog}, 
+      React.createElement("div", {className: "pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody() + " " + this._lightbox(), onClick: this._closeDialog}, 
         React.createElement("section", {className: "pt-modal " + this.props.size}, 
           React.createElement("span", {className: "close-dialog ic ic-times", onClick: this._closeDialog}), 
           this.props.children
@@ -848,6 +850,9 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
     if(this.state.isModalOpen){
       this._getBodyElement().style.overflow = "hidden";
     }
+  },
+  _lightbox : function(){
+    return this.props.lightbox ? "lightbox" : "";
   },
   _showModal : function(){
     return this.state.isModalOpen ? "" : "close";
