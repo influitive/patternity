@@ -961,6 +961,12 @@ h6 {
 .ic.ic-quote-close:before {
   content: "\e622";
 }
+.ic.ic-quote-fill-open:before {
+  content: "\e627";
+}
+.ic.ic-quote-fill-close:before {
+  content: "\e628";
+}
 .ic.ic-clock:before {
   content: "\e623";
 }
@@ -969,6 +975,9 @@ h6 {
 }
 .ic.ic-grid:before {
   content: "\e625";
+}
+.ic.ic-globe:before {
+  content: "\e626";
 }
 
 .button,
@@ -1650,6 +1659,29 @@ textarea {
 }
 .pt-form .pt-form-actions .button-group {
   margin-right: 0px;
+}
+
+.pt-checkbox {
+  display: inline-block;
+  line-height: 24px;
+}
+.pt-checkbox .stylized-checkbox {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #d0d2d3;
+  background-color: #eeeeee;
+  border-radius: 2px;
+  vertical-align: middle;
+  position: relative;
+}
+.pt-checkbox .pt-checkbox-label {
+  display: inline-block;
+  margin-left: 18px;
+  vertical-align: middle;
+}
+.pt-checkbox .pt-native-checkbox {
+  display: none;
 }
 
 .help-tooltip {

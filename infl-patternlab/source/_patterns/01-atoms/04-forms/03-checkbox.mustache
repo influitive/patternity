@@ -1,0 +1,65 @@
+<section class="pattern-section">
+  <header>
+    <h3>checkbox</h3>
+  </header>
+
+  <p>The checkbox form element can be used in place of a native checkbox.  It also still acts as a form element checkbox and can be used with a form tag and form submit.</p>
+
+  <p>It has two states enabled and disabled</p>
+
+  <div id="checkbox-pattern" style="margin-top: 10px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        enabled: true,
+        isChecked : false,
+        onChange : onChange,
+        checkboxName: "test-name",
+        checkboxLabel : "My Checkbox"
+      };
+
+      function onChange(event){
+        console.log(event);
+      }
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Checkbox, props),
+        document.getElementById("checkbox-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Checkbox isOn={false} enabled={true} onChange={callback_function} inputName={form_element_name} /&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Checkbox, props),
+        {DOM element to append checkbox to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        isChecked : boolean,        // defaults to false.  Is the on/ off state of the toggle
+        enabled : boolean           // defaults to true.  determines if the switch is enabled or disabled
+        onChange : function,        // the onChange will be called with the current state of enabled as a boolean
+        checkboxName : string,      // name of the checkbox input to be used in a form
+        id : string,                // id for the internal checkbox
+        checkboxLabel : string      // text to accompany the checkbox
+      }
+    </code>
+  </pre>
+</section>

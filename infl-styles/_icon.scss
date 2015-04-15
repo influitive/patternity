@@ -214,6 +214,18 @@
     }
   }
 
+  &.ic-quote-fill-open {
+    &:before {
+      content : "\e627";
+    }
+  }
+
+  &.ic-quote-fill-close {
+    &:before {
+      content : "\e628";
+    }
+  }
+
   &.ic-clock {
     &:before {
       content : "\e623";
@@ -231,6 +243,12 @@
       content : "\e625";
     }
   }
+
+  &.ic-globe {
+    &:before {
+      content : "\e626";
+    }
+  }
 }
 
 @mixin ic-chevron-down() {
@@ -246,4 +264,9 @@
 @mixin ic-quote-close() {
   font-family : 'influicons';
   content: '\e622';
+}
+
+@mixin ic-check() {
+  font-family : 'influicons';
+  content: '\e604';
 }
