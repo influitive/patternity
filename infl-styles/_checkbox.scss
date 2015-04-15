@@ -11,6 +11,7 @@
     border-radius: $theme-border-radius;
     vertical-align: middle;
     position: relative;
+    cursor: pointer;
   }
 
   .pt-checkbox-label {
@@ -21,9 +22,14 @@
 
   &.isChecked {
     .stylized-checkbox {
-//      &:before {
-//        content : @include ic-check();
-//      }
+      &:before {
+        @include ic-check();
+        color: $darker-grey;
+        position: absolute;
+        font-size: 18px;
+        top: -4px;
+        left: -1px;
+      }
     }
   }
 
