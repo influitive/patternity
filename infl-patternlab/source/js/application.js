@@ -20,6 +20,7 @@ inflComp.Form = require("../../infl-components/form.jsx");
 inflComp.ModalDialog = require("../../infl-components/modal_dialog.jsx");
 inflComp.Tabs = require("../../infl-components/tabs.jsx");
 inflComp.Checkbox = require("../../infl-components/checkbox.jsx");
+inflComp.RadioButton = require("../../infl-components/radio_button.jsx");
 
 inflComp.inputLabel = function(props, elementId){
   inflComp.React.render(
