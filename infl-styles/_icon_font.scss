@@ -1,6 +1,12 @@
 //$path_to_fonts this should be set in your application.scss
 
 @font-face {
-    font-family: 'influicons';
-    src: $path_to_influicons_font format('truetype');
+  font-family: "influicons";
+  src: $path_to_influicons_font_eot;
+  src: $path_to_influicons_font_eot2 format('eot'),
+    $path_to_influicons_font_woff format('woff'),
+    $path_to_influicons_font_ttf format('truetype'),
+    $path_to_influicons_font_svg format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
