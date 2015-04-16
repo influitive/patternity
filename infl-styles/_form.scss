@@ -174,6 +174,12 @@ textarea {
     }
   }
 
+  &.inline > span {
+    &.radio-button-group {
+      margin-top: 6px;
+    }
+  }
+
   &.stacked > label,
   &.stacked > span {
     display: block;
