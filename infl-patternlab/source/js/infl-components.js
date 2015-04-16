@@ -1449,7 +1449,7 @@ var TextInput = React.createClass({displayName: "TextInput",
     return (
       React.createElement("span", {className: this._determineInputStyling()}, 
         this._determineInputIcon(), 
-        React.createElement("input", {readOnly: this.props.readOnly, disabled: this.props.disabled, required: this.props.required, type: this.props.type, value: this.state.value, 
+        React.createElement("input", {readOnly: this.props.readOnly, required: this.props.required, type: this.props.type, value: this.state.value, 
                placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, 
                pattern: this.props.pattern, disabled: this.props.disabled, onChange: this._handleChange}), 
         this._buildMessage()
