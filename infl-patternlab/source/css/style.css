@@ -1550,7 +1550,7 @@ textarea {
 .pt-label.inline > label.multi-line {
   padding-top: 3px;
 }
-.pt-label.inline > span.radio-button-group {
+.pt-label.inline > span.ptradio-button-group, .pt-label.inline > span.pt-checkbox-group {
   margin-top: 6px;
 }
 .pt-label.stacked > label, .pt-label.stacked > span {
@@ -1700,6 +1700,23 @@ textarea {
   display: none;
 }
 
+.pt-checkbox-group {
+  display: inline-block;
+}
+.pt-checkbox-group.inline .pt-checkbox {
+  margin-right: 20px;
+}
+.pt-checkbox-group.inline .pt-checkbox:last-child {
+  margin-right: 0px;
+}
+.pt-checkbox-group.stacked .pt-checkbox {
+  display: block;
+  margin-bottom: 10px;
+}
+.pt-checkbox-group.stacked .pt-checkbox:last-child {
+  margin-bottom: 0px;
+}
+
 .pt-radio-button {
   display: inline-block;
   line-height: 24px;
@@ -1737,20 +1754,20 @@ textarea {
   border-radius: 50%;
 }
 
-.radio-button-group {
+.pt-radio-button-group {
   display: inline-block;
 }
-.radio-button-group.inline .pt-radio-button {
+.pt-radio-button-group.inline .pt-radio-button {
   margin-right: 20px;
 }
-.radio-button-group.inline .pt-radio-button:last-child {
+.pt-radio-button-group.inline .pt-radio-button:last-child {
   margin-right: 0px;
 }
-.radio-button-group.stacked .pt-radio-button {
+.pt-radio-button-group.stacked .pt-radio-button {
   display: block;
   margin-bottom: 10px;
 }
-.radio-button-group.stacked .pt-radio-button:last-child {
+.pt-radio-button-group.stacked .pt-radio-button:last-child {
   margin-bottom: 0px;
 }
 

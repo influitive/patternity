@@ -60,4 +60,24 @@ var Checkbox = React.createClass({
   }
 });
 
+Checkbox.Group = React.createClass({
+    getDefaultProps: function() {
+    return {
+      id: "",
+      layout : "inline"
+    };
+  },
+  propTypes : {
+    id: React.PropTypes.string,
+    layout : React.PropTypes.string
+  },
+  render : function(){
+    return (
+      <span className={"pt-checkbox-group " + this.props.layout} id={this.props.id}>
+        {this.props.children}
+      </span>
+    );
+  }
+});
+
 module.exports = Checkbox;

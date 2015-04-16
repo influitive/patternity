@@ -45,3 +45,28 @@
     display: none;
   }
 }
+
+.pt-checkbox-group {
+  display: inline-block;
+
+  &.inline {
+    .pt-checkbox {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  &.stacked {
+    .pt-checkbox {
+      display: block;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}

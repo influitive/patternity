@@ -7,6 +7,8 @@
 
   <p>It has two states enabled and disabled</p>
 
+  <h4>Checkbox</h4>
+
   <div id="checkbox-pattern" style="margin-top: 10px;"></div>
   <script type="text/javascript">
     (function() {
@@ -59,6 +61,84 @@
         checkboxName : string,      // name of the checkbox input to be used in a form
         id : string,                // id for the internal checkbox
         checkboxLabel : string      // text to accompany the checkbox
+      }
+    </code>
+  </pre>
+
+  <h4>Checkbox Group</h4>
+
+  <div id="checkbox-group-pattern" style="margin-top: 10px;"></div>
+  <script type="text/javascript">
+    (function() {
+      function buildCheckbox(){
+        var props = {
+          enabled: true,
+          isChecked : false,
+          onChange : onChange,
+          checkboxName: "test-name",
+          checkboxLabel : "My Checkbox"
+        };
+
+        function onChange(event){
+          console.log(event);
+        }
+
+        return inflComp.React.createElement(inflComp.Checkbox, props)
+      }
+
+      function createLabelWithCheckbox(){
+        return inflComp.React.createElement(inflComp.InputLabel, {
+          layout : "inline",
+          label : "Field Label",
+          children : [createCheckBoxGroup("inline")]
+        });
+      }
+
+      function createCheckBoxGroup(layout){
+        return inflComp.React.createElement(inflComp.Checkbox.Group, {
+          layout : layout,
+          id : "test-checkbox-group",
+          children : [buildCheckbox(), buildCheckbox(), buildCheckbox()]
+        });
+      }
+
+      inflComp.React.render(
+        createCheckBoxGroup("inline"),
+        document.getElementById("checkbox-group-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Checkbox.Group&gt;
+        &lt;Checkbox isChecked={false} enabled={true} onChange={callback_function} checkboxName={form_element_name} checkboxLabel={label_to_go_with_checkbox} /&gt;
+        &lt;Checkbox isChecked={false} enabled={true} onChange={callback_function} checkboxName={form_element_name} checkboxLabel={label_to_go_with_checkbox} /&gt;
+        &lt;Checkbox isChecked={false} enabled={true} onChange={callback_function} checkboxName={form_element_name} checkboxLabel={label_to_go_with_checkbox} /&gt;
+      &lt;/ Checkbox.Group&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Checkbox.Group, props),
+        {DOM element to append checkbox group to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        id : string,                // id for the checkbox group
+        layout : string             // determines if the layout is inline or stacked.  defaults to inline
       }
     </code>
   </pre>

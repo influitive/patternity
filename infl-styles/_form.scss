@@ -175,7 +175,8 @@ textarea {
   }
 
   &.inline > span {
-    &.radio-button-group {
+    &.ptradio-button-group,
+    &.pt-checkbox-group {
       margin-top: 6px;
     }
   }
