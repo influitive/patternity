@@ -266,6 +266,16 @@
   content: '\e622';
 }
 
+@mixin ic-quote-fill-open() {
+  font-family : 'influicons';
+  content: '\e627';
+}
+
+@mixin ic-quote-fill-close() {
+  font-family : 'influicons';
+  content: '\e628';
+}
+
 @mixin ic-check() {
   font-family : 'influicons';
   content: '\e604';
