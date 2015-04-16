@@ -24,7 +24,7 @@
     .stylized-checkbox {
       &:before {
         @include ic-check();
-        color: $darker-grey;
+        color: $dark-grey;
         position: absolute;
         font-size: 18px;
         top: -4px;
@@ -34,7 +34,11 @@
   }
 
   &.disabled {
-
+    .stylized-checkbox {
+      &:before {
+        color: $light-grey;
+      }
+    }
   }
 
   .pt-native-checkbox {

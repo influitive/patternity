@@ -35,7 +35,7 @@ var Checkbox = React.createClass({
       <span id={this.props.id} className={this._checkboxCSSClasses()} onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
         <span className="stylized-checkbox"></span>
         <span className="pt-checkbox-label">{this.props.checkboxLabel}</span>
-        <input type="checkbox" ref="checkbox" className="pt-native-checkbox" checked={this._isChecked()} name={this.props.checkboxName} onChange={this._handleChange} id={this.props.id} />
+        <input disabled={!this.props.enabled} type="checkbox" ref="checkbox" className="pt-native-checkbox" checked={this._isChecked()} name={this.props.checkboxName} onChange={this._handleChange} id={this.props.id} />
       </span>
     );
   },

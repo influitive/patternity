@@ -1684,13 +1684,53 @@ textarea {
 .pt-checkbox.isChecked .stylized-checkbox:before {
   font-family: 'influicons';
   content: '\e604';
-  color: #444444;
+  color: #666666;
   position: absolute;
   font-size: 18px;
   top: -4px;
   left: -1px;
 }
+.pt-checkbox.disabled .stylized-checkbox:before {
+  color: #d0d2d3;
+}
 .pt-checkbox .pt-native-checkbox {
+  display: none;
+}
+
+.pt-radio-button {
+  display: inline-block;
+  line-height: 24px;
+}
+.pt-radio-button .stylized-radio-button {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #d0d2d3;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+.pt-radio-button .pt-radio-label {
+  display: inline-block;
+  margin-left: 18px;
+  vertical-align: middle;
+}
+.pt-radio-button.isChecked .stylized-radio-button:before {
+  content: "";
+  background-color: #666666;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+.pt-radio-button.disabled .stylized-radio-button:before {
+  color: #d0d2d3;
+}
+.pt-radio-button .pt-native-radio-button {
   display: none;
 }
 
