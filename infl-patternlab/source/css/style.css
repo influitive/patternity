@@ -1717,7 +1717,10 @@ textarea {
   margin-left: 18px;
   vertical-align: middle;
 }
-.pt-radio-button.isChecked .stylized-radio-button:before {
+.pt-radio-button.disabled .stylized-radio-button:before {
+  color: #d0d2d3;
+}
+.pt-radio-button .pt-native-radio-button:checked + .stylized-radio-button:before {
   content: "";
   background-color: #666666;
   position: absolute;
@@ -1726,12 +1729,6 @@ textarea {
   height: 8px;
   width: 8px;
   border-radius: 50%;
-}
-.pt-radio-button.disabled .stylized-radio-button:before {
-  color: #d0d2d3;
-}
-.pt-radio-button .pt-native-radio-button {
-  display: none;
 }
 
 .help-tooltip {

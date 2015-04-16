@@ -16,6 +16,7 @@
         key: "alert-" + Math.random(),
         title : "Default Alert",
         children : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        hideIn : 5
       };
 
       inflComp.React.render(
@@ -293,7 +294,8 @@
         children: [...],              // array of text, html, react elements
         type : String                 // can be success, error, warning or ''
         showAlert : boolean           // determines if the alert is visible or not
-        onClose : function            // optional defaults to empty function called when alert is closed
+        onClose : function,           // optional defaults to empty function called when alert is closed
+        hideIn : integer              // determines the interval until the input is hidden.  optional and defaults to don't hide
       }
     </code>
   </pre>

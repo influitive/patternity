@@ -185,7 +185,8 @@ var Alert = React.createClass({displayName: "Alert",
       showIcon: false,
       closeable : false,
       showAlert : true,
-      onClose : function(){}
+      onClose : function(){},
+      hideIn  : 0
     };
   },
   propTypes : {
@@ -193,13 +194,19 @@ var Alert = React.createClass({displayName: "Alert",
     type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
     closeable : React.PropTypes.bool,
     showAlert : React.PropTypes.bool,
-    onClose: React.PropTypes.func
+    onClose: React.PropTypes.func,
+    hideIn: React.PropTypes.number
   },
   getInitialState: function() {
     return {showAlert: this.props.showAlert};
   },
   componentWillReceiveProps : function(newProps){
     this.setState({showAlert: newProps.showAlert});
+  },
+  componentDidMount : function(){
+    if(this.props.hideIn > 0) {
+      setTimeout(this._close, this._hideInMilliseconds());
+    }
   },
   render : function(){
     return (
@@ -214,6 +221,9 @@ var Alert = React.createClass({displayName: "Alert",
         )
       )
     );
+  },
+  _hideInMilliseconds : function(){
+    return this.props.hideIn * 1000;
   },
   _showAlert: function(){
     return this.state.showAlert ? "" : "hide";
@@ -1010,63 +1020,73 @@ module.exports = PanelLeftSideBar;
 var React = require('react');
 var classNames = require('classnames');
 
-var _RadioButton = React.createClass({displayName: "_RadioButton",
-  getDefaultProps: function() {
-    return {
-      id: "",
-      enabled: true,
-      isChecked : false,
-      radioName : "",
-      radioLabel : ""
-    };
-  },
-  propTypes : {
-    id: React.PropTypes.string,
-    enabled: React.PropTypes.bool,
-    isChecked: React.PropTypes.bool,
-    radioName : React.PropTypes.string,
-    radioLabel : React.PropTypes.string
-  },
-  render : function(){
-    return (
-      React.createElement("div", null, this.props.children)
-    );
-  }
-});
-
-_RadioButton.Group = React.createClass({displayName: "Group",
-  getDefaultProps : function(){
-    return {
-      onChange : function(){}
-    };
-  },
-  propTypes : {
-    onChange : React.PropTypes.func
-  },
-  getInitialState : function(){
-    return {
-      selectedRadioIndex : -1
-    };
-  },
-  render : function(){
-    return (
-      React.createElement("div", {className: "pt-radio-button-group"}, 
-        this.props.children
-      )
-    );
-  },
-  _buildRadioButtons : function(){
-     var that = this;
-    return React.Children.map(this.props.children, function(radio, index){
-      return (
-        React.createElement(InternalRadioButton, React.__spread({},  radio.props, {onChange: that._handleChange}))
-      );
-    });
-  },
-  _handleChange : function(event, index) {
-    this.props.onChange(event);
-  }
-});
+// var RadioButton = React.createClass({
+//   getDefaultProps: function() {
+//     return {
+//       id: "",
+//       enabled: true,
+//       isChecked : false,
+//       onChange: function(){},
+//       radioName : "",
+//       radioLabel : "",
+//       value : ""
+//     };
+//   },
+//   propTypes : {
+//     id: React.PropTypes.string,
+//     enabled: React.PropTypes.bool,
+//     isChecked: React.PropTypes.bool,
+//     onChange : React.PropTypes.func,
+//     radioName : React.PropTypes.string,
+//     radioLabel : React.PropTypes.string,
+//     value : React.PropTypes.string
+//   },
+//   getInitialState: function () {
+//     return {
+//       isChecked: this.props.isChecked
+//     };
+//   },
+//   componentWillReceiveProps: function (newProps) {
+//     this.setState({
+//       isChecked: newProps.isChecked
+//     });
+//   },
+//   render : function(){
+//     // return (
+//     //   <span id={this.props.id} className={this._checkboxCSSClasses()} onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
+//     //     <span className="stylized-radio-button"></span>
+//     //     <span className="pt-radio-label">{this.props.radioLabel}</span>
+//     //     <input disabled={!this.props.enabled} type="radio" ref="radio" value={this.props.value} className="pt-native-radio-button" checked={this._isChecked()} name={this.props.radioName} onChange={this._handleChange} id={this.props.id} />
+//     //   </span>
+//     // );
+//     return (
+//       <span id={this.props.id} className={this._checkboxCSSClasses()}>
+//         <span className="stylized-radio-button"></span>
+//         <span className="pt-radio-label">{this.props.radioLabel}</span>
+//         <input disabled={!this.props.enabled} type="radio" ref="radio" value={this.props.value} className="pt-native-radio-button" checked={this._isChecked()} name={this.props.radioName} onChange={this._handleChange} id={this.props.id} />
+//       </span>
+//     );
+//   },
+//   _isChecked : function(){
+//     return this.state.isChecked;
+//   },
+//   _checkboxCSSClasses : function(){
+//     return classNames({
+//       'pt-radio-button': true,
+//       'isChecked': this.state.isChecked,
+//       'disabled': !this.props.enabled
+//     });
+//   },
+//   _clickCheckBox : function(){
+//     if(this.props.enabled){
+//       this.refs.radio.getDOMNode().click();
+//     }
+//   },
+//   _handleChange : function(event){
+//     this.setState({isChecked: !this.state.isChecked});
+//     this.props.onChange(event);
+//   }
+// });
 
 var RadioButton = React.createClass({displayName: "RadioButton",
   getDefaultProps: function() {
@@ -1076,7 +1096,8 @@ var RadioButton = React.createClass({displayName: "RadioButton",
       isChecked : false,
       onChange: function(){},
       radioName : "",
-      radioLabel : ""
+      radioLabel : "",
+      value : ""
     };
   },
   propTypes : {
@@ -1085,12 +1106,8 @@ var RadioButton = React.createClass({displayName: "RadioButton",
     isChecked: React.PropTypes.bool,
     onChange : React.PropTypes.func,
     radioName : React.PropTypes.string,
-    radioLabel : React.PropTypes.string
-  },
-  getInitialState: function () {
-    return {
-      isChecked: this.props.isChecked
-    };
+    radioLabel : React.PropTypes.string,
+    value : React.PropTypes.string
   },
   componentWillReceiveProps: function (newProps) {
     this.setState({
@@ -1098,21 +1115,18 @@ var RadioButton = React.createClass({displayName: "RadioButton",
     });
   },
   render : function(){
+    //checked={this.props.isChecked}
     return (
-      React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses(), onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
+      React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses()}, 
+        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
         React.createElement("span", {className: "stylized-radio-button"}), 
-        React.createElement("span", {className: "pt-radio-label"}, this.props.radioLabel), 
-        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", className: "pt-native-radio-button", checked: this._isChecked(), name: this.props.radioName, onChange: this._handleChange, id: this.props.id})
+        React.createElement("label", {className: "pt-radio-label", htmlFor: this.props.id}, this.props.radioLabel)
       )
     );
-  },
-  _isChecked : function(){
-    return this.state.isChecked;
   },
   _checkboxCSSClasses : function(){
     return classNames({
       'pt-radio-button': true,
-      'isChecked': this.state.isChecked,
       'disabled': !this.props.enabled
     });
   },
@@ -1122,7 +1136,6 @@ var RadioButton = React.createClass({displayName: "RadioButton",
     }
   },
   _handleChange : function(event){
-    this.setState({isChecked: !this.state.isChecked});
     this.props.onChange(event);
   }
 });
