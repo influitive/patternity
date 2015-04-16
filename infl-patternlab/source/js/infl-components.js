@@ -781,7 +781,8 @@ var InputLabel = React.createClass({displayName: "InputLabel",
     return (
       React.createElement("span", {className: "pt-label " + this.props.layout + " " + this._multiInput()}, 
         React.createElement("label", {htmlFor: this._determineLabelFor(), ref: "label"}, 
-          React.createElement("span", null, this.props.label + ":")
+          React.createElement("span", null, this.props.label + ":"), 
+          this._requiredInput()
         ), 
         this.props.children
       )
@@ -791,10 +792,24 @@ var InputLabel = React.createClass({displayName: "InputLabel",
     return this.props.children.length > 0 ? "multi-input" : "";
   },
   _determineLabelFor : function(){
-    if(this.props.children.length > 0){
-      return this.props.children[0].props.name;
-    } else {
-      return this.props.children.props.name ? this.props.children.props.name : "";
+    return this.props.children.length > 0 ? this._getNameForMultipleInputs() : this._getNameForSingleInput();
+  },
+  _getNameForSingleInput : function(){
+    return this.props.children.props.name ? this.props.children.props.name : "";
+  },
+  _getNameForMultipleInputs : function(){
+    return this.props.children[0].props.name ? this.props.children[0].props.name : "";
+  },
+  _requiredInput : function(){
+    var foundRequired = false;
+    React.Children.map(this.props.children, function(child){
+      if(child.props.required && !foundRequired) {
+        foundRequired = true;
+      }
+    });
+
+    if(foundRequired) {
+      return (React.createElement("span", {className: "ic ic-asterisk required-icon"}));
     }
   }
 });

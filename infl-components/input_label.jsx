@@ -16,6 +16,7 @@ var InputLabel = React.createClass({
       <span className={"pt-label " + this.props.layout + " " + this._multiInput()}>
         <label htmlFor={this._determineLabelFor()} ref="label">
           <span>{this.props.label + ":"}</span>
+          {this._requiredInput()}
         </label>
         {this.props.children}
       </span>
@@ -32,6 +33,18 @@ var InputLabel = React.createClass({
   },
   _getNameForMultipleInputs : function(){
     return this.props.children[0].props.name ? this.props.children[0].props.name : "";
+  },
+  _requiredInput : function(){
+    var foundRequired = false;
+    React.Children.map(this.props.children, function(child){
+      if(child.props.required && !foundRequired) {
+        foundRequired = true;
+      }
+    });
+
+    if(foundRequired) {
+      return (<span className="ic ic-asterisk required-icon"></span>);
+    }
   }
 });
 
