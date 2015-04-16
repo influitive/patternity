@@ -1,0 +1,74 @@
+<section class="pattern-section">
+  <header>
+    <h3>radio button</h3>
+  </header>
+
+  <p>The radio button form element can be used in place of a native radio button.  It also still acts as a form element radio button and can be used with a form tag and form submit.</p>
+
+  <p>It has two states enabled and disabled</p>
+
+  <div id="radio-button-pattern" style="margin-top: 10px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        enabled: true,
+        isChecked : false,
+        onChange : onChange,
+        radioName: "test-name",
+        radioLabel : "My Radio Button"
+      };
+
+      function onChange(event){
+        console.log(event);
+      }
+
+      function createRadioButton(value, isChecked){
+        props.value = value;
+        props.id = value;
+        props.isChecked = isChecked;
+        return inflComp.React.createElement(inflComp.RadioButton, props);
+      }
+
+      inflComp.React.render(
+        inflComp.React.createElement("div", {
+          children : [createRadioButton("value1", true), createRadioButton("value2", false)]
+        }),
+        document.getElementById("radio-button-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Checkbox isChecked={false} enabled={true} onChange={callback_function} checkboxName={form_element_name} checkboxLabel={label_to_go_with_checkbox} /&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Checkbox, props),
+        {DOM element to append checkbox to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        isChecked : boolean,        // defaults to false.  Is the on/ off state of the toggle
+        enabled : boolean           // defaults to true.  determines if the switch is enabled or disabled
+        onChange : function,        // the onChange will be called with the current state of enabled as a boolean
+        checkboxName : string,      // name of the checkbox input to be used in a form
+        id : string,                // id for the internal checkbox
+        checkboxLabel : string      // text to accompany the checkbox
+      }
+    </code>
+  </pre>
+</section>

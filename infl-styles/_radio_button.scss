@@ -1,0 +1,49 @@
+.pt-radio-button {
+  display: inline-block;
+  line-height: 24px;
+
+  .stylized-radio-button {
+    display: inline-block;
+    height : 18px;
+    width: 18px;
+    border: 1px solid $light-grey;
+    background-color: $lighter-grey;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .pt-radio-label {
+    display: inline-block;
+    margin-left: 18px;
+    vertical-align: middle;
+  }
+
+  &.disabled {
+    .stylized-radio-button {
+      &:before {
+        color: $light-grey;
+      }
+    }
+  }
+
+  .pt-native-radio-button {
+    display: none;
+  }
+
+  .pt-native-radio-button:checked + {
+   .stylized-radio-button {
+      &:before {
+        content: "";
+        background-color: $dark-grey;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

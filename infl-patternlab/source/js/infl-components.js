@@ -1115,10 +1115,9 @@ var RadioButton = React.createClass({displayName: "RadioButton",
     });
   },
   render : function(){
-    //checked={this.props.isChecked}
     return (
-      React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses()}, 
-        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
+      React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses(), onClick: this._clickCheckBox}, 
+        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", defaultChecked: this.props.isChecked, value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
         React.createElement("span", {className: "stylized-radio-button"}), 
         React.createElement("label", {className: "pt-radio-label", htmlFor: this.props.id}, this.props.radioLabel)
       )
