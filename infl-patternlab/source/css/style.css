@@ -1720,6 +1720,9 @@ textarea {
 .pt-radio-button.disabled .stylized-radio-button:before {
   color: #d0d2d3;
 }
+.pt-radio-button .pt-native-radio-button {
+  display: none;
+}
 .pt-radio-button .pt-native-radio-button:checked + .stylized-radio-button:before {
   content: "";
   background-color: #666666;
