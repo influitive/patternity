@@ -25,11 +25,13 @@ var InputLabel = React.createClass({
     return this.props.children.length > 0 ? "multi-input" : "";
   },
   _determineLabelFor : function(){
-    if(this.props.children.length > 0){
-      return this.props.children[0].props.name;
-    } else {
-      return this.props.children.props.name ? this.props.children.props.name : "";
-    }
+    return this.props.children.length > 0 ? this._getNameForMultipleInputs() : this._getNameForSingleInput();
+  },
+  _getNameForSingleInput : function(){
+    return this.props.children.props.name ? this.props.children.props.name : "";
+  },
+  _getNameForMultipleInputs : function(){
+    return this.props.children[0].props.name ? this.props.children[0].props.name : "";
   }
 });
 
