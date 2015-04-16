@@ -848,8 +848,11 @@ h6 {
 }
 
 @font-face {
-  font-family: 'influicons';
-  src: url("../fonts/influicons.ttf") format("truetype");
+  font-family: "influicons";
+  src: url("../fonts/influicons.eot");
+  src: url("../fonts/influicons.eot?#iefix") format("eot"), url("../fonts/influicons.woff") format("woff"), url("../fonts/influicons.ttf") format("truetype"), url("../fonts/influicons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 .ic {
   font-family: 'influicons';
@@ -1398,8 +1401,11 @@ button.secondary.inverse:hover {
 }
 
 @font-face {
-  font-family: 'influicons';
-  src: url("../fonts/influicons.ttf") format("truetype");
+  font-family: "influicons";
+  src: url("../fonts/influicons.eot");
+  src: url("../fonts/influicons.eot?#iefix") format("eot"), url("../fonts/influicons.woff") format("woff"), url("../fonts/influicons.ttf") format("truetype"), url("../fonts/influicons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 input[type='email'],
 input[type='text'],
