@@ -1,17 +1,12 @@
 //$path_to_fonts this should be set in your application.scss
 
-$path_to_influicons_font_eot: url('../fonts/icons.eot');
-$path_to_influicons_font_eot2: url('../fonts/icons.eot?#iefix');
-$path_to_influicons_font_svg: url('../fonts/icons.svg');
-$path_to_influicons_font_woff: url('../fonts/icons.woff');
-
 @font-face {
   font-family: "influicons";
-  src: path_to_influicons_font_eot;
-  src: path_to_influicons_font_eot2 format('eot'),
-    path_to_influicons_font_woff format('woff'),
-    $path_to_influicons_font format('truetype'),
-    path_to_influicons_font_svg format('svg');
+  src: $path_to_influicons_font_eot;
+  src: $path_to_influicons_font_eot2 format('eot'),
+    $path_to_influicons_font_woff format('woff'),
+    $path_to_influicons_font_ttf format('truetype'),
+    $path_to_influicons_font_svg format('svg');
   font-weight: normal;
   font-style: normal;
 }
