@@ -7,7 +7,8 @@ var Alert = React.createClass({
       showIcon: false,
       closeable : false,
       showAlert : true,
-      onClose : function(){}
+      onClose : function(){},
+      hideIn  : 0
     };
   },
   propTypes : {
@@ -15,13 +16,19 @@ var Alert = React.createClass({
     type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
     closeable : React.PropTypes.bool,
     showAlert : React.PropTypes.bool,
-    onClose: React.PropTypes.func
+    onClose: React.PropTypes.func,
+    hideIn: React.PropTypes.number
   },
   getInitialState: function() {
     return {showAlert: this.props.showAlert};
   },
   componentWillReceiveProps : function(newProps){
     this.setState({showAlert: newProps.showAlert});
+  },
+  componentDidMount : function(){
+    if(this.props.hideIn > 0) {
+      setTimeout(this._close, this._hideInMilliseconds());
+    }
   },
   render : function(){
     return (
@@ -36,6 +43,9 @@ var Alert = React.createClass({
         </div>
       </div>
     );
+  },
+  _hideInMilliseconds : function(){
+    return this.props.hideIn * 1000;
   },
   _showAlert: function(){
     return this.state.showAlert ? "" : "hide";
