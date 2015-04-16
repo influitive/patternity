@@ -451,6 +451,26 @@ var Checkbox = React.createClass({displayName: "Checkbox",
   }
 });
 
+Checkbox.Group = React.createClass({displayName: "Group",
+    getDefaultProps: function() {
+    return {
+      id: "",
+      layout : "inline"
+    };
+  },
+  propTypes : {
+    id: React.PropTypes.string,
+    layout : React.PropTypes.string
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-checkbox-group " + this.props.layout, id: this.props.id}, 
+        this.props.children
+      )
+    );
+  }
+});
+
 module.exports = Checkbox;
 
 
@@ -1091,7 +1111,7 @@ RadioButton.Group = React.createClass({displayName: "Group",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "radio-button-group " + this.props.layout, id: this.props.id}, 
+      React.createElement("span", {className: "pt-radio-button-group " + this.props.layout, id: this.props.id}, 
         this.props.children
       )
     );

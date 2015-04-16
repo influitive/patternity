@@ -72,7 +72,7 @@ RadioButton.Group = React.createClass({
   },
   render : function(){
     return (
-      <span className={"radio-button-group " + this.props.layout} id={this.props.id}>
+      <span className={"pt-radio-button-group " + this.props.layout} id={this.props.id}>
         {this.props.children}
       </span>
     );
