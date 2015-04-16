@@ -7,6 +7,8 @@
 
   <p>It has two states enabled and disabled</p>
 
+  <h4>Radio Button</h4>
+
   <div id="radio-button-pattern" style="margin-top: 10px;"></div>
   <script type="text/javascript">
     (function() {
@@ -29,10 +31,7 @@
         return inflComp.React.createElement(inflComp.RadioButton, props);
       }
 
-      inflComp.React.render(
-        inflComp.React.createElement("div", {
-          children : [createRadioButton("value1", true), createRadioButton("value2", false)]
-        }),
+      inflComp.React.render(createRadioButton("radio-button-1", false),
         document.getElementById("radio-button-pattern")
       );
     })();
@@ -43,7 +42,92 @@
   <h5 class="code-title">JSX</h5>
   <pre class="code">
     <code>
-      &lt;Checkbox isChecked={false} enabled={true} onChange={callback_function} checkboxName={form_element_name} checkboxLabel={label_to_go_with_checkbox} /&gt;
+      &lt;RadioButton id="radio-id-1" enabled={true} isChecked={true} radioName="my-radio-name" radioLabel : "My Radio Button" value : "radio-button-1"/&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(RadioButton, props),
+        {DOM element to append radio button to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        isChecked : boolean,        // defaults to false.  Is the on/ off state of the toggle
+        enabled : boolean           // defaults to true.  determines if the switch is enabled or disabled
+        onChange : function,        // the onChange will be called with the current state of enabled as a boolean
+        radioName : string,         // name of the checkbox input to be used in a form
+        id : string,                // id for the internal checkbox
+        radioLabel : string,        // text to accompany the checkbox
+        value : string              // value of the radio button
+      }
+    </code>
+  </pre>
+
+  <h4>Radio Button Group</h4>
+
+  <div id="radio-button-group-inline-pattern" style="margin-top: 10px;"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        enabled: true,
+        isChecked : false,
+        onChange : onChange,
+        radioName: "test-name",
+        radioLabel : "My Radio Button"
+      };
+
+      function onChange(event){
+        console.log(event);
+      }
+
+      function createRadioButton(value, isChecked){
+        props.value = value;
+        props.id = value;
+        props.isChecked = isChecked;
+        return inflComp.React.createElement(inflComp.RadioButton, props);
+      }
+
+      function createRadioButtonGroup(layout){
+        return inflComp.React.createElement(inflComp.RadioButton.Group, {
+          radioName : "test-name-two",
+          enabled : true,
+          layout : layout,
+          children : [createRadioButton("value1", true), createRadioButton("value2", false)]
+        });
+      }
+
+      function createLabelWithRadioButton(){
+        return inflComp.React.createElement(inflComp.InputLabel, {
+          layout : "inline",
+          label : "Field Label",
+          children : [createRadioButtonGroup("inline")]
+        });
+      }
+
+      inflComp.React.render(createRadioButtonGroup("inline"),
+        document.getElementById("radio-button-group-inline-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;RadioButton.Group enabled={true} radioName="my-radio-name" layout="inline" &gt;
+        &lt;RadioButton id="radio-id-1" enabled={true} isChecked={true} radioName="my-radio-name" radioLabel : "My Radio Button" value : "radio-button-1"/&gt;
+        &lt;RadioButton id="radio-id-2" enabled={true} isChecked={false} radioName="my-radio-name" radioLabel : "My Radio Button" value : "radio-button-2"/&gt;
+      &lt;/RadioButton.Group&gt;
     </code>
   </pre>
 
@@ -62,12 +146,10 @@
   <pre class="code">
     <code>
       {
-        isChecked : boolean,        // defaults to false.  Is the on/ off state of the toggle
         enabled : boolean           // defaults to true.  determines if the switch is enabled or disabled
-        onChange : function,        // the onChange will be called with the current state of enabled as a boolean
-        checkboxName : string,      // name of the checkbox input to be used in a form
+        radioName : string,         // name of the checkbox input to be used in a form
         id : string,                // id for the internal checkbox
-        checkboxLabel : string      // text to accompany the checkbox
+        layout : string             // determines if radio buttons are display inline for stacked.  defaults to stacked
       }
     </code>
   </pre>

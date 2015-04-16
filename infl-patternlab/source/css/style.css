@@ -1550,6 +1550,9 @@ textarea {
 .pt-label.inline > label.multi-line {
   padding-top: 3px;
 }
+.pt-label.inline > span.radio-button-group {
+  margin-top: 6px;
+}
 .pt-label.stacked > label, .pt-label.stacked > span {
   display: block;
 }
@@ -1717,8 +1720,8 @@ textarea {
   margin-left: 18px;
   vertical-align: middle;
 }
-.pt-radio-button.disabled .stylized-radio-button:before {
-  color: #d0d2d3;
+.pt-radio-button.disabled .pt-native-radio-button:checked + .stylized-radio-button:before {
+  background-color: #d0d2d3;
 }
 .pt-radio-button .pt-native-radio-button {
   display: none;
@@ -1732,6 +1735,23 @@ textarea {
   height: 8px;
   width: 8px;
   border-radius: 50%;
+}
+
+.radio-button-group {
+  display: inline-block;
+}
+.radio-button-group.inline .pt-radio-button {
+  margin-right: 20px;
+}
+.radio-button-group.inline .pt-radio-button:last-child {
+  margin-right: 0px;
+}
+.radio-button-group.stacked .pt-radio-button {
+  display: block;
+  margin-bottom: 10px;
+}
+.radio-button-group.stacked .pt-radio-button:last-child {
+  margin-bottom: 0px;
 }
 
 .help-tooltip {

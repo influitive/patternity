@@ -21,9 +21,11 @@
   }
 
   &.disabled {
-    .stylized-radio-button {
-      &:before {
-        color: $light-grey;
+    .pt-native-radio-button:checked + {
+      .stylized-radio-button {
+        &:before {
+          background-color: $light-grey;
+        }
       }
     }
   }
@@ -43,6 +45,31 @@
         height: 8px;
         width: 8px;
         border-radius: 50%;
+      }
+    }
+  }
+}
+
+.radio-button-group {
+  display: inline-block;
+
+  &.inline {
+    .pt-radio-button {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  &.stacked {
+    .pt-radio-button {
+      display: block;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0px;
       }
     }
   }
