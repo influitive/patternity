@@ -1655,6 +1655,20 @@ textarea {
 .pt-form .pt-form-row .pt-label.stacked .select-box select {
   width: 100%;
 }
+.pt-form .pt-form-row .pt-label label + span .is-required {
+  position: relative;
+  display: inline-block;
+}
+.pt-form .pt-form-row .pt-label label + span .is-required .ic {
+  position: absolute;
+  top: 11px;
+  left: 2px;
+  color: #c54040;
+  font-size: 15px;
+}
+.pt-form .pt-form-row .pt-label label + span .is-required input {
+  padding-left: 15px;
+}
 .pt-form .pt-form-actions {
   margin: 10px 1.8% 10px 0px;
   clear: left;

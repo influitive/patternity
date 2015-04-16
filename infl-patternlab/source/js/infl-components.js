@@ -1416,7 +1416,10 @@ var TextInput = React.createClass({displayName: "TextInput",
       React.PropTypes.string,
       React.PropTypes.array
     ]),
-    value : React.PropTypes.string,
+    value : React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
     required : React.PropTypes.bool,
     error : React.PropTypes.bool,
     valid : React.PropTypes.bool,
@@ -1431,7 +1434,7 @@ var TextInput = React.createClass({displayName: "TextInput",
     return (
       React.createElement("span", {className: this._determineInputStyling()}, 
         this._determineInputIcon(), 
-        React.createElement("input", {readOnly: this.props.readOnly, type: this.props.type, value: this.state.value, 
+        React.createElement("input", {readOnly: this.props.readOnly, disabled: this.props.disabled, required: this.props.required, type: this.props.type, value: this.state.value, 
                placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, 
                pattern: this.props.pattern, disabled: this.props.disabled, onChange: this._handleChange}), 
         this._buildMessage()
