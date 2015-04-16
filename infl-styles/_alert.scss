@@ -30,6 +30,7 @@
     top: 5px;
     cursor: pointer;
     font-weight: bold;
+    color: $info-color;
 
     &:hover {
       color: darken($info-color, 10%);
