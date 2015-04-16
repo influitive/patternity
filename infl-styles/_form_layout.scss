@@ -132,6 +132,25 @@
           }
         }
       }
+
+      label + span {
+        .is-required {
+          position: relative;
+          display: inline-block;
+
+          .ic {
+            position: absolute;
+            top: 11px;
+            left: 2px;
+            color: #c54040;
+            font-size: 15px;
+          }
+
+          input {
+            padding-left: 15px;
+          }
+        }
+      }
     }
   }
 
