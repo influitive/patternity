@@ -32,7 +32,7 @@ var RadioButton = React.createClass({
       <span id={this.props.id} className={this._radioCSSClasses()} onClick={this._clickRadioButton}>
         <input disabled={!this.props.enabled} type="radio" ref="radio" defaultChecked={this.props.isChecked} value={this.props.value} className="pt-native-radio-button"  name={this.props.radioName} onChange={this._handleChange} id={this.props.id} />
         <span className="stylized-radio-button"></span>
-        <label className="pt-radio-label" htmlFor={this.props.id}>{this.props.radioLabel}</label>
+        <span className="pt-radio-label">{this.props.radioLabel}</span>
       </span>
     );
   },

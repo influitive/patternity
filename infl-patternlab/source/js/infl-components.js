@@ -1071,7 +1071,7 @@ var RadioButton = React.createClass({displayName: "RadioButton",
       React.createElement("span", {id: this.props.id, className: this._radioCSSClasses(), onClick: this._clickRadioButton}, 
         React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", defaultChecked: this.props.isChecked, value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
         React.createElement("span", {className: "stylized-radio-button"}), 
-        React.createElement("label", {className: "pt-radio-label", htmlFor: this.props.id}, this.props.radioLabel)
+        React.createElement("span", {className: "pt-radio-label"}, this.props.radioLabel)
       )
     );
   },

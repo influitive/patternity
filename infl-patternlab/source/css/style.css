@@ -1551,7 +1551,7 @@ textarea {
 .pt-label.inline > label.multi-line {
   padding-top: 3px;
 }
-.pt-label.inline > span.ptradio-button-group, .pt-label.inline > span.pt-checkbox-group {
+.pt-label.inline > span.pt-radio-button-group, .pt-label.inline > span.pt-checkbox-group {
   margin-top: 6px;
 }
 .pt-label.stacked > label, .pt-label.stacked > span {
@@ -1682,7 +1682,7 @@ textarea {
 }
 .pt-checkbox .pt-checkbox-label {
   display: inline-block;
-  margin-left: 18px;
+  margin-left: 10px;
   vertical-align: middle;
 }
 .pt-checkbox.isChecked .stylized-checkbox:before {
@@ -1735,7 +1735,7 @@ textarea {
 }
 .pt-radio-button .pt-radio-label {
   display: inline-block;
-  margin-left: 18px;
+  margin-left: 10px;
   vertical-align: middle;
 }
 .pt-radio-button.disabled .pt-native-radio-button:checked + .stylized-radio-button:before {
