@@ -1613,20 +1613,8 @@ textarea {
   display: block;
   margin: 10px 0px;
   clear: left;
-  overflow: hidden;
-}
-.pt-form .pt-form-section .pt-form-section-title h3 {
-  float: left;
-  width: 60%;
-}
-.pt-form .pt-form-section .pt-form-section-title .pt-form-section-title-action {
-  float: right;
-  width: 40%;
-  margin-top: 0.83em;
-  text-align: right;
 }
 .pt-form .pt-form-section .pt-form-section-title .pt-form-section-title-description {
-  clear: left;
   margin-top: 10px;
 }
 .pt-form .pt-form-column {

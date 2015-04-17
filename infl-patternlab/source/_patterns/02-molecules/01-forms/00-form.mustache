@@ -82,7 +82,6 @@
       children : [
         inflComp.React.createElement(inflComp.Form.SectionTitle,{
           title : "My Form Section Title",
-          action : inflComp.React.createElement(inflComp.ToggleSwitch, {}),
           children : ["This is my form section title description"]
         })
       ]
@@ -548,7 +547,7 @@
     <code>
       &lt;Form&gt;
         &lt;Form.Section&gt;
-          &lt;Form.SectionTitle title="My Form Section Title" action={form_title_action}&gt;
+          &lt;Form.SectionTitle title="My Form Section Title"&gt;
             &lt;p&gt;This is my form section title description&lt;/p&gt;
           &lt;/Form.SectionTitle&gt;
         &lt;/Form.Section&gt;
@@ -572,7 +571,6 @@
     <code>
       {
         title : string,          // title of the form section
-        action : ToggleSwitch,   // optional action for the section title is restricted to ToggleSwitch
         children: [...]          // array of React Elements, HTML, etc.
       }
     </code>
