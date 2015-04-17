@@ -1617,6 +1617,9 @@ textarea {
 .pt-form .pt-form-section .pt-form-section-title .pt-form-section-title-description {
   margin-top: 10px;
 }
+.pt-form .pt-form-alert {
+  margin: 10px 0px;
+}
 .pt-form .pt-form-column {
   float: left;
   margin-right: 10px;
