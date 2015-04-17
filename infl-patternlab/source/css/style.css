@@ -1480,8 +1480,10 @@ textarea {
   padding-left: 15px;
 }
 
-.is-disabled input {
+.is-disabled input,
+.is-disabled .select-box {
   background-color: #eeeeee;
+  color: #969696;
 }
 
 .input-message {
@@ -1508,12 +1510,12 @@ textarea {
   line-height: 2.21em;
 }
 
-.select-box {
+.pt-select .select-box {
   display: inline-block;
   position: relative;
   padding-right: 30px;
 }
-.select-box:after {
+.pt-select .select-box:after {
   font-family: 'influicons';
   content: '\e610';
   display: block;
@@ -1523,10 +1525,10 @@ textarea {
   right: 5px;
   z-index: 1;
 }
-.select-box:focus {
+.pt-select .select-box:focus {
   outline: auto 5px -webkit-focus-ring-color;
 }
-.select-box select {
+.pt-select .select-box select {
   width: 100%;
   position: absolute;
   z-index: 2;
