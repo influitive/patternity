@@ -651,6 +651,32 @@ Form.Actions = React.createClass({displayName: "Actions",
   }
 });
 
+Form.Title = React.createClass({displayName: "Title",
+  getDefaultProps : function(){
+    return {
+      title : "",
+      actions : null,
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.string,
+    title : React.PropTypes.instanceOf(Form.Actions)
+  },
+  render: function () {
+    return (
+      React.createElement("div", {className: "pt-form-title"}, 
+        React.createElement("h2", null, this.props.title), 
+        React.createElement("div", {className: "pt-form-title-actions"}, 
+          this.props.actions
+        ), 
+        React.createElement("div", {className: "pt-form-title-description"}, 
+          this.props.children
+        )
+      )
+    );
+  }
+});
+
 module.exports = Form;
 
 
