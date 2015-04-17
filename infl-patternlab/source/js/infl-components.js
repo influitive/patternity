@@ -1231,13 +1231,17 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
       children : [],
       onChange : function(){},
       name : "",
-      value : ""
+      value : "",
+      disabled : false,
+      message : "",
     };
   },
   propTypes : {
     name: React.PropTypes.string,
     children: React.PropTypes.array,
-    onChange : React.PropTypes.func
+    onChange : React.PropTypes.func,
+    disabled :  React.PropTypes.bool,
+    message: React.PropTypes.string
   },
   getInitialState: function() {
     return {
@@ -1257,11 +1261,14 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "select-box", ref: "select-wrapper"}, 
-        React.createElement("span", {className: "title", ref: "title"}, this.state.title), 
-        React.createElement("select", {className: "default", name: this.props.name, ref: "select", onChange: this._handleChange, value: this.state.value}, 
-            this.props.children
-        )
+      React.createElement("span", {className: "pt-select "  + this._isDisabled()}, 
+        React.createElement("span", {className: "select-box", ref: "select-wrapper"}, 
+          React.createElement("span", {className: "title", ref: "title"}, this.state.title), 
+          React.createElement("select", {className: "default", name: this.props.name, disabled: this.props.disabled, ref: "select", onChange: this._handleChange, value: this.state.value}, 
+              this.props.children
+          )
+        ), 
+        this._buildMessage()
       )
     );
   },
@@ -1270,12 +1277,17 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
       title : this._determineSelectTitle()
     });
   },
+  _isDisabled : function(){
+    return this.props.disabled ? "is-disabled" : "";
+  },
   _determineSelectTitle : function(){
     return this._selectedOption().text;
   },
   _handleChange : function(event){
-    this.props.onChange(event);
-    this._updateSelectState();
+    if(!this.props.disabled){
+      this.props.onChange(event);
+      this._updateSelectState();
+    }
   },
   _updateSelectState : function(){
     this.setState({
@@ -1286,6 +1298,15 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   _selectedOption : function(){
     var select = this.refs.select.getDOMNode();
     return select.options[select.selectedIndex];
+  },
+  _buildMessage: function(){
+    if(typeof this.props.message === "string"){
+      return (React.createElement("span", {className: "input-message"}, this.props.message));
+    } else {
+      return this.props.message.map(function(message){
+        return (React.createElement("span", {className: "input-message"}, message));
+      });
+    }
   }
 });
 

@@ -3,7 +3,6 @@
     <h3>select</h3>
   </header>
 
-  <label for="select">Select:</label>
   <span id="select-dropdown-pattern"></span>
   <script type="text/javascript">
     (function() {
@@ -27,6 +26,7 @@
         onChange : function(event){
           console.log(event.target.value);
         },
+        message : "Hint: select one option.",
         value : "5",
         children : [
           createOptionGroup("test label", [
@@ -89,11 +89,13 @@
   <pre class="code">
     <code>
       {
-        key: string
-        name : string,
-        onChange : function,
-        value : {selected_value}
-        children : [...]          //array or react elements
+        key: string               // react key
+        name : string,            // name of select
+        onChange : function,      // callback for when the selected value changes
+        value : {selected_value}  // selected value of the dropdown
+        children : [...],         // array or react elements
+        message : string,         // hint, error etc. displayed below the select
+        disabled : bool           // determines if the select is active or not
       }
     </code>
   </pre>

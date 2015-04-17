@@ -82,8 +82,10 @@ textarea {
 }
 
 .is-disabled {
-  input {
+  input,
+  .select-box {
     background-color: $lighter-grey;
+    color: $medium-grey;
   }
 }
 
@@ -113,32 +115,38 @@ textarea {
   }
 }
 
-.select-box {
-  display: inline-block;
-  position: relative;
-  padding-right: 30px;
+.pt-select {
+  .select-box {
+    display: inline-block;
+    position: relative;
+    padding-right: 30px;
 
-  &:after {
-    @include ic-chevron-down();
-    display: block;
-    position: absolute;
-    font-size: 20px;
-    top: 0px;
-    right: 5px;
-    z-index: 1;
+    &:after {
+      @include ic-chevron-down();
+      display: block;
+      position: absolute;
+      font-size: 20px;
+      top: 0px;
+      right: 5px;
+      z-index: 1;
+    }
+
+    &:focus {
+      outline: auto 5px -webkit-focus-ring-color;
+    }
+
+    select {
+      width: 100%;
+      position: absolute;
+      z-index: 2;
+      left: 0px;
+      border: 0px;
+      opacity: 0;
+    }
   }
 
-  &:focus {
-    outline: auto 5px -webkit-focus-ring-color;
-  }
+  .input-message {
 
-  select {
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    left: 0px;
-    border: 0px;
-    opacity: 0;
   }
 }
 
