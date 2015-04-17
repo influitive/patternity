@@ -720,9 +720,6 @@ Form.SectionTitle = React.createClass({displayName: "SectionTitle",
 });
 
 Form.Alert = React.createClass({displayName: "Alert",
-  shouldComponentUpdate : function(){
-    return false;
-  },
   render: function () {
     return (
       React.createElement("div", {className: "pt-form-alert"}, 
