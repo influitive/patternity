@@ -143,7 +143,7 @@ Form.Title = React.createClass({
   },
   propTypes : {
     title : React.PropTypes.string,
-    title : React.PropTypes.instanceOf(Form.Actions)
+    actions : React.PropTypes.instanceOf(Form.Actions)
   },
   render: function () {
     return (
@@ -153,6 +153,53 @@ Form.Title = React.createClass({
           {this.props.actions}
         </div>
         <div className="pt-form-title-description">
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+});
+
+Form.Section = React.createClass({
+  getDefaultProps : function(){
+    return {
+      hideDivider : false,
+    };
+  },
+  propTypes : {
+    hideDivider : React.PropTypes.bool
+  },
+  render: function () {
+    return (
+      <div className={"pt-form-section " + this._divider()}>
+        {this.props.children}
+      </div>
+    );
+  },
+  _divider : function(){
+    return this.props.hideDivider ? "" : "pt-form-section-divider";
+  }
+});
+
+Form.SectionTitle = React.createClass({
+  getDefaultProps : function(){
+    return {
+      title : "",
+      action : null,
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.string,
+    action : React.PropTypes.instanceOf(Form.ToggleSwitch)
+  },
+  render: function () {
+    return (
+      <div className="pt-form-section-title">
+        <h3>{this.props.title}</h3>
+        <div className="pt-form-section-title-action">
+          {this.props.action}
+        </div>
+        <div className="pt-form-section-title-description">
           {this.props.children}
         </div>
       </div>

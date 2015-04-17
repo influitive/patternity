@@ -1603,6 +1603,32 @@ textarea {
   clear: left;
   margin-top: 10px;
 }
+.pt-form .pt-form-section {
+  margin: 30px 0px;
+}
+.pt-form .pt-form-section.pt-form-section-divider {
+  border-top: 1px solid #d0d2d3;
+}
+.pt-form .pt-form-section .pt-form-section-title {
+  display: block;
+  margin: 10px 0px;
+  clear: left;
+  overflow: hidden;
+}
+.pt-form .pt-form-section .pt-form-section-title h3 {
+  float: left;
+  width: 60%;
+}
+.pt-form .pt-form-section .pt-form-section-title .pt-form-section-title-action {
+  float: right;
+  width: 40%;
+  margin-top: 0.83em;
+  text-align: right;
+}
+.pt-form .pt-form-section .pt-form-section-title .pt-form-section-title-description {
+  clear: left;
+  margin-top: 10px;
+}
 .pt-form .pt-form-column {
   float: left;
   margin-right: 10px;
