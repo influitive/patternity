@@ -1,6 +1,30 @@
 .pt-form {
   overflow: hidden;
 
+  .pt-form-title {
+    display: block;
+    margin: 10px 0px;
+    clear: left;
+    overflow: hidden;
+
+    h2 {
+      float: left;
+      width: 60%;
+    }
+
+    .pt-form-title-actions {
+      float: right;
+      width: 40%;
+      margin-top: 0.83em;
+      text-align: right;
+    }
+
+    .pt-form-title-description {
+      clear: left;
+      margin-top: 10px;
+    }
+  }
+
   .pt-form-column {
     float: left;
     margin-right: 10px;

@@ -57,6 +57,25 @@
       ]
     });
   }
+
+  function buildFormTitle(){
+    return inflComp.React.createElement(inflComp.Form.Title,{
+      title : "My Form Title",
+      actions : inflComp.React.createElement(inflComp.ButtonGroup, {
+        children : [
+          inflComp.React.createElement("button", {
+            className : "secondary",
+            children: ["Cancel"]
+          }),
+          inflComp.React.createElement("button", {
+            className : "primary",
+            children: ["Save Changes"]
+          })
+        ]
+      }),
+      children : ["this is my form title description"]
+    });
+  }
 </script>
 
 <section class="pattern-section">
@@ -374,6 +393,57 @@
     <code>
       {
         children : [...]  // will handle and style button and .button
+      }
+    </code>
+  </pre>
+
+  <h4>Form - Title</h4>
+
+  <p>Form Title comes with optional actions and description.  Actions placed in the title should be used in place of Form.Actions</p>
+
+  <div id="form-title-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        children : [buildFormTitle()]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Form, props),
+        document.getElementById("form-title-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Form&gt;
+        &lt;Form.Title title="My Form Title" actions={form_title_actions} /&gt;
+      &lt;/Form&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Form.Title, props),
+        {DOM element to append form title to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        title : string,          // title of the form
+        actions : Form.Actions,  // optional actions for the form used in place for
+        children: [...]          // array of React Elements, HTML, etc.
       }
     </code>
   </pre>
