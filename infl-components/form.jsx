@@ -134,4 +134,14 @@ Form.Actions = React.createClass({
   }
 });
 
+Form.Title = React.createClass({
+  render: function () {
+    return (
+      <div className="pt-form-title">
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
 module.exports = Form;

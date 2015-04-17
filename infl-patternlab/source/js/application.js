@@ -50,4 +50,7 @@ inflComp.selectDropdown = function(props, elementId){
   );
 };
 
+
+inflComp.FormPattern = require("./patterns/form_pattern.jsx");
+
 module.exports = inflComp;
