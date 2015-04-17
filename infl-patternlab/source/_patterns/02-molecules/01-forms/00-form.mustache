@@ -92,6 +92,17 @@
   function buildFormSection(){
     return inflComp.React.createElement(inflComp.Form.Section,{});
   }
+
+  function buildFormAlert(){
+    return inflComp.React.createElement(inflComp.Form.Alert,{
+      children : [
+        inflComp.React.createElement(inflComp.Alert,{
+          showIcon : true,
+          title : "All fields are required"
+        })
+      ]
+    });
+  }
 </script>
 
 <section class="pattern-section">
@@ -571,6 +582,57 @@
     <code>
       {
         title : string,          // title of the form section
+        children: [...]          // array of React Elements, HTML, etc.
+      }
+    </code>
+  </pre>
+
+  <h4>Form - Alert</h4>
+
+  <p>Form Alert is a wrapper for Alert.  It helps with spacing and styling</p>
+
+  <div id="form-alert-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        children : [buildFormAlert()]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Form, props),
+        document.getElementById("form-alert-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Form&gt;
+        &lt;Form.Alert&gt;
+          &lt;Alert title="All fields are required" type="error" showIcon={true} /&gt;
+        &lt;/Form.Alert&gt;
+      &lt;/Form&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Form.Alert, props),
+        {DOM element to append form alert to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
         children: [...]          // array of React Elements, HTML, etc.
       }
     </code>
