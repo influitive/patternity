@@ -75,7 +75,7 @@
             }
 
             .pt-input,
-            .select-box {
+            .pt-select {
               width: calc(58.5% - 10px);
             }
           }
@@ -96,7 +96,7 @@
             }
 
             .pt-input,
-            .select-box {
+            .pt-select {
               width: calc(40% - 10px);
             }
           }
@@ -114,7 +114,7 @@
       .pt-label {
         &.inline {
           .pt-input,
-          .select-box {
+          .pt-select {
             width: calc(29% - 10px);
           }
         }
@@ -125,7 +125,7 @@
       .pt-label {
         &.inline {
           .pt-input,
-          .select-box {
+          .pt-select  {
             width: calc(51% - 10px);
           }
         }
@@ -136,7 +136,7 @@
       .pt-label {
         &.inline {
           .pt-input,
-          .select-box {
+          .pt-select {
             width: calc(78.9% - 10px);
           }
         }
@@ -153,7 +153,7 @@
         }
 
         .pt-input,
-        .select-box {
+        .pt-select {
           width: calc(50% - 10px);
 
           input,
@@ -164,7 +164,7 @@
 
         &.multi-input {
           .pt-input,
-          .select-box {
+          .pt-select {
             width: auto;
           }
         }
@@ -176,7 +176,7 @@
         }
 
         .pt-input,
-        .select-box {
+        .pt-select {
           width: 100%;
 
           input,

@@ -120,6 +120,7 @@ textarea {
     display: inline-block;
     position: relative;
     padding-right: 30px;
+    width:100%;
 
     &:after {
       @include ic-chevron-down();
