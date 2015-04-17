@@ -203,9 +203,6 @@ Form.SectionTitle = React.createClass({
 });
 
 Form.Alert = React.createClass({
-  shouldComponentUpdate : function(){
-    return false;
-  },
   render: function () {
     return (
       <div className="pt-form-alert">
