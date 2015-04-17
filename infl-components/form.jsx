@@ -143,7 +143,7 @@ Form.Title = React.createClass({
   },
   propTypes : {
     title : React.PropTypes.string,
-    actions : React.PropTypes.instanceOf(Form.Actions)
+    actions : React.PropTypes.element //wanted to use instanceOf(ButtonGroup) but i need to include button group in form
   },
   render: function () {
     return (
@@ -184,21 +184,16 @@ Form.Section = React.createClass({
 Form.SectionTitle = React.createClass({
   getDefaultProps : function(){
     return {
-      title : "",
-      action : null,
+      title : ""
     };
   },
   propTypes : {
-    title : React.PropTypes.string,
-    action : React.PropTypes.instanceOf(Form.ToggleSwitch)
+    title : React.PropTypes.string
   },
   render: function () {
     return (
       <div className="pt-form-section-title">
         <h3>{this.props.title}</h3>
-        <div className="pt-form-section-title-action">
-          {this.props.action}
-        </div>
         <div className="pt-form-section-title-description">
           {this.props.children}
         </div>
