@@ -1514,6 +1514,7 @@ textarea {
   display: inline-block;
   position: relative;
   padding-right: 30px;
+  width: 100%;
 }
 .pt-select .select-box:after {
   font-family: 'influicons';
@@ -1644,11 +1645,11 @@ textarea {
   width: 39.5%;
 }
 .pt-form .pt-form-column.column-num-2 .small-input .pt-label.inline .pt-input,
-.pt-form .pt-form-column.column-num-2 .small-input .pt-label.inline .select-box,
+.pt-form .pt-form-column.column-num-2 .small-input .pt-label.inline .pt-select,
 .pt-form .pt-form-column.column-num-2 .medium-input .pt-label.inline .pt-input,
-.pt-form .pt-form-column.column-num-2 .medium-input .pt-label.inline .select-box,
+.pt-form .pt-form-column.column-num-2 .medium-input .pt-label.inline .pt-select,
 .pt-form .pt-form-column.column-num-2 .large-input .pt-label.inline .pt-input,
-.pt-form .pt-form-column.column-num-2 .large-input .pt-label.inline .select-box {
+.pt-form .pt-form-column.column-num-2 .large-input .pt-label.inline .pt-select {
   width: calc(58.5% - 10px);
 }
 .pt-form .pt-form-column.column-num-3 {
@@ -1660,11 +1661,11 @@ textarea {
   width: 60%;
 }
 .pt-form .pt-form-column.column-num-3 .small-input .pt-label.inline .pt-input,
-.pt-form .pt-form-column.column-num-3 .small-input .pt-label.inline .select-box,
+.pt-form .pt-form-column.column-num-3 .small-input .pt-label.inline .pt-select,
 .pt-form .pt-form-column.column-num-3 .medium-input .pt-label.inline .pt-input,
-.pt-form .pt-form-column.column-num-3 .medium-input .pt-label.inline .select-box,
+.pt-form .pt-form-column.column-num-3 .medium-input .pt-label.inline .pt-select,
 .pt-form .pt-form-column.column-num-3 .large-input .pt-label.inline .pt-input,
-.pt-form .pt-form-column.column-num-3 .large-input .pt-label.inline .select-box {
+.pt-form .pt-form-column.column-num-3 .large-input .pt-label.inline .pt-select {
   width: calc(40% - 10px);
 }
 .pt-form .pt-form-row {
@@ -1673,15 +1674,15 @@ textarea {
   clear: left;
 }
 .pt-form .pt-form-row.small-input .pt-label.inline .pt-input,
-.pt-form .pt-form-row.small-input .pt-label.inline .select-box {
+.pt-form .pt-form-row.small-input .pt-label.inline .pt-select {
   width: calc(29% - 10px);
 }
 .pt-form .pt-form-row.medium-input .pt-label.inline .pt-input,
-.pt-form .pt-form-row.medium-input .pt-label.inline .select-box {
+.pt-form .pt-form-row.medium-input .pt-label.inline .pt-select {
   width: calc(51% - 10px);
 }
 .pt-form .pt-form-row.large-input .pt-label.inline .pt-input,
-.pt-form .pt-form-row.large-input .pt-label.inline .select-box {
+.pt-form .pt-form-row.large-input .pt-label.inline .pt-select {
   width: calc(78.9% - 10px);
 }
 .pt-form .pt-form-row .pt-label {
@@ -1692,30 +1693,30 @@ textarea {
   text-align: right;
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input,
-.pt-form .pt-form-row .pt-label.inline .select-box {
+.pt-form .pt-form-row .pt-label.inline .pt-select {
   width: calc(50% - 10px);
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input input,
 .pt-form .pt-form-row .pt-label.inline .pt-input select,
-.pt-form .pt-form-row .pt-label.inline .select-box input,
-.pt-form .pt-form-row .pt-label.inline .select-box select {
+.pt-form .pt-form-row .pt-label.inline .pt-select input,
+.pt-form .pt-form-row .pt-label.inline .pt-select select {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.inline.multi-input .pt-input,
-.pt-form .pt-form-row .pt-label.inline.multi-input .select-box {
+.pt-form .pt-form-row .pt-label.inline.multi-input .pt-select {
   width: auto;
 }
 .pt-form .pt-form-row .pt-label.stacked label {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.stacked .pt-input,
-.pt-form .pt-form-row .pt-label.stacked .select-box {
+.pt-form .pt-form-row .pt-label.stacked .pt-select {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.stacked .pt-input input,
 .pt-form .pt-form-row .pt-label.stacked .pt-input select,
-.pt-form .pt-form-row .pt-label.stacked .select-box input,
-.pt-form .pt-form-row .pt-label.stacked .select-box select {
+.pt-form .pt-form-row .pt-label.stacked .pt-select input,
+.pt-form .pt-form-row .pt-label.stacked .pt-select select {
   width: 100%;
 }
 .pt-form .pt-form-actions {
