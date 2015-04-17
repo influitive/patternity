@@ -73,8 +73,25 @@
           })
         ]
       }),
-      children : ["this is my form title description"]
+      children : ["This is my form title description"]
     });
+  }
+
+  function buildFormSectionTitle(){
+    return inflComp.React.createElement(inflComp.Form.Section,{
+      children : [
+        inflComp.React.createElement(inflComp.Form.SectionTitle,{
+          title : "My Form Section Title",
+          action : inflComp.React.createElement(inflComp.ToggleSwitch, {}),
+          children : ["This is my form section title description"]
+        })
+      ]
+    });
+  }
+
+
+  function buildFormSection(){
+    return inflComp.React.createElement(inflComp.Form.Section,{});
   }
 </script>
 
@@ -421,7 +438,9 @@
   <pre class="code">
     <code>
       &lt;Form&gt;
-        &lt;Form.Title title="My Form Title" actions={form_title_actions} /&gt;
+        &lt;Form.Title title="My Form Title" actions={form_title_actions}&gt;
+          &lt;p&gt;This is my form title description&lt;/p&gt;
+        &lt;/Form.Title&gt;
       &lt;/Form&gt;
     </code>
   </pre>
@@ -442,7 +461,118 @@
     <code>
       {
         title : string,          // title of the form
-        actions : Form.Actions,  // optional actions for the form used in place for
+        actions : Form.Actions,  // optional actions for the form used in place of Form.Actions
+        children: [...]          // array of React Elements, HTML, etc.
+      }
+    </code>
+  </pre>
+
+  <h4>Form - Section</h4>
+
+  <p>Form Section defines a section of a large form.  It helps with spacing and dividing the form.</p>
+
+  <div id="form-section-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        children : [buildFormSection()]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Form, props),
+        document.getElementById("form-section-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Form&gt;
+        &lt;Form.Section&gt;
+          &lt;Form.SectionTitle title="My Form Section Title" action={form_title_action}&gt;
+            &lt;p&gt;This is my form section title description&lt;/p&gt;
+          &lt;/Form.SectionTitle&gt;
+          .
+          .
+          .
+        &lt;/Form.Section&gt;
+      &lt;/Form&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Form.Section, props),
+        {DOM element to append form section to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        hideDivider : boolean // hides the divider for the section.  defaults to false.
+      }
+    </code>
+  </pre>
+
+  <h4>Form - Section Title</h4>
+
+  <p>Form Section Title is to be used with Form Section and comes with optional action and description.  The action is limited to an instance of ToggleSwitch</p>
+
+  <div id="form-section-title-pattern"></div>
+  <script type="text/javascript">
+    (function() {
+      var props = {
+        children : [buildFormSectionTitle()]
+      };
+
+      inflComp.React.render(
+        inflComp.React.createElement(inflComp.Form, props),
+        document.getElementById("form-section-title-pattern")
+      );
+    })();
+  </script>
+
+  <h4 class="code-title">Code</h4>
+
+  <h5 class="code-title">JSX</h5>
+  <pre class="code">
+    <code>
+      &lt;Form&gt;
+        &lt;Form.Section&gt;
+          &lt;Form.SectionTitle title="My Form Section Title" action={form_title_action}&gt;
+            &lt;p&gt;This is my form section title description&lt;/p&gt;
+          &lt;/Form.SectionTitle&gt;
+        &lt;/Form.Section&gt;
+      &lt;/Form&gt;
+    </code>
+  </pre>
+
+  <h5 class="code-title">Without JSX</h5>
+  <pre class="code">
+    <code>
+      React.render(
+        React.createElement(Form.SectionTitle, props),
+        {DOM element to append form section title to}
+      );
+    </code>
+  </pre>
+
+  <h4 class="code-title">Props</h4>
+
+  <pre class="code">
+    <code>
+      {
+        title : string,          // title of the form section
+        action : ToggleSwitch,   // optional action for the section title is restricted to ToggleSwitch
         children: [...]          // array of React Elements, HTML, etc.
       }
     </code>
