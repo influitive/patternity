@@ -1618,7 +1618,10 @@ textarea {
   margin-top: 10px;
 }
 .pt-form .pt-form-alert {
+  display: block;
   margin: 10px 0px;
+  clear: left;
+  overflow: hidden;
 }
 .pt-form .pt-form-column {
   float: left;
