@@ -1599,6 +1599,9 @@ textarea {
   margin-top: 0.83em;
   text-align: right;
 }
+.pt-form .pt-form-title .pt-form-title-actions .button-group {
+  margin-right: 0px;
+}
 .pt-form .pt-form-title .pt-form-title-description {
   clear: left;
   margin-top: 10px;
