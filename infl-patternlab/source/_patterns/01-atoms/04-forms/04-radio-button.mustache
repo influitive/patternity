@@ -21,7 +21,8 @@
       };
 
       function onChange(event){
-        console.log(event);
+        props.isChecked = !props.isChecked;
+        renderRadioButtonWithProps(props);
       }
 
       function createRadioButton(value, isChecked){
@@ -31,9 +32,13 @@
         return inflComp.React.createElement(inflComp.RadioButton, props);
       }
 
-      inflComp.React.render(createRadioButton("radio-button-1", false),
-        document.getElementById("radio-button-pattern")
-      );
+      function renderRadioButtonWithProps(props){
+        inflComp.React.render(createRadioButton("radio-button-1", props.isChecked),
+          document.getElementById("radio-button-pattern")
+        );
+      }
+
+      renderRadioButtonWithProps(props);
     })();
   </script>
 
@@ -81,16 +86,18 @@
   <div id="radio-button-group-inline-pattern" style="margin-top: 10px;"></div>
   <script type="text/javascript">
     (function() {
+      var radioButtonCheckedState = false;
+
       var props = {
         enabled: true,
-        isChecked : false,
         onChange : onChange,
         radioName: "test-name",
         radioLabel : "My Radio Button"
       };
 
       function onChange(event){
-        console.log(event);
+        radioButtonCheckedState = !radioButtonCheckedState;
+        renderRadioButtonGroup();
       }
 
       function createRadioButton(value, isChecked){
@@ -105,7 +112,7 @@
           radioName : "test-name-two",
           enabled : true,
           layout : layout,
-          children : [createRadioButton("value1", true), createRadioButton("value2", false)]
+          children : [createRadioButton("value1", radioButtonCheckedState), createRadioButton("value2", !radioButtonCheckedState)]
         });
       }
 
@@ -117,9 +124,13 @@
         });
       }
 
-      inflComp.React.render(createRadioButtonGroup("inline"),
-        document.getElementById("radio-button-group-inline-pattern")
-      );
+      function renderRadioButtonGroup(){
+        inflComp.React.render(createRadioButtonGroup("inline"),
+          document.getElementById("radio-button-group-inline-pattern")
+        );
+      }
+
+      renderRadioButtonGroup();
     })();
   </script>
 
