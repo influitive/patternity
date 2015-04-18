@@ -64,6 +64,18 @@
         color: darken($warning-color, 15%);
       }
     }
+
+    .pt-alert-action {
+      button {
+        border-color: darken($warning-color, 10%);
+        color: darken($warning-color, 10%) !important;
+
+        &:hover {
+          border-color: darken($warning-color, 15%);
+          color: darken($warning-color, 15%) !important;
+        }
+      }
+    }
   }
 
   &.success {
@@ -75,6 +87,18 @@
 
       &:hover {
         color : darken($success-color, 10%);
+      }
+    }
+
+    .pt-alert-action {
+      button {
+        border-color: darken($success-color, 15%);
+        color: darken($success-color, 15%) !important;
+
+        &:hover {
+          border-color: darken($success-color, 10%);
+          color: darken($success-color, 10%) !important;
+        }
       }
     }
   }
@@ -90,21 +114,56 @@
         color : darken($error-color, 10%);
       }
     }
+
+    .pt-alert-action {
+      button {
+        border-color: $error-color;
+        color: $error-color !important;
+
+        &:hover {
+          border-color: darken($error-color, 10%);
+          color: darken($error-color, 10%) !important;
+        }
+      }
+    }
   }
 
-  .detailed {
+  .pt-alert-action {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 3;
+
+    button {
+      border-color: $info-color;
+      color: $info-color !important;
+
+      &:hover {
+        border-color: lighten($info-color, 2%);
+        color: lighten($info-color, 2%) !important;
+      }
+    }
+
+    & + .alert-body {
+      padding-right: 40%;
+      min-height: 12px;
+    }
+  }
+
+  .pt-alert-detailed {
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
     color: $darker-grey;
     margin-bottom: 10px;
     position: relative;
+    overflow: hidden;
 
     h4 {
         margin-bottom: 1.33em;
     }
 
-    .detailed-action {
+    .pt-alert-detailed-action {
       position: absolute;
       right: 20px;
       top: 15px;

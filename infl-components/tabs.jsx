@@ -95,7 +95,6 @@ var InternalTab = React.createClass({
     };
   },
   componentWillReceiveProps: function(newProps){
-    console.log(newProps);
     this.setState({
       tabIsOpen : newProps.tabIsOpen
     });
