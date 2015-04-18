@@ -139,7 +139,7 @@
   <h5 class="code-title">JSX</h5>
   <pre class="code">
     <code>
-      &lt;RadioButton.Group enabled={true} radioName="my-radio-name" layout="inline" &gt;
+      &lt;RadioButton.Group layout="inline" &gt;
         &lt;RadioButton id="radio-id-1" enabled={true} isChecked={true} radioName="my-radio-name" radioLabel : "My Radio Button" value : "radio-button-1"/&gt;
         &lt;RadioButton id="radio-id-2" enabled={true} isChecked={false} radioName="my-radio-name" radioLabel : "My Radio Button" value : "radio-button-2"/&gt;
       &lt;/RadioButton.Group&gt;
@@ -161,8 +161,6 @@
   <pre class="code">
     <code>
       {
-        enabled : boolean           // defaults to true.  determines if the switch is enabled or disabled
-        radioName : string,         // name of the checkbox input to be used in a form
         id : string,                // id for the internal checkbox
         layout : string             // determines if radio buttons are display inline for stacked.  defaults to stacked
       }
