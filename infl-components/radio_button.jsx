@@ -22,6 +22,11 @@ var RadioButton = React.createClass({
     radioLabel : React.PropTypes.string,
     value : React.PropTypes.string
   },
+  getInitialState: function () {
+    this.setState({
+      isChecked: this.props.isChecked
+    });
+  },
   componentWillReceiveProps: function (newProps) {
     this.setState({
       isChecked: newProps.isChecked
@@ -30,7 +35,7 @@ var RadioButton = React.createClass({
   render : function(){
     return (
       <span id={this.props.id} className={this._radioCSSClasses()} onClick={this._clickRadioButton}>
-        <input disabled={!this.props.enabled} type="radio" ref="radio" defaultChecked={this.props.isChecked} value={this.props.value} className="pt-native-radio-button"  name={this.props.radioName} onChange={this._handleChange} id={this.props.id} />
+        <input disabled={!this.props.enabled} type="radio" ref="radio" defaultChecked={this.state.isChecked} value={this.props.value} className="pt-native-radio-button"  name={this.props.radioName} onChange={this._handleChange} id={this.props.id} />
         <span className="stylized-radio-button"></span>
         <span className="pt-radio-label">{this.props.radioLabel}</span>
       </span>
