@@ -1154,6 +1154,11 @@ var RadioButton = React.createClass({displayName: "RadioButton",
     radioLabel : React.PropTypes.string,
     value : React.PropTypes.string
   },
+  getInitialState: function () {
+    this.setState({
+      isChecked: this.props.isChecked
+    });
+  },
   componentWillReceiveProps: function (newProps) {
     this.setState({
       isChecked: newProps.isChecked
@@ -1162,7 +1167,7 @@ var RadioButton = React.createClass({displayName: "RadioButton",
   render : function(){
     return (
       React.createElement("span", {id: this.props.id, className: this._radioCSSClasses(), onClick: this._clickRadioButton}, 
-        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", defaultChecked: this.props.isChecked, value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
+        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", defaultChecked: this.state.isChecked, value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
         React.createElement("span", {className: "stylized-radio-button"}), 
         React.createElement("span", {className: "pt-radio-label"}, this.props.radioLabel)
       )
