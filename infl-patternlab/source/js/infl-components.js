@@ -198,15 +198,22 @@ var Alert = React.createClass({displayName: "Alert",
     hideIn: React.PropTypes.number
   },
   getInitialState: function() {
-    return {showAlert: this.props.showAlert};
+    return {
+      showAlert: this.props.showAlert,
+      closeable: this.props.closeable
+    };
   },
   componentWillReceiveProps : function(newProps){
-    this.setState({showAlert: newProps.showAlert});
+    this.setState({
+      showAlert: newProps.showAlert
+    });
   },
   componentDidMount : function(){
     if(this.props.hideIn > 0) {
       setTimeout(this._close, this._hideInMilliseconds());
     }
+
+    this._alertAction();
   },
   render : function(){
     return (
@@ -229,7 +236,7 @@ var Alert = React.createClass({displayName: "Alert",
     return this.state.showAlert ? "" : "hide";
   },
   _closeable: function(){
-    if(this.props.closeable) {
+    if(this.state.closeable) {
       return (React.createElement("span", {className: "close ic ic-times", onClick: this._close, ref: "close"}));
     } else {
       return "";
@@ -259,6 +266,43 @@ var Alert = React.createClass({displayName: "Alert",
     } else {
       return "ic-question-circle-o";
     }
+  },
+  _alertAction : function() {
+    var hasDetailed = false,
+        actionElement = null;
+
+    for(var i = 0; i < this.refs.body.getDOMNode().children.length; i++) {
+      var child = this.refs.body.getDOMNode().children[i];
+      if(this._isAlertAction(child)) {
+        actionElement = child;
+        this._removeActionFormBody(child);
+        this._addActionToAlert(child);
+        this.setState({
+          closeable : false
+        });
+      } else if(this._isAlertDetailed(child)){
+        hasDetailed = true;
+      }
+    }
+
+    this._hideActionIfAlertHasDetailed(hasDetailed, actionElement);
+  },
+  _isAlertAction : function(child) {
+   return child.className.indexOf('pt-alert-action') > -1;
+  },
+  _isAlertDetailed : function(child) {
+    return child.className.indexOf('pt-alert-detailed') > -1;
+  },
+  _removeActionFormBody : function(actionElement){
+    this.refs.body.getDOMNode().removeChild(actionElement);
+  },
+  _addActionToAlert : function(actionElement) {
+    this.refs.alert.getDOMNode().insertBefore(actionElement, this.refs.body.getDOMNode());
+  },
+  _hideActionIfAlertHasDetailed : function(hasDetailed, actionElement) {
+    if(hasDetailed && actionElement) {
+      actionElement.style.display = "none";
+    }
   }
 });
 
@@ -275,11 +319,34 @@ Alert.Detailed = React.createClass({displayName: "Detailed",
   },
   render : function(){
     return (
-      React.createElement("div", {className: "detailed"}, 
+      React.createElement("div", {className: "pt-alert-detailed"}, 
         React.createElement("h4", null, this.props.title), 
-        React.createElement("span", {className: "detailed-action"}, this.props.action), 
-        React.createElement("div", {className: "detailed-body"}, 
+        React.createElement("span", {className: "pt-alert-detailed-action"}, this.props.action), 
+        React.createElement("div", {className: "pt-alert-detailed-body"}, 
           this.props.children
+        )
+      )
+    );
+  }
+});
+
+Alert.Action = React.createClass({
+  displayName : 'Alert.Action',
+  getDefaultProps: function() {
+    return {
+      title: "",
+      onClick : function(){}
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    onClick : React.PropTypes.func
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-alert-action"}, 
+        React.createElement("button", {className: "secondary", onClick: this.props.onClick}, 
+          this.props.title
         )
       )
     );
@@ -1441,7 +1508,6 @@ var InternalTab = React.createClass({displayName: "InternalTab",
     };
   },
   componentWillReceiveProps: function(newProps){
-    console.log(newProps);
     this.setState({
       tabIsOpen : newProps.tabIsOpen
     });
