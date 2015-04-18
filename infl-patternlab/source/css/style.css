@@ -790,6 +790,10 @@ h6 {
   -moz-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
 }
+.alert-msg .alert-body {
+  overflow: hidden;
+  position: relative;
+}
 .alert-msg.hasIcon .alert-body {
   padding-left: 26px;
 }

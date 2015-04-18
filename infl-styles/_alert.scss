@@ -38,6 +38,11 @@
     }
   }
 
+  .alert-body {
+    overflow: hidden;
+    position: relative;
+  }
+
   &.hasIcon {
     .alert-body {
       padding-left: 26px;
