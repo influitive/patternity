@@ -97,17 +97,12 @@ var Alert = React.createClass({
       var child = this.refs.body.getDOMNode().children[i];
       if(this._isAlertAction(child)) {
         actionElement = child;
-        this._removeActionFormBody(child);
-        this._addActionToAlert(child);
-        this.setState({
-          closeable : false
-        });
       } else if(this._isAlertDetailed(child)){
         hasDetailed = true;
       }
     }
 
-    this._hideActionIfAlertHasDetailed(hasDetailed, actionElement);
+    this._updateAlertWithAction(hasDetailed, actionElement);
   },
   _isAlertAction : function(child) {
    return child.className.indexOf('pt-alert-action') > -1;
@@ -115,16 +110,23 @@ var Alert = React.createClass({
   _isAlertDetailed : function(child) {
     return child.className.indexOf('pt-alert-detailed') > -1;
   },
+  _updateAlertWithAction : function(hasDetailed, actionElement){
+    if(actionElement){
+      this._removeActionFormBody(actionElement);
+      this._determineIfAlertActionShouldExist(hasDetailed, actionElement);
+    }
+  },
   _removeActionFormBody : function(actionElement){
     this.refs.body.getDOMNode().removeChild(actionElement);
   },
+  _determineIfAlertActionShouldExist : function(hasDetailed, actionElement) {
+    if(!hasDetailed){
+      this._addActionToAlert(actionElement);
+      this.setState({closeable : false});
+    }
+  },
   _addActionToAlert : function(actionElement) {
     this.refs.alert.getDOMNode().insertBefore(actionElement, this.refs.body.getDOMNode());
-  },
-  _hideActionIfAlertHasDetailed : function(hasDetailed, actionElement) {
-    if(hasDetailed && actionElement) {
-      actionElement.style.display = "none";
-    }
   }
 });
 
