@@ -1154,10 +1154,10 @@ var RadioButton = React.createClass({displayName: "RadioButton",
     radioLabel : React.PropTypes.string,
     value : React.PropTypes.string
   },
-  getInitialState: function () {
-    this.setState({
+  getInitialState : function(){
+    return {
       isChecked: this.props.isChecked
-    });
+    };
   },
   componentWillReceiveProps: function (newProps) {
     this.setState({
@@ -1167,7 +1167,7 @@ var RadioButton = React.createClass({displayName: "RadioButton",
   render : function(){
     return (
       React.createElement("span", {id: this.props.id, className: this._radioCSSClasses(), onClick: this._clickRadioButton}, 
-        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", defaultChecked: this.state.isChecked, value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
+        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", checked: this.state.isChecked, value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
         React.createElement("span", {className: "stylized-radio-button"}), 
         React.createElement("span", {className: "pt-radio-label"}, this.props.radioLabel)
       )
@@ -1193,19 +1193,12 @@ RadioButton.Group = React.createClass({displayName: "Group",
     getDefaultProps: function() {
     return {
       id: "",
-      enabled: true,
-      radioName : "",
       layout : "inline"
     };
   },
   propTypes : {
     id: React.PropTypes.string,
-    enabled: React.PropTypes.bool,
-    radioName : React.PropTypes.string,
     layout : React.PropTypes.string
-  },
-  componentWillMount : function(){
-    this._updateRadioButtonValues();
   },
   render : function(){
     return (
@@ -1213,14 +1206,6 @@ RadioButton.Group = React.createClass({displayName: "Group",
         this.props.children
       )
     );
-  },
-  _updateRadioButtonValues : function(){
-    var that = this;
-    React.Children.forEach(this.props.children, function(child){
-      console.log(child);
-      child.props.enabled = that.props.enabled;
-      child.props.radioName = that.props.radioName;
-    });
   }
 });
 
