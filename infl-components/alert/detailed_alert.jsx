@@ -1,9 +1,9 @@
 var React = require('react');
-var AlertMixin = require('./alert/alert_mixin');
+var AlertMixin = require('./alert_mixin');
 
 var DetailedAlert = {};
 
-var Alert = React.createClass({
+var DetailedAlert = React.createClass({
   mixins: [AlertMixin],
   getDefaultProps: function() {
     return {
@@ -39,4 +39,28 @@ var Alert = React.createClass({
   }
 });
 
-module.exports = Alert;
+DetailedAlert.Detail = React.createClass({
+    getDefaultProps: function() {
+    return {
+      title: "",
+      action: "",
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    action: React.PropTypes.node
+  },
+  render : function(){
+    return (
+      <div className="pt-alert-detailed">
+        <h4>{this.props.title}</h4>
+        <span className="pt-alert-detailed-action">{this.props.action}</span>
+        <div className="pt-alert-detailed-body">
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+});
+
+module.exports = DetailedAlert;

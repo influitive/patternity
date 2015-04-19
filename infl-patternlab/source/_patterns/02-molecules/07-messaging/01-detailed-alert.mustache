@@ -1,18 +1,18 @@
 <section class="pattern-section">
   <header>
-    <h3>alert - detailed</h3>
+    <h3>detailed alert</h3>
   </header>
 
-  <p>The alerts can also take an additional sub component detailed.  All other alert data is still valid.  See Alert for more details.</p>
+  <p>The detailed alert can also take a sub component detail.  All other alert data is still valid.  See Alert for more details.</p>
 
-  <h4>Alert - Detailed</h4>
+  <h4>Detailed Alert</h4>
 
   <p>The alert detailed is an additional space to add more data to an alert</p>
 
   <div id="alert-detailed-pattern"></div>
   <script type="text/javascript">
     (function() {
-      var detailed = inflComp.React.createElement(inflComp.Alert.Detailed, {
+      var detailed = inflComp.React.createElement(inflComp.DetailedAlert.Detail, {
         title: "Single Sign-On",
         action: inflComp.React.createElement("button", {
           className : "secondary",
@@ -43,7 +43,7 @@
       };
 
       inflComp.React.render(
-        inflComp.React.createElement(inflComp.Alert, props),
+        inflComp.React.createElement(inflComp.DetailedAlert, props),
         document.getElementById("alert-detailed-pattern")
       );
     })();
@@ -54,21 +54,21 @@
   <h5 class="code-title">JSX</h5>
   <pre class="code">
     <code>
-      &lt;Alert {...this.props}&gt;
+      &lt;DetailedAlert {...this.props}&gt;
         &lt;p&gt;Your Body&lt;/p&gt;
         &lt;p&gt;Your Body&lt;/p&gt;
         &lt;Alert.Detailed title="Single Sign-On" action={react_element}&gt;
           &lt;p&gt;Your Detailed Body&lt;/p&gt;
         &lt;Alert.Detailed/&gt;
-      &lt;/Alert&gt;
+      &lt;/DetailedAlert&gt;
 
-      &lt;Alert title="Your Title" &gt;
+      &lt;DetailedAlert title="Your Title" &gt;
         &lt;p&gt;Your Body&lt;/p&gt;
         &lt;p&gt;Your Body&lt;/p
-        &gt;&lt;Alert.Detailed title="Single Sign-On" action={react_element}&gt;
+        &gt;&lt;DetailedAlert.Detail title="Single Sign-On" action={react_element}&gt;
           &lt;p&gt;Your Detailed Body&lt;/p&gt;
-        &lt;Alert.Detailed/&gt;
-      &lt;/Alert&gt;
+        &lt;DetailedAlert.Detail/&gt;
+      &lt;/DetailedAlert&gt;
     </code>
   </pre>
 
@@ -76,8 +76,8 @@
   <pre class="code">
     <code>
       React.render(
-        React.createElement(Alert, props, children),
-        {DOM element to append alert to}
+        React.createElement(DetailedAlert, props, children),
+        {DOM element to append detailed alert to}
       );
     </code>
   </pre>
