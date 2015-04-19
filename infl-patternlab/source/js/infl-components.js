@@ -8,6 +8,8 @@ inflComp.Sidebar = require("../../infl-components/sidebar.jsx");
 inflComp.ListPicker = require("../../infl-components/list_picker.jsx");
 inflComp.Accordion = require("../../infl-components/accordion.jsx");
 inflComp.Alert = require("../../infl-components/alert.jsx");
+inflComp.ActionAlert = require("../../infl-components/alert/action_alert.jsx");
+inflComp.DetailedAlert = require("../../infl-components/alert/detailed_alert.jsx");
 inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
 inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
 inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
@@ -54,7 +56,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -177,8 +179,12 @@ module.exports = Accordion;
 
 },{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react/addons":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/addons.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx":[function(require,module,exports){
 var React = require('react');
+var AlertMixin = require('./alert/alert_mixin');
+
+var DetailedAlert = {};
 
 var Alert = React.createClass({displayName: "Alert",
+  mixins: [AlertMixin],
   getDefaultProps: function() {
     return {
       type: "",
@@ -197,6 +203,101 @@ var Alert = React.createClass({displayName: "Alert",
     onClose: React.PropTypes.func,
     hideIn: React.PropTypes.number
   },
+  render : function(){
+    return (
+      React.createElement("div", {className: "alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert(), ref: "alert"}, 
+        this._closeable(), 
+        React.createElement("h4", {className: "alert-title", ref: "title"}, 
+          this._icon(), 
+          React.createElement("span", null, this.props.title)
+        ), 
+        React.createElement("div", {className: "alert-body", ref: "body"}, 
+          this.props.children
+        )
+      )
+    );
+  }
+});
+
+module.exports = Alert;
+
+
+},{"./alert/alert_mixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx":[function(require,module,exports){
+var React = require('react');
+var AlertMixin = require('./alert_mixin');
+
+var ActionAlert = React.createClass({displayName: "ActionAlert",
+  mixins: [AlertMixin],
+  getDefaultProps: function() {
+    return {
+      type: "",
+      showIcon: false,
+      showAlert : true,
+      onClose : function(){},
+      hideIn  : 0,
+      action : {
+        onClick : function(){},
+        title : ""
+      }
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
+    showAlert : React.PropTypes.bool,
+    onClose: React.PropTypes.func,
+    hideIn: React.PropTypes.number,
+    action: React.PropTypes.object
+  },
+  componentWillMount : function(){
+    delete AlertMixin._closeable;
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert(), ref: "alert"}, 
+        React.createElement("h4", {className: "alert-title", ref: "title"}, 
+          this._icon(), 
+          React.createElement("span", null, this.props.title)
+        ), 
+        React.createElement(AlertAction, {onClick: this.props.action.onClick, title: this.props.action.title}), 
+        React.createElement("div", {className: "alert-body", ref: "body"}, 
+          this.props.children
+        )
+      )
+    );
+  },
+});
+
+var AlertAction = React.createClass({
+  displayName : 'Alert.Action',
+  getDefaultProps: function() {
+    return {
+      title: "",
+      onClick : function(){}
+    };
+  },
+  propTypes : {
+    title: React.PropTypes.string,
+    onClick : React.PropTypes.func
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-alert-action"}, 
+        React.createElement("button", {className: "secondary", onClick: this.props.onClick}, 
+          this.props.title
+        )
+      )
+    );
+  }
+});
+
+module.exports = ActionAlert;
+
+
+},{"./alert_mixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js":[function(require,module,exports){
+var React = require('react');
+
+var AlertMixin = {
   getInitialState: function() {
     return {
       showAlert: this.props.showAlert,
@@ -212,35 +313,12 @@ var Alert = React.createClass({displayName: "Alert",
     if(this.props.hideIn > 0) {
       setTimeout(this._close, this._hideInMilliseconds());
     }
-
-    this._alertAction();
-  },
-  render : function(){
-    return (
-      React.createElement("div", {className: "alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert(), ref: "alert"}, 
-        this._closeable(), 
-        React.createElement("h4", {className: "alert-title", ref: "title"}, 
-          this._icon(), 
-          React.createElement("span", null, this.props.title)
-        ), 
-        React.createElement("div", {className: "alert-body", ref: "body"}, 
-          this.props.children
-        )
-      )
-    );
   },
   _hideInMilliseconds : function(){
     return this.props.hideIn * 1000;
   },
   _showAlert: function(){
     return this.state.showAlert ? "" : "hide";
-  },
-  _closeable: function(){
-    if(this.state.closeable) {
-      return (React.createElement("span", {className: "close ic ic-times", onClick: this._close, ref: "close"}));
-    } else {
-      return "";
-    }
   },
   _close: function(){
     this.setState({showAlert: false});
@@ -267,48 +345,61 @@ var Alert = React.createClass({displayName: "Alert",
       return "ic-question-circle-o";
     }
   },
-  _alertAction : function() {
-    var hasDetailed = false,
-        actionElement = null;
+  _closeable: function(){
+    if(this.state.closeable) {
+      return (React.createElement("span", {className: "close ic ic-times", onClick: this._close, ref: "close"}));
+    } else {
+      return "";
+    }
+  }
+};
 
-    for(var i = 0; i < this.refs.body.getDOMNode().children.length; i++) {
-      var child = this.refs.body.getDOMNode().children[i];
-      if(this._isAlertAction(child)) {
-        actionElement = child;
-      } else if(this._isAlertDetailed(child)){
-        hasDetailed = true;
-      }
-    }
+module.exports = AlertMixin;
 
-    this._updateAlertWithAction(hasDetailed, actionElement);
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx":[function(require,module,exports){
+var React = require('react');
+var AlertMixin = require('./alert_mixin');
+
+var DetailedAlert = {};
+
+var DetailedAlert = React.createClass({displayName: "DetailedAlert",
+  mixins: [AlertMixin],
+  getDefaultProps: function() {
+    return {
+      type: "",
+      showIcon: false,
+      closeable : false,
+      showAlert : true,
+      onClose : function(){},
+      hideIn  : 0
+    };
   },
-  _isAlertAction : function(child) {
-   return child.className.indexOf('pt-alert-action') > -1;
+  propTypes : {
+    title: React.PropTypes.string,
+    type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
+    closeable : React.PropTypes.bool,
+    showAlert : React.PropTypes.bool,
+    onClose: React.PropTypes.func,
+    hideIn: React.PropTypes.number
   },
-  _isAlertDetailed : function(child) {
-    return child.className.indexOf('pt-alert-detailed') > -1;
-  },
-  _updateAlertWithAction : function(hasDetailed, actionElement){
-    if(actionElement){
-      this._removeActionFormBody(actionElement);
-      this._determineIfAlertActionShouldExist(hasDetailed, actionElement);
-    }
-  },
-  _removeActionFormBody : function(actionElement){
-    this.refs.body.getDOMNode().removeChild(actionElement);
-  },
-  _determineIfAlertActionShouldExist : function(hasDetailed, actionElement) {
-    if(!hasDetailed){
-      this._addActionToAlert(actionElement);
-      this.setState({closeable : false});
-    }
-  },
-  _addActionToAlert : function(actionElement) {
-    this.refs.alert.getDOMNode().insertBefore(actionElement, this.refs.body.getDOMNode());
+  render : function(){
+    return (
+      React.createElement("div", {className: "alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert(), ref: "alert"}, 
+        this._closeable(), 
+        React.createElement("h4", {className: "alert-title", ref: "title"}, 
+          this._icon(), 
+          React.createElement("span", null, this.props.title)
+        ), 
+        React.createElement("div", {className: "alert-body", ref: "body"}, 
+          this.props.children
+        )
+      )
+    );
   }
 });
 
-Alert.Detailed = React.createClass({displayName: "Detailed",
+DetailedAlert.Detail = React.createClass({displayName: "Detail",
     getDefaultProps: function() {
     return {
       title: "",
@@ -332,33 +423,10 @@ Alert.Detailed = React.createClass({displayName: "Detailed",
   }
 });
 
-Alert.Action = React.createClass({
-  displayName : 'Alert.Action',
-  getDefaultProps: function() {
-    return {
-      title: "",
-      onClick : function(){}
-    };
-  },
-  propTypes : {
-    title: React.PropTypes.string,
-    onClick : React.PropTypes.func
-  },
-  render : function(){
-    return (
-      React.createElement("div", {className: "pt-alert-action"}, 
-        React.createElement("button", {className: "secondary", onClick: this.props.onClick}, 
-          this.props.title
-        )
-      )
-    );
-  }
-});
-
-module.exports = Alert;
+module.exports = DetailedAlert;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx":[function(require,module,exports){
+},{"./alert_mixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx":[function(require,module,exports){
 var React = require('react');
 
 var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
