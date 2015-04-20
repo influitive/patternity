@@ -2091,7 +2091,7 @@ textarea {
   background-color: rgba(68, 68, 68, 0.6);
 }
 .pt-modal-dialog.close {
-  top: -1000px;
+  top: -10000px;
 }
 .pt-modal-dialog.scrollingBody {
   overflow: auto;
