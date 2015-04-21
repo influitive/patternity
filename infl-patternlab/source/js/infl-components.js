@@ -6,6 +6,9 @@ inflComp.React = require('react');
 inflComp.FormPattern        = require("./patterns/molecules/form_pattern.jsx");
 inflComp.LoadingPattern     = require("./patterns/molecules/loading_pattern.jsx");
 inflComp.ColoursPattern     = require("./patterns/atoms/colours_pattern.jsx");
+inflComp.FontsPattern       = require("./patterns/atoms/fonts_pattern.jsx");
+inflComp.HeadingsPattern    = require("./patterns/atoms/headings_pattern.jsx");
+inflComp.ParagraphPattern   = require("./patterns/atoms/paragraph_pattern.jsx");
 
 
 
@@ -64,7 +67,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -39487,6 +39490,103 @@ Colours.Colour = React.createClass({displayName: "Colour",
 });
 
 module.exports = ColourPattern;
+
+
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var FontsPattern = React.createClass({displayName: "FontsPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "fonts-pattern"}, 
+        React.createElement(Pattern, {title: "fonts"}, 
+          React.createElement("h4", null, "Primary font:"), 
+          React.createElement("p", null, 
+            React.createElement("span", {className: "font-title"}, "Regular:"), " Proxima Nova Light"
+          ), 
+          React.createElement("p", null, 
+            React.createElement("span", {className: "font-title"}, "Italic:"), " ", React.createElement("em", null, " Proxima Nova Light Italic")
+          ), 
+          React.createElement("p", null, 
+            React.createElement("span", {className: "font-title"}, "Bold:"), " ", React.createElement("strong", null, "Proxima Nova Semibold")
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/fonts\";"
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = FontsPattern;
+
+
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var HeadingsPattern = React.createClass({displayName: "HeadingsPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "headings-pattern"}, 
+        React.createElement(Pattern, {title: "headings"}, 
+          React.createElement("h1", null, "Heading Level 1 - 32px (2em)      / 33px (2.0265em)"), 
+          React.createElement("h2", null, "Heading Level 2 - 24px (1.5em)    / 27px (1.6875em)"), 
+          React.createElement("h3", null, "Heading Level 3 - 19px (1.25em)   / 24px (1.5em)"), 
+          React.createElement("h4", null, "Heading Level 4 - 16px (1.125em)  / 21px (1.3125em)"), 
+          React.createElement("h5", null, "Heading Level 5 - 14px (0.83em)   / 19px (1.125em)"), 
+          React.createElement("h6", null, "Heading Level 6 - 11px (0.6875em) / 15px (0.9375em)"), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/fonts\";"
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = HeadingsPattern;
+
+
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var HeadingsPattern = React.createClass({displayName: "HeadingsPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "paragraph-pattern"}, 
+        React.createElement(Pattern, {title: "paragraph"}, 
+          React.createElement("h4", null, "Body 15px / 24px (1.5em)"), 
+          React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"), 
+          React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/fonts\";"
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = HeadingsPattern;
 
 
 },{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx":[function(require,module,exports){
