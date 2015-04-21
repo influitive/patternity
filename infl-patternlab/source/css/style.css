@@ -2387,6 +2387,7 @@ body {
   float: left;
   width: 150px;
   margin: 5px;
+  cursor: pointer;
 }
 .icons-container .icon-example .icon-example-icon {
   text-align: center;
