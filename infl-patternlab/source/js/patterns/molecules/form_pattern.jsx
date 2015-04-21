@@ -1,11 +1,11 @@
-var React = require('react');
-var Pattern = require('../patternlab-components/pattern.jsx');
-var Code = require('../patternlab-components/code.jsx');
-var Require = require('../patternlab-components/require.jsx');
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
 
-var Form = require("../../../infl-components/form.jsx");
-var InputLabel = require("../../../infl-components/input_label.jsx");
-var TextInput = require("../../../infl-components/text_input.jsx");
+var Form        = require("../../../../infl-components/form.jsx");
+var InputLabel  = require("../../../../infl-components/input_label.jsx");
+var TextInput   = require("../../../../infl-components/text_input.jsx");
 
 var FormPattern = React.createClass({
   render : function(){
