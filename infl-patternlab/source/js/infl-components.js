@@ -38949,7 +38949,6 @@ module.exports = require('./lib/React');
 },{"./lib/React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx":[function(require,module,exports){
 var React         = require('react');
 var _             = require('lodash');
-var beautify_js   = require('js-beautify');
 var beautify_html = require('js-beautify').html;
 
 var Code = React.createClass({displayName: "Code",
@@ -39105,13 +39104,98 @@ Pattern.Show = React.createClass({displayName: "Show",
   }
 });
 
+Pattern.Requires = React.createClass({displayName: "Requires",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-requires"}, 
+        React.createElement("pre", {className: "code"}, 
+          React.createElement("code", null, 
+            this._formatRequires()
+          )
+        )
+      )
+    );
+  },
+  _formatRequires : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
+  }
+});
+
 module.exports = Pattern;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/form_pattern.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx":[function(require,module,exports){
+var React         = require('react');
+var beautify_html = require('js-beautify').html;
+
+var Require = React.createClass({displayName: "Require",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-requires"}, 
+        React.createElement("h4", null, "Requires"), 
+        this.props.children
+      )
+    );
+  }
+});
+
+Require.JS = React.createClass({displayName: "JS",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-requires-js"}, 
+        React.createElement("h5", null, "Javascript Require"), 
+        React.createElement("pre", {className: "code"}, 
+          React.createElement("code", null, 
+            this._formatRequires()
+          )
+        )
+      )
+    );
+  },
+  _formatRequires : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
+  }
+});
+
+Require.CSS = React.createClass({displayName: "CSS",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-requires-css"}, 
+        React.createElement("h5", null, "CSS Import"), 
+        React.createElement("pre", {className: "code"}, 
+          React.createElement("code", null, 
+            this._formatRequires()
+          )
+        )
+      )
+    );
+  },
+  _formatRequires : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
+  }
+});
+
+module.exports = Require;
+
+
+},{"js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/form_pattern.jsx":[function(require,module,exports){
 var React = require('react');
 var Pattern = require('../patternlab-components/pattern.jsx');
 var Code = require('../patternlab-components/code.jsx');
+var Require = require('../patternlab-components/require.jsx');
+
 var Form = require("../../../infl-components/form.jsx");
 var InputLabel = require("../../../infl-components/input_label.jsx");
 var TextInput = require("../../../infl-components/text_input.jsx");
@@ -39122,6 +39206,16 @@ var FormPattern = React.createClass({displayName: "FormPattern",
       React.createElement("div", {className: "form-pattern"}, 
         React.createElement(Pattern, {title: "form"}, 
           React.createElement("p", null, "The form component is used for wrapping form sub components and aids in the styling and layout for forms."), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/form.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          ), 
+
           React.createElement(Pattern.Detail, {title: "Form"}, 
             React.createElement("p", null, "Form renders a form tag.  So there is not much to show... sorry"), 
 
@@ -39599,5 +39693,5 @@ module.exports = FormPattern;
 */
 
 
-},{"../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
+},{"../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
 });

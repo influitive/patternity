@@ -1,6 +1,5 @@
 var React         = require('react');
 var _             = require('lodash');
-var beautify_js   = require('js-beautify');
 var beautify_html = require('js-beautify').html;
 
 var Code = React.createClass({
