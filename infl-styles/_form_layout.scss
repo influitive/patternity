@@ -157,7 +157,8 @@
           width: calc(50% - 10px);
 
           input,
-          select {
+          select,
+          .select-box {
             width: 100%;
           }
         }
@@ -180,7 +181,8 @@
           width: 100%;
 
           input,
-          select {
+          select,
+          .select-box {
             width: 100%;
           }
         }

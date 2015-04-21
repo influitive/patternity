@@ -1527,7 +1527,6 @@ textarea {
   display: inline-block;
   position: relative;
   padding-right: 30px;
-  width: 100%;
 }
 .pt-select .select-box:after {
   font-family: 'influicons';
@@ -1711,8 +1710,10 @@ textarea {
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input input,
 .pt-form .pt-form-row .pt-label.inline .pt-input select,
+.pt-form .pt-form-row .pt-label.inline .pt-input .select-box,
 .pt-form .pt-form-row .pt-label.inline .pt-select input,
-.pt-form .pt-form-row .pt-label.inline .pt-select select {
+.pt-form .pt-form-row .pt-label.inline .pt-select select,
+.pt-form .pt-form-row .pt-label.inline .pt-select .select-box {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.inline.multi-input .pt-input,
@@ -1728,8 +1729,10 @@ textarea {
 }
 .pt-form .pt-form-row .pt-label.stacked .pt-input input,
 .pt-form .pt-form-row .pt-label.stacked .pt-input select,
+.pt-form .pt-form-row .pt-label.stacked .pt-input .select-box,
 .pt-form .pt-form-row .pt-label.stacked .pt-select input,
-.pt-form .pt-form-row .pt-label.stacked .pt-select select {
+.pt-form .pt-form-row .pt-label.stacked .pt-select select,
+.pt-form .pt-form-row .pt-label.stacked .pt-select .select-box {
   width: 100%;
 }
 .pt-form .pt-form-actions {
