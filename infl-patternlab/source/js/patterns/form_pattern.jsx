@@ -17,7 +17,6 @@ var FormPattern = React.createClass({
             <Code>
               <Code.JSX>
                 &lt;Form&gt;
-                <br />
                 &lt;/Form&gt;
               </Code.JSX>
               <Code.WithoutJSX patternName="Form" />
@@ -38,17 +37,11 @@ var FormPattern = React.createClass({
             <Code>
               <Code.JSX>
                 &lt;Form&gt;
-                  <br />
                   &lt;Form.Row inputSize="large"&gt;
-                    <br />
                     &lt;InputLabel label="Text Input" &gt;
-                      <br />
                       &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
-                      <br />
                     &lt;/InputLabel&gt;
-                    <br />
                   &lt;/Form.Row&gt;
-                  <br />
                 &lt;/Form&gt;
               </Code.JSX>
               <Code.WithoutJSX patternName="Form.Row" />

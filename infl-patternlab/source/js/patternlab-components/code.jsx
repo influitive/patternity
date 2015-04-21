@@ -1,5 +1,7 @@
-var React = require('react');
-var _ = require('lodash');
+var React         = require('react');
+var _             = require('lodash');
+var beautify_js   = require('js-beautify');
+var beautify_html = require('js-beautify').html;
 
 var Code = React.createClass({
   render : function(){
@@ -19,11 +21,18 @@ Code.JSX = React.createClass({
         <h5 className="code-title">JSX</h5>
         <pre className="code">
           <code>
-            {this.props.children}
+            {this._formatCode()}
           </code>
         </pre>
       </div>
     );
+  },
+  _formatCode : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
   }
 });
 
