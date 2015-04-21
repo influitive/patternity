@@ -1,6 +1,8 @@
 var React = require('react');
 var Pattern = require('../patternlab-components/pattern.jsx');
 var Code = require('../patternlab-components/code.jsx');
+var Require = require('../patternlab-components/require.jsx');
+
 var Form = require("../../../infl-components/form.jsx");
 var InputLabel = require("../../../infl-components/input_label.jsx");
 var TextInput = require("../../../infl-components/text_input.jsx");
@@ -11,6 +13,16 @@ var FormPattern = React.createClass({
       <div className="form-pattern">
         <Pattern title="form">
           <p>The form component is used for wrapping form sub components and aids in the styling and layout for forms.</p>
+
+          <Require>
+            <Require.JS>
+              var Form = require("patternity/infl-components/form.jsx");
+            </Require.JS>
+            <Require.CSS>
+              @import "patternity/infl-styles/form";
+            </Require.CSS>
+          </Require>
+
           <Pattern.Detail title="Form">
             <p>Form renders a form tag.  So there is not much to show... sorry</p>
 

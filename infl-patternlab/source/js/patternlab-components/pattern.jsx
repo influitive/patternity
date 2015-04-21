@@ -52,4 +52,25 @@ Pattern.Show = React.createClass({
   }
 });
 
+Pattern.Requires = React.createClass({
+  render : function(){
+    return (
+      <div className="pattern-requires">
+        <pre className="code">
+          <code>
+            {this._formatRequires()}
+          </code>
+        </pre>
+      </div>
+    );
+  },
+  _formatRequires : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
+  }
+});
+
 module.exports = Pattern;
