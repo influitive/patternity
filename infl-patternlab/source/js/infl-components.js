@@ -3,8 +3,9 @@ var inflComp = {};
 
 inflComp.React = require('react');
 
-inflComp.FormPattern = require("./patterns/form_pattern.jsx");
-inflComp.LoadingPattern = require("./patterns/loading_pattern.jsx");
+inflComp.FormPattern        = require("./patterns/molecules/form_pattern.jsx");
+inflComp.LoadingPattern     = require("./patterns/molecules/loading_pattern.jsx");
+inflComp.ColourPattern     = require("./patterns/atoms/colours_pattern.jsx");
 
 
 
@@ -63,7 +64,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/form_pattern.jsx","./patterns/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -39409,15 +39410,115 @@ Require.CSS = React.createClass({displayName: "CSS",
 module.exports = Require;
 
 
-},{"js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/form_pattern.jsx":[function(require,module,exports){
-var React = require('react');
-var Pattern = require('../patternlab-components/pattern.jsx');
-var Code = require('../patternlab-components/code.jsx');
-var Require = require('../patternlab-components/require.jsx');
+},{"js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
 
-var Form = require("../../../infl-components/form.jsx");
-var InputLabel = require("../../../infl-components/input_label.jsx");
-var TextInput = require("../../../infl-components/text_input.jsx");
+var ColourPattern = React.createClass({displayName: "ColourPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "colours-pattern"}, 
+        React.createElement(Pattern, {title: "colours"}, 
+          React.createElement("p", null, "The colours are set via sass variables and can be found in theme.scss.  The first two can change via white labeling, and are set by each company."), 
+
+          React.createElement("ul", {class: "sg-colors"}, 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-primary-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Bright Blue")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#08a5c5")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-secondary-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Dark Blue")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#046f99")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-success-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Green")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#8BC540")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-error-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Red")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#c54040")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-warning-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Yellow")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#ffcc00")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-darker-grey-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Darker Grey")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#444444")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-dark-grey-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Dark Grey")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#666666")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-medium-grey-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Medium Grey")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#666666")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-light-grey-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Light Grey")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#d0d2d3")
+            ), 
+            React.createElement("li", null, 
+              React.createElement("span", {class: "sg-swatch color-lighter-grey-background"}), 
+              React.createElement("span", {class: "sg-name"}, 
+                React.createElement("strong", null, "Lighter Grey")
+              ), 
+              React.createElement("span", {class: "sg-label"}, "#eeeeee")
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/theme\";"
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = ColourPattern;
+
+
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form        = require("../../../../infl-components/form.jsx");
+var InputLabel  = require("../../../../infl-components/input_label.jsx");
+var TextInput   = require("../../../../infl-components/text_input.jsx");
 
 var FormPattern = React.createClass({displayName: "FormPattern",
   render : function(){
@@ -39529,30 +39630,20 @@ var FormPattern = React.createClass({displayName: "FormPattern",
 module.exports = FormPattern;
 
 
-},{"../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/loading_pattern.jsx":[function(require,module,exports){
-var React = require('react');
-var Pattern = require('../patternlab-components/pattern.jsx');
-var Code = require('../patternlab-components/code.jsx');
-var Require = require('../patternlab-components/require.jsx');
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
 
-var Loading = require("../../../infl-components/loading.jsx");
+var Loading   = require("../../../../infl-components/loading.jsx");
 
 var LoadingPattern = React.createClass({displayName: "LoadingPattern",
   render : function(){
     return (
-      React.createElement("div", {className: "form-pattern"}, 
+      React.createElement("div", {className: "loading-pattern"}, 
         React.createElement(Pattern, {title: "loading"}, 
           React.createElement("p", null, "The loading component is basically a loading icon with a bunch of options.  It allows for block, inline, modal along with 2 colours, white and grey."), 
-
-          React.createElement(Require, null, 
-            React.createElement(Require.JS, null, 
-              "var Form = require(\"patternity/infl-components/loading.jsx\");"
-            ), 
-            React.createElement(Require.CSS, null, 
-              "@import \"patternity/infl-styles/loading\";"
-            )
-          ), 
-
           React.createElement(Pattern.Detail, {title: "Loading"}, 
             React.createElement(Pattern.Show, null, 
               React.createElement(Loading, null)
@@ -39563,6 +39654,15 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
               ), 
               React.createElement(Code.WithoutJSX, {patternName: "Loading"}), 
               React.createElement(Code.Props, {patternProps: this._buildLoadingProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/loading.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/loading\";"
             )
           )
         )
@@ -39594,5 +39694,5 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
 module.exports = LoadingPattern;
 
 
-},{"../../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
+},{"../../../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
 });

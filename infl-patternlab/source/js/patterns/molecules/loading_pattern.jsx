@@ -1,26 +1,16 @@
-var React = require('react');
-var Pattern = require('../patternlab-components/pattern.jsx');
-var Code = require('../patternlab-components/code.jsx');
-var Require = require('../patternlab-components/require.jsx');
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
 
-var Loading = require("../../../infl-components/loading.jsx");
+var Loading   = require("../../../../infl-components/loading.jsx");
 
 var LoadingPattern = React.createClass({
   render : function(){
     return (
-      <div className="form-pattern">
+      <div className="loading-pattern">
         <Pattern title="loading">
           <p>The loading component is basically a loading icon with a bunch of options.  It allows for block, inline, modal along with 2 colours, white and grey.</p>
-
-          <Require>
-            <Require.JS>
-              var Form = require("patternity/infl-components/loading.jsx");
-            </Require.JS>
-            <Require.CSS>
-              @import "patternity/infl-styles/loading";
-            </Require.CSS>
-          </Require>
-
           <Pattern.Detail title="Loading">
             <Pattern.Show>
               <Loading />
@@ -33,6 +23,15 @@ var LoadingPattern = React.createClass({
               <Code.Props patternProps={this._buildLoadingProps()} />
             </Code>
           </Pattern.Detail>
+
+          <Require>
+            <Require.JS>
+              var Form = require("patternity/infl-components/loading.jsx");
+            </Require.JS>
+            <Require.CSS>
+              @import "patternity/infl-styles/loading";
+            </Require.CSS>
+          </Require>
         </Pattern>
       </div>
     );

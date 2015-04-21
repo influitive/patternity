@@ -2,8 +2,9 @@ var inflComp = {};
 
 inflComp.React = require('react');
 
-inflComp.FormPattern = require("./patterns/form_pattern.jsx");
-inflComp.LoadingPattern = require("./patterns/loading_pattern.jsx");
+inflComp.FormPattern        = require("./patterns/molecules/form_pattern.jsx");
+inflComp.LoadingPattern     = require("./patterns/molecules/loading_pattern.jsx");
+inflComp.ColoursPattern     = require("./patterns/atoms/colours_pattern.jsx");
 
 
 
