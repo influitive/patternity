@@ -67,7 +67,8 @@
   padding: 0.3em;
   margin: 0 0.2em 0.2em 0;
   float: left;
-  width: 7em;
+  width: 8em;
+  height: 140px;
 }
 
 .sg-swatch {
@@ -80,9 +81,17 @@
 }
 
 .sg-label,
-.sg-name {
+.sg-name,
+.sg-label-code {
   display: block;
   line-height: 1;
+  marign: 2px 0px;
+}
+
+.sg-label-code {
+  display: block;
+  line-height: 1;
+  font-size: 11px;
 }
 
 /*# sourceMappingURL=styleguide-specific.css.map */
