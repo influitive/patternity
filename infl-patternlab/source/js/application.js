@@ -1,6 +1,13 @@
 var inflComp = {};
 
 inflComp.React = require('react');
+
+inflComp.FormPattern = require("./patterns/form_pattern.jsx");
+inflComp.LoadingPattern = require("./patterns/loading_pattern.jsx");
+
+
+
+/* old way of building patternity docs */
 inflComp.PanelLeftSidebar = require("../../infl-components/pages/panel_left_sidebar.jsx");
 inflComp.Conent = require("../../infl-components/content.jsx");
 inflComp.Sidebar = require("../../infl-components/sidebar.jsx");
@@ -51,8 +58,5 @@ inflComp.selectDropdown = function(props, elementId){
     document.getElementById(elementId)
   );
 };
-
-
-inflComp.FormPattern = require("./patterns/form_pattern.jsx");
 
 module.exports = inflComp;
