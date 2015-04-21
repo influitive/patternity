@@ -2,6 +2,8 @@ var React         = require('react');
 var _             = require('lodash');
 var beautify_html = require('js-beautify').html;
 
+var Icon          = require("../../../infl-components/icon.jsx");
+
 var Code = React.createClass({
   render : function(){
     return (
@@ -101,21 +103,41 @@ Code.Props = React.createClass({
     return (
       <div className="code-props">
         <h4 className="code-title">Props</h4>
-        <pre className="code">
-          <code>
-            {this._buildProps()}
-          </code>
-        </pre>
+        <table className="code-props-details">
+          <thead>
+            <tr>
+              <th className="prop">Prop</th>
+              <th className="type">Type</th>
+              <th className="default">Default</th>
+              <th className="required">Required</th>
+              <th className="description">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this._buildPropsDetail()}
+          </tbody>
+        </table>
       </div>
     );
   },
-  _buildProps : function(){
-    var propsString = "{\n";
-    _.forEach(this.props.patternProps, function(value, key){
-      propsString += "\t" + key + " : " + value.type + " //" + value.description + "\n";
+  _buildPropsDetail : function(){
+    var that = this;
+    return _.map(this.props.patternProps, function(value, key){
+      return (
+        <tr>
+          <td>{key}</td>
+          <td>{value.type}</td>
+          <td>{value.default}</td>
+          <td className="code-props-required">
+            {that._isPropRequired(value.required)}
+          </td>
+          <td>{value.description}</td>
+        </tr>
+      );
     });
-    propsString += "}";
-    return propsString;
+  },
+  _isPropRequired : function(required){
+    return required ? <Icon icon="check" /> : "";
   }
 });
 
