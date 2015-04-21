@@ -9,6 +9,7 @@ inflComp.ColoursPattern     = require("./patterns/atoms/colours_pattern.jsx");
 inflComp.FontsPattern       = require("./patterns/atoms/fonts_pattern.jsx");
 inflComp.HeadingsPattern    = require("./patterns/atoms/headings_pattern.jsx");
 inflComp.ParagraphPattern   = require("./patterns/atoms/paragraph_pattern.jsx");
+inflComp.IconsPattern       = require("./patterns/atoms/icons_pattern.jsx");
 
 
 
@@ -67,7 +68,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -39207,6 +39208,28 @@ Code.JSX = React.createClass({displayName: "JSX",
   }
 });
 
+Code.HTML = React.createClass({displayName: "HTML",
+  render : function(){
+    return (
+      React.createElement("div", {className: "code-html"}, 
+        React.createElement("h5", {className: "code-title"}, "HTML"), 
+        React.createElement("pre", {className: "code"}, 
+          React.createElement("code", null, 
+            this._formatCode()
+          )
+        )
+      )
+    );
+  },
+  _formatCode : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
+  }
+});
+
 Code.WithoutJSX = React.createClass({displayName: "WithoutJSX",
   getDefaultProps : function(){
     return {
@@ -39232,7 +39255,7 @@ Code.WithoutJSX = React.createClass({displayName: "WithoutJSX",
     return (
       "React.render(\n" +
         "\tReact.createElement(" + this.props.patternName + "}, props),\n" +
-        "\t{DOM element to append {this.props.patternName} to}\n" +
+        "\t{DOM element to append " + this.props.patternName + " to}\n" +
       ");\n"
     );
   }
@@ -39560,7 +39583,186 @@ var HeadingsPattern = React.createClass({displayName: "HeadingsPattern",
 module.exports = HeadingsPattern;
 
 
-},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx":[function(require,module,exports){
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx":[function(require,module,exports){
+var React       = require('react');
+var _           = require('lodash');
+var Pattern     = require('../../patternlab-components/pattern.jsx');
+var Code        = require('../../patternlab-components/code.jsx');
+var Require     = require('../../patternlab-components/require.jsx');
+var ModalDialog = require("../../../../infl-components/modal_dialog.jsx");
+
+var Icon        = require("../../../../infl-components/icon.jsx");
+
+var icons = {
+  'User': 'user',
+  'Bell': 'bell',
+  'Search': 'search',
+  'Mail': 'mail',
+  'Check Mark': 'check',
+  'Close (Times)': 'times',
+  'Check Circle Hollow': 'check-circle-o',
+  'Close (Times) Circle Hollow': 'times-circle-o',
+  'Exclamation Circle Hollow': 'exclamation-circle-o',
+  'Info Circle Hollow': 'info-circle-o',
+  'Question Circle Hollow': 'question-circle-o',
+  'Plus': 'plus',
+  'Minus': 'minus',
+  'Coins': 'coins',
+  'Lock': 'lock',
+  'Unlock': 'unlock',
+  'Asterisk': 'asterisk',
+  'Chevron Down': 'chevron-down',
+  'Chevron Up': 'chevron-up',
+  'Chevron Left': 'chevron-left',
+  'Chevron Right': 'chevron-right',
+  'Arrow Down': 'arrow-down',
+  'Arrow Up': 'arrow-up',
+  'Arrow Left': 'arrow-left',
+  'Arrow Right': 'arrow-right',
+  'Calendar': 'calendar',
+  'Speech': 'speech',
+  'Heart': 'heart',
+  'Star': 'star',
+  'Pin': 'pin',
+  'Pencil': 'pencil',
+  'Trash': 'trash',
+  'Opening Quote' : 'quote-open',
+  'Closing Quote' : 'quote-close',
+  'Opening Quote Fill' : 'quote-fill-open',
+  'Closing Quote Fill' : 'quote-fill-close',
+  'Clock' : 'clock',
+  'List' : 'list',
+  'Grid' : 'grid',
+  'Globe' : 'globe'
+};
+
+var IconPattern = React.createClass({displayName: "IconPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "icons-pattern"}, 
+        React.createElement(Pattern, {title: "icons"}, 
+          React.createElement("p", null, "All our icons are provided via a custom font.  This allows the size of the icon to be changed via font-size and the colour to be changed via font color."), 
+          React.createElement("p", null, "In order to standardize how icons are displayed, use the Icon react component to render an icon"), 
+
+          React.createElement("div", {className: "icons-container"}, 
+            this._buildIcons()
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Icon = require(\"patternity/infl-components/icon.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/icon\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildIcons : function() {
+    return _.map(icons, function(code, name){
+      return (
+        React.createElement(IconExample, {code: code, name: name})
+      );
+    });
+  }
+});
+
+var IconExample = React.createClass({displayName: "IconExample",
+  getDefaultProps : function(){
+    return {
+      name : "",
+      code : ""
+    };
+  },
+  propTypes : {
+    name : React.PropTypes.string,
+    code : React.PropTypes.string
+  },
+  getInitialState : function(){
+    return {
+      isModalOpen : false
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "icon-example"}, 
+        React.createElement("div", {className: "icon-example-icon", onClick: this._handleClick}, 
+          React.createElement("span", {className: "icon"}, 
+            React.createElement(Icon, {icon: this.props.code, className: "size-100"})
+          ), 
+          React.createElement("h5", null, this.props.name)
+        ), 
+        React.createElement(ModalDialog, {size: "large", isModalOpen: this.state.isModalOpen}, 
+          React.createElement(ModalDialog.Header, {title: "Icon Details"}), 
+          React.createElement(ModalDialog.Body, null, 
+            React.createElement(IconDetails, {name: this.props.name, code: this.props.code})
+          )
+        )
+      )
+    );
+  },
+  _buildJSXExample : function(){
+    return '<Icon icon="' + this.props.code + '"/>';
+  },
+  _buildHTMLExample : function(){
+    return '<span class="ic ic-' +  this.props.code + '"></span>';
+  },
+  _handleClick : function(){
+    this.setState({
+      isModalOpen : true
+    });
+  }
+});
+
+var IconDetails = React.createClass({displayName: "IconDetails",
+  getDefaultProps : function(){
+    return {
+      name : "",
+      code : ""
+    };
+  },
+  propTypes : {
+    name : React.PropTypes.string,
+    code : React.PropTypes.string
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "icon-example-details"}, 
+        React.createElement(Pattern.Detail, {title: this.props.name}, 
+          React.createElement(Pattern.Show, null, 
+            React.createElement(Icon, {icon: this.props.code, className: "size-100"}), 
+            React.createElement(Icon, {icon: this.props.code, className: "size-80"}), 
+            React.createElement(Icon, {icon: this.props.code, className: "size-60"}), 
+            React.createElement(Icon, {icon: this.props.code, className: "size-40"}), 
+            React.createElement(Icon, {icon: this.props.code, className: "size-20"}), 
+            React.createElement(Icon, {icon: this.props.code})
+          ), 
+          React.createElement(Code, null, 
+            React.createElement(Code.JSX, null, 
+              this._buildJSXExample()
+            ), 
+            React.createElement(Code.HTML, null, 
+              this._buildHTMLExample()
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildJSXExample : function(){
+    return '<Icon icon="' + this.props.code + '"/>';
+  },
+  _buildHTMLExample : function(){
+    return '<span class="ic ic-' +  this.props.code + '"></span>';
+  }
+});
+
+module.exports = IconPattern;
+
+
+},{"../../../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -39738,7 +39940,7 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
 
           React.createElement(Require, null, 
             React.createElement(Require.JS, null, 
-              "var Form = require(\"patternity/infl-components/loading.jsx\");"
+              "var Loading = require(\"patternity/infl-components/loading.jsx\");"
             ), 
             React.createElement(Require.CSS, null, 
               "@import \"patternity/infl-styles/loading\";"

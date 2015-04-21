@@ -26,7 +26,7 @@ var LoadingPattern = React.createClass({
 
           <Require>
             <Require.JS>
-              var Form = require("patternity/infl-components/loading.jsx");
+              var Loading = require("patternity/infl-components/loading.jsx");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/loading";

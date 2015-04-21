@@ -35,6 +35,28 @@ Code.JSX = React.createClass({
   }
 });
 
+Code.HTML = React.createClass({
+  render : function(){
+    return (
+      <div className="code-html">
+        <h5 className="code-title">HTML</h5>
+        <pre className="code">
+          <code>
+            {this._formatCode()}
+          </code>
+        </pre>
+      </div>
+    );
+  },
+  _formatCode : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
+  }
+});
+
 Code.WithoutJSX = React.createClass({
   getDefaultProps : function(){
     return {
@@ -60,7 +82,7 @@ Code.WithoutJSX = React.createClass({
     return (
       "React.render(\n" +
         "\tReact.createElement(" + this.props.patternName + "}, props),\n" +
-        "\t{DOM element to append {this.props.patternName} to}\n" +
+        "\t{DOM element to append " + this.props.patternName + " to}\n" +
       ");\n"
     );
   }
