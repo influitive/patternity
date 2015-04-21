@@ -168,7 +168,9 @@ body {
   }
 }
 
-#icons-container {
+.icons-container {
+  overflow: hidden;
+
   .size-100 {
     font-size: 100px;
   }
@@ -187,5 +189,34 @@ body {
 
   .size-20 {
     font-size: 20px;
+  }
+
+  .icon-example {
+    float: left;
+    width: 150px;
+    margin: 5px;
+
+    .icon-example-icon {
+      text-align: center;
+
+      & > h5 {
+        height: 50px;
+        margin: 0px;
+        text-align: center;
+      }
+
+      .icon {
+        height: 150px;
+        line-height: 150px;
+
+        .ic {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $lighter-grey;
+    }
   }
 }

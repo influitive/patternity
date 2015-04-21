@@ -2052,6 +2052,7 @@ textarea {
   width: 100%;
   height: 100%;
   overflow: scroll;
+  z-index: 100000;
 }
 .pt-modal-dialog.lightbox {
   background-color: rgba(68, 68, 68, 0.6);
@@ -2364,20 +2365,46 @@ body {
   margin-top: 0px;
 }
 
-#icons-container .size-100 {
+.icons-container {
+  overflow: hidden;
+}
+.icons-container .size-100 {
   font-size: 100px;
 }
-#icons-container .size-80 {
+.icons-container .size-80 {
   font-size: 80px;
 }
-#icons-container .size-60 {
+.icons-container .size-60 {
   font-size: 60px;
 }
-#icons-container .size-40 {
+.icons-container .size-40 {
   font-size: 40px;
 }
-#icons-container .size-20 {
+.icons-container .size-20 {
   font-size: 20px;
+}
+.icons-container .icon-example {
+  float: left;
+  width: 150px;
+  margin: 5px;
+}
+.icons-container .icon-example .icon-example-icon {
+  text-align: center;
+}
+.icons-container .icon-example .icon-example-icon > h5 {
+  height: 50px;
+  margin: 0px;
+  text-align: center;
+}
+.icons-container .icon-example .icon-example-icon .icon {
+  height: 150px;
+  line-height: 150px;
+}
+.icons-container .icon-example .icon-example-icon .icon .ic {
+  vertical-align: middle;
+}
+.icons-container .icon-example:hover {
+  background-color: #eeeeee;
 }
 
 /*# sourceMappingURL=style.css.map */
