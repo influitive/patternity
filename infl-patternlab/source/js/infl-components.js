@@ -39423,77 +39423,17 @@ var ColourPattern = React.createClass({displayName: "ColourPattern",
         React.createElement(Pattern, {title: "colours"}, 
           React.createElement("p", null, "The colours are set via sass variables and can be found in theme.scss.  The first two can change via white labeling, and are set by each company."), 
 
-          React.createElement("ul", {className: "sg-colors"}, 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-primary-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Bright Blue")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#08a5c5")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-secondary-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Dark Blue")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#046f99")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-success-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Green")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#8BC540")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-error-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Red")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#c54040")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-warning-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Yellow")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#ffcc00")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-darker-grey-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Darker Grey")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#444444")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-dark-grey-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Dark Grey")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#666666")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-medium-grey-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Medium Grey")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#666666")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-light-grey-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Light Grey")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#d0d2d3")
-            ), 
-            React.createElement("li", null, 
-              React.createElement("span", {className: "sg-swatch color-lighter-grey-background"}), 
-              React.createElement("span", {className: "sg-name"}, 
-                React.createElement("strong", null, "Lighter Grey")
-              ), 
-              React.createElement("span", {className: "sg-label"}, "#eeeeee")
-            )
+          React.createElement(Colours, null, 
+            React.createElement(Colours.Colour, {colourCss: "color-primary-background", name: "Bright Blue", colourHex: "#08a5c5", colourCode: "$theme-color-primary, $info-color"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-secondary-background", name: "Dark Blue", colourHex: "#046f99", colourCode: "$theme-color-secondary"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-success-background", name: "Green", colourHex: "#8BC540", colourCode: "$success-color"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-error-background", name: "Red", colourHex: "#c54040", colourCode: "$error-color"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-warning-background", name: "Yellow", colourHex: "#ffcc00", colourCode: "$warning-color"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-darker-grey-background", name: "Darker Grey", colourHex: "#444444", colourCode: "$darker-grey"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-dark-grey-background", name: "Dark Grey", colourHex: "#666666", colourCode: "$dark-grey"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-medium-grey-background", name: "Medium Grey", colourHex: "#969696", colourCode: "$medium-grey"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-light-grey-background", name: "Light Grey", colourHex: "#d0d2d3", colourCode: "$light-grey"}), 
+            React.createElement(Colours.Colour, {colourCss: "color-lighter-grey-background", name: "Lighter Grey", colourHex: "#eeeeee", colourCode: "$lighter-grey"})
           ), 
 
           React.createElement(Require, null, 
@@ -39502,6 +39442,45 @@ var ColourPattern = React.createClass({displayName: "ColourPattern",
             )
           )
         )
+      )
+    );
+  }
+});
+
+var Colours = React.createClass({displayName: "Colours",
+  render : function(){
+    return (
+      React.createElement("ul", {className: "sg-colors"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+Colours.Colour = React.createClass({displayName: "Colour",
+  getDefaultProps : function(){
+    return {
+      colourCss : "",
+      name : "",
+      colourHex : "",
+      colourCode : ""
+    };
+  },
+  propTypes : {
+    colourCss : React.PropTypes.string,
+    name : React.PropTypes.string,
+    colourHex : React.PropTypes.string,
+    colourCode : React.PropTypes.string
+  },
+  render : function(){
+    return (
+      React.createElement("li", null, 
+        React.createElement("span", {className: "sg-swatch " + this.props.colourCss}), 
+        React.createElement("span", {className: "sg-name"}, 
+          React.createElement("strong", null, this.props.name)
+        ), 
+        React.createElement("span", {className: "sg-label"}, this.props.colourHex), 
+        React.createElement("span", {className: "sg-label-code"}, this.props.colourCode)
       )
     );
   }
