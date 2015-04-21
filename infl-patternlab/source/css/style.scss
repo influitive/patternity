@@ -221,3 +221,51 @@ body {
     }
   }
 }
+
+.code-props {
+  .code-props-details {
+    width: 100%;
+
+    th {
+      background-color: $light-grey;
+      padding: 10px;
+      text-align: left;
+      border-right:1px solid $light-grey;
+
+      &:last-child {
+        border-right: 0px;
+      }
+
+      &.type,
+      &.required,
+      &.default {
+        width: 100px;
+      }
+
+      &.prop {
+        width: 150px;
+      }
+    }
+
+    td {
+      padding: 10px;
+      border-right:1px solid $light-grey;
+
+      &:last-child {
+        border-right: 0px;
+      }
+
+      &.code-props-required {
+        text-align: center;
+        color: $success-color;
+        font-size: 18px;
+      }
+    }
+
+    tr {
+      &:nth-child(even) {
+        background-color: lighten($lighter-grey, 2%);
+      }
+    }
+  }
+}

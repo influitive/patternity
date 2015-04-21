@@ -68,35 +68,51 @@ var FormPattern = React.createClass({
     return {
       acceptCharset : {
         type : "string",
+        default : "",
+        required : false,
         description : "character encodings that are to be used for the form submission"
       },
       action : {
         type : "string",
+        default : "",
+        required : false,
         description : "url"
       },
       autocomplete : {
         type : "string",
+        default : "",
+        required : false,
         description : "one of 'on', 'off' defaults to empty string"
       },
       enctype : {
         type : "string",
+        default : "",
+        required : false,
         description : "one of 'application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain'. defaults to empty string"
       },
       method : {
         type : "string",
+        default : "",
+        required : false,
         description : "one of 'get', 'post'.  defaults to empty string"
       },
       name : {
         type : "string",
+        default : "",
+        required : false,
         description : "name of the form"
       },
       novalidate : {
         type : "boolean",
-        description : "determines if html 5 validation is on.  defaults to false"
+        default : "false",
+        required : false,
+        description : "determines if html 5 validation is on."
       },
       target : {
         type : "string",
-        description : "one of '_blank', '_self', '_parent', '_top'.  defaults to empty string"
+        default : "",
+        required : false,
+        description : "one of '_blank', '_self', '_parent', '_top'"
       }
     };
   },
@@ -104,11 +120,15 @@ var FormPattern = React.createClass({
     return {
       children : {
         type : "[...]",
+        default : "[]",
+        required : false,
         description : "array or TextInput, SelectDropdown, Checkbox, RadioButton, etc."
       },
       inputSize : {
         type : "string",
-        description : "determines how large the input will be small, medium ro large.  defaults to large"
+        default : "large",
+        required : false,
+        description : "determines how large the input will be small, medium ro large."
       }
     };
   }

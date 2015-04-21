@@ -2411,4 +2411,38 @@ body {
   background-color: #eeeeee;
 }
 
+.code-props .code-props-details {
+  width: 100%;
+}
+.code-props .code-props-details th {
+  background-color: #d0d2d3;
+  padding: 10px;
+  text-align: left;
+  border-right: 1px solid #d0d2d3;
+}
+.code-props .code-props-details th:last-child {
+  border-right: 0px;
+}
+.code-props .code-props-details th.type, .code-props .code-props-details th.required, .code-props .code-props-details th.default {
+  width: 100px;
+}
+.code-props .code-props-details th.prop {
+  width: 150px;
+}
+.code-props .code-props-details td {
+  padding: 10px;
+  border-right: 1px solid #d0d2d3;
+}
+.code-props .code-props-details td:last-child {
+  border-right: 0px;
+}
+.code-props .code-props-details td.code-props-required {
+  text-align: center;
+  color: #8BC540;
+  font-size: 18px;
+}
+.code-props .code-props-details tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
 /*# sourceMappingURL=style.css.map */
