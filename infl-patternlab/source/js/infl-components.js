@@ -11,6 +11,7 @@ inflComp.HeadingsPattern          = require("./patterns/atoms/headings_pattern.j
 inflComp.ParagraphPattern         = require("./patterns/atoms/paragraph_pattern.jsx");
 inflComp.IconsPattern             = require("./patterns/atoms/icons_pattern.jsx");
 inflComp.RadioButtonPattern       = require("./patterns/atoms/radio_button_pattern.jsx");
+inflComp.TextInputPattern       = require("./patterns/atoms/text_input_pattern.jsx");
 
 
 
@@ -69,7 +70,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -39843,7 +39844,7 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
               React.createElement(Code.JSX, null, 
                 "<RadioButton id=\"radio-id-1\" enabled=\"true\" isChecked=\"true\" onChange=\"on_change_callback\" radioName=\"my-radio-name\" radioLabel=\"My Radio Button\" value=\"radio-button-1\"></RadioButton>"
               ), 
-              React.createElement(Code.WithoutJSX, {patternName: "RadioButtonGroup"}), 
+              React.createElement(Code.WithoutJSX, {patternName: "RadioButton"}), 
               React.createElement(Code.Props, {patternProps: this._buildRadioButtonProps()})
             )
           ), 
@@ -39966,7 +39967,309 @@ var RadioButtonComponent = React.createClass({displayName: "RadioButtonComponent
 module.exports = RadioButtonPattern;
 
 
-},{"../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var RadioButton   = require("../../../../infl-components/radio_button.jsx");
+var InputLabel    = require("../../../../infl-components/input_label.jsx");
+var Form          = require("../../../../infl-components/form.jsx");
+
+var TextInput = require("../../../../infl-components/text_input.jsx");
+
+var TextInputPattern = React.createClass({displayName: "TextInputPattern",
+  getInitialState : function(){
+    return {
+      type : "text",
+      required : false,
+      error : false,
+      valid : false,
+      readOnly : false,
+      disabled : false,
+      placeholder : "Text Input",
+      message : []
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "text-input-pattern"}, 
+        React.createElement(Pattern, {title: "text input"}, 
+
+          React.createElement(TextInputControls, {onTypeChange: this._handleTypeChange, onOptionChange: this._handleOptionChange, onAdditionalChange: this._handleAdditionalChange}), 
+
+          React.createElement(Pattern.Detail, {title: "Text Input"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(TextInput, {placeholder: this.state.placeholder, message: this.state.message, type: this.state.type, required: this.state.required, error: this.state.error, valid: this.state.valid, readOnly: this.state.readOnly, disabled: this.state.disabled})
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<TextInput type=\"text\" placeholder=\"Text Input\" >"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "TextInput"}), 
+              React.createElement(Code.Props, {patternProps: this._buildTextInputProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Loading = require(\"patternity/infl-components/text_input.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleAdditionalChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+  },
+  _handleTypeChange : function(type){
+    this.setState({
+      type : type
+    });
+  },
+  _handleOptionChange : function(option){
+    this.setState({
+      required : option === 'required',
+      error : option === 'error',
+      valid : option === 'valid',
+      readOnly : option === 'readOnly',
+      disabled : option === 'disabled'
+    });
+  },
+  _buildTextInputProps : function(){
+    return {
+      type: {
+        type : "string",
+        default : "text",
+        required : false,
+        description : "can be one of text, password, url, email, search, number."
+      },
+      placeholder : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "placeholder text for the input."
+      },
+      name: {
+        type : "string",
+        default : "",
+        required : false,
+        description : "name for the input used with form tag."
+      },
+      id : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "html id for the input."
+      },
+      pattern : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "regex used to validate the input value."
+      },
+      message : {
+        type : "string or array",
+        default : "",
+        required : false,
+        description : "displayed under the input used for a hint, error, etc. text."
+      },
+      value : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "default value of the input."
+      },
+      required : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "if true input is marked as required."
+      },
+      error : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "if true input is highlighted as an error field."
+      },
+      valid : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "if true input is highlighted as a valid field."
+      },
+      readOnly : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "if true input is read only but will still submit with a form."
+      },
+      disabled : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "if true input is disabled and will not submit with a form."
+      }
+    };
+  }
+});
+
+var TextInputControls = React.createClass({displayName: "TextInputControls",
+  getDefaultProps : function(){
+    return {
+      onTypeChange : function(){},
+      onTypeChange : function(){},
+      onAdditionalChange : function(){}
+    };
+  },
+  render : function(){
+    return (
+      React.createElement(Form, null, 
+        React.createElement(Form.Column, null, 
+          React.createElement(TextInputAdditionalControls, {onChange: this.props.onAdditionalChange})
+        ), 
+        React.createElement(Form.Column, null, 
+          React.createElement(TextInputTypeControl, {onChange: this.props.onTypeChange})
+        ), 
+        React.createElement(Form.Column, null, 
+          React.createElement(TextInputOptionControl, {onChange: this.props.onOptionChange})
+        )
+      )
+    );
+  }
+});
+
+var TextInputAdditionalControls = React.createClass({displayName: "TextInputAdditionalControls",
+  getDefaultProps : function(){
+    return {
+      onChange : function(){}
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "additional-controls"}, 
+        React.createElement(Form.Row, null, 
+          React.createElement(InputLabel, {label: "Placeholder"}, 
+            React.createElement(TextInput, {placeholder: "Text Input", value: "Text Input", name: "placeholder", onChange: this._handleChange})
+          )
+        ), 
+        React.createElement(Form.Row, null, 
+          React.createElement(InputLabel, {label: "Message One"}, 
+            React.createElement(TextInput, {placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageOne", name: "message", onChange: this._handleMessageChange})
+          )
+        ), 
+        React.createElement(Form.Row, null, 
+          React.createElement(InputLabel, {label: "Message Two"}, 
+            React.createElement(TextInput, {placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageTwo", name: "message", onChange: this._handleMessageChange})
+          )
+        ), 
+        React.createElement(Form.Row, null, 
+          React.createElement(InputLabel, {label: "Message Three"}, 
+            React.createElement(TextInput, {placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageThree", name: "message", onChange: this._handleMessageChange})
+          )
+        )
+      )
+    );
+  },
+  _handleChange : function(event){
+    this.props.onChange(event.target.name, event.target.value);
+  },
+  _handleMessageChange : function(event){
+    this.props.onChange(event.target.name, [
+      this.refs.messageOne.getDOMNode().firstChild.value,
+      this.refs.messageTwo.getDOMNode().firstChild.value,
+      this.refs.messageThree.getDOMNode().firstChild.value
+    ]);
+  }
+});
+
+var TextInputTypeControl = React.createClass({displayName: "TextInputTypeControl",
+  getDefaultProps : function(){
+    return {
+      onChange : function(){}
+    };
+  },
+  getInitialState : function(){
+    return {
+      selectedValue : "text"
+    };
+  },
+  render : function(){
+    return (
+      React.createElement(Form.Row, null, 
+        React.createElement(InputLabel, {label: "Input Type"}, 
+          React.createElement(RadioButton.Group, {layout: "stacked"}, 
+            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Text", isChecked: this._isTypeSelected('text'), onChange: this._handleChange, value: "text"}), 
+            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Search", isChecked: this._isTypeSelected('search'), onChange: this._handleChange, value: "search"}), 
+            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Password", isChecked: this._isTypeSelected('password'), onChange: this._handleChange, value: "password"}), 
+            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "URL", isChecked: this._isTypeSelected('url'), onChange: this._handleChange, value: "url"}), 
+            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Email", isChecked: this._isTypeSelected('email'), onChange: this._handleChange, value: "email"}), 
+            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Number", isChecked: this._isTypeSelected('number'), onChange: this._handleChange, value: "number"})
+          )
+        )
+      )
+    );
+  },
+  _isTypeSelected : function(value){
+    return this.state.selectedValue === value;
+  },
+  _handleChange : function(event){
+    this.setState({
+      selectedValue : event.target.value
+    });
+    this.props.onChange(event.target.value);
+  },
+});
+
+var TextInputOptionControl = React.createClass({displayName: "TextInputOptionControl",
+  getDefaultProps : function(){
+    return {
+      onChange : function(){}
+    };
+  },
+  getInitialState : function(){
+    return {
+      selectedValue : ""
+    };
+  },
+  render : function(){
+    return (
+      React.createElement(Form.Row, null, 
+        React.createElement(InputLabel, {label: "Input Option"}, 
+          React.createElement(RadioButton.Group, {layout: "stacked"}, 
+            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Base Input", isChecked: this._isOptionSelected(''), onChange: this._handleChange, value: ""}), 
+            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Required", isChecked: this._isOptionSelected('required'), onChange: this._handleChange, value: "required"}), 
+            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Error", isChecked: this._isOptionSelected('error'), onChange: this._handleChange, value: "error"}), 
+            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Valid", isChecked: this._isOptionSelected('valid'), onChange: this._handleChange, value: "valid"}), 
+            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Read Only", isChecked: this._isOptionSelected('readOnly'), onChange: this._handleChange, value: "readOnly"}), 
+            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Disabled", isChecked: this._isOptionSelected('disabled'), onChange: this._handleChange, value: "disabled"})
+          )
+        )
+      )
+    );
+  },
+  _isOptionSelected : function(value){
+    return this.state.selectedValue === value;
+  },
+  _handleChange : function(event){
+    this.setState({
+      selectedValue : event.target.value
+    });
+    this.props.onChange(event.target.value);
+  },
+});
+
+module.exports = TextInputPattern;
+
+
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');

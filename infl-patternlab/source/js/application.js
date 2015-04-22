@@ -10,6 +10,7 @@ inflComp.HeadingsPattern          = require("./patterns/atoms/headings_pattern.j
 inflComp.ParagraphPattern         = require("./patterns/atoms/paragraph_pattern.jsx");
 inflComp.IconsPattern             = require("./patterns/atoms/icons_pattern.jsx");
 inflComp.RadioButtonPattern       = require("./patterns/atoms/radio_button_pattern.jsx");
+inflComp.TextInputPattern       = require("./patterns/atoms/text_input_pattern.jsx");
 
 
 
