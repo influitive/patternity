@@ -62,7 +62,7 @@ Pattern.Demo = React.createClass({
   render : function(){
     return (
       <div className="pattern-demo">
-        <button className="primary" onClick={this.props.onClick}>{this.props.title}</button>
+        <button className="important" onClick={this.props.onClick}>{this.props.title}</button>
       </div>
     );
   }

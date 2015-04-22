@@ -39387,7 +39387,7 @@ Pattern.Demo = React.createClass({displayName: "Demo",
   render : function(){
     return (
       React.createElement("div", {className: "pattern-demo"}, 
-        React.createElement("button", {className: "primary", onClick: this.props.onClick}, this.props.title)
+        React.createElement("button", {className: "important", onClick: this.props.onClick}, this.props.title)
       )
     );
   }
