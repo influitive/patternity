@@ -15,6 +15,7 @@ inflComp.TextInputPattern         = require("./patterns/atoms/text_input_pattern
 inflComp.TextareaPattern          = require("./patterns/atoms/textarea_pattern.jsx");
 inflComp.SelectDropdownPattern    = require("./patterns/atoms/select_dropdown_pattern.jsx");
 inflComp.ToggleSwitchPattern      = require("./patterns/atoms/toggle_switch_pattern.jsx");
+inflComp.CheckboxPattern          = require("./patterns/atoms/checkbox_pattern.jsx");
 
 
 
@@ -75,7 +76,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -39483,7 +39484,141 @@ Require.CSS = React.createClass({displayName: "CSS",
 module.exports = Require;
 
 
-},{"js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx":[function(require,module,exports){
+},{"js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Checkbox   = require("../../../../infl-components/checkbox.jsx");
+
+var CheckboxPattern = React.createClass({displayName: "CheckboxPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "checkbox-pattern"}, 
+        React.createElement(Pattern, {title: "checkbox"}, 
+          React.createElement("p", null, "The checkbox form element can be used in place of a native checkbox.  It also still acts as a form element checkbox and can be used with a form tag and form submit."), 
+          React.createElement("p", null, "It has two states enabled and disabled"), 
+
+          React.createElement(Pattern.Detail, {title: "Checkbox"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Checkbox, {checkboxLabel: "My Checkbox"})
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Checkbox id=\"checkbox-1\" enabled=\"true\" isChecked=\"true\" onChange=\"on_change_callback\" checkboxNAme=\"my-checkbox-name\" checkboxLabel=\"My Checkbox\" value=\"checkbox-1\"></Checkbox>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "CheckBox"}), 
+              React.createElement(Code.Props, {patternProps: this._buildCheckBoxProps()})
+            )
+          ), 
+
+          React.createElement(Pattern.Detail, {title: "Checkbox Group"}, 
+            React.createElement("p", null, "Checkbox also comes with a subcomponent Group.  It is used to help with styling of checkboxes buttons."), 
+            React.createElement("p", null, "It also has two layout options inline and stacked"), 
+
+            React.createElement(Pattern.Show, null, 
+              React.createElement(CheckboxGroupComponent, null)
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Checkbox.Group>" + ' ' +
+                  "<Checkbox isChecked=\"false\" enabled=\"true\" onChange=\"callback_function\" checkboxName=\"form_element_name\" checkboxLabel=\"label_to_go_with_checkbox\" ></Checkbox>" + ' ' +
+                  "<Checkbox isChecked=\"false\" enabled=\"true\" onChange=\"callback_function\" checkboxName=\"form_element_name\" checkboxLabel=\"label_to_go_with_checkbox\" ></Checkbox>" + ' ' +
+                  "<Checkbox isChecked=\"false\" enabled=\"true\" onChange=\"callback_function\" checkboxName=\"form_element_name\" checkboxLabel=\"label_to_go_with_checkbox\" ></Checkbox>" + ' ' +
+                "</Checkbox.Group>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Checkbox.Group"}), 
+              React.createElement(Code.Props, {patternProps: this._buildCheckBoxGroupProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Loading = require(\"patternity/infl-components/checkbox.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/checkbox\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildCheckBoxProps : function(){
+    return {
+      isChecked : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "determines if the checkbox is checked or not."
+      },
+      enabled : {
+        type : "boolean",
+        default : "true",
+        required : false,
+        description : "determines if the checkbox is enabled or disabled."
+      },
+      onChange : {
+        type : "function",
+        default : "empty function",
+        required : false,
+        description : "the onChange will be called with an event if enabled."
+      },
+      checkboxName : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Name of the checkbox input to be used in a form."
+      },
+      id : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Id for the internal checkbox."
+      },
+      checkboxLabel : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Text to accompany the checkbox."
+      }
+    };
+  },
+  _buildCheckBoxGroupProps : function(){
+    return {
+      layout : {
+        type : "string",
+        default : "inline",
+        required : false,
+        description : "Determines if the checkbox group is displayed stacked or inline."
+      },
+      id : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Id for the checkbox group."
+      }
+    };
+  }
+});
+
+var CheckboxGroupComponent = React.createClass({displayName: "CheckboxGroupComponent",
+  render : function(){
+    return (
+      React.createElement(Checkbox.Group, null, 
+        React.createElement(Checkbox, {checkboxLabel: "My Checkbox One"}), 
+        React.createElement(Checkbox, {checkboxLabel: "My Checkbox Two"}), 
+        React.createElement(Checkbox, {checkboxLabel: "My Checkbox Three"})
+      )
+    );
+  }
+});
+
+module.exports = CheckboxPattern;
+
+
+},{"../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -39855,9 +39990,6 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
           React.createElement("p", null, "It has two states enabled and disabled"), 
 
           React.createElement(Pattern.Detail, {title: "Radio Button"}, 
-            React.createElement("p", null, "Radio Button also comes with a subcomponent Group.  It is used to help with styling of radio buttons... cause we never use one radio button at a time."), 
-            React.createElement("p", null, "It also has to layout options inline and stacked"), 
-
             React.createElement(Pattern.Show, null, 
               React.createElement(RadioButton, {radioLabel: "My Radio Button", isChecked: true})
             ), 
@@ -39872,7 +40004,7 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
 
           React.createElement(Pattern.Detail, {title: "Radio Button Group"}, 
             React.createElement("p", null, "Radio Button also comes with a subcomponent Group.  It is used to help with styling of radio buttons... cause we never use one radio button at a time."), 
-            React.createElement("p", null, "It also has to layout options inline and stacked"), 
+            React.createElement("p", null, "It also has two layout options inline and stacked"), 
 
             React.createElement(Pattern.Show, null, 
               React.createElement(RadioButtonComponent, null)
@@ -39885,7 +40017,7 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
                   "<RadioButton id=\"radio-id-3\" enabled=\"true\" isChecked=\"false\" onChange=\"on_change_callback\" radioName=\"my-radio-name\" radioLabel=\"My Radio Button\" value=\"radio-button-3\"></RadioButton>" + ' ' +
                 "</RadioButton.Group>"
               ), 
-              React.createElement(Code.WithoutJSX, {patternName: "RadioButtonGroup"}), 
+              React.createElement(Code.WithoutJSX, {patternName: "RadioButton.Group"}), 
               React.createElement(Code.Props, {patternProps: this._buildRadioButtonGroupProps()})
             )
           ), 
@@ -39955,7 +40087,13 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
         default : "inline",
         required : false,
         description : "determines if the radio button group is displayed stacked or inline."
-      }
+      },
+      id : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Id for the internal radio button group."
+      },
     };
   }
 });

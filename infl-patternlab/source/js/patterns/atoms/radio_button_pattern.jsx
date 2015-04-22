@@ -14,9 +14,6 @@ var RadioButtonPattern = React.createClass({
           <p>It has two states enabled and disabled</p>
 
           <Pattern.Detail title="Radio Button">
-            <p>Radio Button also comes with a subcomponent Group.  It is used to help with styling of radio buttons... cause we never use one radio button at a time.</p>
-            <p>It also has to layout options inline and stacked</p>
-
             <Pattern.Show>
               <RadioButton radioLabel="My Radio Button" isChecked={true} />
             </Pattern.Show>
@@ -31,7 +28,7 @@ var RadioButtonPattern = React.createClass({
 
           <Pattern.Detail title="Radio Button Group">
             <p>Radio Button also comes with a subcomponent Group.  It is used to help with styling of radio buttons... cause we never use one radio button at a time.</p>
-            <p>It also has to layout options inline and stacked</p>
+            <p>It also has two layout options inline and stacked</p>
 
             <Pattern.Show>
               <RadioButtonComponent />
@@ -44,7 +41,7 @@ var RadioButtonPattern = React.createClass({
                   &lt;RadioButton id="radio-id-3" enabled="true" isChecked="false" onChange="on_change_callback" radioName="my-radio-name" radioLabel="My Radio Button" value="radio-button-3"&gt;&lt;/RadioButton&gt;
                 &lt;/RadioButton.Group&gt;
               </Code.JSX>
-              <Code.WithoutJSX patternName="RadioButtonGroup" />
+              <Code.WithoutJSX patternName="RadioButton.Group" />
               <Code.Props patternProps={this._buildRadioButtonGroupProps()} />
             </Code>
           </Pattern.Detail>
@@ -114,7 +111,13 @@ var RadioButtonPattern = React.createClass({
         default : "inline",
         required : false,
         description : "determines if the radio button group is displayed stacked or inline."
-      }
+      },
+      id : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Id for the internal radio button group."
+      },
     };
   }
 });
