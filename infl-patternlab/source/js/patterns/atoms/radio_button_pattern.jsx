@@ -24,7 +24,7 @@ var RadioButtonPattern = React.createClass({
               <Code.JSX>
                 &lt;RadioButton id="radio-id-1" enabled="true" isChecked="true" onChange="on_change_callback" radioName="my-radio-name" radioLabel="My Radio Button" value="radio-button-1"&gt;&lt;/RadioButton&gt;
               </Code.JSX>
-              <Code.WithoutJSX patternName="RadioButtonGroup" />
+              <Code.WithoutJSX patternName="RadioButton" />
               <Code.Props patternProps={this._buildRadioButtonProps()} />
             </Code>
           </Pattern.Detail>
