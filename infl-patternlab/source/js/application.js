@@ -12,6 +12,10 @@ inflComp.IconsPattern             = require("./patterns/atoms/icons_pattern.jsx"
 inflComp.RadioButtonPattern       = require("./patterns/atoms/radio_button_pattern.jsx");
 inflComp.TextInputPattern         = require("./patterns/atoms/text_input_pattern.jsx");
 inflComp.TextareaPattern          = require("./patterns/atoms/textarea_pattern.jsx");
+inflComp.SelectDropdownPattern    = require("./patterns/atoms/select_dropdown_pattern.jsx");
+inflComp.ToggleSwitchPattern      = require("./patterns/atoms/toggle_switch_pattern.jsx");
+
+
 
 
 

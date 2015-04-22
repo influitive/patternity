@@ -1,68 +1,9 @@
-<section class="pattern-section">
-  <header>
-    <h3>toggle switch</h3>
-  </header>
-
-  <p>The toggle switch form element can be used in place of a checkbox to better visually indicate that a feature is turned on or off.  It also still acts as a form element checkbox and can be used with a form tag and form submit.</p>
-
-  <p>It has two states enabled and disabled</p>
-
-  <div id="toggle-switch-pattern" style="margin-top: 10px;"></div>
-  <script type="text/javascript">
-    (function() {
-      var props = {
-        enabled: true,
-        isOn : false,
-        onChange : onChange,
-        inputName: "test-name"
-      };
-
-      function onChange(event){
-        props.isOn = !props.isOn;
-        renderToggleSwitchWithProps(props);
-      }
-
-      function renderToggleSwitchWithProps(props){
-        inflComp.React.render(
-          inflComp.React.createElement(inflComp.ToggleSwitch, props),
-          document.getElementById("toggle-switch-pattern")
-        );
-      }
-
-      renderToggleSwitchWithProps(props);
-    })();
-  </script>
-
-  <h4 class="code-title">Code</h4>
-
-  <h5 class="code-title">JSX</h5>
-  <pre class="code">
-    <code>
-      &lt;ToggleSwitch isOn={false} enabled={true} onChange={callback_function} inputName={form_element_name} /&gt;
-    </code>
-  </pre>
-
-  <h5 class="code-title">Without JSX</h5>
-  <pre class="code">
-    <code>
-      React.render(
-        React.createElement(ToggleSwitch, props),
-        {DOM element to append toggle switch to}
-      );
-    </code>
-  </pre>
-
-  <h4 class="code-title">Props</h4>
-
-  <pre class="code">
-    <code>
-      {
-        isOn : boolean,       // defaults to false.  Is the on/ off state of the toggle
-        enabled : boolean     // defaults to true.  determines if the switch is enabled or disabled
-        onChange : function,  // the onChange will be called with the current state of enabled as a boolean
-        inputName : string,   // name of the checkbox input to be used in a form
-        id : string           // id for the internal checkbox
-      }
-    </code>
-  </pre>
-</section>
+<div id="toggle-switch-pattern"></div>
+<script type="text/javascript">
+  (function() {
+    inflComp.React.render(
+      inflComp.React.createElement(inflComp.ToggleSwitchPattern, {}),
+      document.getElementById("toggle-switch-pattern")
+    );
+  })();
+</script>
