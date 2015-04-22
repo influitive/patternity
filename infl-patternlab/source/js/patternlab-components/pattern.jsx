@@ -52,6 +52,22 @@ Pattern.Show = React.createClass({
   }
 });
 
+Pattern.Demo = React.createClass({
+  getDefaultProps : function(){
+    return {
+      onClick : function(){},
+      title : ""
+    }
+  },
+  render : function(){
+    return (
+      <div className="pattern-demo">
+        <button className="primary" onClick={this.props.onClick}>{this.props.title}</button>
+      </div>
+    );
+  }
+});
+
 Pattern.Requires = React.createClass({
   render : function(){
     return (

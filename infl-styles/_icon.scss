@@ -256,6 +256,11 @@
   content: '\e610';
 }
 
+@mixin ic-chevron-up() {
+  font-family : 'influicons';
+  content: '\e613';
+}
+
 @mixin ic-quote-open() {
   font-family : 'influicons';
   content: '\e621';
