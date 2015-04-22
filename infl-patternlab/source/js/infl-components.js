@@ -554,7 +554,8 @@ var Checkbox = React.createClass({displayName: "Checkbox",
       isChecked : false,
       onChange: function(){},
       checkboxName : "",
-      checkboxLabel : ""
+      checkboxLabel : "",
+      value : ""
     };
   },
   propTypes : {
@@ -563,7 +564,8 @@ var Checkbox = React.createClass({displayName: "Checkbox",
     isChecked: React.PropTypes.bool,
     onChange : React.PropTypes.func,
     checkboxName : React.PropTypes.string,
-    checkboxLabel : React.PropTypes.string
+    checkboxLabel : React.PropTypes.string,
+    value : React.PropTypes.string
   },
   componentWillReceiveProps: function (newProps) {
     this.setState({
@@ -575,7 +577,7 @@ var Checkbox = React.createClass({displayName: "Checkbox",
       React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses(), onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
         React.createElement("span", {className: "stylized-checkbox"}), 
         React.createElement("span", {className: "pt-checkbox-label"}, this.props.checkboxLabel), 
-        React.createElement("input", {disabled: !this.props.enabled, type: "checkbox", ref: "checkbox", className: "pt-native-checkbox", checked: this._isChecked(), name: this.props.checkboxName, onChange: this._handleChange, id: this.props.id})
+        React.createElement("input", {disabled: !this.props.enabled, type: "checkbox", ref: "checkbox", className: "pt-native-checkbox", value: this.props.value, checked: this._isChecked(), name: this.props.checkboxName, onChange: this._handleChange, id: this.props.id})
       )
     );
   },
@@ -39997,7 +39999,7 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
       size : {
         type : "string",
         default : "medium",
-        required : true,
+        required : false,
         description : "one of small, medium, large"
       },
       type: {
