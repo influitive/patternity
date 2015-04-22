@@ -222,8 +222,33 @@ body {
   }
 }
 
+.pattern-section {
+  position: relative;
+
+  .pattern-demo {
+    position: absolute;
+    right: 10px;
+    top: 80px;
+  }
+}
+
 .pattern-show {
   margin: 10px 0px;
+}
+
+.demo-output {
+  overflow: hidden;
+
+  .demo-pattern {
+    float: left;
+    width: 40%;
+  }
+
+  .demo-props {
+    float: left;
+    width: 60%;
+    background-color: $lighter-grey;
+  }
 }
 
 .code-props {
