@@ -119,13 +119,7 @@ var TextInputPattern = React.createClass({
     this.setState({
       type : type
     });
-    // this._resetOptionsIfTypeSearch(type);
   },
-  // _resetOptionsIfTypeSearch : function(type){
-  //   if(type === "search"){
-  //     this._handleOptionChange("");
-  //   }
-  // },
   _handleOptionChange : function(option){
     this.setState({
       required : option === 'required',
@@ -208,7 +202,13 @@ var TextInputPattern = React.createClass({
         default : "false",
         required : false,
         description : "if true input is disabled and will not submit with a form."
-      }
+      },
+      onChange : {
+        type : "function",
+        default : "empty function",
+        required : false,
+        description : "Callback with event when the text input changes.  Only called if enabled."
+      },
     };
   }
 });
