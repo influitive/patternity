@@ -2,13 +2,14 @@ var inflComp = {};
 
 inflComp.React = require('react');
 
-inflComp.FormPattern        = require("./patterns/molecules/form_pattern.jsx");
-inflComp.LoadingPattern     = require("./patterns/molecules/loading_pattern.jsx");
-inflComp.ColoursPattern     = require("./patterns/atoms/colours_pattern.jsx");
-inflComp.FontsPattern       = require("./patterns/atoms/fonts_pattern.jsx");
-inflComp.HeadingsPattern    = require("./patterns/atoms/headings_pattern.jsx");
-inflComp.ParagraphPattern   = require("./patterns/atoms/paragraph_pattern.jsx");
-inflComp.IconsPattern       = require("./patterns/atoms/icons_pattern.jsx");
+inflComp.FormPattern              = require("./patterns/molecules/form_pattern.jsx");
+inflComp.LoadingPattern           = require("./patterns/molecules/loading_pattern.jsx");
+inflComp.ColoursPattern           = require("./patterns/atoms/colours_pattern.jsx");
+inflComp.FontsPattern             = require("./patterns/atoms/fonts_pattern.jsx");
+inflComp.HeadingsPattern          = require("./patterns/atoms/headings_pattern.jsx");
+inflComp.ParagraphPattern         = require("./patterns/atoms/paragraph_pattern.jsx");
+inflComp.IconsPattern             = require("./patterns/atoms/icons_pattern.jsx");
+inflComp.RadioButtonPattern       = require("./patterns/atoms/radio_button_pattern.jsx");
 
 
 

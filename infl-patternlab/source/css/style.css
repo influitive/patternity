@@ -2411,6 +2411,10 @@ body {
   background-color: #eeeeee;
 }
 
+.pattern-show {
+  margin: 10px 0px;
+}
+
 .code-props .code-props-details {
   width: 100%;
 }
