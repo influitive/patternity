@@ -39982,7 +39982,7 @@ var TextInput = require("../../../../infl-components/text_input.jsx");
 var TextInputPattern = React.createClass({displayName: "TextInputPattern",
   getInitialState : function(){
     return {
-      type : "text",
+      type : "search",
       required : false,
       error : false,
       valid : false,
@@ -39997,7 +39997,18 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
       React.createElement("div", {className: "text-input-pattern"}, 
         React.createElement(Pattern, {title: "text input"}, 
 
-          React.createElement(TextInputControls, {onTypeChange: this._handleTypeChange, onOptionChange: this._handleOptionChange, onAdditionalChange: this._handleAdditionalChange}), 
+          React.createElement(TextInputControls, {
+              onTypeChange: this._handleTypeChange, 
+              onOptionChange: this._handleOptionChange, 
+              onAdditionalChange: this._handleAdditionalChange, 
+              type: this.state.type, 
+              required: this.state.required, 
+              error: this.state.error, 
+              valid: this.state.valid, 
+              readOnly: this.state.readOnly, 
+              disabled: this.state.disabled, 
+              placeholder: this.state.placeholder, 
+              message: this.state.message}), 
 
           React.createElement(Pattern.Detail, {title: "Text Input"}, 
             React.createElement(Pattern.Show, null, 
@@ -40033,7 +40044,13 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
     this.setState({
       type : type
     });
+    // this._resetOptionsIfTypeSearch(type);
   },
+  // _resetOptionsIfTypeSearch : function(type){
+  //   if(type === "search"){
+  //     this._handleOptionChange("");
+  //   }
+  // },
   _handleOptionChange : function(option){
     this.setState({
       required : option === 'required',
@@ -40136,10 +40153,16 @@ var TextInputControls = React.createClass({displayName: "TextInputControls",
           React.createElement(TextInputAdditionalControls, {onChange: this.props.onAdditionalChange})
         ), 
         React.createElement(Form.Column, null, 
-          React.createElement(TextInputTypeControl, {onChange: this.props.onTypeChange})
+          React.createElement(TextInputTypeControl, {onChange: this.props.onTypeChange, type: this.props.type})
         ), 
         React.createElement(Form.Column, null, 
-          React.createElement(TextInputOptionControl, {onChange: this.props.onOptionChange})
+          React.createElement(TextInputOptionControl, {
+              onChange: this.props.onOptionChange, 
+              required: this.props.required, 
+              error: this.props.error, 
+              valid: this.props.valid, 
+              readOnly: this.props.readOnly, 
+              disabled: this.props.disabled})
         )
       )
     );
@@ -40193,12 +40216,13 @@ var TextInputAdditionalControls = React.createClass({displayName: "TextInputAddi
 var TextInputTypeControl = React.createClass({displayName: "TextInputTypeControl",
   getDefaultProps : function(){
     return {
-      onChange : function(){}
+      onChange : function(){},
+      type : "text"
     };
   },
   getInitialState : function(){
     return {
-      selectedValue : "text"
+      selectedValue : this.props.type
     };
   },
   render : function(){
@@ -40231,12 +40255,17 @@ var TextInputTypeControl = React.createClass({displayName: "TextInputTypeControl
 var TextInputOptionControl = React.createClass({displayName: "TextInputOptionControl",
   getDefaultProps : function(){
     return {
-      onChange : function(){}
+      onChange : function(){},
+      required : false,
+      error : false,
+      valid : false,
+      readOnly : false,
+      disabled : false
     };
   },
   getInitialState : function(){
     return {
-      selectedValue : ""
+      selectedValue : this._determineSelectedValue(),
     };
   },
   render : function(){
@@ -40254,6 +40283,19 @@ var TextInputOptionControl = React.createClass({displayName: "TextInputOptionCon
         )
       )
     );
+  },
+  _determineSelectedValue : function(){
+    if(this.props.required){
+      return "requied";
+    } else if(this.props.error){
+      return "error";
+    } else if(this.props.valid){
+      return "valid";
+    } else if(this.props.readOnly){
+      return "readOnly";
+    } else if(this.props.disabled){
+      return "disabled";
+    }
   },
   _isOptionSelected : function(value){
     return this.state.selectedValue === value;
