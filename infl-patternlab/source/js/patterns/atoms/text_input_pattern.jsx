@@ -4,6 +4,7 @@ var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
 var RadioButton   = require("../../../../infl-components/radio_button.jsx");
+var SelectDropdown   = require("../../../../infl-components/select_dropdown.jsx");
 var InputLabel    = require("../../../../infl-components/input_label.jsx");
 var Form          = require("../../../../infl-components/form.jsx");
 
@@ -19,7 +20,8 @@ var TextInputPattern = React.createClass({
       readOnly : false,
       disabled : false,
       placeholder : "Text Input",
-      message : []
+      message : [],
+      isInputOptionEnabled : true
     };
   },
   render : function(){
@@ -65,7 +67,8 @@ var TextInputPattern = React.createClass({
                 readOnly={this.state.readOnly}
                 disabled={this.state.disabled}
                 placeholder={this.state.placeholder}
-                message={this.state.message} />
+                message={this.state.message}
+                isInputOptionEnabled={this.state.isInputOptionEnabled} />
             </Pattern.Demo>
 
             <Code>
@@ -120,8 +123,16 @@ var TextInputPattern = React.createClass({
   },
   _handleTypeChange : function(type){
     this.setState({
-      type : type
+      type : type,
+      isInputOptionEnabled : this._isInputOptionEnabled(type)
     });
+  },
+  _isInputOptionEnabled : function(type){
+    if(type === "search") {
+      this._handleOptionChange("");
+      return false;
+    }
+    return true;
   },
   _handleOptionChange : function(option){
     this.setState({
@@ -229,7 +240,6 @@ var TextInputControls = React.createClass({
       <div className="pattern-controls">
         <h4>Text Input Controls</h4>
         <Form>
-          <TextInputAdditionalControls onChange={this.props.onAdditionalChange} />
           <TextInputTypeControl onChange={this.props.onTypeChange} type={this.props.type} />
           <TextInputOptionControl
               onChange={this.props.onOptionChange}
@@ -237,7 +247,9 @@ var TextInputControls = React.createClass({
               error={this.props.error}
               valid={this.props.valid}
               readOnly={this.props.readOnly}
-              disabled={this.props.disabled}  />
+              disabled={this.props.disabled}
+              isInputOptionEnabled={this.props.isInputOptionEnabled}  />
+          <TextInputAdditionalControls onChange={this.props.onAdditionalChange} />
         </Form>
       </div>
     );
@@ -295,34 +307,23 @@ var TextInputTypeControl = React.createClass({
       type : "text"
     };
   },
-  getInitialState : function(){
-    return {
-      selectedValue : this.props.type
-    };
-  },
   render : function(){
     return (
       <Form.Row>
         <InputLabel label="Input Type">
-          <RadioButton.Group layout="stacked">
-            <RadioButton radioName="text-input-type" radioLabel="Text" isChecked={this._isTypeSelected('text')} onChange={this._handleChange} value="text"/>
-            <RadioButton radioName="text-input-type" radioLabel="Search" isChecked={this._isTypeSelected('search')} onChange={this._handleChange} value="search"/>
-            <RadioButton radioName="text-input-type" radioLabel="Password" isChecked={this._isTypeSelected('password')} onChange={this._handleChange} value="password"/>
-            <RadioButton radioName="text-input-type" radioLabel="URL" isChecked={this._isTypeSelected('url')} onChange={this._handleChange} value="url"/>
-            <RadioButton radioName="text-input-type" radioLabel="Email" isChecked={this._isTypeSelected('email')} onChange={this._handleChange} value="email"/>
-            <RadioButton radioName="text-input-type" radioLabel="Number" isChecked={this._isTypeSelected('number')} onChange={this._handleChange} value="number"/>
-          </RadioButton.Group>
+          <SelectDropdown value={this.props.type} onChange={this._handleChange}>
+            <option value="text">Text</option>
+            <option value="search">Search</option>
+            <option value="password">Password</option>
+            <option value="url">URL</option>
+            <option value="email">Email</option>
+            <option value="number">Number</option>
+          </SelectDropdown>
         </InputLabel>
       </Form.Row>
     );
   },
-  _isTypeSelected : function(value){
-    return this.state.selectedValue === value;
-  },
   _handleChange : function(event){
-    this.setState({
-      selectedValue : event.target.value
-    });
     this.props.onChange(event.target.value);
   },
 });
@@ -335,31 +336,29 @@ var TextInputOptionControl = React.createClass({
       error : false,
       valid : false,
       readOnly : false,
-      disabled : false
-    };
-  },
-  getInitialState : function(){
-    return {
-      selectedValue : this._determineSelectedValue(),
+      disabled : false,
+      isInputOptionEnabled : true
     };
   },
   render : function(){
+    console.log(this.props);
     return (
       <Form.Row>
         <InputLabel label="Input Option">
-          <RadioButton.Group layout="stacked">
-            <RadioButton radioName="text-input-option" radioLabel="Base Input" isChecked={this._isOptionSelected('')} onChange={this._handleChange} value=""/>
-            <RadioButton radioName="text-input-option" radioLabel="Required" isChecked={this._isOptionSelected('required')} onChange={this._handleChange} value="required"/>
-            <RadioButton radioName="text-input-option" radioLabel="Error" isChecked={this._isOptionSelected('error')} onChange={this._handleChange} value="error"/>
-            <RadioButton radioName="text-input-option" radioLabel="Valid" isChecked={this._isOptionSelected('valid')} onChange={this._handleChange} value="valid"/>
-            <RadioButton radioName="text-input-option" radioLabel="Read Only" isChecked={this._isOptionSelected('readOnly')} onChange={this._handleChange} value="readOnly"/>
-            <RadioButton radioName="text-input-option" radioLabel="Disabled" isChecked={this._isOptionSelected('disabled')} onChange={this._handleChange} value="disabled"/>
-          </RadioButton.Group>
+          <SelectDropdown value={this._determineSelectedValue()} onChange={this._handleChange} disabled={!this.props.isInputOptionEnabled}>
+            <option value="">Base Input</option>
+            <option value="required">Required</option>
+            <option value="error">Error</option>
+            <option value="valid">Valid</option>
+            <option value="readOnly">Read Only</option>
+            <option value="disabled">Disabled</option>
+          </SelectDropdown>
         </InputLabel>
       </Form.Row>
     );
   },
   _determineSelectedValue : function(){
+    console.log(this.props);
     if(this.props.required){
       return "requied";
     } else if(this.props.error){
@@ -374,13 +373,7 @@ var TextInputOptionControl = React.createClass({
       return "";
     }
   },
-  _isOptionSelected : function(value){
-    return this.state.selectedValue === value;
-  },
   _handleChange : function(event){
-    this.setState({
-      selectedValue : event.target.value
-    });
     this.props.onChange(event.target.value);
   },
 });

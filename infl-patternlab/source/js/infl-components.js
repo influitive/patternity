@@ -40268,6 +40268,7 @@ var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
 var RadioButton   = require("../../../../infl-components/radio_button.jsx");
+var SelectDropdown   = require("../../../../infl-components/select_dropdown.jsx");
 var InputLabel    = require("../../../../infl-components/input_label.jsx");
 var Form          = require("../../../../infl-components/form.jsx");
 
@@ -40283,7 +40284,8 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
       readOnly : false,
       disabled : false,
       placeholder : "Text Input",
-      message : []
+      message : [],
+      isInputOptionEnabled : true
     };
   },
   render : function(){
@@ -40329,7 +40331,8 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
                 readOnly: this.state.readOnly, 
                 disabled: this.state.disabled, 
                 placeholder: this.state.placeholder, 
-                message: this.state.message})
+                message: this.state.message, 
+                isInputOptionEnabled: this.state.isInputOptionEnabled})
             ), 
 
             React.createElement(Code, null, 
@@ -40384,8 +40387,16 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
   },
   _handleTypeChange : function(type){
     this.setState({
-      type : type
+      type : type,
+      isInputOptionEnabled : this._isInputOptionEnabled(type)
     });
+  },
+  _isInputOptionEnabled : function(type){
+    if(type === "search") {
+      this._handleOptionChange("");
+      return false;
+    }
+    return true;
   },
   _handleOptionChange : function(option){
     this.setState({
@@ -40493,7 +40504,6 @@ var TextInputControls = React.createClass({displayName: "TextInputControls",
       React.createElement("div", {className: "pattern-controls"}, 
         React.createElement("h4", null, "Text Input Controls"), 
         React.createElement(Form, null, 
-          React.createElement(TextInputAdditionalControls, {onChange: this.props.onAdditionalChange}), 
           React.createElement(TextInputTypeControl, {onChange: this.props.onTypeChange, type: this.props.type}), 
           React.createElement(TextInputOptionControl, {
               onChange: this.props.onOptionChange, 
@@ -40501,7 +40511,9 @@ var TextInputControls = React.createClass({displayName: "TextInputControls",
               error: this.props.error, 
               valid: this.props.valid, 
               readOnly: this.props.readOnly, 
-              disabled: this.props.disabled})
+              disabled: this.props.disabled, 
+              isInputOptionEnabled: this.props.isInputOptionEnabled}), 
+          React.createElement(TextInputAdditionalControls, {onChange: this.props.onAdditionalChange})
         )
       )
     );
@@ -40559,34 +40571,23 @@ var TextInputTypeControl = React.createClass({displayName: "TextInputTypeControl
       type : "text"
     };
   },
-  getInitialState : function(){
-    return {
-      selectedValue : this.props.type
-    };
-  },
   render : function(){
     return (
       React.createElement(Form.Row, null, 
         React.createElement(InputLabel, {label: "Input Type"}, 
-          React.createElement(RadioButton.Group, {layout: "stacked"}, 
-            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Text", isChecked: this._isTypeSelected('text'), onChange: this._handleChange, value: "text"}), 
-            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Search", isChecked: this._isTypeSelected('search'), onChange: this._handleChange, value: "search"}), 
-            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Password", isChecked: this._isTypeSelected('password'), onChange: this._handleChange, value: "password"}), 
-            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "URL", isChecked: this._isTypeSelected('url'), onChange: this._handleChange, value: "url"}), 
-            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Email", isChecked: this._isTypeSelected('email'), onChange: this._handleChange, value: "email"}), 
-            React.createElement(RadioButton, {radioName: "text-input-type", radioLabel: "Number", isChecked: this._isTypeSelected('number'), onChange: this._handleChange, value: "number"})
+          React.createElement(SelectDropdown, {value: this.props.type, onChange: this._handleChange}, 
+            React.createElement("option", {value: "text"}, "Text"), 
+            React.createElement("option", {value: "search"}, "Search"), 
+            React.createElement("option", {value: "password"}, "Password"), 
+            React.createElement("option", {value: "url"}, "URL"), 
+            React.createElement("option", {value: "email"}, "Email"), 
+            React.createElement("option", {value: "number"}, "Number")
           )
         )
       )
     );
   },
-  _isTypeSelected : function(value){
-    return this.state.selectedValue === value;
-  },
   _handleChange : function(event){
-    this.setState({
-      selectedValue : event.target.value
-    });
     this.props.onChange(event.target.value);
   },
 });
@@ -40599,31 +40600,29 @@ var TextInputOptionControl = React.createClass({displayName: "TextInputOptionCon
       error : false,
       valid : false,
       readOnly : false,
-      disabled : false
-    };
-  },
-  getInitialState : function(){
-    return {
-      selectedValue : this._determineSelectedValue(),
+      disabled : false,
+      isInputOptionEnabled : true
     };
   },
   render : function(){
+    console.log(this.props);
     return (
       React.createElement(Form.Row, null, 
         React.createElement(InputLabel, {label: "Input Option"}, 
-          React.createElement(RadioButton.Group, {layout: "stacked"}, 
-            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Base Input", isChecked: this._isOptionSelected(''), onChange: this._handleChange, value: ""}), 
-            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Required", isChecked: this._isOptionSelected('required'), onChange: this._handleChange, value: "required"}), 
-            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Error", isChecked: this._isOptionSelected('error'), onChange: this._handleChange, value: "error"}), 
-            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Valid", isChecked: this._isOptionSelected('valid'), onChange: this._handleChange, value: "valid"}), 
-            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Read Only", isChecked: this._isOptionSelected('readOnly'), onChange: this._handleChange, value: "readOnly"}), 
-            React.createElement(RadioButton, {radioName: "text-input-option", radioLabel: "Disabled", isChecked: this._isOptionSelected('disabled'), onChange: this._handleChange, value: "disabled"})
+          React.createElement(SelectDropdown, {value: this._determineSelectedValue(), onChange: this._handleChange, disabled: !this.props.isInputOptionEnabled}, 
+            React.createElement("option", {value: ""}, "Base Input"), 
+            React.createElement("option", {value: "required"}, "Required"), 
+            React.createElement("option", {value: "error"}, "Error"), 
+            React.createElement("option", {value: "valid"}, "Valid"), 
+            React.createElement("option", {value: "readOnly"}, "Read Only"), 
+            React.createElement("option", {value: "disabled"}, "Disabled")
           )
         )
       )
     );
   },
   _determineSelectedValue : function(){
+    console.log(this.props);
     if(this.props.required){
       return "requied";
     } else if(this.props.error){
@@ -40638,13 +40637,7 @@ var TextInputOptionControl = React.createClass({displayName: "TextInputOptionCon
       return "";
     }
   },
-  _isOptionSelected : function(value){
-    return this.state.selectedValue === value;
-  },
   _handleChange : function(event){
-    this.setState({
-      selectedValue : event.target.value
-    });
     this.props.onChange(event.target.value);
   },
 });
@@ -40652,7 +40645,7 @@ var TextInputOptionControl = React.createClass({displayName: "TextInputOptionCon
 module.exports = TextInputPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
