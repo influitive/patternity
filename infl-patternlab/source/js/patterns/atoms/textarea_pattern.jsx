@@ -8,20 +8,22 @@ var FontsPattern = React.createClass({
     return (
       <div className="textarea-pattern">
         <Pattern title="textarea">
-          <Pattern.Show>
-            <textarea rows="8" cols="48" placeholder="Enter your message here"></textarea>
-          </Pattern.Show>
-          <Code>
-            <Code.HTML>
-              {this._buildHTMLExample()}
-            </Code.HTML>
-          </Code>
+          <Pattern.Detail title="Textarea">
+            <Pattern.Show>
+              <textarea rows="8" cols="48" placeholder="Enter your message here"></textarea>
+            </Pattern.Show>
+            <Code>
+              <Code.HTML>
+                {this._buildHTMLExample()}
+              </Code.HTML>
+            </Code>
 
-          <Require>
-            <Require.CSS>
-              @import "patternity/infl-styles/form";
-            </Require.CSS>
-          </Require>
+            <Require>
+              <Require.CSS>
+                @import "patternity/infl-styles/form";
+              </Require.CSS>
+            </Require>
+          </Pattern.Detail>
         </Pattern>
       </div>
     );

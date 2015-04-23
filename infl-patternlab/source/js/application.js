@@ -15,6 +15,8 @@ inflComp.TextareaPattern          = require("./patterns/atoms/textarea_pattern.j
 inflComp.SelectDropdownPattern    = require("./patterns/atoms/select_dropdown_pattern.jsx");
 inflComp.ToggleSwitchPattern      = require("./patterns/atoms/toggle_switch_pattern.jsx");
 inflComp.CheckboxPattern          = require("./patterns/atoms/checkbox_pattern.jsx");
+inflComp.InputLabelPattern        = require("./patterns/atoms/input_label_pattern.jsx");
+
 
 
 

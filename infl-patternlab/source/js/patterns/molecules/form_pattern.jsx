@@ -119,8 +119,8 @@ var FormPattern = React.createClass({
   _buildFormRowProps : function(){
     return {
       children : {
-        type : "[...]",
-        default : "[]",
+        type : "array",
+        default : "[...]",
         required : false,
         description : "array or TextInput, SelectDropdown, Checkbox, RadioButton, etc."
       },
