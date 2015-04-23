@@ -12,6 +12,7 @@ var ButtonPattern = React.createClass({
     return {
       type : "",
       inverse : false,
+      icon : "",
       isInverseAllowed : false
     };
   },
@@ -32,7 +33,10 @@ var ButtonPattern = React.createClass({
                 <div className="demo-pattern">
                   <h4>Button</h4>
                   <div className={"demo-pattern-example " + this._isInverse()}>
-                    <button className={this.state.type + " " + this._isInverse()}>Default Button</button>
+                    <button className={this.state.type + " " + this._isInverse()}>
+                      {this._hasIcon()}
+                      <span>Default Button</span>
+                    </button>
                   </div>
                 </div>
                 <Code>
@@ -44,6 +48,7 @@ var ButtonPattern = React.createClass({
               <ButtonControls
                 type={this.state.type}
                 inverse={this.state.inverse}
+                icon={this.state.icon}
                 isInverseAllowed={this.state.isInverseAllowed}
                 onChange={this._handleChange} />
             </Pattern.Demo>
@@ -81,7 +86,24 @@ var ButtonPattern = React.createClass({
     return this.state.inverse ? "inverse" : "";
   },
   _buildDemoHTML : function(){
-    return ('<button className="' + this.state.type + " " + this._isInverse() + '">Default Button</button>');
+    return (
+      '<button className="' + this.state.type + " " + this._isInverse() + '">\n' +
+        this._hasIconHTML() +
+        '\t<span>Default Button</span>\n' +
+      '</button>'
+    );
+  },
+  _hasIconHTML : function(){
+    if(this.state.icon !== ""){
+      return '<span class="ic ic-' + this.state.icon + '"></span>';
+    }
+    return "";
+  },
+  _hasIcon : function(){
+    if(this.state.icon !== ""){
+      return (<span className={"ic ic-" + this.state.icon}></span>);
+    }
+    return "";
   }
 });
 
@@ -90,6 +112,7 @@ var ButtonControls = React.createClass({
     return {
       type : "",
       inverse : false,
+      icon : "",
       onChange : function(){},
       isInverseAllowed : false
     }
@@ -118,6 +141,14 @@ var ButtonControls = React.createClass({
               <RadioButton.Group>
                 <RadioButton enabled={this.props.isInverseAllowed} isChecked={!this.props.inverse} onChange={this._handleInverseChange} radioName="inverse" radioLabel="Regular" value="false"></RadioButton>
                 <RadioButton enabled={this.props.isInverseAllowed} isChecked={this.props.inverse} onChange={this._handleInverseChange} radioName="inverse" radioLabel="Inverse" value="true"></RadioButton>
+              </RadioButton.Group>
+            </InputLabel>
+          </Form.Row>
+          <Form.Row>
+            <InputLabel label="Icon">
+              <RadioButton.Group layout="stacked">
+                <RadioButton isChecked={this.props.icon === ''} onChange={this._handleChange} radioName="icon" radioLabel="No Icon" value=""></RadioButton>
+                <RadioButton isChecked={this.props.icon === 'plus'} onChange={this._handleChange} radioName="icon" radioLabel="Add Icon" value="plus"></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
