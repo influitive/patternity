@@ -222,32 +222,66 @@ body {
   }
 }
 
-.pattern-section {
-  position: relative;
-
-  .pattern-demo {
-    position: absolute;
-    right: 10px;
-    top: 80px;
-  }
-}
-
 .pattern-show {
   margin: 10px 0px;
 }
 
-.demo-output {
-  overflow: hidden;
+.try-it-yourself {
+  .pt-modal-dialog {
+    @include transition(top 1s ease-in-out);
 
-  .demo-pattern {
-    float: left;
-    width: 40%;
-  }
+    .pt-modal {
+      min-height: 100%;
+      margin: 0px;
 
-  .demo-props {
-    float: left;
-    width: 60%;
-    background-color: $lighter-grey;
+      &.large {
+        width: 100%;
+      }
+
+      .pt-modal-header {
+        h3 {
+          font-size:30px;
+        }
+      }
+
+      .close-dialog {
+        font-size: 60px;
+        top: 3px;
+        right: 3px;
+      }
+
+
+
+      .pt-modal-body {
+        overflow: hidden;
+        .pattern-controls {
+          float: left;
+          width: 40%;
+        }
+
+        .demo-output {
+          overflow: hidden;
+          float: right;
+          width: calc(60% - 20px);
+          padding-left: 20px;
+
+          .demo-pattern {
+
+            .demo-pattern-example {
+
+            }
+          }
+
+          .demo-props {
+            background-color: $lighter-grey;
+
+            pre {
+              padding: 10px
+            }
+          }
+        }
+      }
+    }
   }
 }
 

@@ -39328,7 +39328,8 @@ module.exports = Code;
 
 
 },{"../../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx":[function(require,module,exports){
-var React = require('react');
+var React       = require('react');
+var ModalDialog = require("../../../infl-components/modal_dialog.jsx");
 
 var Pattern = React.createClass({displayName: "Pattern",
   getDefaultProps : function(){
@@ -39389,12 +39390,33 @@ Pattern.Demo = React.createClass({displayName: "Demo",
       title : ""
     }
   },
+  getInitialState : function(){
+    return {
+      isModalOpen : false
+    }
+  },
   render : function(){
     return (
       React.createElement("div", {className: "pattern-demo"}, 
-        React.createElement("button", {className: "important", onClick: this.props.onClick}, this.props.title)
+        React.createElement("h4", null, "Try It Yourself"), 
+        React.createElement("button", {className: "important", onClick: this._showDemo}, 
+          React.createElement("span", null, "View Live Demo")
+        ), 
+        React.createElement("div", {className: "try-it-yourself"}, 
+          React.createElement(ModalDialog, {size: "large", isModalOpen: this.state.isModalOpen}, 
+            React.createElement(ModalDialog.Header, {title: this.props.title}), 
+            React.createElement(ModalDialog.Body, null, 
+              this.props.children
+            )
+          )
+        )
       )
     );
+  },
+  _showDemo : function(){
+    this.setState({
+      isModalOpen : true
+    });
   }
 });
 
@@ -39422,7 +39444,7 @@ Pattern.Requires = React.createClass({displayName: "Requires",
 module.exports = Pattern;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx":[function(require,module,exports){
+},{"../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx":[function(require,module,exports){
 var React         = require('react');
 var beautify_html = require('js-beautify').html;
 
@@ -39535,7 +39557,7 @@ var CheckboxPattern = React.createClass({displayName: "CheckboxPattern",
 
           React.createElement(Require, null, 
             React.createElement(Require.JS, null, 
-              "var Loading = require(\"patternity/infl-components/checkbox.jsx\");"
+              "var Checkbox = require(\"patternity/infl-components/checkbox.jsx\");"
             ), 
             React.createElement(Require.CSS, null, 
               "@import \"patternity/infl-styles/checkbox\";"
@@ -39876,10 +39898,12 @@ var IconExample = React.createClass({displayName: "IconExample",
           ), 
           React.createElement("h5", null, this.props.name)
         ), 
-        React.createElement(ModalDialog, {size: "large", isModalOpen: this.state.isModalOpen}, 
-          React.createElement(ModalDialog.Header, {title: "Icon Details"}), 
-          React.createElement(ModalDialog.Body, null, 
-            React.createElement(IconDetails, {name: this.props.name, code: this.props.code})
+        React.createElement("div", {className: "try-it-yourself"}, 
+          React.createElement(ModalDialog, {size: "large", isModalOpen: this.state.isModalOpen}, 
+            React.createElement(ModalDialog.Header, {title: "Icon Details"}), 
+            React.createElement(ModalDialog.Body, null, 
+              React.createElement(IconDetails, {name: this.props.name, code: this.props.code})
+            )
           )
         )
       )
@@ -40024,7 +40048,7 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
 
           React.createElement(Require, null, 
             React.createElement(Require.JS, null, 
-              "var Loading = require(\"patternity/infl-components/radio_button.jsx\");"
+              "var RadioButton = require(\"patternity/infl-components/radio_button.jsx\");"
             ), 
             React.createElement(Require.CSS, null, 
               "@import \"patternity/infl-styles/radio_button\";"
@@ -40176,7 +40200,7 @@ var SelectDropdownPattern = React.createClass({displayName: "SelectDropdownPatte
 
           React.createElement(Require, null, 
             React.createElement(Require.JS, null, 
-              "var Loading = require(\"patternity/infl-components/select_dropdown.jsx\");"
+              "var SelectDropdown = require(\"patternity/infl-components/select_dropdown.jsx\");"
             ), 
             React.createElement(Require.CSS, null, 
               "@import \"patternity/infl-styles/form\";"
@@ -40246,7 +40270,6 @@ var Require   = require('../../patternlab-components/require.jsx');
 var RadioButton   = require("../../../../infl-components/radio_button.jsx");
 var InputLabel    = require("../../../../infl-components/input_label.jsx");
 var Form          = require("../../../../infl-components/form.jsx");
-var ModalDialog   = require("../../../../infl-components/modal_dialog.jsx");
 
 var TextInput = require("../../../../infl-components/text_input.jsx");
 
@@ -40260,49 +40283,53 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
       readOnly : false,
       disabled : false,
       placeholder : "Text Input",
-      message : [],
-      isModalOpen : false
+      message : []
     };
   },
   render : function(){
     return (
       React.createElement("div", {className: "text-input-pattern"}, 
         React.createElement(Pattern, {title: "text input"}, 
-          React.createElement(Pattern.Demo, {onClick: this._showDemo, title: "View Live Demo"}), 
-
           React.createElement(Pattern.Detail, {title: "Text Input"}, 
 
             React.createElement(Pattern.Show, null, 
               React.createElement(TextInput, {placeholder: "Text Input"})
             ), 
-            React.createElement(ModalDialog, {size: "large", isModalOpen: this.state.isModalOpen}, 
-              React.createElement(ModalDialog.Header, {title: "Text Input Demo"}), 
-              React.createElement(ModalDialog.Body, null, 
-                React.createElement("div", {className: "demo-output"}, 
-                  React.createElement("div", {className: "demo-pattern"}, 
+
+            React.createElement(Pattern.Demo, {title: "Text Input Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Text Input:"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
                     React.createElement(TextInput, {placeholder: this.state.placeholder, message: this.state.message, type: this.state.type, required: this.state.required, error: this.state.error, valid: this.state.valid, readOnly: this.state.readOnly, disabled: this.state.disabled})
-                  ), 
-                  React.createElement("div", {className: "demo-props"}, 
-                    React.createElement("pre", null, 
-                      React.createElement("code", null, 
-                        this._buildDemoProps()
-                      )
-                    )
                   )
                 ), 
-                React.createElement(TextInputControls, {
-                  onTypeChange: this._handleTypeChange, 
-                  onOptionChange: this._handleOptionChange, 
-                  onAdditionalChange: this._handleAdditionalChange, 
-                  type: this.state.type, 
-                  required: this.state.required, 
-                  error: this.state.error, 
-                  valid: this.state.valid, 
-                  readOnly: this.state.readOnly, 
-                  disabled: this.state.disabled, 
-                  placeholder: this.state.placeholder, 
-                  message: this.state.message})
-              )
+                React.createElement(Code, null, 
+                  React.createElement(Code.JSX, null, 
+                    this._buildDempJSX()
+                  )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
+                )
+              ), 
+              React.createElement(TextInputControls, {
+                onTypeChange: this._handleTypeChange, 
+                onOptionChange: this._handleOptionChange, 
+                onAdditionalChange: this._handleAdditionalChange, 
+                type: this.state.type, 
+                required: this.state.required, 
+                error: this.state.error, 
+                valid: this.state.valid, 
+                readOnly: this.state.readOnly, 
+                disabled: this.state.disabled, 
+                placeholder: this.state.placeholder, 
+                message: this.state.message})
             ), 
 
             React.createElement(Code, null, 
@@ -40316,7 +40343,7 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
 
           React.createElement(Require, null, 
             React.createElement(Require.JS, null, 
-              "var Loading = require(\"patternity/infl-components/text_input.jsx\");"
+              "var TextInput = require(\"patternity/infl-components/text_input.jsx\");"
             ), 
             React.createElement(Require.CSS, null, 
               "@import \"patternity/infl-styles/form\";"
@@ -40326,26 +40353,26 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
       )
     );
   },
-  _showDemo : function(){
-    this.setState({
-      isModalOpen : true
-    });
-  },
   _buildDemoProps : function(){
     return "{\n" +
-              "\ttype : '" + this.state.type + "',\n" +
-              "\trequired : " + this.state.required.toString() + ",\n" +
-              "\terror : " + this.state.error.toString() + ",\n" +
-              "\tvalid : " + this.state.valid.toString() + ",\n" +
-              "\treadOnly : " + this.state.readOnly.toString() + ",\n" +
-              "\tdisabled : " + this.state.disabled.toString() + ",\n" +
-              "\tplaceholder : '" + this.state.placeholder + "',\n" +
-              "\tmessage : [\n" +
-                this._handleEmptyMessage(this.state.message[0]) +
-                this._handleEmptyMessage(this.state.message[1]) +
-                this._handleEmptyMessage(this.state.message[2]) +
-              "\t]\n" +
-            "}";
+      "\ttype : '" + this.state.type + "',\n" +
+      "\trequired : " + this.state.required.toString() + ",\n" +
+      "\terror : " + this.state.error.toString() + ",\n" +
+      "\tvalid : " + this.state.valid.toString() + ",\n" +
+      "\treadOnly : " + this.state.readOnly.toString() + ",\n" +
+      "\tdisabled : " + this.state.disabled.toString() + ",\n" +
+      "\tplaceholder : '" + this.state.placeholder + "',\n" +
+      "\tmessage : [\n" +
+        this._handleEmptyMessage(this.state.message[0]) +
+        this._handleEmptyMessage(this.state.message[1]) +
+        this._handleEmptyMessage(this.state.message[2]) +
+      "\t]\n" +
+    "}";
+  },
+  _buildDempJSX : function(){
+    return (
+      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" required="' + this.state.required + '" error="' + this.state.error + '" valid="' + this.state.valid + '" readOnly="' + this.state.readOnly + '" disabled="' + this.state.disabled + '"  />'
+    );
   },
   _handleEmptyMessage : function(message){
     return message ? "\t\t" + message + ",\n" : "";
@@ -40466,21 +40493,15 @@ var TextInputControls = React.createClass({displayName: "TextInputControls",
       React.createElement("div", {className: "pattern-controls"}, 
         React.createElement("h4", null, "Text Input Controls"), 
         React.createElement(Form, null, 
-          React.createElement(Form.Column, null, 
-            React.createElement(TextInputAdditionalControls, {onChange: this.props.onAdditionalChange})
-          ), 
-          React.createElement(Form.Column, null, 
-            React.createElement(TextInputTypeControl, {onChange: this.props.onTypeChange, type: this.props.type})
-          ), 
-          React.createElement(Form.Column, null, 
-            React.createElement(TextInputOptionControl, {
-                onChange: this.props.onOptionChange, 
-                required: this.props.required, 
-                error: this.props.error, 
-                valid: this.props.valid, 
-                readOnly: this.props.readOnly, 
-                disabled: this.props.disabled})
-          )
+          React.createElement(TextInputAdditionalControls, {onChange: this.props.onAdditionalChange}), 
+          React.createElement(TextInputTypeControl, {onChange: this.props.onTypeChange, type: this.props.type}), 
+          React.createElement(TextInputOptionControl, {
+              onChange: this.props.onOptionChange, 
+              required: this.props.required, 
+              error: this.props.error, 
+              valid: this.props.valid, 
+              readOnly: this.props.readOnly, 
+              disabled: this.props.disabled})
         )
       )
     );
@@ -40631,7 +40652,7 @@ var TextInputOptionControl = React.createClass({displayName: "TextInputOptionCon
 module.exports = TextInputPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -40698,7 +40719,7 @@ var ToggleSwitchPattern = React.createClass({displayName: "ToggleSwitchPattern",
 
           React.createElement(Require, null, 
             React.createElement(Require.JS, null, 
-              "var Loading = require(\"patternity/infl-components/toggle_switch.jsx\");"
+              "var ToggleSwitch = require(\"patternity/infl-components/toggle_switch.jsx\");"
             ), 
             React.createElement(Require.CSS, null, 
               "@import \"patternity/infl-styles/toggle_switch\";"

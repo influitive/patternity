@@ -108,12 +108,14 @@ var IconExample = React.createClass({
           </span>
           <h5>{this.props.name}</h5>
         </div>
-        <ModalDialog size="large" isModalOpen={this.state.isModalOpen}>
-          <ModalDialog.Header title="Icon Details" />
-          <ModalDialog.Body>
-            <IconDetails name={this.props.name} code={this.props.code} />
-          </ModalDialog.Body>
-        </ModalDialog>
+        <div className="try-it-yourself">
+          <ModalDialog size="large" isModalOpen={this.state.isModalOpen}>
+            <ModalDialog.Header title="Icon Details" />
+            <ModalDialog.Body>
+              <IconDetails name={this.props.name} code={this.props.code} />
+            </ModalDialog.Body>
+          </ModalDialog>
+        </div>
       </div>
     );
   },
