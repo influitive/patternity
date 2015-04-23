@@ -16,6 +16,8 @@ inflComp.TextareaPattern          = require("./patterns/atoms/textarea_pattern.j
 inflComp.SelectDropdownPattern    = require("./patterns/atoms/select_dropdown_pattern.jsx");
 inflComp.ToggleSwitchPattern      = require("./patterns/atoms/toggle_switch_pattern.jsx");
 inflComp.CheckboxPattern          = require("./patterns/atoms/checkbox_pattern.jsx");
+inflComp.InputLabelPattern        = require("./patterns/atoms/input_label_pattern.jsx");
+
 
 
 
@@ -76,7 +78,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -39968,7 +39970,263 @@ var IconDetails = React.createClass({displayName: "IconDetails",
 module.exports = IconPattern;
 
 
-},{"../../../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+var Checkbox        = require("../../../../infl-components/checkbox.jsx");
+var ToggleSwitch    = require("../../../../infl-components/toggle_switch.jsx");
+var SelectDropdown  = require("../../../../infl-components/select_dropdown.jsx");
+var Form            = require("../../../../infl-components/form.jsx");
+var TextInput       = require("../../../../infl-components/text_input.jsx");
+
+var InputLabel    = require("../../../../infl-components/input_label.jsx");
+
+var FontsPattern = React.createClass({displayName: "FontsPattern",
+  getInitialState : function(){
+    return {
+      layout : "inline",
+      label : "Field Label",
+      type : "text"
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "input-label-pattern"}, 
+        React.createElement(Pattern, {title: "input label"}, 
+          React.createElement("p", null, "The Input Label is used to add a label to a variety of inputs including:"), 
+          React.createElement("ul", null, 
+            React.createElement("li", null, "Text Inputs"), 
+            React.createElement("li", null, "Select Dropdowns"), 
+            React.createElement("li", null, "Checkboxes"), 
+            React.createElement("li", null, "Radio Buttons"), 
+            React.createElement("li", null, "Textareas"), 
+            React.createElement("li", null, "ToggleSwitch")
+          ), 
+          React.createElement("p", null, "Input Label helps with styling of the inputs and has two layouts inline and stacked"), 
+
+          React.createElement(Pattern.Detail, {title: "Input Label"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(InputLabel, {label: "Field Label"}, 
+                React.createElement(TextInput, {type: "text", placeholder: "Text Input", message: "Hint: Fill in this field."})
+              )
+            ), 
+
+            React.createElement(Pattern.Demo, {title: "Text Input Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Text Input:"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(InputLabel, {label: this.state.label, layout: this.state.layout}, 
+                      this._determineWhichInputToShow()
+                    )
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.JSX, null, 
+                    this._buildDemoJSX()
+                  )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
+                )
+              ), 
+              React.createElement(InputLabelControls, {
+                layout: this.state.layout, 
+                label: this.state.label, 
+                type: this.state.type, 
+                onChange: this._handleChange})
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<InputLabel layout=\"stacked\" label=\"Field Label\">" + ' ' +
+                  "<TextInput type=\"text\" placeholder=\"Text Input\" message=\"Hint: Fill in this field.\"></TextInput>" + ' ' +
+                "</InputLabel>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "InputLabel"}), 
+              React.createElement(Code.Props, {patternProps: this._buildInputLabelProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var InputLabel = require(\"patternity/infl-components/input_label.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _determineWhichInputToShow : function(){
+    if(this.state.type === "text"){
+      return (React.createElement(TextInput, {type: "text", placeholder: "Text Input", message: "Hint: Fill in this field."}));
+    } else if(this.state.type === "select"){
+      return (
+        React.createElement(SelectDropdown, {value: "0"}, 
+          React.createElement("option", {value: "0"}, "Option 0"), 
+          React.createElement("option", {value: "1"}, "Option 1"), 
+          React.createElement("option", {value: "2"}, "Option 2"), 
+          React.createElement("option", {value: "3"}, "Option 3"), 
+          React.createElement("option", {value: "4"}, "Option 4"), 
+          React.createElement("option", {value: "5"}, "Option 5")
+        )
+      );
+    } else if(this.state.type === "radioButton"){
+      return (
+        React.createElement(RadioButton.Group, null, 
+          React.createElement(RadioButton, {isChecked: true, onChange: function(){}, radioName: "test", radioLabel: "Radio Button 1", value: "1"}), 
+          React.createElement(RadioButton, {isChecked: false, onChange: function(){}, radioName: "test", radioLabel: "Radio Button 2", value: "2"})
+        )
+      );
+    } else if(this.state.type === "checkbox"){
+      return (
+        React.createElement(Checkbox.Group, null, 
+          React.createElement(Checkbox, {checkboxLabel: "My Checkbox One"}), 
+          React.createElement(Checkbox, {checkboxLabel: "My Checkbox Two"}), 
+          React.createElement(Checkbox, {checkboxLabel: "My Checkbox Three"})
+        )
+      );
+    } else if(this.state.type === "toggleSwitch"){
+      return (React.createElement(ToggleSwitch, null));
+    }
+  },
+  _buildDemoProps : function(){
+    return "{\n" +
+      "\tlayout : '" + this.state.layout + "',\n" +
+      "\tlabel : " + this.state.label + "\n" +
+    "}";
+  },
+  _buildDemoJSX : function(){
+    return (
+      '<InputLabel label="' + this.state.label + '" layout="' + this.state.layout + '">\n' +
+        this._determineWhichJSXToShow() +
+      '</InputLabel>'
+    );
+  },
+  _determineWhichJSXToShow : function(){
+    if(this.state.type === "text"){
+      return ('<TextInput type="text" placeholder="Text Input" message="Hint: Fill in this field." />\n');
+    } else if(this.state.type === "select"){
+      return (
+        '<SelectDropdown value="0">\n' +
+          '\t<option value="0">Option 0</option>\n' +
+          '\t<option value="1">Option 1</option>\n' +
+          '\t<option value="2">Option 2</option>\n' +
+          '\t<option value="3">Option 3</option>\n' +
+          '\t<option value="4">Option 4</option>\n' +
+          '\t<option value="5">Option 5</option>\n' +
+        '</SelectDropdown>'
+      );
+    } else if(this.state.type === "radioButton"){
+      return (
+        '<RadioButton.Group>\n' +
+          '\t<RadioButton isChecked="true"  radioName="test" radioLabel="Radio Button 1" value="1"></RadioButton>\n' +
+          '\t<RadioButton isChecked="false"  radioName="test" radioLabel="Radio Button 2" value="2"></RadioButton>\n' +
+        '</RadioButton.Group>'
+      );
+    } else if(this.state.type === "checkbox"){
+      return (
+        '<Checkbox.Group>\n' +
+          '\t<Checkbox checkboxLabel="My Checkbox One" />\n' +
+          '\t<Checkbox checkboxLabel="My Checkbox Two" />\n' +
+          '\t<Checkbox checkboxLabel="My Checkbox Three" />\n' +
+        '</Checkbox.Group>'
+      );
+    } else if(this.state.type === "toggleSwitch"){
+      return ('<ToggleSwitch />');
+    }
+  },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+  },
+  _buildInputLabelProps : function(){
+    return {
+      layout : {
+        type : "string",
+        default : "inline",
+        required : false,
+        description : "Determines InputLabel layout is either 'stacked' or 'inline'."
+      },
+      label : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Value of the label."
+      },
+      children : {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Input can be TextInput, SelectDropdown, ToggleSwitch, checkbox, etc."
+      }
+    };
+  }
+});
+
+var InputLabelControls = React.createClass({displayName: "InputLabelControls",
+  getDefaultProps : function(){
+    return {
+      onChange : function(){},
+      label : "",
+      layout : ""
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Input Label Controls"), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Label"}, 
+              React.createElement(TextInput, {placeholder: "Add Label", value: this.props.label, name: "label", onChange: this._handleChange})
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Layout"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.layout === 'inline', onChange: this._handleChange, radioName: "layout", radioLabel: "Inline", value: "inline"}), 
+                React.createElement(RadioButton, {isChecked: this.props.layout === 'stacked', onChange: this._handleChange, radioName: "layout", radioLabel: "Stacked", value: "stacked"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Input Type"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'text', onChange: this._handleChange, radioName: "type", radioLabel: "Text Input", value: "text"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'select', onChange: this._handleChange, radioName: "type", radioLabel: "Select", value: "select"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'radioButton', onChange: this._handleChange, radioName: "type", radioLabel: "Radio Button Group", value: "radioButton"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'checkbox', onChange: this._handleChange, radioName: "type", radioLabel: "Checkbox Group", value: "checkbox"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'toggleSwitch', onChange: this._handleChange, radioName: "type", radioLabel: "Toggle Switch", value: "toggleSwitch"})
+              )
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleChange : function(event){
+    this.props.onChange(event.target.name, event.target.value)
+  }
+});
+
+module.exports = FontsPattern;
+
+
+},{"../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -40238,9 +40496,9 @@ var SelectDropdownPattern = React.createClass({displayName: "SelectDropdownPatte
       },
       children : {
         type : "array",
-        default : "[]",
+        default : "[...]",
         required : false,
-        description : "Array or react elements."
+        description : "Array of html option option group elements."
       },
       message : {
         type : "string",
@@ -40605,7 +40863,6 @@ var TextInputOptionControl = React.createClass({displayName: "TextInputOptionCon
     };
   },
   render : function(){
-    console.log(this.props);
     return (
       React.createElement(Form.Row, null, 
         React.createElement(InputLabel, {label: "Input Option"}, 
@@ -40656,18 +40913,20 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
     return (
       React.createElement("div", {className: "textarea-pattern"}, 
         React.createElement(Pattern, {title: "textarea"}, 
-          React.createElement(Pattern.Show, null, 
-            React.createElement("textarea", {rows: "8", cols: "48", placeholder: "Enter your message here"})
-          ), 
-          React.createElement(Code, null, 
-            React.createElement(Code.HTML, null, 
-              this._buildHTMLExample()
-            )
-          ), 
+          React.createElement(Pattern.Detail, {title: "Textarea"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement("textarea", {rows: "8", cols: "48", placeholder: "Enter your message here"})
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.HTML, null, 
+                this._buildHTMLExample()
+              )
+            ), 
 
-          React.createElement(Require, null, 
-            React.createElement(Require.CSS, null, 
-              "@import \"patternity/infl-styles/form\";"
+            React.createElement(Require, null, 
+              React.createElement(Require.CSS, null, 
+                "@import \"patternity/infl-styles/form\";"
+              )
             )
           )
         )
@@ -40883,8 +41142,8 @@ var FormPattern = React.createClass({displayName: "FormPattern",
   _buildFormRowProps : function(){
     return {
       children : {
-        type : "[...]",
-        default : "[]",
+        type : "array",
+        default : "[...]",
         required : false,
         description : "array or TextInput, SelectDropdown, Checkbox, RadioButton, etc."
       },

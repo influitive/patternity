@@ -85,9 +85,9 @@ var SelectDropdownPattern = React.createClass({
       },
       children : {
         type : "array",
-        default : "[]",
+        default : "[...]",
         required : false,
-        description : "Array or react elements."
+        description : "Array of html option option group elements."
       },
       message : {
         type : "string",
