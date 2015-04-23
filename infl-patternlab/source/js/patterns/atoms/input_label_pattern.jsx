@@ -42,7 +42,7 @@ var FontsPattern = React.createClass({
               </InputLabel>
             </Pattern.Show>
 
-            <Pattern.Demo title="Text Input Demo">
+            <Pattern.Demo title="Input Label Demo">
               <div className="demo-output">
                 <div className="demo-pattern">
                   <h4>Text Input:</h4>
