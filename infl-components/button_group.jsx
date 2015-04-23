@@ -12,9 +12,6 @@ var ButtonGroup = React.createClass({
     isVertical : React.PropTypes.bool,
     grouped : React.PropTypes.bool
   },
-  shouldComponentUpdate : function(){
-    return false;
-  },
   render: function () {
     return (
       <div className={this._determineButtonGroupStyling()} ref="buttonGroup">
