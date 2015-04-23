@@ -17,7 +17,8 @@ var FontsPattern = React.createClass({
     return {
       layout : "inline",
       label : "Field Label",
-      type : "text"
+      type : "text",
+      radioButtonToggle : true
     };
   },
   render : function(){
@@ -113,10 +114,15 @@ var FontsPattern = React.createClass({
         </SelectDropdown>
       );
     } else if(this.state.type === "radioButton"){
+      var radioButtonOnChange = function(){
+        this.setState({
+          radioButtonToggle : !this.state.radioButtonToggle
+        });
+      };
       return (
         <RadioButton.Group>
-          <RadioButton isChecked={true} onChange={function(){}} radioName="test" radioLabel="Radio Button 1" value="1"></RadioButton>
-          <RadioButton isChecked={false} onChange={function(){}} radioName="test" radioLabel="Radio Button 2" value="2"></RadioButton>
+          <RadioButton isChecked={this.state.radioButtonToggle} onChange={radioButtonOnChange} radioName="test" radioLabel="Radio Button 1" value="1"></RadioButton>
+          <RadioButton isChecked={!this.state.radioButtonToggle} onChange={radioButtonOnChange} radioName="test" radioLabel="Radio Button 2" value="2"></RadioButton>
         </RadioButton.Group>
       );
     } else if(this.state.type === "checkbox"){

@@ -39990,7 +39990,8 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
     return {
       layout : "inline",
       label : "Field Label",
-      type : "text"
+      type : "text",
+      radioButtonToggle : true
     };
   },
   render : function(){
@@ -40086,10 +40087,15 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
         )
       );
     } else if(this.state.type === "radioButton"){
+      var radioButtonOnChange = function(){
+        this.setState({
+          radioButtonToggle : !this.state.radioButtonToggle
+        });
+      };
       return (
         React.createElement(RadioButton.Group, null, 
-          React.createElement(RadioButton, {isChecked: true, onChange: function(){}, radioName: "test", radioLabel: "Radio Button 1", value: "1"}), 
-          React.createElement(RadioButton, {isChecked: false, onChange: function(){}, radioName: "test", radioLabel: "Radio Button 2", value: "2"})
+          React.createElement(RadioButton, {isChecked: this.state.radioButtonToggle, onChange: radioButtonOnChange, radioName: "test", radioLabel: "Radio Button 1", value: "1"}), 
+          React.createElement(RadioButton, {isChecked: !this.state.radioButtonToggle, onChange: radioButtonOnChange, radioName: "test", radioLabel: "Radio Button 2", value: "2"})
         )
       );
     } else if(this.state.type === "checkbox"){
