@@ -17,6 +17,7 @@ inflComp.ToggleSwitchPattern      = require("./patterns/atoms/toggle_switch_patt
 inflComp.CheckboxPattern          = require("./patterns/atoms/checkbox_pattern.jsx");
 inflComp.InputLabelPattern        = require("./patterns/atoms/input_label_pattern.jsx");
 inflComp.ButtonPattern            = require("./patterns/atoms/button_pattern.jsx");
+inflComp.ButtonDropdownPattern    = require("./patterns/atoms/button_dropdown_pattern.jsx");
 
 
 

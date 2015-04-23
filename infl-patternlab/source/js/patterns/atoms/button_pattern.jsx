@@ -71,7 +71,6 @@ var ButtonPattern = React.createClass({
     );
   },
   _handleChange : function(name, value){
-    console.log(name + " - " + value);
     var currentState = this.state;
     currentState[name] = value;
     if(value === "secondary" || value === "text"){

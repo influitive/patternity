@@ -18,6 +18,7 @@ inflComp.ToggleSwitchPattern      = require("./patterns/atoms/toggle_switch_patt
 inflComp.CheckboxPattern          = require("./patterns/atoms/checkbox_pattern.jsx");
 inflComp.InputLabelPattern        = require("./patterns/atoms/input_label_pattern.jsx");
 inflComp.ButtonPattern            = require("./patterns/atoms/button_pattern.jsx");
+inflComp.ButtonDropdownPattern    = require("./patterns/atoms/button_dropdown_pattern.jsx");
 
 
 
@@ -79,7 +80,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -39509,7 +39510,173 @@ Require.CSS = React.createClass({displayName: "CSS",
 module.exports = Require;
 
 
-},{"js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx":[function(require,module,exports){
+},{"js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+
+var ButtonDropdown  = require("../../../../infl-components/button_dropdown.jsx");
+
+var ButtonDropdownPattern = React.createClass({displayName: "ButtonDropdownPattern",
+  getInitialState : function(){
+    return {
+      type : ""
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "button-dropdown-pattern"}, 
+        React.createElement(Pattern, {title: "button dropdown"}, 
+          React.createElement("p", null, "Button dropdowns mix the awesomeness of a button with the functionality of a dropdown."), 
+
+          React.createElement(Pattern.Detail, {title: "Button Dropdown"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(ButtonDropdown, {title: "Button Title"}, 
+                React.createElement("a", {href: "#"}, "Option 1"), 
+                React.createElement("a", {href: "#"}, "Option 2"), 
+                React.createElement("a", {href: "#"}, "Option 3")
+              )
+            ), 
+
+            React.createElement(Pattern.Demo, {title: "Button Dropdown Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Button Dropdown"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(ButtonDropdown, {title: "Button Title", type: this.state.type}, 
+                      React.createElement("a", {href: "#"}, "Option 1"), 
+                      React.createElement("a", {href: "#"}, "Option 2"), 
+                      React.createElement("a", {href: "#"}, "Option 3")
+                    )
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.HTML, null, 
+                    this._buildDemoHTML()
+                  )
+                )
+              ), 
+              React.createElement(ButtonControls, {
+                type: this.state.type, 
+                inverse: this.state.inverse, 
+                icon: this.state.icon, 
+                isInverseAllowed: this.state.isInverseAllowed, 
+                onChange: this._handleChange})
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<ButtonDropdown title=\"Button Title\" options=\"[...]\" onChange=\"on_change_callback\" />" + ' ' +
+
+                "<ButtonDropdown title=\"Button Title\" onChange=\"on_change_callback\">" + ' ' +
+                  "<Link \"...props\"></Link>" + ' ' +
+                  "<Link \"...props\"></Link>" + ' ' +
+                  "<Link \"...props\"></Link>" + ' ' +
+                "</ButtonDropdown>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "ButtonDropdown"}), 
+              React.createElement(Code.Props, {patternProps: this._buildButtonDropdownProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var ButtonDropdown = require(\"patternity/infl-components/button_dropdown.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/button\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+  },
+  _buildDemoHTML : function(){
+    return (
+      '<ButtonDropdown title="Button Title" type="' + this.state.type + '">\n' +
+        '\t<a href="#">Option 1</a>\n' +
+        '\t<a href="#">Option 2</a>\n' +
+        '\t<a href="#">Option 3</a>\n' +
+      '</ButtonDropdown>'
+    );
+  },
+  _buildButtonDropdownProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Title to appear on button."
+      },
+      type : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Button type: success, danger, primary, important, secondary."
+      },
+      options : {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of react link elements, or html hrefs."
+      },
+      children : {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of react link elements, or html hrefs."
+      }
+    };
+  }
+});
+
+var ButtonControls = React.createClass({displayName: "ButtonControls",
+  getDefaultProps : function(){
+    return {
+      type : "",
+      onChange : function(){}
+    }
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Input Label Controls"), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Button Type"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.type === '', onChange: this._handleChange, radioName: "type", radioLabel: "Default", value: ""}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'primary', onChange: this._handleChange, radioName: "type", radioLabel: "Primary", value: "primary"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'secondary', onChange: this._handleChange, radioName: "type", radioLabel: "Secondary", value: "secondary"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'important', onChange: this._handleChange, radioName: "type", radioLabel: "Important", value: "important"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'success', onChange: this._handleChange, radioName: "type", radioLabel: "Success", value: "success"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'danger', onChange: this._handleChange, radioName: "type", radioLabel: "Danger", value: "danger"})
+              )
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleChange : function(event) {
+    this.props.onChange(event.target.name, event.target.value);
+  }
+});
+
+module.exports = ButtonDropdownPattern;
+
+
+},{"../../../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -39583,7 +39750,6 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
     );
   },
   _handleChange : function(name, value){
-    console.log(name + " - " + value);
     var currentState = this.state;
     currentState[name] = value;
     if(value === "secondary" || value === "text"){
