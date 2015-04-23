@@ -40015,10 +40015,10 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
               )
             ), 
 
-            React.createElement(Pattern.Demo, {title: "Text Input Demo"}, 
+            React.createElement(Pattern.Demo, {title: "Input Label Demo"}, 
               React.createElement("div", {className: "demo-output"}, 
                 React.createElement("div", {className: "demo-pattern"}, 
-                  React.createElement("h4", null, "Text Input:"), 
+                  React.createElement("h4", null, "Input Label:"), 
                   React.createElement("div", {className: "demo-pattern-example"}, 
                     React.createElement(InputLabel, {label: this.state.label, layout: this.state.layout}, 
                       this._determineWhichInputToShow()
