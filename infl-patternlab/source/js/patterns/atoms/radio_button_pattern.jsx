@@ -48,7 +48,7 @@ var RadioButtonPattern = React.createClass({
 
           <Require>
             <Require.JS>
-              var Loading = require("patternity/infl-components/radio_button.jsx");
+              var RadioButton = require("patternity/infl-components/radio_button.jsx");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/radio_button";

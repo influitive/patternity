@@ -1,4 +1,5 @@
-var React = require('react');
+var React       = require('react');
+var ModalDialog = require("../../../infl-components/modal_dialog.jsx");
 
 var Pattern = React.createClass({
   getDefaultProps : function(){
@@ -59,12 +60,33 @@ Pattern.Demo = React.createClass({
       title : ""
     }
   },
+  getInitialState : function(){
+    return {
+      isModalOpen : false
+    }
+  },
   render : function(){
     return (
       <div className="pattern-demo">
-        <button className="important" onClick={this.props.onClick}>{this.props.title}</button>
+        <h4>Try It Yourself</h4>
+        <button className="important" onClick={this._showDemo}>
+          <span>View Live Demo</span>
+        </button>
+        <div className="try-it-yourself">
+          <ModalDialog size="large" isModalOpen={this.state.isModalOpen}>
+            <ModalDialog.Header title={this.props.title} />
+            <ModalDialog.Body>
+              {this.props.children}
+            </ModalDialog.Body>
+          </ModalDialog>
+        </div>
       </div>
     );
+  },
+  _showDemo : function(){
+    this.setState({
+      isModalOpen : true
+    });
   }
 });
 

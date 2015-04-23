@@ -47,7 +47,7 @@ var SelectDropdownPattern = React.createClass({
 
           <Require>
             <Require.JS>
-              var Loading = require("patternity/infl-components/select_dropdown.jsx");
+              var SelectDropdown = require("patternity/infl-components/select_dropdown.jsx");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/form";

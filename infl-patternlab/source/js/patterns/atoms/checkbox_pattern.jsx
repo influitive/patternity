@@ -48,7 +48,7 @@ var CheckboxPattern = React.createClass({
 
           <Require>
             <Require.JS>
-              var Loading = require("patternity/infl-components/checkbox.jsx");
+              var Checkbox = require("patternity/infl-components/checkbox.jsx");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/checkbox";

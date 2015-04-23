@@ -2412,30 +2412,48 @@ body {
   background-color: #eeeeee;
 }
 
-.pattern-section {
-  position: relative;
-}
-.pattern-section .pattern-demo {
-  position: absolute;
-  right: 10px;
-  top: 80px;
-}
-
 .pattern-show {
   margin: 10px 0px;
 }
 
-.demo-output {
+.try-it-yourself .pt-modal-dialog {
+  -webkit-transition: top 1s ease-in-out;
+  -moz-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal {
+  min-height: 100%;
+  margin: 0px;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal.large {
+  width: 100%;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-header h3 {
+  font-size: 30px;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .close-dialog {
+  font-size: 60px;
+  top: 3px;
+  right: 3px;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body {
   overflow: hidden;
 }
-.demo-output .demo-pattern {
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .pattern-controls {
   float: left;
   width: 40%;
 }
-.demo-output .demo-props {
-  float: left;
-  width: 60%;
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output {
+  overflow: hidden;
+  float: right;
+  width: calc(60% - 20px);
+  padding-left: 20px;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-props {
   background-color: #eeeeee;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-props pre {
+  padding: 10px;
 }
 
 .code-props .code-props-details {

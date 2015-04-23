@@ -6,7 +6,6 @@ var Require   = require('../../patternlab-components/require.jsx');
 var RadioButton   = require("../../../../infl-components/radio_button.jsx");
 var InputLabel    = require("../../../../infl-components/input_label.jsx");
 var Form          = require("../../../../infl-components/form.jsx");
-var ModalDialog   = require("../../../../infl-components/modal_dialog.jsx");
 
 var TextInput = require("../../../../infl-components/text_input.jsx");
 
@@ -20,50 +19,54 @@ var TextInputPattern = React.createClass({
       readOnly : false,
       disabled : false,
       placeholder : "Text Input",
-      message : [],
-      isModalOpen : false
+      message : []
     };
   },
   render : function(){
     return (
       <div className="text-input-pattern">
         <Pattern title="text input">
-          <Pattern.Demo onClick={this._showDemo} title="View Live Demo" />
-
           <Pattern.Detail title="Text Input">
 
             <Pattern.Show>
               <TextInput placeholder="Text Input" />
             </Pattern.Show>
-            <ModalDialog size="large" isModalOpen={this.state.isModalOpen}>
-              <ModalDialog.Header title="Text Input Demo" />
-              <ModalDialog.Body>
-                <div className="demo-output">
-                  <div className="demo-pattern">
+
+            <Pattern.Demo title="Text Input Demo">
+              <div className="demo-output">
+                <div className="demo-pattern">
+                  <h4>Text Input:</h4>
+                  <div className="demo-pattern-example">
                     <TextInput placeholder={this.state.placeholder} message={this.state.message} type={this.state.type} required={this.state.required} error={this.state.error} valid={this.state.valid} readOnly={this.state.readOnly} disabled={this.state.disabled}/>
                   </div>
-                  <div className="demo-props">
-                    <pre>
-                      <code>
-                        {this._buildDemoProps()}
-                      </code>
-                    </pre>
-                  </div>
                 </div>
-                <TextInputControls
-                  onTypeChange={this._handleTypeChange}
-                  onOptionChange={this._handleOptionChange}
-                  onAdditionalChange={this._handleAdditionalChange}
-                  type={this.state.type}
-                  required={this.state.required}
-                  error={this.state.error}
-                  valid={this.state.valid}
-                  readOnly={this.state.readOnly}
-                  disabled={this.state.disabled}
-                  placeholder={this.state.placeholder}
-                  message={this.state.message} />
-              </ModalDialog.Body>
-            </ModalDialog>
+                <Code>
+                  <Code.JSX>
+                    {this._buildDempJSX()}
+                  </Code.JSX>
+                </Code>
+                <h5>Props</h5>
+                <div className="demo-props">
+                  <pre>
+                    <code>
+                      {this._buildDemoProps()}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <TextInputControls
+                onTypeChange={this._handleTypeChange}
+                onOptionChange={this._handleOptionChange}
+                onAdditionalChange={this._handleAdditionalChange}
+                type={this.state.type}
+                required={this.state.required}
+                error={this.state.error}
+                valid={this.state.valid}
+                readOnly={this.state.readOnly}
+                disabled={this.state.disabled}
+                placeholder={this.state.placeholder}
+                message={this.state.message} />
+            </Pattern.Demo>
 
             <Code>
               <Code.JSX>
@@ -76,7 +79,7 @@ var TextInputPattern = React.createClass({
 
           <Require>
             <Require.JS>
-              var Loading = require("patternity/infl-components/text_input.jsx");
+              var TextInput = require("patternity/infl-components/text_input.jsx");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/form";
@@ -86,26 +89,26 @@ var TextInputPattern = React.createClass({
       </div>
     );
   },
-  _showDemo : function(){
-    this.setState({
-      isModalOpen : true
-    });
-  },
   _buildDemoProps : function(){
     return "{\n" +
-              "\ttype : '" + this.state.type + "',\n" +
-              "\trequired : " + this.state.required.toString() + ",\n" +
-              "\terror : " + this.state.error.toString() + ",\n" +
-              "\tvalid : " + this.state.valid.toString() + ",\n" +
-              "\treadOnly : " + this.state.readOnly.toString() + ",\n" +
-              "\tdisabled : " + this.state.disabled.toString() + ",\n" +
-              "\tplaceholder : '" + this.state.placeholder + "',\n" +
-              "\tmessage : [\n" +
-                this._handleEmptyMessage(this.state.message[0]) +
-                this._handleEmptyMessage(this.state.message[1]) +
-                this._handleEmptyMessage(this.state.message[2]) +
-              "\t]\n" +
-            "}";
+      "\ttype : '" + this.state.type + "',\n" +
+      "\trequired : " + this.state.required.toString() + ",\n" +
+      "\terror : " + this.state.error.toString() + ",\n" +
+      "\tvalid : " + this.state.valid.toString() + ",\n" +
+      "\treadOnly : " + this.state.readOnly.toString() + ",\n" +
+      "\tdisabled : " + this.state.disabled.toString() + ",\n" +
+      "\tplaceholder : '" + this.state.placeholder + "',\n" +
+      "\tmessage : [\n" +
+        this._handleEmptyMessage(this.state.message[0]) +
+        this._handleEmptyMessage(this.state.message[1]) +
+        this._handleEmptyMessage(this.state.message[2]) +
+      "\t]\n" +
+    "}";
+  },
+  _buildDempJSX : function(){
+    return (
+      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" required="' + this.state.required + '" error="' + this.state.error + '" valid="' + this.state.valid + '" readOnly="' + this.state.readOnly + '" disabled="' + this.state.disabled + '"  />'
+    );
   },
   _handleEmptyMessage : function(message){
     return message ? "\t\t" + message + ",\n" : "";
@@ -226,21 +229,15 @@ var TextInputControls = React.createClass({
       <div className="pattern-controls">
         <h4>Text Input Controls</h4>
         <Form>
-          <Form.Column>
-            <TextInputAdditionalControls onChange={this.props.onAdditionalChange} />
-          </Form.Column>
-          <Form.Column>
-            <TextInputTypeControl onChange={this.props.onTypeChange} type={this.props.type} />
-          </Form.Column>
-          <Form.Column>
-            <TextInputOptionControl
-                onChange={this.props.onOptionChange}
-                required={this.props.required}
-                error={this.props.error}
-                valid={this.props.valid}
-                readOnly={this.props.readOnly}
-                disabled={this.props.disabled}  />
-          </Form.Column>
+          <TextInputAdditionalControls onChange={this.props.onAdditionalChange} />
+          <TextInputTypeControl onChange={this.props.onTypeChange} type={this.props.type} />
+          <TextInputOptionControl
+              onChange={this.props.onOptionChange}
+              required={this.props.required}
+              error={this.props.error}
+              valid={this.props.valid}
+              readOnly={this.props.readOnly}
+              disabled={this.props.disabled}  />
         </Form>
       </div>
     );

@@ -27,7 +27,7 @@ var ToggleSwitchPattern = React.createClass({
 
           <Require>
             <Require.JS>
-              var Loading = require("patternity/infl-components/toggle_switch.jsx");
+              var ToggleSwitch = require("patternity/infl-components/toggle_switch.jsx");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/toggle_switch";
