@@ -39532,7 +39532,7 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
     return (
       React.createElement("div", {className: "button-pattern"}, 
         React.createElement(Pattern, {title: "button"}, 
-          React.createElement("p", null, "We have a variety of buttons that are used in specific circumstances.  The default and primary styling will be affected by white labeling."), 
+          React.createElement("p", null, "We have a variety of buttons that are used in specific circumstances.  The default and primary styling will be affected by white labeling.  Buttons can also have icons.  View demo to see an example."), 
           React.createElement("p", null, "Buttons can either be an HTML tag \"button\" or an anchor with a \".button\" class"), 
 
           React.createElement(Pattern.Detail, {title: "Button"}, 
