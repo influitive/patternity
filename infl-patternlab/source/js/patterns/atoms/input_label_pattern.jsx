@@ -75,7 +75,7 @@ var FontsPattern = React.createClass({
 
             <Code>
               <Code.JSX>
-                &lt;InputLabel layout="stacked" label="Field Label"&gt;
+                &lt;InputLabel layout="inline" label="Field Label"&gt;
                   &lt;TextInput type="text" placeholder="Text Input" message="Hint: Fill in this field."&gt;&lt;/TextInput&gt;
                 &lt;/InputLabel&gt;
               </Code.JSX>
@@ -99,6 +99,8 @@ var FontsPattern = React.createClass({
   _determineWhichInputToShow : function(){
     if(this.state.type === "text"){
       return (<TextInput type="text" placeholder="Text Input" message="Hint: Fill in this field." />);
+    } else if(this.state.type === "required"){
+      return (<TextInput type="text" required={true} placeholder="Text Input" />);
     } else if(this.state.type === "select"){
       return (
         <SelectDropdown value="0">
@@ -234,6 +236,7 @@ var InputLabelControls = React.createClass({
             <InputLabel label="Input Type">
               <RadioButton.Group layout="stacked">
                 <RadioButton isChecked={this.props.type === 'text'} onChange={this._handleChange} radioName="type" radioLabel="Text Input" value="text"></RadioButton>
+                <RadioButton isChecked={this.props.type === 'required'} onChange={this._handleChange} radioName="type" radioLabel="Required Text Input" value="required"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'select'} onChange={this._handleChange} radioName="type" radioLabel="Select" value="select"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'radioButton'} onChange={this._handleChange} radioName="type" radioLabel="Radio Button Group" value="radioButton"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'checkbox'} onChange={this._handleChange} radioName="type" radioLabel="Checkbox Group" value="checkbox"></RadioButton>

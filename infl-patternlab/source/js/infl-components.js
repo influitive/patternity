@@ -40048,7 +40048,7 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
 
             React.createElement(Code, null, 
               React.createElement(Code.JSX, null, 
-                "<InputLabel layout=\"stacked\" label=\"Field Label\">" + ' ' +
+                "<InputLabel layout=\"inline\" label=\"Field Label\">" + ' ' +
                   "<TextInput type=\"text\" placeholder=\"Text Input\" message=\"Hint: Fill in this field.\"></TextInput>" + ' ' +
                 "</InputLabel>"
               ), 
@@ -40072,6 +40072,8 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
   _determineWhichInputToShow : function(){
     if(this.state.type === "text"){
       return (React.createElement(TextInput, {type: "text", placeholder: "Text Input", message: "Hint: Fill in this field."}));
+    } else if(this.state.type === "required"){
+      return (React.createElement(TextInput, {type: "text", required: true, placeholder: "Text Input"}));
     } else if(this.state.type === "select"){
       return (
         React.createElement(SelectDropdown, {value: "0"}, 
@@ -40207,6 +40209,7 @@ var InputLabelControls = React.createClass({displayName: "InputLabelControls",
             React.createElement(InputLabel, {label: "Input Type"}, 
               React.createElement(RadioButton.Group, {layout: "stacked"}, 
                 React.createElement(RadioButton, {isChecked: this.props.type === 'text', onChange: this._handleChange, radioName: "type", radioLabel: "Text Input", value: "text"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'required', onChange: this._handleChange, radioName: "type", radioLabel: "Required Text Input", value: "required"}), 
                 React.createElement(RadioButton, {isChecked: this.props.type === 'select', onChange: this._handleChange, radioName: "type", radioLabel: "Select", value: "select"}), 
                 React.createElement(RadioButton, {isChecked: this.props.type === 'radioButton', onChange: this._handleChange, radioName: "type", radioLabel: "Radio Button Group", value: "radioButton"}), 
                 React.createElement(RadioButton, {isChecked: this.props.type === 'checkbox', onChange: this._handleChange, radioName: "type", radioLabel: "Checkbox Group", value: "checkbox"}), 
