@@ -39754,7 +39754,7 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
     currentState[name] = value;
     if(value === "secondary" || value === "text"){
       currentState.isInverseAllowed = true;
-    } else if(name !== "inverse") {
+    } else if(name !== "inverse" && name !== 'icon') {
       currentState.isInverseAllowed = false;
       currentState.inverse = false;
     }
