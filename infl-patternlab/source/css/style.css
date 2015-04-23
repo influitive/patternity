@@ -2449,6 +2449,12 @@ body {
   width: calc(60% - 20px);
   padding-left: 20px;
 }
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example {
+  padding: 10px;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example.inverse {
+  background-color: #666666;
+}
 .try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-props {
   background-color: #eeeeee;
 }
