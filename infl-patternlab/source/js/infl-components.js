@@ -40624,7 +40624,7 @@ var TextInputOptionControl = React.createClass({displayName: "TextInputOptionCon
   _determineSelectedValue : function(){
     console.log(this.props);
     if(this.props.required){
-      return "requied";
+      return "required";
     } else if(this.props.error){
       return "error";
     } else if(this.props.valid){

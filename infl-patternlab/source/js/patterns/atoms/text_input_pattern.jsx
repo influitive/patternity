@@ -341,7 +341,6 @@ var TextInputOptionControl = React.createClass({
     };
   },
   render : function(){
-    console.log(this.props);
     return (
       <Form.Row>
         <InputLabel label="Input Option">
@@ -360,7 +359,7 @@ var TextInputOptionControl = React.createClass({
   _determineSelectedValue : function(){
     console.log(this.props);
     if(this.props.required){
-      return "requied";
+      return "required";
     } else if(this.props.error){
       return "error";
     } else if(this.props.valid){
