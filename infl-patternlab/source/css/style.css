@@ -2327,6 +2327,11 @@ body {
   display: block;
   text-align: center;
   font-size: 100px;
+  border: 5px solid white;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  margin: 0px auto;
 }
 
 #why-lab {
@@ -2417,6 +2422,7 @@ body {
 }
 
 .try-it-yourself .pt-modal-dialog {
+  cursor: auto;
   -webkit-transition: top 1s ease-in-out;
   -moz-transition: top 1s ease-in-out;
   transition: top 1s ease-in-out;

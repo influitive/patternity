@@ -119,7 +119,7 @@ var ButtonControls = React.createClass({
   render : function(){
     return (
       <div className="pattern-controls">
-        <h4>Input Label Controls</h4>
+        <h4>Button Controls</h4>
         <Form>
           <Form.Row>
             <InputLabel label="Button Type">
