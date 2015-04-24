@@ -24,6 +24,7 @@ inflComp.ButtonGroupPattern       = require("./patterns/atoms/button_group_patte
 inflComp.FormPattern              = require("./patterns/molecules/form_pattern.jsx");
 inflComp.LoadingPattern           = require("./patterns/molecules/loading_pattern.jsx");
 inflComp.HelpTooltipPattern       = require("./patterns/molecules/help_tooltip_pattern.jsx");
+inflComp.AlertPattern             = require("./patterns/molecules/alert_pattern.jsx");
 inflComp.ActionAlertPattern       = require("./patterns/molecules/action_alert_pattern.jsx");
 inflComp.DetailedAlertPattern     = require("./patterns/molecules/detailed_alert_pattern.jsx");
 
@@ -87,7 +88,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -337,7 +338,8 @@ var AlertMixin = {
   },
   componentWillReceiveProps : function(newProps){
     this.setState({
-      showAlert: newProps.showAlert
+      showAlert: newProps.showAlert,
+      closeable: newProps.closeable
     });
   },
   componentDidMount : function(){
@@ -41912,7 +41914,242 @@ var AlertControls = React.createClass({displayName: "AlertControls",
 module.exports = ActionAlertPattern;
 
 
-},{"../../../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+var TextInput       = require("../../../../infl-components/text_input.jsx");
+
+var Alert   = require("../../../../infl-components/alert.jsx");
+
+var AlertPattern = React.createClass({displayName: "AlertPattern",
+  getInitialState : function(){
+    return {
+      type : "info",
+      showIcon : true,
+      hideIn : 0,
+      showAlert : true,
+      closeable : true
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "alert-pattern"}, 
+        React.createElement(Pattern, {title: "alert"}, 
+          React.createElement("p", null, "The alerts has several states info or default, success and error.  Each Type is used for specific circumstances:"), 
+
+          React.createElement(Pattern.Detail, {title: "Alert"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Alert, {title: "Action Alert", showIcon: true}, 
+                React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+              )
+            ), 
+
+            React.createElement(Pattern.Demo, {title: "Alert Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Alert"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(Alert, {title: "Alert", showAlert: this.state.showAlert, showIcon: this.state.showIcon, type: this.state.type, hideIn: this.state.hideIn, closeable: this.state.closeable}, 
+                      React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+                    )
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.HTML, null, 
+                    this._buildDemoHTML()
+                  )
+                )
+              ), 
+              React.createElement(AlertControls, {
+                type: this.state.type, 
+                showIcon: this.state.showIcon, 
+                hideIn: this.state.hideIn, 
+                onChange: this._handleChange, 
+                closeable: this.state.closeable})
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Alert title=\"Your Title\" >" + ' ' +
+                  "<p>Your Body</p>" + ' ' +
+                  "<p>Your Body</p>" + ' ' +
+                "</Alert>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Alert"}), 
+              React.createElement(Code.Props, {patternProps: this._buildAlertProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Alert = require(\"patternity/infl-components/alert.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/alert\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _detailedAction : function(){
+    return (React.createElement("button", {className: "secondary"}, "Do Something"));
+  },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+    this._handleHideIn(name, value);
+  },
+  _handleHideIn : function(name, value){
+    if(name === "hideIn" && value > 0){
+      var that = this;
+      setTimeout(function(){
+        that.setState({
+          hideIn : 0
+        });
+      }, (value + 2) * 1000);
+    }
+  },
+  _buildDemoHTML : function(){
+    return (
+      '<Alert title="Alert" showAlert="' + this.state.showAlert.toString() + '" showIcon="' + this.state.showIcon.toString() + '" type="' + this.state.type + '" hideIn="' + this.state.hideIn + '"  closeable="' + this.state.closeable.toString() + '">\n' +
+        '\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n' +
+      '</Alert>'
+    );
+  },
+  _buildAlertProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Title of the action alert."
+      },
+      showIcon : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "Determines if the alert will have an icon."
+      },
+      type : {
+        type : "string",
+        default : "info",
+        required : false,
+        description : "Type of alert can be success, error, warning, info or ''."
+      },
+      showAlert : {
+        type : "boolean",
+        default : "true",
+        required : false,
+        description : "Determines if the alert is visible or not."
+      },
+      onClose : {
+        type : "function",
+        default : "empty function",
+        required : false,
+        description : "Called when alert is closed."
+      },
+      hideIn : {
+        type : "integer",
+        default : "0",
+        required : false,
+        description : "If greater than zero it determines the interval until the input is hidden in seconds."
+      },
+      closeable : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "Determines if the alert is closeable or not."
+      },
+      children: {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of text, html, react elements."
+      }
+    };
+  }
+});
+
+var AlertControls = React.createClass({displayName: "AlertControls",
+  getDefaultProps : function(){
+    return {
+      type : "info",
+      hideIn : 0,
+      showIcon : true,
+      onChange : function(){},
+      closeable : true
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Button Group Controls"), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Hide In"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.hideIn === 0, onChange: this._handleHideInChange, radioName: "hideIn", radioLabel: "Dont' Hide", value: "0"}), 
+                React.createElement(RadioButton, {isChecked: this.props.hideIn === 3, onChange: this._handleHideInChange, radioName: "hideIn", radioLabel: "3 seconds", value: "3"}), 
+                React.createElement(RadioButton, {isChecked: this.props.hideIn === 5, onChange: this._handleHideInChange, radioName: "hideIn", radioLabel: "5 seconds", value: "5"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Closeable"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.closeable, onChange: this._handleCloseableChange, radioName: "closeable", radioLabel: "Yes", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.closeable, onChange: this._handleCloseableChange, radioName: "closeable", radioLabel: "No", value: "false"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Icon"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.showIcon, onChange: this._handleIconChange, radioName: "showIcon", radioLabel: "Show", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.showIcon, onChange: this._handleIconChange, radioName: "showIcon", radioLabel: "Hide", value: "false"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Alert Type"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'info', onChange: this._handleChange, radioName: "type", radioLabel: "Info / Default", value: "info"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'success', onChange: this._handleChange, radioName: "type", radioLabel: "Success", value: "success"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'error', onChange: this._handleChange, radioName: "type", radioLabel: "Error", value: "error"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'disabled', onChange: this._handleChange, radioName: "type", radioLabel: "Warning", value: "warning"})
+              )
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleIconChange : function(event){
+    this.props.onChange(event.target.name, event.target.value === "true");
+  },
+  _handleCloseableChange : function(event){
+    this.props.onChange(event.target.name, event.target.value === "true");
+  },
+  _handleChange : function(){
+    this.props.onChange(event.target.name, event.target.value);
+  },
+  _handleHideInChange : function(event){
+    this.props.onChange(event.target.name, parseInt(event.target.value));
+  }
+});
+
+module.exports = AlertPattern;
+
+
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -41931,7 +42168,8 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
       type : "info",
       showIcon : true,
       hideIn : 0,
-      showAlert : true
+      showAlert : true,
+      closeable : true
     };
   },
   render : function(){
@@ -41957,7 +42195,7 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
                 React.createElement("div", {className: "demo-pattern"}, 
                   React.createElement("h4", null, "Detailed Alert"), 
                   React.createElement("div", {className: "demo-pattern-example"}, 
-                    React.createElement(DetailedAlert, {title: "Action Alert", showAlert: this.state.showAlert, showIcon: this.state.showIcon, type: this.state.type, hideIn: this.state.hideIn}, 
+                    React.createElement(DetailedAlert, {title: "Action Alert", showAlert: this.state.showAlert, showIcon: this.state.showIcon, type: this.state.type, hideIn: this.state.hideIn, closeable: this.state.closeable}, 
                       React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."), 
                       React.createElement(DetailedAlert.Detail, {title: "Detail Title", action: this._detailedAction()}, 
                         React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
@@ -41975,6 +42213,7 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
                 type: this.state.type, 
                 showIcon: this.state.showIcon, 
                 hideIn: this.state.hideIn, 
+                closeable: this.state.closeable, 
                 onChange: this._handleChange})
             ), 
 
@@ -42039,7 +42278,7 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
   },
   _buildDemoHTML : function(){
     return (
-      '<DetailedAlert title="Action Alert" showAlert="' + this.state.showAlert.toString() + '" showIcon="' + this.state.showIcon.toString() + '" type="' + this.state.type + '" hideIn="' + this.state.hideIn + '">\n' +
+      '<DetailedAlert title="Action Alert" showAlert="' + this.state.showAlert.toString() + '" showIcon="' + this.state.showIcon.toString() + '" type="' + this.state.type + '" hideIn="' + this.state.hideIn + '"  closeable="' + this.state.closeable.toString() + '">\n' +
         '\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n' +
         '\t<DetailedAlert.Detail title="Detail Title" action={this._detailedAction()}>\n' +
           '\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n' +
@@ -42129,7 +42368,8 @@ var AlertControls = React.createClass({displayName: "AlertControls",
       type : "info",
       hideIn : 0,
       showIcon : true,
-      onChange : function(){}
+      onChange : function(){},
+      closeable : true
     };
   },
   render : function(){
@@ -42143,6 +42383,14 @@ var AlertControls = React.createClass({displayName: "AlertControls",
                 React.createElement(RadioButton, {isChecked: this.props.hideIn === 0, onChange: this._handleHideInChange, radioName: "hideIn", radioLabel: "Dont' Hide", value: "0"}), 
                 React.createElement(RadioButton, {isChecked: this.props.hideIn === 3, onChange: this._handleHideInChange, radioName: "hideIn", radioLabel: "3 seconds", value: "3"}), 
                 React.createElement(RadioButton, {isChecked: this.props.hideIn === 5, onChange: this._handleHideInChange, radioName: "hideIn", radioLabel: "5 seconds", value: "5"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Closeable"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.closeable, onChange: this._handleCloseableChange, radioName: "closeable", radioLabel: "Yes", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.closeable, onChange: this._handleCloseableChange, radioName: "closeable", radioLabel: "No", value: "false"})
               )
             )
           ), 
@@ -42169,6 +42417,9 @@ var AlertControls = React.createClass({displayName: "AlertControls",
     );
   },
   _handleIconChange : function(event){
+    this.props.onChange(event.target.name, event.target.value === "true");
+  },
+  _handleCloseableChange : function(event){
     this.props.onChange(event.target.name, event.target.value === "true");
   },
   _handleChange : function(){

@@ -9,7 +9,8 @@ var AlertMixin = {
   },
   componentWillReceiveProps : function(newProps){
     this.setState({
-      showAlert: newProps.showAlert
+      showAlert: newProps.showAlert,
+      closeable: newProps.closeable
     });
   },
   componentDidMount : function(){
