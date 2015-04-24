@@ -48,7 +48,7 @@
 $sg-font : "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 
 /* Style Guide Interface Colors */
-$sg-primary : #666666;
+$sg-primary : #444444;
 $sg-secondary : #cccccc;
 $sg-tertiary : #ddd;
 $sg-quaternary : #fff;
@@ -991,7 +991,6 @@ div.clear {
 
 .infl-header {
 	padding-left: 40px;
-	border-bottom: 1px solid #cccccc;
 	width: calc(100% - 40px);
 	height: 34px;
 
@@ -1000,13 +999,12 @@ div.clear {
 		display: block;
 		height: 34px;
 		width: 40px;
-		background-image: url("../../images/influitive_logo.png");
+		background-image: url("../../images/influitive_logo_white.png");
 		background-repeat: no-repeat;
 		background-size: 20px 20px;
 		position: absolute;
 		top: 0px;
 		left: 0px;
-		background-color: white;
 		background-position: center;
 	}
 }
