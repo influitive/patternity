@@ -1,59 +1,9 @@
-<section class="pattern-section">
-  <header>
-    <h3>help tooltip</h3>
-  </header>
-
-  <p>The help tooltip should be used for more indepth tooltip information that can also include links.  There are two ways of interacting with it, hover and click.</p>
-
-  <div id="help-tooltip-pattern" style="margin-top:200px; margin-left: 200px;"></div>
-  <script type="text/javascript">
-    (function() {
-      var link = inflComp.React.createElement('a', {
-        href : "#",
-        key : "link-1",
-        children : ["Test Link"]
-      });
-      var props = {
-        title: "Tooltip Title",
-        children: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  ", link]
-      };
-
-      inflComp.React.render(
-        inflComp.React.createElement(inflComp.HelpTooltip, props),
-        document.getElementById("help-tooltip-pattern")
-      );
-    })();
-  </script>
-
-  <h4 class="code-title">Code</h4>
-
-  <h5 class="code-title">JSX</h5>
-  <pre class="code">
-    <code>
-      &lt;HelpTooltip title="Tooltip Title"&gt;
-        &lt;p&gt;My tooltip Body&lt;/p&gt;
-      &lt;/HelpTooltip&gt;
-    </code>
-  </pre>
-
-  <h5 class="code-title">Without JSX</h5>
-  <pre class="code">
-    <code>
-      React.render(
-        React.createElement(HelpTooltip, props),
-        {DOM element to append help tooltip to}
-      );
-    </code>
-  </pre>
-
-  <h4 class="code-title">Props</h4>
-
-  <pre class="code">
-    <code>
-      {
-        title : "Tooltip Title",
-        children : [...]          // array of text, html, react elements
-      }
-    </code>
-  </pre>
-</section>
+<div id="help-tooltip-pattern"></div>
+<script type="text/javascript">
+  (function() {
+    inflComp.React.render(
+      inflComp.React.createElement(inflComp.HelpTooltipPattern, {}),
+      document.getElementById("help-tooltip-pattern")
+    );
+  })();
+</script>
