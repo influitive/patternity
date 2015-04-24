@@ -39804,13 +39804,13 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
   render : function(){
     return (
       React.createElement("div", {className: "pattern-controls"}, 
-        React.createElement("h4", null, "Input Label Controls"), 
+        React.createElement("h4", null, "Button Group Controls"), 
         React.createElement(Form, null, 
           React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Button Group Layout"}, 
               React.createElement(RadioButton.Group, null, 
-                React.createElement(RadioButton, {isChecked: !this.props.layout, onChange: this._handleChange, radioName: "layout", radioLabel: "Inline", value: "inline"}), 
-                React.createElement(RadioButton, {isChecked: this.props.layout, onChange: this._handleChange, radioName: "layout", radioLabel: "Stacked", value: "stacked"})
+                React.createElement(RadioButton, {isChecked: this.props.layout === "inline", onChange: this._handleChange, radioName: "layout", radioLabel: "Inline", value: "inline"}), 
+                React.createElement(RadioButton, {isChecked: this.props.layout === "stacked", onChange: this._handleChange, radioName: "layout", radioLabel: "Stacked", value: "stacked"})
               )
             )
           ), 
@@ -40782,9 +40782,19 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+
 var RadioButton   = require("../../../../infl-components/radio_button.jsx");
 
 var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
+  getInitialState : function(){
+    return {
+      layout : "inline",
+      selectedValue : "radio-button-1",
+      selectedValueDemo : "radio-button-1"
+    };
+  },
   render : function(){
     return (
       React.createElement("div", {className: "radio-button-pattern"}, 
@@ -40810,8 +40820,38 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
             React.createElement("p", null, "It also has two layout options inline and stacked"), 
 
             React.createElement(Pattern.Show, null, 
-              React.createElement(RadioButtonComponent, null)
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {radioName: "selectedValue", radioLabel: "My Radio Button One", isChecked: this.state.selectedValue === 'radio-button-1', onChange: this._handleChange, value: "radio-button-1"}), 
+                React.createElement(RadioButton, {radioName: "selectedValue", radioLabel: "My Radio Button Two", isChecked: this.state.selectedValue === 'radio-button-2', onChange: this._handleChange, value: "radio-button-2"}), 
+                React.createElement(RadioButton, {radioName: "selectedValue", radioLabel: "My Radio Button Three", isChecked: this.state.selectedValue === 'radio-button-3', onChange: this._handleChange, value: "radio-button-3"})
+              )
             ), 
+
+            React.createElement(Pattern.Demo, {title: "Radio Button Group Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Radio Button Group"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(RadioButton.Group, {layout: this.state.layout}, 
+                    React.createElement(RadioButton, {radioName: "selectedValueDemo", radioLabel: "My Radio Button One", isChecked: this.state.selectedValueDemo === 'radio-button-1', onChange: this._handleChange, value: "radio-button-1"}), 
+                    React.createElement(RadioButton, {radioName: "selectedValueDemo", radioLabel: "My Radio Button Two", isChecked: this.state.selectedValueDemo === 'radio-button-2', onChange: this._handleChange, value: "radio-button-2"}), 
+                    React.createElement(RadioButton, {radioName: "selectedValueDemo", radioLabel: "My Radio Button Three", isChecked: this.state.selectedValueDemo === 'radio-button-3', onChange: this._handleChange, value: "radio-button-3"})
+                  )
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.HTML, null, 
+                    this._buildDemoHTML()
+                  )
+                )
+              ), 
+              React.createElement(RadioButtonControls, {
+                type: this.state.type, 
+                layout: this.state.layout, 
+                grouped: this.state.grouped, 
+                onChange: this._handleChange})
+            ), 
+
             React.createElement(Code, null, 
               React.createElement(Code.JSX, null, 
                 "<RadioButton.Group layout=\"inline\" >" + ' ' +
@@ -40835,6 +40875,20 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
           )
         )
       )
+    );
+  },
+  _handleChange : function(event){
+    var currentState = this.state;
+    currentState[event.target.name] = event.target.value;
+    this.setState(currentState);
+  },
+  _buildDemoHTML : function(){
+    return (
+      '<RadioButton.Group layout="' + this.state.layout + '">\n' +
+        '\t<RadioButton radioName="my-radio-name" radioLabel="My Radio Button One" isChecked="' + (this.state.selectedValueDemo ==='radio-button-1').toString() + '" onChange="this._handleChange" value="radio-button-1"/>\n' +
+        '\t<RadioButton radioName="my-radio-name" radioLabel="My Radio Button Two" isChecked="' + (this.state.selectedValueDemo ==='radio-button-2').toString() + '" onChange="this._handleChange" value="radio-button-2"/>\n' +
+        '\t<RadioButton radioName="my-radio-name" radioLabel="My Radio Button Three" isChecked="' + (this.state.selectedValueDemo ==='radio-button-3').toString() + '" onChange="this._handleChange" value="radio-button-3"/>\n' +
+      '</RadioButton.Group>'
     );
   },
   _buildRadioButtonProps : function(){
@@ -40901,35 +40955,36 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
   }
 });
 
-var RadioButtonComponent = React.createClass({displayName: "RadioButtonComponent",
-  getInitialState : function(){
+var RadioButtonControls = React.createClass({displayName: "RadioButtonControls",
+  getDefaultProps : function(){
     return {
-      selectedValue : "radio-button-1"
+      layout : "inline",
+      onChange : function(){}
     };
   },
   render : function(){
     return (
-      React.createElement(RadioButton.Group, null, 
-        React.createElement(RadioButton, {radioName: "my-radio-name", radioLabel: "My Radio Button One", isChecked: this._isRadioSelected('radio-button-1'), onChange: this._handleChange, value: "radio-button-1"}), 
-        React.createElement(RadioButton, {radioName: "my-radio-name", radioLabel: "My Radio Button Two", isChecked: this._isRadioSelected('radio-button-2'), onChange: this._handleChange, value: "radio-button-2"}), 
-        React.createElement(RadioButton, {radioName: "my-radio-name", radioLabel: "My Radio Button Three", isChecked: this._isRadioSelected('radio-button-3'), onChange: this._handleChange, value: "radio-button-3"})
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Radio Button Group Controls"), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Layout"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.layout === "inline", onChange: this.props.onChange, radioName: "layout", radioLabel: "Inline", value: "inline"}), 
+                React.createElement(RadioButton, {isChecked: this.props.layout === "stacked", onChange: this.props.onChange, radioName: "layout", radioLabel: "Stacked", value: "stacked"})
+              )
+            )
+          )
+        )
       )
     );
-  },
-  _isRadioSelected : function(value){
-    return this.state.selectedValue === value;
-  },
-  _handleChange : function(event){
-    this.setState({
-      selectedValue : event.target.value
-    });
-  },
+  }
 });
 
 module.exports = RadioButtonPattern;
 
 
-},{"../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');

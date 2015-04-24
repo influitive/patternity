@@ -132,13 +132,13 @@ var ButtonControls = React.createClass({
   render : function(){
     return (
       <div className="pattern-controls">
-        <h4>Input Label Controls</h4>
+        <h4>Button Group Controls</h4>
         <Form>
           <Form.Row>
             <InputLabel label="Button Group Layout">
               <RadioButton.Group>
-                <RadioButton isChecked={!this.props.layout} onChange={this._handleChange} radioName="layout" radioLabel="Inline" value="inline"></RadioButton>
-                <RadioButton isChecked={this.props.layout} onChange={this._handleChange} radioName="layout" radioLabel="Stacked" value="stacked"></RadioButton>
+                <RadioButton isChecked={this.props.layout === "inline"} onChange={this._handleChange} radioName="layout" radioLabel="Inline" value="inline"></RadioButton>
+                <RadioButton isChecked={this.props.layout === "stacked"} onChange={this._handleChange} radioName="layout" radioLabel="Stacked" value="stacked"></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
