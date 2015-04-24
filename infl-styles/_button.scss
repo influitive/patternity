@@ -331,7 +331,7 @@ button {
   display: inline-block;
   position: relative;
 
-  &.is-vertical {
+  &.stacked {
     button,
     .button {
       display:block;
@@ -381,7 +381,7 @@ button {
     }
   }
 
-  &.is-horizontal {
+  &.inline {
     button,
     .button {
       margin-right: 5px;
