@@ -13,7 +13,7 @@ var ButtonGroupPattern = React.createClass({
   getInitialState : function(){
     return {
       type : "",
-      layout : false,
+      layout : 'inline',
       grouped : false
     };
   },
@@ -135,7 +135,7 @@ var ButtonControls = React.createClass({
         <h4>Button Group Controls</h4>
         <Form>
           <Form.Row>
-            <InputLabel label="Button Group Layout">
+            <InputLabel label="Layout">
               <RadioButton.Group>
                 <RadioButton isChecked={this.props.layout === "inline"} onChange={this._handleChange} radioName="layout" radioLabel="Inline" value="inline"></RadioButton>
                 <RadioButton isChecked={this.props.layout === "stacked"} onChange={this._handleChange} radioName="layout" radioLabel="Stacked" value="stacked"></RadioButton>
@@ -145,8 +145,8 @@ var ButtonControls = React.createClass({
           <Form.Row>
             <InputLabel label="Grouped">
               <RadioButton.Group>
-                <RadioButton isChecked={!this.props.grouped} onChange={this._handleGroupedChange} radioName="grouped" radioLabel="Default" value="false"></RadioButton>
-                <RadioButton isChecked={this.props.grouped} onChange={this._handleGroupedChange} radioName="grouped" radioLabel="Grouped" value="true"></RadioButton>
+                <RadioButton isChecked={!this.props.grouped} onChange={this._handleGroupedChange} radioName="grouped" radioLabel="No" value="false"></RadioButton>
+                <RadioButton isChecked={this.props.grouped} onChange={this._handleGroupedChange} radioName="grouped" radioLabel="Yes" value="true"></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>

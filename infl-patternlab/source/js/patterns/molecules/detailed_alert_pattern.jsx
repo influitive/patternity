@@ -8,9 +8,9 @@ var InputLabel      = require("../../../../infl-components/input_label.jsx");
 var RadioButton     = require("../../../../infl-components/radio_button.jsx");
 var TextInput       = require("../../../../infl-components/text_input.jsx");
 
-var ActionAlert   = require("../../../../infl-components/alert/action_alert.jsx");
+var DetailedAlert   = require("../../../../infl-components/alert/detailed_alert.jsx");
 
-var ActionAlertPattern = React.createClass({
+var DetailedAlertPattern = React.createClass({
   getInitialState : function(){
     return {
       type : "info",
@@ -21,33 +21,33 @@ var ActionAlertPattern = React.createClass({
   },
   render : function(){
     return (
-      <div className="action-alert-pattern">
-        <Pattern title="action alert">
-          <p>An ActionAlert has the same functionaliy as Alert except it is not closeable.</p>
+      <div className="detailed-alert-pattern">
+        <Pattern title="detailed alert">
+          <p>The detailed alert can also take a sub component detail.  All other alert data is still valid.  See Alert for more details.</p>
 
-          <Pattern.Detail title="Action Alert">
-            <p>The alert action allows you to add a new action to an alert.  It also comes with special styling.</p>
+          <Pattern.Detail title="Detailed Alert">
+            <p>The alert detailed is an additional space to add more data to an alert</p>
 
             <Pattern.Show>
-              <ActionAlert title="Action Alert" showIcon={true} type="info" action={{
-                      title : "Do Something",
-                      onClick : function(){ alert("You did something"); }
-                    }}>
+              <DetailedAlert title="Action Alert" showIcon={true}>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </ActionAlert>
+                <DetailedAlert.Detail title="Detail Title" action={this._detailedAction()}>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </DetailedAlert.Detail>
+              </DetailedAlert>
             </Pattern.Show>
 
-            <Pattern.Demo title="Action Alert Demo">
+            <Pattern.Demo title="Detailed Alert Demo">
               <div className="demo-output">
                 <div className="demo-pattern">
-                  <h4>Action Alert</h4>
+                  <h4>Detailed Alert</h4>
                   <div className="demo-pattern-example">
-                    <ActionAlert title="Action Alert" showAlert={this.state.showAlert} showIcon={this.state.showIcon} type={this.state.type} hideIn={this.state.hideIn} action={{
-                      title : "Do Something",
-                      onClick : function(){ alert("You did something"); }
-                    }}>
+                    <DetailedAlert title="Action Alert" showAlert={this.state.showAlert} showIcon={this.state.showIcon} type={this.state.type} hideIn={this.state.hideIn}>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </ActionAlert>
+                      <DetailedAlert.Detail title="Detail Title" action={this._detailedAction()}>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </DetailedAlert.Detail>
+                    </DetailedAlert>
                   </div>
                 </div>
                 <Code>
@@ -65,18 +65,35 @@ var ActionAlertPattern = React.createClass({
 
             <Code>
               <Code.JSX>
-                &lt;ActionAlert title="Action Alert" showIcon="true"  actions="actions_object"&gt;
-                  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
-                &lt;/ActionAlert&gt;
+                &lt;DetailedAlert title="Your Title" &gt;
+                  &lt;p&gt;Your Body&lt;/p&gt;
+                  &lt;p&gt;Your Body&lt;/p
+                  &gt;&lt;DetailedAlert.Detail title="Single Sign-On" action="react_element"&gt;
+                    &lt;p&gt;Your Detailed Body&lt;/p&gt;
+                  &lt;/DetailedAlert.Detail&gt;
+                &lt;/DetailedAlert&gt;
               </Code.JSX>
-              <Code.WithoutJSX patternName="ActionAlert" />
-              <Code.Props patternProps={this._buildActionAlertProps()} />
+              <Code.WithoutJSX patternName="DetailedAlert" />
+              <Code.Props patternProps={this._buildDetailedAlertProps()} />
+            </Code>
+          </Pattern.Detail>
+
+          <Pattern.Detail title="Detailed Alert - Detail">
+            <p>Detailed Alert Detail is a sub component of Alert Detail.  It provides extra styling, and functionality.</p>
+            <Code>
+              <Code.JSX>
+                &lt;DetailedAlert.Detail title="Single Sign-On" action="react_element"&gt;
+                  &lt;p&gt;Your Detailed Body&lt;/p&gt;
+                &lt;DetailedAlert.Detail/&gt;
+              </Code.JSX>
+              <Code.WithoutJSX patternName="DetailedAlert.Detail" />
+              <Code.Props patternProps={this._buildDetailedAlertDetailProps()} />
             </Code>
           </Pattern.Detail>
 
           <Require>
             <Require.JS>
-              var ActionAlert = require("patternity/infl-components/alert/action_alert.jsx");
+              var DetailedAlert = require("patternity/infl-components/alert/detailed_alert.jsx");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/alert";
@@ -85,6 +102,9 @@ var ActionAlertPattern = React.createClass({
         </Pattern>
       </div>
     );
+  },
+  _detailedAction : function(){
+    return (<button className="secondary">Do Something</button>);
   },
   _handleChange : function(name, value){
     var currentState = this.state;
@@ -104,12 +124,15 @@ var ActionAlertPattern = React.createClass({
   },
   _buildDemoHTML : function(){
     return (
-      '<ActionAlert title="Action Alert" showIcon="' + this.state.showIcon.toString() + '" type="' + this.state.type + '" hideIn="' + this.state.hideIn + '" action="action_object">\n' +
+      '<DetailedAlert title="Action Alert" showAlert="' + this.state.showAlert.toString() + '" showIcon="' + this.state.showIcon.toString() + '" type="' + this.state.type + '" hideIn="' + this.state.hideIn + '">\n' +
         '\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n' +
-      '</ActionAlert>'
+        '\t<DetailedAlert.Detail title="Detail Title" action={this._detailedAction()}>\n' +
+          '\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n' +
+        '\t</DetailedAlert.Detail>\n' +
+      '</DetailedAlert>'
     );
   },
-  _buildActionAlertProps : function(){
+  _buildDetailedAlertProps : function(){
     return {
       title : {
         type : "string",
@@ -122,12 +145,6 @@ var ActionAlertPattern = React.createClass({
         default : "false",
         required : false,
         description : "Determines if the alert will have an icon."
-      },
-      children: {
-        type : "array",
-        default : "[...]",
-        required : false,
-        description : "Array of text, html, react elements."
       },
       type : {
         type : "string",
@@ -153,25 +170,41 @@ var ActionAlertPattern = React.createClass({
         required : false,
         description : "If greater than zero it determines the interval until the input is hidden in seconds."
       },
-      action : {
-        type : "object",
-        default : "title, onClick",
-        required : true,
-        description : "The hash for the actions details."
-      },
-      "action.title" : {
-        type : "string",
-        default : "",
+      closeable : {
+        type : "boolean",
+        default : "false",
         required : false,
-        description : "Action button title."
+        description : "Determines if the alert is closeable or not."
       },
-      "action.onClick" : {
-        type : "function",
-        default : "empty function",
+      children: {
+        type : "array",
+        default : "[...]",
         required : false,
-        description : "Callback function for when the action is clicked."
+        description : "Array of text, html, react elements."
       }
     };
+  },
+  _buildDetailedAlertDetailProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : true,
+        description : "Title of details."
+      },
+      action : {
+        type : "react element, button",
+        default : "",
+        required : false,
+        description : "User action associated with details."
+      },
+      children: {
+        type : "array",
+        default : "[...]",
+        required : true,
+        description : "Array of text, html, react elements."
+      }
+    }
   }
 });
 
@@ -231,4 +264,4 @@ var AlertControls = React.createClass({
   }
 });
 
-module.exports = ActionAlertPattern;
+module.exports = DetailedAlertPattern;
