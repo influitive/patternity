@@ -3,9 +3,18 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton   = require("../../../../infl-components/radio_button.jsx");
+
 var Checkbox   = require("../../../../infl-components/checkbox.jsx");
 
 var CheckboxPattern = React.createClass({
+  getInitialState : function(){
+    return {
+      layout : "inline"
+    };
+  },
   render : function(){
     return (
       <div className="checkbox-pattern">
@@ -31,8 +40,36 @@ var CheckboxPattern = React.createClass({
             <p>It also has two layout options inline and stacked</p>
 
             <Pattern.Show>
-              <CheckboxGroupComponent />
+              <Checkbox.Group>
+                <Checkbox checkboxLabel="My Checkbox One" />
+                <Checkbox checkboxLabel="My Checkbox Two" />
+                <Checkbox checkboxLabel="My Checkbox Three" />
+              </Checkbox.Group>
             </Pattern.Show>
+
+            <Pattern.Demo title="Radio Button Group Demo">
+              <div className="demo-output">
+                <div className="demo-pattern">
+                  <h4>Radio Button Group</h4>
+                  <div className="demo-pattern-example">
+                    <Checkbox.Group layout={this.state.layout}>
+                      <Checkbox checkboxLabel="My Checkbox One" />
+                      <Checkbox checkboxLabel="My Checkbox Two" />
+                      <Checkbox checkboxLabel="My Checkbox Three" />
+                    </Checkbox.Group>
+                  </div>
+                </div>
+                <Code>
+                  <Code.HTML>
+                    {this._buildDemoHTML()}
+                  </Code.HTML>
+                </Code>
+              </div>
+              <CheckBoxGroupControls
+                layout={this.state.layout}
+                onChange={this._handleChange} />
+            </Pattern.Demo>
+
             <Code>
               <Code.JSX>
                 &lt;Checkbox.Group&gt;
@@ -56,6 +93,20 @@ var CheckboxPattern = React.createClass({
           </Require>
         </Pattern>
       </div>
+    );
+  },
+  _handleChange : function(event){
+    var currentState = this.state;
+    currentState[event.target.name] = event.target.value;
+    this.setState(currentState);
+  },
+  _buildDemoHTML : function(){
+    return (
+      '<Checkbox.Group layout="' + this.state.layout + '">\n' +
+        '\t<Checkbox checkboxLabel="My Checkbox One" />\n' +
+        '\t<Checkbox checkboxLabel="My Checkbox Two" />\n' +
+        '\t<Checkbox checkboxLabel="My Checkbox Three" />\n' +
+      '</Checkbox.Group>'
     );
   },
   _buildCheckBoxProps : function(){
@@ -116,14 +167,28 @@ var CheckboxPattern = React.createClass({
   }
 });
 
-var CheckboxGroupComponent = React.createClass({
+var CheckBoxGroupControls = React.createClass({
+  getDefaultProps : function(){
+    return {
+      layout : "inline",
+      onChange : function(){}
+    };
+  },
   render : function(){
     return (
-      <Checkbox.Group>
-        <Checkbox checkboxLabel="My Checkbox One" />
-        <Checkbox checkboxLabel="My Checkbox Two" />
-        <Checkbox checkboxLabel="My Checkbox Three" />
-      </Checkbox.Group>
+      <div className="pattern-controls">
+        <h4>Checkbox Group Controls</h4>
+        <Form>
+          <Form.Row>
+            <InputLabel label="Layout">
+              <RadioButton.Group>
+                <RadioButton isChecked={this.props.layout === "inline"} onChange={this.props.onChange} radioName="layout" radioLabel="Inline" value="inline"></RadioButton>
+                <RadioButton isChecked={this.props.layout === "stacked"} onChange={this.props.onChange} radioName="layout" radioLabel="Stacked" value="stacked"></RadioButton>
+              </RadioButton.Group>
+            </InputLabel>
+          </Form.Row>
+        </Form>
+      </div>
     );
   }
 });
