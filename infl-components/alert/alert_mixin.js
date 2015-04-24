@@ -13,12 +13,20 @@ var AlertMixin = {
     });
   },
   componentDidMount : function(){
-    if(this.props.hideIn > 0) {
-      setTimeout(this._close, this._hideInMilliseconds());
+    this._hideAlert(this.props.hideIn);
+  },
+  componentWillUpdate : function(nextProps){
+    if(nextProps.hideIn !== this.props.hideIn){
+      this._hideAlert(nextProps.hideIn);
     }
   },
-  _hideInMilliseconds : function(){
-    return this.props.hideIn * 1000;
+  _hideAlert : function(hideIn){
+    if(hideIn > 0) {
+      setTimeout(this._close, this._hideInMilliseconds(hideIn));
+    }
+  },
+  _hideInMilliseconds : function(hideIn){
+    return hideIn * 1000;
   },
   _showAlert: function(){
     return this.state.showAlert ? "" : "hide";
