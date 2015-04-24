@@ -2,8 +2,7 @@ var inflComp = {};
 
 inflComp.React = require('react');
 
-inflComp.FormPattern              = require("./patterns/molecules/form_pattern.jsx");
-inflComp.LoadingPattern           = require("./patterns/molecules/loading_pattern.jsx");
+/* Atoms */
 inflComp.ColoursPattern           = require("./patterns/atoms/colours_pattern.jsx");
 inflComp.FontsPattern             = require("./patterns/atoms/fonts_pattern.jsx");
 inflComp.HeadingsPattern          = require("./patterns/atoms/headings_pattern.jsx");
@@ -19,6 +18,11 @@ inflComp.InputLabelPattern        = require("./patterns/atoms/input_label_patter
 inflComp.ButtonPattern            = require("./patterns/atoms/button_pattern.jsx");
 inflComp.ButtonDropdownPattern    = require("./patterns/atoms/button_dropdown_pattern.jsx");
 inflComp.ButtonGroupPattern       = require("./patterns/atoms/button_group_pattern.jsx");
+
+/* Moleclues */
+inflComp.FormPattern              = require("./patterns/molecules/form_pattern.jsx");
+inflComp.LoadingPattern           = require("./patterns/molecules/loading_pattern.jsx");
+inflComp.HelpTooltipPattern       = require("./patterns/molecules/help_tooltip_pattern.jsx");
 
 
 
