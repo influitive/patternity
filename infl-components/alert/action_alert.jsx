@@ -5,7 +5,7 @@ var ActionAlert = React.createClass({
   mixins: [AlertMixin],
   getDefaultProps: function() {
     return {
-      type: "",
+      type: "info",
       showIcon: false,
       showAlert : true,
       onClose : function(){},
