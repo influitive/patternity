@@ -4,28 +4,23 @@ var classNames = require('classnames');
 var ButtonGroup = React.createClass({
   getDefaultProps : function(){
     return {
-      isVertical : false,
+      layout : "inline",
       grouped : false
     };
   },
   propTypes : {
-    isVertical : React.PropTypes.bool,
+    layout : React.PropTypes.string,
     grouped : React.PropTypes.bool
   },
   render: function () {
     return (
-      <div className={this._determineButtonGroupStyling()} ref="buttonGroup">
+      <div className={"button-group " + this.props.layout + " " + this.isGrouped()} ref="buttonGroup">
         {this.props.children}
       </div>
     );
   },
-  _determineButtonGroupStyling : function(){
-    return classNames({
-      'button-group' : true,
-      'is-vertical': this.props.isVertical,
-      'is-horizontal': !this.props.isVertical,
-      'grouped' : this.props.grouped
-    });
+  isGrouped : function(){
+    return this.props.grouped ? "grouped" : "";
   }
 });
 

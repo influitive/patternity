@@ -13,7 +13,7 @@ var ButtonGroupPattern = React.createClass({
   getInitialState : function(){
     return {
       type : "",
-      isVertical : false,
+      layout : false,
       grouped : false
     };
   },
@@ -37,7 +37,7 @@ var ButtonGroupPattern = React.createClass({
                 <div className="demo-pattern">
                   <h4>Button Group</h4>
                   <div className="demo-pattern-example">
-                    <ButtonGroup isVertical={this.state.isVertical} grouped={this.state.grouped}>
+                    <ButtonGroup layout={this.state.layout} grouped={this.state.grouped}>
                       <button className={this.state.type}>First Button</button>
                       <button className={this.state.type}>Second Button</button>
                       <button className={this.state.type}>Third Button</button>
@@ -52,7 +52,7 @@ var ButtonGroupPattern = React.createClass({
               </div>
               <ButtonControls
                 type={this.state.type}
-                isVertical={this.state.isVertical}
+                layout={this.state.layout}
                 grouped={this.state.grouped}
                 onChange={this._handleChange} />
             </Pattern.Demo>
@@ -89,7 +89,7 @@ var ButtonGroupPattern = React.createClass({
   },
   _buildDemoHTML : function(){
     return (
-      '<ButtonGroup isVertical="' + this.state.isVertical + '" grouped="' + this.state.grouped + '">\n' +
+      '<ButtonGroup layout="' + this.state.layout + '" grouped="' + this.state.grouped + '">\n' +
         '\t<button class="' + this.state.type + '">First Button</button>\n' +
         '\t<button class="' + this.state.type + '">Second Button</button>\n' +
         '\t<button class="' + this.state.type + '">Third Button</button>\n' +
@@ -98,11 +98,11 @@ var ButtonGroupPattern = React.createClass({
   },
   _buildButtonGroupProps : function(){
     return {
-      isVertical : {
-        type : "boolean",
-        default : "false",
+      layout : {
+        type : "string",
+        default : "inline",
         required : false,
-        description : "Determines if the button group is vertical."
+        description : "Determines if the button group is inline or stacked."
       },
       grouped : {
         type : "boolean",
@@ -125,7 +125,7 @@ var ButtonControls = React.createClass({
     return {
       type : "",
       grouped : false,
-      isVertical : false,
+      layout : "inline",
       onChange : function(){}
     }
   },
@@ -137,16 +137,16 @@ var ButtonControls = React.createClass({
           <Form.Row>
             <InputLabel label="Button Group Layout">
               <RadioButton.Group>
-                <RadioButton isChecked={!this.props.isVertical} onChange={this._handleLayoutChange} radioName="isVertical" radioLabel="Inline" value="false"></RadioButton>
-                <RadioButton isChecked={this.props.isVertical} onChange={this._handleLayoutChange} radioName="isVertical" radioLabel="Stacked" value="true"></RadioButton>
+                <RadioButton isChecked={!this.props.layout} onChange={this._handleChange} radioName="layout" radioLabel="Inline" value="inline"></RadioButton>
+                <RadioButton isChecked={this.props.layout} onChange={this._handleChange} radioName="layout" radioLabel="Stacked" value="stacked"></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
           <Form.Row>
             <InputLabel label="Grouped">
               <RadioButton.Group>
-                <RadioButton isChecked={!this.props.grouped} onChange={this._handleLayoutChange} radioName="grouped" radioLabel="Default" value="false"></RadioButton>
-                <RadioButton isChecked={this.props.grouped} onChange={this._handleLayoutChange} radioName="grouped" radioLabel="Grouped" value="true"></RadioButton>
+                <RadioButton isChecked={!this.props.grouped} onChange={this._handleGroupedChange} radioName="grouped" radioLabel="Default" value="false"></RadioButton>
+                <RadioButton isChecked={this.props.grouped} onChange={this._handleGroupedChange} radioName="grouped" radioLabel="Grouped" value="true"></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
@@ -170,9 +170,6 @@ var ButtonControls = React.createClass({
   },
   _handleChange : function(event) {
     this.props.onChange(event.target.name, event.target.value);
-  },
-  _handleLayoutChange : function(event){
-    this.props.onChange(event.target.name, event.target.value === "true");
   },
   _handleGroupedChange : function(event){
     this.props.onChange(event.target.name, event.target.value === "true");
