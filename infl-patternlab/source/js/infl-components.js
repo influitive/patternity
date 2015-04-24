@@ -40026,9 +40026,18 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton   = require("../../../../infl-components/radio_button.jsx");
+
 var Checkbox   = require("../../../../infl-components/checkbox.jsx");
 
 var CheckboxPattern = React.createClass({displayName: "CheckboxPattern",
+  getInitialState : function(){
+    return {
+      layout : "inline"
+    };
+  },
   render : function(){
     return (
       React.createElement("div", {className: "checkbox-pattern"}, 
@@ -40054,8 +40063,36 @@ var CheckboxPattern = React.createClass({displayName: "CheckboxPattern",
             React.createElement("p", null, "It also has two layout options inline and stacked"), 
 
             React.createElement(Pattern.Show, null, 
-              React.createElement(CheckboxGroupComponent, null)
+              React.createElement(Checkbox.Group, null, 
+                React.createElement(Checkbox, {checkboxLabel: "My Checkbox One"}), 
+                React.createElement(Checkbox, {checkboxLabel: "My Checkbox Two"}), 
+                React.createElement(Checkbox, {checkboxLabel: "My Checkbox Three"})
+              )
             ), 
+
+            React.createElement(Pattern.Demo, {title: "Radio Button Group Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Radio Button Group"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(Checkbox.Group, {layout: this.state.layout}, 
+                      React.createElement(Checkbox, {checkboxLabel: "My Checkbox One"}), 
+                      React.createElement(Checkbox, {checkboxLabel: "My Checkbox Two"}), 
+                      React.createElement(Checkbox, {checkboxLabel: "My Checkbox Three"})
+                    )
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.HTML, null, 
+                    this._buildDemoHTML()
+                  )
+                )
+              ), 
+              React.createElement(CheckBoxGroupControls, {
+                layout: this.state.layout, 
+                onChange: this._handleChange})
+            ), 
+
             React.createElement(Code, null, 
               React.createElement(Code.JSX, null, 
                 "<Checkbox.Group>" + ' ' +
@@ -40079,6 +40116,20 @@ var CheckboxPattern = React.createClass({displayName: "CheckboxPattern",
           )
         )
       )
+    );
+  },
+  _handleChange : function(event){
+    var currentState = this.state;
+    currentState[event.target.name] = event.target.value;
+    this.setState(currentState);
+  },
+  _buildDemoHTML : function(){
+    return (
+      '<Checkbox.Group layout="' + this.state.layout + '">\n' +
+        '\t<Checkbox checkboxLabel="My Checkbox One" />\n' +
+        '\t<Checkbox checkboxLabel="My Checkbox Two" />\n' +
+        '\t<Checkbox checkboxLabel="My Checkbox Three" />\n' +
+      '</Checkbox.Group>'
     );
   },
   _buildCheckBoxProps : function(){
@@ -40139,13 +40190,27 @@ var CheckboxPattern = React.createClass({displayName: "CheckboxPattern",
   }
 });
 
-var CheckboxGroupComponent = React.createClass({displayName: "CheckboxGroupComponent",
+var CheckBoxGroupControls = React.createClass({displayName: "CheckBoxGroupControls",
+  getDefaultProps : function(){
+    return {
+      layout : "inline",
+      onChange : function(){}
+    };
+  },
   render : function(){
     return (
-      React.createElement(Checkbox.Group, null, 
-        React.createElement(Checkbox, {checkboxLabel: "My Checkbox One"}), 
-        React.createElement(Checkbox, {checkboxLabel: "My Checkbox Two"}), 
-        React.createElement(Checkbox, {checkboxLabel: "My Checkbox Three"})
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Checkbox Group Controls"), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Layout"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.layout === "inline", onChange: this.props.onChange, radioName: "layout", radioLabel: "Inline", value: "inline"}), 
+                React.createElement(RadioButton, {isChecked: this.props.layout === "stacked", onChange: this.props.onChange, radioName: "layout", radioLabel: "Stacked", value: "stacked"})
+              )
+            )
+          )
+        )
       )
     );
   }
@@ -40154,7 +40219,7 @@ var CheckboxGroupComponent = React.createClass({displayName: "CheckboxGroupCompo
 module.exports = CheckboxPattern;
 
 
-},{"../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
