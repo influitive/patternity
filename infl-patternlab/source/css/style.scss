@@ -123,6 +123,11 @@ body {
     display:block;
     text-align: center;
     font-size: 100px;
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    margin: 0px auto;
   }
 }
 
@@ -228,6 +233,7 @@ body {
 
 .try-it-yourself {
   .pt-modal-dialog {
+    cursor: auto;
     @include transition(top 1s ease-in-out);
 
     .pt-modal {

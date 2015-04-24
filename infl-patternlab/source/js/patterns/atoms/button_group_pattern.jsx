@@ -135,20 +135,6 @@ var ButtonControls = React.createClass({
         <h4>Input Label Controls</h4>
         <Form>
           <Form.Row>
-            <InputLabel label="Button Type">
-              <RadioButton.Group layout="stacked">
-                <RadioButton isChecked={this.props.type === ''} onChange={this._handleChange} radioName="type" radioLabel="Default" value=""></RadioButton>
-                <RadioButton isChecked={this.props.type === 'primary'} onChange={this._handleChange} radioName="type" radioLabel="Primary" value="primary"></RadioButton>
-                <RadioButton isChecked={this.props.type === 'secondary'} onChange={this._handleChange} radioName="type" radioLabel="Secondary" value="secondary"></RadioButton>
-                <RadioButton isChecked={this.props.type === 'disabled'} onChange={this._handleChange} radioName="type" radioLabel="Disabled" value="disabled"></RadioButton>
-                <RadioButton isChecked={this.props.type === 'important'} onChange={this._handleChange} radioName="type" radioLabel="Important" value="important"></RadioButton>
-                <RadioButton isChecked={this.props.type === 'success'} onChange={this._handleChange} radioName="type" radioLabel="Success" value="success"></RadioButton>
-                <RadioButton isChecked={this.props.type === 'danger'} onChange={this._handleChange} radioName="type" radioLabel="Danger" value="danger"></RadioButton>
-                <RadioButton isChecked={this.props.type === 'text'} onChange={this._handleChange} radioName="type" radioLabel="Text" value="text"></RadioButton>
-              </RadioButton.Group>
-            </InputLabel>
-          </Form.Row>
-          <Form.Row>
             <InputLabel label="Button Group Layout">
               <RadioButton.Group>
                 <RadioButton isChecked={!this.props.isVertical} onChange={this._handleLayoutChange} radioName="isVertical" radioLabel="Inline" value="false"></RadioButton>
@@ -161,6 +147,20 @@ var ButtonControls = React.createClass({
               <RadioButton.Group>
                 <RadioButton isChecked={!this.props.grouped} onChange={this._handleLayoutChange} radioName="grouped" radioLabel="Default" value="false"></RadioButton>
                 <RadioButton isChecked={this.props.grouped} onChange={this._handleLayoutChange} radioName="grouped" radioLabel="Grouped" value="true"></RadioButton>
+              </RadioButton.Group>
+            </InputLabel>
+          </Form.Row>
+          <Form.Row>
+            <InputLabel label="Button Type">
+              <RadioButton.Group layout="stacked">
+                <RadioButton isChecked={this.props.type === ''} onChange={this._handleChange} radioName="type" radioLabel="Default" value=""></RadioButton>
+                <RadioButton isChecked={this.props.type === 'primary'} onChange={this._handleChange} radioName="type" radioLabel="Primary" value="primary"></RadioButton>
+                <RadioButton isChecked={this.props.type === 'secondary'} onChange={this._handleChange} radioName="type" radioLabel="Secondary" value="secondary"></RadioButton>
+                <RadioButton isChecked={this.props.type === 'disabled'} onChange={this._handleChange} radioName="type" radioLabel="Disabled" value="disabled"></RadioButton>
+                <RadioButton isChecked={this.props.type === 'important'} onChange={this._handleChange} radioName="type" radioLabel="Important" value="important"></RadioButton>
+                <RadioButton isChecked={this.props.type === 'success'} onChange={this._handleChange} radioName="type" radioLabel="Success" value="success"></RadioButton>
+                <RadioButton isChecked={this.props.type === 'danger'} onChange={this._handleChange} radioName="type" radioLabel="Danger" value="danger"></RadioButton>
+                <RadioButton isChecked={this.props.type === 'text'} onChange={this._handleChange} radioName="type" radioLabel="Text" value="text"></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>

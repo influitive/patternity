@@ -39812,20 +39812,6 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
         React.createElement("h4", null, "Input Label Controls"), 
         React.createElement(Form, null, 
           React.createElement(Form.Row, null, 
-            React.createElement(InputLabel, {label: "Button Type"}, 
-              React.createElement(RadioButton.Group, {layout: "stacked"}, 
-                React.createElement(RadioButton, {isChecked: this.props.type === '', onChange: this._handleChange, radioName: "type", radioLabel: "Default", value: ""}), 
-                React.createElement(RadioButton, {isChecked: this.props.type === 'primary', onChange: this._handleChange, radioName: "type", radioLabel: "Primary", value: "primary"}), 
-                React.createElement(RadioButton, {isChecked: this.props.type === 'secondary', onChange: this._handleChange, radioName: "type", radioLabel: "Secondary", value: "secondary"}), 
-                React.createElement(RadioButton, {isChecked: this.props.type === 'disabled', onChange: this._handleChange, radioName: "type", radioLabel: "Disabled", value: "disabled"}), 
-                React.createElement(RadioButton, {isChecked: this.props.type === 'important', onChange: this._handleChange, radioName: "type", radioLabel: "Important", value: "important"}), 
-                React.createElement(RadioButton, {isChecked: this.props.type === 'success', onChange: this._handleChange, radioName: "type", radioLabel: "Success", value: "success"}), 
-                React.createElement(RadioButton, {isChecked: this.props.type === 'danger', onChange: this._handleChange, radioName: "type", radioLabel: "Danger", value: "danger"}), 
-                React.createElement(RadioButton, {isChecked: this.props.type === 'text', onChange: this._handleChange, radioName: "type", radioLabel: "Text", value: "text"})
-              )
-            )
-          ), 
-          React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Button Group Layout"}, 
               React.createElement(RadioButton.Group, null, 
                 React.createElement(RadioButton, {isChecked: !this.props.isVertical, onChange: this._handleLayoutChange, radioName: "isVertical", radioLabel: "Inline", value: "false"}), 
@@ -39838,6 +39824,20 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
               React.createElement(RadioButton.Group, null, 
                 React.createElement(RadioButton, {isChecked: !this.props.grouped, onChange: this._handleLayoutChange, radioName: "grouped", radioLabel: "Default", value: "false"}), 
                 React.createElement(RadioButton, {isChecked: this.props.grouped, onChange: this._handleLayoutChange, radioName: "grouped", radioLabel: "Grouped", value: "true"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Button Type"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.type === '', onChange: this._handleChange, radioName: "type", radioLabel: "Default", value: ""}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'primary', onChange: this._handleChange, radioName: "type", radioLabel: "Primary", value: "primary"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'secondary', onChange: this._handleChange, radioName: "type", radioLabel: "Secondary", value: "secondary"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'disabled', onChange: this._handleChange, radioName: "type", radioLabel: "Disabled", value: "disabled"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'important', onChange: this._handleChange, radioName: "type", radioLabel: "Important", value: "important"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'success', onChange: this._handleChange, radioName: "type", radioLabel: "Success", value: "success"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'danger', onChange: this._handleChange, radioName: "type", radioLabel: "Danger", value: "danger"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === 'text', onChange: this._handleChange, radioName: "type", radioLabel: "Text", value: "text"})
               )
             )
           )
@@ -39981,7 +39981,7 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
   render : function(){
     return (
       React.createElement("div", {className: "pattern-controls"}, 
-        React.createElement("h4", null, "Input Label Controls"), 
+        React.createElement("h4", null, "Button Controls"), 
         React.createElement(Form, null, 
           React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Button Type"}, 
@@ -40539,7 +40539,7 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
             React.createElement(Pattern.Demo, {title: "Input Label Demo"}, 
               React.createElement("div", {className: "demo-output"}, 
                 React.createElement("div", {className: "demo-pattern"}, 
-                  React.createElement("h4", null, "Input Label:"), 
+                  React.createElement("h4", null, "Input Label"), 
                   React.createElement("div", {className: "demo-pattern-example"}, 
                     React.createElement(InputLabel, {label: this.state.label, layout: this.state.layout}, 
                       this._determineWhichInputToShow()
@@ -41026,7 +41026,7 @@ var SelectDropdownPattern = React.createClass({displayName: "SelectDropdownPatte
       children : {
         type : "array",
         default : "[...]",
-        required : false,
+        required : true,
         description : "Array of html option option group elements."
       },
       message : {
