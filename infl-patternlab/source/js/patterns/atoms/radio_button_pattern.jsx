@@ -3,9 +3,19 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+
 var RadioButton   = require("../../../../infl-components/radio_button.jsx");
 
 var RadioButtonPattern = React.createClass({
+  getInitialState : function(){
+    return {
+      layout : "inline",
+      selectedValue : "radio-button-1",
+      selectedValueDemo : "radio-button-1"
+    };
+  },
   render : function(){
     return (
       <div className="radio-button-pattern">
@@ -31,8 +41,38 @@ var RadioButtonPattern = React.createClass({
             <p>It also has two layout options inline and stacked</p>
 
             <Pattern.Show>
-              <RadioButtonComponent />
+              <RadioButton.Group>
+                <RadioButton radioName="selectedValue" radioLabel="My Radio Button One" isChecked={this.state.selectedValue === 'radio-button-1'} onChange={this._handleChange} value="radio-button-1"/>
+                <RadioButton radioName="selectedValue" radioLabel="My Radio Button Two" isChecked={this.state.selectedValue === 'radio-button-2'} onChange={this._handleChange} value="radio-button-2"/>
+                <RadioButton radioName="selectedValue" radioLabel="My Radio Button Three" isChecked={this.state.selectedValue === 'radio-button-3'} onChange={this._handleChange} value="radio-button-3"/>
+              </RadioButton.Group>
             </Pattern.Show>
+
+            <Pattern.Demo title="Radio Button Group Demo">
+              <div className="demo-output">
+                <div className="demo-pattern">
+                  <h4>Radio Button Group</h4>
+                  <div className="demo-pattern-example">
+                    <RadioButton.Group layout={this.state.layout}>
+                    <RadioButton radioName="selectedValueDemo" radioLabel="My Radio Button One" isChecked={this.state.selectedValueDemo === 'radio-button-1'} onChange={this._handleChange} value="radio-button-1"/>
+                    <RadioButton radioName="selectedValueDemo" radioLabel="My Radio Button Two" isChecked={this.state.selectedValueDemo === 'radio-button-2'} onChange={this._handleChange} value="radio-button-2"/>
+                    <RadioButton radioName="selectedValueDemo" radioLabel="My Radio Button Three" isChecked={this.state.selectedValueDemo === 'radio-button-3'} onChange={this._handleChange} value="radio-button-3"/>
+                  </RadioButton.Group>
+                  </div>
+                </div>
+                <Code>
+                  <Code.HTML>
+                    {this._buildDemoHTML()}
+                  </Code.HTML>
+                </Code>
+              </div>
+              <RadioButtonControls
+                type={this.state.type}
+                layout={this.state.layout}
+                grouped={this.state.grouped}
+                onChange={this._handleChange} />
+            </Pattern.Demo>
+
             <Code>
               <Code.JSX>
                 &lt;RadioButton.Group layout="inline" &gt;
@@ -56,6 +96,20 @@ var RadioButtonPattern = React.createClass({
           </Require>
         </Pattern>
       </div>
+    );
+  },
+  _handleChange : function(event){
+    var currentState = this.state;
+    currentState[event.target.name] = event.target.value;
+    this.setState(currentState);
+  },
+  _buildDemoHTML : function(){
+    return (
+      '<RadioButton.Group layout="' + this.state.layout + '">\n' +
+        '\t<RadioButton radioName="my-radio-name" radioLabel="My Radio Button One" isChecked="' + (this.state.selectedValueDemo ==='radio-button-1').toString() + '" onChange="this._handleChange" value="radio-button-1"/>\n' +
+        '\t<RadioButton radioName="my-radio-name" radioLabel="My Radio Button Two" isChecked="' + (this.state.selectedValueDemo ==='radio-button-2').toString() + '" onChange="this._handleChange" value="radio-button-2"/>\n' +
+        '\t<RadioButton radioName="my-radio-name" radioLabel="My Radio Button Three" isChecked="' + (this.state.selectedValueDemo ==='radio-button-3').toString() + '" onChange="this._handleChange" value="radio-button-3"/>\n' +
+      '</RadioButton.Group>'
     );
   },
   _buildRadioButtonProps : function(){
@@ -122,29 +176,30 @@ var RadioButtonPattern = React.createClass({
   }
 });
 
-var RadioButtonComponent = React.createClass({
-  getInitialState : function(){
+var RadioButtonControls = React.createClass({
+  getDefaultProps : function(){
     return {
-      selectedValue : "radio-button-1"
+      layout : "inline",
+      onChange : function(){}
     };
   },
   render : function(){
     return (
-      <RadioButton.Group>
-        <RadioButton radioName="my-radio-name" radioLabel="My Radio Button One" isChecked={this._isRadioSelected('radio-button-1')} onChange={this._handleChange} value="radio-button-1"/>
-        <RadioButton radioName="my-radio-name" radioLabel="My Radio Button Two" isChecked={this._isRadioSelected('radio-button-2')} onChange={this._handleChange} value="radio-button-2"/>
-        <RadioButton radioName="my-radio-name" radioLabel="My Radio Button Three" isChecked={this._isRadioSelected('radio-button-3')} onChange={this._handleChange} value="radio-button-3"/>
-      </RadioButton.Group>
+      <div className="pattern-controls">
+        <h4>Radio Button Group Controls</h4>
+        <Form>
+          <Form.Row>
+            <InputLabel label="Layout">
+              <RadioButton.Group>
+                <RadioButton isChecked={this.props.layout === "inline"} onChange={this.props.onChange} radioName="layout" radioLabel="Inline" value="inline"></RadioButton>
+                <RadioButton isChecked={this.props.layout === "stacked"} onChange={this.props.onChange} radioName="layout" radioLabel="Stacked" value="stacked"></RadioButton>
+              </RadioButton.Group>
+            </InputLabel>
+          </Form.Row>
+        </Form>
+      </div>
     );
-  },
-  _isRadioSelected : function(value){
-    return this.state.selectedValue === value;
-  },
-  _handleChange : function(event){
-    this.setState({
-      selectedValue : event.target.value
-    });
-  },
+  }
 });
 
 module.exports = RadioButtonPattern;
