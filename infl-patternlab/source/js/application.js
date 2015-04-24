@@ -23,6 +23,7 @@ inflComp.ButtonGroupPattern       = require("./patterns/atoms/button_group_patte
 inflComp.FormPattern              = require("./patterns/molecules/form_pattern.jsx");
 inflComp.LoadingPattern           = require("./patterns/molecules/loading_pattern.jsx");
 inflComp.HelpTooltipPattern       = require("./patterns/molecules/help_tooltip_pattern.jsx");
+inflComp.AlertPattern             = require("./patterns/molecules/alert_pattern.jsx");
 inflComp.ActionAlertPattern       = require("./patterns/molecules/action_alert_pattern.jsx");
 inflComp.DetailedAlertPattern     = require("./patterns/molecules/detailed_alert_pattern.jsx");
 

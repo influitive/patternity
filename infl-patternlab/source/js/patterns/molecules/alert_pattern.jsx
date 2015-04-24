@@ -8,9 +8,9 @@ var InputLabel      = require("../../../../infl-components/input_label.jsx");
 var RadioButton     = require("../../../../infl-components/radio_button.jsx");
 var TextInput       = require("../../../../infl-components/text_input.jsx");
 
-var DetailedAlert   = require("../../../../infl-components/alert/detailed_alert.jsx");
+var Alert   = require("../../../../infl-components/alert.jsx");
 
-var DetailedAlertPattern = React.createClass({
+var AlertPattern = React.createClass({
   getInitialState : function(){
     return {
       type : "info",
@@ -22,33 +22,25 @@ var DetailedAlertPattern = React.createClass({
   },
   render : function(){
     return (
-      <div className="detailed-alert-pattern">
-        <Pattern title="detailed alert">
-          <p>The detailed alert can also take a sub component detail.  All other alert data is still valid.  See Alert for more details.</p>
+      <div className="alert-pattern">
+        <Pattern title="alert">
+          <p>The alerts has several states info or default, success and error.  Each Type is used for specific circumstances:</p>
 
-          <Pattern.Detail title="Detailed Alert">
-            <p>The alert detailed is an additional space to add more data to an alert</p>
-
+          <Pattern.Detail title="Alert">
             <Pattern.Show>
-              <DetailedAlert title="Action Alert" showIcon={true}>
+              <Alert title="Action Alert" showIcon={true}>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <DetailedAlert.Detail title="Detail Title" action={this._detailedAction()}>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </DetailedAlert.Detail>
-              </DetailedAlert>
+              </Alert>
             </Pattern.Show>
 
-            <Pattern.Demo title="Detailed Alert Demo">
+            <Pattern.Demo title="Alert Demo">
               <div className="demo-output">
                 <div className="demo-pattern">
-                  <h4>Detailed Alert</h4>
+                  <h4>Alert</h4>
                   <div className="demo-pattern-example">
-                    <DetailedAlert title="Action Alert" showAlert={this.state.showAlert} showIcon={this.state.showIcon} type={this.state.type} hideIn={this.state.hideIn}  closeable={this.state.closeable}>
+                    <Alert title="Alert" showAlert={this.state.showAlert} showIcon={this.state.showIcon} type={this.state.type} hideIn={this.state.hideIn} closeable={this.state.closeable}>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <DetailedAlert.Detail title="Detail Title" action={this._detailedAction()}>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      </DetailedAlert.Detail>
-                    </DetailedAlert>
+                    </Alert>
                   </div>
                 </div>
                 <Code>
@@ -61,41 +53,25 @@ var DetailedAlertPattern = React.createClass({
                 type={this.state.type}
                 showIcon={this.state.showIcon}
                 hideIn={this.state.hideIn}
-                closeable={this.state.closeable}
-                onChange={this._handleChange} />
+                onChange={this._handleChange}
+                closeable={this.state.closeable} />
             </Pattern.Demo>
 
             <Code>
               <Code.JSX>
-                &lt;DetailedAlert title="Your Title" &gt;
+                &lt;Alert title="Your Title" &gt;
                   &lt;p&gt;Your Body&lt;/p&gt;
-                  &lt;p&gt;Your Body&lt;/p
-                  &gt;&lt;DetailedAlert.Detail title="Single Sign-On" action="react_element"&gt;
-                    &lt;p&gt;Your Detailed Body&lt;/p&gt;
-                  &lt;/DetailedAlert.Detail&gt;
-                &lt;/DetailedAlert&gt;
+                  &lt;p&gt;Your Body&lt;/p&gt;
+                &lt;/Alert&gt;
               </Code.JSX>
-              <Code.WithoutJSX patternName="DetailedAlert" />
-              <Code.Props patternProps={this._buildDetailedAlertProps()} />
-            </Code>
-          </Pattern.Detail>
-
-          <Pattern.Detail title="Detailed Alert - Detail">
-            <p>Detailed Alert Detail is a sub component of Alert Detail.  It provides extra styling, and functionality.</p>
-            <Code>
-              <Code.JSX>
-                &lt;DetailedAlert.Detail title="Single Sign-On" action="react_element"&gt;
-                  &lt;p&gt;Your Detailed Body&lt;/p&gt;
-                &lt;DetailedAlert.Detail/&gt;
-              </Code.JSX>
-              <Code.WithoutJSX patternName="DetailedAlert.Detail" />
-              <Code.Props patternProps={this._buildDetailedAlertDetailProps()} />
+              <Code.WithoutJSX patternName="Alert" />
+              <Code.Props patternProps={this._buildAlertProps()} />
             </Code>
           </Pattern.Detail>
 
           <Require>
             <Require.JS>
-              var DetailedAlert = require("patternity/infl-components/alert/detailed_alert.jsx");
+              var Alert = require("patternity/infl-components/alert.jsx");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/alert";
@@ -126,15 +102,12 @@ var DetailedAlertPattern = React.createClass({
   },
   _buildDemoHTML : function(){
     return (
-      '<DetailedAlert title="Action Alert" showAlert="' + this.state.showAlert.toString() + '" showIcon="' + this.state.showIcon.toString() + '" type="' + this.state.type + '" hideIn="' + this.state.hideIn + '"  closeable="' + this.state.closeable.toString() + '">\n' +
+      '<Alert title="Alert" showAlert="' + this.state.showAlert.toString() + '" showIcon="' + this.state.showIcon.toString() + '" type="' + this.state.type + '" hideIn="' + this.state.hideIn + '"  closeable="' + this.state.closeable.toString() + '">\n' +
         '\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n' +
-        '\t<DetailedAlert.Detail title="Detail Title" action={this._detailedAction()}>\n' +
-          '\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n' +
-        '\t</DetailedAlert.Detail>\n' +
-      '</DetailedAlert>'
+      '</Alert>'
     );
   },
-  _buildDetailedAlertProps : function(){
+  _buildAlertProps : function(){
     return {
       title : {
         type : "string",
@@ -185,28 +158,6 @@ var DetailedAlertPattern = React.createClass({
         description : "Array of text, html, react elements."
       }
     };
-  },
-  _buildDetailedAlertDetailProps : function(){
-    return {
-      title : {
-        type : "string",
-        default : "",
-        required : true,
-        description : "Title of details."
-      },
-      action : {
-        type : "react element, button",
-        default : "",
-        required : false,
-        description : "User action associated with details."
-      },
-      children: {
-        type : "array",
-        default : "[...]",
-        required : true,
-        description : "Array of text, html, react elements."
-      }
-    }
   }
 });
 
@@ -278,4 +229,4 @@ var AlertControls = React.createClass({
   }
 });
 
-module.exports = DetailedAlertPattern;
+module.exports = AlertPattern;
