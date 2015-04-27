@@ -102,7 +102,7 @@ var InternalTab = React.createClass({
   render: function() {
     return (
       <li className={"pt-tab " + this._isTabOpen()}>
-        <a href="#" onClick={this._handleClick}>
+        <a href="javascript:void(0);" onClick={this._handleClick}>
           <span>{this.props.title}</span>
         </a>
       </li>

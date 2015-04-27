@@ -83,7 +83,7 @@ Code.WithoutJSX = React.createClass({
   _buildReactCode : function(){
     return (
       "React.render(\n" +
-        "\tReact.createElement(" + this.props.patternName + "}, props),\n" +
+        "\tReact.createElement(" + this.props.patternName + ", props),\n" +
         "\t{DOM element to append " + this.props.patternName + " to}\n" +
       ");\n"
     );

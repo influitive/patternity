@@ -28,6 +28,7 @@ inflComp.ActionAlertPattern       = require("./patterns/molecules/action_alert_p
 inflComp.DetailedAlertPattern     = require("./patterns/molecules/detailed_alert_pattern.jsx");
 inflComp.ModalDialogPattern       = require("./patterns/molecules/modal_dialog_pattern.jsx");
 inflComp.AccordionPattern         = require("./patterns/molecules/accordion_pattern.jsx");
+inflComp.TabsPattern              = require("./patterns/molecules/tabs_pattern.jsx");
 
 
 

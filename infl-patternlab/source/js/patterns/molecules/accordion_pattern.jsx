@@ -204,8 +204,8 @@ var AccordionControls = React.createClass({
           <Form.Row>
             <InputLabel label="Is Enabled">
               <RadioButton.Group>
-                <RadioButton isChecked={section.isEnabled} onChange={that._handleBooleanChange} radioName={index} radioLabel="Yes" value="true"></RadioButton>
-                <RadioButton isChecked={!section.isEnabled} onChange={that._handleBooleanChange} radioName={index} radioLabel="No" value="false"></RadioButton>
+                <RadioButton isChecked={section.isEnabled} onChange={that._handleBooleanChange} radioName={index.toString()} radioLabel="Yes" value="true"></RadioButton>
+                <RadioButton isChecked={!section.isEnabled} onChange={that._handleBooleanChange} radioName={index.toString() } radioLabel="No" value="false"></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
