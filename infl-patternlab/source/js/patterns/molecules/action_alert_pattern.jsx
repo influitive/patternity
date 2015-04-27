@@ -55,6 +55,14 @@ var ActionAlertPattern = React.createClass({
                     {this._buildDemoHTML()}
                   </Code.JSX>
                 </Code>
+                <h5>Props</h5>
+                <div className="demo-props">
+                  <pre>
+                    <code>
+                      {this._buildDemoProps()}
+                    </code>
+                  </pre>
+                </div>
               </div>
               <AlertControls
                 type={this.state.type}
@@ -84,6 +92,21 @@ var ActionAlertPattern = React.createClass({
           </Require>
         </Pattern>
       </div>
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\ttype: "' + this.state.type + '",\n' +
+        '\tshowIcon: ' + this.state.showIcon + ',\n' +
+        '\tshowAlert : ' + this.state.showAlert + ',\n' +
+        '\tonClose : function(){},\n' +
+        '\thideIn  : ' + this.state.hideIn + '\n' +
+        '\taction : {\n' +
+          '\t\tonClick : function(){},\n' +
+          '\t\ttitle : "Do Something"\n' +
+        '\t}\n' +
+      '}'
     );
   },
   _handleChange : function(name, value){
