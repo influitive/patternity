@@ -263,6 +263,16 @@ body {
         .pattern-controls {
           float: left;
           width: 40%;
+
+          h4 {
+            position: relative;
+
+            .reset-demo {
+              position: absolute;
+              right: 0px;
+              top: -9 px;
+            }
+          }
         }
 
         .demo-output {
@@ -278,6 +288,40 @@ body {
 
               &.inverse {
                 background-color: $dark-grey;
+              }
+
+              .modal-demo-area {
+                position: relative;
+                height: 500px;
+
+                .pt-modal-dialog {
+                  position: absolute;
+
+                  .pt-modal {
+                    min-height: initial;
+                    margin: 30px auto;
+
+                    .close-dialog {
+                      top: 10px;
+                      right: 10px;
+                      font-size: 30px;
+                    }
+
+                    .pt-modal-body {
+                      overflow: scroll;
+                    }
+
+                    .pt-modal-header {
+                      h3 {
+                        font-size: 19px;
+                      }
+                    }
+
+                    &.large {
+                      width: 80%;
+                    }
+                  }
+                }
               }
             }
           }

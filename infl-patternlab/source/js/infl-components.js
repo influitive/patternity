@@ -27,6 +27,7 @@ inflComp.HelpTooltipPattern       = require("./patterns/molecules/help_tooltip_p
 inflComp.AlertPattern             = require("./patterns/molecules/alert_pattern.jsx");
 inflComp.ActionAlertPattern       = require("./patterns/molecules/action_alert_pattern.jsx");
 inflComp.DetailedAlertPattern     = require("./patterns/molecules/detailed_alert_pattern.jsx");
+inflComp.ModalDialogPattern     = require("./patterns/molecules/modal_dialog_pattern.jsx");
 
 
 
@@ -88,7 +89,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -1199,11 +1200,14 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
     return (
       React.createElement("div", {className: "pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody() + " " + this._lightbox(), onClick: this._closeDialog}, 
         React.createElement("section", {className: "pt-modal " + this.props.size}, 
-          React.createElement("span", {className: "close-dialog ic ic-times", onClick: this._closeDialog}), 
+          React.createElement("span", {className: "close-dialog ic ic-times " + this._isModalCloseable(), onClick: this._closeDialog}), 
           this.props.children
         )
       )
     );
+  },
+  _isModalCloseable : function(){
+    return this.props.closeable ? "" : "disable-close";
   },
   _scrollingModalBody : function(){
     return this.props.scrollingBody ? "scrollingBody" : "";
@@ -41731,7 +41735,7 @@ var ActionAlertPattern = React.createClass({displayName: "ActionAlertPattern",
                   )
                 ), 
                 React.createElement(Code, null, 
-                  React.createElement(Code.HTML, null, 
+                  React.createElement(Code.JSX, null, 
                     this._buildDemoHTML()
                   )
                 )
@@ -41961,7 +41965,7 @@ var AlertPattern = React.createClass({displayName: "AlertPattern",
                   )
                 ), 
                 React.createElement(Code, null, 
-                  React.createElement(Code.HTML, null, 
+                  React.createElement(Code.JSX, null, 
                     this._buildDemoHTML()
                   )
                 )
@@ -42204,7 +42208,7 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
                   )
                 ), 
                 React.createElement(Code, null, 
-                  React.createElement(Code.HTML, null, 
+                  React.createElement(Code.JSX, null, 
                     this._buildDemoHTML()
                   )
                 )
@@ -42713,5 +42717,350 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
 module.exports = LoadingPattern;
 
 
-},{"../../../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
+},{"../../../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+var ButtonGroup     = require("../../../../infl-components/button_group.jsx");
+
+var ModalDialog   = require("../../../../infl-components/modal_dialog.jsx");
+
+var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
+  getInitialState : function(){
+    return {
+      size : "medium",
+      scrollingBody : false,
+      lightbox : true,
+      closeable : true
+    };
+  },
+  componentDidMount : function(){
+    this._addModalToDemoArea();
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "modal-dialog-pattern"}, 
+        React.createElement(Pattern, {title: "modal dialog"}, 
+          React.createElement("p", null, "The Modal Dialog component helps you build modal dialogs.  It has 3 sub components Header, Body and Footer."), 
+
+          React.createElement(Pattern.Detail, {title: "Modal Dialog"}, 
+            React.createElement(Pattern.Demo, {title: "Modal Dialog Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Modal Dialog"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement("div", {ref: "modalDemoArea", className: "modal-demo-area"})
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.JSX, null, 
+                    this._buildDemoJSX()
+                  )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
+                )
+              ), 
+              React.createElement(ModalControls, {
+                  onChange: this._handleChange, 
+                  size: this.state.size, 
+                  scrollingBody: this.state.scrollingBody, 
+                  lightbox: this.state.lightbox, 
+                  closeable: this.state.closeable})
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<ModalDailog id=\"modal-id\" closeable=\"true\" size=\"medium\" onClose=\"onCloseCallback\" isModalOpen=\"true\" >" + ' ' +
+                  "<ModalDailog.Header title=\"Modal Dialog Header Title\" />" + ' ' +
+                  "<ModalDailog.Body>" + ' ' +
+                    "<p>This is the modal body.  This is the modal body.</p>" + ' ' +
+                    "<p>This is the modal body.  This is the modal body.</p>" + ' ' +
+                    "<p>This is the modal body.  This is the modal body.</p>" + ' ' +
+                  "</ModalDailog.Body>" + ' ' +
+                  "<ModalDailog.Footer>" + ' ' +
+                    "<ButtonGroup>" + ' ' +
+                      "<Button type=\"text\">Cancel</Button>" + ' ' +
+                      "<Button type=\"success\">Save</Button>" + ' ' +
+                    "</ButtonGroup>" + ' ' +
+                  "</ModalDailog.Footer>" + ' ' +
+                "</ModalDailog>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "ModalDialog"}), 
+              React.createElement(Code.Props, {patternProps: this._buildModalDialogProps()})
+            )
+          ), 
+
+          React.createElement(Pattern.Detail, {title: "Modal Dialog - Header"}, 
+            React.createElement("p", null, "The Modal Dialog Header adds a styled header to the modal dialog."), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<ModalDailog.Header title=\"Modal Dialog Header Title\" />"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "ModalDialog.Header"}), 
+              React.createElement(Code.Props, {patternProps: this._buildModalDialogHeaderProps()})
+            )
+          ), 
+
+          React.createElement(Pattern.Detail, {title: "Modal Dialog - Body"}, 
+            React.createElement("p", null, "The Modal Dialog Body adds a styled content section to the modal dialog."), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<ModalDailog.Body>" + ' ' +
+                  "<p>This is the modal body.  This is the modal body.</p>" + ' ' +
+                  "<p>This is the modal body.  This is the modal body.</p>" + ' ' +
+                  "<p>This is the modal body.  This is the modal body.</p>" + ' ' +
+                "</ModalDailog.Body>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "ModalDialog.Body"}), 
+              React.createElement(Code.Props, {patternProps: this._buildModalDialogBodyProps()})
+            )
+          ), 
+
+          React.createElement(Pattern.Detail, {title: "Modal Dialog - Footer"}, 
+            React.createElement("p", null, "The Modal Dialog Footer adds a styled footer section to the modal dialog."), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<ModalDailog.Footer>" + ' ' +
+                  "<ButtonGroup>" + ' ' +
+                    "<Button type=\"text\">Cancel</Button>" + ' ' +
+                    "<Button type=\"success\">Save</Button>" + ' ' +
+                  "</ButtonGroup>" + ' ' +
+                "</ModalDailog.Footer>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "ModalDialog.Footer"}), 
+              React.createElement(Code.Props, {patternProps: this._buildModalDialogFooterProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var ModalDialog = require(\"patternity/infl-components/modal_dialog.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/modal_dialog\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\tid : "",\n' +
+        '\tcloseable : ' + this.state.closeable + ',\n' +
+        '\tsize : "' + this.state.size + '",\n' +
+        '\tonClose : function(){},\n' +
+        '\tisModalOpen : true,\n' +
+        '\tscrollingBody : ' + this.state.scrollingBody + ',\n' +
+        '\tlightbox : ' + this.state.lightbox + '\n' +
+      '}'
+    );
+  },
+  _addModalToDemoArea : function(){
+    this.refs.modalDemoArea.getDOMNode().innerHTML = this._demoModal();
+  },
+  _createStyleLink : function(){
+    return React.renderToString(
+      React.createElement("link", {rel: "stylesheet", href: "../../styleguide/css/styleguide.css", media: "all"})
+    );
+  },
+  _demoModal : function(){
+    return React.renderToString(
+      React.createElement(ModalDialog, {isModalOpen: true, size: this.state.size, closeable: this.state.closeable, scrollingBody: this.state.scrollingBody, lightbox: this.state.lightbox}, 
+        React.createElement(ModalDialog.Header, {title: "test"}), 
+        React.createElement(ModalDialog.Body, null, 
+          React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), 
+          React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), 
+          React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        ), 
+        React.createElement(ModalDialog.Footer, null, 
+          React.createElement(ButtonGroup, null, 
+            React.createElement("button", {className: "secondary"}, "Cancel"), 
+            React.createElement("button", {className: "success"}, "Success")
+          )
+        )
+      )
+    );
+  },
+  _buildDemoJSX : function(){
+    return (
+      '<ModalDialog isModalOpen="true" size="' + this.state.size + '" closeable="' + this.state.closeable + '" scrollingBody="' + this.state.scrollingBody + '" lightbox="' + this.state.lightbox + '">\n' +
+        '\t<ModalDialog.Header title="test" />\n' +
+        '\t<ModalDialog.Body>\n' +
+          '\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n' +
+          '\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n' +
+          '\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n' +
+        '\t</ModalDialog.Body>\n' +
+        '\t<ModalDialog.Footer>\n' +
+          '\t\t<ButtonGroup>\n' +
+            '\t\t\t<button className="secondary">Cancel</button>\n' +
+            '\t\t\t<button className="success">Success</button>\n' +
+          '\t\t</ButtonGroup>\n' +
+        '\t</ModalDialog.Footer>\n' +
+      '</ModalDialog>'
+    );
+  },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState, this._addModalToDemoArea);
+  },
+  _buildModalDialogProps : function(){
+    return {
+      id : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Id for the modal."
+      },
+      closeable : {
+        type : "boolean",
+        default : "true",
+        required : false,
+        description : "Determines if the modal can be closed."
+      },
+      size : {
+        type : "string",
+        default : "medium",
+        required : false,
+        description : "Determines modal size can be small, medium or large."
+      },
+      onClose : {
+        type : "function",
+        default : "empty function",
+        required : false,
+        description : "Optional callback function when the modal is closed."
+      },
+      isModalOpen : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "Determines if the modal is open or not defaults to false."
+      },
+      scrollingBody : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "Controls styling to make the modal full screen height and body of the modal scroll."
+      },
+      lightbox : {
+        type : "boolean",
+        default : "true",
+        required : false,
+        description : "Determines if background is greyed out or not.  defaults to true."
+      }
+    };
+  },
+  _buildModalDialogHeaderProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Title for the modal dialog."
+      }
+    }
+  },
+  _buildModalDialogBodyProps : function(){
+    return {
+      children : {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of text, react elements or html."
+      }
+    }
+  },
+  _buildModalDialogFooterProps : function(){
+    return {
+      children : {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of text, react elements or html."
+      }
+    }
+  }
+});
+
+var ModalControls = React.createClass({displayName: "ModalControls",
+  getDefaultProps : function(){
+    return {
+      onChange : function(){},
+      resetDemo : function(){},
+      size : "medium",
+      scrollingBody : false,
+      lightbox : true
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, 
+          React.createElement("span", null, "Button Group Controls")
+        ), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Size"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.size === "small", onChange: this._handleChange, radioName: "size", radioLabel: "Small", value: "small"}), 
+                React.createElement(RadioButton, {isChecked: this.props.size === "medium", onChange: this._handleChange, radioName: "size", radioLabel: "Medium", value: "medium"}), 
+                React.createElement(RadioButton, {isChecked: this.props.size === "large", onChange: this._handleChange, radioName: "size", radioLabel: "Large", value: "large"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Scrolling Body"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.scrollingBody, onChange: this._handleBooleanChange, radioName: "scrollingBody", radioLabel: "Yes", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.scrollingBody, onChange: this._handleBooleanChange, radioName: "scrollingBody", radioLabel: "No", value: "false"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Lightbox"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.lightbox, onChange: this._handleBooleanChange, radioName: "lightbox", radioLabel: "Yes", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.lightbox, onChange: this._handleBooleanChange, radioName: "lightbox", radioLabel: "No", value: "false"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Closeable"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.closeable, onChange: this._handleBooleanChange, radioName: "closeable", radioLabel: "Yes", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.closeable, onChange: this._handleBooleanChange, radioName: "closeable", radioLabel: "No", value: "false"})
+              )
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleChange : function(event){
+    this.props.onChange(event.target.name, event.target.value);
+  },
+  _handleBooleanChange : function(event){
+    this.props.onChange(event.target.name, event.target.value === "true");
+  }
+});
+
+module.exports = ModalDialogPattern;
+
+
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
 });

@@ -52,9 +52,9 @@ var DetailedAlertPattern = React.createClass({
                   </div>
                 </div>
                 <Code>
-                  <Code.HTML>
+                  <Code.JSX>
                     {this._buildDemoHTML()}
-                  </Code.HTML>
+                  </Code.JSX>
                 </Code>
               </div>
               <AlertControls
