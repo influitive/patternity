@@ -357,7 +357,6 @@ var TextInputOptionControl = React.createClass({
     );
   },
   _determineSelectedValue : function(){
-    console.log(this.props);
     if(this.props.required){
       return "required";
     } else if(this.props.error){
