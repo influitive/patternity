@@ -210,7 +210,7 @@ var AlertControls = React.createClass({
   render : function(){
     return (
       <div className="pattern-controls">
-        <h4>Button Group Controls</h4>
+        <h4>Action Alert Controls</h4>
         <Form>
           <Form.Row>
             <InputLabel label="Hide In">
