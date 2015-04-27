@@ -41738,6 +41738,14 @@ var ActionAlertPattern = React.createClass({displayName: "ActionAlertPattern",
                   React.createElement(Code.JSX, null, 
                     this._buildDemoHTML()
                   )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
                 )
               ), 
               React.createElement(AlertControls, {
@@ -41768,6 +41776,21 @@ var ActionAlertPattern = React.createClass({displayName: "ActionAlertPattern",
           )
         )
       )
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\ttype: "' + this.state.type + '",\n' +
+        '\tshowIcon: ' + this.state.showIcon + ',\n' +
+        '\tshowAlert : ' + this.state.showAlert + ',\n' +
+        '\tonClose : function(){},\n' +
+        '\thideIn  : ' + this.state.hideIn + '\n' +
+        '\taction : {\n' +
+          '\t\tonClick : function(){},\n' +
+          '\t\ttitle : "Do Something"\n' +
+        '\t}\n' +
+      '}'
     );
   },
   _handleChange : function(name, value){
@@ -41968,6 +41991,14 @@ var AlertPattern = React.createClass({displayName: "AlertPattern",
                   React.createElement(Code.JSX, null, 
                     this._buildDemoHTML()
                   )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
                 )
               ), 
               React.createElement(AlertControls, {
@@ -42000,6 +42031,18 @@ var AlertPattern = React.createClass({displayName: "AlertPattern",
           )
         )
       )
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\ttype: "' + this.state.type + '",\n' +
+        '\tshowIcon: ' + this.state.showIcon + ',\n' +
+        '\tcloseable : ' + this.state.closeable + ',\n' +
+        '\tshowAlert : ' + this.state.showAlert + ',\n' +
+        '\tonClose : function(){},\n' +
+        '\thideIn  : ' + this.state.hideIn + '\n' +
+      '}'
     );
   },
   _detailedAction : function(){
@@ -42211,6 +42254,14 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
                   React.createElement(Code.JSX, null, 
                     this._buildDemoHTML()
                   )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
                 )
               ), 
               React.createElement(AlertControls, {
@@ -42259,6 +42310,18 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
           )
         )
       )
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\ttype: "' + this.state.type + '",\n' +
+        '\tshowIcon: ' + this.state.showIcon + ',\n' +
+        '\tcloseable : ' + this.state.closeable + ',\n' +
+        '\tshowAlert : ' + this.state.showAlert + ',\n' +
+        '\tonClose : function(){},\n' +
+        '\thideIn  : ' + this.state.hideIn + '\n' +
+      '}'
     );
   },
   _detailedAction : function(){
