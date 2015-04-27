@@ -65,6 +65,10 @@
       padding: 10px;
       z-index: 2;
       font-size: 30px;
+
+      &.disable-close {
+        display : none;
+      }
     }
 
     &.large {
@@ -77,6 +81,7 @@
 
     &.small {
       width: 25%;
+      min-width: 250px;
 
       .pt-modal-footer {
         .button-group {

@@ -2110,6 +2110,9 @@ textarea {
   z-index: 2;
   font-size: 30px;
 }
+.pt-modal-dialog .pt-modal .close-dialog.disable-close {
+  display: none;
+}
 .pt-modal-dialog .pt-modal.large {
   width: 80%;
 }
@@ -2118,6 +2121,7 @@ textarea {
 }
 .pt-modal-dialog .pt-modal.small {
   width: 25%;
+  min-width: 250px;
 }
 .pt-modal-dialog .pt-modal.small .pt-modal-footer .button-group {
   text-align: center;
@@ -2449,6 +2453,14 @@ body {
   float: left;
   width: 40%;
 }
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .pattern-controls h4 {
+  position: relative;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .pattern-controls h4 .reset-demo {
+  position: absolute;
+  right: 0px;
+  top: -9 px;
+}
 .try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output {
   overflow: hidden;
   float: right;
@@ -2460,6 +2472,31 @@ body {
 }
 .try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example.inverse {
   background-color: #666666;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area {
+  position: relative;
+  height: 500px;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog {
+  position: absolute;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog .pt-modal {
+  min-height: initial;
+  margin: 30px auto;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog .pt-modal .close-dialog {
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog .pt-modal .pt-modal-body {
+  overflow: scroll;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog .pt-modal .pt-modal-header h3 {
+  font-size: 19px;
+}
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog .pt-modal.large {
+  width: 80%;
 }
 .try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-props {
   background-color: #eeeeee;

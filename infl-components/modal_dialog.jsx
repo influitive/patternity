@@ -36,11 +36,14 @@ var ModalDialog = React.createClass({
     return (
       <div className={"pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody() + " " + this._lightbox()} onClick={this._closeDialog}>
         <section className={"pt-modal " + this.props.size}>
-          <span className="close-dialog ic ic-times" onClick={this._closeDialog}></span>
+          <span className={"close-dialog ic ic-times " + this._isModalCloseable()} onClick={this._closeDialog}></span>
           {this.props.children}
         </section>
       </div>
     );
+  },
+  _isModalCloseable : function(){
+    return this.props.closeable ? "" : "disable-close";
   },
   _scrollingModalBody : function(){
     return this.props.scrollingBody ? "scrollingBody" : "";
