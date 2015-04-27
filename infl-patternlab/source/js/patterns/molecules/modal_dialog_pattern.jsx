@@ -291,7 +291,7 @@ var ModalControls = React.createClass({
     return (
       <div className="pattern-controls">
         <h4>
-          <span>Button Group Controls</span>
+          <span>Modal Dialog Controls</span>
         </h4>
         <Form>
           <Form.Row>

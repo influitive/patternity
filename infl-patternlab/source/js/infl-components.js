@@ -27,7 +27,8 @@ inflComp.HelpTooltipPattern       = require("./patterns/molecules/help_tooltip_p
 inflComp.AlertPattern             = require("./patterns/molecules/alert_pattern.jsx");
 inflComp.ActionAlertPattern       = require("./patterns/molecules/action_alert_pattern.jsx");
 inflComp.DetailedAlertPattern     = require("./patterns/molecules/detailed_alert_pattern.jsx");
-inflComp.ModalDialogPattern     = require("./patterns/molecules/modal_dialog_pattern.jsx");
+inflComp.ModalDialogPattern       = require("./patterns/molecules/modal_dialog_pattern.jsx");
+inflComp.AccordionPattern         = require("./patterns/molecules/accordion_pattern.jsx");
 
 
 
@@ -89,7 +90,7 @@ inflComp.selectDropdown = function(props, elementId){
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -97,12 +98,14 @@ var Accordion = React.createClass({displayName: "Accordion",
   getDefaultProps: function() {
     return {
       sections: [],
-      openSectionIndex : -1
+      openSectionIndex : -1,
+      uniqueIdentifier : ""
     };
   },
   propTypes : {
-    sections: React.PropTypes.array,
-    openSectionIndex : React.PropTypes.number
+    sections: React.PropTypes.array.isRequired,
+    openSectionIndex : React.PropTypes.number,
+    uniqueIdentifier : React.PropTypes.string
   },
   getInitialState: function(){
     if(this._isOpenSectionIndexValid(this.props.openSectionIndex)){
@@ -41681,7 +41684,233 @@ var ToggleSwitchPattern = React.createClass({displayName: "ToggleSwitchPattern",
 module.exports = ToggleSwitchPattern;
 
 
-},{"../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+var TextInput       = require("../../../../infl-components/text_input.jsx");
+
+var Accordion   = require("../../../../infl-components/accordion.jsx");
+
+var AccordionPattern = React.createClass({displayName: "AccordionPattern",
+  getInitialState : function(){
+    return {
+      sections : this._accordionSections()
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "accordion-pattern"}, 
+        React.createElement(Pattern, {title: "accordion"}, 
+          React.createElement("p", null, "The accordion is exactly what it sounds like, and accordion. Accordion sections have two states, enabled and disabled."), 
+
+          React.createElement(Pattern.Detail, {title: "Accordion"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Accordion, {sections: this.state.sections, uniqueIdentifier: "accordion-1"})
+            ), 
+
+            React.createElement(Pattern.Demo, {title: "Accordion Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Accordion"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(Accordion, {sections: this.state.sections, uniqueIdentifier: "accordion-2"})
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.JSX, null, 
+                    this._buildDemoJSX()
+                  )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
+                )
+              ), 
+              React.createElement(AccordionControls, {
+                onChange: this._handleChange, 
+                sections: this.state.sections})
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Accordion sections=\"sections_array\" uniqueIdentifier=\"unique-identfier-for-this-accordion\" />"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Accordion"}), 
+              React.createElement(Code.Props, {patternProps: this._buildAccordionProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Accordion = require(\"patternity/infl-components/accordion.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/accordion\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\tsections: [\n' +
+          '\t\t{\n' +
+            '\t\t\theader:"' + this.state.sections[0].header + '",\n' +
+            '\t\t\tbody:"' + this.state.sections[0].body + '",\n' +
+            '\t\t\tkey:"' + this.state.sections[0].key + '",\n' +
+            '\t\t\tisEnabled:' + this.state.sections[0].isEnabled + ',\n' +
+          '\t\t}\n' +
+          '\t\t{\n' +
+            '\t\t\theader:"' + this.state.sections[1].header + '",\n' +
+            '\t\t\tbody:"' + this.state.sections[1].body + '",\n' +
+            '\t\t\tkey:"' + this.state.sections[1].key + '",\n' +
+            '\t\t\tisEnabled:' + this.state.sections[1].isEnabled + ',\n' +
+          '\t\t}\n' +
+          '\t\t{\n' +
+            '\t\t\theader:"' + this.state.sections[2].header + '",\n' +
+            '\t\t\tbody:"' + this.state.sections[2].body + '",\n' +
+            '\t\t\tkey:"' + this.state.sections[2].key + '",\n' +
+            '\t\t\tisEnabled:' + this.state.sections[2].isEnabled + ',\n' +
+          '\t\t}\n' +
+        '\t],\n' +
+        '\topenSectionIndex : -1,\n' +
+        '\tuniqueIdentifier : "accordion-2"\n' +
+      '}'
+    );
+  },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+  },
+  _buildDemoJSX : function(){
+    return (
+      '<Accordion sections="sections_array" uniqueIdentifier="accordion-2" />'
+    );
+  },
+  _accordionSections : function(){
+    return [{
+      "header" : "Section Header One",
+      "body" : "Section Body One",
+      "key" : "test-2",
+      "isEnabled" : true
+    },{
+      "header" : "Section Header Two",
+      "body" : "Section Body Two",
+      "key" : "test-3",
+      "isEnabled" : false
+    },{
+      "header" : "Section Header Three",
+      "body" : "Section Body Three",
+      "key" : "test-1",
+      "isEnabled" : true
+    }];
+  },
+  _buildAccordionProps : function(){
+    return {
+      openSectionIndex : {
+        type : "integer",
+        default : "-1",
+        required : false,
+        description : "Will open the section indicated if enabled starts at 0."
+      },
+      uniqueIdentifier : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Unique identfier for this accordion."
+      },
+      sections: {
+        type : "array",
+        default : "[...]",
+        required : true,
+        description : "Array of section objects."
+      },
+      'sections.header' : {
+        type : "React Element, DOM Node, String",
+        default : "",
+        required : true,
+        description : "Section header."
+      },
+      'sections.body' : {
+        type : "React Element, DOM Node, String",
+        default : "",
+        required : true,
+        description : "Section body."
+      },
+      'sections.key' : {
+        type : "string",
+        default : "",
+        required : true,
+        description : "Unique identifier for this accordion section."
+      },
+      'sections.isEnabled' : {
+        type : "boolean",
+        default : 'true',
+        required : false,
+        description : "Determines if this section is enabled or not."
+      }
+    };
+  }
+});
+
+var AccordionControls = React.createClass({displayName: "AccordionControls",
+  getDefaultProps : function(){
+    return {
+      sections : [],
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Accordion Controls"), 
+        React.createElement(Form, null, 
+          this._buildSectionControls()
+        )
+      )
+    );
+  },
+  _buildSectionControls : function(){
+    var that = this;
+    return this.props.sections.map(function(section, index){
+      return (
+        React.createElement("div", null, 
+          React.createElement("h5", null, "Section ", index + 1), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Is Enabled"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: section.isEnabled, onChange: that._handleBooleanChange, radioName: index, radioLabel: "Yes", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !section.isEnabled, onChange: that._handleBooleanChange, radioName: index, radioLabel: "No", value: "false"})
+              )
+            )
+          )
+        )
+      );
+    });
+  },
+  _handleBooleanChange : function(event){
+    var sections = this.props.sections;
+    sections[event.target.name].isEnabled = (event.target.value === "true");
+    this.props.onChange("sections", sections);
+  }
+});
+
+module.exports = AccordionPattern;
+
+
+},{"../../../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -41894,7 +42123,7 @@ var AlertControls = React.createClass({displayName: "AlertControls",
   render : function(){
     return (
       React.createElement("div", {className: "pattern-controls"}, 
-        React.createElement("h4", null, "Button Group Controls"), 
+        React.createElement("h4", null, "Action Alert Controls"), 
         React.createElement(Form, null, 
           React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Hide In"}, 
@@ -42138,7 +42367,7 @@ var AlertControls = React.createClass({displayName: "AlertControls",
   render : function(){
     return (
       React.createElement("div", {className: "pattern-controls"}, 
-        React.createElement("h4", null, "Button Group Controls"), 
+        React.createElement("h4", null, "Alert Controls"), 
         React.createElement(Form, null, 
           React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Hide In"}, 
@@ -42442,7 +42671,7 @@ var AlertControls = React.createClass({displayName: "AlertControls",
   render : function(){
     return (
       React.createElement("div", {className: "pattern-controls"}, 
-        React.createElement("h4", null, "Button Group Controls"), 
+        React.createElement("h4", null, "Detailed Alert Controls"), 
         React.createElement(Form, null, 
           React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Hide In"}, 
@@ -43074,7 +43303,7 @@ var ModalControls = React.createClass({displayName: "ModalControls",
     return (
       React.createElement("div", {className: "pattern-controls"}, 
         React.createElement("h4", null, 
-          React.createElement("span", null, "Button Group Controls")
+          React.createElement("span", null, "Modal Dialog Controls")
         ), 
         React.createElement(Form, null, 
           React.createElement(Form.Row, null, 

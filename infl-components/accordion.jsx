@@ -5,12 +5,14 @@ var Accordion = React.createClass({
   getDefaultProps: function() {
     return {
       sections: [],
-      openSectionIndex : -1
+      openSectionIndex : -1,
+      uniqueIdentifier : ""
     };
   },
   propTypes : {
-    sections: React.PropTypes.array,
-    openSectionIndex : React.PropTypes.number
+    sections: React.PropTypes.array.isRequired,
+    openSectionIndex : React.PropTypes.number,
+    uniqueIdentifier : React.PropTypes.string
   },
   getInitialState: function(){
     if(this._isOpenSectionIndexValid(this.props.openSectionIndex)){
