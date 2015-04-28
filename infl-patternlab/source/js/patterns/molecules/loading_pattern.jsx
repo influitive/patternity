@@ -35,7 +35,7 @@ var LoadingPattern = React.createClass({
               <div className="demo-output">
                 <div className="demo-pattern">
                   <h4>Loading</h4>
-                  <div className="demo-pattern-example">
+                  <div className={"demo-pattern-example " + this._isLightLoading()}>
                     <div ref="loadingDemoArea" className="loading-demo-area"></div>
                   </div>
                 </div>
@@ -80,6 +80,9 @@ var LoadingPattern = React.createClass({
         </Pattern>
       </div>
     );
+  },
+  _isLightLoading : function(){
+    return this.state.type === "light" ? "inverse" : "";
   },
   _buildDemoProps : function(){
     return (

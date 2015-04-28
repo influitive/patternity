@@ -43449,7 +43449,7 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
               React.createElement("div", {className: "demo-output"}, 
                 React.createElement("div", {className: "demo-pattern"}, 
                   React.createElement("h4", null, "Loading"), 
-                  React.createElement("div", {className: "demo-pattern-example"}, 
+                  React.createElement("div", {className: "demo-pattern-example " + this._isLightLoading()}, 
                     React.createElement("div", {ref: "loadingDemoArea", className: "loading-demo-area"})
                   )
                 ), 
@@ -43494,6 +43494,9 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
         )
       )
     );
+  },
+  _isLightLoading : function(){
+    return this.state.type === "light" ? "inverse" : "";
   },
   _buildDemoProps : function(){
     return (
