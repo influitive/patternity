@@ -199,7 +199,7 @@ var AccordionControls = React.createClass({
     var that = this;
     return this.props.sections.map(function(section, index){
       return (
-        <div>
+        <div key={index}>
           <h5>Section {index + 1}</h5>
           <Form.Row>
             <InputLabel label="Is Enabled">

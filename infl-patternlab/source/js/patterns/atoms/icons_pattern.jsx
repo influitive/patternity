@@ -77,7 +77,7 @@ var IconPattern = React.createClass({
   _buildIcons : function() {
     return _.map(icons, function(code, name){
       return (
-        <IconExample code={code} name={name} />
+        <IconExample key={name} code={code} name={name} />
       );
     });
   }

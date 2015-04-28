@@ -14,15 +14,6 @@ var FormPattern = React.createClass({
         <Pattern title="form">
           <p>The form component is used for wrapping form sub components and aids in the styling and layout for forms.</p>
 
-          <Require>
-            <Require.JS>
-              var Form = require("patternity/infl-components/form.jsx");
-            </Require.JS>
-            <Require.CSS>
-              @import "patternity/infl-styles/form";
-            </Require.CSS>
-          </Require>
-
           <Pattern.Detail title="Form">
             <p>Form renders a form tag.  So there is not much to show... sorry</p>
 
@@ -35,31 +26,15 @@ var FormPattern = React.createClass({
               <Code.Props patternProps={this._buildFormProps()} />
             </Code>
           </Pattern.Detail>
-          <Pattern.Detail title="Form - Rows">
-            <p>Should be used with Form.  Otherwise there will be no styling</p>
-            <Pattern.Show>
-              <Form>
-                <Form.Row>
-                  <InputLabel label="Text Input">
-                    <TextInput name="text-input" placeholder="Text Input" />
-                  </InputLabel>
-                </Form.Row>
-              </Form>
-            </Pattern.Show>
-            <Code>
-              <Code.JSX>
-                &lt;Form&gt;
-                  &lt;Form.Row inputSize="large"&gt;
-                    &lt;InputLabel label="Text Input" &gt;
-                      &lt;TextInput name="text-input" placeholder="Text Input" /&gt;
-                    &lt;/InputLabel&gt;
-                  &lt;/Form.Row&gt;
-                &lt;/Form&gt;
-              </Code.JSX>
-              <Code.WithoutJSX patternName="Form.Row" />
-              <Code.Props patternProps={this._buildFormRowProps()} />
-            </Code>
-          </Pattern.Detail>
+
+          <Require>
+            <Require.JS>
+              var Form = require("patternity/infl-components/form.jsx");
+            </Require.JS>
+            <Require.CSS>
+              @import "patternity/infl-styles/form";
+            </Require.CSS>
+          </Require>
         </Pattern>
       </div>
     );
@@ -113,22 +88,6 @@ var FormPattern = React.createClass({
         default : "",
         required : false,
         description : "one of '_blank', '_self', '_parent', '_top'"
-      }
-    };
-  },
-  _buildFormRowProps : function(){
-    return {
-      children : {
-        type : "array",
-        default : "[...]",
-        required : false,
-        description : "array or TextInput, SelectDropdown, Checkbox, RadioButton, etc."
-      },
-      inputSize : {
-        type : "string",
-        default : "large",
-        required : false,
-        description : "determines how large the input will be small, medium ro large."
       }
     };
   }

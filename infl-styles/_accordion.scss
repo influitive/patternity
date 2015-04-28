@@ -27,20 +27,21 @@ $transition-out-time : 0.5s;
 
       &.open + .section-details {
         max-height: 1000px;
+        @include transition(max-height $transition-out-time ease-in);
       }
 
       &.disabled {
-          color: #999999;
-          cursor: auto;
-          opacity: 1;
+        color: #999999;
+        cursor: auto;
+        opacity: 1;
 
-          &:hover {
-            background-color: #cccccc;
-          }
+        &:hover {
+          background-color: #cccccc;
+        }
 
-          &:hover  + .section-details{
-            border-color: #cccccc;
-          }
+        &:hover  + .section-details{
+          border-color: #cccccc;
+        }
       }
 
       &:hover {
@@ -56,7 +57,7 @@ $transition-out-time : 0.5s;
       border: 1px solid #cccccc;
       max-height: 0;
       overflow: hidden;
-      @include transition(all $transition-out-time ease-in-out);
+      @include transition(max-height $transition-out-time ease-out);
 
       .section-details-inner {
         padding: $spacing-large;
