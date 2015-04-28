@@ -386,3 +386,30 @@ body {
     }
   }
 }
+
+.page-pattern {
+  background-color: $lighter-grey;
+  min-height: 100%;
+
+  header,
+  footer {
+    background-color: $lighter-grey;
+    padding: 20px 0px;
+  }
+
+  header {
+    background-color: $theme-color-primary;
+    color: #fff;
+    margin-bottom: 20px;
+
+    h1 {
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  footer {
+    text-align: center;
+  }
+}
