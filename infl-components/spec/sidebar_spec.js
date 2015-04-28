@@ -4,7 +4,7 @@ var es5Shim   = require('es5-shim'),
     TestUtils = require('react/addons').addons.TestUtils;
 
 var Sidebar = require('sidebar');
-var SidebarHeading = require('sidebar').heading;
+var SidebarHeading = require('sidebar').Heading;
 
 describe('Sidebar', function() {
   it('will be empty if it has no children', function () {
