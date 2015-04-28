@@ -9,7 +9,7 @@ var Form = React.createClass({
        enctype : "",
        method : "",
        name : "",
-       novalidate : false,
+       novalidate : true,
        target : ""
     };
   },

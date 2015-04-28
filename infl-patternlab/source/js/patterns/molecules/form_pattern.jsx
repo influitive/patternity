@@ -79,7 +79,7 @@ var FormPattern = React.createClass({
       },
       novalidate : {
         type : "boolean",
-        default : "false",
+        default : "true",
         required : false,
         description : "determines if html 5 validation is on."
       },

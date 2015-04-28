@@ -657,7 +657,7 @@ var Form = React.createClass({displayName: "Form",
        enctype : "",
        method : "",
        name : "",
-       novalidate : false,
+       novalidate : true,
        target : ""
     };
   },
@@ -43039,7 +43039,7 @@ var FormPattern = React.createClass({displayName: "FormPattern",
       },
       novalidate : {
         type : "boolean",
-        default : "false",
+        default : "true",
         required : false,
         description : "determines if html 5 validation is on."
       },
