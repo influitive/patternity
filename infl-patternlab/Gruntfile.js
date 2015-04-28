@@ -112,19 +112,6 @@ module.exports = function(grunt) {
 			}
 		},
 		gulp : {
-			publish : function(){
-				var gulp 	= require('gulp');
-				var s3 		= require("gulp-s3");
-				var gzip 	= require("gulp-gzip");
-				var fs 		= require('fs');
-
-				var aws = JSON.parse(fs.readFileSync('./aws.json'));
-				var options = { gzippedOnly: true };
-
-				gulp.src('./public/**')
-					.pipe(gzip())
-					.pipe(s3(aws, options));
-			},
 			browserify : function(){
 				//compile react
 				/* browserify task
