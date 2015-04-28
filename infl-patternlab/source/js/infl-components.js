@@ -43983,7 +43983,9 @@ var ToggleSwitch    = require("../../../../infl-components/toggle_switch.jsx");
 var FormPagePattern = React.createClass({displayName: "FormPagePattern",
   getInitialState : function(){
     return {
-      activeFormLayout : "one-column"
+      activeFormLayout : "one-column",
+      testRadioButtonTwo : "1",
+      testRadioButton : "1"
     };
   },
   render : function(){
@@ -44049,18 +44051,24 @@ var FormPagePattern = React.createClass({displayName: "FormPagePattern",
   },
   _formLayoutContent : function(){
     var formLayouts = {
-      "one-column" : React.createElement(OneColumnLayout, null),
-      "two-column" : React.createElement(TwoColumnLayout, null)
+      "one-column" : React.createElement(OneColumnLayout, {onChange: this._handleChange, testRadioButton: this.state.testRadioButton}),
+      "two-column" : React.createElement(TwoColumnLayout, {onChange: this._handleChange, testRadioButtonTwo: this.state.testRadioButtonTwo})
     };
 
     return formLayouts[this.state.activeFormLayout];
+  },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
   }
 });
 
 var OneColumnLayout = React.createClass({displayName: "OneColumnLayout",
-  getInitialState : function(){
+  getDefaultProps : function(){
     return {
-      testRadioButton : "1"
+      testRadioButton : "1",
+      onChange : function(){}
     };
   },
   render : function(){
@@ -44106,9 +44114,9 @@ var OneColumnLayout = React.createClass({displayName: "OneColumnLayout",
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Radio Buttons"}, 
             React.createElement(RadioButton.Group, {layout: "stacked"}, 
-              React.createElement(RadioButton, {radioLabel: "First Checkbox", radioName: "testRadioButton", value: "1", onChange: this._handleChange, isChecked: this.state.testRadioButton === "1"}), 
-              React.createElement(RadioButton, {radioLabel: "Second Checkbox", radioName: "testRadioButton", value: "2", onChange: this._handleChange, isChecked: this.state.testRadioButton === "2"}), 
-              React.createElement(RadioButton, {radioLabel: "Third Checkbox", radioName: "testRadioButton", value: "3", onChange: this._handleChange, isChecked: this.state.testRadioButton === "3"})
+              React.createElement(RadioButton, {radioLabel: "First Checkbox", radioName: "testRadioButton", value: "1", onChange: this._handleChange, isChecked: this.props.testRadioButton === "1"}), 
+              React.createElement(RadioButton, {radioLabel: "Second Checkbox", radioName: "testRadioButton", value: "2", onChange: this._handleChange, isChecked: this.props.testRadioButton === "2"}), 
+              React.createElement(RadioButton, {radioLabel: "Third Checkbox", radioName: "testRadioButton", value: "3", onChange: this._handleChange, isChecked: this.props.testRadioButton === "3"})
             )
           )
         ), 
@@ -44139,16 +44147,15 @@ var OneColumnLayout = React.createClass({displayName: "OneColumnLayout",
     );
   },
   _handleChange : function(event){
-    var currentState = this.state;
-    currentState[event.target.name] = event.target.value;
-    this.setState(currentState);
+    this.props.onChange(event.target.name, event.target.value);
   }
 });
 
 var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
-  getInitialState : function(){
+  getDefaultProps : function(){
     return {
-      testRadioButtonTwo : "1"
+      testRadioButtonTwo : "1",
+      onChange : function(){}
     };
   },
   render : function(){
@@ -44214,9 +44221,9 @@ var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
           React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Radio Buttons"}, 
               React.createElement(RadioButton.Group, {layout: "stacked"}, 
-                React.createElement(RadioButton, {radioLabel: "First Checkbox", radioName: "testRadioButtonTwo", value: "1", onChange: this._handleTwoChange, isChecked: this.state.testRadioButtonTwo === "1"}), 
-                React.createElement(RadioButton, {radioLabel: "Second Checkbox", radioName: "testRadioButtonTwo", value: "2", onChange: this._handleTwoChange, isChecked: this.state.testRadioButtonTwo === "2"}), 
-                React.createElement(RadioButton, {radioLabel: "Third Checkbox", radioName: "testRadioButtonTwo", value: "3", onChange: this._handleTwoChange, isChecked: this.state.testRadioButtonTwo === "3"})
+                React.createElement(RadioButton, {radioLabel: "First Checkbox", radioName: "testRadioButtonTwo", value: "1", onChange: this._handleChange, isChecked: this.props.testRadioButtonTwo === "1"}), 
+                React.createElement(RadioButton, {radioLabel: "Second Checkbox", radioName: "testRadioButtonTwo", value: "2", onChange: this._handleChange, isChecked: this.props.testRadioButtonTwo === "2"}), 
+                React.createElement(RadioButton, {radioLabel: "Third Checkbox", radioName: "testRadioButtonTwo", value: "3", onChange: this._handleChange, isChecked: this.props.testRadioButtonTwo === "3"})
               )
             )
           )
@@ -44232,10 +44239,8 @@ var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
       )
     );
   },
-  _handleTwoChange : function(event){
-    var currentState = this.state;
-    currentState[event.target.name] = event.target.value;
-    this.setState(currentState);
+  _handleChange : function(event){
+    this.props.onChange(event.target.name, event.target.value);
   }
 });
 
