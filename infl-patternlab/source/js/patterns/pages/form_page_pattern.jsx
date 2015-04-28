@@ -167,7 +167,7 @@ var OneColumnLayout = React.createClass({
         <Form.Actions>
           <ButtonGroup>
             <button className="secondary">Cancel</button>
-            <button className="success">save</button>
+            <button className="success">Save</button>
           </ButtonGroup>
         </Form.Actions>
       </Form>
@@ -183,13 +183,13 @@ var OneColumnLayout = React.createClass({
 var TwoColumnLayout = React.createClass({
   getInitialState : function(){
     return {
-      testRadioButton : "1"
+      testRadioButtonTwo : "1"
     };
   },
   render : function(){
     return (
       <Form>
-        <Form.Title title="Two Column Form">
+        <Form.Title title="Two Column Form" actions={this._buildFormActions()}>
           <p>This is a sample of what a two column form layout looks like.</p>
         </Form.Title>
         <Form.Alert>
@@ -249,24 +249,25 @@ var TwoColumnLayout = React.createClass({
           <Form.Row>
             <InputLabel label="Radio Buttons">
               <RadioButton.Group layout="stacked">
-                <RadioButton radioLabel="First Checkbox" radioName="testRadioButton" value="1" onChange={this._handleChange} isChecked={this.state.testRadioButton === "1"}/>
-                <RadioButton radioLabel="Second Checkbox" radioName="testRadioButton" value="2" onChange={this._handleChange} isChecked={this.state.testRadioButton === "2"}/>
-                <RadioButton radioLabel="Third Checkbox" radioName="testRadioButton" value="3" onChange={this._handleChange} isChecked={this.state.testRadioButton === "3"}/>
+                <RadioButton radioLabel="First Checkbox" radioName="testRadioButtonTwo" value="1" onChange={this._handleTwoChange} isChecked={this.state.testRadioButtonTwo === "1"}/>
+                <RadioButton radioLabel="Second Checkbox" radioName="testRadioButtonTwo" value="2" onChange={this._handleTwoChange} isChecked={this.state.testRadioButtonTwo === "2"}/>
+                <RadioButton radioLabel="Third Checkbox" radioName="testRadioButtonTwo" value="3" onChange={this._handleTwoChange} isChecked={this.state.testRadioButtonTwo === "3"}/>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
-
         </Form.Column>
-        <Form.Actions>
-          <ButtonGroup>
-            <button className="secondary">Cancel</button>
-            <button className="success">save</button>
-          </ButtonGroup>
-        </Form.Actions>
       </Form>
     );
   },
-  _handleChange : function(event){
+  _buildFormActions : function(){
+    return (
+      <ButtonGroup>
+        <button className="secondary">Cancel</button>
+        <button className="primary">Save Changes</button>
+      </ButtonGroup>
+    );
+  },
+  _handleTwoChange : function(event){
     var currentState = this.state;
     currentState[event.target.name] = event.target.value;
     this.setState(currentState);

@@ -44132,7 +44132,7 @@ var OneColumnLayout = React.createClass({displayName: "OneColumnLayout",
         React.createElement(Form.Actions, null, 
           React.createElement(ButtonGroup, null, 
             React.createElement("button", {className: "secondary"}, "Cancel"), 
-            React.createElement("button", {className: "success"}, "save")
+            React.createElement("button", {className: "success"}, "Save")
           )
         )
       )
@@ -44148,13 +44148,13 @@ var OneColumnLayout = React.createClass({displayName: "OneColumnLayout",
 var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
   getInitialState : function(){
     return {
-      testRadioButton : "1"
+      testRadioButtonTwo : "1"
     };
   },
   render : function(){
     return (
       React.createElement(Form, null, 
-        React.createElement(Form.Title, {title: "Two Column Form"}, 
+        React.createElement(Form.Title, {title: "Two Column Form", actions: this._buildFormActions()}, 
           React.createElement("p", null, "This is a sample of what a two column form layout looks like.")
         ), 
         React.createElement(Form.Alert, null, 
@@ -44214,24 +44214,25 @@ var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
           React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Radio Buttons"}, 
               React.createElement(RadioButton.Group, {layout: "stacked"}, 
-                React.createElement(RadioButton, {radioLabel: "First Checkbox", radioName: "testRadioButton", value: "1", onChange: this._handleChange, isChecked: this.state.testRadioButton === "1"}), 
-                React.createElement(RadioButton, {radioLabel: "Second Checkbox", radioName: "testRadioButton", value: "2", onChange: this._handleChange, isChecked: this.state.testRadioButton === "2"}), 
-                React.createElement(RadioButton, {radioLabel: "Third Checkbox", radioName: "testRadioButton", value: "3", onChange: this._handleChange, isChecked: this.state.testRadioButton === "3"})
+                React.createElement(RadioButton, {radioLabel: "First Checkbox", radioName: "testRadioButtonTwo", value: "1", onChange: this._handleTwoChange, isChecked: this.state.testRadioButtonTwo === "1"}), 
+                React.createElement(RadioButton, {radioLabel: "Second Checkbox", radioName: "testRadioButtonTwo", value: "2", onChange: this._handleTwoChange, isChecked: this.state.testRadioButtonTwo === "2"}), 
+                React.createElement(RadioButton, {radioLabel: "Third Checkbox", radioName: "testRadioButtonTwo", value: "3", onChange: this._handleTwoChange, isChecked: this.state.testRadioButtonTwo === "3"})
               )
             )
-          )
-
-        ), 
-        React.createElement(Form.Actions, null, 
-          React.createElement(ButtonGroup, null, 
-            React.createElement("button", {className: "secondary"}, "Cancel"), 
-            React.createElement("button", {className: "success"}, "save")
           )
         )
       )
     );
   },
-  _handleChange : function(event){
+  _buildFormActions : function(){
+    return (
+      React.createElement(ButtonGroup, null, 
+        React.createElement("button", {className: "secondary"}, "Cancel"), 
+        React.createElement("button", {className: "primary"}, "Save Changes")
+      )
+    );
+  },
+  _handleTwoChange : function(event){
     var currentState = this.state;
     currentState[event.target.name] = event.target.value;
     this.setState(currentState);
