@@ -290,6 +290,15 @@ body {
                 background-color: $dark-grey;
               }
 
+              .loading-demo-area {
+                position: relative;
+                height: 100px;
+
+                .loading-spinner {
+                  position: absolute;
+                }
+              }
+
               .modal-demo-area {
                 position: relative;
                 height: 500px;

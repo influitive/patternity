@@ -43417,9 +43417,25 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+var ButtonGroup     = require("../../../../infl-components/button_group.jsx");
+
 var Loading   = require("../../../../infl-components/loading.jsx");
 
 var LoadingPattern = React.createClass({displayName: "LoadingPattern",
+  getInitialState : function(){
+    return {
+      size : "medium",
+      type : "dark",
+      isModal : false,
+      isBlock : false
+    };
+  },
+  componentDidMount : function(){
+    this._addLoadingToDemoArea();
+  },
   render : function(){
     return (
       React.createElement("div", {className: "loading-pattern"}, 
@@ -43428,6 +43444,35 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
           React.createElement(Pattern.Detail, {title: "Loading"}, 
             React.createElement(Pattern.Show, null, 
               React.createElement(Loading, null)
+            ), 
+            React.createElement(Pattern.Demo, {title: "Loading Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Loading"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement("div", {ref: "loadingDemoArea", className: "loading-demo-area"})
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.JSX, null, 
+                    this._buildDemoJSX()
+                  )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
+                )
+              ), 
+              React.createElement(LoadingControls, {
+                  onChange: this._handleChange, 
+                  size: this.state.size, 
+                  type: this.state.type, 
+                  isModal: this.state.isModal, 
+                  isBlock: this.state.isBlock})
             ), 
             React.createElement(Code, null, 
               React.createElement(Code.JSX, null, 
@@ -43449,6 +43494,34 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
         )
       )
     );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\tsize : "' + this.state.size + '",\n' +
+        '\ttype : "' + this.state.type + '",\n' +
+        '\tisModal : ' + this.state.isModal + ',\n' +
+        '\tisBlock : ' + this.state.isBlock + ',\n' +
+      '}'
+    );
+  },
+  _addLoadingToDemoArea : function(){
+    this.refs.loadingDemoArea.getDOMNode().innerHTML = this._demoLoading();
+  },
+  _demoLoading : function(){
+    return React.renderToString(
+      React.createElement(Loading, {isModal: this.state.isModal, size: this.state.size, type: this.state.type, isBlock: this.state.isBlock})
+    );
+  },
+  _buildDemoJSX : function(){
+    return (
+      '<Loading isModal="' + this.state.isModal + '" size="' + this.state.size + '" type="' + this.state.type + '" isBlock="' + this.state.isBlock + '"/>'
+    );
+  },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState, this._addLoadingToDemoArea);
   },
   _buildLoadingProps : function(){
     return {
@@ -43480,10 +43553,72 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
   }
 });
 
+var LoadingControls = React.createClass({displayName: "LoadingControls",
+  getDefaultProps : function(){
+    return {
+      onChange : function(){},
+      size: "small",
+      type: "dark",
+      isModal : false,
+      isBlock : false
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, 
+          React.createElement("span", null, "Modal Dialog Controls")
+        ), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Size"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.size === "small", onChange: this._handleChange, radioName: "size", radioLabel: "Small", value: "small"}), 
+                React.createElement(RadioButton, {isChecked: this.props.size === "medium", onChange: this._handleChange, radioName: "size", radioLabel: "Medium", value: "medium"}), 
+                React.createElement(RadioButton, {isChecked: this.props.size === "large", onChange: this._handleChange, radioName: "size", radioLabel: "Large", value: "large"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Type"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.type === "dark", onChange: this._handleChange, radioName: "type", radioLabel: "Dark", value: "dark"}), 
+                React.createElement(RadioButton, {isChecked: this.props.type === "light", onChange: this._handleChange, radioName: "type", radioLabel: "Light", value: "light"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Is Modal"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.isModal, onChange: this._handleBooleanChange, radioName: "isModal", radioLabel: "Yes", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.isModal, onChange: this._handleBooleanChange, radioName: "isModal", radioLabel: "No", value: "false"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Is Block"}, 
+              React.createElement(RadioButton.Group, null, 
+                React.createElement(RadioButton, {isChecked: this.props.isBlock, onChange: this._handleBooleanChange, radioName: "isBlock", radioLabel: "Yes", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.isBlock, onChange: this._handleBooleanChange, radioName: "isBlock", radioLabel: "No", value: "false"})
+              )
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleChange : function(event){
+    this.props.onChange(event.target.name, event.target.value);
+  },
+  _handleBooleanChange : function(event){
+    this.props.onChange(event.target.name, event.target.value === "true");
+  }
+});
+
 module.exports = LoadingPattern;
 
 
-},{"../../../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -43638,11 +43773,6 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
   },
   _addModalToDemoArea : function(){
     this.refs.modalDemoArea.getDOMNode().innerHTML = this._demoModal();
-  },
-  _createStyleLink : function(){
-    return React.renderToString(
-      React.createElement("link", {rel: "stylesheet", href: "../../styleguide/css/styleguide.css", media: "all"})
-    );
   },
   _demoModal : function(){
     return React.renderToString(

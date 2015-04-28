@@ -153,11 +153,6 @@ var ModalDialogPattern = React.createClass({
   _addModalToDemoArea : function(){
     this.refs.modalDemoArea.getDOMNode().innerHTML = this._demoModal();
   },
-  _createStyleLink : function(){
-    return React.renderToString(
-      <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
-    );
-  },
   _demoModal : function(){
     return React.renderToString(
       <ModalDialog isModalOpen={true} size={this.state.size} closeable={this.state.closeable} scrollingBody={this.state.scrollingBody} lightbox={this.state.lightbox}>
