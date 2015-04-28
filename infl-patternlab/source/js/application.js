@@ -36,4 +36,9 @@ inflComp.FormTitlePattern         = require("./patterns/molecules/form_title_pat
 inflComp.FormSectionPattern       = require("./patterns/molecules/form_section_pattern.jsx");
 inflComp.FormAlertPattern         = require("./patterns/molecules/form_alert_pattern.jsx");
 
+/* Organisims */
+
+/* Pages */
+inflComp.FormPagePattern          = require("./patterns/pages/form_page_pattern.jsx");
+
 module.exports = inflComp;

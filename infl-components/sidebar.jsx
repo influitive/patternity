@@ -12,7 +12,7 @@ var Sidebar = React.createClass({
   }
 });
 
-Sidebar.heading = React.createClass({
+Sidebar.Heading = React.createClass({
   propTypes : {
     title: React.PropTypes.string
   },
