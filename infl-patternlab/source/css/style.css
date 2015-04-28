@@ -1738,6 +1738,9 @@ textarea {
 .pt-form .pt-form-row .pt-label.stacked .pt-select .select-box {
   width: 100%;
 }
+.pt-form .pt-form-row .pt-label .toggle-switch {
+  margin: 5px 0px;
+}
 .pt-form .pt-form-actions {
   margin: 10px 1.8% 10px 0px;
   clear: left;
@@ -2243,6 +2246,9 @@ textarea {
   text-decoration: none;
   color: #08a5c5;
 }
+.panel-sidebar .panel-sidebar-inner .panel-block h3 {
+  color: #08a5c5;
+}
 
 .panel-content {
   float: left;
@@ -2273,6 +2279,59 @@ textarea {
     content: "";
     display: table;
   }
+}
+
+.list-picker {
+  padding: 0px;
+}
+.list-picker li {
+  margin-bottom: 0.2em;
+  line-height: 22px;
+  list-style-type: none;
+}
+.list-picker li:last-child {
+  margin-bottom: 0;
+}
+.list-picker li a {
+  display: block;
+  padding: 0.5em 0.5em 0.5em 1em;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #08a5c5;
+}
+.list-picker li a:hover {
+  color: #046f99;
+}
+.list-picker li a:hover .icon {
+  visibility: visible;
+}
+.list-picker li a:active, .list-picker li a.active {
+  background-color: #08a5c5;
+  color: white;
+}
+.list-picker li a:active .ic, .list-picker li a.active .ic {
+  color: white;
+  visibility: visible;
+}
+.list-picker li a .ic {
+  font-weight: bold;
+  font-size: 1.2em;
+  float: right;
+  margin-right: 0.5em;
+  margin-top: 0px;
+  visibility: hidden;
+  color: #555;
+}
+.list-picker li.selected a,
+.list-picker li.selected a:hover {
+  background-color: #08a5c5;
+  color: white;
+}
+.list-picker li.selected a .ic,
+.list-picker li.selected a:hover .ic {
+  color: white;
+  visibility: visible;
 }
 
 body {
@@ -2610,6 +2669,29 @@ body {
 }
 .code-props .code-props-details tr:nth-child(even) {
   background-color: #f3f3f3;
+}
+
+.page-pattern {
+  background-color: #eeeeee;
+  min-height: 100%;
+}
+.page-pattern header,
+.page-pattern footer {
+  background-color: #eeeeee;
+  padding: 20px 0px;
+}
+.page-pattern header {
+  background-color: #08a5c5;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.page-pattern header h1 {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page-pattern footer {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

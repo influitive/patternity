@@ -1026,6 +1026,64 @@ var InputLabel = React.createClass({displayName: "InputLabel",
 module.exports = InputLabel;
 
 
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx":[function(require,module,exports){
+var React   = require('react');
+
+var ListPicker = React.createClass({displayName: "ListPicker",
+  getDefaultProps: function() {
+    return {
+      listItems: []
+    };
+  },
+  propTypes : {
+    listItems: React.PropTypes.array,
+    title : React.PropTypes.string
+  },
+  _buildList: function(listItems){
+    return this._buildListItems(listItems);
+  },
+  _buildListItems: function(listItems){
+    return listItems.map(function (item, index) {
+      return (React.createElement(ListItem, {item: item, key: "list-picker-item-" + index}));
+    });
+  },
+  render: function () {
+    return (
+      React.createElement("div", {className: "panel-block"}, 
+        React.createElement("h4", {className: "list-title", ref: "title"}, this.props.title, ":"), 
+        React.createElement("ul", {className: "list-picker", ref: "list"}, 
+          this._buildList(this.props.listItems)
+        )
+      )
+    );
+  }
+});
+
+var ListItem = React.createClass({displayName: "ListItem",
+  getDefaultProps: function() {
+    return {
+      item: {}
+    };
+  },
+  propTypes : {
+    item: React.PropTypes.object
+  },
+  render: function () {
+    var Component = this.props.item.listItemComponent;
+    return (
+      React.createElement("li", null, 
+        React.createElement(Component, React.__spread({},  this.props.item.listItemComponentProps), 
+          React.createElement("span", {className: "icon ic ic-chevron-right"}), 
+          this.props.item.name
+        )
+      )
+    );
+  }
+});
+
+module.exports = ListPicker;
+
+
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx":[function(require,module,exports){
 var React   = require('react');
 var classNames = require('classnames');
@@ -43910,35 +43968,278 @@ var React     = require('react');
 var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
 var Sidebar           = require("../../../../infl-components/sidebar.jsx");
 var Content           = require("../../../../infl-components/content.jsx");
+var ListPicker        = require("../../../../infl-components/list_picker.jsx");
 
 var Form            = require("../../../../infl-components/form.jsx");
 var InputLabel      = require("../../../../infl-components/input_label.jsx");
 var RadioButton     = require("../../../../infl-components/radio_button.jsx");
 var TextInput       = require("../../../../infl-components/text_input.jsx");
 var Checkbox        = require("../../../../infl-components/checkbox.jsx");
+var SelectDropdown  = require("../../../../infl-components/select_dropdown.jsx");
+var Alert           = require("../../../../infl-components/alert.jsx");
+var ButtonGroup     = require("../../../../infl-components/button_group.jsx");
+var ToggleSwitch    = require("../../../../infl-components/toggle_switch.jsx");
 
 var FormPagePattern = React.createClass({displayName: "FormPagePattern",
+  getInitialState : function(){
+    return {
+      activeFormLayout : "one-column"
+    };
+  },
   render : function(){
     return (
-      React.createElement("div", {className: "form-page-pattern"}, 
-        React.createElement("div", {className: "pt-page-header"}, 
-          React.createElement("h1", null, "this is the header")
+      React.createElement("div", {className: "form-page-pattern page-pattern"}, 
+        React.createElement("header", {className: "pt-page-header"}, 
+          React.createElement("h1", null, "Form Page Demo")
         ), 
         React.createElement(PanelLeftSidebar, {id: "form-page"}, 
           React.createElement(Sidebar, null, 
-            React.createElement(Sidebar.Heading, {title: "Form Page Demo"})
+            React.createElement(Sidebar.Heading, {title: "Form Page Layouts"}), 
+            React.createElement(ListPicker, {
+                title: "Select Layout", 
+                key: "form-layouts", 
+                listItems: this._formLayoutItems()})
           ), 
           React.createElement(Content, null, 
-            React.createElement("h2", null, "yeah")
+            this._formLayoutContent()
+          )
+        ), 
+        React.createElement("footer", {className: "pt-page-footer"}, 
+          React.createElement("h5", null, "Form Page Footer")
+        )
+      )
+    );
+  },
+  _formLayoutItems : function(){
+    var that = this;
+    return [
+      {
+        name : "One Column",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : this._isActiveLayout("one-column"),
+          href : "javascript:void(0);",
+          onClick : function(){
+            that._switchActiveLayout("one-column");
+          }
+        },
+        key : "one-column"
+      },
+      {
+        name : "Two Column",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : this._isActiveLayout("two-column"),
+          href : "javascript:void(0);",
+          onClick : function(){
+            that._switchActiveLayout("two-column");
+          }
+        },
+        key : "two-column"
+      }
+    ];
+  },
+  _isActiveLayout : function(layout){
+    return layout === this.state.activeFormLayout ? "active" : "";
+  },
+  _switchActiveLayout : function(layout){
+    this.setState({
+      activeFormLayout : layout
+    });
+  },
+  _formLayoutContent : function(){
+    var formLayouts = {
+      "one-column" : React.createElement(OneColumnLayout, null),
+      "two-column" : React.createElement(TwoColumnLayout, null)
+    };
+
+    return formLayouts[this.state.activeFormLayout];
+  }
+});
+
+var OneColumnLayout = React.createClass({displayName: "OneColumnLayout",
+  getInitialState : function(){
+    return {
+      testRadioButton : "1"
+    };
+  },
+  render : function(){
+    return (
+      React.createElement(Form, null, 
+        React.createElement(Form.Title, {title: "One Column Form"}, 
+          React.createElement("p", null, "This is a sample of what a one column form layout looks like.")
+        ), 
+        React.createElement(Form.Alert, null, 
+          React.createElement(Alert, {title: "Success!", type: "success", showIcon: true, closeable: false}, 
+            React.createElement("p", null, "You have successfully updated the one column form layout")
+          )
+        ), 
+        React.createElement(Form.Row, {inputSize: "small"}, 
+          React.createElement(InputLabel, {label: "Small Text Input"}, 
+            React.createElement(TextInput, {type: "text"})
+          )
+        ), 
+        React.createElement(Form.Row, {inputSize: "medium"}, 
+          React.createElement(InputLabel, {label: "Medium Text Input"}, 
+            React.createElement(TextInput, {type: "text"})
+          )
+        ), 
+        React.createElement(Form.Row, {inputSize: "large"}, 
+          React.createElement(InputLabel, {label: "Large Text Input"}, 
+            React.createElement(TextInput, {type: "text"})
+          )
+        ), 
+        React.createElement(Form.Row, {inputSize: "small"}, 
+          React.createElement(InputLabel, {label: "Required Input"}, 
+            React.createElement(TextInput, {type: "text", required: true})
+          )
+        ), 
+        React.createElement(Form.Row, null, 
+          React.createElement(InputLabel, {label: "Checkboxes"}, 
+            React.createElement(Checkbox.Group, null, 
+              React.createElement(Checkbox, {checkboxLabel: "First Checkbox"}), 
+              React.createElement(Checkbox, {checkboxLabel: "Second Checkbox"}), 
+              React.createElement(Checkbox, {checkboxLabel: "Third Checkbox"})
+            )
+          )
+        ), 
+        React.createElement(Form.Row, null, 
+          React.createElement(InputLabel, {label: "Radio Buttons"}, 
+            React.createElement(RadioButton.Group, {layout: "stacked"}, 
+              React.createElement(RadioButton, {radioLabel: "First Checkbox", radioName: "testRadioButton", value: "1", onChange: this._handleChange, isChecked: this.state.testRadioButton === "1"}), 
+              React.createElement(RadioButton, {radioLabel: "Second Checkbox", radioName: "testRadioButton", value: "2", onChange: this._handleChange, isChecked: this.state.testRadioButton === "2"}), 
+              React.createElement(RadioButton, {radioLabel: "Third Checkbox", radioName: "testRadioButton", value: "3", onChange: this._handleChange, isChecked: this.state.testRadioButton === "3"})
+            )
+          )
+        ), 
+        React.createElement(Form.Row, {inputSize: "small"}, 
+          React.createElement(InputLabel, {label: "Select Dropdown"}, 
+            React.createElement(SelectDropdown, null, 
+              React.createElement("option", {value: "1"}, "First Option"), 
+              React.createElement("option", {value: "2"}, "Second Option"), 
+              React.createElement("option", {value: "3"}, "Third Option"), 
+              React.createElement("option", {value: "4"}, "Fourth Option"), 
+              React.createElement("option", {value: "5"}, "Fifth Option"), 
+              React.createElement("option", {value: "6"}, "Sixth Option")
+            )
+          )
+        ), 
+        React.createElement(Form.Row, null, 
+          React.createElement(InputLabel, {label: "Toggle Switch"}, 
+            React.createElement(ToggleSwitch, null)
+          )
+        ), 
+        React.createElement(Form.Actions, null, 
+          React.createElement(ButtonGroup, null, 
+            React.createElement("button", {className: "secondary"}, "Cancel"), 
+            React.createElement("button", {className: "success"}, "save")
           )
         )
       )
     );
+  },
+  _handleChange : function(event){
+    var currentState = this.state;
+    currentState[event.target.name] = event.target.value;
+    this.setState(currentState);
+  }
+});
+
+var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
+  getInitialState : function(){
+    return {
+      testRadioButton : "1"
+    };
+  },
+  render : function(){
+    return (
+      React.createElement(Form, null, 
+        React.createElement(Form.Title, {title: "Two Column Form"}, 
+          React.createElement("p", null, "This is a sample of what a two column form layout looks like.")
+        ), 
+        React.createElement(Form.Alert, null, 
+          React.createElement(Alert, {title: "Success!", type: "success", showIcon: true, closeable: false}, 
+            React.createElement("p", null, "You have successfully updated the one column form layout")
+          )
+        ), 
+        React.createElement(Form.Column, null, 
+          React.createElement(Form.Row, {inputSize: "small"}, 
+            React.createElement(InputLabel, {label: "Small Text Input"}, 
+              React.createElement(TextInput, {type: "text"})
+            )
+          ), 
+          React.createElement(Form.Row, {inputSize: "medium"}, 
+            React.createElement(InputLabel, {label: "Medium Text Input"}, 
+              React.createElement(TextInput, {type: "text"})
+            )
+          ), 
+          React.createElement(Form.Row, {inputSize: "small"}, 
+            React.createElement(InputLabel, {label: "Select Dropdown"}, 
+              React.createElement(SelectDropdown, null, 
+                React.createElement("option", {value: "1"}, "First Option"), 
+                React.createElement("option", {value: "2"}, "Second Option"), 
+                React.createElement("option", {value: "3"}, "Third Option"), 
+                React.createElement("option", {value: "4"}, "Fourth Option"), 
+                React.createElement("option", {value: "5"}, "Fifth Option"), 
+                React.createElement("option", {value: "6"}, "Sixth Option")
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Checkboxes"}, 
+              React.createElement(Checkbox.Group, {layout: "stacked"}, 
+                React.createElement(Checkbox, {checkboxLabel: "First Checkbox"}), 
+                React.createElement(Checkbox, {checkboxLabel: "Second Checkbox"}), 
+                React.createElement(Checkbox, {checkboxLabel: "Third Checkbox"})
+              )
+            )
+          )
+        ), 
+        React.createElement(Form.Column, null, 
+          React.createElement(Form.Row, {inputSize: "large"}, 
+            React.createElement(InputLabel, {label: "Large Text Input"}, 
+              React.createElement(TextInput, {type: "text"})
+            )
+          ), 
+           React.createElement(Form.Row, {inputSize: "small"}, 
+            React.createElement(InputLabel, {label: "Required Input"}, 
+              React.createElement(TextInput, {type: "text", required: true})
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Toggle Switch"}, 
+              React.createElement(ToggleSwitch, null)
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Radio Buttons"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {radioLabel: "First Checkbox", radioName: "testRadioButton", value: "1", onChange: this._handleChange, isChecked: this.state.testRadioButton === "1"}), 
+                React.createElement(RadioButton, {radioLabel: "Second Checkbox", radioName: "testRadioButton", value: "2", onChange: this._handleChange, isChecked: this.state.testRadioButton === "2"}), 
+                React.createElement(RadioButton, {radioLabel: "Third Checkbox", radioName: "testRadioButton", value: "3", onChange: this._handleChange, isChecked: this.state.testRadioButton === "3"})
+              )
+            )
+          )
+
+        ), 
+        React.createElement(Form.Actions, null, 
+          React.createElement(ButtonGroup, null, 
+            React.createElement("button", {className: "secondary"}, "Cancel"), 
+            React.createElement("button", {className: "success"}, "save")
+          )
+        )
+      )
+    );
+  },
+  _handleChange : function(event){
+    var currentState = this.state;
+    currentState[event.target.name] = event.target.value;
+    this.setState(currentState);
   }
 });
 
 module.exports = FormPagePattern;
 
 
-},{"../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
 });
