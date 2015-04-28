@@ -47,7 +47,8 @@ var icons = {
   'Clock' : 'clock',
   'List' : 'list',
   'Grid' : 'grid',
-  'Globe' : 'globe'
+  'Globe' : 'globe',
+  'Speech': 'speech'
 };
 
 var IconPattern = React.createClass({
