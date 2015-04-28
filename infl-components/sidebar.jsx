@@ -17,13 +17,11 @@ Sidebar.Heading = React.createClass({
     title: React.PropTypes.string
   },
   render: function(){
-    var Component = this.props.headingComponent;
+
     return (
       <div className="panel-block" ref="heading">
         <h3>
-          <Component {...this.props.headingComponentParams}>
-            {this.props.title}
-          </Component>
+          {this._buildHeading()}
         </h3>
         {this._buildMessage()}
       </div>
@@ -31,6 +29,18 @@ Sidebar.Heading = React.createClass({
   },
   _buildMessage: function(){
     return this.props.message ? (<p>{ this.props.message }</p>) : "";
+  },
+  _buildHeading : function(){
+    if(this.props.headingComponent){
+      var Component = this.props.headingComponent;
+      return (
+        <Component {...this.props.headingComponentParams}>
+          {this.props.title}
+        </Component>
+      );
+    } else {
+      return this.props.title;
+    }
   }
 });
 
