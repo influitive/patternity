@@ -30,68 +30,17 @@ inflComp.DetailedAlertPattern     = require("./patterns/molecules/detailed_alert
 inflComp.ModalDialogPattern       = require("./patterns/molecules/modal_dialog_pattern.jsx");
 inflComp.AccordionPattern         = require("./patterns/molecules/accordion_pattern.jsx");
 inflComp.TabsPattern              = require("./patterns/molecules/tabs_pattern.jsx");
-
-
-
-
-
-
-/* old way of building patternity docs */
-inflComp.PanelLeftSidebar = require("../../infl-components/pages/panel_left_sidebar.jsx");
-inflComp.Conent = require("../../infl-components/content.jsx");
-inflComp.Sidebar = require("../../infl-components/sidebar.jsx");
-inflComp.ListPicker = require("../../infl-components/list_picker.jsx");
-inflComp.Accordion = require("../../infl-components/accordion.jsx");
-inflComp.Alert = require("../../infl-components/alert.jsx");
-inflComp.ActionAlert = require("../../infl-components/alert/action_alert.jsx");
-inflComp.DetailedAlert = require("../../infl-components/alert/detailed_alert.jsx");
-inflComp.HelpTooltip = require("../../infl-components/help_tooltip.jsx");
-inflComp.ToggleSwitch = require("../../infl-components/toggle_switch.jsx");
-inflComp.ButtonDropdown = require("../../infl-components/button_dropdown.jsx");
-inflComp.SelectDropdown = require("../../infl-components/select_dropdown.jsx");
-inflComp.TextInput = require("../../infl-components/text_input.jsx");
-inflComp.InputLabel = require("../../infl-components/input_label.jsx");
-inflComp.Icon = require("../../infl-components/icon.jsx");
-inflComp.Loading = require("../../infl-components/loading.jsx");
-inflComp.ButtonGroup = require("../../infl-components/button_group.jsx");
-inflComp.Form = require("../../infl-components/form.jsx");
-inflComp.ModalDialog = require("../../infl-components/modal_dialog.jsx");
-inflComp.Tabs = require("../../infl-components/tabs.jsx");
-inflComp.Checkbox = require("../../infl-components/checkbox.jsx");
-inflComp.RadioButton = require("../../infl-components/radio_button.jsx");
-
-inflComp.inputLabel = function(props, elementId){
-  inflComp.React.render(
-    inflComp.React.createElement(inflComp.InputLabel, props),
-    document.getElementById(elementId)
-  );
-};
-
-inflComp.textInput = function(props, elementId){
-  inflComp.React.render(
-    inflComp.React.createElement(inflComp.TextInput, props),
-    document.getElementById(elementId)
-  );
-};
-
-inflComp.buttonDropdown = function(props, elementId){
-  inflComp.React.render(
-    inflComp.React.createElement(inflComp.ButtonDropdown, props),
-    document.getElementById(elementId)
-  );
-};
-
-inflComp.selectDropdown = function(props, elementId){
-  inflComp.React.render(
-    inflComp.React.createElement(inflComp.SelectDropdown, props),
-    document.getElementById(elementId)
-  );
-};
+inflComp.FormRowPattern           = require("./patterns/molecules/form_row_pattern.jsx");
+inflComp.FormColumnPattern        = require("./patterns/molecules/form_column_pattern.jsx");
+inflComp.FormActionsPattern       = require("./patterns/molecules/form_actions_pattern.jsx");
+inflComp.FormTitlePattern         = require("./patterns/molecules/form_title_pattern.jsx");
+inflComp.FormSectionPattern       = require("./patterns/molecules/form_section_pattern.jsx");
+inflComp.FormAlertPattern         = require("./patterns/molecules/form_alert_pattern.jsx");
 
 module.exports = inflComp;
 
 
-},{"../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -651,47 +600,7 @@ Checkbox.Group = React.createClass({displayName: "Group",
 module.exports = Checkbox;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
-var React = require('react');
-
-var Content = React.createClass({displayName: "Content",
-  getDefaultProps : function(){
-    return {
-      hasInnerPanel : true,
-      hasBackgroundColour : true
-    };
-  },
-  propTypes : {
-    hasInnerPanel: React.PropTypes.bool,
-    hasBackgroundColour: React.PropTypes.bool
-  },
-  render: function () {
-    return (
-      React.createElement("div", {className: "panel-content " + this._doesContentHaveBackgroundColour()}, 
-        this._contentHasInnerPanel()
-      )
-    );
-  },
-  _doesContentHaveBackgroundColour : function(){
-    return this.props.hasBackgroundColour ? "" : "no-colour";
-  },
-  _contentHasInnerPanel : function(){
-    if(this.props.hasInnerPanel){
-      return (
-        React.createElement("div", {className: "panel-content-inner"}, 
-          this.props.children
-        )
-      );
-    } else {
-      return (this.props.children);
-    }
-  }
-});
-
-module.exports = Content;
-
-
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Form = React.createClass({displayName: "Form",
@@ -1072,64 +981,6 @@ var InputLabel = React.createClass({displayName: "InputLabel",
 module.exports = InputLabel;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx":[function(require,module,exports){
-var React   = require('react');
-
-var ListPicker = React.createClass({displayName: "ListPicker",
-  getDefaultProps: function() {
-    return {
-      listItems: []
-    };
-  },
-  propTypes : {
-    listItems: React.PropTypes.array,
-    title : React.PropTypes.string
-  },
-  _buildList: function(listItems){
-    return this._buildListItems(listItems);
-  },
-  _buildListItems: function(listItems){
-    return listItems.map(function (item, index) {
-      return (React.createElement(ListItem, {item: item, key: "list-picker-item-" + index}));
-    });
-  },
-  render: function () {
-    return (
-      React.createElement("div", {className: "panel-block"}, 
-        React.createElement("h4", {className: "list-title", ref: "title"}, this.props.title, ":"), 
-        React.createElement("ul", {className: "list-picker", ref: "list"}, 
-          this._buildList(this.props.listItems)
-        )
-      )
-    );
-  }
-});
-
-var ListItem = React.createClass({displayName: "ListItem",
-  getDefaultProps: function() {
-    return {
-      item: {}
-    };
-  },
-  propTypes : {
-    item: React.PropTypes.object
-  },
-  render: function () {
-    var Component = this.props.item.listItemComponent;
-    return (
-      React.createElement("li", null, 
-        React.createElement(Component, React.__spread({},  this.props.item.listItemComponentProps), 
-          React.createElement("span", {className: "icon ic ic-chevron-right"}), 
-          this.props.item.name
-        )
-      )
-    );
-  }
-});
-
-module.exports = ListPicker;
-
-
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx":[function(require,module,exports){
 var React   = require('react');
 var classNames = require('classnames');
@@ -1291,22 +1142,6 @@ ModalDialog.Footer = React.createClass({displayName: "Footer",
 });
 
 module.exports = ModalDialog;
-
-
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx":[function(require,module,exports){
-var React = require('react');
-
-var PanelLeftSideBar = React.createClass({displayName: "PanelLeftSideBar",
-  render: function () {
-    return (
-      React.createElement("section", {id: this.props.id, className: "panel"}, 
-          this.props.children
-      )
-    );
-  }
-});
-
-module.exports = PanelLeftSideBar;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx":[function(require,module,exports){
@@ -1481,46 +1316,6 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
 });
 
 module.exports = SelectDropdown;
-
-
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx":[function(require,module,exports){
-var React = require('react');
-
-var Sidebar = React.createClass({displayName: "Sidebar",
-  render: function () {
-    return (
-      React.createElement("div", {className: "panel-sidebar"}, 
-        React.createElement("div", {className: "panel-sidebar-inner", ref: "sidebar"}, 
-          this.props.children
-        )
-      )
-    );
-  }
-});
-
-Sidebar.heading = React.createClass({displayName: "heading",
-  propTypes : {
-    title: React.PropTypes.string
-  },
-  render: function(){
-    var Component = this.props.headingComponent;
-    return (
-      React.createElement("div", {className: "panel-block", ref: "heading"}, 
-        React.createElement("h3", null, 
-          React.createElement(Component, React.__spread({},  this.props.headingComponentParams), 
-            this.props.title
-          )
-        ), 
-        this._buildMessage()
-      )
-    );
-  },
-  _buildMessage: function(){
-    return this.props.message ? (React.createElement("p", null,  this.props.message)) : "";
-  }
-});
-
-module.exports = Sidebar;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx":[function(require,module,exports){
@@ -39328,7 +39123,7 @@ Code.Props = React.createClass({displayName: "Props",
     var that = this;
     return _.map(this.props.patternProps, function(value, key){
       return (
-        React.createElement("tr", null, 
+        React.createElement("tr", {key: key}, 
           React.createElement("td", null, key), 
           React.createElement("td", null, value.type), 
           React.createElement("td", null, value.default), 
@@ -40470,7 +40265,7 @@ var IconPattern = React.createClass({displayName: "IconPattern",
   _buildIcons : function() {
     return _.map(icons, function(code, name){
       return (
-        React.createElement(IconExample, {code: code, name: name})
+        React.createElement(IconExample, {key: name, code: code, name: name})
       );
     });
   }
@@ -41886,7 +41681,7 @@ var AccordionControls = React.createClass({displayName: "AccordionControls",
     var that = this;
     return this.props.sections.map(function(section, index){
       return (
-        React.createElement("div", null, 
+        React.createElement("div", {key: index}, 
           React.createElement("h5", null, "Section ", index + 1), 
           React.createElement(Form.Row, null, 
             React.createElement(InputLabel, {label: "Is Enabled"}, 
@@ -42729,7 +42524,271 @@ var AlertControls = React.createClass({displayName: "AlertControls",
 module.exports = DetailedAlertPattern;
 
 
-},{"../../../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form        = require("../../../../infl-components/form.jsx");
+var ButtonGroup = require("../../../../infl-components/button_group.jsx");
+
+var FormActionsPattern = React.createClass({displayName: "FormActionsPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "form-actions-pattern"}, 
+        React.createElement(Pattern, {title: "form actions"}, 
+          React.createElement("p", null, "The form component is used for wrapping form sub components and aids in the styling and layout for forms."), 
+
+          React.createElement(Pattern.Detail, {title: "Form - Actions"}, 
+            React.createElement("p", null, "Should be used with Form.  Otherwise there will be no styling"), 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Form, null, 
+                React.createElement(Form.Actions, null, 
+                  React.createElement(ButtonGroup, null, 
+                    React.createElement("button", {className: "secondary"}, "Cancel"), 
+                    React.createElement("button", {className: "success"}, "Save")
+                  )
+                )
+              )
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Form>" + ' ' +
+                  "<Form.Actions>" + ' ' +
+                    "<ButtonGroup>" + ' ' +
+                      "<Button type=\"text\">Cancel</Button>" + ' ' +
+                      "<Button type=\"success\">Save</Button>" + ' ' +
+                    "</ButtonGroup>" + ' ' +
+                  "</Form.Actions>" + ' ' +
+                "</Form>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Form.Actions"}), 
+              React.createElement(Code.Props, {patternProps: this._buildFormActionsProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/form.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildFormActionsProps : function(){
+    return {
+      children : {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Button Group React element."
+      }
+    };
+  }
+});
+
+module.exports = FormActionsPattern;
+
+
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form        = require("../../../../infl-components/form.jsx");
+var Alert        = require("../../../../infl-components/alert.jsx");
+
+var FormAlertPattern = React.createClass({displayName: "FormAlertPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "form-alert-pattern"}, 
+        React.createElement(Pattern, {title: "form alert"}, 
+          React.createElement("p", null, "The form component is used for wrapping form sub components and aids in the styling and layout for forms."), 
+
+          React.createElement(Pattern.Detail, {title: "Form - Alert"}, 
+            React.createElement("p", null, "Form Alert is a wrapper for Alert.  It helps with spacing and styling."), 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Form, null, 
+                React.createElement(Form.Alert, null, 
+                  React.createElement(Alert, {title: "All fields are required", type: "error", showIcon: true})
+                )
+              )
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Form>" + ' ' +
+                  "<Form.Alert>" + ' ' +
+                    "<Alert title=\"All fields are required\" type=\"error\" showIcon=\"true\"></Alert>" + ' ' +
+                  "</Form.Alert>" + ' ' +
+                "</Form>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Form.Alert"}), 
+              React.createElement(Code.Props, {patternProps: this._buildFormAlertProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/form.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildFormAlertProps : function(){
+    return {
+      children: {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of Alert React Elements, preferably one."
+      }
+    };
+  }
+});
+
+module.exports = FormAlertPattern;
+
+
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form        = require("../../../../infl-components/form.jsx");
+var InputLabel  = require("../../../../infl-components/input_label.jsx");
+var TextInput   = require("../../../../infl-components/text_input.jsx");
+
+var FormColumnPattern = React.createClass({displayName: "FormColumnPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "form-column-pattern"}, 
+        React.createElement(Pattern, {title: "form column"}, 
+          React.createElement("p", null, "The form component is used for wrapping form sub components and aids in the styling and layout for forms."), 
+
+          React.createElement(Pattern.Detail, {title: "Form - Column"}, 
+            React.createElement("p", null, "Should be used with Form.  Otherwise there will be no styling.  Form can handle none, 2 and 3 columns"), 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Form, null, 
+                React.createElement(Form.Column, null, 
+                  React.createElement(Form.Row, null, 
+                    React.createElement(InputLabel, {label: "Text Input"}, 
+                      React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                    )
+                  ), 
+                  React.createElement(Form.Row, null, 
+                    React.createElement(InputLabel, {label: "Text Input"}, 
+                      React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                    )
+                  ), 
+                  React.createElement(Form.Row, null, 
+                    React.createElement(InputLabel, {label: "Text Input"}, 
+                      React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                    )
+                  )
+                ), 
+                React.createElement(Form.Column, null, 
+                  React.createElement(Form.Row, null, 
+                    React.createElement(InputLabel, {label: "Text Input"}, 
+                      React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                    )
+                  ), 
+                  React.createElement(Form.Row, null, 
+                    React.createElement(InputLabel, {label: "Text Input"}, 
+                      React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                    )
+                  ), 
+                  React.createElement(Form.Row, null, 
+                    React.createElement(InputLabel, {label: "Text Input"}, 
+                      React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                    )
+                  )
+                )
+              )
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Form>" + ' ' +
+                  "<Form.Column>" + ' ' +
+                    "<Form.Row>" + ' ' +
+                      "<InputLabel label=\"Text Input\" >" + ' ' +
+                        "<TextInput name=\"text-input\" placeholder=\"Text Input\"></TextInput>" + ' ' +
+                      "</InputLabel>" + ' ' +
+                    "</Form.Row>" + ' ' +
+                    "<Form.Row>" + ' ' +
+                      "<InputLabel label=\"Text Input\" >" + ' ' +
+                        "<TextInput name=\"text-input\" placeholder=\"Text Input\"></TextInput>" + ' ' +
+                      "</InputLabel>" + ' ' +
+                    "</Form.Row>" + ' ' +
+                    "<Form.Row>" + ' ' +
+                      "<InputLabel label=\"Text Input\" >" + ' ' +
+                        "<TextInput name=\"text-input\" placeholder=\"Text Input\"></TextInput>" + ' ' +
+                      "</InputLabel>" + ' ' +
+                    "</Form.Row>" + ' ' +
+                  "</Form.Column>" + ' ' +
+                  "<Form.Column>" + ' ' +
+                    "<Form.Row>" + ' ' +
+                      "<InputLabel label=\"Text Input\" >" + ' ' +
+                        "<TextInput name=\"text-input\" placeholder=\"Text Input\"></TextInput>" + ' ' +
+                      "</InputLabel>" + ' ' +
+                    "</Form.Row>" + ' ' +
+                    "<Form.Row>" + ' ' +
+                      "<InputLabel label=\"Text Input\" >" + ' ' +
+                        "<TextInput name=\"text-input\" placeholder=\"Text Input\"></TextInput>" + ' ' +
+                      "</InputLabel>" + ' ' +
+                    "</Form.Row>" + ' ' +
+                    "<Form.Row>" + ' ' +
+                      "<InputLabel label=\"Text Input\" >" + ' ' +
+                        "<TextInput name=\"text-input\" placeholder=\"Text Input\"></TextInput>" + ' ' +
+                      "</InputLabel>" + ' ' +
+                    "</Form.Row>" + ' ' +
+                  "</Form.Column>" + ' ' +
+                "</Form>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Form.Column"}), 
+              React.createElement(Code.Props, {patternProps: this._buildFormColumnProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/form.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildFormColumnProps : function(){
+    return {
+      children : {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of Form Row React elements."
+      }
+    };
+  }
+});
+
+module.exports = FormColumnPattern;
+
+
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -42746,15 +42805,6 @@ var FormPattern = React.createClass({displayName: "FormPattern",
         React.createElement(Pattern, {title: "form"}, 
           React.createElement("p", null, "The form component is used for wrapping form sub components and aids in the styling and layout for forms."), 
 
-          React.createElement(Require, null, 
-            React.createElement(Require.JS, null, 
-              "var Form = require(\"patternity/infl-components/form.jsx\");"
-            ), 
-            React.createElement(Require.CSS, null, 
-              "@import \"patternity/infl-styles/form\";"
-            )
-          ), 
-
           React.createElement(Pattern.Detail, {title: "Form"}, 
             React.createElement("p", null, "Form renders a form tag.  So there is not much to show... sorry"), 
 
@@ -42767,29 +42817,13 @@ var FormPattern = React.createClass({displayName: "FormPattern",
               React.createElement(Code.Props, {patternProps: this._buildFormProps()})
             )
           ), 
-          React.createElement(Pattern.Detail, {title: "Form - Rows"}, 
-            React.createElement("p", null, "Should be used with Form.  Otherwise there will be no styling"), 
-            React.createElement(Pattern.Show, null, 
-              React.createElement(Form, null, 
-                React.createElement(Form.Row, null, 
-                  React.createElement(InputLabel, {label: "Text Input"}, 
-                    React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
-                  )
-                )
-              )
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/form.jsx\");"
             ), 
-            React.createElement(Code, null, 
-              React.createElement(Code.JSX, null, 
-                "<Form>" + ' ' +
-                  "<Form.Row inputSize=\"large\">" + ' ' +
-                    "<InputLabel label=\"Text Input\" >" + ' ' +
-                      "<TextInput name=\"text-input\" placeholder=\"Text Input\" />" + ' ' +
-                    "</InputLabel>" + ' ' +
-                  "</Form.Row>" + ' ' +
-                "</Form>"
-              ), 
-              React.createElement(Code.WithoutJSX, {patternName: "Form.Row"}), 
-              React.createElement(Code.Props, {patternProps: this._buildFormRowProps()})
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
             )
           )
         )
@@ -42847,6 +42881,66 @@ var FormPattern = React.createClass({displayName: "FormPattern",
         description : "one of '_blank', '_self', '_parent', '_top'"
       }
     };
+  }
+});
+
+module.exports = FormPattern;
+
+
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form        = require("../../../../infl-components/form.jsx");
+var InputLabel  = require("../../../../infl-components/input_label.jsx");
+var TextInput   = require("../../../../infl-components/text_input.jsx");
+
+var FormRowPattern = React.createClass({displayName: "FormRowPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "form-row-pattern"}, 
+        React.createElement(Pattern, {title: "form row"}, 
+          React.createElement("p", null, "The form component is used for wrapping form sub components and aids in the styling and layout for forms."), 
+
+          React.createElement(Pattern.Detail, {title: "Form - Row"}, 
+            React.createElement("p", null, "Should be used with Form.  Otherwise there will be no styling"), 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Form, null, 
+                React.createElement(Form.Row, null, 
+                  React.createElement(InputLabel, {label: "Text Input"}, 
+                    React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                  )
+                )
+              )
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Form>" + ' ' +
+                  "<Form.Row inputSize=\"large\">" + ' ' +
+                    "<InputLabel label=\"Text Input\" >" + ' ' +
+                      "<TextInput name=\"text-input\" placeholder=\"Text Input\" />" + ' ' +
+                    "</InputLabel>" + ' ' +
+                  "</Form.Row>" + ' ' +
+                "</Form>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Form.Row"}), 
+              React.createElement(Code.Props, {patternProps: this._buildFormRowProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/form.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          )
+        )
+      )
+    );
   },
   _buildFormRowProps : function(){
     return {
@@ -42866,10 +42960,221 @@ var FormPattern = React.createClass({displayName: "FormPattern",
   }
 });
 
-module.exports = FormPattern;
+module.exports = FormRowPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form        = require("../../../../infl-components/form.jsx");
+var InputLabel  = require("../../../../infl-components/input_label.jsx");
+var TextInput   = require("../../../../infl-components/text_input.jsx");
+
+var FormSectionPattern = React.createClass({displayName: "FormSectionPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "form-section-pattern"}, 
+        React.createElement(Pattern, {title: "form section"}, 
+          React.createElement("p", null, "The form component is used for wrapping form sub components and aids in the styling and layout for forms."), 
+
+          React.createElement(Pattern.Detail, {title: "Form - Section"}, 
+            React.createElement("p", null, "Form Section defines a section of a large form.  It helps with spacing and dividing the form."), 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Form, null, 
+                React.createElement(Form.Section, null, 
+                  React.createElement(Form.Row, null, 
+                    React.createElement(InputLabel, {label: "Text Input"}, 
+                      React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                    )
+                  )
+                )
+              )
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Form>" + ' ' +
+                  "<Form.Section>" + ' ' +
+                    "<Form.Row>" + ' ' +
+                      "<InputLabel label=\"Text Input\" >" + ' ' +
+                        "<TextInput name=\"text-input\" placeholder=\"Text Input\" />" + ' ' +
+                      "</InputLabel>" + ' ' +
+                    "</Form.Row>" + ' ' +
+                  "</Form.Section>" + ' ' +
+                "</Form>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Form.Section"}), 
+              React.createElement(Code.Props, {patternProps: this._buildFormSectonProps()})
+            )
+          ), 
+
+          React.createElement(Pattern.Detail, {title: "Form - SectionTitle"}, 
+            React.createElement("p", null, "Form Section Title is to be used with Form Section and comes with optional description (children)."), 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Form, null, 
+                React.createElement(Form.Section, null, 
+                  React.createElement(Form.SectionTitle, {title: "My Form Section Title"}, 
+                      React.createElement("p", null, "This is my form section title description")
+                  ), 
+                  React.createElement(Form.Row, null, 
+                    React.createElement(InputLabel, {label: "Text Input"}, 
+                      React.createElement(TextInput, {name: "text-input", placeholder: "Text Input"})
+                    )
+                  )
+                )
+              )
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Form>" + ' ' +
+                  "<Form.Section>" + ' ' +
+                    "<Form.SectionTitle title=\"My Form Section Title\">" + ' ' +
+                      "<p>This is my form section title description</p>" + ' ' +
+                    "</Form.SectionTitle>" + ' ' +
+                    "<Form.Row>" + ' ' +
+                      "<InputLabel label=\"Text Input\" >" + ' ' +
+                        "<TextInput name=\"text-input\" placeholder=\"Text Input\"></TextInput>" + ' ' +
+                      "</InputLabel>" + ' ' +
+                    "</Form.Row>" + ' ' +
+                  "</Form.Section>" + ' ' +
+                "</Form>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Form.SectionTitle"}), 
+              React.createElement(Code.Props, {patternProps: this._buildFormSectonTitleProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/form.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildFormSectonProps : function(){
+    return {
+      hideDivider : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "Hides the divider for the section."
+      }
+    };
+  },
+  _buildFormSectonTitleProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Title of the form section."
+      },
+      children: {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of React Elements, HTML, etc."
+      }
+    };
+  }
+});
+
+module.exports = FormSectionPattern;
+
+
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form        = require("../../../../infl-components/form.jsx");
+var ButtonGroup = require("../../../../infl-components/button_group.jsx");
+
+var FormTitlePattern = React.createClass({displayName: "FormTitlePattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "form-title-pattern"}, 
+        React.createElement(Pattern, {title: "form title"}, 
+          React.createElement("p", null, "The form component is used for wrapping form sub components and aids in the styling and layout for forms."), 
+
+          React.createElement(Pattern.Detail, {title: "Form - Title"}, 
+            React.createElement("p", null, "Form Title comes with optional actions and description.  Actions placed in the title should be used in place of Form.Actions"), 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Form, null, 
+                React.createElement(Form.Title, {title: "My Form Title", actions: this._buildTitleActions()}, 
+                  React.createElement("p", null, "This is my form title description")
+                )
+              )
+            ), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Form>" + ' ' +
+                  "<Form.Title title=\"My Form Title\" actions=\"form_title_actions\">" + ' ' +
+                    "<p>This is my form title description</p>" + ' ' +
+                  "</Form.Title>" + ' ' +
+                "</Form>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Form.Title"}), 
+              React.createElement(Code.Props, {patternProps: this._buildFormTitleProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Form = require(\"patternity/infl-components/form.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/form\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildTitleActions : function(){
+    return (
+      React.createElement(ButtonGroup, null, 
+        React.createElement("button", {className: "secondary"}, "Cancel"), 
+        React.createElement("button", {className: "primary"}, "Save")
+      )
+    );
+  },
+  _buildFormTitleProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : true,
+        description : "Title of the form."
+      },
+      actions : {
+        type : "React Element or DOM Node",
+        default : "",
+        required : false,
+        description : "Optional actions for the form used in place of Form.Actions.  Actions should be Button Group."
+      },
+      children: {
+        type : "array",
+        default : "[...]",
+        required : false,
+        description : "Array of React Elements, HTML, etc."
+      }
+    }
+  }
+});
+
+module.exports = FormTitlePattern;
+
+
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');

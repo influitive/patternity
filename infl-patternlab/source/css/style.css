@@ -687,6 +687,9 @@ h4.list-title {
 }
 .accordion .accordion-section .section-heading.open + .section-details {
   max-height: 1000px;
+  -webkit-transition: max-height 0.5s ease-in;
+  -moz-transition: max-height 0.5s ease-in;
+  transition: max-height 0.5s ease-in;
 }
 .accordion .accordion-section .section-heading.disabled {
   color: #999999;
@@ -712,9 +715,9 @@ h4.list-title {
   border: 1px solid #cccccc;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: max-height 0.5s ease-out;
+  -moz-transition: max-height 0.5s ease-out;
+  transition: max-height 0.5s ease-out;
 }
 .accordion .accordion-section .section-details .section-details-inner {
   padding: 1.5em;

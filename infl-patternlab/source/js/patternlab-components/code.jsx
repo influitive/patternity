@@ -124,7 +124,7 @@ Code.Props = React.createClass({
     var that = this;
     return _.map(this.props.patternProps, function(value, key){
       return (
-        <tr>
+        <tr key={key}>
           <td>{key}</td>
           <td>{value.type}</td>
           <td>{value.default}</td>
