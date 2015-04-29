@@ -3,7 +3,6 @@ var React     = require('react');
 var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
 var Sidebar           = require("../../../../infl-components/sidebar.jsx");
 var Content           = require("../../../../infl-components/content.jsx");
-var ListPicker        = require("../../../../infl-components/list_picker.jsx");
 
 var Form            = require("../../../../infl-components/form.jsx");
 var InputLabel      = require("../../../../infl-components/input_label.jsx");
@@ -32,7 +31,7 @@ var FormPagePattern = React.createClass({
         <PanelLeftSidebar id="form-page">
           <Sidebar>
             <Sidebar.Heading title="Form Page Layouts" />
-            <ListPicker
+            <Sidebar.NavList
                 title="Select Layout"
                 key="form-layouts"
                 listItems={this._formLayoutItems()} />

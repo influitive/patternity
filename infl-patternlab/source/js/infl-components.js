@@ -1029,65 +1029,6 @@ var InputLabel = React.createClass({displayName: "InputLabel",
 module.exports = InputLabel;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx":[function(require,module,exports){
-var React   = require('react');
-
-var ListPicker = React.createClass({displayName: "ListPicker",
-  getDefaultProps: function() {
-    return {
-      title : "",
-      listItems: []
-    };
-  },
-  propTypes : {
-    listItems: React.PropTypes.array,
-    title : React.PropTypes.string
-  },
-  _buildList: function(listItems){
-    return this._buildListItems(listItems);
-  },
-  _buildListItems: function(listItems){
-    return listItems.map(function (item, index) {
-      return (React.createElement(ListItem, {item: item, key: "list-picker-item-" + index}));
-    });
-  },
-  render: function () {
-    return (
-      React.createElement("div", {className: "panel-block"}, 
-        React.createElement("h4", {className: "list-title", ref: "title"}, this.props.title, ":"), 
-        React.createElement("ul", {className: "list-picker", ref: "list"}, 
-          this._buildList(this.props.listItems)
-        )
-      )
-    );
-  }
-});
-
-var ListItem = React.createClass({displayName: "ListItem",
-  getDefaultProps: function() {
-    return {
-      item: {}
-    };
-  },
-  propTypes : {
-    item: React.PropTypes.object
-  },
-  render: function () {
-    var Component = this.props.item.listItemComponent;
-    return (
-      React.createElement("li", null, 
-        React.createElement(Component, React.__spread({},  this.props.item.listItemComponentProps), 
-          React.createElement("span", {className: "icon ic ic-chevron-right"}), 
-          this.props.item.name
-        )
-      )
-    );
-  }
-});
-
-module.exports = ListPicker;
-
-
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx":[function(require,module,exports){
 var React   = require('react');
 var classNames = require('classnames');
@@ -44458,7 +44399,6 @@ var React     = require('react');
 var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
 var Sidebar           = require("../../../../infl-components/sidebar.jsx");
 var Content           = require("../../../../infl-components/content.jsx");
-var ListPicker        = require("../../../../infl-components/list_picker.jsx");
 
 var Form            = require("../../../../infl-components/form.jsx");
 var InputLabel      = require("../../../../infl-components/input_label.jsx");
@@ -44487,7 +44427,7 @@ var FormPagePattern = React.createClass({displayName: "FormPagePattern",
         React.createElement(PanelLeftSidebar, {id: "form-page"}, 
           React.createElement(Sidebar, null, 
             React.createElement(Sidebar.Heading, {title: "Form Page Layouts"}), 
-            React.createElement(ListPicker, {
+            React.createElement(Sidebar.NavList, {
                 title: "Select Layout", 
                 key: "form-layouts", 
                 listItems: this._formLayoutItems()})
@@ -44737,5 +44677,5 @@ var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
 module.exports = FormPagePattern;
 
 
-},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/list_picker.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/list_picker.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
 });
