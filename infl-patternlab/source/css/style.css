@@ -2555,6 +2555,7 @@ body {
 
 .pattern-show {
   margin: 10px 0px;
+  overflow: auto;
 }
 
 .try-it-yourself .pt-modal-dialog {

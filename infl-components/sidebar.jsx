@@ -13,11 +13,21 @@ var Sidebar = React.createClass({
 });
 
 Sidebar.Heading = React.createClass({
+  getDefaultProps : function(){
+    return {
+      title : "",
+      message : "",
+      headingComponent : undefined,
+      headingComponentParams : {}
+    };
+  },
   propTypes : {
-    title: React.PropTypes.string
+    title: React.PropTypes.string,
+    message : React.PropTypes.string,
+    headingComponent : React.PropTypes.node,
+    headingComponentParams : React.PropTypes.object
   },
   render: function(){
-
     return (
       <div className="panel-block" ref="heading">
         <h3>
@@ -65,7 +75,7 @@ Sidebar.NavList = React.createClass({
   },
   render: function () {
     return (
-      <div className="panel-block">
+      <div className="panel-block sidebar-nav-list">
         <h4 className="list-title" ref="title">{this.props.title}:</h4>
         <ul className="list-picker" ref="list">
           {this._buildList(this.props.listItems)}
