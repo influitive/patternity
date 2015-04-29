@@ -41,25 +41,3 @@
   }
 }
 
-.panel-content {
-  @include span-columns(10);
-  @include omega();
-
-  background-color: white;
-  box-sizing: border-box;
-
-  &.no-colour {
-    background-color: transparent;
-  }
-
-  .panel-content-inner {
-    padding: $spacing-large;
-  }
-
-  @include media($mobile) {
-    @include row();
-    float: none;
-    width: 100%;
-  }
-}
-
