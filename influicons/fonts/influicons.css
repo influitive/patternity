@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "influicons";
+  src: url('influicons.eot');
+  src: url('influicons.eot?#iefix') format('eot'),
+    url('influicons.woff') format('woff'),
+    url('influicons.ttf') format('truetype'),
+    url('influicons.svg#influicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ic:before {
+  display: inline-block;
+  font-family: "influicons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+  
+}
+
+.ic-add:before { content: "\E001" }
+.ic-alert_caution:before { content: "\E002" }
+.ic-alert_error:before { content: "\E003" }
+.ic-alert_error2:before { content: "\E004" }
+.ic-alert_info:before { content: "\E005" }
+.ic-alert_question:before { content: "\E006" }
+.ic-alert_success:before { content: "\E007" }
+.ic-arrow_down:before { content: "\E008" }
+.ic-arrow_left:before { content: "\E009" }
+.ic-arrow_right:before { content: "\E00A" }
+.ic-arrow_up:before { content: "\E00B" }
+.ic-asterisk:before { content: "\E00C" }
+.ic-bell:before { content: "\E00D" }
+.ic-calendar:before { content: "\E00E" }
+.ic-checkmark:before { content: "\E00F" }
+.ic-chevron_down:before { content: "\E010" }
+.ic-chevron_left:before { content: "\E011" }
+.ic-chevron_right:before { content: "\E012" }
+.ic-chevron_up:before { content: "\E013" }
+.ic-clock:before { content: "\E014" }
+.ic-close:before { content: "\E015" }
+.ic-code:before { content: "\E016" }
+.ic-coins:before { content: "\E017" }
+.ic-edit:before { content: "\E018" }
+.ic-globe:before { content: "\E019" }
+.ic-grid:before { content: "\E01A" }
+.ic-hamburger:before { content: "\E01B" }
+.ic-heart:before { content: "\E01C" }
+.ic-list:before { content: "\E01D" }
+.ic-lock:before { content: "\E01E" }
+.ic-mail:before { content: "\E01F" }
+.ic-pin:before { content: "\E020" }
+.ic-quote1:before { content: "\E021" }
+.ic-quote1_fill:before { content: "\E022" }
+.ic-quote2:before { content: "\E023" }
+.ic-quote2_fill:before { content: "\E024" }
+.ic-search:before { content: "\E025" }
+.ic-share:before { content: "\E026" }
+.ic-speech:before { content: "\E027" }
+.ic-speech_2:before { content: "\E028" }
+.ic-star:before { content: "\E029" }
+.ic-subtract:before { content: "\E02A" }
+.ic-target:before { content: "\E02B" }
+.ic-trash:before { content: "\E02C" }
+.ic-unlock:before { content: "\E02D" }
+.ic-user:before { content: "\E02E" }
