@@ -22,6 +22,24 @@ gulp.task('influicons', function(){
         }))
         .pipe(gulp.dest('fonts/'));
 
+      gulp.src('templates/influicons-font.css')
+        .pipe(consolidate('lodash', {
+          glyphs: codepoints,
+          fontName: 'influicons',
+          fontPath: 'fonts/',
+          className: 'ic'
+        }))
+        .pipe(gulp.dest('fonts/'));
+
+      gulp.src('templates/influicons-icons.css')
+        .pipe(consolidate('lodash', {
+          glyphs: codepoints,
+          fontName: 'influicons',
+          fontPath: 'fonts/',
+          className: 'ic'
+        }))
+        .pipe(gulp.dest('fonts/'));
+
       gulp.src('templates/influicons.html')
         .pipe(consolidate('lodash', {
           glyphs: codepoints,
