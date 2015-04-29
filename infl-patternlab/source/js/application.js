@@ -37,6 +37,7 @@ inflComp.FormSectionPattern       = require("./patterns/molecules/form_section_p
 inflComp.FormAlertPattern         = require("./patterns/molecules/form_alert_pattern.jsx");
 inflComp.PanelLeftSidebarPattern  = require("./patterns/molecules/panel_left_sidebar_pattern.jsx");
 inflComp.ContentPattern           = require("./patterns/molecules/content_pattern.jsx");
+inflComp.SidebarPattern           = require("./patterns/molecules/sidebar_pattern.jsx");
 
 /* Organisims */
 

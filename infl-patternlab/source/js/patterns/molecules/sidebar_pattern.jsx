@@ -3,17 +3,17 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
-var Content = require("../../../../infl-components/content.jsx");
+var Sidebar = require("../../../../infl-components/sidebar.jsx");
 
 var ContentPattern = React.createClass({
   render : function(){
     return (
-      <div className="content-pattern">
-        <Pattern title="content">
-          <p>The Content component is used to help with page layout, and should be used with Panel Left Sidebar.</p>
+      <div className="sidebar-pattern">
+        <Pattern title="sidebar">
+          <p>The Sidebar component is used to help with page layout, and should be used with Panel Left Sidebar.</p>
 
-          <Pattern.Detail title="Content">
-            <p>Content renders a set of div tags.  So there is not much to show.  Below is a sample of the layout using PanelLeftSidebar and Sidebar as children.</p>
+          <Pattern.Detail title="Sidebar">
+            <p>Sidebar renders a set of div tags.  So there is not much to show.  Below is a sample of the layout using PanelLeftSidebar and Content as children.</p>
 
             <Pattern.SampleLayout>
               <div style={this.sampleStyle.panelLeftSidebar}>
@@ -29,42 +29,30 @@ var ContentPattern = React.createClass({
                   &lt;Content&gt;&lt;/Content&gt;
                 &lt;/PanelLeftSidebar&gt;
               </Code.JSX>
-              <Code.WithoutJSX patternName="Content" />
-              <Code.Props patternProps={this._buildContentProps()} />
+              <Code.WithoutJSX patternName="Sidebar" />
+              <Code.Props patternProps={this._buildSidebarProps()} />
             </Code>
           </Pattern.Detail>
 
           <Require>
             <Require.JS>
-              var Content = require("patternity/infl-components/content.jsx");
+              var Sidebar = require("patternity/infl-components/sidebar.jsx");
             </Require.JS>
             <Require.CSS>
-              @import "patternity/infl-styles/infl_base";
+              @import "patternity/infl-styles/sidebar";
             </Require.CSS>
           </Require>
         </Pattern>
       </div>
     );
   },
-  _buildContentProps : function(){
+  _buildSidebarProps : function(){
     return {
-      hasInnerPanel : {
-        type : "boolean",
-        default : "true",
-        required : false,
-        description : "Determines if the contents inner panel is rendered."
-      },
-      hasBackgroundColour : {
-        type : "boolean",
-        default : "true",
-        required : false,
-        description : "Determines if the content has a background colour of white or is transparent."
-      },
       children : {
         type : "array",
         default : "[...]",
         required : false,
-        description : "Array of html, rect components, etc."
+        description : "Array of Sidebar sub components (Heading, NavList), html, rect components, etc."
       }
     };
   },
@@ -80,14 +68,14 @@ var ContentPattern = React.createClass({
       float: "left",
       width: "60px",
       height: "100%",
-      backgroundColor : "white"
+      backgroundColor : "#ffcc00"
     },
     content : {
       float: "left",
       width: "125px",
       height: "100%",
       marginLeft : "5px",
-      backgroundColor : "#ffcc00",
+      backgroundColor : "white",
     }
   }
 });
