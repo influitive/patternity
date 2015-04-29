@@ -658,6 +658,37 @@ h4.list-title {
   display: table;
 }
 
+.panel-content {
+  float: left;
+  display: block;
+  margin-right: 2.17235405%;
+  width: 76.42176445%;
+  margin-right: 0;
+  background-color: white;
+  box-sizing: border-box;
+}
+.panel-content:last-child {
+  margin-right: 0;
+}
+.panel-content.no-colour {
+  background-color: transparent;
+}
+.panel-content .panel-content-inner {
+  padding: 1.5em;
+}
+@media screen and (max-width: 640px) {
+  .panel-content {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+  .panel-content::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
 /*body {
     font-size: $baseline-font-size !important;
     line-height: $baseline;
@@ -2248,37 +2279,6 @@ textarea {
 }
 .panel-sidebar .panel-sidebar-inner .panel-block h3 {
   color: #08a5c5;
-}
-
-.panel-content {
-  float: left;
-  display: block;
-  margin-right: 2.17235405%;
-  width: 76.42176445%;
-  margin-right: 0;
-  background-color: white;
-  box-sizing: border-box;
-}
-.panel-content:last-child {
-  margin-right: 0;
-}
-.panel-content.no-colour {
-  background-color: transparent;
-}
-.panel-content .panel-content-inner {
-  padding: 1.5em;
-}
-@media screen and (max-width: 640px) {
-  .panel-content {
-    display: block;
-    float: none;
-    width: 100%;
-  }
-  .panel-content::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
 }
 
 .list-picker {

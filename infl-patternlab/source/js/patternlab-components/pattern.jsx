@@ -111,4 +111,20 @@ Pattern.Requires = React.createClass({
   }
 });
 
+Pattern.SampleLayout = React.createClass({
+  getDefaultProps : function(){
+    return {
+      title : ""
+    };
+  },
+  render : function(){
+    return (
+      <div className="pattern-sample-layout">
+        <h4>Sample Layout</h4>
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
 module.exports = Pattern;

@@ -3,6 +3,7 @@ var React   = require('react');
 var ListPicker = React.createClass({
   getDefaultProps: function() {
     return {
+      title : "",
       listItems: []
     };
   },
