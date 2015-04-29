@@ -39,6 +39,8 @@ inflComp.FormAlertPattern         = require("./patterns/molecules/form_alert_pat
 inflComp.PanelLeftSidebarPattern  = require("./patterns/molecules/panel_left_sidebar_pattern.jsx");
 inflComp.ContentPattern           = require("./patterns/molecules/content_pattern.jsx");
 inflComp.SidebarPattern           = require("./patterns/molecules/sidebar_pattern.jsx");
+inflComp.SidebarNavListPattern    = require("./patterns/molecules/sidebar_nav_list_pattern.jsx");
+inflComp.SidebarHeadingPattern    = require("./patterns/molecules/sidebar_heading_pattern.jsx");
 
 /* Organisims */
 
@@ -48,7 +50,7 @@ inflComp.FormPagePattern          = require("./patterns/pages/form_page_pattern.
 module.exports = inflComp;
 
 
-},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -1406,11 +1408,21 @@ var Sidebar = React.createClass({displayName: "Sidebar",
 });
 
 Sidebar.Heading = React.createClass({displayName: "Heading",
+  getDefaultProps : function(){
+    return {
+      title : "",
+      message : "",
+      headingComponent : undefined,
+      headingComponentParams : {}
+    };
+  },
   propTypes : {
-    title: React.PropTypes.string
+    title: React.PropTypes.string,
+    message : React.PropTypes.string,
+    headingComponent : React.PropTypes.node,
+    headingComponentParams : React.PropTypes.object
   },
   render: function(){
-
     return (
       React.createElement("div", {className: "panel-block", ref: "heading"}, 
         React.createElement("h3", null, 
@@ -1458,7 +1470,7 @@ Sidebar.NavList = React.createClass({displayName: "NavList",
   },
   render: function () {
     return (
-      React.createElement("div", {className: "panel-block"}, 
+      React.createElement("div", {className: "panel-block sidebar-nav-list"}, 
         React.createElement("h4", {className: "list-title", ref: "title"}, this.props.title, ":"), 
         React.createElement("ul", {className: "list-picker", ref: "list"}, 
           this._buildList(this.props.listItems)
@@ -1755,6 +1767,11 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
     onChange : React.PropTypes.func,
     inputName : React.PropTypes.string
   },
+  componentWillReceiveProps: function (newProps) {
+    this.setState({
+      isOn: newProps.isOn
+    });
+  },
   render : function(){
     return (
       React.createElement("span", {id: this.props.id, className: this._switchCSSClasses(), onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
@@ -1767,11 +1784,6 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
         React.createElement("input", {type: "checkbox", ref: "checkbox", className: "toggle-checkbox", checked: this._isChecked(), name: this.props.inputName, onChange: this._handleChange, id: this.props.id})
       )
     );
-  },
-  componentWillReceiveProps: function (newProps) {
-    this.setState({
-      isOn: newProps.isOn
-    });
   },
   _toggleText : function(){
     return this.state.isOn ? "On" : "Off";
@@ -44173,7 +44185,226 @@ var PanelLeftSidebarPattern = React.createClass({displayName: "PanelLeftSidebarP
 module.exports = PanelLeftSidebarPattern;
 
 
-},{"../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+var TextInput       = require("../../../../infl-components/text_input.jsx");
+
+var Sidebar   = require("../../../../infl-components/sidebar.jsx");
+
+var SidebarHeadingPattern = React.createClass({displayName: "SidebarHeadingPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "sidebar-heading-pattern"}, 
+        React.createElement(Pattern, {title: "sidebar heading"}, 
+          React.createElement("p", null, "The Sidebar.Heading should be used with the Sidebar component.  It controls the title, a link or not, and optional message for the sidebar."), 
+
+          React.createElement(Pattern.Detail, {title: "Sidebar Heading"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Sidebar, null, 
+                React.createElement(Sidebar.Heading, {
+                    title: "Sidebar Heading", 
+                    message: "This is a sample sidebar heading.", 
+                    headingComponent: "a", 
+                    headingComponentParams: {
+                      href : "javascript:void(0);"
+                    }})
+              )
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Sidebar.Heading title=\"Sidebar Heading\" message=\"This is a sample sidebar heading.\" headingComponent=\"a\" headingComponentParams=\"params_object\" />"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Sidebar.Heading"}), 
+              React.createElement(Code.Props, {patternProps: this._buildSidebarHeadingProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Sidebar = require(\"patternity/infl-components/sidebar.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/sidebar\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildSidebarHeadingProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Title of the Sidebar Heading."
+      },
+      message : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Optional message to be displayed under the title."
+      },
+      headingComponent : {
+        type : "react link or a tag",
+        default : "undefined",
+        required : false,
+        description : "Determines if the title should be a link or not."
+      },
+      headingComponentParams : {
+        type : "object",
+        default : "{ }",
+        required : false,
+        description : "Prams to be passed with the headingComponent if defined."
+      }
+    };
+  }
+});
+
+module.exports = SidebarHeadingPattern;
+
+
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+var TextInput       = require("../../../../infl-components/text_input.jsx");
+
+var Sidebar   = require("../../../../infl-components/sidebar.jsx");
+
+var SidebarNavListPattern = React.createClass({displayName: "SidebarNavListPattern",
+  getInitialState : function(){
+    return {
+      activeNavListItem : "nav-list-item-one"
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "sidebar-nav-list-pattern"}, 
+        React.createElement(Pattern, {title: "sidebar nav list"}, 
+          React.createElement("p", null, "The Sidebar.NavList should be used with the Sidebar component.  It is a list of links used for navigation on a page."), 
+
+          React.createElement(Pattern.Detail, {title: "Sidebar Nav List"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(Sidebar, null, 
+                React.createElement(Sidebar.NavList, {
+                    title: "Sidebar Nav List", 
+                    key: "sidebar-nav-list", 
+                    listItems: this._navListItems()})
+              )
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Sidebar.NavList title=\"Sidebar Nav List\" key=\"sidebar-nav-list\" listItems=\"array_of_nav_list_item_objects\" />"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Sidebar.NavList"}), 
+              React.createElement(Code.Props, {patternProps: this._buildSidebarNavListProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Sidebar = require(\"patternity/infl-components/sidebar.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/sidebar\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  _navListItems : function(){
+    var that = this;
+    return [
+      {
+        name : "Nav List Item One",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : this._isNavListItemActive("nav-list-item-one"),
+          href : "javascript:void(0);",
+          onClick : function(){
+            that._changeActiveNavListItem("nav-list-item-one")
+          }
+        },
+        key : "nav-list-item-one"
+      },
+      {
+        name : "Nav List Item Two",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : this._isNavListItemActive("nav-list-item-two"),
+          href : "javascript:void(0);",
+          onClick : function(){
+            that._changeActiveNavListItem("nav-list-item-two")
+          }
+        },
+        key : "nav-list-item-two"
+      }
+    ];
+  },
+  _isNavListItemActive : function(item){
+    return item === this.state.activeNavListItem ? "active" : "";
+  },
+  _changeActiveNavListItem : function(item){
+    this.setState({
+      activeNavListItem : item
+    });
+  },
+  _buildSidebarNavListProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "Title of the Sidebar Nav List."
+      },
+      listItems: {
+        type : "array",
+        default : "[...]",
+        required : true,
+        description : "Array of NavListItem objects."
+      },
+      "listItems.name": {
+        type : "string",
+        default : "",
+        required : true,
+        description : "Name of the list item."
+      },
+      "listItems.listItemComponent": {
+        type : "react element or html DOM node",
+        default : "",
+        required : true,
+        description : "Type of component that will be used in the list.  A Link react element or a tag."
+      },
+      "listItems.listItemComponentProps": {
+        type : "object",
+        default : "{ }",
+        required : true,
+        description : "Props to be passed the the listItemComponent."
+      }
+    };
+  }
+});
+
+module.exports = SidebarNavListPattern;
+
+
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');

@@ -23,6 +23,11 @@ var ToggleSwitch = React.createClass({
     onChange : React.PropTypes.func,
     inputName : React.PropTypes.string
   },
+  componentWillReceiveProps: function (newProps) {
+    this.setState({
+      isOn: newProps.isOn
+    });
+  },
   render : function(){
     return (
       <span id={this.props.id} className={this._switchCSSClasses()} onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
@@ -35,11 +40,6 @@ var ToggleSwitch = React.createClass({
         <input type="checkbox" ref="checkbox" className="toggle-checkbox" checked={this._isChecked()} name={this.props.inputName} onChange={this._handleChange} id={this.props.id} />
       </span>
     );
-  },
-  componentWillReceiveProps: function (newProps) {
-    this.setState({
-      isOn: newProps.isOn
-    });
   },
   _toggleText : function(){
     return this.state.isOn ? "On" : "Off";
