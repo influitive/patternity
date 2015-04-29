@@ -1262,9 +1262,6 @@ var PanelLeftSideBar = React.createClass({displayName: "PanelLeftSideBar",
   propTypes : {
     id: React.PropTypes.string
   },
-  shouldComponentUpdate : function(){
-    return false;
-  },
   render: function () {
     return (
       React.createElement("section", {id: this.props.id, className: "panel"}, 
