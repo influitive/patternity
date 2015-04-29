@@ -42,6 +42,9 @@ inflComp.SidebarPattern           = require("./patterns/molecules/sidebar_patter
 inflComp.SidebarNavListPattern    = require("./patterns/molecules/sidebar_nav_list_pattern.jsx");
 inflComp.SidebarHeadingPattern    = require("./patterns/molecules/sidebar_heading_pattern.jsx");
 
+/* Utilities */
+inflComp.StoragePattern           = require("./patterns/utilities/storage_pattern.jsx");
+
 /* Organisims */
 
 /* Pages */
@@ -50,7 +53,7 @@ inflComp.FormPagePattern          = require("./patterns/pages/form_page_pattern.
 module.exports = inflComp;
 
 
-},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -39223,6 +39226,28 @@ Code.JSX = React.createClass({displayName: "JSX",
   }
 });
 
+Code.JS = React.createClass({displayName: "JS",
+  render : function(){
+    return (
+      React.createElement("div", {className: "code-js"}, 
+        React.createElement("h5", {className: "code-title"}, "Javascript"), 
+        React.createElement("pre", {className: "code"}, 
+          React.createElement("code", null, 
+            this._formatCode()
+          )
+        )
+      )
+    );
+  },
+  _formatCode : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
+  }
+});
+
 Code.HTML = React.createClass({displayName: "HTML",
   render : function(){
     return (
@@ -41616,7 +41641,7 @@ var ToggleSwitchPattern = React.createClass({displayName: "ToggleSwitchPattern",
     return (
       React.createElement("div", {className: "toggle-switch-pattern"}, 
         React.createElement(Pattern, {title: "toggle switch"}, 
-          React.createElement("p", null, "The toggle switch form element can be used in place of a checkbox to better visually indicate that a feature is turned on or off.  It also still acts as a form element checkbox and can be used with a form tag and form submit."), 
+          React.createElement("p", null, "The toggle switch form element can be used in place of a checkbox to better visually indicate that a feature is turned on or off.  It should be used only for enabling or disabling features, and should not be used within a form that requires a submit action.  It should save or update data as it changes."), 
           React.createElement("p", null, "It has two states enabled and disabled"), 
           React.createElement(Pattern.Detail, {title: "Toggle Switch"}, 
             React.createElement(Pattern.Show, null, 
@@ -44908,5 +44933,59 @@ var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
 module.exports = FormPagePattern;
 
 
-},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var StoragePattern = React.createClass({displayName: "StoragePattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "storage-pattern"}, 
+        React.createElement(Pattern, {title: "storage"}, 
+          React.createElement("p", null, "The Storage utility is a wrapper for accessing localStorage.  This will isolate the use of localStorage in the app and allow for easier mocking when writing tests."), 
+
+          React.createElement(Pattern.Detail, {title: "Storage.getItem"}, 
+            React.createElement("p", null, "getItem is used to retreive data from localStorage.  It has a couple additional features it will JSON.parse the value on retrieval and has a default value.  Default is what will be passed back if the item comes back from localStorage as null."), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JS, null, 
+                "var itemValue = Storage.getItem(key, defaultValue);"
+              )
+            )
+          ), 
+
+          React.createElement(Pattern.Detail, {title: "Storage.setItem"}, 
+            React.createElement("p", null, "setItem is used to save data to localStorage.  It has an additional feature.  It will JSON.stringify the value when it is set."), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JS, null, 
+                "Storage.setItem(key, value);"
+              )
+            )
+          ), 
+
+          React.createElement(Pattern.Detail, {title: "Storage.removeItem"}, 
+            React.createElement("p", null, "removeItem is used to remove data from localStorage."), 
+            React.createElement(Code, null, 
+              React.createElement(Code.JS, null, 
+                "Storage.removeItem(key);"
+              )
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Storage = require(\"patternity/infl-components/utilities/storage.js\");"
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = StoragePattern;
+
+
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
 });

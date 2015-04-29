@@ -37,6 +37,28 @@ Code.JSX = React.createClass({
   }
 });
 
+Code.JS = React.createClass({
+  render : function(){
+    return (
+      <div className="code-js">
+        <h5 className="code-title">Javascript</h5>
+        <pre className="code">
+          <code>
+            {this._formatCode()}
+          </code>
+        </pre>
+      </div>
+    );
+  },
+  _formatCode : function(){
+    return beautify_html(this.props.children.toString(), {
+      "--indent-inner-html" : true,
+      "--preserve-newlines" : true,
+      "--indent-size" : 2
+    });
+  }
+});
+
 Code.HTML = React.createClass({
   render : function(){
     return (
