@@ -9,9 +9,6 @@ var PanelLeftSideBar = React.createClass({
   propTypes : {
     id: React.PropTypes.string
   },
-  shouldComponentUpdate : function(){
-    return false;
-  },
   render: function () {
     return (
       <section id={this.props.id} className="panel">
