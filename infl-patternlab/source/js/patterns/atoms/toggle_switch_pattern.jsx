@@ -10,7 +10,7 @@ var ToggleSwitchPattern = React.createClass({
     return (
       <div className="toggle-switch-pattern">
         <Pattern title="toggle switch">
-          <p>The toggle switch form element can be used in place of a checkbox to better visually indicate that a feature is turned on or off.  It also still acts as a form element checkbox and can be used with a form tag and form submit.</p>
+          <p>The toggle switch form element can be used in place of a checkbox to better visually indicate that a feature is turned on or off.  It should be used only for enabling or disabling features, and should not be used within a form that requires a submit action.  It should save or update data as it changes.</p>
           <p>It has two states enabled and disabled</p>
           <Pattern.Detail title="Toggle Switch">
             <Pattern.Show>
