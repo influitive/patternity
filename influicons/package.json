@@ -1,0 +1,12 @@
+{
+  "name": "influicons",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-consolidate": "*",
+    "gulp-iconfont": "*",
+    "gulp-iconfont-css": "*",
+    "lodash": "*"
+  }
+}
