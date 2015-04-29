@@ -1,0 +1,59 @@
+.ic:before {
+    display: inline-block;
+    font-family: "influicons";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+.ic-500donotdeletethis:before { content: "\E001" }
+.ic-add:before { content: "\E002" }
+.ic-alert_caution:before { content: "\E003" }
+.ic-alert_error:before { content: "\E004" }
+.ic-alert_error2:before { content: "\E005" }
+.ic-alert_info:before { content: "\E006" }
+.ic-alert_question:before { content: "\E007" }
+.ic-alert_success:before { content: "\E008" }
+.ic-arrow_down:before { content: "\E009" }
+.ic-arrow_left:before { content: "\E00A" }
+.ic-arrow_right:before { content: "\E00B" }
+.ic-arrow_up:before { content: "\E00C" }
+.ic-asterisk:before { content: "\E00D" }
+.ic-bell:before { content: "\E00E" }
+.ic-calendar:before { content: "\E00F" }
+.ic-checkmark:before { content: "\E010" }
+.ic-chevron_down:before { content: "\E011" }
+.ic-chevron_left:before { content: "\E012" }
+.ic-chevron_right:before { content: "\E013" }
+.ic-chevron_up:before { content: "\E014" }
+.ic-clock:before { content: "\E015" }
+.ic-close:before { content: "\E016" }
+.ic-code:before { content: "\E017" }
+.ic-coins:before { content: "\E018" }
+.ic-edit:before { content: "\E019" }
+.ic-globe:before { content: "\E01A" }
+.ic-grid:before { content: "\E01B" }
+.ic-hamburger:before { content: "\E01C" }
+.ic-heart:before { content: "\E01D" }
+.ic-list:before { content: "\E01E" }
+.ic-lock:before { content: "\E01F" }
+.ic-mail:before { content: "\E020" }
+.ic-pin:before { content: "\E021" }
+.ic-quote1:before { content: "\E022" }
+.ic-quote1_fill:before { content: "\E023" }
+.ic-quote2:before { content: "\E024" }
+.ic-quote2_fill:before { content: "\E025" }
+.ic-search:before { content: "\E026" }
+.ic-share:before { content: "\E027" }
+.ic-speech:before { content: "\E028" }
+.ic-speech_2:before { content: "\E029" }
+.ic-star:before { content: "\E02A" }
+.ic-subtract:before { content: "\E02B" }
+.ic-target:before { content: "\E02C" }
+.ic-trash:before { content: "\E02D" }
+.ic-unlock:before { content: "\E02E" }
+.ic-user:before { content: "\E02F" }
