@@ -43,6 +43,11 @@ var TextInput = React.createClass({
   getInitialState: function() {
     return {value: this.props.value};
   },
+  componentWillReceiveProps: function(newProps){
+    this.setState({
+      value : newProps.value
+    });
+  },
   render : function(){
     return (
       <span className={this._determineInputStyling()}>
