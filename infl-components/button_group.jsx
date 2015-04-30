@@ -9,7 +9,7 @@ var ButtonGroup = React.createClass({
     };
   },
   propTypes : {
-    layout : React.PropTypes.string,
+    layout : React.PropTypes.oneOf(['inline', 'stacked']),
     grouped : React.PropTypes.bool
   },
   render: function () {
