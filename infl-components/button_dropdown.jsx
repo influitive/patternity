@@ -22,10 +22,10 @@ var ButtonDropdown = React.createClass({
   },
   render : function(){
     return (
-      <div className={"button-dropdown " + this._isDropdownOpen()}>
-        <button className={this.props.type} onClick={this._toggleDropdownOptions}>
-          <span>{this.props.title}</span>
-          <span className="arrow ic ic-chevron-down"></span>
+      <div className={"button-dropdown " + this._isDropdownOpen()} ref="buttonDropdown">
+        <button ref="button" className={this.props.type} onClick={this._toggleDropdownOptions}>
+          <span ref="title">{this.props.title}</span>
+          <span ref="icon" className="arrow ic ic-chevron-down"></span>
         </button>
         <ul className="options">
           {this._buildDropdown()}
