@@ -1698,6 +1698,11 @@ var TextInput = React.createClass({displayName: "TextInput",
   getInitialState: function() {
     return {value: this.props.value};
   },
+  componentWillReceiveProps: function(newProps){
+    this.setState({
+      value : newProps.value
+    });
+  },
   render : function(){
     return (
       React.createElement("span", {className: this._determineInputStyling()}, 
