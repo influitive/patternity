@@ -1,5 +1,7 @@
 var React = require('react');
 
+var hideInTimeout;
+
 var AlertMixin = {
   getInitialState: function() {
     return {
@@ -17,13 +19,15 @@ var AlertMixin = {
     this._hideAlert(this.props.hideIn);
   },
   componentWillUpdate : function(nextProps){
-    if(nextProps.hideIn !== this.props.hideIn){
-      this._hideAlert(nextProps.hideIn);
-    }
+    this._clearHideInTimeout();
+    this._hideAlert(nextProps.hideIn);
+  },
+  _clearHideInTimeout : function(){
+    window.clearTimeout(hideInTimeout);
   },
   _hideAlert : function(hideIn){
     if(hideIn > 0) {
-      setTimeout(this._close, this._hideInMilliseconds(hideIn));
+      hideInTimeout = setTimeout(this._close, this._hideInMilliseconds(hideIn));
     }
   },
   _hideInMilliseconds : function(hideIn){
