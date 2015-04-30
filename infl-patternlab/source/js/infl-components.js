@@ -296,6 +296,8 @@ module.exports = ActionAlert;
 },{"./alert_mixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js":[function(require,module,exports){
 var React = require('react');
 
+var hideInTimeout;
+
 var AlertMixin = {
   getInitialState: function() {
     return {
@@ -313,13 +315,15 @@ var AlertMixin = {
     this._hideAlert(this.props.hideIn);
   },
   componentWillUpdate : function(nextProps){
-    if(nextProps.hideIn !== this.props.hideIn){
-      this._hideAlert(nextProps.hideIn);
-    }
+    this._clearHideInTimeout();
+    this._hideAlert(nextProps.hideIn);
+  },
+  _clearHideInTimeout : function(){
+    window.clearTimeout(hideInTimeout);
   },
   _hideAlert : function(hideIn){
     if(hideIn > 0) {
-      setTimeout(this._close, this._hideInMilliseconds(hideIn));
+      hideInTimeout = setTimeout(this._close, this._hideInMilliseconds(hideIn));
     }
   },
   _hideInMilliseconds : function(hideIn){
@@ -959,7 +963,8 @@ var classNames = require('classnames');
 
 var Icon = React.createClass({displayName: "Icon",
   propTypes: {
-    icon: React.PropTypes.string.isRequired
+    icon: React.PropTypes.string.isRequired,
+    className: React.PropTypes.string
   },
   render: function() {
     return (
@@ -40468,7 +40473,8 @@ var icons = {
   'Clock' : 'clock',
   'List' : 'list',
   'Grid' : 'grid',
-  'Globe' : 'globe'
+  'Globe' : 'globe',
+  'Speech': 'speech'
 };
 
 var IconPattern = React.createClass({displayName: "IconPattern",
