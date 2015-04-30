@@ -27,15 +27,13 @@ var ButtonDropdown = React.createClass({
           <span ref="title">{this.props.title}</span>
           <span ref="icon" className="arrow ic ic-chevron-down"></span>
         </button>
-        <ul className="options">
+        <ul ref="options" className="options">
           {this._buildDropdown()}
         </ul>
       </div>
     );
   },
   _toggleDropdownOptions: function(event){
-    // event.stopPropagation();
-    // event.nativeEvent.stopImmediatePropagation();
     this.setState({ isDropdownOpen : !this.state.isDropdownOpen });
   },
   _isDropdownOpen : function(){
