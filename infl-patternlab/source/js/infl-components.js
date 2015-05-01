@@ -877,6 +877,11 @@ module.exports = Form;
 var React = require('react');
 
 var HelpTooltip = React.createClass({displayName: "HelpTooltip",
+  getDefaultProps: function(){
+    return {
+      title : ""
+    };
+  },
   getInitialState: function() {
     return {
       showTooltip: false,
@@ -885,22 +890,22 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
     };
   },
   propTypes : {
-    title: React.PropTypes.string,
-    children: React.PropTypes.array
+    title: React.PropTypes.string
   },
   render : function(){
     return (
-      React.createElement("span", {className: "help-tooltip"}, 
-        React.createElement("div", {className: "tooltip-content " + this._showTooltip()}, 
-          React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this._clickCloseTooltip}), 
-          React.createElement("h3", null, this.props.title), 
+      React.createElement("span", {className: "help-tooltip", ref: "helpTooltip"}, 
+        React.createElement("div", {className: "tooltip-content " + this._showTooltip(), ref: "tip"}, 
+          React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this._clickCloseTooltip, ref: "close"}), 
+          React.createElement("h3", {ref: "title"}, this.props.title), 
           this.props.children
         ), 
         React.createElement("span", {className: "help ic ic-question-circle-o", 
           onClick: this._clickTooltip, 
           onTouchStart: this._clickShowTooltip, 
           onMouseEnter: this._hoverShowTooltip, 
-          onMouseLeave: this._hoverHideTooltip}
+          onMouseLeave: this._hoverHideTooltip, 
+          ref: "help"}
         )
       )
     );

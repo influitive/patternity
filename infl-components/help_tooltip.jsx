@@ -1,6 +1,11 @@
 var React = require('react');
 
 var HelpTooltip = React.createClass({
+  getDefaultProps: function(){
+    return {
+      title : ""
+    };
+  },
   getInitialState: function() {
     return {
       showTooltip: false,
@@ -9,22 +14,24 @@ var HelpTooltip = React.createClass({
     };
   },
   propTypes : {
-    title: React.PropTypes.string,
-    children: React.PropTypes.array
+    title: React.PropTypes.string
   },
   render : function(){
     return (
-      <span className="help-tooltip">
-        <div className={"tooltip-content " + this._showTooltip()}>
-          <span className={"close ic ic-times " + this._showClose()} onClick={this._clickCloseTooltip}></span>
-          <h3>{this.props.title}</h3>
-          {this.props.children}
+      <span className="help-tooltip" ref="helpTooltip">
+        <div className={"tooltip-content " + this._showTooltip()} ref="tip">
+          <span className={"close ic ic-times " + this._showClose()} onClick={this._clickCloseTooltip} ref="close"></span>
+          <h3 ref="title">{this.props.title}</h3>
+          <div className="tooltip-details" ref="details">
+            {this.props.children}
+          </div>
         </div>
         <span className="help ic ic-question-circle-o"
           onClick={this._clickTooltip}
           onTouchStart={this._clickShowTooltip}
           onMouseEnter={this._hoverShowTooltip}
-          onMouseLeave={this._hoverHideTooltip}>
+          onMouseLeave={this._hoverHideTooltip}
+          ref="help">
         </span>
       </span>
     );
