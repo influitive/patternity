@@ -35,16 +35,18 @@ var InputLabel = React.createClass({
     return this.props.children[0].props.name ? this.props.children[0].props.name : "";
   },
   _requiredInput : function(){
+    if(this._isRequiredInput()) {
+      return (<span className="ic ic-asterisk required-icon"></span>);
+    }
+  },
+  _isRequiredInput : function(){
     var foundRequired = false;
     React.Children.map(this.props.children, function(child){
       if(child.props.required && !foundRequired) {
         foundRequired = true;
       }
     });
-
-    if(foundRequired) {
-      return (<span className="ic ic-asterisk required-icon"></span>);
-    }
+    return foundRequired;
   }
 });
 
