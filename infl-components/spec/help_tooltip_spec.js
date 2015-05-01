@@ -49,7 +49,7 @@ describe('Help Tooltip Component', function() {
       );
     });
 
-  it('will render the content component', function() {
+  it('will render the help tooltip component', function() {
     expect(helpTooltipElement.className).to.contain("help-tooltip");
     expect(helpElement.className.split(' ')).to.have.members(['help', 'ic', 'ic-question-circle-o']);
   });

@@ -13,7 +13,7 @@ var InputLabel = React.createClass({
   },
   render : function(){
     return (
-      <span className={"pt-label " + this.props.layout + " " + this._multiInput()}>
+      <span className={"pt-label " + this.props.layout + " " + this._multiInput()} ref="inputLabel">
         <label htmlFor={this._determineLabelFor()} ref="label">
           <span>{this.props.label + ":"}</span>
           {this._requiredInput()}
