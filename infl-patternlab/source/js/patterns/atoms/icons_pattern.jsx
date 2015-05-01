@@ -7,49 +7,7 @@ var ModalDialog = require("../../../../infl-components/modal_dialog.jsx");
 
 var Icon        = require("../../../../infl-components/icon.jsx");
 
-var icons = {
-  'User': 'user',
-  'Bell': 'bell',
-  'Search': 'search',
-  'Mail': 'mail',
-  'Check Mark': 'check',
-  'Close (Times)': 'times',
-  'Check Circle Hollow': 'check-circle-o',
-  'Close (Times) Circle Hollow': 'times-circle-o',
-  'Exclamation Circle Hollow': 'exclamation-circle-o',
-  'Info Circle Hollow': 'info-circle-o',
-  'Question Circle Hollow': 'question-circle-o',
-  'Plus': 'plus',
-  'Minus': 'minus',
-  'Coins': 'coins',
-  'Lock': 'lock',
-  'Unlock': 'unlock',
-  'Asterisk': 'asterisk',
-  'Chevron Down': 'chevron-down',
-  'Chevron Up': 'chevron-up',
-  'Chevron Left': 'chevron-left',
-  'Chevron Right': 'chevron-right',
-  'Arrow Down': 'arrow-down',
-  'Arrow Up': 'arrow-up',
-  'Arrow Left': 'arrow-left',
-  'Arrow Right': 'arrow-right',
-  'Calendar': 'calendar',
-  'Speech': 'speech',
-  'Heart': 'heart',
-  'Star': 'star',
-  'Pin': 'pin',
-  'Pencil': 'pencil',
-  'Trash': 'trash',
-  'Opening Quote' : 'quote-open',
-  'Closing Quote' : 'quote-close',
-  'Opening Quote Fill' : 'quote-fill-open',
-  'Closing Quote Fill' : 'quote-fill-close',
-  'Clock' : 'clock',
-  'List' : 'list',
-  'Grid' : 'grid',
-  'Globe' : 'globe',
-  'Speech': 'speech'
-};
+var icons = require("./influicons-list.js").icons;
 
 var IconPattern = React.createClass({
   render : function(){

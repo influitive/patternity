@@ -1,0 +1,24 @@
+<html>
+<head>
+    <link rel="stylesheet" href="influicons.css" type="text/css" />
+    <title>influicons</title>
+    <style>
+        .ic { font-size:100px; }
+    </style>
+</head>
+
+<body>
+<ul>
+    <%
+    _.each(glyphs, function(glyph) {
+        %>
+        <p>
+            <span class="<%= className %> <%= className %>-<%= glyph.name %>" /></span>
+            &lt;span class="<%= className %> <%= className %>-<%= glyph.name %>"&gt;
+        </p>
+        <%
+    });
+    %>
+</ul>
+</body>
+</html>
