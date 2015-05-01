@@ -3,7 +3,7 @@ var React  = require("react/addons");
 var ReactTestUtils = React.addons.TestUtils;
 var simulate  = ReactTestUtils.Simulate;
 
-var Form = require("Form");
+var Form = require("form");
 
 var chai = require("chai");
 var sinon = require("sinon");
