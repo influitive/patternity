@@ -15,8 +15,12 @@ var expect = chai.expect;
 describe('Content Component', function() {
   var subject, contentElement, contentInnerPannelElement;
 
+  function renderContent(contentComponent){
+    subject = ReactTestUtils.renderIntoDocument(contentComponent);
+  }
+
   it('will render the content component', function() {
-    subject = ReactTestUtils.renderIntoDocument(
+    renderContent(
       <Content>
         <p>test</p>
       </Content>
@@ -27,7 +31,7 @@ describe('Content Component', function() {
 
   describe('Inner Pannel', function () {
     it('will render the content inner pannel', function() {
-      subject = ReactTestUtils.renderIntoDocument(
+      renderContent(
         <Content>
           <p>test</p>
         </Content>
@@ -37,7 +41,7 @@ describe('Content Component', function() {
     });
 
     it('will not render the content inner pannel if hasInnerPanel is false', function() {
-      subject = ReactTestUtils.renderIntoDocument(
+      renderContent(
         <Content hasInnerPanel={false}>
           <p>test</p>
         </Content>
@@ -46,7 +50,7 @@ describe('Content Component', function() {
     });
 
     it('will render children inside inner pannel if hasInnerPanel is true', function() {
-      subject = ReactTestUtils.renderIntoDocument(
+      renderContent(
         <Content hasInnerPanel={true}>
           <p>test</p>
         </Content>
@@ -56,7 +60,7 @@ describe('Content Component', function() {
     });
 
     it('will render children inside the content pannel if hasInnerPanel is false', function() {
-      subject = ReactTestUtils.renderIntoDocument(
+      renderContent(
         <Content hasInnerPanel={false}>
           <p>test</p>
         </Content>
@@ -68,7 +72,7 @@ describe('Content Component', function() {
 
   describe('Has Background Color', function () {
     it('will render the content component with a background colour by default', function() {
-      subject = ReactTestUtils.renderIntoDocument(
+      renderContent(
         <Content>
           <p>test</p>
         </Content>
@@ -78,7 +82,7 @@ describe('Content Component', function() {
     });
 
     it('will render the content component with a background colour if hasBackgroundColour is true', function() {
-      subject = ReactTestUtils.renderIntoDocument(
+      renderContent(
         <Content hasBackgroundColour={true}>
           <p>test</p>
         </Content>
@@ -88,7 +92,7 @@ describe('Content Component', function() {
     });
 
     it('will render the content component without a background colour if hasBackgroundColour is false', function() {
-      subject = ReactTestUtils.renderIntoDocument(
+      renderContent(
         <Content hasBackgroundColour={false}>
           <p>test</p>
         </Content>
