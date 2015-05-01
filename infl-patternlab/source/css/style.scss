@@ -262,6 +262,7 @@ body {
 
       .pt-modal-body {
         overflow: hidden;
+
         .pattern-controls {
           float: left;
           width: 40%;
@@ -308,6 +309,11 @@ body {
                 .pt-modal-dialog {
                   position: absolute;
 
+                  &.scrolling-body {
+                    .pt-modal-body {
+                      overflow: scroll;
+                    }
+                  }
                   .pt-modal {
                     min-height: initial;
                     margin: 30px auto;
@@ -316,10 +322,6 @@ body {
                       top: 10px;
                       right: 10px;
                       font-size: 30px;
-                    }
-
-                    .pt-modal-body {
-                      overflow: scroll;
                     }
 
                     .pt-modal-header {

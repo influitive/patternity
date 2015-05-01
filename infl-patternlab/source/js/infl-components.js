@@ -898,7 +898,9 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
         React.createElement("div", {className: "tooltip-content " + this._showTooltip(), ref: "tip"}, 
           React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this._clickCloseTooltip, ref: "close"}), 
           React.createElement("h3", {ref: "title"}, this.props.title), 
-          this.props.children
+          React.createElement("div", {className: "tooltip-details", ref: "details"}, 
+            this.props.children
+          )
         ), 
         React.createElement("span", {className: "help ic ic-question-circle-o", 
           onClick: this._clickTooltip, 
@@ -1004,7 +1006,7 @@ var InputLabel = React.createClass({displayName: "InputLabel",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "pt-label " + this.props.layout + " " + this._multiInput()}, 
+      React.createElement("span", {className: "pt-label " + this.props.layout + " " + this._multiInput(), ref: "inputLabel"}, 
         React.createElement("label", {htmlFor: this._determineLabelFor(), ref: "label"}, 
           React.createElement("span", null, this.props.label + ":"), 
           this._requiredInput()
@@ -1026,16 +1028,18 @@ var InputLabel = React.createClass({displayName: "InputLabel",
     return this.props.children[0].props.name ? this.props.children[0].props.name : "";
   },
   _requiredInput : function(){
+    if(this._isRequiredInput()) {
+      return (React.createElement("span", {className: "ic ic-asterisk required-icon"}));
+    }
+  },
+  _isRequiredInput : function(){
     var foundRequired = false;
     React.Children.map(this.props.children, function(child){
       if(child.props.required && !foundRequired) {
         foundRequired = true;
       }
     });
-
-    if(foundRequired) {
-      return (React.createElement("span", {className: "ic ic-asterisk required-icon"}));
-    }
+    return foundRequired;
   }
 });
 
@@ -1063,7 +1067,7 @@ var Loading = React.createClass({displayName: "Loading",
   },
   render: function () {
     return (
-      React.createElement("span", {className: "loading-spinner " + this.props.size + " " + this.props.type + " " + this._isModal() + " " + this._isInline()})
+      React.createElement("span", {className: "loading-spinner " + this.props.size + " " + this.props.type + " " + this._isModal() + " " + this._isInline(), ref: "loading"})
     );
   },
   _isModal: function(){
@@ -1114,9 +1118,9 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
   },
   render : function(){
     return (
-      React.createElement("div", {className: "pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody() + " " + this._lightbox(), onClick: this._closeDialog}, 
-        React.createElement("section", {className: "pt-modal " + this.props.size}, 
-          React.createElement("span", {className: "close-dialog ic ic-times " + this._isModalCloseable(), onClick: this._closeDialog}), 
+      React.createElement("div", {id: this.props.id, className: "pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody() + " " + this._lightbox(), onClick: this._closeDialog, ref: "modalDialog"}, 
+        React.createElement("section", {className: "pt-modal " + this.props.size, ref: "modal"}, 
+          React.createElement("span", {className: "close-dialog ic ic-times " + this._isModalCloseable(), onClick: this._closeDialog, ref: "close"}), 
           this.props.children
         )
       )
@@ -1126,7 +1130,7 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
     return this.props.closeable ? "" : "disable-close";
   },
   _scrollingModalBody : function(){
-    return this.props.scrollingBody ? "scrollingBody" : "";
+    return this.props.scrollingBody ? "scrolling-body" : "";
   },
   _disableBodyScroll : function(){
     if(this.state.isModalOpen){
@@ -40573,6 +40577,8 @@ module.exports = IconPattern;
 var icons = {
 
 
+    "500donotdeletethis-test": "500donotdeletethis-test",
+  
     "alert-caution": "alert-caution",
   
     "arrow-down": "arrow-down",
