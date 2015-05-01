@@ -34,10 +34,10 @@ var Checkbox = React.createClass({
   },
   render : function(){
     return (
-      <span id={this.props.id} className={this._checkboxCSSClasses()} onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
-        <span className="stylized-checkbox"></span>
-        <span className="pt-checkbox-label">{this.props.checkboxLabel}</span>
-        <input disabled={!this.props.enabled} type="checkbox" ref="checkbox" className="pt-native-checkbox" value={this.props.value} checked={this._isChecked()} name={this.props.checkboxName} onChange={this._handleChange} id={this.props.id} />
+      <span id={this.props.id} className={this._checkboxCSSClasses()} ref="checkbox" onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
+        <span className="stylized-checkbox" ref="stylizedCheckbox"></span>
+        <span className="pt-checkbox-label" ref="label">{this.props.checkboxLabel}</span>
+        <input disabled={!this.props.enabled} type="checkbox" ref="nativeCheckbox" className="pt-native-checkbox" value={this.props.value} checked={this._isChecked()} name={this.props.checkboxName} onChange={this._handleChange} id={this.props.id} />
       </span>
     );
   },
@@ -53,7 +53,7 @@ var Checkbox = React.createClass({
   },
   _clickCheckBox : function(){
     if(this.props.enabled){
-      this.refs.checkbox.getDOMNode().click();
+      this.refs.nativeCheckbox.getDOMNode().click();
     }
   },
   _handleChange : function(event){
@@ -75,7 +75,7 @@ Checkbox.Group = React.createClass({
   },
   render : function(){
     return (
-      <span className={"pt-checkbox-group " + this.props.layout} id={this.props.id}>
+      <span className={"pt-checkbox-group " + this.props.layout} id={this.props.id} ref="group">
         {this.props.children}
       </span>
     );

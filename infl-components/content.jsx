@@ -13,7 +13,7 @@ var Content = React.createClass({
   },
   render: function () {
     return (
-      <div className={"panel-content " + this._doesContentHaveBackgroundColour()}>
+      <div className={"panel-content " + this._doesContentHaveBackgroundColour()} ref="contentPannel">
         {this._contentHasInnerPanel()}
       </div>
     );
@@ -24,7 +24,7 @@ var Content = React.createClass({
   _contentHasInnerPanel : function(){
     if(this.props.hasInnerPanel){
       return (
-        <div className="panel-content-inner">
+        <div className="panel-content-inner" ref="contentInnerPannel">
           {this.props.children}
         </div>
       );
