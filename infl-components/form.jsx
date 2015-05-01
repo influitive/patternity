@@ -80,9 +80,6 @@ var Form = React.createClass({
   _isFormRow : function(child){
     return child.className.indexOf('pt-form-row') > -1;
   },
-  _isFormAction : function(child) {
-
-  },
   _styleColumns : function(columns){
     columns.map(function(column){
       column.className = column.className + " column-num-" + columns.length;
@@ -96,7 +93,7 @@ Form.Column = React.createClass({
   },
   render: function () {
     return (
-      <div className="pt-form-column">
+      <div className="pt-form-column" ref="column">
         {this.props.children}
       </div>
     );
@@ -127,7 +124,7 @@ Form.Actions = React.createClass({
   },
   render: function () {
     return (
-      <div className="pt-form-actions">
+      <div className="pt-form-actions" ref="actions">
         {this.props.children}
       </div>
     );
@@ -147,12 +144,12 @@ Form.Title = React.createClass({
   },
   render: function () {
     return (
-      <div className="pt-form-title">
+      <div className="pt-form-title" ref="title">
         <h2>{this.props.title}</h2>
-        <div className="pt-form-title-actions">
+        <div className="pt-form-title-actions" ref="actions">
           {this.props.actions}
         </div>
-        <div className="pt-form-title-description">
+        <div className="pt-form-title-description" ref="description">
           {this.props.children}
         </div>
       </div>
@@ -171,7 +168,7 @@ Form.Section = React.createClass({
   },
   render: function () {
     return (
-      <div className={"pt-form-section " + this._divider()}>
+      <div className={"pt-form-section " + this._divider()} ref="section">
         {this.props.children}
       </div>
     );
@@ -192,9 +189,9 @@ Form.SectionTitle = React.createClass({
   },
   render: function () {
     return (
-      <div className="pt-form-section-title">
+      <div className="pt-form-section-title" ref="title">
         <h3>{this.props.title}</h3>
-        <div className="pt-form-section-title-description">
+        <div className="pt-form-section-title-description" ref="description">
           {this.props.children}
         </div>
       </div>
@@ -205,7 +202,7 @@ Form.SectionTitle = React.createClass({
 Form.Alert = React.createClass({
   render: function () {
     return (
-      <div className="pt-form-alert">
+      <div className="pt-form-alert" ref="alert">
         {this.props.children}
       </div>
     );
