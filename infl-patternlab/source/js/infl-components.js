@@ -463,20 +463,18 @@ var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
   },
   render : function(){
     return (
-      React.createElement("div", {className: "button-dropdown " + this._isDropdownOpen()}, 
-        React.createElement("button", {className: this.props.type, onClick: this._toggleDropdownOptions}, 
-          React.createElement("span", null, this.props.title), 
-          React.createElement("span", {className: "arrow ic ic-chevron-down"})
+      React.createElement("div", {className: "button-dropdown " + this._isDropdownOpen(), ref: "buttonDropdown"}, 
+        React.createElement("button", {ref: "button", className: this.props.type, onClick: this._toggleDropdownOptions}, 
+          React.createElement("span", {ref: "title"}, this.props.title), 
+          React.createElement("span", {ref: "icon", className: "arrow ic ic-chevron-down"})
         ), 
-        React.createElement("ul", {className: "options"}, 
+        React.createElement("ul", {ref: "options", className: "options"}, 
           this._buildDropdown()
         )
       )
     );
   },
   _toggleDropdownOptions: function(event){
-    // event.stopPropagation();
-    // event.nativeEvent.stopImmediatePropagation();
     this.setState({ isDropdownOpen : !this.state.isDropdownOpen });
   },
   _isDropdownOpen : function(){
@@ -511,7 +509,7 @@ var ButtonGroup = React.createClass({displayName: "ButtonGroup",
     };
   },
   propTypes : {
-    layout : React.PropTypes.string,
+    layout : React.PropTypes.oneOf(['inline', 'stacked']),
     grouped : React.PropTypes.bool
   },
   render: function () {
@@ -566,10 +564,10 @@ var Checkbox = React.createClass({displayName: "Checkbox",
   },
   render : function(){
     return (
-      React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses(), onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
-        React.createElement("span", {className: "stylized-checkbox"}), 
-        React.createElement("span", {className: "pt-checkbox-label"}, this.props.checkboxLabel), 
-        React.createElement("input", {disabled: !this.props.enabled, type: "checkbox", ref: "checkbox", className: "pt-native-checkbox", value: this.props.value, checked: this._isChecked(), name: this.props.checkboxName, onChange: this._handleChange, id: this.props.id})
+      React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses(), ref: "checkbox", onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
+        React.createElement("span", {className: "stylized-checkbox", ref: "stylizedCheckbox"}), 
+        React.createElement("span", {className: "pt-checkbox-label", ref: "label"}, this.props.checkboxLabel), 
+        React.createElement("input", {disabled: !this.props.enabled, type: "checkbox", ref: "nativeCheckbox", className: "pt-native-checkbox", value: this.props.value, checked: this._isChecked(), name: this.props.checkboxName, onChange: this._handleChange, id: this.props.id})
       )
     );
   },
@@ -585,7 +583,7 @@ var Checkbox = React.createClass({displayName: "Checkbox",
   },
   _clickCheckBox : function(){
     if(this.props.enabled){
-      this.refs.checkbox.getDOMNode().click();
+      this.refs.nativeCheckbox.getDOMNode().click();
     }
   },
   _handleChange : function(event){
