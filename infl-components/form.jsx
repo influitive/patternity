@@ -80,6 +80,9 @@ var Form = React.createClass({
   _isFormRow : function(child){
     return child.className.indexOf('pt-form-row') > -1;
   },
+  _isFormAction : function(child){
+    return child.className.indexOf('pt-form-actions') > -1;
+  },
   _styleColumns : function(columns){
     columns.map(function(column){
       column.className = column.className + " column-num-" + columns.length;

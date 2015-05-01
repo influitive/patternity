@@ -605,7 +605,7 @@ Checkbox.Group = React.createClass({displayName: "Group",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "pt-checkbox-group " + this.props.layout, id: this.props.id}, 
+      React.createElement("span", {className: "pt-checkbox-group " + this.props.layout, id: this.props.id, ref: "group"}, 
         this.props.children
       )
     );
@@ -631,7 +631,7 @@ var Content = React.createClass({displayName: "Content",
   },
   render: function () {
     return (
-      React.createElement("div", {className: "panel-content " + this._doesContentHaveBackgroundColour()}, 
+      React.createElement("div", {className: "panel-content " + this._doesContentHaveBackgroundColour(), ref: "contentPannel"}, 
         this._contentHasInnerPanel()
       )
     );
@@ -642,7 +642,7 @@ var Content = React.createClass({displayName: "Content",
   _contentHasInnerPanel : function(){
     if(this.props.hasInnerPanel){
       return (
-        React.createElement("div", {className: "panel-content-inner"}, 
+        React.createElement("div", {className: "panel-content-inner", ref: "contentInnerPannel"}, 
           this.props.children
         )
       );
@@ -738,8 +738,8 @@ var Form = React.createClass({displayName: "Form",
   _isFormRow : function(child){
     return child.className.indexOf('pt-form-row') > -1;
   },
-  _isFormAction : function(child) {
-
+  _isFormAction : function(child){
+    return child.className.indexOf('pt-form-actions') > -1;
   },
   _styleColumns : function(columns){
     columns.map(function(column){
@@ -754,7 +754,7 @@ Form.Column = React.createClass({displayName: "Column",
   },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-column"}, 
+      React.createElement("div", {className: "pt-form-column", ref: "column"}, 
         this.props.children
       )
     );
@@ -785,7 +785,7 @@ Form.Actions = React.createClass({displayName: "Actions",
   },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-actions"}, 
+      React.createElement("div", {className: "pt-form-actions", ref: "actions"}, 
         this.props.children
       )
     );
@@ -805,12 +805,12 @@ Form.Title = React.createClass({displayName: "Title",
   },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-title"}, 
+      React.createElement("div", {className: "pt-form-title", ref: "title"}, 
         React.createElement("h2", null, this.props.title), 
-        React.createElement("div", {className: "pt-form-title-actions"}, 
+        React.createElement("div", {className: "pt-form-title-actions", ref: "actions"}, 
           this.props.actions
         ), 
-        React.createElement("div", {className: "pt-form-title-description"}, 
+        React.createElement("div", {className: "pt-form-title-description", ref: "description"}, 
           this.props.children
         )
       )
@@ -829,7 +829,7 @@ Form.Section = React.createClass({displayName: "Section",
   },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-section " + this._divider()}, 
+      React.createElement("div", {className: "pt-form-section " + this._divider(), ref: "section"}, 
         this.props.children
       )
     );
@@ -850,9 +850,9 @@ Form.SectionTitle = React.createClass({displayName: "SectionTitle",
   },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-section-title"}, 
+      React.createElement("div", {className: "pt-form-section-title", ref: "title"}, 
         React.createElement("h3", null, this.props.title), 
-        React.createElement("div", {className: "pt-form-section-title-description"}, 
+        React.createElement("div", {className: "pt-form-section-title-description", ref: "description"}, 
           this.props.children
         )
       )
@@ -863,7 +863,7 @@ Form.SectionTitle = React.createClass({displayName: "SectionTitle",
 Form.Alert = React.createClass({displayName: "Alert",
   render: function () {
     return (
-      React.createElement("div", {className: "pt-form-alert"}, 
+      React.createElement("div", {className: "pt-form-alert", ref: "alert"}, 
         this.props.children
       )
     );
@@ -40431,49 +40431,7 @@ var ModalDialog = require("../../../../infl-components/modal_dialog.jsx");
 
 var Icon        = require("../../../../infl-components/icon.jsx");
 
-var icons = {
-  'User': 'user',
-  'Bell': 'bell',
-  'Search': 'search',
-  'Mail': 'mail',
-  'Check Mark': 'check',
-  'Close (Times)': 'times',
-  'Check Circle Hollow': 'check-circle-o',
-  'Close (Times) Circle Hollow': 'times-circle-o',
-  'Exclamation Circle Hollow': 'exclamation-circle-o',
-  'Info Circle Hollow': 'info-circle-o',
-  'Question Circle Hollow': 'question-circle-o',
-  'Plus': 'plus',
-  'Minus': 'minus',
-  'Coins': 'coins',
-  'Lock': 'lock',
-  'Unlock': 'unlock',
-  'Asterisk': 'asterisk',
-  'Chevron Down': 'chevron-down',
-  'Chevron Up': 'chevron-up',
-  'Chevron Left': 'chevron-left',
-  'Chevron Right': 'chevron-right',
-  'Arrow Down': 'arrow-down',
-  'Arrow Up': 'arrow-up',
-  'Arrow Left': 'arrow-left',
-  'Arrow Right': 'arrow-right',
-  'Calendar': 'calendar',
-  'Speech': 'speech',
-  'Heart': 'heart',
-  'Star': 'star',
-  'Pin': 'pin',
-  'Pencil': 'pencil',
-  'Trash': 'trash',
-  'Opening Quote' : 'quote-open',
-  'Closing Quote' : 'quote-close',
-  'Opening Quote Fill' : 'quote-fill-open',
-  'Closing Quote Fill' : 'quote-fill-close',
-  'Clock' : 'clock',
-  'List' : 'list',
-  'Grid' : 'grid',
-  'Globe' : 'globe',
-  'Speech': 'speech'
-};
+var icons = require("./influicons-list.js").icons;
 
 var IconPattern = React.createClass({displayName: "IconPattern",
   render : function(){
@@ -40603,7 +40561,115 @@ var IconDetails = React.createClass({displayName: "IconDetails",
 module.exports = IconPattern;
 
 
-},{"../../../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","./influicons-list.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/influicons-list.js","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/influicons-list.js":[function(require,module,exports){
+// WARNING!! DANGER!! THIS FILE IS AUTOMATIGICALLY GENERATED BY "gulp"
+// THE SOURCE FILE IS infl-icons/templates/influicons-list.js
+
+var icons = {
+
+
+    "alert-caution": "alert-caution",
+  
+    "arrow-down": "arrow-down",
+  
+    "arrow-left": "arrow-left",
+  
+    "arrow-right": "arrow-right",
+  
+    "arrow-up": "arrow-up",
+  
+    "asterisk": "asterisk",
+  
+    "bell": "bell",
+  
+    "calendar": "calendar",
+  
+    "check-circle-o": "check-circle-o",
+  
+    "check": "check",
+  
+    "chevron-down": "chevron-down",
+  
+    "chevron-left": "chevron-left",
+  
+    "chevron-right": "chevron-right",
+  
+    "chevron-up": "chevron-up",
+  
+    "clock": "clock",
+  
+    "close-circle-o": "close-circle-o",
+  
+    "close": "close",
+  
+    "code": "code",
+  
+    "coins": "coins",
+  
+    "exclamation-circle-o": "exclamation-circle-o",
+  
+    "globe": "globe",
+  
+    "grid": "grid",
+  
+    "hamburger": "hamburger",
+  
+    "heart": "heart",
+  
+    "info-circle-o": "info-circle-o",
+  
+    "list": "list",
+  
+    "lock": "lock",
+  
+    "mail": "mail",
+  
+    "minus": "minus",
+  
+    "pencil": "pencil",
+  
+    "pin": "pin",
+  
+    "plus": "plus",
+  
+    "question-circle-o": "question-circle-o",
+  
+    "quote-close": "quote-close",
+  
+    "quote-fill-close": "quote-fill-close",
+  
+    "quote-fill-open": "quote-fill-open",
+  
+    "quote-open": "quote-open",
+  
+    "search": "search",
+  
+    "share": "share",
+  
+    "speech-2": "speech-2",
+  
+    "speech": "speech",
+  
+    "star": "star",
+  
+    "target": "target",
+  
+    "times-circle-o": "times-circle-o",
+  
+    "times": "times",
+  
+    "trash": "trash",
+  
+    "unlock": "unlock",
+  
+    "user": "user",
+  
+
+};
+
+exports.icons = icons;
+
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
