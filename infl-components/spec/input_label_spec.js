@@ -56,4 +56,23 @@ describe('Input Label Component', function() {
     );
     expect(labelElement.lastChild.className).to.contain("required-icon");
   });
+
+  it('will set the for of the label to the name of the input', function() {
+    var testName = "testName";
+    renderInputLabel(
+      <InputLabel layout="inline" label="Field Label">
+        <TextInput type="text" required={true} name={testName} placeholder="Text Input" message="Hint: Fill in this field."></TextInput>
+      </InputLabel>
+    );
+    expect(labelElement.getAttribute("for")).to.equal(testName);
+  });
+
+  it('will display the input that is passed to it', function() {
+    renderInputLabel(
+      <InputLabel layout="inline" label="Field Label">
+        <TextInput type="text" required={true} placeholder="Text Input" message="Hint: Fill in this field."></TextInput>
+      </InputLabel>
+    );
+    expect(inputLabelElement.lastChild.className).to.contain("pt-input");
+  });
 });
