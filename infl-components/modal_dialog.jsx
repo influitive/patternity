@@ -46,7 +46,7 @@ var ModalDialog = React.createClass({
     return this.props.closeable ? "" : "disable-close";
   },
   _scrollingModalBody : function(){
-    return this.props.scrollingBody ? "scrollingBody" : "";
+    return this.props.scrollingBody ? "scrolling-body" : "";
   },
   _disableBodyScroll : function(){
     if(this.state.isModalOpen){

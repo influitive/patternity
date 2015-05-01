@@ -38,13 +38,15 @@ describe('Modal Dialog Component', function() {
       closeable : true,
       size : "medium",
       onClose : function(){},
-      isModalOpen : false
+      isModalOpen : false,
+      scrollingBody : false,
+      lightbox : true
     };
 
     _.defaults(defaultConfig, config);
 
     renderModalDialog(
-      <ModalDailog id={config.id} closeable={config.closeable} size={config.size} onClose={config.onClose} isModalOpen={config.isModalOpen} >
+      <ModalDailog id={config.id} closeable={config.closeable} size={config.size} onClose={config.onClose} isModalOpen={config.isModalOpen} scrollingBody={config.scrollingBody} lightbox={config.lightbox}>
         <ModalDailog.Header title="Modal Dialog Header Title" />
         <ModalDailog.Body>
             <p>This is the modal body. This is the modal body.</p>
@@ -74,6 +76,22 @@ describe('Modal Dialog Component', function() {
       id : testId
     });
     expect(modalDialogElement.id).to.equal(testId);
+  });
+
+  it('will disabled the scroll of the body when open', function () {
+    buildModalDialog({
+      isModalOpen : true
+    });
+    var bodyElement = document.getElementsByTagName('body')[0];
+    expect(bodyElement.style.overflow).to.equal("hidden");
+  });
+
+  xit('will enable the scroll of the body when closed', function () {
+    buildModalDialog({
+      isModalOpen : false
+    });
+    var bodyElement = document.getElementsByTagName('body')[0];
+    expect(bodyElement.style.overflow).to.equal("auto");
   });
 
   describe('Closeable', function () {
@@ -126,15 +144,15 @@ describe('Modal Dialog Component', function() {
   });
 
   describe('On Close', function () {
-    // it('will call on close when dialog closes', function() {
-    //   var mockOnClose = sinon.spy();
-    //   buildModalDialog({
-    //     onClose : mockOnClose,
-    //     isModalOpen : true
-    //   });
-    //   simulate.click(closeElement);
-    //   expect(mockOnClose).to.have.been.called();
-    // });
+    xit('will call on close when dialog closes', function() {
+      var mockOnClose = sinon.spy();
+      buildModalDialog({
+        onClose : mockOnClose,
+        isModalOpen : true
+      });
+      simulate.click(closeElement);
+      expect(mockOnClose).to.have.been.called();
+    });
   });
 
   describe('Is Modal Open', function () {
@@ -163,6 +181,41 @@ describe('Modal Dialog Component', function() {
         isModalOpen : true
       });
       expect(modalDialogElement.className).not.to.contain("close");
+    });
+  });
+
+  describe('Scrolling Body', function () {
+    it('will render the modal dialog with no scrolling body by default', function() {
+      buildModalDialog({});
+      expect(modalDialogElement.className).not.to.contain("scrolling");
+    });
+
+    it('will render the modal dialog with no scrolling body when scrollingBody is false', function() {
+      buildModalDialog({
+        scrollingBody : false
+      });
+      expect(modalDialogElement.className).not.to.contain("scrolling");
+    });
+
+    it('will render the modal dialog with scrolling body when scrollingBody is true', function() {
+      buildModalDialog({
+        scrollingBody : true
+      });
+      expect(modalDialogElement.className).to.contain("scrolling");
+    });
+  });
+
+  describe('Lightbox', function () {
+    it('will render the modal dialog as lightbox by default', function() {
+      buildModalDialog({});
+      expect(modalDialogElement.className).to.contain("lightbox");
+    });
+
+    it('will render the modal dialog as lightbox when lightbox is false', function() {
+      buildModalDialog({
+        lightbox : false
+      });
+      expect(modalDialogElement.className).not.to.contain("lightbox");
     });
   });
 });

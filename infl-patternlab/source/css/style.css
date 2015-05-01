@@ -913,196 +913,200 @@ h4.list-title {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ic.ic-alert-caution:before {
-  content: "";
+.ic.ic-500donotdeletethis-test:before {
+  content: "";
 }
 
-.ic.ic-arrow-down:before {
+.ic.ic-alert-caution:before {
   content: "";
 }
 
-.ic.ic-arrow-left:before {
+.ic.ic-arrow-down:before {
   content: "";
 }
 
-.ic.ic-arrow-right:before {
+.ic.ic-arrow-left:before {
   content: "";
 }
 
-.ic.ic-arrow-up:before {
+.ic.ic-arrow-right:before {
   content: "";
 }
 
-.ic.ic-asterisk:before {
+.ic.ic-arrow-up:before {
   content: "";
 }
 
-.ic.ic-bell:before {
+.ic.ic-asterisk:before {
   content: "";
 }
 
-.ic.ic-calendar:before {
+.ic.ic-bell:before {
   content: "";
 }
 
-.ic.ic-check-circle-o:before {
+.ic.ic-calendar:before {
   content: "";
 }
 
-.ic.ic-check:before {
+.ic.ic-check-circle-o:before {
   content: "";
 }
 
-.ic.ic-chevron-down:before {
+.ic.ic-check:before {
   content: "";
 }
 
-.ic.ic-chevron-left:before {
+.ic.ic-chevron-down:before {
   content: "";
 }
 
-.ic.ic-chevron-right:before {
+.ic.ic-chevron-left:before {
   content: "";
 }
 
-.ic.ic-chevron-up:before {
+.ic.ic-chevron-right:before {
   content: "";
 }
 
-.ic.ic-clock:before {
+.ic.ic-chevron-up:before {
   content: "";
 }
 
-.ic.ic-close-circle-o:before {
+.ic.ic-clock:before {
   content: "";
 }
 
-.ic.ic-close:before {
+.ic.ic-close-circle-o:before {
   content: "";
 }
 
-.ic.ic-code:before {
+.ic.ic-close:before {
   content: "";
 }
 
-.ic.ic-coins:before {
+.ic.ic-code:before {
   content: "";
 }
 
-.ic.ic-exclamation-circle-o:before {
+.ic.ic-coins:before {
   content: "";
 }
 
-.ic.ic-globe:before {
+.ic.ic-exclamation-circle-o:before {
   content: "";
 }
 
-.ic.ic-grid:before {
+.ic.ic-globe:before {
   content: "";
 }
 
-.ic.ic-hamburger:before {
+.ic.ic-grid:before {
   content: "";
 }
 
-.ic.ic-heart:before {
+.ic.ic-hamburger:before {
   content: "";
 }
 
-.ic.ic-info-circle-o:before {
+.ic.ic-heart:before {
   content: "";
 }
 
-.ic.ic-list:before {
+.ic.ic-info-circle-o:before {
   content: "";
 }
 
-.ic.ic-lock:before {
+.ic.ic-list:before {
   content: "";
 }
 
-.ic.ic-mail:before {
+.ic.ic-lock:before {
   content: "";
 }
 
-.ic.ic-minus:before {
+.ic.ic-mail:before {
   content: "";
 }
 
-.ic.ic-pencil:before {
+.ic.ic-minus:before {
   content: "";
 }
 
-.ic.ic-pin:before {
+.ic.ic-pencil:before {
   content: "";
 }
 
-.ic.ic-plus:before {
+.ic.ic-pin:before {
   content: "";
 }
 
-.ic.ic-question-circle-o:before {
+.ic.ic-plus:before {
   content: "";
 }
 
-.ic.ic-quote-close:before {
+.ic.ic-question-circle-o:before {
   content: "";
 }
 
-.ic.ic-quote-fill-close:before {
+.ic.ic-quote-close:before {
   content: "";
 }
 
-.ic.ic-quote-fill-open:before {
+.ic.ic-quote-fill-close:before {
   content: "";
 }
 
-.ic.ic-quote-open:before {
+.ic.ic-quote-fill-open:before {
   content: "";
 }
 
-.ic.ic-search:before {
+.ic.ic-quote-open:before {
   content: "";
 }
 
-.ic.ic-share:before {
+.ic.ic-search:before {
   content: "";
 }
 
-.ic.ic-speech-2:before {
+.ic.ic-share:before {
   content: "";
 }
 
-.ic.ic-speech:before {
+.ic.ic-speech-2:before {
   content: "";
 }
 
-.ic.ic-star:before {
+.ic.ic-speech:before {
   content: "";
 }
 
-.ic.ic-target:before {
+.ic.ic-star:before {
   content: "";
 }
 
-.ic.ic-times-circle-o:before {
+.ic.ic-target:before {
   content: "";
 }
 
-.ic.ic-times:before {
+.ic.ic-times-circle-o:before {
   content: "";
 }
 
-.ic.ic-trash:before {
+.ic.ic-times:before {
   content: "";
 }
 
-.ic.ic-unlock:before {
+.ic.ic-trash:before {
   content: "";
 }
 
-.ic.ic-user:before {
+.ic.ic-unlock:before {
   content: "";
+}
+
+.ic.ic-user:before {
+  content: "";
 }
 
 .button,
@@ -1638,7 +1642,7 @@ textarea {
 }
 .pt-select .select-box:after {
   font-family: 'influicons';
-  content: "";
+  content: "";
   display: block;
   position: absolute;
   font-size: 20px;
@@ -1878,7 +1882,7 @@ textarea {
 }
 .pt-checkbox.isChecked .stylized-checkbox:before {
   font-family: 'influicons';
-  content: "";
+  content: "";
   color: #666666;
   position: absolute;
   font-size: 18px;
@@ -2175,15 +2179,15 @@ textarea {
 .pt-modal-dialog.close {
   top: -10000px;
 }
-.pt-modal-dialog.scrollingBody {
+.pt-modal-dialog.scrolling-body {
   overflow: auto;
 }
-.pt-modal-dialog.scrollingBody .pt-modal {
+.pt-modal-dialog.scrolling-body .pt-modal {
   height: calc(100% - 60px);
   padding-top: 78px;
   padding-bottom: 64px;
 }
-.pt-modal-dialog.scrollingBody .pt-modal .pt-modal-header {
+.pt-modal-dialog.scrolling-body .pt-modal .pt-modal-header {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -2191,11 +2195,11 @@ textarea {
   background-color: #fff;
   padding-top: 24px;
 }
-.pt-modal-dialog.scrollingBody .pt-modal .pt-modal-body {
+.pt-modal-dialog.scrolling-body .pt-modal .pt-modal-body {
   overflow: scroll;
   height: 100%;
 }
-.pt-modal-dialog.scrollingBody .pt-modal .pt-modal-footer {
+.pt-modal-dialog.scrolling-body .pt-modal .pt-modal-footer {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -2695,6 +2699,9 @@ body {
 .try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog {
   position: absolute;
 }
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog.scrolling-body .pt-modal-body {
+  overflow: scroll;
+}
 .try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog .pt-modal {
   min-height: initial;
   margin: 30px auto;
@@ -2703,9 +2710,6 @@ body {
   top: 10px;
   right: 10px;
   font-size: 30px;
-}
-.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog .pt-modal .pt-modal-body {
-  overflow: scroll;
 }
 .try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area .pt-modal-dialog .pt-modal .pt-modal-header h3 {
   font-size: 19px;
