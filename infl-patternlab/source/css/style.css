@@ -913,200 +913,196 @@ h4.list-title {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ic.ic-500donotdeletethis-test:before {
-  content: "";
-}
-
 .ic.ic-alert-caution:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-arrow-down:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-arrow-left:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-arrow-right:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-arrow-up:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-asterisk:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-bell:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-calendar:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-check-circle-o:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-check:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-chevron-down:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-chevron-left:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-chevron-right:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-chevron-up:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-clock:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-close-circle-o:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-close:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-code:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-coins:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-exclamation-circle-o:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-globe:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-grid:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-hamburger:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-heart:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-info-circle-o:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-list:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-lock:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-mail:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-minus:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-pencil:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-pin:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-plus:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-question-circle-o:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-quote-close:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-quote-fill-close:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-quote-fill-open:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-quote-open:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-search:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-share:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-speech-2:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-speech:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-star:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-target:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-times-circle-o:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-times:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-trash:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-unlock:before {
-  content: "";
+  content: "";
 }
 
 .ic.ic-user:before {
-  content: "";
+  content: "";
 }
 
 .button,
@@ -1642,7 +1638,7 @@ textarea {
 }
 .pt-select .select-box:after {
   font-family: 'influicons';
-  content: "";
+  content: "";
   display: block;
   position: absolute;
   font-size: 20px;
@@ -1882,7 +1878,7 @@ textarea {
 }
 .pt-checkbox.isChecked .stylized-checkbox:before {
   font-family: 'influicons';
-  content: "";
+  content: "";
   color: #666666;
   position: absolute;
   font-size: 18px;

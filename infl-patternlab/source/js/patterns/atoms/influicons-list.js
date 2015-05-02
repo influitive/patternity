@@ -4,8 +4,6 @@
 var icons = {
 
 
-    "500donotdeletethis-test": "500donotdeletethis-test",
-  
     "alert-caution": "alert-caution",
   
     "arrow-down": "arrow-down",
