@@ -42509,7 +42509,7 @@ var AlertControls = React.createClass({displayName: "AlertControls",
                 React.createElement(RadioButton, {isChecked: this.props.type === 'info', onChange: this._handleChange, radioName: "type", radioLabel: "Info / Default", value: "info"}), 
                 React.createElement(RadioButton, {isChecked: this.props.type === 'success', onChange: this._handleChange, radioName: "type", radioLabel: "Success", value: "success"}), 
                 React.createElement(RadioButton, {isChecked: this.props.type === 'error', onChange: this._handleChange, radioName: "type", radioLabel: "Error", value: "error"}), 
-                React.createElement(RadioButton, {isChecked: this.props.type === 'disabled', onChange: this._handleChange, radioName: "type", radioLabel: "Warning", value: "warning"})
+                React.createElement(RadioButton, {isChecked: this.props.type === 'warning', onChange: this._handleChange, radioName: "type", radioLabel: "Warning", value: "warning"})
               )
             )
           )

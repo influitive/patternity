@@ -227,7 +227,7 @@ var AlertControls = React.createClass({
                 <RadioButton isChecked={this.props.type === 'info'} onChange={this._handleChange} radioName="type" radioLabel="Info / Default" value="info"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'success'} onChange={this._handleChange} radioName="type" radioLabel="Success" value="success"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'error'} onChange={this._handleChange} radioName="type" radioLabel="Error" value="error"></RadioButton>
-                <RadioButton isChecked={this.props.type === 'disabled'} onChange={this._handleChange} radioName="type" radioLabel="Warning" value="warning"></RadioButton>
+                <RadioButton isChecked={this.props.type === 'warning'} onChange={this._handleChange} radioName="type" radioLabel="Warning" value="warning"></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
