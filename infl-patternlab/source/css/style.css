@@ -2115,6 +2115,7 @@ textarea {
 }
 .loading-spinner.is-block {
   display: block;
+  margin: 0px auto;
 }
 .loading-spinner.small {
   height: 1em;
@@ -2685,7 +2686,7 @@ body {
   position: relative;
   height: 100px;
 }
-.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .loading-demo-area .loading-spinner {
+.try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .loading-demo-area .loading-spinner.is-modal {
   position: absolute;
 }
 .try-it-yourself .pt-modal-dialog .pt-modal .pt-modal-body .demo-output .demo-pattern .demo-pattern-example .modal-demo-area {
