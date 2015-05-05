@@ -1590,7 +1590,7 @@ textarea {
   position: relative;
   display: inline-block;
 }
-.is-required .ic {
+.is-required .required-input {
   position: absolute;
   top: 11px;
   left: 2px;
@@ -1599,6 +1599,21 @@ textarea {
 }
 .is-required input {
   padding-left: 15px;
+}
+
+.is-clearable {
+  position: relative;
+  display: inline-block;
+}
+.is-clearable input {
+  padding-right: 30px;
+}
+.is-clearable .clear-input {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .is-disabled input,
@@ -1618,7 +1633,7 @@ textarea {
   position: relative;
   display: inline-block;
 }
-.search-input .ic {
+.search-input .search-input {
   position: absolute;
   top: 9px;
   z-index: 1;
