@@ -1528,13 +1528,15 @@ var Tabs = React.createClass({displayName: "Tabs",
     return {
       id : "",
       key : "tabs-" + Math.random(),
-      openTabIndex : 0
+      openTabIndex : 0,
+      onChange : function(){}
     };
   },
   propTypes : {
     title : React.PropTypes.string,
     key : React.PropTypes.string,
-    openTabIndex : React.PropTypes.number
+    openTabIndex : React.PropTypes.number,
+    onChange : React.PropTypes.func
   },
   getInitialState : function(){
     return {
@@ -1565,6 +1567,7 @@ var Tabs = React.createClass({displayName: "Tabs",
     this.setState({
       openTabIndex : index
     });
+    this.props.onChange(index);
   },
   _isTabOpen : function(index) {
     return (this.state.openTabIndex === index);
@@ -44669,7 +44672,7 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
 
           React.createElement(Pattern.Detail, {title: "Tabs"}, 
             React.createElement(Pattern.Show, null, 
-              React.createElement(Tabs, null, 
+              React.createElement(Tabs, {onChange: function(index){console.log(index)}}, 
                 React.createElement(Tabs.Tab, {title: "First Tab"}, 
                   React.createElement("h2", null, "First Tab"), 
                   React.createElement("p", null, "This is the first tabs content.")
