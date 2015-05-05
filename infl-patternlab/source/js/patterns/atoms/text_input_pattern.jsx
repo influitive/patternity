@@ -21,7 +21,8 @@ var TextInputPattern = React.createClass({
       disabled : false,
       placeholder : "Text Input",
       message : [],
-      isInputOptionEnabled : true
+      isInputOptionEnabled : true,
+      clearable : true
     };
   },
   render : function(){
@@ -39,7 +40,7 @@ var TextInputPattern = React.createClass({
                 <div className="demo-pattern">
                   <h4>Text Input:</h4>
                   <div className="demo-pattern-example">
-                    <TextInput placeholder={this.state.placeholder} message={this.state.message} type={this.state.type} required={this.state.required} error={this.state.error} valid={this.state.valid} readOnly={this.state.readOnly} disabled={this.state.disabled}/>
+                    <TextInput clearable={this.state.clearable} placeholder={this.state.placeholder} message={this.state.message} type={this.state.type} required={this.state.required} error={this.state.error} valid={this.state.valid} readOnly={this.state.readOnly} disabled={this.state.disabled}/>
                   </div>
                 </div>
                 <Code>

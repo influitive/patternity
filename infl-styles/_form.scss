@@ -68,7 +68,7 @@ textarea {
   position: relative;
   display: inline-block;
 
-  .ic {
+  .required-input {
     position: absolute;
     top: 11px;
     left: 2px;
@@ -78,6 +78,23 @@ textarea {
 
   input {
     padding-left: 15px;
+  }
+}
+
+.is-clearable {
+  position: relative;
+  display: inline-block;
+
+  input {
+    padding-right: 30px;
+  }
+
+  .clear-input {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    padding: 10px;
   }
 }
 
@@ -100,7 +117,7 @@ textarea {
   position: relative;
   display: inline-block;
 
-  .ic {
+  .search-input {
     position: absolute;
     top: 9px;
     z-index: 1;

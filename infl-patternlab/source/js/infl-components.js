@@ -1683,7 +1683,9 @@ var TextInput = React.createClass({displayName: "TextInput",
       valid : false,
       readOnly : false,
       disabled : false,
-      onChange : function(){}
+      onChange : function(){},
+      clearable : false,
+      onCleared : function(){}
     };
   },
   propTypes : {
@@ -1705,7 +1707,9 @@ var TextInput = React.createClass({displayName: "TextInput",
     valid : React.PropTypes.bool,
     readOnly : React.PropTypes.bool,
     disabled : React.PropTypes.bool,
-    onChange : React.PropTypes.func
+    onChange : React.PropTypes.func,
+    clearInput : React.PropTypes.bool,
+    onInputCleared : React.PropTypes.func
   },
   getInitialState: function() {
     return {value: this.props.value};
@@ -1722,6 +1726,7 @@ var TextInput = React.createClass({displayName: "TextInput",
         React.createElement("input", {readOnly: this.props.readOnly, required: this.props.required, type: this.props.type, value: this.state.value, 
                placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, 
                pattern: this.props.pattern, disabled: this.props.disabled, onChange: this._handleChange}), 
+        this._isClearable(), 
         this._buildMessage()
       )
     );
@@ -1733,19 +1738,34 @@ var TextInput = React.createClass({displayName: "TextInput",
       'is-valid': this.props.valid,
       'search-input': this.props.type === 'search',
       'pt-input': true,
-      'is-disabled' : this.props.disabled
+      'is-disabled' : this.props.disabled,
+      'is-clearable' : this.props.clearable
     });
   },
   _determineInputIcon : function(){
     if(this.props.type === 'search'){
-      return (React.createElement("span", {className: "ic ic-search"}));
+      return (React.createElement("span", {className: "search-input ic ic-search"}));
     } else if(this.props.required) {
-      return (React.createElement("span", {className: "ic ic-asterisk"}));
+      return (React.createElement("span", {className: "required-input ic ic-asterisk"}));
     }
   },
   _handleChange: function(event){
     this.setState({value : event.target.value});
     this.props.onChange(event);
+  },
+  _isClearable : function(){
+    if(!this.props.clearable){
+      return "";
+    }
+
+    return (
+      React.createElement("span", {className: "clear-input ic ic-close", onClick: this._clearInputValue})
+    );
+  },
+  _clearInputValue : function(){
+    this.setState({
+      value : ""
+    }, this.props.onCleared());
   },
   _buildMessage: function(){
     if(typeof this.props.message === "string"){
@@ -41315,7 +41335,8 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
       disabled : false,
       placeholder : "Text Input",
       message : [],
-      isInputOptionEnabled : true
+      isInputOptionEnabled : true,
+      clearable : true
     };
   },
   render : function(){
@@ -41333,7 +41354,7 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
                 React.createElement("div", {className: "demo-pattern"}, 
                   React.createElement("h4", null, "Text Input:"), 
                   React.createElement("div", {className: "demo-pattern-example"}, 
-                    React.createElement(TextInput, {placeholder: this.state.placeholder, message: this.state.message, type: this.state.type, required: this.state.required, error: this.state.error, valid: this.state.valid, readOnly: this.state.readOnly, disabled: this.state.disabled})
+                    React.createElement(TextInput, {clearable: this.state.clearable, placeholder: this.state.placeholder, message: this.state.message, type: this.state.type, required: this.state.required, error: this.state.error, valid: this.state.valid, readOnly: this.state.readOnly, disabled: this.state.disabled})
                   )
                 ), 
                 React.createElement(Code, null, 
