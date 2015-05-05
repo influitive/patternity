@@ -1615,6 +1615,9 @@ textarea {
   cursor: pointer;
   padding: 10px;
 }
+.is-clearable .clear-input:hover {
+  color: #444444;
+}
 
 .is-disabled input,
 .is-disabled .select-box {

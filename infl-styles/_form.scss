@@ -95,6 +95,10 @@ textarea {
     top: 0px;
     cursor: pointer;
     padding: 10px;
+
+    &:hover {
+      color: $darker-grey;
+    }
   }
 }
 
