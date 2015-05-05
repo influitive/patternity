@@ -44735,6 +44735,7 @@ module.exports = TabsPattern;
 
 },{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
 
 var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
 var Sidebar           = require("../../../../infl-components/sidebar.jsx");
@@ -44761,23 +44762,19 @@ var FormPagePattern = React.createClass({displayName: "FormPagePattern",
   render : function(){
     return (
       React.createElement("div", {className: "form-page-pattern page-pattern"}, 
-        React.createElement("header", {className: "pt-page-header"}, 
-          React.createElement("h1", null, "Form Page Demo")
-        ), 
-        React.createElement(PanelLeftSidebar, {id: "form-page"}, 
-          React.createElement(Sidebar, null, 
-            React.createElement(Sidebar.Heading, {title: "Form Page Layouts"}), 
-            React.createElement(Sidebar.NavList, {
-                title: "Select Layout", 
-                key: "form-layouts", 
-                listItems: this._formLayoutItems()})
-          ), 
-          React.createElement(Content, null, 
-            this._formLayoutContent()
+        React.createElement(Pattern, {title: "form page demo"}, 
+          React.createElement(PanelLeftSidebar, {id: "form-page"}, 
+            React.createElement(Sidebar, null, 
+              React.createElement(Sidebar.Heading, {title: "Form Page Layouts"}), 
+              React.createElement(Sidebar.NavList, {
+                  title: "Select Layout", 
+                  key: "form-layouts", 
+                  listItems: this._formLayoutItems()})
+            ), 
+            React.createElement(Content, null, 
+              this._formLayoutContent()
+            )
           )
-        ), 
-        React.createElement("footer", {className: "pt-page-footer"}, 
-          React.createElement("h5", null, "Form Page Footer")
         )
       )
     );
@@ -45017,7 +45014,7 @@ var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
 module.exports = FormPagePattern;
 
 
-},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');

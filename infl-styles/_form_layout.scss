@@ -49,9 +49,12 @@
 
   .pt-form-alert {
     display: block;
-    margin: 10px 0px;
     clear: left;
     overflow: hidden;
+
+    .alert-msg {
+      margin: 10px 0px;
+    }
   }
 
   .pt-form-column {

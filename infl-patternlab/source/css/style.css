@@ -1518,7 +1518,7 @@ button.secondary.inverse:hover {
 }
 .button-group.inline.grouped button:last-child:after,
 .button-group.inline.grouped .button:last-child:after {
-  border-left: 0px;
+  border-left-width: 0px;
 }
 
 @font-face {
@@ -1745,9 +1745,11 @@ textarea {
 }
 .pt-form .pt-form-alert {
   display: block;
-  margin: 10px 0px;
   clear: left;
   overflow: hidden;
+}
+.pt-form .pt-form-alert .alert-msg {
+  margin: 10px 0px;
 }
 .pt-form .pt-form-column {
   float: left;
