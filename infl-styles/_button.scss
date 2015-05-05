@@ -467,10 +467,11 @@ button {
           border-bottom-right-radius: $theme-border-radius;
 
           &:after {
-            border-left: 0px;
+            border-left-width: 0px;
           }
         }
       }
     }
   }
 }
+

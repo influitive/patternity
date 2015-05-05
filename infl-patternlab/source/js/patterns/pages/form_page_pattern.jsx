@@ -1,4 +1,5 @@
 var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
 
 var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
 var Sidebar           = require("../../../../infl-components/sidebar.jsx");
@@ -25,24 +26,20 @@ var FormPagePattern = React.createClass({
   render : function(){
     return (
       <div className="form-page-pattern page-pattern">
-        <header className="pt-page-header">
-          <h1>Form Page Demo</h1>
-        </header>
-        <PanelLeftSidebar id="form-page">
-          <Sidebar>
-            <Sidebar.Heading title="Form Page Layouts" />
-            <Sidebar.NavList
-                title="Select Layout"
-                key="form-layouts"
-                listItems={this._formLayoutItems()} />
-          </Sidebar>
-          <Content>
-            {this._formLayoutContent()}
-          </Content>
-        </PanelLeftSidebar>
-        <footer className="pt-page-footer">
-          <h5>Form Page Footer</h5>
-        </footer>
+        <Pattern title="form page demo">
+          <PanelLeftSidebar id="form-page">
+            <Sidebar>
+              <Sidebar.Heading title="Form Page Layouts" />
+              <Sidebar.NavList
+                  title="Select Layout"
+                  key="form-layouts"
+                  listItems={this._formLayoutItems()} />
+            </Sidebar>
+            <Content>
+              {this._formLayoutContent()}
+            </Content>
+          </PanelLeftSidebar>
+        </Pattern>
       </div>
     );
   },
