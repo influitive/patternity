@@ -437,62 +437,72 @@
 }
 
 
-.ic.ic-target:before {
+.ic.ic-support:before {
   content: "\E02C"
+}
+
+@mixin ic-support() {
+  font-family: 'influicons';
+  content: "\E02C"
+}
+
+
+.ic.ic-target:before {
+  content: "\E02D"
 }
 
 @mixin ic-target() {
   font-family: 'influicons';
-  content: "\E02C"
+  content: "\E02D"
 }
 
 
 .ic.ic-times-circle-o:before {
-  content: "\E02D"
+  content: "\E02E"
 }
 
 @mixin ic-times-circle-o() {
   font-family: 'influicons';
-  content: "\E02D"
+  content: "\E02E"
 }
 
 
 .ic.ic-times:before {
-  content: "\E02E"
+  content: "\E02F"
 }
 
 @mixin ic-times() {
   font-family: 'influicons';
-  content: "\E02E"
+  content: "\E02F"
 }
 
 
 .ic.ic-trash:before {
-  content: "\E02F"
+  content: "\E030"
 }
 
 @mixin ic-trash() {
   font-family: 'influicons';
-  content: "\E02F"
+  content: "\E030"
 }
 
 
 .ic.ic-unlock:before {
-  content: "\E030"
+  content: "\E031"
 }
 
 @mixin ic-unlock() {
   font-family: 'influicons';
-  content: "\E030"
+  content: "\E031"
 }
 
 
 .ic.ic-user:before {
-  content: "\E031"
+  content: "\E032"
 }
 
 @mixin ic-user() {
   font-family: 'influicons';
-  content: "\E031"
+  content: "\E032"
 }
 

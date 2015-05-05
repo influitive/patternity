@@ -65,9 +65,10 @@
 .ic.ic-speech-2:before { content: "\E029" }
 .ic.ic-speech:before { content: "\E02A" }
 .ic.ic-star:before { content: "\E02B" }
-.ic.ic-target:before { content: "\E02C" }
-.ic.ic-times-circle-o:before { content: "\E02D" }
-.ic.ic-times:before { content: "\E02E" }
-.ic.ic-trash:before { content: "\E02F" }
-.ic.ic-unlock:before { content: "\E030" }
-.ic.ic-user:before { content: "\E031" }
+.ic.ic-support:before { content: "\E02C" }
+.ic.ic-target:before { content: "\E02D" }
+.ic.ic-times-circle-o:before { content: "\E02E" }
+.ic.ic-times:before { content: "\E02F" }
+.ic.ic-trash:before { content: "\E030" }
+.ic.ic-unlock:before { content: "\E031" }
+.ic.ic-user:before { content: "\E032" }

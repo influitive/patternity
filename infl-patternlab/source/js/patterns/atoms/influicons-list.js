@@ -88,6 +88,8 @@ var icons = {
   
     "star": "star",
   
+    "support": "support",
+  
     "target": "target",
   
     "times-circle-o": "times-circle-o",
