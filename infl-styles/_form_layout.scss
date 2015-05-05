@@ -82,6 +82,17 @@
               width: calc(58.5% - 10px);
             }
           }
+
+          &.stacked {
+            label {
+              width: 100%;
+            }
+
+            .pt-input,
+            .pt-select {
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -103,6 +114,17 @@
               width: calc(40% - 10px);
             }
           }
+
+          &.stacked {
+            label {
+              width: 100%;
+            }
+
+            .pt-input,
+            .pt-select {
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -115,7 +137,8 @@
 
     &.small-input {
       .pt-label {
-        &.inline {
+        &.inline,
+        &.stacked {
           .pt-input,
           .pt-select {
             width: calc(29% - 10px);
@@ -126,7 +149,8 @@
 
     &.medium-input {
       .pt-label {
-        &.inline {
+        &.inline,
+        &.stacked {
           .pt-input,
           .pt-select  {
             width: calc(51% - 10px);
@@ -137,7 +161,8 @@
 
     &.large-input {
       .pt-label {
-        &.inline {
+        &.inline,
+        &.stacked {
           .pt-input,
           .pt-select {
             width: calc(78.9% - 10px);
