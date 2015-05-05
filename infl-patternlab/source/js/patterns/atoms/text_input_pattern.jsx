@@ -112,7 +112,7 @@ var TextInputPattern = React.createClass({
   },
   _buildDempJSX : function(){
     return (
-      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" clearable="' + this.state.clearable + '" required="' + this.state.required + '" error="' + this.state.error + '" valid="' + this.state.valid + '" readOnly="' + this.state.readOnly + '" disabled="' + this.state.disabled + '"  />'
+      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" clearable={' + this.state.clearable + '} required={' + this.state.required + '} error={' + this.state.error + '} valid={' + this.state.valid + '} readOnly={' + this.state.readOnly + '} disabled={' + this.state.disabled + '}  />'
     );
   },
   _handleEmptyMessage : function(message){

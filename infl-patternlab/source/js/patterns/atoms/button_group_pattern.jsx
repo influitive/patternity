@@ -89,7 +89,7 @@ var ButtonGroupPattern = React.createClass({
   },
   _buildDemoHTML : function(){
     return (
-      '<ButtonGroup layout="' + this.state.layout + '" grouped="' + this.state.grouped + '">\n' +
+      '<ButtonGroup layout="' + this.state.layout + '" grouped={' + this.state.grouped + '}>\n' +
         '\t<button class="' + this.state.type + '">First Button</button>\n' +
         '\t<button class="' + this.state.type + '">Second Button</button>\n' +
         '\t<button class="' + this.state.type + '">Third Button</button>\n' +

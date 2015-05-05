@@ -1792,6 +1792,19 @@ textarea {
 .pt-form .pt-form-column.column-num-2 .large-input .pt-label.inline .pt-select {
   width: calc(58.5% - 10px);
 }
+.pt-form .pt-form-column.column-num-2 .small-input .pt-label.stacked label,
+.pt-form .pt-form-column.column-num-2 .medium-input .pt-label.stacked label,
+.pt-form .pt-form-column.column-num-2 .large-input .pt-label.stacked label {
+  width: 100%;
+}
+.pt-form .pt-form-column.column-num-2 .small-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-column.column-num-2 .small-input .pt-label.stacked .pt-select,
+.pt-form .pt-form-column.column-num-2 .medium-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-column.column-num-2 .medium-input .pt-label.stacked .pt-select,
+.pt-form .pt-form-column.column-num-2 .large-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-column.column-num-2 .large-input .pt-label.stacked .pt-select {
+  width: 100%;
+}
 .pt-form .pt-form-column.column-num-3 {
   width: calc(33% - 10px);
 }
@@ -1808,21 +1821,37 @@ textarea {
 .pt-form .pt-form-column.column-num-3 .large-input .pt-label.inline .pt-select {
   width: calc(40% - 10px);
 }
+.pt-form .pt-form-column.column-num-3 .small-input .pt-label.stacked label,
+.pt-form .pt-form-column.column-num-3 .medium-input .pt-label.stacked label,
+.pt-form .pt-form-column.column-num-3 .large-input .pt-label.stacked label {
+  width: 100%;
+}
+.pt-form .pt-form-column.column-num-3 .small-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-column.column-num-3 .small-input .pt-label.stacked .pt-select,
+.pt-form .pt-form-column.column-num-3 .medium-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-column.column-num-3 .medium-input .pt-label.stacked .pt-select,
+.pt-form .pt-form-column.column-num-3 .large-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-column.column-num-3 .large-input .pt-label.stacked .pt-select {
+  width: 100%;
+}
 .pt-form .pt-form-row {
   display: block;
   margin: 10px 0px;
   clear: left;
 }
 .pt-form .pt-form-row.small-input .pt-label.inline .pt-input,
-.pt-form .pt-form-row.small-input .pt-label.inline .pt-select {
+.pt-form .pt-form-row.small-input .pt-label.inline .pt-select, .pt-form .pt-form-row.small-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.small-input .pt-label.stacked .pt-select {
   width: calc(29% - 10px);
 }
 .pt-form .pt-form-row.medium-input .pt-label.inline .pt-input,
-.pt-form .pt-form-row.medium-input .pt-label.inline .pt-select {
+.pt-form .pt-form-row.medium-input .pt-label.inline .pt-select, .pt-form .pt-form-row.medium-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.medium-input .pt-label.stacked .pt-select {
   width: calc(51% - 10px);
 }
 .pt-form .pt-form-row.large-input .pt-label.inline .pt-input,
-.pt-form .pt-form-row.large-input .pt-label.inline .pt-select {
+.pt-form .pt-form-row.large-input .pt-label.inline .pt-select, .pt-form .pt-form-row.large-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.large-input .pt-label.stacked .pt-select {
   width: calc(78.9% - 10px);
 }
 .pt-form .pt-form-row .pt-label {

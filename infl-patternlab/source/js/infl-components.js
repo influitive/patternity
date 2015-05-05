@@ -39845,7 +39845,7 @@ var ButtonGroupPattern = React.createClass({displayName: "ButtonGroupPattern",
   },
   _buildDemoHTML : function(){
     return (
-      '<ButtonGroup layout="' + this.state.layout + '" grouped="' + this.state.grouped + '">\n' +
+      '<ButtonGroup layout="' + this.state.layout + '" grouped={' + this.state.grouped + '}>\n' +
         '\t<button class="' + this.state.type + '">First Button</button>\n' +
         '\t<button class="' + this.state.type + '">Second Button</button>\n' +
         '\t<button class="' + this.state.type + '">Third Button</button>\n' +
@@ -41426,7 +41426,7 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
   },
   _buildDempJSX : function(){
     return (
-      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" clearable="' + this.state.clearable + '" required="' + this.state.required + '" error="' + this.state.error + '" valid="' + this.state.valid + '" readOnly="' + this.state.readOnly + '" disabled="' + this.state.disabled + '"  />'
+      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" clearable={' + this.state.clearable + '} required={' + this.state.required + '} error={' + this.state.error + '} valid={' + this.state.valid + '} readOnly={' + this.state.readOnly + '} disabled={' + this.state.disabled + '}  />'
     );
   },
   _handleEmptyMessage : function(message){
