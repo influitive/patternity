@@ -42450,7 +42450,7 @@ var AlertPattern = React.createClass({displayName: "AlertPattern",
   },
   _buildDemoHTML : function(){
     return (
-      '<Alert title="Alert" showAlert="' + this.state.showAlert.toString() + '" showIcon="' + this.state.showIcon.toString() + '" type="' + this.state.type + '" hideIn="' + this.state.hideIn + '"  closeable="' + this.state.closeable.toString() + '">\n' +
+      '<Alert title="Alert" showAlert={' + this.state.showAlert.toString() + '} showIcon={' + this.state.showIcon.toString() + '} type="' + this.state.type + '" hideIn={' + this.state.hideIn + '}  closeable={' + this.state.closeable.toString() + '}>\n' +
         '\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n' +
       '</Alert>'
     );
