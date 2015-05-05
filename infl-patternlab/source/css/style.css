@@ -1393,7 +1393,7 @@ button.secondary.inverse:hover {
 }
 
 .button-group {
-  margin: 5px;
+  margin: 0px;
   display: inline-block;
   position: relative;
 }
@@ -1737,7 +1737,7 @@ textarea {
 .pt-form .pt-form-title .pt-form-title-actions {
   float: right;
   width: 40%;
-  margin-top: 0.83em;
+  margin-top: 1em;
   text-align: right;
 }
 .pt-form .pt-form-title .pt-form-title-actions .button-group {
