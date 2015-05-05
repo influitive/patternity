@@ -5,13 +5,15 @@ var Tabs = React.createClass({
     return {
       id : "",
       key : "tabs-" + Math.random(),
-      openTabIndex : 0
+      openTabIndex : 0,
+      onChange : function(){}
     };
   },
   propTypes : {
     title : React.PropTypes.string,
     key : React.PropTypes.string,
-    openTabIndex : React.PropTypes.number
+    openTabIndex : React.PropTypes.number,
+    onChange : React.PropTypes.func
   },
   getInitialState : function(){
     return {
@@ -42,6 +44,7 @@ var Tabs = React.createClass({
     this.setState({
       openTabIndex : index
     });
+    this.props.onChange(index);
   },
   _isTabOpen : function(index) {
     return (this.state.openTabIndex === index);

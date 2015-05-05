@@ -102,6 +102,12 @@ var TabsPattern = React.createClass({
         required : false,
         description : "Index of which tab will be open first."
       },
+      onChange : {
+        type : "function",
+        default : "empty function",
+        required : false,
+        description : "Callback for when the tab changes.  Called with the index of that tab."
+      },
       children : {
         type : "array",
         default : "[...] ",
