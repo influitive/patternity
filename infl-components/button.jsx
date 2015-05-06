@@ -9,7 +9,8 @@ var Button = React.createClass({
     primary: React.PropTypes.bool,
     secondary: React.PropTypes.bool,
     onClick: React.PropTypes.function,
-    href: React.PropTypes.string
+    href: React.PropTypes.string,
+    disabled: React.PropTypes.bool
   },
 
   render : function() {
@@ -24,7 +25,7 @@ var Button = React.createClass({
     if (this.props.className) classes += ' '+this.props.className;
 
     return (
-      <button className={ classes } onClick={ this._onClick }>
+      <button disabled={ this.props.disabled } className={ classes } onClick={ this._onClick }>
         { icon }
         <span className="text">
             { this.props.children }
