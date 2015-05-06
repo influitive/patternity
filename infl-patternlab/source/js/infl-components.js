@@ -40684,6 +40684,8 @@ var icons = {
   
     "star": "star",
   
+    "support": "support",
+  
     "target": "target",
   
     "times-circle-o": "times-circle-o",
@@ -44672,7 +44674,7 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
 
           React.createElement(Pattern.Detail, {title: "Tabs"}, 
             React.createElement(Pattern.Show, null, 
-              React.createElement(Tabs, {onChange: function(index){console.log(index)}}, 
+              React.createElement(Tabs, null, 
                 React.createElement(Tabs.Tab, {title: "First Tab"}, 
                   React.createElement("h2", null, "First Tab"), 
                   React.createElement("p", null, "This is the first tabs content.")
@@ -44754,6 +44756,12 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
         default : "0",
         required : false,
         description : "Index of which tab will be open first."
+      },
+      onChange : {
+        type : "function",
+        default : "empty function",
+        required : false,
+        description : "Callback for when the tab changes.  Called with the index of that tab."
       },
       children : {
         type : "array",

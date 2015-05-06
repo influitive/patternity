@@ -1081,28 +1081,32 @@ h4.list-title {
   content: "";
 }
 
-.ic.ic-target:before {
+.ic.ic-support:before {
   content: "";
 }
 
-.ic.ic-times-circle-o:before {
+.ic.ic-target:before {
   content: "";
 }
 
-.ic.ic-times:before {
+.ic.ic-times-circle-o:before {
   content: "";
 }
 
-.ic.ic-trash:before {
+.ic.ic-times:before {
   content: "";
 }
 
-.ic.ic-unlock:before {
+.ic.ic-trash:before {
   content: "";
 }
 
-.ic.ic-user:before {
+.ic.ic-unlock:before {
   content: "";
+}
+
+.ic.ic-user:before {
+  content: "";
 }
 
 .button,
@@ -1398,65 +1402,78 @@ button.secondary.inverse:hover {
   position: relative;
 }
 .button-group.stacked button,
-.button-group.stacked .button {
+.button-group.stacked .button,
+.button-group.stacked .input[type='submit'] {
   display: block;
   margin-bottom: 5px;
   width: 100%;
   max-width: 100%;
 }
 .button-group.stacked button:last-child,
-.button-group.stacked .button:last-child {
+.button-group.stacked .button:last-child,
+.button-group.stacked .input[type='submit']:last-child {
   margin-bottom: 0px;
 }
 .button-group.stacked.grouped button,
-.button-group.stacked.grouped .button {
+.button-group.stacked.grouped .button,
+.button-group.stacked.grouped .input[type='submit'] {
   margin-bottom: 1px;
   border-radius: 0px;
 }
 .button-group.stacked.grouped button:first-child,
-.button-group.stacked.grouped .button:first-child {
+.button-group.stacked.grouped .button:first-child,
+.button-group.stacked.grouped .input[type='submit']:first-child {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 .button-group.stacked.grouped button:last-child,
-.button-group.stacked.grouped .button:last-child {
+.button-group.stacked.grouped .button:last-child,
+.button-group.stacked.grouped .input[type='submit']:last-child {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
 .button-group.stacked.grouped button.secondary,
-.button-group.stacked.grouped .button.secondary {
+.button-group.stacked.grouped .button.secondary,
+.button-group.stacked.grouped .input[type='submit'].secondary {
   margin-bottom: 0px;
   border-bottom-width: 0px;
 }
 .button-group.stacked.grouped button.secondary:last-child,
-.button-group.stacked.grouped .button.secondary:last-child {
+.button-group.stacked.grouped .button.secondary:last-child,
+.button-group.stacked.grouped .input[type='submit'].secondary:last-child {
   border-bottom-width: 1px;
 }
 .button-group.stacked.grouped button.text,
-.button-group.stacked.grouped .button.text {
+.button-group.stacked.grouped .button.text,
+.button-group.stacked.grouped .input[type='submit'].text {
   margin-bottom: 0px;
   border-bottom: 1px solid #eeeeee;
 }
 .button-group.stacked.grouped button.text:last-child,
-.button-group.stacked.grouped .button.text:last-child {
+.button-group.stacked.grouped .button.text:last-child,
+.button-group.stacked.grouped .input[type='submit'].text:last-child {
   border-bottom-width: 0px;
 }
 .button-group.inline button,
-.button-group.inline .button {
+.button-group.inline .button,
+.button-group.inline .input[type='submit'] {
   margin-right: 5px;
 }
 .button-group.inline button:last-child,
-.button-group.inline .button:last-child {
+.button-group.inline .button:last-child,
+.button-group.inline .input[type='submit']:last-child {
   margin-right: 0px;
 }
 .button-group.inline.grouped button,
-.button-group.inline.grouped .button {
+.button-group.inline.grouped .button,
+.button-group.inline.grouped .input[type='submit'] {
   margin-right: 1px;
   border-radius: 0px;
   position: relative;
 }
 .button-group.inline.grouped button:after,
-.button-group.inline.grouped .button:after {
+.button-group.inline.grouped .button:after,
+.button-group.inline.grouped .input[type='submit']:after {
   border-left: 1px solid #d4d4d4;
   content: "";
   position: absolute;
@@ -1465,59 +1482,72 @@ button.secondary.inverse:hover {
   height: calc(100% + 2px);
 }
 .button-group.inline.grouped button.important:after,
-.button-group.inline.grouped .button.important:after {
+.button-group.inline.grouped .button.important:after,
+.button-group.inline.grouped .input[type='submit'].important:after {
   border-color: #c29b00;
 }
 .button-group.inline.grouped button.primary:after,
-.button-group.inline.grouped .button.primary:after {
+.button-group.inline.grouped .button.primary:after,
+.button-group.inline.grouped .input[type='submit'].primary:after {
   border-color: #067c94;
 }
 .button-group.inline.grouped button.success:after,
-.button-group.inline.grouped .button.success:after {
+.button-group.inline.grouped .button.success:after,
+.button-group.inline.grouped .input[type='submit'].success:after {
   border-color: #70a131;
 }
 .button-group.inline.grouped button.danger:after,
-.button-group.inline.grouped .button.danger:after {
+.button-group.inline.grouped .button.danger:after,
+.button-group.inline.grouped .input[type='submit'].danger:after {
   border-color: #a13131;
 }
 .button-group.inline.grouped button.secondary,
-.button-group.inline.grouped .button.secondary {
+.button-group.inline.grouped .button.secondary,
+.button-group.inline.grouped .input[type='submit'].secondary {
   margin-right: 0px;
   border-right-width: 0px;
 }
 .button-group.inline.grouped button.secondary:after,
-.button-group.inline.grouped .button.secondary:after {
+.button-group.inline.grouped .button.secondary:after,
+.button-group.inline.grouped .input[type='submit'].secondary:after {
   display: none;
 }
 .button-group.inline.grouped button.secondary:last-child,
-.button-group.inline.grouped .button.secondary:last-child {
+.button-group.inline.grouped .button.secondary:last-child,
+.button-group.inline.grouped .input[type='submit'].secondary:last-child {
   border-right-width: 1px;
 }
 .button-group.inline.grouped button.text,
-.button-group.inline.grouped .button.text {
+.button-group.inline.grouped .button.text,
+.button-group.inline.grouped .input[type='submit'].text {
   margin-right: 0px;
   border-right: 1px solid #eeeeee;
 }
 .button-group.inline.grouped button.text:after,
-.button-group.inline.grouped .button.text:after {
+.button-group.inline.grouped .button.text:after,
+.button-group.inline.grouped .input[type='submit'].text:after {
   display: none;
 }
 .button-group.inline.grouped button.text:last-child,
-.button-group.inline.grouped .button.text:last-child {
+.button-group.inline.grouped .button.text:last-child,
+.button-group.inline.grouped .input[type='submit'].text:last-child {
   border-right: 0px;
 }
 .button-group.inline.grouped button:first-child,
-.button-group.inline.grouped .button:first-child {
+.button-group.inline.grouped .button:first-child,
+.button-group.inline.grouped .input[type='submit']:first-child {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 .button-group.inline.grouped button:last-child,
-.button-group.inline.grouped .button:last-child {
+.button-group.inline.grouped .button:last-child,
+.button-group.inline.grouped .input[type='submit']:last-child {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
 .button-group.inline.grouped button:last-child:after,
-.button-group.inline.grouped .button:last-child:after {
+.button-group.inline.grouped .button:last-child:after,
+.button-group.inline.grouped .input[type='submit']:last-child:after {
   border-left-width: 0px;
 }
 
