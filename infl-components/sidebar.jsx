@@ -24,7 +24,10 @@ Sidebar.Heading = React.createClass({
   propTypes : {
     title: React.PropTypes.string,
     message : React.PropTypes.string,
-    headingComponent : React.PropTypes.node,
+    headingComponent : React.PropTypes.oneOfType([
+      React.PropTypes.node,
+      React.PropTypes.element
+    ]),
     headingComponentParams : React.PropTypes.object
   },
   render: function(){
