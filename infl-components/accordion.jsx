@@ -5,7 +5,7 @@ var Accordion = React.createClass({
   getDefaultProps: function() {
     return {
       sections: [],
-      openSectionIndex : -1,
+      openSectionIndex : null,
       uniqueIdentifier : ""
     };
   },
@@ -18,18 +18,21 @@ var Accordion = React.createClass({
     if(this._isOpenSectionIndexValid(this.props.openSectionIndex)){
       return { openSectionIndex: this.props.openSectionIndex };
     } else {
-      return { openSectionIndex: -1 };
+      return { openSectionIndex: null };
     }
   },
   componentWillReceiveProps : function(nextProps){
+    console.log(this.state.openSectionIndex);
     if(this._isOpenSectionIndexValid(nextProps.openSectionIndex)){
       this.setState({
         openSectionIndex : nextProps.openSectionIndex
       });
     }
   },
-  render: function () {
+  componentWillMount : function(){
     this._resetAccordionState();
+  },
+  render: function () {
     return (
       <ul className="accordion">
         {this._buildSections(this.props)}
@@ -63,7 +66,9 @@ var Accordion = React.createClass({
   _uniqueIdentifier : null,
   _resetAccordionState: function(){
     if(this._uniqueIdentifier !== this.props.uniqueIdentifier){
-      this.state.openSectionIndex = this.props.openSectionIndex;
+      this.setState({
+        openSectionIndex : this.props.openSectionIndex
+      });
     }
     this._uniqueIdentifier = this.props.uniqueIdentifier;
   }
