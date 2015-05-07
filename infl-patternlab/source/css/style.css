@@ -2464,6 +2464,68 @@ textarea {
   visibility: visible;
 }
 
+DIV.infl-popover {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  border: 1px solid #d2d2d2;
+  background: white;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+DIV.infl-popover UL {
+  padding: 0;
+  margin: 0.5em 0;
+}
+DIV.infl-popover UL LI {
+  list-style: none;
+}
+DIV.infl-popover UL LI A {
+  padding: 0em 1em;
+  display: block;
+  vertical-align: top;
+  line-height: 1.8em;
+}
+DIV.infl-popover UL LI A.ic:before {
+  margin-right: 0.3em;
+  font-size: 18px;
+  line-height: 1.4em;
+  display: inline-block;
+}
+DIV.infl-popover UL LI A:hover {
+  text-decoration: none;
+  background-color: #e0e0e0;
+}
+DIV.infl-popover.is-visible {
+  visibility: visible;
+}
+DIV.infl-popover DIV.arrow-top {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 1001;
+  margin-left: -15px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #d2d2d2;
+}
+DIV.infl-popover DIV.arrow-top-inner {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 1002;
+  margin-left: -14px;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid white;
+}
+
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;
