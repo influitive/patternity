@@ -333,8 +333,7 @@ button {
 
   &.stacked {
     button,
-    .button,
-    .input[type='submit'] {
+    .button {
       display:block;
       margin-bottom: 5px;
       width: 100%;
@@ -347,8 +346,7 @@ button {
 
     &.grouped {
       button,
-      .button,
-      .input[type='submit'] {
+      .button {
         margin-bottom: 1px;
         border-radius: 0px;
 
@@ -385,8 +383,7 @@ button {
 
   &.inline {
     button,
-    .button,
-    .input[type='submit'] {
+    .button {
       margin-right: 5px;
 
       &:last-child {
@@ -396,8 +393,7 @@ button {
 
     &.grouped {
       button,
-      .button,
-      .input[type='submit'] {
+      .button {
         margin-right: 1px;
         border-radius: 0px;
         position: relative;
