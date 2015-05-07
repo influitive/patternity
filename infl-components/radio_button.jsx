@@ -34,10 +34,17 @@ var RadioButton = React.createClass({
   },
   render : function(){
     return (
-      <span id={this.props.id} className={this._radioCSSClasses()} onClick={this._clickRadioButton}>
-        <input disabled={!this.props.enabled} type="radio" ref="radio" checked={this.state.isChecked} value={this.props.value} className="pt-native-radio-button"  name={this.props.radioName} onChange={this._handleChange} id={this.props.id} />
-        <span className="stylized-radio-button"></span>
-        <span className="pt-radio-label">{this.props.radioLabel}</span>
+      <span id={this.props.id} className={this._radioCSSClasses()} onClick={this._clickRadioButton} ref="radioButton">
+        <input disabled={!this.props.enabled}
+            type="radio"
+            ref="nativeRadioButton"
+            checked={this.state.isChecked}
+            value={this.props.value}
+            className="pt-native-radio-button"
+            name={this.props.radioName}
+            onChange={this._handleChange} />
+        <span className="stylized-radio-button" ref="stylizedRadioButton"></span>
+        <span className="pt-radio-label" ref="label">{this.props.radioLabel}</span>
       </span>
     );
   },
@@ -49,7 +56,7 @@ var RadioButton = React.createClass({
   },
   _clickRadioButton : function(){
     if(this.props.enabled){
-      this.refs.radio.getDOMNode().click();
+      this.refs.nativeRadioButton.getDOMNode().click();
     }
   },
   _handleChange : function(event){
@@ -70,7 +77,7 @@ RadioButton.Group = React.createClass({
   },
   render : function(){
     return (
-      <span className={"pt-radio-button-group " + this.props.layout} id={this.props.id}>
+      <span className={"pt-radio-button-group " + this.props.layout} id={this.props.id} ref="radioButtonGroup">
         {this.props.children}
       </span>
     );
