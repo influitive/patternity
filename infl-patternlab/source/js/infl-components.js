@@ -30,6 +30,7 @@ inflComp.DetailedAlertPattern     = require("./patterns/molecules/detailed_alert
 inflComp.ModalDialogPattern       = require("./patterns/molecules/modal_dialog_pattern.jsx");
 inflComp.AccordionPattern         = require("./patterns/molecules/accordion_pattern.jsx");
 inflComp.TabsPattern              = require("./patterns/molecules/tabs_pattern.jsx");
+inflComp.PopoverPattern           = require("./patterns/molecules/popover_pattern.jsx");
 inflComp.FormRowPattern           = require("./patterns/molecules/form_row_pattern.jsx");
 inflComp.FormColumnPattern        = require("./patterns/molecules/form_column_pattern.jsx");
 inflComp.FormActionsPattern       = require("./patterns/molecules/form_actions_pattern.jsx");
@@ -53,7 +54,7 @@ inflComp.FormPagePattern          = require("./patterns/pages/form_page_pattern.
 module.exports = inflComp;
 
 
-},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/dstein/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dstein/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/dstein/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dstein/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -1231,6 +1232,105 @@ var PanelLeftSideBar = React.createClass({displayName: "PanelLeftSideBar",
 });
 
 module.exports = PanelLeftSideBar;
+
+
+},{"react":"/Users/dstein/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dstein/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx":[function(require,module,exports){
+var React = require('react');
+
+var $ = window.$;
+
+var Popover = React.createClass({displayName: "Popover",
+
+  getInitialState: function() {
+    return {
+      isVisible : false
+    };
+  },
+
+  componentWillUnmount: function() {
+    this._removeEvents();
+    this.hide();
+  },
+
+  render: function() {
+    var classes = 'infl-popover';
+    if (this.state.isVisible) classes += ' is-visible';
+    return (
+      React.createElement("div", {ref: "popover", className: classes}, 
+        React.createElement("div", {className: "arrow-top"}), 
+        React.createElement("div", {className: "arrow-top-inner"}), 
+         this.props.children
+      )
+      );
+  },
+
+  toggle: function(targetElement) {
+    if (this.state.isVisible) this.hide();
+    else this.show(targetElement);
+  },
+
+  hide: function() {
+    this.setState({
+        isVisible: false
+      }, function () {
+        this._removeEvents();
+    });
+  },
+
+  show: function(targetElement) {
+    var popoverNode = React.findDOMNode(this.refs.popover);
+    var popover = $(popoverNode);
+    var tW = $(targetElement).width();
+    var tH = $(targetElement).height();
+    var tOT = targetElement.offsetTop;
+    var tOL = targetElement.offsetLeft;
+    var pW = popover.width();
+    //var pH = popover.height();
+
+    // position the popover centered below the target element
+    var top = tOT + tH + 18;
+    var left = tOL + (tW - pW)/2;
+    popoverNode.style.top = top+'px';
+    popoverNode.style.left = left+'px';
+
+    this.setState({
+      isVisible : true
+    }, function() {
+      var me = this;
+      setTimeout(function() {
+        me._addEvents();
+      },50);
+    });
+  },
+
+  _windowClick : function(e) {
+    this.setState({
+      isVisible : false
+    }, function() {
+      this._removeEvents();
+    });
+
+  },
+  _addEvents : function() {
+    $(window).on('click', this._windowClick);
+  },
+  _removeEvents : function() {
+    $(window).off('click', this._windowClick);
+  }
+
+});
+
+Popover.clickEvent = function(e) {
+  var targetElement = e.target;
+  var popoverName = targetElement.getAttribute('data-popover');
+  var popover = this.refs[popoverName];
+  popover.toggle(targetElement);
+  e.preventDefault();
+  e.stopPropagation();
+  e.cancelBubble = true;
+};
+
+module.exports = Popover;
 
 
 },{"react":"/Users/dstein/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dstein/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx":[function(require,module,exports){
@@ -44391,7 +44491,90 @@ var PanelLeftSidebarPattern = React.createClass({displayName: "PanelLeftSidebarP
 module.exports = PanelLeftSidebarPattern;
 
 
-},{"../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../patternlab-components/code.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dstein/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../patternlab-components/code.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dstein/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Code      = require('../../patternlab-components/code.jsx');
+var Require   = require('../../patternlab-components/require.jsx');
+
+var Popover       = require("../../../../infl-components/popover.jsx");
+
+var PopoverPattern = React.createClass({displayName: "PopoverPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "popover-pattern"}, 
+        React.createElement(Pattern, {title: "popover"}, 
+          React.createElement("p", null, "The Popover component is a floating component that is used to hide and show content."), 
+          React.createElement("p", null, "Use an anchor tag with a ", React.createElement("b", null, "data-popover"), " attribute to reference the popover to open and bind the ", React.createElement("b", null, "Popover.clickEvent"), " function to the onClick event."), 
+
+          React.createElement(Pattern.Detail, {title: "Popover"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement("a", {href: "javascript://", "data-popover": "MyPopover1", onClick:  Popover.clickEvent.bind(this) }, "Open \"MyPopover1\""), 
+
+              React.createElement(Popover, {ref: "MyPopover1"}, 
+                React.createElement("ul", null, 
+                  React.createElement("li", null, React.createElement("a", {className: "ic ic-pencil", href: "javascript://"}, "Edit")), 
+                  React.createElement("li", null, React.createElement("a", {className: "ic ic-lock", href: "javascript://"}, "Lock")), 
+                  React.createElement("li", null, React.createElement("a", {className: "ic ic-arrow-left", href: "javascript://"}, "Move")), 
+                  React.createElement("li", null, React.createElement("a", {className: "ic ic-trash", href: "javascript://"}, "Delete"))
+                )
+              )
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+              "<a href=\"javascript://\" data-popover=\"MyPopover1\" onClick={ Popover.clickEvent.bind(this) }>Open \"MyPopover1\"</a>" + ' ' +
+
+              "<Popover ref=\"MyPopover1\">" + ' ' +
+              "<ul>" + ' ' +
+              "<li><a className=\"ic ic-pencil\"href=\"javascript://\">Edit</a></li>" + ' ' +
+              "<li><a className=\"ic ic-lock\"href=\"javascript://\">Lock</a></li>" + ' ' +
+              "<li><a className=\"ic ic-arrow-left\"href=\"javascript://\">Move</a></li>" + ' ' +
+              "<li><a className=\"ic ic-trash\" href=\"javascript://\">Delete</a></li>" + ' ' +
+              "</ul>" + ' ' +
+              "</Popover>"
+              ), 
+
+              React.createElement(Code.Props, {patternProps: this._getProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+            "var Popover = require(\"patternity/infl-components/popover.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+            "@import \"patternity/infl-styles/popover\";"
+            )
+          )
+        )
+      )
+      );
+  },
+  _getProps : function(){
+    return {
+      ref : {
+        type : "string",
+        default : "",
+        required : true,
+        description : "react reference key."
+      },
+      children : {
+        type : "array",
+        default : "[...] ",
+        required : true,
+        description : "Children elements to show within the popover."
+      }
+    };
+  }
+});
+
+module.exports = PopoverPattern;
+
+
+
+
+},{"../../../../infl-components/popover.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx","../../patternlab-components/code.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dstein/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dstein/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');

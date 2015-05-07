@@ -1,5 +1,7 @@
 var React = require('react');
 
+var $ = window.$;
+
 var Popover = React.createClass({
 
   getInitialState: function() {
@@ -51,7 +53,8 @@ var Popover = React.createClass({
     // position the popover centered below the target element
     var top = tOT + tH + 18;
     var left = tOL + (tW - pW)/2;
-    popover.css({top:top, left:left});
+    popoverNode.style.top = top+'px';
+    popoverNode.style.left = left+'px';
 
     this.setState({
       isVisible : true
@@ -79,5 +82,15 @@ var Popover = React.createClass({
   }
 
 });
+
+Popover.clickEvent = function(e) {
+  var targetElement = e.target;
+  var popoverName = targetElement.getAttribute('data-popover');
+  var popover = this.refs[popoverName];
+  popover.toggle(targetElement);
+  e.preventDefault();
+  e.stopPropagation();
+  e.cancelBubble = true;
+};
 
 module.exports = Popover;
