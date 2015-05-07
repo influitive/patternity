@@ -1132,8 +1132,9 @@ button .ic,
 button .loading-spinner {
   vertical-align: middle;
   margin-right: 5px;
-  margin-top: -1px;
   margin-left: -5px;
+  position: relative;
+  top: 2px;
 }
 .button:hover,
 button:hover {

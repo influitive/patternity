@@ -1270,10 +1270,17 @@ var RadioButton = React.createClass({displayName: "RadioButton",
   },
   render : function(){
     return (
-      React.createElement("span", {id: this.props.id, className: this._radioCSSClasses(), onClick: this._clickRadioButton}, 
-        React.createElement("input", {disabled: !this.props.enabled, type: "radio", ref: "radio", checked: this.state.isChecked, value: this.props.value, className: "pt-native-radio-button", name: this.props.radioName, onChange: this._handleChange, id: this.props.id}), 
-        React.createElement("span", {className: "stylized-radio-button"}), 
-        React.createElement("span", {className: "pt-radio-label"}, this.props.radioLabel)
+      React.createElement("span", {id: this.props.id, className: this._radioCSSClasses(), onClick: this._clickRadioButton, ref: "radioButton"}, 
+        React.createElement("input", {disabled: !this.props.enabled, 
+            type: "radio", 
+            ref: "nativeRadioButton", 
+            checked: this.state.isChecked, 
+            value: this.props.value, 
+            className: "pt-native-radio-button", 
+            name: this.props.radioName, 
+            onChange: this._handleChange}), 
+        React.createElement("span", {className: "stylized-radio-button", ref: "stylizedRadioButton"}), 
+        React.createElement("span", {className: "pt-radio-label", ref: "label"}, this.props.radioLabel)
       )
     );
   },
@@ -1285,7 +1292,7 @@ var RadioButton = React.createClass({displayName: "RadioButton",
   },
   _clickRadioButton : function(){
     if(this.props.enabled){
-      this.refs.radio.getDOMNode().click();
+      this.refs.nativeRadioButton.getDOMNode().click();
     }
   },
   _handleChange : function(event){
@@ -1306,7 +1313,7 @@ RadioButton.Group = React.createClass({displayName: "Group",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "pt-radio-button-group " + this.props.layout, id: this.props.id}, 
+      React.createElement("span", {className: "pt-radio-button-group " + this.props.layout, id: this.props.id, ref: "radioButtonGroup"}, 
         this.props.children
       )
     );
