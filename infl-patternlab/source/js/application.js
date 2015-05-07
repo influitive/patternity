@@ -29,6 +29,7 @@ inflComp.DetailedAlertPattern     = require("./patterns/molecules/detailed_alert
 inflComp.ModalDialogPattern       = require("./patterns/molecules/modal_dialog_pattern.jsx");
 inflComp.AccordionPattern         = require("./patterns/molecules/accordion_pattern.jsx");
 inflComp.TabsPattern              = require("./patterns/molecules/tabs_pattern.jsx");
+inflComp.PopoverPattern           = require("./patterns/molecules/popover_pattern.jsx");
 inflComp.FormRowPattern           = require("./patterns/molecules/form_row_pattern.jsx");
 inflComp.FormColumnPattern        = require("./patterns/molecules/form_column_pattern.jsx");
 inflComp.FormActionsPattern       = require("./patterns/molecules/form_actions_pattern.jsx");

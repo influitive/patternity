@@ -2487,6 +2487,7 @@ DIV.infl-popover UL LI A {
   display: block;
   vertical-align: top;
   line-height: 1.8em;
+  text-decoration: none;
 }
 DIV.infl-popover UL LI A.ic:before {
   margin-right: 0.3em;
@@ -2524,6 +2525,11 @@ DIV.infl-popover DIV.arrow-top-inner {
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
   border-bottom: 14px solid white;
+}
+
+/* the parent element of a popover link and popover component needs to be positioned relatively */
+.position-relative {
+  position: relative;
 }
 
 body {
