@@ -8,7 +8,7 @@ var Button = React.createClass({
     className: React.PropTypes.string,
     primary: React.PropTypes.bool,
     secondary: React.PropTypes.bool,
-    onClick: React.PropTypes.function,
+    onClick: React.PropTypes.func,
     href: React.PropTypes.string,
     disabled: React.PropTypes.bool
   },
