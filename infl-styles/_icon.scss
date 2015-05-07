@@ -217,292 +217,312 @@
 }
 
 
-.ic.ic-globe:before {
+.ic.ic-gear:before {
   content: "\E016"
+}
+
+@mixin ic-gear() {
+  font-family: 'influicons';
+  content: "\E016"
+}
+
+
+.ic.ic-globe:before {
+  content: "\E017"
 }
 
 @mixin ic-globe() {
   font-family: 'influicons';
-  content: "\E016"
+  content: "\E017"
 }
 
 
 .ic.ic-grid:before {
-  content: "\E017"
+  content: "\E018"
 }
 
 @mixin ic-grid() {
   font-family: 'influicons';
-  content: "\E017"
+  content: "\E018"
 }
 
 
 .ic.ic-hamburger:before {
-  content: "\E018"
+  content: "\E019"
 }
 
 @mixin ic-hamburger() {
   font-family: 'influicons';
-  content: "\E018"
+  content: "\E019"
 }
 
 
 .ic.ic-heart:before {
-  content: "\E019"
+  content: "\E01A"
 }
 
 @mixin ic-heart() {
   font-family: 'influicons';
-  content: "\E019"
+  content: "\E01A"
 }
 
 
 .ic.ic-info-circle-o:before {
-  content: "\E01A"
+  content: "\E01B"
 }
 
 @mixin ic-info-circle-o() {
   font-family: 'influicons';
-  content: "\E01A"
+  content: "\E01B"
 }
 
 
 .ic.ic-list:before {
-  content: "\E01B"
+  content: "\E01C"
 }
 
 @mixin ic-list() {
   font-family: 'influicons';
-  content: "\E01B"
+  content: "\E01C"
 }
 
 
 .ic.ic-lock:before {
-  content: "\E01C"
+  content: "\E01D"
 }
 
 @mixin ic-lock() {
   font-family: 'influicons';
-  content: "\E01C"
+  content: "\E01D"
 }
 
 
 .ic.ic-mail:before {
-  content: "\E01D"
+  content: "\E01E"
 }
 
 @mixin ic-mail() {
   font-family: 'influicons';
-  content: "\E01D"
+  content: "\E01E"
+}
+
+
+.ic.ic-merge:before {
+  content: "\E01F"
+}
+
+@mixin ic-merge() {
+  font-family: 'influicons';
+  content: "\E01F"
 }
 
 
 .ic.ic-minus:before {
-  content: "\E01E"
+  content: "\E020"
 }
 
 @mixin ic-minus() {
   font-family: 'influicons';
-  content: "\E01E"
+  content: "\E020"
 }
 
 
 .ic.ic-pencil:before {
-  content: "\E01F"
+  content: "\E021"
 }
 
 @mixin ic-pencil() {
   font-family: 'influicons';
-  content: "\E01F"
+  content: "\E021"
 }
 
 
 .ic.ic-pin:before {
-  content: "\E020"
+  content: "\E022"
 }
 
 @mixin ic-pin() {
   font-family: 'influicons';
-  content: "\E020"
+  content: "\E022"
 }
 
 
 .ic.ic-plus:before {
-  content: "\E021"
+  content: "\E023"
 }
 
 @mixin ic-plus() {
   font-family: 'influicons';
-  content: "\E021"
+  content: "\E023"
 }
 
 
 .ic.ic-question-circle-o:before {
-  content: "\E022"
+  content: "\E024"
 }
 
 @mixin ic-question-circle-o() {
   font-family: 'influicons';
-  content: "\E022"
+  content: "\E024"
 }
 
 
 .ic.ic-quote-close:before {
-  content: "\E023"
+  content: "\E025"
 }
 
 @mixin ic-quote-close() {
   font-family: 'influicons';
-  content: "\E023"
+  content: "\E025"
 }
 
 
 .ic.ic-quote-fill-close:before {
-  content: "\E024"
+  content: "\E026"
 }
 
 @mixin ic-quote-fill-close() {
   font-family: 'influicons';
-  content: "\E024"
+  content: "\E026"
 }
 
 
 .ic.ic-quote-fill-open:before {
-  content: "\E025"
+  content: "\E027"
 }
 
 @mixin ic-quote-fill-open() {
   font-family: 'influicons';
-  content: "\E025"
+  content: "\E027"
 }
 
 
 .ic.ic-quote-open:before {
-  content: "\E026"
+  content: "\E028"
 }
 
 @mixin ic-quote-open() {
   font-family: 'influicons';
-  content: "\E026"
+  content: "\E028"
 }
 
 
 .ic.ic-search:before {
-  content: "\E027"
+  content: "\E029"
 }
 
 @mixin ic-search() {
   font-family: 'influicons';
-  content: "\E027"
+  content: "\E029"
 }
 
 
 .ic.ic-share:before {
-  content: "\E028"
+  content: "\E02A"
 }
 
 @mixin ic-share() {
   font-family: 'influicons';
-  content: "\E028"
+  content: "\E02A"
 }
 
 
 .ic.ic-speech-2:before {
-  content: "\E029"
+  content: "\E02B"
 }
 
 @mixin ic-speech-2() {
   font-family: 'influicons';
-  content: "\E029"
+  content: "\E02B"
 }
 
 
 .ic.ic-speech:before {
-  content: "\E02A"
+  content: "\E02C"
 }
 
 @mixin ic-speech() {
   font-family: 'influicons';
-  content: "\E02A"
+  content: "\E02C"
 }
 
 
 .ic.ic-star:before {
-  content: "\E02B"
+  content: "\E02D"
 }
 
 @mixin ic-star() {
   font-family: 'influicons';
-  content: "\E02B"
+  content: "\E02D"
 }
 
 
 .ic.ic-support:before {
-  content: "\E02C"
+  content: "\E02E"
 }
 
 @mixin ic-support() {
   font-family: 'influicons';
-  content: "\E02C"
+  content: "\E02E"
 }
 
 
 .ic.ic-target:before {
-  content: "\E02D"
+  content: "\E02F"
 }
 
 @mixin ic-target() {
   font-family: 'influicons';
-  content: "\E02D"
+  content: "\E02F"
 }
 
 
 .ic.ic-times-circle-o:before {
-  content: "\E02E"
+  content: "\E030"
 }
 
 @mixin ic-times-circle-o() {
   font-family: 'influicons';
-  content: "\E02E"
+  content: "\E030"
 }
 
 
 .ic.ic-times:before {
-  content: "\E02F"
+  content: "\E031"
 }
 
 @mixin ic-times() {
   font-family: 'influicons';
-  content: "\E02F"
+  content: "\E031"
 }
 
 
 .ic.ic-trash:before {
-  content: "\E030"
+  content: "\E032"
 }
 
 @mixin ic-trash() {
   font-family: 'influicons';
-  content: "\E030"
+  content: "\E032"
 }
 
 
 .ic.ic-unlock:before {
-  content: "\E031"
+  content: "\E033"
 }
 
 @mixin ic-unlock() {
   font-family: 'influicons';
-  content: "\E031"
+  content: "\E033"
 }
 
 
 .ic.ic-user:before {
-  content: "\E032"
+  content: "\E034"
 }
 
 @mixin ic-user() {
   font-family: 'influicons';
-  content: "\E032"
+  content: "\E034"
 }
 

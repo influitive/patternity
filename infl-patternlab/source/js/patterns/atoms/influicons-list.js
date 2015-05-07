@@ -44,6 +44,8 @@ var icons = {
   
     "exclamation-circle-o": "exclamation-circle-o",
   
+    "gear": "gear",
+  
     "globe": "globe",
   
     "grid": "grid",
@@ -59,6 +61,8 @@ var icons = {
     "lock": "lock",
   
     "mail": "mail",
+  
+    "merge": "merge",
   
     "minus": "minus",
   
