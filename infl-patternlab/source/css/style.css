@@ -1564,6 +1564,7 @@ select {
 
 textarea {
   padding-top: 10px;
+  height: 10em;
 }
 
 .is-error input,
