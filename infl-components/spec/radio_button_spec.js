@@ -114,7 +114,7 @@ describe('Radio Button Component', function() {
     xit('will call the onChange callback if enabled', function () {
       var mockOnChange = sinon.spy();
       renderRadioButton(<RadioButton onChange={mockOnChange}></RadioButton>);
-      simulate.click(nativeRadioButtonElement);
+      simulate.change(nativeRadioButtonElement, {target: {checked: true}});
       expect(mockOnChange).to.have.been.called();
     });
 
