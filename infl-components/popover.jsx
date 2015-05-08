@@ -84,13 +84,21 @@ var Popover = React.createClass({
 });
 
 Popover.clickEvent = function(e) {
-  var targetElement = e.target;
-  var popoverName = targetElement.getAttribute('data-popover');
-  var popover = this.refs[popoverName];
-  popover.toggle(targetElement);
-  e.preventDefault();
-  e.stopPropagation();
-  e.cancelBubble = true;
+  var elm = e.target;
+  while (!elm.getAttribute('data-popover') && elm.parentNode) {
+    elm = elm.parentNode;
+  }
+  if (elm.getAttribute('data-popover')) {
+    var popoverName = elm.getAttribute('data-popover');
+    var popover = this.refs[popoverName];
+    popover.toggle(elm);
+    e.preventDefault();
+    e.stopPropagation();
+    e.cancelBubble = true;
+  }
+  else {
+    console.log('no popover found');
+  }
 };
 
 module.exports = Popover;

@@ -8,6 +8,7 @@ DIV.infl-popover {
   z-index:1000;
   top:0;
   left:0;
+  text-align: left;
 
   UL {
     padding: 0;
@@ -35,10 +36,6 @@ DIV.infl-popover {
     }
   }
 
-  &.is-visible {
-    visibility:visible;
-  }
-
   DIV.arrow-top {
     position : absolute;
     top: -15px;
@@ -63,6 +60,10 @@ DIV.infl-popover {
     border-right: 14px solid transparent;
     border-bottom: 14px solid white;
   }
+}
+
+DIV.infl-popover.is-visible {
+  visibility:visible;
 }
 
 /* the parent element of a popover link and popover component needs to be positioned relatively */
