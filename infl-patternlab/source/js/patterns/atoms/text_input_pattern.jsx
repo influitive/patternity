@@ -21,7 +21,8 @@ var TextInputPattern = React.createClass({
       disabled : false,
       placeholder : "Text Input",
       message : [],
-      clearable : false
+      clearable : false,
+      autofocus : false
     };
   },
   render : function(){
@@ -39,7 +40,16 @@ var TextInputPattern = React.createClass({
                 <div className="demo-pattern">
                   <h4>Text Input:</h4>
                   <div className="demo-pattern-example">
-                    <TextInput clearable={this.state.clearable} placeholder={this.state.placeholder} message={this.state.message} type={this.state.type} required={this.state.required} error={this.state.error} valid={this.state.valid} readOnly={this.state.readOnly} disabled={this.state.disabled}/>
+                    <TextInput  clearable={this.state.clearable}
+                                placeholder={this.state.placeholder}
+                                message={this.state.message}
+                                type={this.state.type}
+                                required={this.state.required}
+                                error={this.state.error}
+                                valid={this.state.valid}
+                                readOnly={this.state.readOnly}
+                                disabled={this.state.disabled}
+                                autofocus={this.state.autofocus}/>
                   </div>
                 </div>
                 <Code>
@@ -69,7 +79,8 @@ var TextInputPattern = React.createClass({
                 placeholder={this.state.placeholder}
                 message={this.state.message}
                 isInputOptionEnabled={this.state.isInputOptionEnabled}
-                clearable={this.state.clearable} />
+                clearable={this.state.clearable}
+                autofocus={this.state.autofocus} />
             </Pattern.Demo>
 
             <Code>
@@ -101,7 +112,8 @@ var TextInputPattern = React.createClass({
       "\tvalid : " + this.state.valid.toString() + ",\n" +
       "\treadOnly : " + this.state.readOnly.toString() + ",\n" +
       "\tdisabled : " + this.state.disabled.toString() + ",\n" +
-      "\clearable : " + this.state.clearable.toString() + ",\n" +
+      "\tclearable : " + this.state.clearable.toString() + ",\n" +
+      "\tautofocus : " + this.state.autofocus.toString() + ",\n" +
       "\tplaceholder : '" + this.state.placeholder + "',\n" +
       "\tmessage : [\n" +
         this._handleEmptyMessage(this.state.message[0]) +
@@ -112,7 +124,7 @@ var TextInputPattern = React.createClass({
   },
   _buildDempJSX : function(){
     return (
-      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" clearable={' + this.state.clearable + '} required={' + this.state.required + '} error={' + this.state.error + '} valid={' + this.state.valid + '} readOnly={' + this.state.readOnly + '} disabled={' + this.state.disabled + '}  />'
+      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" clearable={' + this.state.clearable + '} required={' + this.state.required + '} error={' + this.state.error + '} valid={' + this.state.valid + '} readOnly={' + this.state.readOnly + '} disabled={' + this.state.disabled + '} autofocus={' + this.state.autofocus + '}  />'
     );
   },
   _handleEmptyMessage : function(message){
@@ -236,6 +248,12 @@ var TextInputPattern = React.createClass({
         default : "empty function",
         required : false,
         description : "Callback with event when the text input changes.  Only called if enabled."
+      },
+      autofocus : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "When true it will set the focus to the input"
       }
     };
   }
@@ -265,7 +283,8 @@ var TextInputControls = React.createClass({
               isInputOptionEnabled={this.props.isInputOptionEnabled}  />
           <TextInputAdditionalControls
               onChange={this.props.onAdditionalChange}
-              clearable={this.props.clearable} />
+              clearable={this.props.clearable}
+              autofocus={this.props.autofocus} />
         </Form>
       </div>
     );
@@ -276,7 +295,8 @@ var TextInputAdditionalControls = React.createClass({
   getDefaultProps : function(){
     return {
       onChange : function(){},
-      clearable : false
+      clearable : false,
+      autofocus : false
     };
   },
   render : function(){
@@ -287,6 +307,14 @@ var TextInputAdditionalControls = React.createClass({
             <RadioButton.Group>
               <RadioButton isChecked={this.props.clearable} onChange={this._handleBooleanChange} radioName="clearable" radioLabel="Yes" value="true"></RadioButton>
               <RadioButton isChecked={!this.props.clearable} onChange={this._handleBooleanChange} radioName="clearable" radioLabel="No" value="false"></RadioButton>
+            </RadioButton.Group>
+          </InputLabel>
+        </Form.Row>
+        <Form.Row>
+          <InputLabel label="Autofocus">
+            <RadioButton.Group>
+              <RadioButton isChecked={this.props.autofocus} onChange={this._handleBooleanChange} radioName="autofocus" radioLabel="Yes" value="true"></RadioButton>
+              <RadioButton isChecked={!this.props.autofocus} onChange={this._handleBooleanChange} radioName="autofocus" radioLabel="No" value="false"></RadioButton>
             </RadioButton.Group>
           </InputLabel>
         </Form.Row>

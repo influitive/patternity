@@ -18,7 +18,8 @@ var TextInput = React.createClass({
       disabled : false,
       onChange : function(){},
       clearable : false,
-      onCleared : function(){}
+      onCleared : function(){},
+      autofocus : false
     };
   },
   propTypes : {
@@ -42,7 +43,8 @@ var TextInput = React.createClass({
     disabled : React.PropTypes.bool,
     onChange : React.PropTypes.func,
     clearInput : React.PropTypes.bool,
-    onInputCleared : React.PropTypes.func
+    onInputCleared : React.PropTypes.func,
+    autofocus : React.PropTypes.bool
   },
   getInitialState: function() {
     return {value: this.props.value};
@@ -51,6 +53,10 @@ var TextInput = React.createClass({
     this.setState({
       value : newProps.value
     });
+    this._setInputFocus(newProps.autofocus);
+  },
+  componentDidMount: function(){
+    this._setInputFocus(this.props.autofocus);
   },
   render : function(){
     return (
@@ -58,11 +64,16 @@ var TextInput = React.createClass({
         {this._determineInputIcon()}
         <input readOnly={this.props.readOnly} required={this.props.required} type={this.props.type} value={this.state.value}
                placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
-               pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange}/>
+               pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange} ref="input"/>
         {this._isClearable()}
         {this._buildMessage()}
       </span>
     );
+  },
+  _setInputFocus : function(autofocus){
+    if(autofocus){
+      this.refs.input.getDOMNode().focus();
+    }
   },
   _determineInputStyling : function(){
     return classNames({
