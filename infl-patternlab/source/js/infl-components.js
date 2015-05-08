@@ -79,7 +79,6 @@ var Accordion = React.createClass({displayName: "Accordion",
     }
   },
   componentWillReceiveProps : function(nextProps){
-    console.log(this.state.openSectionIndex);
     if(this._isOpenSectionIndexValid(nextProps.openSectionIndex)){
       this.setState({
         openSectionIndex : nextProps.openSectionIndex
@@ -1800,7 +1799,8 @@ var TextInput = React.createClass({displayName: "TextInput",
       disabled : false,
       onChange : function(){},
       clearable : false,
-      onCleared : function(){}
+      onCleared : function(){},
+      autofocus : false
     };
   },
   propTypes : {
@@ -1824,7 +1824,8 @@ var TextInput = React.createClass({displayName: "TextInput",
     disabled : React.PropTypes.bool,
     onChange : React.PropTypes.func,
     clearInput : React.PropTypes.bool,
-    onInputCleared : React.PropTypes.func
+    onInputCleared : React.PropTypes.func,
+    autofocus : React.PropTypes.bool
   },
   getInitialState: function() {
     return {value: this.props.value};
@@ -1833,6 +1834,10 @@ var TextInput = React.createClass({displayName: "TextInput",
     this.setState({
       value : newProps.value
     });
+    this._setInputFocus(newProps.autofocus);
+  },
+  componentDidMount: function(){
+    this._setInputFocus(this.props.autofocus);
   },
   render : function(){
     return (
@@ -1840,11 +1845,16 @@ var TextInput = React.createClass({displayName: "TextInput",
         this._determineInputIcon(), 
         React.createElement("input", {readOnly: this.props.readOnly, required: this.props.required, type: this.props.type, value: this.state.value, 
                placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, 
-               pattern: this.props.pattern, disabled: this.props.disabled, onChange: this._handleChange}), 
+               pattern: this.props.pattern, disabled: this.props.disabled, onChange: this._handleChange, ref: "input"}), 
         this._isClearable(), 
         this._buildMessage()
       )
     );
+  },
+  _setInputFocus : function(autofocus){
+    if(autofocus){
+      this.refs.input.getDOMNode().focus();
+    }
   },
   _determineInputStyling : function(){
     return classNames({
@@ -41456,7 +41466,8 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
       disabled : false,
       placeholder : "Text Input",
       message : [],
-      clearable : false
+      clearable : false,
+      autofocus : false
     };
   },
   render : function(){
@@ -41474,7 +41485,16 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
                 React.createElement("div", {className: "demo-pattern"}, 
                   React.createElement("h4", null, "Text Input:"), 
                   React.createElement("div", {className: "demo-pattern-example"}, 
-                    React.createElement(TextInput, {clearable: this.state.clearable, placeholder: this.state.placeholder, message: this.state.message, type: this.state.type, required: this.state.required, error: this.state.error, valid: this.state.valid, readOnly: this.state.readOnly, disabled: this.state.disabled})
+                    React.createElement(TextInput, {clearable: this.state.clearable, 
+                                placeholder: this.state.placeholder, 
+                                message: this.state.message, 
+                                type: this.state.type, 
+                                required: this.state.required, 
+                                error: this.state.error, 
+                                valid: this.state.valid, 
+                                readOnly: this.state.readOnly, 
+                                disabled: this.state.disabled, 
+                                autofocus: this.state.autofocus})
                   )
                 ), 
                 React.createElement(Code, null, 
@@ -41504,7 +41524,8 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
                 placeholder: this.state.placeholder, 
                 message: this.state.message, 
                 isInputOptionEnabled: this.state.isInputOptionEnabled, 
-                clearable: this.state.clearable})
+                clearable: this.state.clearable, 
+                autofocus: this.state.autofocus})
             ), 
 
             React.createElement(Code, null, 
@@ -41536,7 +41557,8 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
       "\tvalid : " + this.state.valid.toString() + ",\n" +
       "\treadOnly : " + this.state.readOnly.toString() + ",\n" +
       "\tdisabled : " + this.state.disabled.toString() + ",\n" +
-      "\clearable : " + this.state.clearable.toString() + ",\n" +
+      "\tclearable : " + this.state.clearable.toString() + ",\n" +
+      "\tautofocus : " + this.state.autofocus.toString() + ",\n" +
       "\tplaceholder : '" + this.state.placeholder + "',\n" +
       "\tmessage : [\n" +
         this._handleEmptyMessage(this.state.message[0]) +
@@ -41547,7 +41569,7 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
   },
   _buildDempJSX : function(){
     return (
-      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" clearable={' + this.state.clearable + '} required={' + this.state.required + '} error={' + this.state.error + '} valid={' + this.state.valid + '} readOnly={' + this.state.readOnly + '} disabled={' + this.state.disabled + '}  />'
+      '<TextInput placeholder="' + this.state.placeholder + '" message="[' + this.state.message + ']" type="' + this.state.type +  '" clearable={' + this.state.clearable + '} required={' + this.state.required + '} error={' + this.state.error + '} valid={' + this.state.valid + '} readOnly={' + this.state.readOnly + '} disabled={' + this.state.disabled + '} autofocus={' + this.state.autofocus + '}  />'
     );
   },
   _handleEmptyMessage : function(message){
@@ -41671,6 +41693,12 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
         default : "empty function",
         required : false,
         description : "Callback with event when the text input changes.  Only called if enabled."
+      },
+      autofocus : {
+        type : "boolean",
+        default : "false",
+        required : false,
+        description : "When true it will set the focus to the input"
       }
     };
   }
@@ -41700,7 +41728,8 @@ var TextInputControls = React.createClass({displayName: "TextInputControls",
               isInputOptionEnabled: this.props.isInputOptionEnabled}), 
           React.createElement(TextInputAdditionalControls, {
               onChange: this.props.onAdditionalChange, 
-              clearable: this.props.clearable})
+              clearable: this.props.clearable, 
+              autofocus: this.props.autofocus})
         )
       )
     );
@@ -41711,7 +41740,8 @@ var TextInputAdditionalControls = React.createClass({displayName: "TextInputAddi
   getDefaultProps : function(){
     return {
       onChange : function(){},
-      clearable : false
+      clearable : false,
+      autofocus : false
     };
   },
   render : function(){
@@ -41722,6 +41752,14 @@ var TextInputAdditionalControls = React.createClass({displayName: "TextInputAddi
             React.createElement(RadioButton.Group, null, 
               React.createElement(RadioButton, {isChecked: this.props.clearable, onChange: this._handleBooleanChange, radioName: "clearable", radioLabel: "Yes", value: "true"}), 
               React.createElement(RadioButton, {isChecked: !this.props.clearable, onChange: this._handleBooleanChange, radioName: "clearable", radioLabel: "No", value: "false"})
+            )
+          )
+        ), 
+        React.createElement(Form.Row, null, 
+          React.createElement(InputLabel, {label: "Autofocus"}, 
+            React.createElement(RadioButton.Group, null, 
+              React.createElement(RadioButton, {isChecked: this.props.autofocus, onChange: this._handleBooleanChange, radioName: "autofocus", radioLabel: "Yes", value: "true"}), 
+              React.createElement(RadioButton, {isChecked: !this.props.autofocus, onChange: this._handleBooleanChange, radioName: "autofocus", radioLabel: "No", value: "false"})
             )
           )
         ), 
