@@ -22,7 +22,6 @@ var Accordion = React.createClass({
     }
   },
   componentWillReceiveProps : function(nextProps){
-    console.log(this.state.openSectionIndex);
     if(this._isOpenSectionIndexValid(nextProps.openSectionIndex)){
       this.setState({
         openSectionIndex : nextProps.openSectionIndex
