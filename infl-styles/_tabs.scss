@@ -1,14 +1,16 @@
 .pt-tabs {
-  with: 100%;
+  width: 100%;
 
   .pt-tabs-menu {
     width: 100%;
-    border-bottom: 1px solid $light-grey;
     padding: 0px;
     margin-bottom: 0px;
+    overflow: hidden;
 
     .pt-tab {
-      display: inline-block;
+      float: left;
+      border-bottom: 1px solid $light-grey;
+      box-sizing: border-box;
       width: 150px;
       list-style-type: none;
       z-index: 3;
@@ -25,16 +27,22 @@
       }
 
       &.tab-open {
-        background-color:#fff;
         border-top: 3px solid $info-color;
-        border-bottom: 1px solid #fff;
-
+        border-bottom: none;
         a {
           border-right: 1px solid $light-grey;
           border-left: 1px solid $light-grey;
           position: relative;
           color: $info-color;
         }
+      }
+
+      &:last-child:after {
+        position:absolute;
+        left: 100%;
+        content: '';
+        width: 9999%;
+        border-bottom: 1px solid $light-grey;
       }
     }
   }
