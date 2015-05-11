@@ -27,16 +27,15 @@ var ModalDialog = React.createClass({
   componentWillReceiveProps : function(newProps){
     this.setState({
       isModalOpen : newProps.isModalOpen
-    }, function() {
-      if (newProps.isModalOpen) {
-        this._disableBodyScroll();
-      }
-      else {
-        this._enableBodyScroll();
-      }
     });
   },
-  componentDidMount : function(){
+  componentDidUpdate: function(){
+    if (this.state.isModalOpen) {
+      this._disableBodyScroll();
+    }
+    else {
+      this._enableBodyScroll();
+    }
   },
   render : function(){
     return (
