@@ -20,6 +20,9 @@ var ModalDialog = React.createClass({
     lightbox : React.PropTypes.bool
   },
   getInitialState : function(){
+    if (this.props.isModalOpen) {
+      this._disableBodyScroll();
+    }
     return {
       isModalOpen : this.props.isModalOpen
     };
@@ -54,9 +57,7 @@ var ModalDialog = React.createClass({
     return this.props.scrollingBody ? "scrolling-body" : "";
   },
   _disableBodyScroll : function(){
-    if(this.state.isModalOpen){
-      this._getBodyElement().style.overflow = "hidden";
-    }
+    this._getBodyElement().style.overflow = "hidden";
   },
   _lightbox : function(){
     return this.props.lightbox ? "lightbox" : "";
