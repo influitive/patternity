@@ -1,4 +1,4 @@
-DIV.infl-popover {
+DIV.pt-popover {
   box-sizing:border-box;
   display:block;
   position:absolute;
@@ -10,29 +10,28 @@ DIV.infl-popover {
   left:0;
   text-align: left;
 
-  UL {
+  DIV.pt-popovermenu {
     padding: 0;
     margin: 0.5em 0;
-    LI {
-      list-style:none;
-      A {
-        padding: 0em 1em;
-        display: block;
-        vertical-align: top;
-        line-height: 1.8em;
-        text-decoration:none;
+  }
+  DIV.pt-popovermenu > A {
+    display:block;
+    padding: 0em 1em;
+    display: block;
+    vertical-align: top;
+    line-height: 1.8em;
+    text-decoration:none;
 
-        &.ic:before {
-          margin-right: 0.3em;
-          font-size: 18px;
-          line-height: 1.4em;
-          display: inline-block;
-        }
-      }
-      A:hover {
-        text-decoration:none;
-        background-color:#e0e0e0;
-      }
+    &.ic:before {
+      margin-right: 0.3em;
+      font-size: 18px;
+      line-height: 1.4em;
+      display: inline-block;
+    }
+
+    &:hover {
+      text-decoration:none;
+      background-color:#e0e0e0;
     }
   }
 
@@ -62,7 +61,7 @@ DIV.infl-popover {
   }
 }
 
-DIV.infl-popover.is-visible {
+DIV.pt-popover.is-visible {
   visibility:visible;
 }
 
