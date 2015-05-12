@@ -1,8 +1,6 @@
 var React = require('react');
 
-var $ = window.$;
-
-var Popover = React.createClass({
+var PopoverFloater = React.createClass({
 
   propTypes : {
     ref: React.PropTypes.string,
@@ -31,7 +29,7 @@ var Popover = React.createClass({
   },
 
   _classes: function() {
-    return 'infl-popover' + (this.state.isVisible?' is-visible':'');
+    return 'pt-popover' + (this.state.isVisible?' is-visible':'');
   },
 
   toggle: function(targetElement) {
@@ -45,9 +43,9 @@ var Popover = React.createClass({
 
   _hide: function() {
     this.setState({
-        isVisible: false
-      }, function () {
-        this._removeEvents();
+      isVisible: false
+    }, function () {
+      this._removeEvents();
     });
   },
 
@@ -85,6 +83,7 @@ var Popover = React.createClass({
     });
 
   },
+
   _addEvents : function() {
     $(window).on('click', this._windowClick);
   },
@@ -94,7 +93,7 @@ var Popover = React.createClass({
 
 });
 
-Popover.clickEvent = function(e) {
+PopoverFloater.clickEvent = function(e) {
   var elm = e.target;
   while (!elm.getAttribute('data-popover') && elm.parentNode) {
     elm = elm.parentNode;
@@ -107,9 +106,32 @@ Popover.clickEvent = function(e) {
     e.stopPropagation();
     e.cancelBubble = true;
   }
-  else {
-    console.log('no popover found');
-  }
 };
+
+var Popover = React.createClass({
+  render : function() {
+    var first = this.props.children[0];
+    first.props['data-popover'] = 'popover';
+    first.props.onClick = PopoverFloater.clickEvent.bind(this);
+
+    var second = this.props.children[1];
+    second.props.ref = 'popover';
+
+    return (<span>
+      { first }
+      <PopoverFloater ref="popover">
+        { second }
+      </PopoverFloater>
+    </span>);
+  }
+});
+
+Popover.Menu = React.createClass({
+  render : function() {
+    return (<div className="pt-popovermenu">
+      { this.props.children }
+    </div>);
+  }
+});
 
 module.exports = Popover;
