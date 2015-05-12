@@ -19,6 +19,11 @@ module.exports = function(config) {
       'infl-components/**/*.jsx'
     ],
 
+    plugins: [
+      'karma-browserify',
+      'karma-mocha',
+      'karma-phantomjs-launcher'
+    ],
 
     // list of files to exclude
     exclude: [
