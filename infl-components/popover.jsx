@@ -4,6 +4,11 @@ var $ = window.$;
 
 var Popover = React.createClass({
 
+  propTypes : {
+    ref: React.PropTypes.string,
+    children: React.PropTypes.object
+  },
+
   getInitialState: function() {
     return {
       isVisible : false
@@ -12,14 +17,12 @@ var Popover = React.createClass({
 
   componentWillUnmount: function() {
     this._removeEvents();
-    this.hide();
+    this._hide();
   },
 
   render: function() {
-    var classes = 'infl-popover';
-    if (this.state.isVisible) classes += ' is-visible';
     return (
-      <div ref="popover" className={classes}>
+      <div ref="popover" className={this._classes()}>
         <div className="arrow-top"/>
         <div className="arrow-top-inner"/>
         { this.props.children }
@@ -27,12 +30,20 @@ var Popover = React.createClass({
       );
   },
 
-  toggle: function(targetElement) {
-    if (this.state.isVisible) this.hide();
-    else this.show(targetElement);
+  _classes: function() {
+    return 'infl-popover' + (this.state.isVisible?' is-visible':'');
   },
 
-  hide: function() {
+  toggle: function(targetElement) {
+    if (this.state.isVisible) {
+      this._hide();
+    }
+    else {
+      this._show(targetElement);
+    }
+  },
+
+  _hide: function() {
     this.setState({
         isVisible: false
       }, function () {
@@ -40,7 +51,7 @@ var Popover = React.createClass({
     });
   },
 
-  show: function(targetElement) {
+  _show: function(targetElement) {
     var popoverNode = React.findDOMNode(this.refs.popover);
     var popover = $(popoverNode);
     var tW = $(targetElement).width();
