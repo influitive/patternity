@@ -1247,9 +1247,7 @@ module.exports = PanelLeftSideBar;
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx":[function(require,module,exports){
 var React = require('react');
 
-var $ = window.$;
-
-var Popover = React.createClass({displayName: "Popover",
+var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
   propTypes : {
     ref: React.PropTypes.string,
@@ -1278,7 +1276,7 @@ var Popover = React.createClass({displayName: "Popover",
   },
 
   _classes: function() {
-    return 'infl-popover' + (this.state.isVisible?' is-visible':'');
+    return 'pt-popover' + (this.state.isVisible?' is-visible':'');
   },
 
   toggle: function(targetElement) {
@@ -1292,9 +1290,9 @@ var Popover = React.createClass({displayName: "Popover",
 
   _hide: function() {
     this.setState({
-        isVisible: false
-      }, function () {
-        this._removeEvents();
+      isVisible: false
+    }, function () {
+      this._removeEvents();
     });
   },
 
@@ -1332,6 +1330,7 @@ var Popover = React.createClass({displayName: "Popover",
     });
 
   },
+
   _addEvents : function() {
     $(window).on('click', this._windowClick);
   },
@@ -1341,7 +1340,7 @@ var Popover = React.createClass({displayName: "Popover",
 
 });
 
-Popover.clickEvent = function(e) {
+PopoverFloater.clickEvent = function(e) {
   var elm = e.target;
   while (!elm.getAttribute('data-popover') && elm.parentNode) {
     elm = elm.parentNode;
@@ -1354,10 +1353,33 @@ Popover.clickEvent = function(e) {
     e.stopPropagation();
     e.cancelBubble = true;
   }
-  else {
-    console.log('no popover found');
-  }
 };
+
+var Popover = React.createClass({displayName: "Popover",
+  render : function() {
+    var first = this.props.children[0];
+    first.props['data-popover'] = 'popover';
+    first.props.onClick = PopoverFloater.clickEvent.bind(this);
+
+    var second = this.props.children[1];
+    second.props.ref = 'popover';
+
+    return (React.createElement("span", null, 
+       first, 
+      React.createElement(PopoverFloater, {ref: "popover"}, 
+         second 
+      )
+    ));
+  }
+});
+
+Popover.Menu = React.createClass({displayName: "Menu",
+  render : function() {
+    return (React.createElement("div", {className: "pt-popovermenu"}, 
+       this.props.children
+    ));
+  }
+});
 
 module.exports = Popover;
 
@@ -41802,22 +41824,22 @@ var TextInputAdditionalControls = React.createClass({displayName: "TextInputAddi
         ), 
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Placeholder"}, 
-            React.createElement(TextInput, {placeholder: "Text Input", value: "Text Input", name: "placeholder", onChange: this._handleChange})
+            React.createElement(TextInput, {key: "placeholder", placeholder: "Text Input", value: "Text Input", name: "placeholder", onChange: this._handleChange})
           )
         ), 
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Message One"}, 
-            React.createElement(TextInput, {placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageOne", name: "message", onChange: this._handleMessageChange})
+            React.createElement(TextInput, {key: "message-one", placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageOne", name: "message", onChange: this._handleMessageChange})
           )
         ), 
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Message Two"}, 
-            React.createElement(TextInput, {placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageTwo", name: "message", onChange: this._handleMessageChange})
+            React.createElement(TextInput, {key: "message-two", placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageTwo", name: "message", onChange: this._handleMessageChange})
           )
         ), 
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Message Three"}, 
-            React.createElement(TextInput, {placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageThree", name: "message", onChange: this._handleMessageChange})
+            React.createElement(TextInput, {key: "message-three", placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageThree", name: "message", onChange: this._handleMessageChange})
           )
         )
       )

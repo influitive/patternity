@@ -320,22 +320,22 @@ var TextInputAdditionalControls = React.createClass({
         </Form.Row>
         <Form.Row>
           <InputLabel label="Placeholder">
-            <TextInput placeholder="Text Input" value="Text Input" name="placeholder" onChange={this._handleChange}/>
+            <TextInput key="placeholder" placeholder="Text Input" value="Text Input" name="placeholder" onChange={this._handleChange}/>
           </InputLabel>
         </Form.Row>
         <Form.Row>
           <InputLabel label="Message One">
-            <TextInput placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageOne" name="message" onChange={this._handleMessageChange}/>
+            <TextInput key="message-one" placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageOne" name="message" onChange={this._handleMessageChange}/>
           </InputLabel>
         </Form.Row>
         <Form.Row>
           <InputLabel label="Message Two">
-            <TextInput placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageTwo" name="message" onChange={this._handleMessageChange}/>
+            <TextInput key="message-two" placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageTwo" name="message" onChange={this._handleMessageChange}/>
           </InputLabel>
         </Form.Row>
         <Form.Row>
           <InputLabel label="Message Three">
-            <TextInput placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageThree" name="message" onChange={this._handleMessageChange}/>
+            <TextInput key="message-three" placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageThree" name="message" onChange={this._handleMessageChange}/>
           </InputLabel>
         </Form.Row>
       </div>
