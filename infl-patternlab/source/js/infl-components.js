@@ -1109,6 +1109,9 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
     lightbox : React.PropTypes.bool
   },
   getInitialState : function(){
+    if (this.props.isModalOpen) {
+      this._disableBodyScroll();
+    }
     return {
       isModalOpen : this.props.isModalOpen
     };
@@ -1116,10 +1119,15 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
   componentWillReceiveProps : function(newProps){
     this.setState({
       isModalOpen : newProps.isModalOpen
-    }, this._disableBodyScroll);
+    });
   },
-  componentDidMount : function(){
-    this._disableBodyScroll();
+  componentDidUpdate: function(){
+    if (this.state.isModalOpen) {
+      this._disableBodyScroll();
+    }
+    else {
+      this._enableBodyScroll();
+    }
   },
   render : function(){
     return (
@@ -1138,9 +1146,7 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
     return this.props.scrollingBody ? "scrolling-body" : "";
   },
   _disableBodyScroll : function(){
-    if(this.state.isModalOpen){
-      this._getBodyElement().style.overflow = "hidden";
-    }
+    this._getBodyElement().style.overflow = "hidden";
   },
   _lightbox : function(){
     return this.props.lightbox ? "lightbox" : "";
@@ -1245,6 +1251,11 @@ var $ = window.$;
 
 var Popover = React.createClass({displayName: "Popover",
 
+  propTypes : {
+    ref: React.PropTypes.string,
+    children: React.PropTypes.object
+  },
+
   getInitialState: function() {
     return {
       isVisible : false
@@ -1253,14 +1264,12 @@ var Popover = React.createClass({displayName: "Popover",
 
   componentWillUnmount: function() {
     this._removeEvents();
-    this.hide();
+    this._hide();
   },
 
   render: function() {
-    var classes = 'infl-popover';
-    if (this.state.isVisible) classes += ' is-visible';
     return (
-      React.createElement("div", {ref: "popover", className: classes}, 
+      React.createElement("div", {ref: "popover", className: this._classes()}, 
         React.createElement("div", {className: "arrow-top"}), 
         React.createElement("div", {className: "arrow-top-inner"}), 
          this.props.children
@@ -1268,12 +1277,20 @@ var Popover = React.createClass({displayName: "Popover",
       );
   },
 
-  toggle: function(targetElement) {
-    if (this.state.isVisible) this.hide();
-    else this.show(targetElement);
+  _classes: function() {
+    return 'infl-popover' + (this.state.isVisible?' is-visible':'');
   },
 
-  hide: function() {
+  toggle: function(targetElement) {
+    if (this.state.isVisible) {
+      this._hide();
+    }
+    else {
+      this._show(targetElement);
+    }
+  },
+
+  _hide: function() {
     this.setState({
         isVisible: false
       }, function () {
@@ -1281,7 +1298,7 @@ var Popover = React.createClass({displayName: "Popover",
     });
   },
 
-  show: function(targetElement) {
+  _show: function(targetElement) {
     var popoverNode = React.findDOMNode(this.refs.popover);
     var popover = $(popoverNode);
     var tW = $(targetElement).width();
@@ -1325,13 +1342,21 @@ var Popover = React.createClass({displayName: "Popover",
 });
 
 Popover.clickEvent = function(e) {
-  var targetElement = e.target;
-  var popoverName = targetElement.getAttribute('data-popover');
-  var popover = this.refs[popoverName];
-  popover.toggle(targetElement);
-  e.preventDefault();
-  e.stopPropagation();
-  e.cancelBubble = true;
+  var elm = e.target;
+  while (!elm.getAttribute('data-popover') && elm.parentNode) {
+    elm = elm.parentNode;
+  }
+  if (elm.getAttribute('data-popover')) {
+    var popoverName = elm.getAttribute('data-popover');
+    var popover = this.refs[popoverName];
+    popover.toggle(elm);
+    e.preventDefault();
+    e.stopPropagation();
+    e.cancelBubble = true;
+  }
+  else {
+    console.log('no popover found');
+  }
 };
 
 module.exports = Popover;
@@ -40762,6 +40787,10 @@ var icons = {
   
     "exclamation-circle-o": "exclamation-circle-o",
   
+    "fb": "fb",
+  
+    "fb_filled": "fb_filled",
+  
     "gear": "gear",
   
     "globe": "globe",
@@ -40773,6 +40802,10 @@ var icons = {
     "heart": "heart",
   
     "info-circle-o": "info-circle-o",
+  
+    "linkedin": "linkedin",
+  
+    "linkedin_filled": "linkedin_filled",
   
     "list": "list",
   
@@ -40819,6 +40852,10 @@ var icons = {
     "times": "times",
   
     "trash": "trash",
+  
+    "twitter": "twitter",
+  
+    "twitter_filled": "twitter_filled",
   
     "unlock": "unlock",
   
@@ -44224,10 +44261,11 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
   },
   _addModalToDemoArea : function(){
     this.refs.modalDemoArea.getDOMNode().innerHTML = this._demoModal();
+    this._showDemoModal();
   },
   _demoModal : function(){
     return React.renderToString(
-      React.createElement(ModalDialog, {isModalOpen: true, size: this.state.size, closeable: this.state.closeable, scrollingBody: this.state.scrollingBody, lightbox: this.state.lightbox}, 
+      React.createElement(ModalDialog, {id: "demo-modal", isModalOpen: false, size: this.state.size, closeable: this.state.closeable, scrollingBody: this.state.scrollingBody, lightbox: this.state.lightbox}, 
         React.createElement(ModalDialog.Header, {title: "test"}), 
         React.createElement(ModalDialog.Body, null, 
           React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), 
@@ -44242,6 +44280,10 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
         )
       )
     );
+  },
+  _showDemoModal : function(){
+    var demoModal = document.getElementById("demo-modal");
+    demoModal.classList.remove("close");
   },
   _buildDemoJSX : function(){
     return (

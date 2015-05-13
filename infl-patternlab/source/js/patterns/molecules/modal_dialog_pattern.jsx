@@ -152,10 +152,11 @@ var ModalDialogPattern = React.createClass({
   },
   _addModalToDemoArea : function(){
     this.refs.modalDemoArea.getDOMNode().innerHTML = this._demoModal();
+    this._showDemoModal();
   },
   _demoModal : function(){
     return React.renderToString(
-      <ModalDialog isModalOpen={true} size={this.state.size} closeable={this.state.closeable} scrollingBody={this.state.scrollingBody} lightbox={this.state.lightbox}>
+      <ModalDialog id="demo-modal" isModalOpen={false} size={this.state.size} closeable={this.state.closeable} scrollingBody={this.state.scrollingBody} lightbox={this.state.lightbox}>
         <ModalDialog.Header title="test" />
         <ModalDialog.Body>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -170,6 +171,10 @@ var ModalDialogPattern = React.createClass({
         </ModalDialog.Footer>
       </ModalDialog>
     );
+  },
+  _showDemoModal : function(){
+    var demoModal = document.getElementById("demo-modal");
+    demoModal.classList.remove("close");
   },
   _buildDemoJSX : function(){
     return (
