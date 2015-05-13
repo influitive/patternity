@@ -19,7 +19,8 @@ var TextInput = React.createClass({
       onChange : function(){},
       clearable : false,
       onCleared : function(){},
-      autofocus : false
+      autofocus : false,
+      key : ""
     };
   },
   propTypes : {
@@ -44,7 +45,8 @@ var TextInput = React.createClass({
     onChange : React.PropTypes.func,
     clearInput : React.PropTypes.bool,
     onInputCleared : React.PropTypes.func,
-    autofocus : React.PropTypes.bool
+    autofocus : React.PropTypes.bool,
+    key : React.PropTypes.string
   },
   getInitialState: function() {
     return {value: this.props.value};
