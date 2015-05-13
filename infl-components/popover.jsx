@@ -3,7 +3,6 @@ var React = require('react');
 var PopoverFloater = React.createClass({
 
   propTypes : {
-    ref: React.PropTypes.string,
     children: React.PropTypes.object
   },
 
@@ -29,7 +28,8 @@ var PopoverFloater = React.createClass({
   },
 
   _classes: function() {
-    return 'pt-popover' + (this.state.isVisible?' is-visible':'');
+    return 'pt-popover' +
+      (this.state.isVisible?' is-visible':'');
   },
 
   toggle: function(targetElement) {
@@ -115,9 +115,8 @@ var Popover = React.createClass({
     first.props.onClick = PopoverFloater.clickEvent.bind(this);
 
     var second = this.props.children[1];
-    second.props.ref = 'popover';
 
-    return (<span>
+    return (<span className={ this.props.className }>
       { first }
       <PopoverFloater ref="popover">
         { second }
@@ -127,6 +126,10 @@ var Popover = React.createClass({
 });
 
 Popover.Menu = React.createClass({
+  propTypes : {
+    className: React.PropTypes.string,
+    children: React.PropTypes.object  // first child is the link, second child is PopOver.Menu
+  },
   render : function() {
     return (<div className="pt-popovermenu">
       { this.props.children }
