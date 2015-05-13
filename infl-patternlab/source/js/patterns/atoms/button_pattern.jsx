@@ -35,7 +35,7 @@ var ButtonPattern = React.createClass({
                   <div className={"demo-pattern-example " + this._isInverse()}>
                     <button className={this.state.type + " " + this._isInverse()}>
                       {this._hasIcon()}
-                      <span>Default Button</span>
+                      <span>Sample Button</span>
                     </button>
                   </div>
                 </div>
