@@ -29,11 +29,19 @@ Code.JSX = React.createClass({
     );
   },
   _formatCode : function(){
-    return beautify_html(this.props.children.toString(), {
+    return beautify_html(this._getCode(), {
       "--indent-inner-html" : true,
       "--preserve-newlines" : true,
       "--indent-size" : 2
     });
+  },
+  _getCode : function() {
+    if (this.props.src) {
+      return this.props.src;
+    }
+    else {
+      return this.props.children.toString()
+    }
   }
 });
 
