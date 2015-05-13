@@ -40155,7 +40155,7 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
                   React.createElement("div", {className: "demo-pattern-example " + this._isInverse()}, 
                     React.createElement("button", {className: this.state.type + " " + this._isInverse()}, 
                       this._hasIcon(), 
-                      React.createElement("span", null, "Default Button")
+                      React.createElement("span", null, "Sample Button")
                     )
                   )
                 ), 
