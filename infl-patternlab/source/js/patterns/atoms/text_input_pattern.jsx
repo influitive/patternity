@@ -284,7 +284,9 @@ var TextInputControls = React.createClass({
           <TextInputAdditionalControls
               onChange={this.props.onAdditionalChange}
               clearable={this.props.clearable}
-              autofocus={this.props.autofocus} />
+              autofocus={this.props.autofocus}
+              placeholder={this.props.placeholder}
+              message={this.props.message} />
         </Form>
       </div>
     );
@@ -296,7 +298,9 @@ var TextInputAdditionalControls = React.createClass({
     return {
       onChange : function(){},
       clearable : false,
-      autofocus : false
+      autofocus : false,
+      placeholder : "Text Input",
+      message : []
     };
   },
   render : function(){
@@ -320,22 +324,22 @@ var TextInputAdditionalControls = React.createClass({
         </Form.Row>
         <Form.Row>
           <InputLabel label="Placeholder">
-            <TextInput key="placeholder" placeholder="Text Input" value="Text Input" name="placeholder" onChange={this._handleChange}/>
+            <TextInput key="placeholder" placeholder="Text Input" value={this.props.placeholder} name="placeholder" onChange={this._handleChange}/>
           </InputLabel>
         </Form.Row>
         <Form.Row>
           <InputLabel label="Message One">
-            <TextInput key="message-one" placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageOne" name="message" onChange={this._handleMessageChange}/>
+            <TextInput key="message-one" placeholder="e.g. Hint: should be at least 5 characters" value={this.props.message[0] ? this.props.message[0] : ""} ref="messageOne" name="message" onChange={this._handleMessageChange}/>
           </InputLabel>
         </Form.Row>
         <Form.Row>
           <InputLabel label="Message Two">
-            <TextInput key="message-two" placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageTwo" name="message" onChange={this._handleMessageChange}/>
+            <TextInput key="message-two" placeholder="e.g. Hint: should be at least 5 characters" value={this.props.message[1] ? this.props.message[1] : ""} ref="messageTwo" name="message" onChange={this._handleMessageChange}/>
           </InputLabel>
         </Form.Row>
         <Form.Row>
           <InputLabel label="Message Three">
-            <TextInput key="message-three" placeholder="e.g. Hint: should be at least 5 characters" value="" ref="messageThree" name="message" onChange={this._handleMessageChange}/>
+            <TextInput key="message-three" placeholder="e.g. Hint: should be at least 5 characters" value={this.props.message[2] ? this.props.message[2] : ""} ref="messageThree" name="message" onChange={this._handleMessageChange}/>
           </InputLabel>
         </Form.Row>
       </div>

@@ -1847,7 +1847,8 @@ var TextInput = React.createClass({displayName: "TextInput",
       onChange : function(){},
       clearable : false,
       onCleared : function(){},
-      autofocus : false
+      autofocus : false,
+      key : ""
     };
   },
   propTypes : {
@@ -1872,7 +1873,8 @@ var TextInput = React.createClass({displayName: "TextInput",
     onChange : React.PropTypes.func,
     clearInput : React.PropTypes.bool,
     onInputCleared : React.PropTypes.func,
-    autofocus : React.PropTypes.bool
+    autofocus : React.PropTypes.bool,
+    key : React.PropTypes.string
   },
   getInitialState: function() {
     return {value: this.props.value};
@@ -39427,11 +39429,19 @@ Code.JSX = React.createClass({displayName: "JSX",
     );
   },
   _formatCode : function(){
-    return beautify_html(this.props.children.toString(), {
+    return beautify_html(this._getCode(), {
       "--indent-inner-html" : true,
       "--preserve-newlines" : true,
       "--indent-size" : 2
     });
+  },
+  _getCode : function() {
+    if (this.props.src) {
+      return this.props.src;
+    }
+    else {
+      return this.props.children.toString()
+    }
   }
 });
 
@@ -41788,7 +41798,9 @@ var TextInputControls = React.createClass({displayName: "TextInputControls",
           React.createElement(TextInputAdditionalControls, {
               onChange: this.props.onAdditionalChange, 
               clearable: this.props.clearable, 
-              autofocus: this.props.autofocus})
+              autofocus: this.props.autofocus, 
+              placeholder: this.props.placeholder, 
+              message: this.props.message})
         )
       )
     );
@@ -41800,7 +41812,9 @@ var TextInputAdditionalControls = React.createClass({displayName: "TextInputAddi
     return {
       onChange : function(){},
       clearable : false,
-      autofocus : false
+      autofocus : false,
+      placeholder : "Text Input",
+      message : []
     };
   },
   render : function(){
@@ -41824,22 +41838,22 @@ var TextInputAdditionalControls = React.createClass({displayName: "TextInputAddi
         ), 
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Placeholder"}, 
-            React.createElement(TextInput, {key: "placeholder", placeholder: "Text Input", value: "Text Input", name: "placeholder", onChange: this._handleChange})
+            React.createElement(TextInput, {key: "placeholder", placeholder: "Text Input", value: this.props.placeholder, name: "placeholder", onChange: this._handleChange})
           )
         ), 
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Message One"}, 
-            React.createElement(TextInput, {key: "message-one", placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageOne", name: "message", onChange: this._handleMessageChange})
+            React.createElement(TextInput, {key: "message-one", placeholder: "e.g. Hint: should be at least 5 characters", value: this.props.message[0] ? this.props.message[0] : "", ref: "messageOne", name: "message", onChange: this._handleMessageChange})
           )
         ), 
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Message Two"}, 
-            React.createElement(TextInput, {key: "message-two", placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageTwo", name: "message", onChange: this._handleMessageChange})
+            React.createElement(TextInput, {key: "message-two", placeholder: "e.g. Hint: should be at least 5 characters", value: this.props.message[1] ? this.props.message[1] : "", ref: "messageTwo", name: "message", onChange: this._handleMessageChange})
           )
         ), 
         React.createElement(Form.Row, null, 
           React.createElement(InputLabel, {label: "Message Three"}, 
-            React.createElement(TextInput, {key: "message-three", placeholder: "e.g. Hint: should be at least 5 characters", value: "", ref: "messageThree", name: "message", onChange: this._handleMessageChange})
+            React.createElement(TextInput, {key: "message-three", placeholder: "e.g. Hint: should be at least 5 characters", value: this.props.message[2] ? this.props.message[2] : "", ref: "messageThree", name: "message", onChange: this._handleMessageChange})
           )
         )
       )
@@ -44565,50 +44579,74 @@ var PanelLeftSidebarPattern = React.createClass({displayName: "PanelLeftSidebarP
 module.exports = PanelLeftSidebarPattern;
 
 
-},{"../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_example1.jsx":[function(require,module,exports){
+var React = require('react');
+var Code = require('../../patternlab-components/code.jsx');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+var Popover       = require("../../../../infl-components/popover.jsx");
+
+module.exports = {
+
+  Demo : React.createClass({displayName: "Demo",
+    render : function() {
+      return (
+        React.createElement(Pattern.Show, null, 
+          React.createElement(Popover, null, 
+            React.createElement("a", {href: "javascript://"}, "Open Popover Demo"), 
+            React.createElement(Popover.Menu, null, 
+              React.createElement("a", {className: "ic ic-pencil", href: "javascript://"}, "Edit"), 
+              React.createElement("a", {className: "ic ic-lock", href: "javascript://"}, "Lock"), 
+              React.createElement("a", {className: "ic ic-arrow-left", href: "javascript://"}, "Move"), 
+              React.createElement("a", {className: "ic ic-trash", href: "javascript://"}, "Delete")
+            )
+          )
+        )
+        );
+    }
+  }),
+
+  Code : React.createClass({displayName: "Code",
+    render : function() {
+      // for some reason the resulting code snippet loses the line breaks
+      return (
+        React.createElement(Code.JSX, null, 
+"<Popover>" + ' ' +
+"<a href=\"javascript://\">Open Popover</a>" + ' ' +
+"<Popover.Menu>" + ' ' +
+"<a className=\"ic ic-pencil\"href=\"javascript://\">Edit</a>" + ' ' +
+"<a className=\"ic ic-lock\"href=\"javascript://\">Lock</a>" + ' ' +
+"<a className=\"ic ic-arrow-left\"href=\"javascript://\">Move</a>" + ' ' +
+"<a className=\"ic ic-trash\" href=\"javascript://\">Delete</a>" + ' ' +
+"</Popover.Menu>" + ' ' +
+"</Popover>"
+        )
+        );
+    }
+  })
+
+};
+
+
+
+},{"../../../../infl-components/popover.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
-var Popover       = require("../../../../infl-components/popover.jsx");
+var Example1 = require('./popover_example1.jsx');
 
 var PopoverPattern = React.createClass({displayName: "PopoverPattern",
   render : function(){
     return (
       React.createElement("div", {className: "popover-pattern"}, 
         React.createElement(Pattern, {title: "popover"}, 
-          React.createElement("p", null, "The Popover component is a floating component that is used to hide and show content."), 
-          React.createElement("p", null, "Use an anchor tag with a ", React.createElement("b", null, "data-popover"), " attribute to reference the popover to open and bind the ", React.createElement("b", null, "Popover.clickEvent"), " function to the onClick event."), 
+          React.createElement("p", null, "The Popover component is a floating menu used to expose more options."), 
 
           React.createElement(Pattern.Detail, {title: "Popover"}, 
-            React.createElement(Pattern.Show, null, 
-              React.createElement("a", {href: "javascript://", "data-popover": "MyPopover1", onClick:  Popover.clickEvent.bind(this) }, "Open \"MyPopover1\""), 
-
-              React.createElement(Popover, {ref: "MyPopover1"}, 
-                React.createElement("ul", null, 
-                  React.createElement("li", null, React.createElement("a", {className: "ic ic-pencil", href: "javascript://"}, "Edit")), 
-                  React.createElement("li", null, React.createElement("a", {className: "ic ic-lock", href: "javascript://"}, "Lock")), 
-                  React.createElement("li", null, React.createElement("a", {className: "ic ic-arrow-left", href: "javascript://"}, "Move")), 
-                  React.createElement("li", null, React.createElement("a", {className: "ic ic-trash", href: "javascript://"}, "Delete"))
-                )
-              )
-            ), 
-
+            React.createElement(Example1.Demo, null), 
             React.createElement(Code, null, 
-              React.createElement(Code.JSX, null, 
-              "<a href=\"javascript://\" data-popover=\"MyPopover1\" onClick={ Popover.clickEvent.bind(this) }>Open \"MyPopover1\"</a>" + ' ' +
-
-              "<Popover ref=\"MyPopover1\">" + ' ' +
-              "<ul>" + ' ' +
-              "<li><a className=\"ic ic-pencil\"href=\"javascript://\">Edit</a></li>" + ' ' +
-              "<li><a className=\"ic ic-lock\"href=\"javascript://\">Lock</a></li>" + ' ' +
-              "<li><a className=\"ic ic-arrow-left\"href=\"javascript://\">Move</a></li>" + ' ' +
-              "<li><a className=\"ic ic-trash\" href=\"javascript://\">Delete</a></li>" + ' ' +
-              "</ul>" + ' ' +
-              "</Popover>"
-              ), 
-
+              React.createElement(Example1.Code, null), 
               React.createElement(Code.Props, {patternProps: this._getProps()})
             )
           ), 
@@ -44648,7 +44686,7 @@ module.exports = PopoverPattern;
 
 
 
-},{"../../../../infl-components/popover.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx":[function(require,module,exports){
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","./popover_example1.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_example1.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
