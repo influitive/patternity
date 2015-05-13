@@ -31,7 +31,9 @@
   }
 
   .pt-native-radio-button {
-    display: none;
+    visibility: hidden;
+    position: relative;
+    left: -1000px;
   }
 
   .pt-native-radio-button:checked + {

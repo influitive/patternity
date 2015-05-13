@@ -1976,7 +1976,9 @@ textarea {
   color: #d0d2d3;
 }
 .pt-checkbox .pt-native-checkbox {
-  display: none;
+  visibility: hidden;
+  position: relative;
+  left: -1000px;
 }
 
 .pt-checkbox-group {
@@ -2020,7 +2022,9 @@ textarea {
   background-color: #d0d2d3;
 }
 .pt-radio-button .pt-native-radio-button {
-  display: none;
+  visibility: hidden;
+  position: relative;
+  left: -1000px;
 }
 .pt-radio-button .pt-native-radio-button:checked + .stylized-radio-button:before {
   content: "";
@@ -2496,7 +2500,7 @@ textarea {
   visibility: visible;
 }
 
-DIV.infl-popover {
+DIV.pt-popover {
   box-sizing: border-box;
   display: block;
   position: absolute;
@@ -2508,31 +2512,29 @@ DIV.infl-popover {
   left: 0;
   text-align: left;
 }
-DIV.infl-popover UL {
+DIV.pt-popover DIV.pt-popovermenu {
   padding: 0;
   margin: 0.5em 0;
 }
-DIV.infl-popover UL LI {
-  list-style: none;
-}
-DIV.infl-popover UL LI A {
+DIV.pt-popover DIV.pt-popovermenu > A {
+  display: block;
   padding: 0em 1em;
   display: block;
   vertical-align: top;
   line-height: 1.8em;
   text-decoration: none;
 }
-DIV.infl-popover UL LI A.ic:before {
+DIV.pt-popover DIV.pt-popovermenu > A.ic:before {
   margin-right: 0.3em;
   font-size: 18px;
   line-height: 1.4em;
   display: inline-block;
 }
-DIV.infl-popover UL LI A:hover {
+DIV.pt-popover DIV.pt-popovermenu > A:hover {
   text-decoration: none;
   background-color: #e0e0e0;
 }
-DIV.infl-popover DIV.arrow-top {
+DIV.pt-popover DIV.arrow-top {
   position: absolute;
   top: -15px;
   left: 50%;
@@ -2544,7 +2546,7 @@ DIV.infl-popover DIV.arrow-top {
   border-right: 15px solid transparent;
   border-bottom: 15px solid #d2d2d2;
 }
-DIV.infl-popover DIV.arrow-top-inner {
+DIV.pt-popover DIV.arrow-top-inner {
   position: absolute;
   top: -14px;
   left: 50%;
@@ -2557,7 +2559,7 @@ DIV.infl-popover DIV.arrow-top-inner {
   border-bottom: 14px solid white;
 }
 
-DIV.infl-popover.is-visible {
+DIV.pt-popover.is-visible {
   visibility: visible;
 }
 

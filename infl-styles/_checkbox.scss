@@ -42,7 +42,9 @@
   }
 
   .pt-native-checkbox {
-    display: none;
+    visibility: hidden;
+    position: relative;
+    left: -1000px;
   }
 }
 
