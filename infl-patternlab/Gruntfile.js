@@ -311,6 +311,8 @@ module.exports = function(grunt) {
 	//if you choose to use scss, or any preprocessor, you can add it here
 	grunt.registerTask('default', ['clean', 'gulp:influicons', 'concat', 'patternlab', 'sass', 'gulp:browserify', 'copy']);
 
+  grunt.registerTask('docs', ['clean', 'concat', 'patternlab', 'sass', 'gulp:browserify', 'copy']);
+
   grunt.registerTask('influicons', ['gulp:influicons']);
 
 	//travis CI task
