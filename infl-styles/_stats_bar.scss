@@ -1,0 +1,80 @@
+.pt-stats-bar {
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  .pt-stat {
+    display: inline-block;
+    width: calc((96% / 3) - 1em);
+    margin-right: 2%;
+    background-color: $lighter-grey;
+    padding: $spacing-small;
+    margin-bottom: 10px;
+    vertical-align: top;
+
+    &:nth-child(3n) {
+      margin-right: 0px;
+    }
+
+    &.negative {
+      color: $error-color;
+
+      .pt-stat-title {
+        color: $error-color;
+      }
+    }
+  }
+
+  &.points {
+    .pt-stat {
+      text-align: center;
+
+      .pt-stat-title {
+        font-size: 15px;
+        color: $dark-grey;
+        padding-right: 10px;
+        text-transform: capitalize;
+      }
+
+      .pt-stat-value {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &.activity {
+    .pt-stat {
+      text-align: left;
+
+      .pt-stat-title {
+        padding-right: 10px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .pt-stats-bar {
+    &.activity,
+    &.points {
+      .pt-stat {
+        float: none;
+        display: block;
+        margin-right: 0px;
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: left;
+
+        .pt-stat-title {
+          vertical-align: middle;
+          display: inline-block;
+          width: 50%;
+        }
+
+        .pt-stat-value {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

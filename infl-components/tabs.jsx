@@ -20,6 +20,11 @@ var Tabs = React.createClass({
       openTabIndex : this.props.openTabIndex
     };
   },
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({
+      openTabIndex: nextProps.openTabIndex
+    });
+  },
   render: function() {
     return (
       <nav className="pt-tabs">

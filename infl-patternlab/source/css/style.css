@@ -2568,6 +2568,66 @@ DIV.pt-popover.is-visible {
   position: relative;
 }
 
+.pt-stats-bar {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.pt-stats-bar .pt-stat {
+  display: inline-block;
+  width: calc((96% / 3) - 1em);
+  margin-right: 2%;
+  background-color: #eeeeee;
+  padding: 0.5em;
+  margin-bottom: 10px;
+  vertical-align: top;
+}
+.pt-stats-bar .pt-stat:nth-child(3n) {
+  margin-right: 0px;
+}
+.pt-stats-bar .pt-stat.negative {
+  color: #c54040;
+}
+.pt-stats-bar .pt-stat.negative .pt-stat-title {
+  color: #c54040;
+}
+.pt-stats-bar.points .pt-stat {
+  text-align: center;
+}
+.pt-stats-bar.points .pt-stat .pt-stat-title {
+  font-size: 15px;
+  color: #666666;
+  padding-right: 10px;
+  text-transform: capitalize;
+}
+.pt-stats-bar.points .pt-stat .pt-stat-value {
+  font-size: 18px;
+}
+.pt-stats-bar.activity .pt-stat {
+  text-align: left;
+}
+.pt-stats-bar.activity .pt-stat .pt-stat-title {
+  padding-right: 10px;
+  text-transform: capitalize;
+}
+
+@media (max-width: 520px) {
+  .pt-stats-bar.activity .pt-stat, .pt-stats-bar.points .pt-stat {
+    float: none;
+    display: block;
+    margin-right: 0px;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  .pt-stats-bar.activity .pt-stat .pt-stat-title, .pt-stats-bar.points .pt-stat .pt-stat-title {
+    vertical-align: middle;
+    display: inline-block;
+    width: 50%;
+  }
+  .pt-stats-bar.activity .pt-stat .pt-stat-value, .pt-stats-bar.points .pt-stat .pt-stat-value {
+    display: inline-block;
+  }
+}
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;

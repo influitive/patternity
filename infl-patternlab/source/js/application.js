@@ -41,6 +41,7 @@ inflComp.ContentPattern           = require("./patterns/molecules/content_patter
 inflComp.SidebarPattern           = require("./patterns/molecules/sidebar_pattern.jsx");
 inflComp.SidebarNavListPattern    = require("./patterns/molecules/sidebar_nav_list_pattern.jsx");
 inflComp.SidebarHeadingPattern    = require("./patterns/molecules/sidebar_heading_pattern.jsx");
+inflComp.StatsBarPattern          = require("./patterns/molecules/stats_bar_pattern.jsx");
 
 /* Utilities */
 inflComp.StoragePattern           = require("./patterns/utilities/storage_pattern.jsx");
