@@ -16,20 +16,9 @@ var StatsBar = React.createClass({
   render: function() {
     return (
       <div ref="statsBar" className={"pt-stats-bar " + this.props.statType}>
-        {this._addAdditionalHeightProp()}
+        {this.props.children}
       </div>
     );
-  },
-  _addAdditionalHeightProp : function(){
-    var that = this;
-    return React.Children.map(this.props.children, function(child){
-      child.props.height = 40;
-      child.props.onHeightChange = that._onHeightChange;
-      return child;
-    });
-  },
-  _onHeightChange : function(newHeight){
-    console.log(newHeight);
   }
 });
 
@@ -37,9 +26,7 @@ StatsBar.Stat = React.createClass({
   getDefaultProps : function(){
     return {
       title : "",
-      value : "",
-      height : "auto",
-      onHeightChange : function(){}
+      value : ""
     }
   },
   PropTypes : {
@@ -47,32 +34,20 @@ StatsBar.Stat = React.createClass({
     value : React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.number
-    ]).isRequired,
-    height : React.PropTypes.string,
-    onHeightChange : React.PropTypes.func
-  },
-  handleResize: function(event) {
-    if(this.refs.stat.getDOMNode().scrollHeight > this.props.height){
-      this.props.onHeightChange(this.refs.stat.getDOMNode().scrollHeight);
-    }
-    // console.log(this.refs.stat.getDOMNode().scrollHeight);
-    // this.setState({
-    //   statHeight: event.target.height
-    // });
-  },
-  componentDidMount: function() {
-    window.addEventListener('resize', this.handleResize);
-  },
-  componentWillUnmount: function() {
-    window.removeEventListener('resize', this.handleResize);
+    ]).isRequired
   },
   render: function() {
     return (
-      <span ref="stat" className="pt-stat" style={{height: this.props.height}}>
+      <span ref="stat" className={"pt-stat " + this._isValueNegative()}>
         <span className="pt-stat-title">{this.props.title}:</span>
         <strong className="pt-stat-value">{this.props.value}</strong>
       </span>
     );
+  },
+  _isValueNegative : function(){
+    if(parseInt(this.props.value) < 0) {
+      return "negative"
+    }
   }
 });
 
