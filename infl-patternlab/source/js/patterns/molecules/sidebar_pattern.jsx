@@ -5,7 +5,7 @@ var Require   = require('../../patternlab-components/require.jsx');
 
 var Sidebar = require("../../../../infl-components/sidebar.jsx");
 
-var ContentPattern = React.createClass({
+var SidebarPattern = React.createClass({
   render : function(){
     return (
       <div className="sidebar-pattern">
@@ -80,4 +80,4 @@ var ContentPattern = React.createClass({
   }
 });
 
-module.exports = ContentPattern;
+module.exports = SidebarPattern;
