@@ -16,9 +16,7 @@
     }
 
     &.negative {
-      color: $error-color;
-
-      .pt-stat-title {
+      .pt-stat-value {
         color: $error-color;
       }
     }
@@ -73,6 +71,16 @@
 
         .pt-stat-value {
           display: inline-block;
+        }
+      }
+    }
+
+    &.points {
+      .pt-stat {
+        text-align: center;
+
+        .pt-stat-title {
+          width: auto;
         }
       }
     }

@@ -3,9 +3,18 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+
 var StatsBar = require("../../../../infl-components/stats_bar.jsx");
 
 var StatsBarPattern = React.createClass({
+  getInitialState : function(){
+    return {
+      statType : "points"
+    };
+  },
   render : function(){
     return (
       <div className="stats-bar-pattern">
@@ -15,21 +24,61 @@ var StatsBarPattern = React.createClass({
           <Pattern.Detail title="Stats Bar">
             <Pattern.Show>
               <StatsBar statType="points">
-                <StatsBar.Stat title="Points Required Points Required" value={1500} />
-                <StatsBar.Stat title="Your Total" value={3500} />
-                <StatsBar.Stat title="Balance" value={2000} />
                 <StatsBar.Stat title="Points Required" value={1500} />
                 <StatsBar.Stat title="Your Total" value={3500} />
-                <StatsBar.Stat title="Balance" value={2000} />
+                <StatsBar.Stat title="Balance" value={-2000} />
               </StatsBar>
             </Pattern.Show>
 
+            <Pattern.Demo title="Stats Bar Demo">
+              <div className="demo-output">
+                <div className="demo-pattern">
+                  <h4>Stats Bar</h4>
+                  <div className="demo-pattern-example">
+                    <StatsBar statType={this.state.statType}>
+                      <StatsBar.Stat title="Points Required" value={1500} />
+                      <StatsBar.Stat title="Your Total" value={3500} />
+                      <StatsBar.Stat title="Balance" value={-2000} />
+                    </StatsBar>
+                  </div>
+                </div>
+                <Code>
+                  <Code.JSX>
+                    {this._buildDemoJSX()}
+                  </Code.JSX>
+                </Code>
+                <h5>Props</h5>
+                <div className="demo-props">
+                  <pre>
+                    <code>
+                      {this._buildDemoProps()}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <StatBarControls statType={this.state.statType} onChange={this._handleChange} />
+            </Pattern.Demo>
+
             <Code>
               <Code.JSX>
-                &lt;StatsBar &gt;
+                &lt;StatsBar statType="points"&gt;
+                  &lt;StatsBar.Stat title="Points Required" value=&#123;1500&#125; &gt;&lt;/StatsBar.Stat&gt;
+                  &lt;StatsBar.Stat title="Your Total" value=&#123;3500&#125; &gt;&lt;/StatsBar.Stat&gt;
+                  &lt;StatsBar.Stat title="Balance" value=&#123;-2000&#125; &gt;&lt;/StatsBar.Stat&gt;
+                &lt;/StatsBar&gt;
               </Code.JSX>
               <Code.WithoutJSX patternName="StatsBar" />
               <Code.Props patternProps={this._buildStatsBarProps()} />
+            </Code>
+          </Pattern.Detail>
+
+          <Pattern.Detail title="Stats Bar - Stat">
+            <Code>
+              <Code.JSX>
+                &lt;StatsBar.Stat title="Points Required" value=&#123;1500&#125; &gt;&lt;/StatsBar.Stat&gt;
+              </Code.JSX>
+              <Code.WithoutJSX patternName="StatsBar.Stat" />
+              <Code.Props patternProps={this._buildStatsBarStatProps()} />
             </Code>
           </Pattern.Detail>
 
@@ -45,15 +94,88 @@ var StatsBarPattern = React.createClass({
       </div>
     );
   },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+  },
+  _buildDemoJSX : function(){
+    return (
+      '<StatsBar statType={' + this.state.statType + '}>\n' +
+        '\t<StatsBar.Stat title="Points Required" value={1500} />\n' +
+        '\t<StatsBar.Stat title="Your Total" value={3500} />\n' +
+        '\t<StatsBar.Stat title="Balance" value={-2000} />\n' +
+      '</StatsBar>'
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\statType: "' + this.state.statType + '"\n' +
+      '}'
+    );
+  },
   _buildStatsBarProps : function(){
     return {
-      children : {
-        type : "array",
-        default : "[...]",
+      statType : {
+        type : "string",
+        default : "points",
         required : false,
-        description : "Array of Sidebar sub components (Heading, NavList), html, rect components, etc."
+        description : "Type of stats can be points or activity"
       }
     };
+  },
+  _buildStatsBarStatProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : true,
+        description : "Title of the stat"
+      },
+      value : {
+        type : "string or number",
+        default : "",
+        required : true,
+        description : "Value of the stat"
+      }
+    };
+  }
+});
+
+var StatBarControls = React.createClass({
+  getDefaultProps : function(){
+    return {
+      statType : "points",
+      onChange : function(){}
+    }
+  },
+  PropTypes : {
+    statType : React.PropTypes.oneOf([
+      'points',
+      'activity'
+    ]),
+    onChange : React.PropTypes.func
+  },
+  render: function() {
+    return (
+      <div className="pattern-controls">
+        <h4>Alert Controls</h4>
+        <Form>
+          <Form.Row>
+            <InputLabel label="Stat Type">
+              <RadioButton.Group layout="stacked">
+                <RadioButton isChecked={this.props.statType === "points"} onChange={this._handleChange} radioName="statType" radioLabel="Points" value="points"></RadioButton>
+                <RadioButton isChecked={this.props.statType === "activity"} onChange={this._handleChange} radioName="statType" radioLabel="Activity" value="activity"></RadioButton>
+              </RadioButton.Group>
+            </InputLabel>
+          </Form.Row>
+        </Form>
+      </div>
+    );
+  },
+  _handleChange : function(event){
+    this.props.onChange(event.target.name, event.target.value);
   }
 });
 

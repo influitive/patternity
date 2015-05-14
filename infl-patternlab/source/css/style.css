@@ -2584,10 +2584,7 @@ DIV.pt-popover.is-visible {
 .pt-stats-bar .pt-stat:nth-child(3n) {
   margin-right: 0px;
 }
-.pt-stats-bar .pt-stat.negative {
-  color: #c54040;
-}
-.pt-stats-bar .pt-stat.negative .pt-stat-title {
+.pt-stats-bar .pt-stat.negative .pt-stat-value {
   color: #c54040;
 }
 .pt-stats-bar.points .pt-stat {
@@ -2626,6 +2623,12 @@ DIV.pt-popover.is-visible {
   }
   .pt-stats-bar.activity .pt-stat .pt-stat-value, .pt-stats-bar.points .pt-stat .pt-stat-value {
     display: inline-block;
+  }
+  .pt-stats-bar.points .pt-stat {
+    text-align: center;
+  }
+  .pt-stats-bar.points .pt-stat .pt-stat-title {
+    width: auto;
   }
 }
 body {

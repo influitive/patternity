@@ -1701,20 +1701,9 @@ var StatsBar = React.createClass({displayName: "StatsBar",
   render: function() {
     return (
       React.createElement("div", {ref: "statsBar", className: "pt-stats-bar " + this.props.statType}, 
-        this._addAdditionalHeightProp()
+        this.props.children
       )
     );
-  },
-  _addAdditionalHeightProp : function(){
-    var that = this;
-    return React.Children.map(this.props.children, function(child){
-      child.props.height = 40;
-      child.props.onHeightChange = that._onHeightChange;
-      return child;
-    });
-  },
-  _onHeightChange : function(newHeight){
-    console.log(newHeight);
   }
 });
 
@@ -1722,9 +1711,7 @@ StatsBar.Stat = React.createClass({displayName: "Stat",
   getDefaultProps : function(){
     return {
       title : "",
-      value : "",
-      height : "auto",
-      onHeightChange : function(){}
+      value : ""
     }
   },
   PropTypes : {
@@ -1732,32 +1719,20 @@ StatsBar.Stat = React.createClass({displayName: "Stat",
     value : React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.number
-    ]).isRequired,
-    height : React.PropTypes.string,
-    onHeightChange : React.PropTypes.func
-  },
-  handleResize: function(event) {
-    if(this.refs.stat.getDOMNode().scrollHeight > this.props.height){
-      this.props.onHeightChange(this.refs.stat.getDOMNode().scrollHeight);
-    }
-    // console.log(this.refs.stat.getDOMNode().scrollHeight);
-    // this.setState({
-    //   statHeight: event.target.height
-    // });
-  },
-  componentDidMount: function() {
-    window.addEventListener('resize', this.handleResize);
-  },
-  componentWillUnmount: function() {
-    window.removeEventListener('resize', this.handleResize);
+    ]).isRequired
   },
   render: function() {
     return (
-      React.createElement("span", {ref: "stat", className: "pt-stat", style: {height: this.props.height}}, 
+      React.createElement("span", {ref: "stat", className: "pt-stat " + this._isValueNegative()}, 
         React.createElement("span", {className: "pt-stat-title"}, this.props.title, ":"), 
         React.createElement("strong", {className: "pt-stat-value"}, this.props.value)
       )
     );
+  },
+  _isValueNegative : function(){
+    if(parseInt(this.props.value) < 0) {
+      return "negative"
+    }
   }
 });
 
@@ -45088,9 +45063,18 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
+var Form            = require("../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../infl-components/radio_button.jsx");
+
 var StatsBar = require("../../../../infl-components/stats_bar.jsx");
 
 var StatsBarPattern = React.createClass({displayName: "StatsBarPattern",
+  getInitialState : function(){
+    return {
+      statType : "points"
+    };
+  },
   render : function(){
     return (
       React.createElement("div", {className: "stats-bar-pattern"}, 
@@ -45100,21 +45084,61 @@ var StatsBarPattern = React.createClass({displayName: "StatsBarPattern",
           React.createElement(Pattern.Detail, {title: "Stats Bar"}, 
             React.createElement(Pattern.Show, null, 
               React.createElement(StatsBar, {statType: "points"}, 
-                React.createElement(StatsBar.Stat, {title: "Points Required Points Required", value: 1500}), 
-                React.createElement(StatsBar.Stat, {title: "Your Total", value: 3500}), 
-                React.createElement(StatsBar.Stat, {title: "Balance", value: 2000}), 
                 React.createElement(StatsBar.Stat, {title: "Points Required", value: 1500}), 
                 React.createElement(StatsBar.Stat, {title: "Your Total", value: 3500}), 
-                React.createElement(StatsBar.Stat, {title: "Balance", value: 2000})
+                React.createElement(StatsBar.Stat, {title: "Balance", value: -2000})
               )
+            ), 
+
+            React.createElement(Pattern.Demo, {title: "Stats Bar Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Stats Bar"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(StatsBar, {statType: this.state.statType}, 
+                      React.createElement(StatsBar.Stat, {title: "Points Required", value: 1500}), 
+                      React.createElement(StatsBar.Stat, {title: "Your Total", value: 3500}), 
+                      React.createElement(StatsBar.Stat, {title: "Balance", value: -2000})
+                    )
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.JSX, null, 
+                    this._buildDemoJSX()
+                  )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
+                )
+              ), 
+              React.createElement(StatBarControls, {statType: this.state.statType, onChange: this._handleChange})
             ), 
 
             React.createElement(Code, null, 
               React.createElement(Code.JSX, null, 
-                "<StatsBar >"
+                "<StatsBar statType=\"points\">" + ' ' +
+                  "<StatsBar.Stat title=\"Points Required\" value={1500} ></StatsBar.Stat>" + ' ' +
+                  "<StatsBar.Stat title=\"Your Total\" value={3500} ></StatsBar.Stat>" + ' ' +
+                  "<StatsBar.Stat title=\"Balance\" value={-2000} ></StatsBar.Stat>" + ' ' +
+                "</StatsBar>"
               ), 
               React.createElement(Code.WithoutJSX, {patternName: "StatsBar"}), 
               React.createElement(Code.Props, {patternProps: this._buildStatsBarProps()})
+            )
+          ), 
+
+          React.createElement(Pattern.Detail, {title: "Stats Bar - Stat"}, 
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<StatsBar.Stat title=\"Points Required\" value={1500} ></StatsBar.Stat>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "StatsBar.Stat"}), 
+              React.createElement(Code.Props, {patternProps: this._buildStatsBarStatProps()})
             )
           ), 
 
@@ -45130,22 +45154,95 @@ var StatsBarPattern = React.createClass({displayName: "StatsBarPattern",
       )
     );
   },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+  },
+  _buildDemoJSX : function(){
+    return (
+      '<StatsBar statType={' + this.state.statType + '}>\n' +
+        '\t<StatsBar.Stat title="Points Required" value={1500} />\n' +
+        '\t<StatsBar.Stat title="Your Total" value={3500} />\n' +
+        '\t<StatsBar.Stat title="Balance" value={-2000} />\n' +
+      '</StatsBar>'
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\statType: "' + this.state.statType + '"\n' +
+      '}'
+    );
+  },
   _buildStatsBarProps : function(){
     return {
-      children : {
-        type : "array",
-        default : "[...]",
+      statType : {
+        type : "string",
+        default : "points",
         required : false,
-        description : "Array of Sidebar sub components (Heading, NavList), html, rect components, etc."
+        description : "Type of stats can be points or activity"
       }
     };
+  },
+  _buildStatsBarStatProps : function(){
+    return {
+      title : {
+        type : "string",
+        default : "",
+        required : true,
+        description : "Title of the stat"
+      },
+      value : {
+        type : "string or number",
+        default : "",
+        required : true,
+        description : "Value of the stat"
+      }
+    };
+  }
+});
+
+var StatBarControls = React.createClass({displayName: "StatBarControls",
+  getDefaultProps : function(){
+    return {
+      statType : "points",
+      onChange : function(){}
+    }
+  },
+  PropTypes : {
+    statType : React.PropTypes.oneOf([
+      'points',
+      'activity'
+    ]),
+    onChange : React.PropTypes.func
+  },
+  render: function() {
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Alert Controls"), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Stat Type"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.statType === "points", onChange: this._handleChange, radioName: "statType", radioLabel: "Points", value: "points"}), 
+                React.createElement(RadioButton, {isChecked: this.props.statType === "activity", onChange: this._handleChange, radioName: "statType", radioLabel: "Activity", value: "activity"})
+              )
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleChange : function(event){
+    this.props.onChange(event.target.name, event.target.value);
   }
 });
 
 module.exports = StatsBarPattern;
 
 
-},{"../../../../infl-components/stats_bar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/stats_bar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/stats_bar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/stats_bar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');

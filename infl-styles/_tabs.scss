@@ -27,13 +27,13 @@
       }
 
       &.tab-open {
-        border-top: 3px solid $info-color;
+        border-top: 3px solid $theme-color-primary;
         border-bottom: none;
         a {
           border-right: 1px solid $light-grey;
           border-left: 1px solid $light-grey;
           position: relative;
-          color: $info-color;
+          color: $theme-color-primary;
         }
       }
 
