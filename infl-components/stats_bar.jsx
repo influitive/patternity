@@ -4,14 +4,16 @@ var classNames = require('classnames');
 var StatsBar = React.createClass({
   getDefaultProps : function(){
     return {
-      statType : "points"
+      statType : "points",
+      children : []
     }
   },
   PropTypes : {
     statType : React.PropTypes.oneOf([
       'points',
       'activity'
-    ])
+    ]),
+    children : React.PropTypes.array
   },
   render: function() {
     return (
@@ -39,14 +41,16 @@ StatsBar.Stat = React.createClass({
   render: function() {
     return (
       <span ref="stat" className={"pt-stat " + this._isValueNegative()}>
-        <span className="pt-stat-title">{this.props.title}:</span>
-        <strong className="pt-stat-value">{this.props.value}</strong>
+        <span ref="title" className="pt-stat-title">{this.props.title}:</span>
+        <strong ref="value" className="pt-stat-value">{this.props.value}</strong>
       </span>
     );
   },
   _isValueNegative : function(){
     if(parseInt(this.props.value) < 0) {
       return "negative"
+    } else {
+      return "";
     }
   }
 });

@@ -1732,6 +1732,8 @@ StatsBar.Stat = React.createClass({displayName: "Stat",
   _isValueNegative : function(){
     if(parseInt(this.props.value) < 0) {
       return "negative"
+    } else {
+      return "";
     }
   }
 });
@@ -45095,11 +45097,11 @@ var StatsBarPattern = React.createClass({displayName: "StatsBarPattern",
                 React.createElement("div", {className: "demo-pattern"}, 
                   React.createElement("h4", null, "Stats Bar"), 
                   React.createElement("div", {className: "demo-pattern-example"}, 
-                    React.createElement(StatsBar, {statType: this.state.statType}, 
-                      React.createElement(StatsBar.Stat, {title: "Points Required", value: 1500}), 
-                      React.createElement(StatsBar.Stat, {title: "Your Total", value: 3500}), 
-                      React.createElement(StatsBar.Stat, {title: "Balance", value: -2000})
-                    )
+                      React.createElement(StatsBar, {statType: this.state.statType}, 
+                        React.createElement(StatsBar.Stat, {title: "Points Required", value: 1500}), 
+                        React.createElement(StatsBar.Stat, {title: "Your Total", value: 3500}), 
+                        React.createElement(StatsBar.Stat, {title: "Balance", value: -2000})
+                      )
                   )
                 ), 
                 React.createElement(Code, null, 

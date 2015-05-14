@@ -2362,16 +2362,18 @@ textarea {
 }
 
 .pt-tabs {
-  with: 100%;
+  width: 100%;
 }
 .pt-tabs .pt-tabs-menu {
   width: 100%;
-  border-bottom: 1px solid #d0d2d3;
   padding: 0px;
   margin-bottom: 0px;
+  overflow: hidden;
 }
 .pt-tabs .pt-tabs-menu .pt-tab {
-  display: inline-block;
+  float: left;
+  border-bottom: 1px solid #d0d2d3;
+  box-sizing: border-box;
   width: 150px;
   list-style-type: none;
   z-index: 3;
@@ -2387,15 +2389,21 @@ textarea {
   text-decoration: none;
 }
 .pt-tabs .pt-tabs-menu .pt-tab.tab-open {
-  background-color: #fff;
   border-top: 3px solid #08a5c5;
-  border-bottom: 1px solid #fff;
+  border-bottom: none;
 }
 .pt-tabs .pt-tabs-menu .pt-tab.tab-open a {
   border-right: 1px solid #d0d2d3;
   border-left: 1px solid #d0d2d3;
   position: relative;
   color: #08a5c5;
+}
+.pt-tabs .pt-tabs-menu .pt-tab:last-child:after {
+  position: absolute;
+  left: 100%;
+  content: '';
+  width: 9999%;
+  border-bottom: 1px solid #d0d2d3;
 }
 .pt-tabs .pt-tabs-content-sections .pt-tab-content {
   display: none;

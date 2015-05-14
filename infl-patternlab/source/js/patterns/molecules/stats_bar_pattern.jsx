@@ -35,11 +35,11 @@ var StatsBarPattern = React.createClass({
                 <div className="demo-pattern">
                   <h4>Stats Bar</h4>
                   <div className="demo-pattern-example">
-                    <StatsBar statType={this.state.statType}>
-                      <StatsBar.Stat title="Points Required" value={1500} />
-                      <StatsBar.Stat title="Your Total" value={3500} />
-                      <StatsBar.Stat title="Balance" value={-2000} />
-                    </StatsBar>
+                      <StatsBar statType={this.state.statType}>
+                        <StatsBar.Stat title="Points Required" value={1500} />
+                        <StatsBar.Stat title="Your Total" value={3500} />
+                        <StatsBar.Stat title="Balance" value={-2000} />
+                      </StatsBar>
                   </div>
                 </div>
                 <Code>
