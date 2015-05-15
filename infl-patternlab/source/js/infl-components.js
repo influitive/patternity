@@ -648,19 +648,21 @@ ChallengeCard.Notice = React.createClass({displayName: "Notice",
       points : 0,
       createdAt : "",
       status : "",
-      completedOn : ""
+      completedOn : "",
+      startedOn : ""
     };
   },
   PropTypes : {
     points : React.PropTypes.number,
     createdAt : React.PropTypes.string,
     status : React.PropTypes.string,
-    completedOn : ""
+    completedOn : React.PropTypes.string,
+    startedOn : React.PropTypes.string
   },
   render : function(){
     return (
       React.createElement("div", {className: "pt-card-notice"}, 
-        React.createElement(ChallengeStatus, {createdAt: this.props.createdAt, status: this.props.status, completedOn: this.props.completedOn}), 
+        React.createElement(ChallengeStatus, {createdAt: this.props.createdAt, status: this.props.status, completedOn: this.props.completedOn, startedOn: this.props.startedOn}), 
         React.createElement(Points, {points: this.props.points})
       )
     );
@@ -691,21 +693,44 @@ var ChallengeStatus = React.createClass({displayName: "ChallengeStatus",
     return {
       createdAt : "",
       status : "",
-      completedOn : ""
+      completedOn : "",
+      startedOn : ""
     };
   },
   PropTypes : {
     createdAt : React.PropTypes.string,
     status : React.PropTypes.string,
-    completedOn : ""
+    completedOn : React.PropTypes.string,
+    startedOn : React.PropTypes.string
   },
   render : function(){
     return (
-      React.createElement("span", {className: "pt-challenge-status"}
-
+      React.createElement("span", {className: "pt-challenge-status"}, 
+        this._determineStatusDetails()
       )
     );
-  }
+  },
+  _determineStatusDetails : function(){
+    if(this.props.status === "completed") {
+      return this._showCompletedStatus();
+    } else if(this.props.status === "started") {
+      return this._showStartedStatus();
+    }
+  },
+  _showStartedStatus : function(){
+    console.log(this.props.startedOn)
+    var startedOn = new Date(this.props.startedOn);
+    return (
+      React.createElement("span", {className: "completed"}, "Started: ", this._monthNames[startedOn.getUTCMonth()], " ", startedOn.getUTCDate())
+    );
+  },
+  _showCompletedStatus : function(){
+    var completedOn = new Date(this.props.completedOn);
+    return (
+      React.createElement("span", {className: "completed"}, "Completed: ", this._monthNames[completedOn.getUTCMonth()], " ", completedOn.getUTCDate())
+    );
+  },
+  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 });
 
 module.exports = ChallengeCard;
@@ -45615,6 +45640,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
 
           //Not part of the data we get back yet
           status : "available",
+          startedOn : ""
         },
         {
           points : 1000,
@@ -45634,6 +45660,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
 
           //Not part of the data we get back yet
           status : "available",
+          startedOn : ""
         }
       ],
       started : [
@@ -45655,6 +45682,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
 
           //Not part of the data we get back yet
           status : "started",
+          startedOn : "2015-03-10T14:46:34.913-05:00"
         }
       ],
       later : [],
@@ -45673,10 +45701,11 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
           type : "Social",
           participantCount : 5,
           timeoutMessage : "",
-          completedOn : "",
+          completedOn : "2015-03-02T14:46:34.913-05:00",
 
           //Not part of the data we get back yet
           status : "completed",
+          startedOn : ""
         }]
     };
   },
@@ -45711,7 +45740,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     return cards.map(function(card){
       return (
         React.createElement(ChallengeCard, {key: card.id}, 
-          React.createElement(ChallengeCard.Notice, {points: card.points, status: card.status, createdAt: card.createdAt, completedOn: card.completedOn}), 
+          React.createElement(ChallengeCard.Notice, {points: card.points, status: card.status, createdAt: card.createdAt, completedOn: card.completedOn, startedOn: card.startedOn}), 
           React.createElement(ChallengeCard.Image, {image: card.image}), 
           React.createElement(ChallengeCard.Details, {type: card.type, headline: card.headline, description: card.description}), 
           React.createElement(ChallengeCard.Actions, null, 
