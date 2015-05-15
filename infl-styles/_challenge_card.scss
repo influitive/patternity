@@ -19,14 +19,25 @@
     background-color: rgba(68, 68, 68, 0.7); // $darker-grey with opacity change
     color: #fff;
     z-index: 2;
+    height: 24px;
 
     .pt-challenge-status {
       float: left;
+      font-size: 12px;
+      line-height: 24px;
+      display: block;
+      height: 24px;
+
+      span {
+        vertical-align: middle;
+      }
     }
 
     .pt-card-points {
       float: right;
       font-size: 15px;
+      display: block;
+      margin-top: 1px;
 
       .ic {
         position: relative;

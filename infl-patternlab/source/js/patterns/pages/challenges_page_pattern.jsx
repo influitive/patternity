@@ -27,6 +27,7 @@ var ChallengesPagePattern = React.createClass({
 
           //Not part of the data we get back yet
           status : "available",
+          startedOn : ""
         },
         {
           points : 1000,
@@ -46,6 +47,7 @@ var ChallengesPagePattern = React.createClass({
 
           //Not part of the data we get back yet
           status : "available",
+          startedOn : ""
         }
       ],
       started : [
@@ -67,6 +69,7 @@ var ChallengesPagePattern = React.createClass({
 
           //Not part of the data we get back yet
           status : "started",
+          startedOn : "2015-03-10T14:46:34.913-05:00"
         }
       ],
       later : [],
@@ -85,10 +88,11 @@ var ChallengesPagePattern = React.createClass({
           type : "Social",
           participantCount : 5,
           timeoutMessage : "",
-          completedOn : "",
+          completedOn : "2015-03-02T14:46:34.913-05:00",
 
           //Not part of the data we get back yet
           status : "completed",
+          startedOn : ""
         }]
     };
   },
@@ -123,7 +127,7 @@ var ChallengesPagePattern = React.createClass({
     return cards.map(function(card){
       return (
         <ChallengeCard key={card.id}>
-          <ChallengeCard.Notice points={card.points} status={card.status} createdAt={card.createdAt} completedOn={card.completedOn} />
+          <ChallengeCard.Notice points={card.points} status={card.status} createdAt={card.createdAt} completedOn={card.completedOn} startedOn={card.startedOn} />
           <ChallengeCard.Image image={card.image} />
           <ChallengeCard.Details type={card.type} headline={card.headline} description={card.description} />
           <ChallengeCard.Actions>

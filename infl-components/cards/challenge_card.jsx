@@ -111,19 +111,21 @@ ChallengeCard.Notice = React.createClass({
       points : 0,
       createdAt : "",
       status : "",
-      completedOn : ""
+      completedOn : "",
+      startedOn : ""
     };
   },
   PropTypes : {
     points : React.PropTypes.number,
     createdAt : React.PropTypes.string,
     status : React.PropTypes.string,
-    completedOn : ""
+    completedOn : React.PropTypes.string,
+    startedOn : React.PropTypes.string
   },
   render : function(){
     return (
       <div className="pt-card-notice">
-        <ChallengeStatus createdAt={this.props.createdAt} status={this.props.status} completedOn={this.props.completedOn} />
+        <ChallengeStatus createdAt={this.props.createdAt} status={this.props.status} completedOn={this.props.completedOn} startedOn={this.props.startedOn} />
         <Points points={this.props.points} />
       </div>
     );
@@ -154,21 +156,43 @@ var ChallengeStatus = React.createClass({
     return {
       createdAt : "",
       status : "",
-      completedOn : ""
+      completedOn : "",
+      startedOn : ""
     };
   },
   PropTypes : {
     createdAt : React.PropTypes.string,
     status : React.PropTypes.string,
-    completedOn : ""
+    completedOn : React.PropTypes.string,
+    startedOn : React.PropTypes.string
   },
   render : function(){
     return (
       <span className="pt-challenge-status">
-
+        {this._determineStatusDetails()}
       </span>
     );
-  }
+  },
+  _determineStatusDetails : function(){
+    if(this.props.status === "completed") {
+      return this._showCompletedStatus();
+    } else if(this.props.status === "started") {
+      return this._showStartedStatus();
+    }
+  },
+  _showStartedStatus : function(){
+    var startedOn = new Date(this.props.startedOn);
+    return (
+      <span className="completed">Started: {this._monthNames[startedOn.getUTCMonth()]} {startedOn.getUTCDate()}</span>
+    );
+  },
+  _showCompletedStatus : function(){
+    var completedOn = new Date(this.props.completedOn);
+    return (
+      <span className="completed">Completed: {this._monthNames[completedOn.getUTCMonth()]} {completedOn.getUTCDate()}</span>
+    );
+  },
+  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 });
 
 module.exports = ChallengeCard;

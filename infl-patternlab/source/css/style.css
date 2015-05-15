@@ -2658,13 +2658,23 @@ DIV.pt-popover.is-visible {
   background-color: rgba(68, 68, 68, 0.7);
   color: #fff;
   z-index: 2;
+  height: 24px;
 }
 .pt-challenge-card .pt-card-notice .pt-challenge-status {
   float: left;
+  font-size: 12px;
+  line-height: 24px;
+  display: block;
+  height: 24px;
+}
+.pt-challenge-card .pt-card-notice .pt-challenge-status span {
+  vertical-align: middle;
 }
 .pt-challenge-card .pt-card-notice .pt-card-points {
   float: right;
   font-size: 15px;
+  display: block;
+  margin-top: 1px;
 }
 .pt-challenge-card .pt-card-notice .pt-card-points .ic {
   position: relative;
