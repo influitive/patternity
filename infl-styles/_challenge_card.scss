@@ -1,0 +1,111 @@
+.pt-card {
+  box-shadow: 0px 1px 3px 0px $light-grey;
+  background-color: #fff;
+}
+
+.pt-challenge-card {
+  .pt-card {
+    position: relative;
+    width: 250px;
+    height: 400px;
+  }
+
+  .pt-card-notice {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 2px 10px;
+    background-color: rgba(68, 68, 68, 0.7); // $darker-grey with opacity change
+    color: #fff;
+    z-index: 2;
+
+    .pt-challenge-status {
+      float: left;
+    }
+
+    .pt-card-points {
+      float: right;
+      font-size: 15px;
+
+      .ic {
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .pt-challenge-image {
+    overflow: hidden;
+    height: 120px;
+
+    img {
+      width: 100%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.no-image {
+      display: none;
+    }
+  }
+
+  .pt-challenge-details {
+    padding: 0px 20px;
+
+    .description {
+      color: $medium-grey;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .pt-challenge-type {
+      margin: 0px 0px 1.3em;
+      padding: 2px 10px;
+      font-variant: small-caps;
+      color: #fff;
+      display: inline-block;
+      cursor : pointer;
+      font-size: 13px;
+
+      &.webinar {
+        background-color: #D6960D;
+      }
+
+      &.social {
+        background-color: #27B8D9;
+      }
+    }
+  }
+
+  .pt-challenge-actions {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid $medium-grey;
+
+    .button-group {
+      width: 100%;
+
+      .button,
+      button {
+        width: calc((100% - 20px) / 2);
+
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+
+      .button:only-child,
+      button:only-child {
+        margin: 0px auto;
+        margin-left: 0px;
+      }
+    }
+  }
+}

@@ -51,11 +51,12 @@ inflComp.StoragePattern           = require("./patterns/utilities/storage_patter
 
 /* Pages */
 inflComp.FormPagePattern          = require("./patterns/pages/form_page_pattern.jsx");
+inflComp.ChallengesPagePattern    = require("./patterns/pages/challenges_page_pattern.jsx");
 
 module.exports = inflComp;
 
 
-},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -533,7 +534,205 @@ var ButtonGroup = React.createClass({displayName: "ButtonGroup",
 module.exports = ButtonGroup;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
+var React   = require('react');
+var classNames = require('classnames');
+
+var Icon = require('../icon.jsx');
+var ButtonGroup = require('../button_group.jsx');
+
+var Card = React.createClass({displayName: "Card",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-card"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+var ChallengeCard = React.createClass({displayName: "ChallengeCard",
+  render: function () {
+    return (
+      React.createElement("div", {className: "pt-challenge-card"}, 
+        React.createElement(Card, null, 
+          this.props.children
+        )
+      )
+    );
+  }
+});
+
+ChallengeCard.Details = React.createClass({displayName: "Details",
+  getDefaultProps : function(){
+    return {
+      type : "",
+      headline : "",
+      description : "",
+      onFilterByType : function(){}
+    };
+  },
+  PropTypes : {
+    type : React.PropTypes.string,
+    headline : React.PropTypes.string,
+    description : React.PropTypes.string,
+    onFilterByType : React.PropTypes.func
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-challenge-details"}, 
+        React.createElement("h4", {className: "headline"}, this.props.headline), 
+        React.createElement(ChallengeType, {type: this.props.type, onClick: this.props.onFilterByType}), 
+        React.createElement("p", {className: "description"}, this.props.description)
+      )
+    );
+  }
+});
+
+var ChallengeType = React.createClass({displayName: "ChallengeType",
+  getDefaultProps : function(){
+    return {
+      type : "",
+      onClick : function(){}
+    };
+  },
+  PropTypes : {
+    type : React.PropTypes.string,
+    onClick : React.PropTypes.func
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-challenge-type " + this.props.type.toLowerCase(), onClick: this.props.onClick}, 
+        this.props.type.toLowerCase()
+      )
+    );
+  }
+});
+
+ChallengeCard.Actions = React.createClass({displayName: "Actions",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-challenge-actions"}, 
+        React.createElement(ButtonGroup, null, 
+          this.props.children
+        )
+      )
+    );
+  }
+});
+
+ChallengeCard.Image = React.createClass({displayName: "Image",
+  getDefaultProps : function(){
+    return {
+      image : null,
+    };
+  },
+  PropTypes : {
+    image : React.PropTypes.string,
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage()}, 
+        React.createElement("img", {src: this.props.image, alt: "Challenge Image"})
+      )
+    );
+  },
+  _doesChallengeHaveAnImage : function(){
+    return this.props.image ? "" : "no-image";
+  }
+});
+
+ChallengeCard.Notice = React.createClass({displayName: "Notice",
+    getDefaultProps : function(){
+    return {
+      points : 0,
+      createdAt : "",
+      status : "",
+      completedOn : ""
+    };
+  },
+  PropTypes : {
+    points : React.PropTypes.number,
+    createdAt : React.PropTypes.string,
+    status : React.PropTypes.string,
+    completedOn : ""
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-card-notice"}, 
+        React.createElement(ChallengeStatus, {createdAt: this.props.createdAt, status: this.props.status, completedOn: this.props.completedOn}), 
+        React.createElement(Points, {points: this.props.points})
+      )
+    );
+  }
+});
+
+var Points = React.createClass({displayName: "Points",
+  getDefaultProps : function(){
+    return {
+      points : 0,
+    };
+  },
+  PropTypes : {
+    points : React.PropTypes.number,
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-card-points"}, 
+        React.createElement(Icon, {icon: "coins"}), 
+        this.props.points
+      )
+    );
+  }
+});
+
+var ChallengeStatus = React.createClass({displayName: "ChallengeStatus",
+  getDefaultProps : function(){
+    return {
+      createdAt : "",
+      status : "",
+      completedOn : ""
+    };
+  },
+  PropTypes : {
+    createdAt : React.PropTypes.string,
+    status : React.PropTypes.string,
+    completedOn : ""
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-challenge-status"}
+
+      )
+    );
+  }
+});
+
+module.exports = ChallengeCard;
+
+// created_at: "2015-03-02T14:46:34.913-05:00"
+// description: ""
+// description_text_only: ""
+// featured: false
+// headline: "Take this 2-minute challenge to learn how you can benefit from app AdvocateHub."
+// id: 1
+// image: null
+// multiple_completion: false
+// name: "Introductory Challenge for New Advocates"
+// points: 5
+// stage_count: 4
+// stage_types:[
+//   0: "intro_questions"
+//   1: "intro_questions"
+//   2: "intro_questions"
+//   3: "intro_questions"
+// ]
+// timeout_message: null
+// type: "Survey"
+// unique_participant_count: 0
+
+
+},{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -1689,14 +1888,16 @@ var classNames = require('classnames');
 var StatsBar = React.createClass({displayName: "StatsBar",
   getDefaultProps : function(){
     return {
-      statType : "points"
+      statType : "points",
+      children : []
     }
   },
   PropTypes : {
     statType : React.PropTypes.oneOf([
       'points',
       'activity'
-    ])
+    ]),
+    children : React.PropTypes.array
   },
   render: function() {
     return (
@@ -1724,8 +1925,8 @@ StatsBar.Stat = React.createClass({displayName: "Stat",
   render: function() {
     return (
       React.createElement("span", {ref: "stat", className: "pt-stat " + this._isValueNegative()}, 
-        React.createElement("span", {className: "pt-stat-title"}, this.props.title, ":"), 
-        React.createElement("strong", {className: "pt-stat-value"}, this.props.value)
+        React.createElement("span", {ref: "title", className: "pt-stat-title"}, this.props.title, ":"), 
+        React.createElement("strong", {ref: "value", className: "pt-stat-value"}, this.props.value)
       )
     );
   },
@@ -45384,7 +45585,221 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
 module.exports = TabsPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+
+var Tabs  = require("../../../../infl-components/tabs.jsx");
+var ButtonGroup  = require("../../../../infl-components/button_group.jsx");
+var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.jsx");
+
+var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePattern",
+  getInitialState : function(){
+    return {
+      available : [
+        {
+          points : 5,
+          featured : false,
+          description : "Look to generate new referrals?  Try creating a new referral challenge and featuring it!",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "How to use LinkedIn suggestions in the referral challenge",
+          id : 1,
+          image : "http://manofdepravity.com/wp-content/uploads/2010/02/Shaking-Hands3.jpg",
+          name : "LinkedIn referral help",
+          stage_count : 0,
+          stage_types : [],
+          type : "Webinar",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "available",
+        },
+        {
+          points : 1000,
+          featured : false,
+          description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "Your community manifesto.  Pass it on.",
+          id : 2,
+          image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+          name : "LinkedIn referral help",
+          stage_count : 0,
+          stage_types : [],
+          type : "Social",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "available",
+        }
+      ],
+      started : [
+        {
+          points : 1000,
+          featured : false,
+          description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "Heard something great from a customer",
+          id : 3,
+          image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+          name : "LinkedIn referral help",
+          stage_count : 0,
+          stage_types : [],
+          type : "Social",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "started",
+        }
+      ],
+      later : [],
+      completed : [
+        {
+          points : 1000,
+          featured : false,
+          description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "Heard something great from a customer",
+          id : 4,
+          image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+          name : "LinkedIn referral help",
+          stage_count : 0,
+          stage_types : [],
+          type : "Social",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "completed",
+        }]
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
+        React.createElement(Pattern, {title: "challenges page demo"}, 
+          React.createElement(Tabs, null, 
+            React.createElement(Tabs.Tab, {title: "Available"}, 
+              React.createElement("div", {className: "challenge-cards"}, 
+                this._buildCards(this.state.available)
+              )
+            ), 
+            React.createElement(Tabs.Tab, {title: "Started"}, 
+              this._buildCards(this.state.started)
+            ), 
+            React.createElement(Tabs.Tab, {title: "Later"}, 
+              React.createElement("div", {className: "challenge-cards"}, 
+                this._buildCards(this.state.later)
+              )
+            ), 
+            React.createElement(Tabs.Tab, {title: "Complete"}, 
+              this._buildCards(this.state.completed)
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildCards : function(cards){
+    var that = this;
+    return cards.map(function(card){
+      return (
+        React.createElement(ChallengeCard, {key: card.id}, 
+          React.createElement(ChallengeCard.Notice, {points: card.points, status: card.status, createdAt: card.createdAt, completedOn: card.completedOn}), 
+          React.createElement(ChallengeCard.Image, {image: card.image}), 
+          React.createElement(ChallengeCard.Details, {type: card.type, headline: card.headline, description: card.description}), 
+          React.createElement(ChallengeCard.Actions, null, 
+            that._cardButtons(card.id, card.status)
+          )
+        )
+      );
+    });
+  },
+  _cardButtons : function(cardId, status){
+    if(status === "available"){
+      return this._availableButtons(cardId);
+    } else if(status === "started"){
+      return this._startedButtons(cardId);
+    } else if(status === "later"){
+      return this._laterButtons(cardId);
+    } else if(status === "completed"){
+      return this._completedButtons(cardId);
+    }
+
+  },
+  _completedButtons : function(cardId){
+    return (
+      React.createElement("span", null, 
+        React.createElement("button", {className: "success", onClick: function(){}}, "View")
+      )
+    );
+  },
+  _laterButtons : function(cardId){
+    return (
+      React.createElement("span", null, 
+        React.createElement("button", {className: "secondary", onClick: function(){}, "data-id": cardId}, "Make Available"), 
+        React.createElement("button", {className: "success", onClick: function(){}}, "View")
+      )
+    );
+  },
+  _startedButtons : function(cardId){
+    return (
+      React.createElement("span", null, 
+        React.createElement("button", {className: "secondary", onClick: function(){}, "data-id": cardId}, "Message"), 
+        React.createElement("button", {className: "success", onClick: function(){}}, "View")
+      )
+    );
+  },
+  _availableButtons : function(cardId){
+    return (
+      React.createElement("span", null, 
+        React.createElement("button", {className: "secondary", onClick: this._laterChallenge, "data-id": cardId}, "Later"), 
+        React.createElement("button", {className: "success", onClick: function(){}}, "View")
+      )
+    );
+  },
+  _laterChallenge : function(event){
+    var challangeId = event.target.getAttribute("data-id");
+    var availableChallenges = this.state.available;
+    var laterChallenges = this.state.later;
+    var selectedCard = {};
+    for(var i = 0; i < availableChallenges.length; i++){
+      if(availableChallenges[i].id === parseInt(challangeId)){
+        availableChallenges[i].status = "later";
+        laterChallenges.push(availableChallenges[i])
+        availableChallenges.splice(i, 1);
+      }
+    }
+    this.setState({
+      available : availableChallenges,
+      later : laterChallenges
+    })
+  }
+});
+
+module.exports = ChallengesPagePattern;
+
+        // <div key={card.id} ref={"card-" + card.id} className="pt-challenge-card">
+        //   <h2>{card.title}</h2>
+        //   <p>{card.description}</p>
+        //   <span className="participants">{card.participants}</span>
+        //   <span className="points">{card.points}</span>
+        //   <div className="actions">
+        //     <ButtonGroup>
+        //       <button className="secondary" onClick={that._laterChallenge} data-id={card.id}>Later</button>
+        //       <button className="success">View</button>
+        //     </ButtonGroup>
+        //   </div>
+        // </div>
+
+
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 
