@@ -43,6 +43,7 @@ inflComp.SidebarPattern           = require("./patterns/molecules/sidebar_patter
 inflComp.SidebarNavListPattern    = require("./patterns/molecules/sidebar_nav_list_pattern.jsx");
 inflComp.SidebarHeadingPattern    = require("./patterns/molecules/sidebar_heading_pattern.jsx");
 inflComp.StatsBarPattern          = require("./patterns/molecules/stats_bar_pattern.jsx");
+inflComp.CardPattern              = require("./patterns/molecules/cards/card_pattern.jsx");
 
 /* Utilities */
 inflComp.StoragePattern           = require("./patterns/utilities/storage_pattern.jsx");
@@ -56,7 +57,7 @@ inflComp.ChallengesPagePattern    = require("./patterns/pages/challenges_page_pa
 module.exports = inflComp;
 
 
-},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/cards/card_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -534,12 +535,8 @@ var ButtonGroup = React.createClass({displayName: "ButtonGroup",
 module.exports = ButtonGroup;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx":[function(require,module,exports){
 var React   = require('react');
-var classNames = require('classnames');
-
-var Icon = require('../icon.jsx');
-var ButtonGroup = require('../button_group.jsx');
 
 var Card = React.createClass({displayName: "Card",
   render : function(){
@@ -550,6 +547,28 @@ var Card = React.createClass({displayName: "Card",
     );
   }
 });
+
+// Card.Container = React.createClass({
+//   render : function(){
+//     return (
+//       <div className="pt-card-container">
+//         {this.props.children}
+//       </div>
+//     );
+//   }
+// });
+
+module.exports = Card;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
+var React   = require('react');
+var classNames = require('classnames');
+
+var Icon = require('../icon.jsx');
+var ButtonGroup = require('../button_group.jsx');
+
+var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
   render: function () {
@@ -784,7 +803,7 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
+},{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -43146,7 +43165,68 @@ var AlertControls = React.createClass({displayName: "AlertControls",
 module.exports = AlertPattern;
 
 
-},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../../patternlab-components/pattern.jsx');
+var Code      = require('../../../patternlab-components/code.jsx');
+var Require   = require('../../../patternlab-components/require.jsx');
+
+var Card = require("../../../../../infl-components/cards/card.jsx");
+
+var ContentPattern = React.createClass({displayName: "ContentPattern",
+  render : function(){
+    return (
+      React.createElement("div", {className: "card-pattern"}, 
+        React.createElement(Pattern, {title: "card"}, 
+          React.createElement("p", null, "The Card component is used to help with styling of cards used through out the app.  Challenge, provider details, etc."), 
+
+          React.createElement(Pattern.Detail, {title: "Card"}, 
+            React.createElement("p", null, "Content renders a div tag.  So there is not much to show."), 
+
+            React.createElement(Pattern.Show, null, 
+              React.createElement("div", {style: this.sampleCardStyling}, 
+                React.createElement(Card, null, 
+                  React.createElement("h4", null, "Sample Card"), 
+                  React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), 
+                  React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                )
+              )
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Card>" + ' ' +
+                  "<h4>Sample Card</h4>" + ' ' +
+                  "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" + ' ' +
+                "</Card>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Card"})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var Card = require(\"patternity/infl-components/cards/card.jsx\");"
+            ), 
+            React.createElement(Require.CSS, null, 
+              "@import \"patternity/infl-styles/card\";"
+            )
+          )
+        )
+      )
+    );
+  },
+  sampleCardStyling : {
+    width: "300px",
+    padding: "10px",
+    backgroundColor: "#eeeeee"
+  }
+});
+
+module.exports = ContentPattern;
+
+
+},{"../../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
