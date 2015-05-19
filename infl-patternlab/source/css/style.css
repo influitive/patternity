@@ -2670,6 +2670,16 @@ DIV.pt-popover.is-visible {
 .pt-challenge-card .pt-card-notice .pt-challenge-status span {
   vertical-align: middle;
 }
+.pt-challenge-card .pt-card-notice .pt-challenge-status .status-icon {
+  padding-left: 12px;
+  position: relative;
+}
+.pt-challenge-card .pt-card-notice .pt-challenge-status .ic {
+  position: absolute;
+  top: -6px;
+  left: -5px;
+  font-size: 15px;
+}
 .pt-challenge-card .pt-card-notice .pt-card-points {
   float: right;
   font-size: 15px;
@@ -2701,6 +2711,17 @@ DIV.pt-popover.is-visible {
   color: #969696;
   height: 80px;
   overflow: hidden;
+}
+.pt-challenge-card .pt-challenge-details .description.long-description {
+  position: relative;
+}
+.pt-challenge-card .pt-challenge-details .description.long-description:after {
+  content: "...";
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
 .pt-challenge-card .pt-challenge-details .pt-challenge-type {
   margin: 0px 0px 1.3em;

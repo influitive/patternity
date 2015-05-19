@@ -1,6 +1,8 @@
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 
+var _ = require("lodash");
+
 var Tabs  = require("../../../../infl-components/tabs.jsx");
 var ButtonGroup  = require("../../../../infl-components/button_group.jsx");
 var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.jsx");
@@ -8,92 +10,108 @@ var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.j
 var ChallengesPagePattern = React.createClass({
   getInitialState : function(){
     return {
-      available : [
-        {
-          points : 5,
-          featured : false,
-          description : "Look to generate new referrals?  Try creating a new referral challenge and featuring it!",
-          createdAt : "2015-03-02T14:46:34.913-05:00",
-          headline : "How to use LinkedIn suggestions in the referral challenge",
-          id : 1,
-          image : "http://manofdepravity.com/wp-content/uploads/2010/02/Shaking-Hands3.jpg",
-          name : "LinkedIn referral help",
-          stage_count : 0,
-          stage_types : [],
-          type : "Webinar",
-          participantCount : 5,
-          timeoutMessage : "",
-          completedOn : "",
+      available : {
+        tabIndex : 0,
+        challenges :[
+          {
+            points : 5,
+            featured : false,
+            description : "Look to generate new referrals?  Try creating a new referral challenge and featuring it!",
+            createdAt : "2015-03-02T14:46:34.913-05:00",
+            headline : "How to use LinkedIn suggestions in the referral challenge",
+            id : 1,
+            image : "http://manofdepravity.com/wp-content/uploads/2010/02/Shaking-Hands3.jpg",
+            name : "LinkedIn referral help",
+            stage_count : 0,
+            stage_types : [],
+            type : "Webinar",
+            participantCount : 5,
+            timeoutMessage : "",
+            completedOn : "",
 
-          //Not part of the data we get back yet
-          status : "available",
-          startedOn : ""
-        },
-        {
-          points : 1000,
-          featured : false,
-          description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          createdAt : "2015-03-02T14:46:34.913-05:00",
-          headline : "Your community manifesto.  Pass it on.",
-          id : 2,
-          image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
-          name : "LinkedIn referral help",
-          stage_count : 0,
-          stage_types : [],
-          type : "Social",
-          participantCount : 5,
-          timeoutMessage : "",
-          completedOn : "",
+            //Not part of the data we get back yet
+            status : "available",
+            startedOn : "",
+            unlocked : true
+          },
+          {
+            points : 1000,
+            featured : false,
+            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            createdAt : "2015-03-02T14:46:34.913-05:00",
+            headline : "Your community manifesto.  Pass it on.",
+            id : 2,
+            image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+            name : "LinkedIn referral help",
+            stage_count : 0,
+            stage_types : [],
+            type : "Social",
+            participantCount : 5,
+            timeoutMessage : "",
+            completedOn : "",
 
-          //Not part of the data we get back yet
-          status : "available",
-          startedOn : ""
+            //Not part of the data we get back yet
+            status : "available",
+            startedOn : "",
+            unlocked : false
+          }
+        ]
+      },
+      started : {
+        tabIndex : 1,
+        challenges : [
+          {
+            points : 1000,
+            featured : false,
+            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            createdAt : "2015-03-02T14:46:34.913-05:00",
+            headline : "Heard something great from a customer",
+            id : 3,
+            image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+            name : "LinkedIn referral help",
+            stage_count : 0,
+            stage_types : [],
+            type : "Social",
+            participantCount : 5,
+            timeoutMessage : "",
+            completedOn : "",
+
+            //Not part of the data we get back yet
+            status : "started",
+            startedOn : "2015-03-10T14:46:34.913-05:00",
+            unlocked : false
+          }
+        ]
+      },
+      later : {
+        tabIndex : 2,
+        challenges : []
+      },
+      completed : {
+        tabIndex : 3,
+        challenges :[
+          {
+            points : 1000,
+            featured : false,
+            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            createdAt : "2015-03-02T14:46:34.913-05:00",
+            headline : "Heard something great from a customer",
+            id : 4,
+            image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+            name : "LinkedIn referral help",
+            stage_count : 0,
+            stage_types : [],
+            type : "Social",
+            participantCount : 5,
+            timeoutMessage : "",
+            completedOn : "2015-03-02T14:46:34.913-05:00",
+
+            //Not part of the data we get back yet
+            status : "completed",
+            startedOn : "",
+            unlocked : false
+          }]
         }
-      ],
-      started : [
-        {
-          points : 1000,
-          featured : false,
-          description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          createdAt : "2015-03-02T14:46:34.913-05:00",
-          headline : "Heard something great from a customer",
-          id : 3,
-          image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
-          name : "LinkedIn referral help",
-          stage_count : 0,
-          stage_types : [],
-          type : "Social",
-          participantCount : 5,
-          timeoutMessage : "",
-          completedOn : "",
-
-          //Not part of the data we get back yet
-          status : "started",
-          startedOn : "2015-03-10T14:46:34.913-05:00"
-        }
-      ],
-      later : [],
-      completed : [
-        {
-          points : 1000,
-          featured : false,
-          description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          createdAt : "2015-03-02T14:46:34.913-05:00",
-          headline : "Heard something great from a customer",
-          id : 4,
-          image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
-          name : "LinkedIn referral help",
-          stage_count : 0,
-          stage_types : [],
-          type : "Social",
-          participantCount : 5,
-          timeoutMessage : "",
-          completedOn : "2015-03-02T14:46:34.913-05:00",
-
-          //Not part of the data we get back yet
-          status : "completed",
-          startedOn : ""
-        }]
     };
   },
   render : function(){
@@ -102,20 +120,24 @@ var ChallengesPagePattern = React.createClass({
         <Pattern title="challenges page demo">
           <Tabs>
             <Tabs.Tab title="Available">
-              <div className="challenge-cards">
-                {this._buildCards(this.state.available)}
+              <div ref="available" className="challenge-cards">
+                {this._buildCards(this.state.available.challenges)}
               </div>
             </Tabs.Tab>
             <Tabs.Tab title="Started">
-              {this._buildCards(this.state.started)}
+              <div ref="started" className="challenge-cards">
+                {this._buildCards(this.state.started.challenges)}
+              </div>
             </Tabs.Tab>
             <Tabs.Tab title="Later">
-              <div className="challenge-cards">
-                {this._buildCards(this.state.later)}
+              <div ref="later" className="challenge-cards">
+                {this._buildCards(this.state.later.challenges)}
               </div>
             </Tabs.Tab>
             <Tabs.Tab title="Complete">
-              {this._buildCards(this.state.completed)}
+              <div ref="completed" className="challenge-cards">
+                {this._buildCards(this.state.completed.challenges)}
+              </div>
             </Tabs.Tab>
           </Tabs>
         </Pattern>
@@ -127,7 +149,13 @@ var ChallengesPagePattern = React.createClass({
     return cards.map(function(card){
       return (
         <ChallengeCard key={card.id}>
-          <ChallengeCard.Notice points={card.points} status={card.status} createdAt={card.createdAt} completedOn={card.completedOn} startedOn={card.startedOn} />
+          <ChallengeCard.Notice
+              points={card.points}
+              status={card.status}
+              createdAt={card.createdAt}
+              completedOn={card.completedOn}
+              startedOn={card.startedOn}
+              unlocked={card.unlocked} />
           <ChallengeCard.Image image={card.image} />
           <ChallengeCard.Details type={card.type} headline={card.headline} description={card.description} />
           <ChallengeCard.Actions>
@@ -159,7 +187,7 @@ var ChallengesPagePattern = React.createClass({
   _laterButtons : function(cardId){
     return (
       <span>
-        <button className="secondary" onClick={function(){}} data-id={cardId}>Make Available</button>
+        <button className="secondary" onClick={this._availableChallenge} data-id={cardId}>Make Available</button>
         <button className="success" onClick={function(){}}>View</button>
       </span>
     );
@@ -180,22 +208,39 @@ var ChallengesPagePattern = React.createClass({
       </span>
     );
   },
-  _laterChallenge : function(event){
+  _availableChallenge : function(event) {
     var challangeId = event.target.getAttribute("data-id");
     var availableChallenges = this.state.available;
     var laterChallenges = this.state.later;
     var selectedCard = {};
-    for(var i = 0; i < availableChallenges.length; i++){
-      if(availableChallenges[i].id === parseInt(challangeId)){
-        availableChallenges[i].status = "later";
-        laterChallenges.push(availableChallenges[i])
-        availableChallenges.splice(i, 1);
+    for(var i = 0; i < laterChallenges.challenges.length; i++){
+      if(laterChallenges.challenges[i].id === parseInt(challangeId)){
+        laterChallenges.challenges[i].status = "available";
+        availableChallenges.challenges.push(laterChallenges.challenges[i])
+        laterChallenges.challenges.splice(i, 1);
       }
     }
     this.setState({
       available : availableChallenges,
       later : laterChallenges
-    })
+    });
+  },
+  _laterChallenge : function(event){
+    var challangeId = event.target.getAttribute("data-id");
+    var availableChallenges = this.state.available;
+    var laterChallenges = this.state.later;
+    var selectedCard = {};
+    for(var i = 0; i < availableChallenges.challenges.length; i++){
+      if(availableChallenges.challenges[i].id === parseInt(challangeId)){
+        availableChallenges.challenges[i].status = "later";
+        laterChallenges.challenges.push(availableChallenges.challenges[i])
+        availableChallenges.challenges.splice(i, 1);
+      }
+    }
+    this.setState({
+      available : availableChallenges,
+      later : laterChallenges
+    });
   }
 });
 

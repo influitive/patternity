@@ -41,14 +41,23 @@ ChallengeCard.Details = React.createClass({
     description : React.PropTypes.string,
     onFilterByType : React.PropTypes.func
   },
+  componentDidMount : function(){
+    this._formatDescription();
+  },
   render : function(){
     return (
       <div className="pt-challenge-details">
         <h4 className="headline">{this.props.headline}</h4>
         <ChallengeType type={this.props.type} onClick={this.props.onFilterByType} />
-        <p className="description">{this.props.description}</p>
+        <p ref="description" className="description">{this.props.description}</p>
       </div>
     );
+  },
+  _formatDescription : function(){
+    var description = React.findDOMNode(this.refs.description);
+    if(description.scrollHeight > description.offsetHeight) {
+      description.classList.add("long-description");
+    }
   }
 });
 
@@ -112,7 +121,8 @@ ChallengeCard.Notice = React.createClass({
       createdAt : "",
       status : "",
       completedOn : "",
-      startedOn : ""
+      startedOn : "",
+      unlocked : false
     };
   },
   PropTypes : {
@@ -120,12 +130,18 @@ ChallengeCard.Notice = React.createClass({
     createdAt : React.PropTypes.string,
     status : React.PropTypes.string,
     completedOn : React.PropTypes.string,
-    startedOn : React.PropTypes.string
+    startedOn : React.PropTypes.string,
+    unlocked : React.PropTypes.bool
   },
   render : function(){
     return (
       <div className="pt-card-notice">
-        <ChallengeStatus createdAt={this.props.createdAt} status={this.props.status} completedOn={this.props.completedOn} startedOn={this.props.startedOn} />
+        <ChallengeStatus
+            createdAt={this.props.createdAt}
+            status={this.props.status}
+            completedOn={this.props.completedOn}
+            startedOn={this.props.startedOn}
+            unlocked={this.props.unlocked} />
         <Points points={this.props.points} />
       </div>
     );
@@ -157,14 +173,16 @@ var ChallengeStatus = React.createClass({
       createdAt : "",
       status : "",
       completedOn : "",
-      startedOn : ""
+      startedOn : "",
+      unlocked : false
     };
   },
   PropTypes : {
     createdAt : React.PropTypes.string,
     status : React.PropTypes.string,
     completedOn : React.PropTypes.string,
-    startedOn : React.PropTypes.string
+    startedOn : React.PropTypes.string,
+    unlocked : React.PropTypes.bool
   },
   render : function(){
     return (
@@ -178,6 +196,8 @@ var ChallengeStatus = React.createClass({
       return this._showCompletedStatus();
     } else if(this.props.status === "started") {
       return this._showStartedStatus();
+    } else if(this.props.unlocked) {
+      return this._showUnlockedStatus();
     }
   },
   _showStartedStatus : function(){
@@ -192,7 +212,15 @@ var ChallengeStatus = React.createClass({
       <span className="completed">Completed: {this._monthNames[completedOn.getUTCMonth()]} {completedOn.getUTCDate()}</span>
     );
   },
-  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  _showUnlockedStatus : function(){
+    return (
+      <span className="unlocked status-icon">
+        <Icon icon="unlock" />
+        <span>Challenge unlocked!</span>
+      </span>
+    );
+  }
 });
 
 module.exports = ChallengeCard;

@@ -5,7 +5,7 @@ var Tabs = React.createClass({
     return {
       id : "",
       key : "tabs-" + Math.random(),
-      openTabIndex : 0,
+      openTabIndex : null,
       onChange : function(){}
     };
   },
@@ -17,13 +17,15 @@ var Tabs = React.createClass({
   },
   getInitialState : function(){
     return {
-      openTabIndex : this.props.openTabIndex
+      openTabIndex : this._validTabIndex(this.props.openTabIndex) ? this.props.openTabIndex : 0
     };
   },
   componentWillReceiveProps: function(nextProps) {
-    this.setState({
-      openTabIndex: nextProps.openTabIndex
-    });
+    if(this._validTabIndex(nextProps.openTabIndex)){
+      this.setState({
+        openTabIndex: nextProps.openTabIndex
+      });
+    }
   },
   render: function() {
     return (
@@ -36,6 +38,17 @@ var Tabs = React.createClass({
         </section>
       </nav>
     );
+  },
+  _validTabIndex : function(openTabIndex){
+    if(isNaN(parseInt(openTabIndex))){
+      return false;
+    }
+
+    if(openTabIndex > this.props.children.length){
+      return false;
+    }
+
+    return true;
   },
   _buildTabs : function(){
     var that = this;
