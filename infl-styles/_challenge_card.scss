@@ -31,6 +31,18 @@
       span {
         vertical-align: middle;
       }
+
+      .status-icon {
+        padding-left: 12px;
+        position: relative;
+      }
+
+      .ic {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        font-size: 15px;
+      }
     }
 
     .pt-card-points {
@@ -70,6 +82,19 @@
       color: $medium-grey;
       height: 80px;
       overflow: hidden;
+
+      &.long-description {
+        position: relative;
+
+        &:after {
+          content : "...";
+          display: block;
+          background-color: #fff;
+          position: absolute;
+          bottom : 0px;
+          right: 0px;
+        }
+      }
     }
 
     .pt-challenge-type {
