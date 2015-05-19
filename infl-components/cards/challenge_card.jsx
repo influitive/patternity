@@ -9,11 +9,11 @@ var Card = require('./card.jsx');
 var ChallengeCard = React.createClass({
   render: function () {
     return (
-      <div className="pt-challenge-card">
-        <Card>
+      <Card>
+        <div className="pt-challenge-card">
           {this.props.children}
-        </Card>
-      </div>
+        </div>
+      </Card>
     );
   }
 });

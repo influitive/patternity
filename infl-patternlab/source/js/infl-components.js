@@ -541,22 +541,22 @@ var React   = require('react');
 var Card = React.createClass({displayName: "Card",
   render : function(){
     return (
-      React.createElement("div", {className: "pt-card"}, 
+      React.createElement("div", {ref: "card", className: "pt-card"}, 
         this.props.children
       )
     );
   }
 });
 
-// Card.Container = React.createClass({
-//   render : function(){
-//     return (
-//       <div className="pt-card-container">
-//         {this.props.children}
-//       </div>
-//     );
-//   }
-// });
+Card.Container = React.createClass({displayName: "Container",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-card-container"}, 
+        this.props.children
+      )
+    );
+  }
+});
 
 module.exports = Card;
 
@@ -573,8 +573,8 @@ var Card = require('./card.jsx');
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
   render: function () {
     return (
-      React.createElement("div", {className: "pt-challenge-card"}, 
-        React.createElement(Card, null, 
+      React.createElement(Card, null, 
+        React.createElement("div", {className: "pt-challenge-card"}, 
           this.props.children
         )
       )
@@ -43204,6 +43204,55 @@ var ContentPattern = React.createClass({displayName: "ContentPattern",
             )
           ), 
 
+          React.createElement(Pattern.Detail, {title: "Card Container"}, 
+            React.createElement("p", null, "Content Container renders a div tag.  So there is not much to show."), 
+
+            React.createElement(Pattern.Show, null, 
+              React.createElement("div", {style: this.sampleCardContainerStyling}, 
+                React.createElement(Card.Container, null, 
+                  React.createElement(Card, null, 
+                    React.createElement("h4", null, "Sample Card"), 
+                    React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), 
+                    React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                  ), 
+                  React.createElement(Card, null, 
+                    React.createElement("h4", null, "Sample Card"), 
+                    React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), 
+                    React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                  ), 
+                  React.createElement(Card, null, 
+                    React.createElement("h4", null, "Sample Card"), 
+                    React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), 
+                    React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                  )
+                )
+              )
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<Card.Container>" + ' ' +
+                  "<Card>" + ' ' +
+                    "<h4>Sample Card</h4>" + ' ' +
+                    "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" + ' ' +
+                    "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" + ' ' +
+                  "</Card>" + ' ' +
+                  "<Card>" + ' ' +
+                    "<h4>Sample Card</h4>" + ' ' +
+                    "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" + ' ' +
+                    "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" + ' ' +
+                  "</Card>" + ' ' +
+                  "<Card>" + ' ' +
+                    "<h4>Sample Card</h4>" + ' ' +
+                    "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" + ' ' +
+                    "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>" + ' ' +
+                  "</Card>" + ' ' +
+                "</Card.Container>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "Card.Container"})
+            )
+          ), 
+
           React.createElement(Require, null, 
             React.createElement(Require.JS, null, 
               "var Card = require(\"patternity/infl-components/cards/card.jsx\");"
@@ -43218,6 +43267,10 @@ var ContentPattern = React.createClass({displayName: "ContentPattern",
   },
   sampleCardStyling : {
     width: "300px",
+    padding: "10px",
+    backgroundColor: "#eeeeee"
+  },
+  sampleCardContainerStyling : {
     padding: "10px",
     backgroundColor: "#eeeeee"
   }
@@ -45739,6 +45792,7 @@ var _ = require("lodash");
 var Tabs  = require("../../../../infl-components/tabs.jsx");
 var ButtonGroup  = require("../../../../infl-components/button_group.jsx");
 var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.jsx");
+var Card  = require("../../../../infl-components/cards/card.jsx");
 
 var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePattern",
   getInitialState : function(){
@@ -45853,22 +45907,22 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
         React.createElement(Pattern, {title: "challenges page demo"}, 
           React.createElement(Tabs, null, 
             React.createElement(Tabs.Tab, {title: "Available"}, 
-              React.createElement("div", {ref: "available", className: "challenge-cards"}, 
+              React.createElement(Card.Container, null, 
                 this._buildCards(this.state.available.challenges)
               )
             ), 
             React.createElement(Tabs.Tab, {title: "Started"}, 
-              React.createElement("div", {ref: "started", className: "challenge-cards"}, 
+              React.createElement(Card.Container, null, 
                 this._buildCards(this.state.started.challenges)
               )
             ), 
             React.createElement(Tabs.Tab, {title: "Later"}, 
-              React.createElement("div", {ref: "later", className: "challenge-cards"}, 
+              React.createElement(Card.Container, null, 
                 this._buildCards(this.state.later.challenges)
               )
             ), 
             React.createElement(Tabs.Tab, {title: "Complete"}, 
-              React.createElement("div", {ref: "completed", className: "challenge-cards"}, 
+              React.createElement(Card.Container, null, 
                 this._buildCards(this.state.completed.challenges)
               )
             )
@@ -45993,7 +46047,7 @@ module.exports = ChallengesPagePattern;
         // </div>
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 

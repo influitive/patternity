@@ -6,6 +6,7 @@ var _ = require("lodash");
 var Tabs  = require("../../../../infl-components/tabs.jsx");
 var ButtonGroup  = require("../../../../infl-components/button_group.jsx");
 var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.jsx");
+var Card  = require("../../../../infl-components/cards/card.jsx");
 
 var ChallengesPagePattern = React.createClass({
   getInitialState : function(){
@@ -120,24 +121,24 @@ var ChallengesPagePattern = React.createClass({
         <Pattern title="challenges page demo">
           <Tabs>
             <Tabs.Tab title="Available">
-              <div ref="available" className="challenge-cards">
+              <Card.Container>
                 {this._buildCards(this.state.available.challenges)}
-              </div>
+              </Card.Container>
             </Tabs.Tab>
             <Tabs.Tab title="Started">
-              <div ref="started" className="challenge-cards">
+              <Card.Container>
                 {this._buildCards(this.state.started.challenges)}
-              </div>
+              </Card.Container>
             </Tabs.Tab>
             <Tabs.Tab title="Later">
-              <div ref="later" className="challenge-cards">
+              <Card.Container>
                 {this._buildCards(this.state.later.challenges)}
-              </div>
+              </Card.Container>
             </Tabs.Tab>
             <Tabs.Tab title="Complete">
-              <div ref="completed" className="challenge-cards">
+              <Card.Container>
                 {this._buildCards(this.state.completed.challenges)}
-              </div>
+              </Card.Container>
             </Tabs.Tab>
           </Tabs>
         </Pattern>

@@ -2,3 +2,18 @@
   box-shadow: 0px 1px 3px 0px $light-grey;
   background-color: #fff;
 }
+
+.pt-card-container {
+  overflow: hidden;
+  padding: 5px;
+
+  .pt-card {
+    float: left;
+    width: calc(96% / 3);
+    margin-right: 2%;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}

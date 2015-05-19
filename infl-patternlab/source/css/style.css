@@ -2644,9 +2644,21 @@ DIV.pt-popover.is-visible {
   background-color: #fff;
 }
 
-.pt-challenge-card .pt-card {
+.pt-card-container {
+  overflow: hidden;
+  padding: 5px;
+}
+.pt-card-container .pt-card {
+  float: left;
+  width: calc(96% / 3);
+  margin-right: 2%;
+}
+.pt-card-container .pt-card:last-child {
+  margin-right: 0px;
+}
+
+.pt-challenge-card {
   position: relative;
-  width: 250px;
   height: 400px;
 }
 .pt-challenge-card .pt-card-notice {
