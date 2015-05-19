@@ -4,11 +4,9 @@
 }
 
 .pt-card-container {
-  overflow: hidden;
-  padding: 5px;
-
   .pt-card {
-    float: left;
+    display: inline-block;
+    vertical-align: top;
     width: calc(96% / 3);
     margin-right: 2%;
     margin-bottom: 20px;
