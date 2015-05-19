@@ -2652,9 +2652,10 @@ DIV.pt-popover.is-visible {
   float: left;
   width: calc(96% / 3);
   margin-right: 2%;
+  margin-bottom: 20px;
 }
-.pt-card-container .pt-card:last-child {
-  margin-right: 0px;
+.pt-card-container .pt-card:nth-child(3n) {
+  margin-right: 0;
 }
 
 .pt-challenge-card {

@@ -551,7 +551,7 @@ var Card = React.createClass({displayName: "Card",
 Card.Container = React.createClass({displayName: "Container",
   render : function(){
     return (
-      React.createElement("div", {className: "pt-card-container"}, 
+      React.createElement("div", {ref: "container", className: "pt-card-container"}, 
         this.props.children
       )
     );
