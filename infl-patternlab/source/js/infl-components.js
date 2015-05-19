@@ -718,7 +718,6 @@ var ChallengeStatus = React.createClass({displayName: "ChallengeStatus",
     }
   },
   _showStartedStatus : function(){
-    console.log(this.props.startedOn)
     var startedOn = new Date(this.props.startedOn);
     return (
       React.createElement("span", {className: "completed"}, "Started: ", this._monthNames[startedOn.getUTCMonth()], " ", startedOn.getUTCDate())
