@@ -4,15 +4,7 @@ var classNames = require('classnames');
 var Icon = require('../icon.jsx');
 var ButtonGroup = require('../button_group.jsx');
 
-var Card = React.createClass({
-  render : function(){
-    return (
-      <div className="pt-card">
-        {this.props.children}
-      </div>
-    );
-  }
-});
+var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({
   render: function () {

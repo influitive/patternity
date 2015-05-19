@@ -2676,7 +2676,7 @@ DIV.pt-popover.is-visible {
 }
 .pt-challenge-card .pt-card-notice .pt-challenge-status .ic {
   position: absolute;
-  top: -6px;
+  top: -5px;
   left: -5px;
   font-size: 15px;
 }
