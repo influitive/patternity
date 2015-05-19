@@ -63,7 +63,11 @@
     }
 
     &.no-image {
-      display: none;
+      height: 24px;
+
+      img {
+        display: none;
+      }
     }
   }
 

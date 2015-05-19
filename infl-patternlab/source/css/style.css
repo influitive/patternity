@@ -2712,6 +2712,9 @@ DIV.pt-popover.is-visible {
   transform: translateY(-50%);
 }
 .pt-challenge-card .pt-challenge-image.no-image {
+  height: 24px;
+}
+.pt-challenge-card .pt-challenge-image.no-image img {
   display: none;
 }
 .pt-challenge-card .pt-challenge-details {
