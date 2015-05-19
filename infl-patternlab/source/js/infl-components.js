@@ -45841,6 +45841,69 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             status : "available",
             startedOn : "",
             unlocked : false
+          },
+          {
+            points : 200,
+            featured : false,
+            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            createdAt : "2015-03-02T14:46:34.913-05:00",
+            headline : "This is another awesome challenge for you.",
+            id : 5,
+            image : null,
+            name : "Some Challenge",
+            stage_count : 0,
+            stage_types : [],
+            type : "Social",
+            participantCount : 5,
+            timeoutMessage : "",
+            completedOn : "",
+
+            //Not part of the data we get back yet
+            status : "available",
+            startedOn : "",
+            unlocked : false
+          },
+          {
+            points : 200,
+            featured : false,
+            description : "",
+            createdAt : "2015-03-02T14:46:34.913-05:00",
+            headline : "This is another awesome challenge for you.",
+            id : 6,
+            image : null,
+            name : "Some Challenge",
+            stage_count : 0,
+            stage_types : [],
+            type : "Social",
+            participantCount : 5,
+            timeoutMessage : "",
+            completedOn : "",
+
+            //Not part of the data we get back yet
+            status : "available",
+            startedOn : "",
+            unlocked : false
+          },
+          {
+            points : 1000,
+            featured : false,
+            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            createdAt : "2015-03-02T14:46:34.913-05:00",
+            headline : "Your community manifesto.  Pass it on.",
+            id : 7,
+            image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+            name : "LinkedIn referral help",
+            stage_count : 0,
+            stage_types : [],
+            type : "Social",
+            participantCount : 5,
+            timeoutMessage : "",
+            completedOn : "",
+
+            //Not part of the data we get back yet
+            status : "available",
+            startedOn : "",
+            unlocked : false
           }
         ]
       },
