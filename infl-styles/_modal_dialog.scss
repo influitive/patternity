@@ -30,6 +30,7 @@
         width: 100%;
         background-color: #fff;
         padding-top: 24px;
+        box-sizing: border-box;
       }
 
       .pt-modal-body {
@@ -43,6 +44,7 @@
         left: 0px;
         width: 100%;
         background-color: #fff;
+        box-sizing: border-box;
       }
     }
   }
@@ -55,6 +57,7 @@
     padding-top: 24px;
     color: $dark-grey;
     border: 1px solid $lighter-grey;
+    box-sizing: border-box;
 
     .close-dialog {
       position: absolute;
