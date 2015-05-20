@@ -55,7 +55,9 @@
     "classnames": "^1.1.4",
     "es5-shim": "^4.1.0",
     "lodash": "^3.7.0",
-    "node-bourbon": "~1.2.3",
+    "node-bourbon": "~1.2.3"
+  },
+  "peerDependencies": {
     "react": "^0.12.2"
   }
 }
