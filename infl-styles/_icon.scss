@@ -207,382 +207,422 @@
 }
 
 
-.ic.ic-exclamation-circle-o:before {
+.ic.ic-copy:before {
   content: "\E015"
+}
+
+@mixin ic-copy() {
+  font-family: 'influicons';
+  content: "\E015"
+}
+
+
+.ic.ic-empty:before {
+  content: "\E016"
+}
+
+@mixin ic-empty() {
+  font-family: 'influicons';
+  content: "\E016"
+}
+
+
+.ic.ic-exclamation-circle-o:before {
+  content: "\E017"
 }
 
 @mixin ic-exclamation-circle-o() {
   font-family: 'influicons';
-  content: "\E015"
+  content: "\E017"
 }
 
 
 .ic.ic-fb:before {
-  content: "\E016"
+  content: "\E018"
 }
 
 @mixin ic-fb() {
   font-family: 'influicons';
-  content: "\E016"
+  content: "\E018"
 }
 
 
 .ic.ic-fb_filled:before {
-  content: "\E017"
+  content: "\E019"
 }
 
 @mixin ic-fb_filled() {
   font-family: 'influicons';
-  content: "\E017"
+  content: "\E019"
+}
+
+
+.ic.ic-flag:before {
+  content: "\E01A"
+}
+
+@mixin ic-flag() {
+  font-family: 'influicons';
+  content: "\E01A"
 }
 
 
 .ic.ic-gear:before {
-  content: "\E018"
+  content: "\E01B"
 }
 
 @mixin ic-gear() {
   font-family: 'influicons';
-  content: "\E018"
+  content: "\E01B"
 }
 
 
 .ic.ic-globe:before {
-  content: "\E019"
+  content: "\E01C"
 }
 
 @mixin ic-globe() {
   font-family: 'influicons';
-  content: "\E019"
+  content: "\E01C"
 }
 
 
 .ic.ic-grid:before {
-  content: "\E01A"
+  content: "\E01D"
 }
 
 @mixin ic-grid() {
   font-family: 'influicons';
-  content: "\E01A"
+  content: "\E01D"
 }
 
 
 .ic.ic-hamburger:before {
-  content: "\E01B"
+  content: "\E01E"
 }
 
 @mixin ic-hamburger() {
   font-family: 'influicons';
-  content: "\E01B"
+  content: "\E01E"
 }
 
 
 .ic.ic-heart:before {
-  content: "\E01C"
+  content: "\E01F"
 }
 
 @mixin ic-heart() {
   font-family: 'influicons';
-  content: "\E01C"
+  content: "\E01F"
 }
 
 
 .ic.ic-info-circle-o:before {
-  content: "\E01D"
+  content: "\E020"
 }
 
 @mixin ic-info-circle-o() {
   font-family: 'influicons';
-  content: "\E01D"
+  content: "\E020"
 }
 
 
 .ic.ic-linkedin:before {
-  content: "\E01E"
+  content: "\E021"
 }
 
 @mixin ic-linkedin() {
   font-family: 'influicons';
-  content: "\E01E"
+  content: "\E021"
 }
 
 
 .ic.ic-linkedin_filled:before {
-  content: "\E01F"
+  content: "\E022"
 }
 
 @mixin ic-linkedin_filled() {
   font-family: 'influicons';
-  content: "\E01F"
+  content: "\E022"
 }
 
 
 .ic.ic-list:before {
-  content: "\E020"
+  content: "\E023"
 }
 
 @mixin ic-list() {
   font-family: 'influicons';
-  content: "\E020"
+  content: "\E023"
 }
 
 
 .ic.ic-lock:before {
-  content: "\E021"
+  content: "\E024"
 }
 
 @mixin ic-lock() {
   font-family: 'influicons';
-  content: "\E021"
+  content: "\E024"
 }
 
 
 .ic.ic-mail:before {
-  content: "\E022"
+  content: "\E025"
 }
 
 @mixin ic-mail() {
   font-family: 'influicons';
-  content: "\E022"
+  content: "\E025"
 }
 
 
 .ic.ic-merge:before {
-  content: "\E023"
+  content: "\E026"
 }
 
 @mixin ic-merge() {
   font-family: 'influicons';
-  content: "\E023"
+  content: "\E026"
 }
 
 
 .ic.ic-minus:before {
-  content: "\E024"
+  content: "\E027"
 }
 
 @mixin ic-minus() {
   font-family: 'influicons';
-  content: "\E024"
+  content: "\E027"
 }
 
 
 .ic.ic-pencil:before {
-  content: "\E025"
+  content: "\E028"
 }
 
 @mixin ic-pencil() {
   font-family: 'influicons';
-  content: "\E025"
+  content: "\E028"
 }
 
 
 .ic.ic-pin:before {
-  content: "\E026"
+  content: "\E029"
 }
 
 @mixin ic-pin() {
   font-family: 'influicons';
-  content: "\E026"
+  content: "\E029"
 }
 
 
 .ic.ic-plus:before {
-  content: "\E027"
+  content: "\E02A"
 }
 
 @mixin ic-plus() {
   font-family: 'influicons';
-  content: "\E027"
+  content: "\E02A"
 }
 
 
 .ic.ic-question-circle-o:before {
-  content: "\E028"
+  content: "\E02B"
 }
 
 @mixin ic-question-circle-o() {
   font-family: 'influicons';
-  content: "\E028"
+  content: "\E02B"
 }
 
 
 .ic.ic-quote-close:before {
-  content: "\E029"
+  content: "\E02C"
 }
 
 @mixin ic-quote-close() {
   font-family: 'influicons';
-  content: "\E029"
+  content: "\E02C"
 }
 
 
 .ic.ic-quote-fill-close:before {
-  content: "\E02A"
+  content: "\E02D"
 }
 
 @mixin ic-quote-fill-close() {
   font-family: 'influicons';
-  content: "\E02A"
+  content: "\E02D"
 }
 
 
 .ic.ic-quote-fill-open:before {
-  content: "\E02B"
+  content: "\E02E"
 }
 
 @mixin ic-quote-fill-open() {
   font-family: 'influicons';
-  content: "\E02B"
+  content: "\E02E"
 }
 
 
 .ic.ic-quote-open:before {
-  content: "\E02C"
+  content: "\E02F"
 }
 
 @mixin ic-quote-open() {
   font-family: 'influicons';
-  content: "\E02C"
+  content: "\E02F"
 }
 
 
 .ic.ic-search:before {
-  content: "\E02D"
+  content: "\E030"
 }
 
 @mixin ic-search() {
   font-family: 'influicons';
-  content: "\E02D"
+  content: "\E030"
 }
 
 
 .ic.ic-share:before {
-  content: "\E02E"
+  content: "\E031"
 }
 
 @mixin ic-share() {
   font-family: 'influicons';
-  content: "\E02E"
+  content: "\E031"
+}
+
+
+.ic.ic-shareEmail:before {
+  content: "\E032"
+}
+
+@mixin ic-shareEmail() {
+  font-family: 'influicons';
+  content: "\E032"
 }
 
 
 .ic.ic-speech-2:before {
-  content: "\E02F"
+  content: "\E033"
 }
 
 @mixin ic-speech-2() {
   font-family: 'influicons';
-  content: "\E02F"
+  content: "\E033"
 }
 
 
 .ic.ic-speech:before {
-  content: "\E030"
+  content: "\E034"
 }
 
 @mixin ic-speech() {
   font-family: 'influicons';
-  content: "\E030"
+  content: "\E034"
 }
 
 
 .ic.ic-star:before {
-  content: "\E031"
+  content: "\E035"
 }
 
 @mixin ic-star() {
   font-family: 'influicons';
-  content: "\E031"
+  content: "\E035"
 }
 
 
 .ic.ic-support:before {
-  content: "\E032"
+  content: "\E036"
 }
 
 @mixin ic-support() {
   font-family: 'influicons';
-  content: "\E032"
+  content: "\E036"
 }
 
 
 .ic.ic-target:before {
-  content: "\E033"
+  content: "\E037"
 }
 
 @mixin ic-target() {
   font-family: 'influicons';
-  content: "\E033"
+  content: "\E037"
 }
 
 
 .ic.ic-times-circle-o:before {
-  content: "\E034"
+  content: "\E038"
 }
 
 @mixin ic-times-circle-o() {
   font-family: 'influicons';
-  content: "\E034"
+  content: "\E038"
 }
 
 
 .ic.ic-times:before {
-  content: "\E035"
+  content: "\E039"
 }
 
 @mixin ic-times() {
   font-family: 'influicons';
-  content: "\E035"
+  content: "\E039"
 }
 
 
 .ic.ic-trash:before {
-  content: "\E036"
+  content: "\E03A"
 }
 
 @mixin ic-trash() {
   font-family: 'influicons';
-  content: "\E036"
+  content: "\E03A"
 }
 
 
 .ic.ic-twitter:before {
-  content: "\E037"
+  content: "\E03B"
 }
 
 @mixin ic-twitter() {
   font-family: 'influicons';
-  content: "\E037"
+  content: "\E03B"
 }
 
 
 .ic.ic-twitter_filled:before {
-  content: "\E038"
+  content: "\E03C"
 }
 
 @mixin ic-twitter_filled() {
   font-family: 'influicons';
-  content: "\E038"
+  content: "\E03C"
 }
 
 
 .ic.ic-unlock:before {
-  content: "\E039"
+  content: "\E03D"
 }
 
 @mixin ic-unlock() {
   font-family: 'influicons';
-  content: "\E039"
+  content: "\E03D"
 }
 
 
 .ic.ic-user:before {
-  content: "\E03A"
+  content: "\E03E"
 }
 
 @mixin ic-user() {
   font-family: 'influicons';
-  content: "\E03A"
+  content: "\E03E"
 }
 
