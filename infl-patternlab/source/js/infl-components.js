@@ -583,9 +583,6 @@ var Icon = require('../icon.jsx');
 var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
-  componentDidMount : function(){
-    this._adjustElementSizing();
-  },
   render: function () {
     return (
       React.createElement("div", {className: "pt-challenge-card"}, 
@@ -594,9 +591,6 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
         )
       )
     );
-  },
-  _adjustElementSizing : function(){
-    console.log(this.props.children);
   }
 });
 
@@ -2037,6 +2031,16 @@ var Tabs = React.createClass({displayName: "Tabs",
       openTabIndex : this._validTabIndex(this.props.openTabIndex) ? this.props.openTabIndex : 0
     };
   },
+  componentDidMount : function(){
+    this._adjustTabsForSmallerScreens();
+    this._addWindowResizeEvent();
+  },
+  componentWillUnmount : function(){
+    this._removeWindowResizeEvent();
+  },
+  componentDidUpdate : function(){
+    this._adjustTabsForSmallerScreens();
+  },
   componentWillReceiveProps: function(nextProps) {
     if(this._validTabIndex(nextProps.openTabIndex)){
       this.setState({
@@ -2047,14 +2051,32 @@ var Tabs = React.createClass({displayName: "Tabs",
   render: function() {
     return (
       React.createElement("nav", {className: "pt-tabs"}, 
-        React.createElement("ul", {className: "pt-tabs-menu", key: "pt-tabs-menu-" + Math.random()}, 
-          this._buildTabs()
+        React.createElement("div", {className: "pt-tabs-menu-wrapper"}, 
+          React.createElement("ul", {ref: "tabs", className: "pt-tabs-menu", key: "pt-tabs-menu-" + Math.random()}, 
+            this._buildTabs()
+          )
         ), 
         React.createElement("section", {className: "pt-tabs-content-sections"}, 
           this._buildTabContentSections()
         )
       )
     );
+  },
+  _addWindowResizeEvent : function(){
+    window.addEventListener('resize', this._adjustTabsForSmallerScreens, true);
+  },
+  _adjustTabsForSmallerScreens : function(){
+    var tabs = React.findDOMNode(this.refs.tabs);
+    var tabsMinWidthWidth = tabs.children.length * tabs.firstChild.clientWidth;
+
+    if(window.innerWidth <= tabsMinWidthWidth) {
+      tabs.style.width = tabsMinWidthWidth + "px";
+    } else {
+      tabs.style.width = "100%";
+    }
+  },
+  _removeWindowResizeEvent : function(){
+    window.removeEventListener('resize');
   },
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
@@ -45995,6 +46017,9 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.completed.challenges)
               )
+            ), 
+            React.createElement(Tabs.Tab, {title: "Another Tab"}, 
+              React.createElement("p", null, "test")
             )
           )
         )

@@ -203,6 +203,9 @@ var ChallengesPagePattern = React.createClass({
                 {this._buildCards(this.state.completed.challenges)}
               </Card.Container>
             </Tabs.Tab>
+            <Tabs.Tab title="Another Tab">
+              <p>test</p>
+            </Tabs.Tab>
           </Tabs>
         </Pattern>
       </div>

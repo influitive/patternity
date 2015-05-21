@@ -8,7 +8,7 @@
     overflow: hidden;
 
     .pt-tab {
-      float: left;
+      display: inline-block;
       border-bottom: 1px solid $light-grey;
       box-sizing: border-box;
       width: 150px;
@@ -70,9 +70,19 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
   .pt-tabs {
-    .pt-tabs-menu {
-      .pt-tab {
-        width: 100px;
+    .pt-tabs-menu-wrapper {
+      overflow-x: scroll;
+      width: 100%;
+      .pt-tabs-menu {
+        .pt-tab {
+  //        width: 100px;
+  //        width: 19%;
+
+          &.tab-open {
+  //          width: auto;
+  //          max-width: 80px;
+          }
+        }
       }
     }
   }
@@ -81,48 +91,32 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
 .pt-tabs {
-    .pt-tabs-menu {
-      .pt-tab {
-        /* one tabs */
-        &:first-child:nth-last-child(1) {
-            width: auto;
-        }
+    .pt-tabs-menu-wrapper {
+      overflow-x: scroll;
+      width: 100%;
 
-        /* two tabs */
-        &:first-child:nth-last-child(2),
-        &:first-child:nth-last-child(2) ~ li {
-            width: 25%;
-        }
+      .pt-tabs-menu {
+        .pt-tab {
+          padding-left: 5px;
+          padding-right: 5px;
+          border-bottom: 3px solid transparent;
+          width: 100px;
 
-        /* three tabs */
-        &:first-child:nth-last-child(3),
-        &:first-child:nth-last-child(3) ~ li {
-            width: 25%;
-        }
+          &.tab-open {
+            border-bottom: 3px solid $theme-color-primary;
+            border-top: none;
 
-        /* four tabs */
-        &:first-child:nth-last-child(4),
-        &:first-child:nth-last-child(4) ~ li {
-            width: 25%;
-        }
-        padding-left: 5px;
-        padding-right: 5px;
-        border-bottom: 3px solid transparent;
-
-        &.tab-open {
-          border-bottom: 3px solid $theme-color-primary;
-          border-top: none;
-
-          a {
-            border-right: 0px;
-            border-left: 0px;
-            position: relative;
-            color: $theme-color-primary;
+            a {
+              border-right: 0px;
+              border-left: 0px;
+              position: relative;
+              color: $theme-color-primary;
+            }
           }
-        }
 
-        &:last-child:after {
-          display: none;;
+          &:last-child:after {
+            display: none;;
+          }
         }
       }
     }
