@@ -1,5 +1,7 @@
 var React   = require('react');
 
+var ButtonGroup = require('../button_group.jsx');
+
 var Card = React.createClass({
   render : function(){
     return (
@@ -15,6 +17,18 @@ Card.Container = React.createClass({
     return (
       <div ref="container" className="pt-card-container">
         {this.props.children}
+      </div>
+    );
+  }
+});
+
+Card.Actions = React.createClass({
+  render : function(){
+    return (
+      <div className="pt-card-actions">
+        <ButtonGroup>
+          {this.props.children}
+        </ButtonGroup>
       </div>
     );
   }

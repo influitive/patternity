@@ -100,6 +100,12 @@ var SelectDropdownPattern = React.createClass({
         default : "false",
         required : false,
         description : "Determines if the select is disabled or not."
+      },
+      id : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "HTML id for the select dropdown."
       }
     };
   }

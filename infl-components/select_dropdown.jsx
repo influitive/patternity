@@ -9,6 +9,7 @@ var SelectDropdown = React.createClass({
       value : "",
       disabled : false,
       message : "",
+      id : ""
     };
   },
   propTypes : {
@@ -16,7 +17,8 @@ var SelectDropdown = React.createClass({
     children: React.PropTypes.array,
     onChange : React.PropTypes.func,
     disabled :  React.PropTypes.bool,
-    message: React.PropTypes.string
+    message: React.PropTypes.string,
+    id: React.PropTypes.string
   },
   getInitialState: function() {
     return {
@@ -36,7 +38,7 @@ var SelectDropdown = React.createClass({
   },
   render : function(){
     return (
-      <span className={"pt-select "  + this._isDisabled()}>
+      <span className={"pt-select "  + this._isDisabled()} id={this.props.id}>
         <span className="select-box" ref="select-wrapper">
           <span className="title" ref="title">{this.state.title}</span>
           <select className="default" name={this.props.name} disabled={this.props.disabled} ref="select" onChange={this._handleChange} value={this.state.value}>

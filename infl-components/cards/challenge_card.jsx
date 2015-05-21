@@ -2,19 +2,23 @@ var React   = require('react');
 var classNames = require('classnames');
 
 var Icon = require('../icon.jsx');
-var ButtonGroup = require('../button_group.jsx');
-
 var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({
+  componentDidMount : function(){
+    this._adjustElementSizing();
+  },
   render: function () {
     return (
-      <Card>
-        <div className="pt-challenge-card">
+      <div className="pt-challenge-card">
+        <Card>
           {this.props.children}
-        </div>
-      </Card>
+        </Card>
+      </div>
     );
+  },
+  _adjustElementSizing : function(){
+    console.log(this.props.children);
   }
 });
 
@@ -33,9 +37,6 @@ ChallengeCard.Details = React.createClass({
     description : React.PropTypes.string,
     onFilterByType : React.PropTypes.func
   },
-  componentDidMount : function(){
-    this._formatDescription();
-  },
   render : function(){
     return (
       <div className="pt-challenge-details">
@@ -44,12 +45,6 @@ ChallengeCard.Details = React.createClass({
         <p ref="description" className="description">{this.props.description}</p>
       </div>
     );
-  },
-  _formatDescription : function(){
-    var description = React.findDOMNode(this.refs.description);
-    if(description.scrollHeight > description.offsetHeight) {
-      description.classList.add("long-description");
-    }
   }
 });
 
@@ -73,17 +68,7 @@ var ChallengeType = React.createClass({
   }
 });
 
-ChallengeCard.Actions = React.createClass({
-  render : function(){
-    return (
-      <div className="pt-challenge-actions">
-        <ButtonGroup>
-          {this.props.children}
-        </ButtonGroup>
-      </div>
-    );
-  }
-});
+ChallengeCard.Actions = Card.Actions;
 
 ChallengeCard.Image = React.createClass({
   getDefaultProps : function(){

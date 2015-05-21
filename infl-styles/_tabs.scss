@@ -24,6 +24,14 @@
         text-align: center;
         color: $dark-grey;
         text-decoration: none;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover {
+          color: $theme-color-primary;
+        }
       }
 
       &.tab-open {
@@ -55,6 +63,68 @@
 
       &.tab-content-visible {
         display: block;
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .pt-tabs {
+    .pt-tabs-menu {
+      .pt-tab {
+        width: 100px;
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+.pt-tabs {
+    .pt-tabs-menu {
+      .pt-tab {
+        /* one tabs */
+        &:first-child:nth-last-child(1) {
+            width: auto;
+        }
+
+        /* two tabs */
+        &:first-child:nth-last-child(2),
+        &:first-child:nth-last-child(2) ~ li {
+            width: 25%;
+        }
+
+        /* three tabs */
+        &:first-child:nth-last-child(3),
+        &:first-child:nth-last-child(3) ~ li {
+            width: 25%;
+        }
+
+        /* four tabs */
+        &:first-child:nth-last-child(4),
+        &:first-child:nth-last-child(4) ~ li {
+            width: 25%;
+        }
+        padding-left: 5px;
+        padding-right: 5px;
+        border-bottom: 3px solid transparent;
+
+        &.tab-open {
+          border-bottom: 3px solid $theme-color-primary;
+          border-top: none;
+
+          a {
+            border-right: 0px;
+            border-left: 0px;
+            position: relative;
+            color: $theme-color-primary;
+          }
+        }
+
+        &:last-child:after {
+          display: none;;
+        }
       }
     }
   }

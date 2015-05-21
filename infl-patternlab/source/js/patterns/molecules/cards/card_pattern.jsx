@@ -13,7 +13,7 @@ var ContentPattern = React.createClass({
           <p>The Card component is used to help with styling of cards used through out the app.  Challenge, provider details, etc.</p>
 
           <Pattern.Detail title="Card">
-            <p>Content renders a div tag.  So there is not much to show.</p>
+            <p>Card renders a div tag.  So there is not much to show.</p>
 
             <Pattern.Show>
               <div style={this.sampleCardStyling}>
@@ -37,7 +37,7 @@ var ContentPattern = React.createClass({
           </Pattern.Detail>
 
           <Pattern.Detail title="Card Container">
-            <p>Content Container renders a div tag.  So there is not much to show.</p>
+            <p>Card Container renders a div tag.  So there is not much to show.</p>
 
             <Pattern.Show>
               <div style={this.sampleCardContainerStyling}>

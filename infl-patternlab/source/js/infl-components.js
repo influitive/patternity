@@ -538,6 +538,8 @@ module.exports = ButtonGroup;
 },{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx":[function(require,module,exports){
 var React   = require('react');
 
+var ButtonGroup = require('../button_group.jsx');
+
 var Card = React.createClass({displayName: "Card",
   render : function(){
     return (
@@ -558,27 +560,43 @@ Card.Container = React.createClass({displayName: "Container",
   }
 });
 
-module.exports = Card;
-
-
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
-var React   = require('react');
-var classNames = require('classnames');
-
-var Icon = require('../icon.jsx');
-var ButtonGroup = require('../button_group.jsx');
-
-var Card = require('./card.jsx');
-
-var ChallengeCard = React.createClass({displayName: "ChallengeCard",
-  render: function () {
+Card.Actions = React.createClass({displayName: "Actions",
+  render : function(){
     return (
-      React.createElement(Card, null, 
-        React.createElement("div", {className: "pt-challenge-card"}, 
+      React.createElement("div", {className: "pt-card-actions"}, 
+        React.createElement(ButtonGroup, null, 
           this.props.children
         )
       )
     );
+  }
+});
+
+module.exports = Card;
+
+
+},{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
+var React   = require('react');
+var classNames = require('classnames');
+
+var Icon = require('../icon.jsx');
+var Card = require('./card.jsx');
+
+var ChallengeCard = React.createClass({displayName: "ChallengeCard",
+  componentDidMount : function(){
+    this._adjustElementSizing();
+  },
+  render: function () {
+    return (
+      React.createElement("div", {className: "pt-challenge-card"}, 
+        React.createElement(Card, null, 
+          this.props.children
+        )
+      )
+    );
+  },
+  _adjustElementSizing : function(){
+    console.log(this.props.children);
   }
 });
 
@@ -597,9 +615,6 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
     description : React.PropTypes.string,
     onFilterByType : React.PropTypes.func
   },
-  componentDidMount : function(){
-    this._formatDescription();
-  },
   render : function(){
     return (
       React.createElement("div", {className: "pt-challenge-details"}, 
@@ -608,12 +623,6 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
         React.createElement("p", {ref: "description", className: "description"}, this.props.description)
       )
     );
-  },
-  _formatDescription : function(){
-    var description = React.findDOMNode(this.refs.description);
-    if(description.scrollHeight > description.offsetHeight) {
-      description.classList.add("long-description");
-    }
   }
 });
 
@@ -637,17 +646,7 @@ var ChallengeType = React.createClass({displayName: "ChallengeType",
   }
 });
 
-ChallengeCard.Actions = React.createClass({displayName: "Actions",
-  render : function(){
-    return (
-      React.createElement("div", {className: "pt-challenge-actions"}, 
-        React.createElement(ButtonGroup, null, 
-          this.props.children
-        )
-      )
-    );
-  }
-});
+ChallengeCard.Actions = Card.Actions;
 
 ChallengeCard.Image = React.createClass({displayName: "Image",
   getDefaultProps : function(){
@@ -803,7 +802,7 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -1760,6 +1759,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
       value : "",
       disabled : false,
       message : "",
+      id : ""
     };
   },
   propTypes : {
@@ -1767,7 +1767,8 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     children: React.PropTypes.array,
     onChange : React.PropTypes.func,
     disabled :  React.PropTypes.bool,
-    message: React.PropTypes.string
+    message: React.PropTypes.string,
+    id: React.PropTypes.string
   },
   getInitialState: function() {
     return {
@@ -1787,7 +1788,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "pt-select "  + this._isDisabled()}, 
+      React.createElement("span", {className: "pt-select "  + this._isDisabled(), id: this.props.id}, 
         React.createElement("span", {className: "select-box", ref: "select-wrapper"}, 
           React.createElement("span", {className: "title", ref: "title"}, this.state.title), 
           React.createElement("select", {className: "default", name: this.props.name, disabled: this.props.disabled, ref: "select", onChange: this._handleChange, value: this.state.value}, 
@@ -41856,6 +41857,12 @@ var SelectDropdownPattern = React.createClass({displayName: "SelectDropdownPatte
         default : "false",
         required : false,
         description : "Determines if the select is disabled or not."
+      },
+      id : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "HTML id for the select dropdown."
       }
     };
   }
@@ -43181,7 +43188,7 @@ var ContentPattern = React.createClass({displayName: "ContentPattern",
           React.createElement("p", null, "The Card component is used to help with styling of cards used through out the app.  Challenge, provider details, etc."), 
 
           React.createElement(Pattern.Detail, {title: "Card"}, 
-            React.createElement("p", null, "Content renders a div tag.  So there is not much to show."), 
+            React.createElement("p", null, "Card renders a div tag.  So there is not much to show."), 
 
             React.createElement(Pattern.Show, null, 
               React.createElement("div", {style: this.sampleCardStyling}, 
@@ -43205,7 +43212,7 @@ var ContentPattern = React.createClass({displayName: "ContentPattern",
           ), 
 
           React.createElement(Pattern.Detail, {title: "Card Container"}, 
-            React.createElement("p", null, "Content Container renders a div tag.  So there is not much to show."), 
+            React.createElement("p", null, "Card Container renders a div tag.  So there is not much to show."), 
 
             React.createElement(Pattern.Show, null, 
               React.createElement("div", {style: this.sampleCardContainerStyling}, 
