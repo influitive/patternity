@@ -2040,6 +2040,10 @@ var Tabs = React.createClass({displayName: "Tabs",
   },
   componentDidUpdate : function(){
     this._adjustTabsForSmallerScreens();
+    this.refs.tabsWrapper.getDOMNode().scrollLeft = this._tabsScrollLeft;
+  },
+  componentWillUpdate : function(){
+    this._tabsScrollLeft = this.refs.tabsWrapper.getDOMNode().scrollLeft;
   },
   componentWillReceiveProps: function(nextProps) {
     if(this._validTabIndex(nextProps.openTabIndex)){
@@ -2051,7 +2055,7 @@ var Tabs = React.createClass({displayName: "Tabs",
   render: function() {
     return (
       React.createElement("nav", {className: "pt-tabs"}, 
-        React.createElement("div", {className: "pt-tabs-menu-wrapper"}, 
+        React.createElement("div", {ref: "tabsWrapper", className: "pt-tabs-menu-wrapper"}, 
           React.createElement("ul", {ref: "tabs", className: "pt-tabs-menu", key: "pt-tabs-menu-" + Math.random()}, 
             this._buildTabs()
           )
@@ -2062,11 +2066,12 @@ var Tabs = React.createClass({displayName: "Tabs",
       )
     );
   },
+  _tabsScrollLeft : 0,
   _addWindowResizeEvent : function(){
     window.addEventListener('resize', this._adjustTabsForSmallerScreens, true);
   },
   _adjustTabsForSmallerScreens : function(){
-    var tabs = React.findDOMNode(this.refs.tabs);
+    var tabs = this.refs.tabs.getDOMNode();
     var tabsMinWidthWidth = tabs.children.length * tabs.firstChild.clientWidth;
 
     if(window.innerWidth <= tabsMinWidthWidth) {
