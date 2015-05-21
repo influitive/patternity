@@ -44,13 +44,15 @@ var icons = {
   
     "copy": "copy",
   
+    "email-share": "email-share",
+  
     "empty": "empty",
   
     "exclamation-circle-o": "exclamation-circle-o",
   
-    "fb": "fb",
+    "fb-filled": "fb-filled",
   
-    "fb_filled": "fb_filled",
+    "fb": "fb",
   
     "flag": "flag",
   
@@ -66,9 +68,9 @@ var icons = {
   
     "info-circle-o": "info-circle-o",
   
-    "linkedin": "linkedin",
+    "linkedin-filled": "linkedin-filled",
   
-    "linkedin_filled": "linkedin_filled",
+    "linkedin": "linkedin",
   
     "list": "list",
   
@@ -100,8 +102,6 @@ var icons = {
   
     "share": "share",
   
-    "shareEmail": "shareEmail",
-  
     "speech-2": "speech-2",
   
     "speech": "speech",
@@ -118,9 +118,9 @@ var icons = {
   
     "trash": "trash",
   
-    "twitter": "twitter",
+    "twitter-filled": "twitter-filled",
   
-    "twitter_filled": "twitter_filled",
+    "twitter": "twitter",
   
     "unlock": "unlock",
   
