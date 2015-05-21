@@ -2035,9 +2035,6 @@ var Tabs = React.createClass({displayName: "Tabs",
     this._adjustTabsForSmallerScreens();
     this._addWindowResizeEvent();
   },
-  componentWillUnmount : function(){
-    this._removeWindowResizeEvent();
-  },
   componentDidUpdate : function(){
     this._adjustTabsForSmallerScreens();
     this.refs.tabsWrapper.getDOMNode().scrollLeft = this._tabsScrollLeft;
@@ -2068,20 +2065,17 @@ var Tabs = React.createClass({displayName: "Tabs",
   },
   _tabsScrollLeft : 0,
   _addWindowResizeEvent : function(){
-    window.addEventListener('resize', this._adjustTabsForSmallerScreens, true);
+    $(window).resize(this._adjustTabsForSmallerScreens);
   },
   _adjustTabsForSmallerScreens : function(){
     var tabs = this.refs.tabs.getDOMNode();
     var tabsMinWidthWidth = tabs.children.length * tabs.firstChild.clientWidth;
-    console.log(tabs.parentNode.clientWidth)
+
     if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
       tabs.style.width = tabsMinWidthWidth + "px";
     } else {
       tabs.style.width = "100%";
     }
-  },
-  _removeWindowResizeEvent : function(){
-    window.removeEventListener('resize');
   },
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){

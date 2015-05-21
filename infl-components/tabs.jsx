@@ -24,9 +24,6 @@ var Tabs = React.createClass({
     this._adjustTabsForSmallerScreens();
     this._addWindowResizeEvent();
   },
-  componentWillUnmount : function(){
-    this._removeWindowResizeEvent();
-  },
   componentDidUpdate : function(){
     this._adjustTabsForSmallerScreens();
     this.refs.tabsWrapper.getDOMNode().scrollLeft = this._tabsScrollLeft;
@@ -57,7 +54,7 @@ var Tabs = React.createClass({
   },
   _tabsScrollLeft : 0,
   _addWindowResizeEvent : function(){
-    window.addEventListener('resize', this._adjustTabsForSmallerScreens, true);
+    $(window).resize(this._adjustTabsForSmallerScreens);
   },
   _adjustTabsForSmallerScreens : function(){
     var tabs = this.refs.tabs.getDOMNode();
@@ -68,9 +65,6 @@ var Tabs = React.createClass({
     } else {
       tabs.style.width = "100%";
     }
-  },
-  _removeWindowResizeEvent : function(){
-    window.removeEventListener('resize');
   },
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
