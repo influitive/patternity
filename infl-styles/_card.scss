@@ -1,10 +1,44 @@
 .pt-card {
   box-shadow: 0px 1px 3px 0px $light-grey;
   background-color: #fff;
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  .pt-card-actions {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid $medium-grey;
+    background-color: #fff;
+
+    .button-group {
+      width: 100%;
+
+      .button,
+      button {
+        width: calc((100% - 20px) / 2);
+
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+
+      .button:only-child,
+      button:only-child {
+        margin: 0px auto;
+        margin-left: 0px;
+      }
+    }
+  }
 }
 
 .pt-card-container {
-  .pt-card {
+
+  & > * {
     display: inline-block;
     vertical-align: top;
     width: calc(96% / 3);
@@ -13,6 +47,44 @@
 
     &:nth-child(3n) {
       margin-right: 0;
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .pt-card-container {
+
+    & > * {
+      width: calc(98% / 2);
+      margin-right: 2%;
+
+      &:nth-child(3n) {
+        margin-right: 2%;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  .pt-card-container {
+
+    & > * {
+      width: 100%;
+      margin-right: 0;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
     }
   }
 }
