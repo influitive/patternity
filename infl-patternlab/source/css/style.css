@@ -2282,6 +2282,7 @@ textarea {
   width: 100%;
   background-color: #fff;
   padding-top: 24px;
+  box-sizing: border-box;
 }
 .pt-modal-dialog.scrolling-body .pt-modal .pt-modal-body {
   overflow: scroll;
@@ -2293,6 +2294,7 @@ textarea {
   left: 0px;
   width: 100%;
   background-color: #fff;
+  box-sizing: border-box;
 }
 .pt-modal-dialog .pt-modal {
   background-color: #fff;
@@ -2302,6 +2304,7 @@ textarea {
   padding-top: 24px;
   color: #666666;
   border: 1px solid #eeeeee;
+  box-sizing: border-box;
 }
 .pt-modal-dialog .pt-modal .close-dialog {
   position: absolute;
@@ -2387,7 +2390,6 @@ textarea {
   text-align: center;
   color: #666666;
   text-decoration: none;
-  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
