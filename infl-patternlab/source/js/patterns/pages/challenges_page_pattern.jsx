@@ -203,9 +203,6 @@ var ChallengesPagePattern = React.createClass({
                 {this._buildCards(this.state.completed.challenges)}
               </Card.Container>
             </Tabs.Tab>
-            <Tabs.Tab title="Another Tab">
-              <p>test</p>
-            </Tabs.Tab>
           </Tabs>
         </Pattern>
       </div>
@@ -215,7 +212,7 @@ var ChallengesPagePattern = React.createClass({
     var that = this;
     return cards.map(function(card){
       return (
-        <ChallengeCard key={card.id}>
+        <ChallengeCard key={card.id} id={"card-" + card.id}>
           <ChallengeCard.Notice
               points={card.points}
               status={card.status}
@@ -279,7 +276,6 @@ var ChallengesPagePattern = React.createClass({
     var challangeId = event.target.getAttribute("data-id");
     var availableChallenges = this.state.available;
     var laterChallenges = this.state.later;
-    var selectedCard = {};
     for(var i = 0; i < laterChallenges.challenges.length; i++){
       if(laterChallenges.challenges[i].id === parseInt(challangeId)){
         laterChallenges.challenges[i].status = "available";
@@ -287,16 +283,18 @@ var ChallengesPagePattern = React.createClass({
         laterChallenges.challenges.splice(i, 1);
       }
     }
-    this.setState({
-      available : availableChallenges,
-      later : laterChallenges
+    var that = this;
+    this._animateCardStatusChange(document.getElementById("card-" + challangeId), "available", function(){
+      that.setState({
+        available : availableChallenges,
+        later : laterChallenges
+      });
     });
   },
   _laterChallenge : function(event){
     var challangeId = event.target.getAttribute("data-id");
     var availableChallenges = this.state.available;
     var laterChallenges = this.state.later;
-    var selectedCard = {};
     for(var i = 0; i < availableChallenges.challenges.length; i++){
       if(availableChallenges.challenges[i].id === parseInt(challangeId)){
         availableChallenges.challenges[i].status = "later";
@@ -304,10 +302,29 @@ var ChallengesPagePattern = React.createClass({
         availableChallenges.challenges.splice(i, 1);
       }
     }
-    this.setState({
-      available : availableChallenges,
-      later : laterChallenges
+    var that = this;
+    this._animateCardStatusChange(document.getElementById("card-" + challangeId), "later", function(){
+      that.setState({
+        available : availableChallenges,
+        later : laterChallenges
+      });
     });
+  },
+  _animateCardStatusChange : function(card, status, callback){
+    var scale = 1;
+
+    requestAnimationFrame(update);
+
+    function update() {
+      scale = scale - 0.03;
+      card.style.transform = 'scale(' + scale + ', ' + scale + ')';
+
+      if (scale > 0) {
+        requestAnimationFrame(update);
+      } else {
+        callback();
+      }
+    }
   }
 });
 

@@ -583,9 +583,17 @@ var Icon = require('../icon.jsx');
 var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
+  getDefaultProps : function(){
+    return {
+      id : ""
+    };
+  },
+  PropTypes : {
+    id : React.PropTypes.string
+  },
   render: function () {
     return (
-      React.createElement("div", {className: "pt-challenge-card"}, 
+      React.createElement("div", {className: "pt-challenge-card", id: this.props.id}, 
         React.createElement(Card, null, 
           this.props.children
         )
@@ -41192,11 +41200,19 @@ var icons = {
   
     "coins": "coins",
   
+    "copy": "copy",
+  
+    "email-share": "email-share",
+  
+    "empty": "empty",
+  
     "exclamation-circle-o": "exclamation-circle-o",
+  
+    "fb-filled": "fb-filled",
   
     "fb": "fb",
   
-    "fb_filled": "fb_filled",
+    "flag": "flag",
   
     "gear": "gear",
   
@@ -41210,9 +41226,9 @@ var icons = {
   
     "info-circle-o": "info-circle-o",
   
-    "linkedin": "linkedin",
+    "linkedin-filled": "linkedin-filled",
   
-    "linkedin_filled": "linkedin_filled",
+    "linkedin": "linkedin",
   
     "list": "list",
   
@@ -41260,9 +41276,9 @@ var icons = {
   
     "trash": "trash",
   
-    "twitter": "twitter",
+    "twitter-filled": "twitter-filled",
   
-    "twitter_filled": "twitter_filled",
+    "twitter": "twitter",
   
     "unlock": "unlock",
   
@@ -46016,9 +46032,6 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.completed.challenges)
               )
-            ), 
-            React.createElement(Tabs.Tab, {title: "Another Tab"}, 
-              React.createElement("p", null, "test")
             )
           )
         )
@@ -46029,7 +46042,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     var that = this;
     return cards.map(function(card){
       return (
-        React.createElement(ChallengeCard, {key: card.id}, 
+        React.createElement(ChallengeCard, {key: card.id, id: "card-" + card.id}, 
           React.createElement(ChallengeCard.Notice, {
               points: card.points, 
               status: card.status, 
@@ -46093,7 +46106,6 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     var challangeId = event.target.getAttribute("data-id");
     var availableChallenges = this.state.available;
     var laterChallenges = this.state.later;
-    var selectedCard = {};
     for(var i = 0; i < laterChallenges.challenges.length; i++){
       if(laterChallenges.challenges[i].id === parseInt(challangeId)){
         laterChallenges.challenges[i].status = "available";
@@ -46101,16 +46113,18 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
         laterChallenges.challenges.splice(i, 1);
       }
     }
-    this.setState({
-      available : availableChallenges,
-      later : laterChallenges
+    var that = this;
+    this._animateCardStatusChange(document.getElementById("card-" + challangeId), "available", function(){
+      that.setState({
+        available : availableChallenges,
+        later : laterChallenges
+      });
     });
   },
   _laterChallenge : function(event){
     var challangeId = event.target.getAttribute("data-id");
     var availableChallenges = this.state.available;
     var laterChallenges = this.state.later;
-    var selectedCard = {};
     for(var i = 0; i < availableChallenges.challenges.length; i++){
       if(availableChallenges.challenges[i].id === parseInt(challangeId)){
         availableChallenges.challenges[i].status = "later";
@@ -46118,10 +46132,29 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
         availableChallenges.challenges.splice(i, 1);
       }
     }
-    this.setState({
-      available : availableChallenges,
-      later : laterChallenges
+    var that = this;
+    this._animateCardStatusChange(document.getElementById("card-" + challangeId), "later", function(){
+      that.setState({
+        available : availableChallenges,
+        later : laterChallenges
+      });
     });
+  },
+  _animateCardStatusChange : function(card, status, callback){
+    var scale = 1;
+
+    requestAnimationFrame(update);
+
+    function update() {
+      scale = scale - 0.03;
+      card.style.transform = 'scale(' + scale + ', ' + scale + ')';
+
+      if (scale > 0) {
+        requestAnimationFrame(update);
+      } else {
+        callback();
+      }
+    }
   }
 });
 
