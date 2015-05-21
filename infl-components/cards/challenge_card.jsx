@@ -5,9 +5,17 @@ var Icon = require('../icon.jsx');
 var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({
+  getDefaultProps : function(){
+    return {
+      id : ""
+    };
+  },
+  PropTypes : {
+    id : React.PropTypes.string
+  },
   render: function () {
     return (
-      <div className="pt-challenge-card">
+      <div className="pt-challenge-card" id={this.props.id}>
         <Card>
           {this.props.children}
         </Card>
