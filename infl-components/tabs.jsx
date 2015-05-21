@@ -63,7 +63,7 @@ var Tabs = React.createClass({
     var tabs = this.refs.tabs.getDOMNode();
     var tabsMinWidthWidth = tabs.children.length * tabs.firstChild.clientWidth;
 
-    if(window.innerWidth <= tabsMinWidthWidth) {
+    if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
       tabs.style.width = tabsMinWidthWidth + "px";
     } else {
       tabs.style.width = "100%";

@@ -2073,8 +2073,8 @@ var Tabs = React.createClass({displayName: "Tabs",
   _adjustTabsForSmallerScreens : function(){
     var tabs = this.refs.tabs.getDOMNode();
     var tabsMinWidthWidth = tabs.children.length * tabs.firstChild.clientWidth;
-
-    if(window.innerWidth <= tabsMinWidthWidth) {
+    console.log(tabs.parentNode.clientWidth)
+    if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
       tabs.style.width = tabsMinWidthWidth + "px";
     } else {
       tabs.style.width = "100%";
