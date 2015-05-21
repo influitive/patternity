@@ -42,11 +42,17 @@ var icons = {
   
     "coins": "coins",
   
+    "copy": "copy",
+  
+    "empty": "empty",
+  
     "exclamation-circle-o": "exclamation-circle-o",
   
     "fb": "fb",
   
     "fb_filled": "fb_filled",
+  
+    "flag": "flag",
   
     "gear": "gear",
   
@@ -93,6 +99,8 @@ var icons = {
     "search": "search",
   
     "share": "share",
+  
+    "shareEmail": "shareEmail",
   
     "speech-2": "speech-2",
   
