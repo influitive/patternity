@@ -5,9 +5,6 @@ var Icon = require('../icon.jsx');
 var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({
-  componentDidMount : function(){
-    this._adjustElementSizing();
-  },
   render: function () {
     return (
       <div className="pt-challenge-card">
@@ -16,9 +13,6 @@ var ChallengeCard = React.createClass({
         </Card>
       </div>
     );
-  },
-  _adjustElementSizing : function(){
-    console.log(this.props.children);
   }
 });
 

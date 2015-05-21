@@ -20,6 +20,16 @@ var Tabs = React.createClass({
       openTabIndex : this._validTabIndex(this.props.openTabIndex) ? this.props.openTabIndex : 0
     };
   },
+  componentDidMount : function(){
+    this._adjustTabsForSmallerScreens();
+    this._addWindowResizeEvent();
+  },
+  componentWillUnmount : function(){
+    this._removeWindowResizeEvent();
+  },
+  componentDidUpdate : function(){
+    this._adjustTabsForSmallerScreens();
+  },
   componentWillReceiveProps: function(nextProps) {
     if(this._validTabIndex(nextProps.openTabIndex)){
       this.setState({
@@ -30,14 +40,32 @@ var Tabs = React.createClass({
   render: function() {
     return (
       <nav className="pt-tabs">
-        <ul className="pt-tabs-menu" key={"pt-tabs-menu-" + Math.random()}>
-          {this._buildTabs()}
-        </ul>
+        <div className="pt-tabs-menu-wrapper">
+          <ul ref="tabs" className="pt-tabs-menu" key={"pt-tabs-menu-" + Math.random()}>
+            {this._buildTabs()}
+          </ul>
+        </div>
         <section className="pt-tabs-content-sections">
           {this._buildTabContentSections()}
         </section>
       </nav>
     );
+  },
+  _addWindowResizeEvent : function(){
+    window.addEventListener('resize', this._adjustTabsForSmallerScreens, true);
+  },
+  _adjustTabsForSmallerScreens : function(){
+    var tabs = React.findDOMNode(this.refs.tabs);
+    var tabsMinWidthWidth = tabs.children.length * tabs.firstChild.clientWidth;
+
+    if(window.innerWidth <= tabsMinWidthWidth) {
+      tabs.style.width = tabsMinWidthWidth + "px";
+    } else {
+      tabs.style.width = "100%";
+    }
+  },
+  _removeWindowResizeEvent : function(){
+    window.removeEventListener('resize');
   },
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
