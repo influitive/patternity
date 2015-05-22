@@ -1,4 +1,5 @@
 var React = require('react');
+var $ = require('jquery');
 
 var PopoverFloater = React.createClass({
 
