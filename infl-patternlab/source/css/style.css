@@ -2400,6 +2400,9 @@ textarea {
   font-size: 15px;
   border-top: 3px solid transparent;
 }
+.pt-tabs .pt-tabs-menu .pt-tab.hide {
+  display: none;
+}
 .pt-tabs .pt-tabs-menu .pt-tab a {
   display: block;
   padding: 10px;
@@ -2438,36 +2441,25 @@ textarea {
   display: block;
 }
 
-/* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-  .pt-tabs .pt-tabs-menu-wrapper {
-    overflow-x: scroll;
-    width: 100%;
-  }
-}
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-  .pt-tabs .pt-tabs-menu-wrapper {
-    overflow-x: scroll;
-    width: 100%;
-  }
-  .pt-tabs .pt-tabs-menu-wrapper .pt-tabs-menu .pt-tab {
+  .pt-tabs .pt-tabs-menu .pt-tab {
     padding-left: 5px;
     padding-right: 5px;
     border-bottom: 3px solid transparent;
     width: 100px;
   }
-  .pt-tabs .pt-tabs-menu-wrapper .pt-tabs-menu .pt-tab.tab-open {
+  .pt-tabs .pt-tabs-menu .pt-tab.tab-open {
     border-bottom: 3px solid #08a5c5;
     border-top: none;
   }
-  .pt-tabs .pt-tabs-menu-wrapper .pt-tabs-menu .pt-tab.tab-open a {
+  .pt-tabs .pt-tabs-menu .pt-tab.tab-open a {
     border-right: 0px;
     border-left: 0px;
     position: relative;
     color: #08a5c5;
   }
-  .pt-tabs .pt-tabs-menu-wrapper .pt-tabs-menu .pt-tab:last-child:after {
+  .pt-tabs .pt-tabs-menu .pt-tab:last-child:after {
     display: none;
   }
 }

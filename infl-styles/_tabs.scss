@@ -18,6 +18,10 @@
       font-size: 15px;
       border-top: 3px solid transparent;
 
+      &.hide {
+        display: none;
+      }
+
       a {
         display: block;
         padding: 10px;
@@ -67,56 +71,30 @@
   }
 }
 
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-  .pt-tabs {
-    .pt-tabs-menu-wrapper {
-      overflow-x: scroll;
-      width: 100%;
-      .pt-tabs-menu {
-        .pt-tab {
-  //        width: 100px;
-  //        width: 19%;
-
-          &.tab-open {
-  //          width: auto;
-  //          max-width: 80px;
-          }
-        }
-      }
-    }
-  }
-}
-
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-.pt-tabs {
-    .pt-tabs-menu-wrapper {
-      overflow-x: scroll;
-      width: 100%;
+  .pt-tabs {
+    .pt-tabs-menu {
+      .pt-tab {
+        padding-left: 5px;
+        padding-right: 5px;
+        border-bottom: 3px solid transparent;
+        width: 100px;
 
-      .pt-tabs-menu {
-        .pt-tab {
-          padding-left: 5px;
-          padding-right: 5px;
-          border-bottom: 3px solid transparent;
-          width: 100px;
+        &.tab-open {
+          border-bottom: 3px solid $theme-color-primary;
+          border-top: none;
 
-          &.tab-open {
-            border-bottom: 3px solid $theme-color-primary;
-            border-top: none;
-
-            a {
-              border-right: 0px;
-              border-left: 0px;
-              position: relative;
-              color: $theme-color-primary;
-            }
+          a {
+            border-right: 0px;
+            border-left: 0px;
+            position: relative;
+            color: $theme-color-primary;
           }
+        }
 
-          &:last-child:after {
-            display: none;;
-          }
+        &:last-child:after {
+          display: none;;
         }
       }
     }

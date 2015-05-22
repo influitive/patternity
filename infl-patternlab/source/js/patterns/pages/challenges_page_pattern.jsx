@@ -182,7 +182,7 @@ var ChallengesPagePattern = React.createClass({
     return (
       <div className="challenges-page-pattern page-pattern">
         <Pattern title="challenges page demo">
-          <Tabs>
+          <Tabs hideTabOrder={[3,1]}>
             <Tabs.Tab title="Available">
               <Card.Container>
                 {this._buildCards(this.state.available.challenges)}
@@ -319,7 +319,6 @@ var ChallengesPagePattern = React.createClass({
     requestAnimationFrame(update);
 
     function update() {
-      //determine when animation is over
       scale = scale - (scale * 0.12);
       card.style.transform = 'scale(' + scale + ', ' + scale + ')';
 
