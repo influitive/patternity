@@ -2100,7 +2100,7 @@ var Tabs = React.createClass({displayName: "Tabs",
     var that = this;
     return React.Children.map(this.props.children, function(tab, index){
       return (
-        React.createElement(InternalTab, {title: tab.props.title, onClick: that._onTabChange, key: index, index: index, tabIsOpen: that._isTabOpen(index)})
+        React.createElement(InternalTab, {title: tab.props.title, id: tab.id, onClick: that._onTabChange, key: index, index: index, tabIsOpen: that._isTabOpen(index)})
       );
     });
   },
@@ -2128,11 +2128,13 @@ var Tabs = React.createClass({displayName: "Tabs",
 Tabs.Tab = React.createClass({displayName: "Tab",
   getDefaultProps : function(){
     return {
-      title : ""
+      title : "",
+      id : ""
     };
   },
   propTypes : {
-    title : React.PropTypes.string
+    title : React.PropTypes.string,
+    id : React.PropTypes.string
   },
   render: function() {
     return (
@@ -2147,6 +2149,7 @@ var InternalTab = React.createClass({displayName: "InternalTab",
       title : "",
       tabIsOpen : false,
       index : -1,
+      id : "",
       onClick : function(){}
     };
   },
@@ -2154,6 +2157,7 @@ var InternalTab = React.createClass({displayName: "InternalTab",
     title : React.PropTypes.string,
     tabIsOpen : React.PropTypes.bool,
     index : React.PropTypes.number,
+    id : React.PropTypes.string,
     onClick : React.PropTypes.func
   },
   getInitialState : function(){
@@ -2168,7 +2172,7 @@ var InternalTab = React.createClass({displayName: "InternalTab",
   },
   render: function() {
     return (
-      React.createElement("li", {className: "pt-tab " + this._isTabOpen()}, 
+      React.createElement("li", {className: "pt-tab " + this._isTabOpen(), id: this.props.id}, 
         React.createElement("a", {href: "javascript:void(0);", onClick: this._handleClick}, 
           React.createElement("span", null, this.props.title)
         )
@@ -46114,7 +46118,8 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
       }
     }
     var that = this;
-    this._animateCardStatusChange(document.getElementById("card-" + challangeId), "available", function(){
+    this._animateCardStatusChange(document.getElementById("card-" + challangeId), function(){
+      that._animateChallengeTab("available");
       that.setState({
         available : availableChallenges,
         later : laterChallenges
@@ -46133,28 +46138,34 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
       }
     }
     var that = this;
-    this._animateCardStatusChange(document.getElementById("card-" + challangeId), "later", function(){
+    this._animateCardStatusChange(document.getElementById("card-" + challangeId), function(){
+      that._animateChallengeTab("later");
       that.setState({
         available : availableChallenges,
         later : laterChallenges
       });
     });
   },
-  _animateCardStatusChange : function(card, status, callback){
+  //move this to an animation mixin
+  _animateCardStatusChange : function(card, callback){
     var scale = 1;
 
     requestAnimationFrame(update);
 
     function update() {
-      scale = scale - 0.03;
+      //determine when animation is over
+      scale = scale - (scale * 0.12);
       card.style.transform = 'scale(' + scale + ', ' + scale + ')';
 
-      if (scale > 0) {
+      if (scale.toFixed(2) > 0.00) {
         requestAnimationFrame(update);
       } else {
         callback();
       }
     }
+  },
+  _animateChallengeTab : function(){
+
   }
 });
 

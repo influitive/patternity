@@ -284,7 +284,8 @@ var ChallengesPagePattern = React.createClass({
       }
     }
     var that = this;
-    this._animateCardStatusChange(document.getElementById("card-" + challangeId), "available", function(){
+    this._animateCardStatusChange(document.getElementById("card-" + challangeId), function(){
+      that._animateChallengeTab("available");
       that.setState({
         available : availableChallenges,
         later : laterChallenges
@@ -303,28 +304,34 @@ var ChallengesPagePattern = React.createClass({
       }
     }
     var that = this;
-    this._animateCardStatusChange(document.getElementById("card-" + challangeId), "later", function(){
+    this._animateCardStatusChange(document.getElementById("card-" + challangeId), function(){
+      that._animateChallengeTab("later");
       that.setState({
         available : availableChallenges,
         later : laterChallenges
       });
     });
   },
-  _animateCardStatusChange : function(card, status, callback){
+  //move this to an animation mixin
+  _animateCardStatusChange : function(card, callback){
     var scale = 1;
 
     requestAnimationFrame(update);
 
     function update() {
-      scale = scale - 0.03;
+      //determine when animation is over
+      scale = scale - (scale * 0.12);
       card.style.transform = 'scale(' + scale + ', ' + scale + ')';
 
-      if (scale > 0) {
+      if (scale.toFixed(2) > 0.00) {
         requestAnimationFrame(update);
       } else {
         callback();
       }
     }
+  },
+  _animateChallengeTab : function(){
+
   }
 });
 
