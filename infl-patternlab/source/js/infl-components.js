@@ -2025,14 +2025,16 @@ var Tabs = React.createClass({displayName: "Tabs",
       id : "",
       key : "tabs-" + Math.random(),
       openTabIndex : null,
-      onChange : function(){}
+      onChange : function(){},
+      showAllTabs : false
     };
   },
   propTypes : {
     title : React.PropTypes.string,
     key : React.PropTypes.string,
     openTabIndex : React.PropTypes.number,
-    onChange : React.PropTypes.func
+    onChange : React.PropTypes.func,
+    showAllTabs : React.PropTypes.bool
   },
   getInitialState : function(){
     return {
@@ -2059,12 +2061,40 @@ var Tabs = React.createClass({displayName: "Tabs",
         React.createElement("ul", {ref: "tabs", className: "pt-tabs-menu", key: "pt-tabs-menu-" + Math.random()}, 
           this._buildTabs()
         ), 
+
+        React.createElement("div", {className: "pt-drop-down-tabs"}, 
+          React.createElement("div", {ref: "selectTabTitle", className: "selected-tab-title", onClick: this._toggleTabDropdown}, 
+            this._determineTabDropdownTitle()
+          ), 
+          React.createElement("ul", {ref: "tabsDropdown"}, 
+            this._buildTabs()
+          )
+        ), 
+
         React.createElement("section", {className: "pt-tabs-content-sections"}, 
           this._buildTabContentSections()
         )
       )
     );
   },
+
+  _determineTabDropdownTitle : function(){
+    var that = this;
+    return React.Children.map(this.props.children, function(tab, index){
+      if(index === that.state.openTabIndex){
+        return tab.props.title;
+      }
+    });
+  },
+  _toggleTabDropdown : function(event){
+    if(this.refs.selectTabTitle.getDOMNode().classList.contains("show-dropdown")) {
+      this.refs.selectTabTitle.getDOMNode().classList.remove("show-dropdown");
+    } else {
+      this.refs.selectTabTitle.getDOMNode().classList.add("show-dropdown");
+    }
+  },
+
+/* START - move to it's own class or mixin */
   _addWindowResizeEvent : function(){
     $(window).resize(this._adjustTabsForScreenSize);
   },
@@ -2073,10 +2103,10 @@ var Tabs = React.createClass({displayName: "Tabs",
     var visibleTabs = this._visibleTabs(tabs.children);
     var tabsMinWidthWidth = visibleTabs.length * tabs.firstChild.clientWidth;
 
-    if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
-      this._hideTab(visibleTabs);
-    } else if(tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
-      this._showTab(tabs.children, visibleTabs);
+    if(this.props.showAllTabs){
+      this._toggleShowAllStyling(tabs, tabsMinWidthWidth);
+    } else {
+      this._toggleTabVisibility(tabs, tabsMinWidthWidth, visibleTabs);
     }
   },
   _visibleTabs : function(tabs){
@@ -2087,6 +2117,20 @@ var Tabs = React.createClass({displayName: "Tabs",
       }
     }
     return visibleTabs;
+  },
+  _toggleShowAllStyling : function(tabs, tabsMinWidthWidth){
+    if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
+        tabs.parentNode.classList.add("show-all");
+      } else {
+        tabs.parentNode.classList.remove("show-all");
+      }
+  },
+  _toggleTabVisibility : function(tabs, tabsMinWidthWidth, visibleTabs){
+    if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
+      this._hideTab(visibleTabs);
+    } else if(tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
+      this._showTab(tabs.children, visibleTabs);
+    }
   },
   _hideTab : function(visibleTabs){
     visibleTabs[this._tabToHideIndex(visibleTabs)].classList.add("hide");
@@ -2104,6 +2148,8 @@ var Tabs = React.createClass({displayName: "Tabs",
   _tabToShowIndex : function(visibleTabs){
     return visibleTabs.length;
   },
+/* END */
+
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
       return false;
@@ -2128,6 +2174,9 @@ var Tabs = React.createClass({displayName: "Tabs",
       openTabIndex : index
     });
     this.props.onChange(index);
+    if(this.props.showAllTabs){
+      this._toggleTabDropdown();
+    }
   },
   _isTabOpen : function(index) {
     return (this.state.openTabIndex === index);
@@ -46035,7 +46084,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     return (
       React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
         React.createElement(Pattern, {title: "challenges page demo"}, 
-          React.createElement(Tabs, {hideTabOrder: [3,1]}, 
+          React.createElement(Tabs, {showAllTabs: false}, 
             React.createElement(Tabs.Tab, {title: "Available"}, 
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.available.challenges)
