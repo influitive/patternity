@@ -6,14 +6,16 @@ var Tabs = React.createClass({
       id : "",
       key : "tabs-" + Math.random(),
       openTabIndex : null,
-      onChange : function(){}
+      onChange : function(){},
+      showAllTabs : false
     };
   },
   propTypes : {
     title : React.PropTypes.string,
     key : React.PropTypes.string,
     openTabIndex : React.PropTypes.number,
-    onChange : React.PropTypes.func
+    onChange : React.PropTypes.func,
+    showAllTabs : React.PropTypes.bool
   },
   getInitialState : function(){
     return {
@@ -40,12 +42,40 @@ var Tabs = React.createClass({
         <ul ref="tabs" className="pt-tabs-menu" key={"pt-tabs-menu-" + Math.random()}>
           {this._buildTabs()}
         </ul>
+
+        <div className="pt-drop-down-tabs">
+          <div ref="selectTabTitle" className="selected-tab-title" onClick={this._toggleTabDropdown}>
+            {this._determineTabDropdownTitle()}
+          </div>
+          <ul ref="tabsDropdown">
+            {this._buildTabs()}
+          </ul>
+        </div>
+
         <section className="pt-tabs-content-sections">
           {this._buildTabContentSections()}
         </section>
       </nav>
     );
   },
+
+  _determineTabDropdownTitle : function(){
+    var that = this;
+    return React.Children.map(this.props.children, function(tab, index){
+      if(index === that.state.openTabIndex){
+        return tab.props.title;
+      }
+    });
+  },
+  _toggleTabDropdown : function(event){
+    if(this.refs.selectTabTitle.getDOMNode().classList.contains("show-dropdown")) {
+      this.refs.selectTabTitle.getDOMNode().classList.remove("show-dropdown");
+    } else {
+      this.refs.selectTabTitle.getDOMNode().classList.add("show-dropdown");
+    }
+  },
+
+/* START - move to it's own class or mixin */
   _addWindowResizeEvent : function(){
     $(window).resize(this._adjustTabsForScreenSize);
   },
@@ -54,10 +84,10 @@ var Tabs = React.createClass({
     var visibleTabs = this._visibleTabs(tabs.children);
     var tabsMinWidthWidth = visibleTabs.length * tabs.firstChild.clientWidth;
 
-    if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
-      this._hideTab(visibleTabs);
-    } else if(tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
-      this._showTab(tabs.children, visibleTabs);
+    if(this.props.showAllTabs){
+      this._toggleShowAllStyling(tabs, tabsMinWidthWidth);
+    } else {
+      this._toggleTabVisibility(tabs, tabsMinWidthWidth, visibleTabs);
     }
   },
   _visibleTabs : function(tabs){
@@ -68,6 +98,20 @@ var Tabs = React.createClass({
       }
     }
     return visibleTabs;
+  },
+  _toggleShowAllStyling : function(tabs, tabsMinWidthWidth){
+    if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
+        tabs.parentNode.classList.add("show-all");
+      } else {
+        tabs.parentNode.classList.remove("show-all");
+      }
+  },
+  _toggleTabVisibility : function(tabs, tabsMinWidthWidth, visibleTabs){
+    if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
+      this._hideTab(visibleTabs);
+    } else if(tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
+      this._showTab(tabs.children, visibleTabs);
+    }
   },
   _hideTab : function(visibleTabs){
     visibleTabs[this._tabToHideIndex(visibleTabs)].classList.add("hide");
@@ -85,6 +129,8 @@ var Tabs = React.createClass({
   _tabToShowIndex : function(visibleTabs){
     return visibleTabs.length;
   },
+/* END */
+
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
       return false;
@@ -109,6 +155,9 @@ var Tabs = React.createClass({
       openTabIndex : index
     });
     this.props.onChange(index);
+    if(this.props.showAllTabs){
+      this._toggleTabDropdown();
+    }
   },
   _isTabOpen : function(index) {
     return (this.state.openTabIndex === index);
