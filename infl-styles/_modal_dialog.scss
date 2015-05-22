@@ -8,7 +8,11 @@
   z-index: 1500;
 
   &.lightbox {
-    background-color: rgba(68, 68, 68, 0.6); // $darker-grey with opacity change
+    background: #ddd;
+    background: transparent\9;
+    background: rgba(68, 68, 68, 0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#3c444444,endColorstr=#3c444444);
+    zoom: 1;
   }
 
   &.close {
