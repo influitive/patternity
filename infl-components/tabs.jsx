@@ -21,15 +21,11 @@ var Tabs = React.createClass({
     };
   },
   componentDidMount : function(){
-    this._adjustTabsForSmallerScreens();
+    this._adjustTabsForScreenSize();
     this._addWindowResizeEvent();
   },
   componentDidUpdate : function(){
-    this._adjustTabsForSmallerScreens();
-    this.refs.tabsWrapper.getDOMNode().scrollLeft = this._tabsScrollLeft;
-  },
-  componentWillUpdate : function(){
-    this._tabsScrollLeft = this.refs.tabsWrapper.getDOMNode().scrollLeft;
+    this._adjustTabsForScreenSize();
   },
   componentWillReceiveProps: function(nextProps) {
     if(this._validTabIndex(nextProps.openTabIndex)){
@@ -41,30 +37,53 @@ var Tabs = React.createClass({
   render: function() {
     return (
       <nav className="pt-tabs">
-        <div ref="tabsWrapper" className="pt-tabs-menu-wrapper">
-          <ul ref="tabs" className="pt-tabs-menu" key={"pt-tabs-menu-" + Math.random()}>
-            {this._buildTabs()}
-          </ul>
-        </div>
+        <ul ref="tabs" className="pt-tabs-menu" key={"pt-tabs-menu-" + Math.random()}>
+          {this._buildTabs()}
+        </ul>
         <section className="pt-tabs-content-sections">
           {this._buildTabContentSections()}
         </section>
       </nav>
     );
   },
-  _tabsScrollLeft : 0,
   _addWindowResizeEvent : function(){
-    $(window).resize(this._adjustTabsForSmallerScreens);
+    $(window).resize(this._adjustTabsForScreenSize);
   },
-  _adjustTabsForSmallerScreens : function(){
+  _adjustTabsForScreenSize : function(){
     var tabs = this.refs.tabs.getDOMNode();
-    var tabsMinWidthWidth = tabs.children.length * tabs.firstChild.clientWidth;
+    var visibleTabs = this._visibleTabs(tabs.children);
+    var tabsMinWidthWidth = visibleTabs.length * tabs.firstChild.clientWidth;
 
     if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
-      tabs.style.width = tabsMinWidthWidth + "px";
-    } else {
-      tabs.style.width = "100%";
+      this._hideTab(visibleTabs);
+    } else if(tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
+      this._showTab(tabs.children, visibleTabs);
     }
+  },
+  _visibleTabs : function(tabs){
+    var visibleTabs = [];
+    for(var i = 0; i < tabs.length; i++){
+      if(!tabs[i].classList.contains("hide")){
+        visibleTabs.push(tabs[i]);
+      }
+    }
+    return visibleTabs;
+  },
+  _hideTab : function(visibleTabs){
+    visibleTabs[this._tabToHideIndex(visibleTabs)].classList.add("hide");
+    this._adjustTabsForScreenSize();
+  },
+  _showTab : function(tabs, visibleTabs){
+    if(tabs[this._tabToShowIndex(visibleTabs)]){
+      tabs[this._tabToShowIndex(visibleTabs)].classList.remove("hide");
+      this._adjustTabsForScreenSize();
+    }
+  },
+  _tabToHideIndex : function(visibleTabs){
+    return visibleTabs.length - 1;
+  },
+  _tabToShowIndex : function(visibleTabs){
+    return visibleTabs.length;
   },
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
