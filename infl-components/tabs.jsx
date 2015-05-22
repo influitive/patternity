@@ -81,7 +81,7 @@ var Tabs = React.createClass({
     var that = this;
     return React.Children.map(this.props.children, function(tab, index){
       return (
-        <InternalTab title={tab.props.title} onClick={that._onTabChange} key={index} index={index} tabIsOpen={that._isTabOpen(index)} />
+        <InternalTab title={tab.props.title} id={tab.id} onClick={that._onTabChange} key={index} index={index} tabIsOpen={that._isTabOpen(index)} />
       );
     });
   },
@@ -109,11 +109,13 @@ var Tabs = React.createClass({
 Tabs.Tab = React.createClass({
   getDefaultProps : function(){
     return {
-      title : ""
+      title : "",
+      id : ""
     };
   },
   propTypes : {
-    title : React.PropTypes.string
+    title : React.PropTypes.string,
+    id : React.PropTypes.string
   },
   render: function() {
     return (
@@ -128,6 +130,7 @@ var InternalTab = React.createClass({
       title : "",
       tabIsOpen : false,
       index : -1,
+      id : "",
       onClick : function(){}
     };
   },
@@ -135,6 +138,7 @@ var InternalTab = React.createClass({
     title : React.PropTypes.string,
     tabIsOpen : React.PropTypes.bool,
     index : React.PropTypes.number,
+    id : React.PropTypes.string,
     onClick : React.PropTypes.func
   },
   getInitialState : function(){
@@ -149,7 +153,7 @@ var InternalTab = React.createClass({
   },
   render: function() {
     return (
-      <li className={"pt-tab " + this._isTabOpen()}>
+      <li className={"pt-tab " + this._isTabOpen()} id={this.props.id}>
         <a href="javascript:void(0);" onClick={this._handleClick}>
           <span>{this.props.title}</span>
         </a>
