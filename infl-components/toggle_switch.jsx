@@ -30,7 +30,7 @@ var ToggleSwitch = React.createClass({
   },
   render : function(){
     return (
-      <span id={this.props.id} className={this._switchCSSClasses()} onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
+      <span id={this.props.id} className={this._switchCSSClasses()} onClick={this._clickCheckBox} >
         <span className="toggle-text">{this._toggleText()}</span>
         <span className="switch">
           <span className="switch-line"></span>
