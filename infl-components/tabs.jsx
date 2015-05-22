@@ -1,4 +1,5 @@
 var React = require('react');
+var $ = require('jquery');
 
 var Tabs = React.createClass({
   getDefaultProps : function(){
@@ -58,7 +59,6 @@ var Tabs = React.createClass({
       </nav>
     );
   },
-
   _determineTabDropdownTitle : function(){
     var that = this;
     return React.Children.map(this.props.children, function(tab, index){
@@ -74,8 +74,6 @@ var Tabs = React.createClass({
       this.refs.selectTabTitle.getDOMNode().classList.add("show-dropdown");
     }
   },
-
-/* START - move to it's own class or mixin */
   _addWindowResizeEvent : function(){
     $(window).resize(this._adjustTabsForScreenSize);
   },
@@ -129,8 +127,6 @@ var Tabs = React.createClass({
   _tabToShowIndex : function(visibleTabs){
     return visibleTabs.length;
   },
-/* END */
-
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
       return false;
