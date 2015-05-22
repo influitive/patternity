@@ -1,8 +1,7 @@
 DIV.pt-popover {
   box-sizing:border-box;
-  display:block;
   position:absolute;
-  visibility:hidden;
+  display:none;
   border:1px solid rgb(210,210,210);
   background:white;
   z-index:1000;
@@ -62,7 +61,7 @@ DIV.pt-popover {
 }
 
 DIV.pt-popover.is-visible {
-  visibility:visible;
+  display:block;
 }
 
 /* the parent element of a popover link and popover component needs to be positioned relatively */
