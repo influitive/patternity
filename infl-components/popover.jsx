@@ -12,6 +12,10 @@ var PopoverFloater = React.createClass({
     };
   },
 
+  componentWillMount: function() {
+    this._windowClickEvent = this._windowClick.bind(this);
+  },
+
   componentWillUnmount: function() {
     this._removeEvents();
     this._hide();
@@ -85,16 +89,16 @@ var PopoverFloater = React.createClass({
   },
 
   _addEvents : function() {
-    $(window).on('click', this._windowClick);
+    $(document).on('click', this._windowClickEvent);
   },
   _removeEvents : function() {
-    $(window).off('click', this._windowClick);
+    $(document).off('click', this._windowClickEvent);
   }
 
 });
 
 PopoverFloater.clickEvent = function(e) {
-  var elm = e.target;
+  var elm = (window.event && window.event.srcEvent)? window.event.srcElement : e.target;
   while (!elm.getAttribute('data-popover') && elm.parentNode) {
     elm = elm.parentNode;
   }
