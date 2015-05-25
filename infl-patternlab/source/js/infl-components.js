@@ -2023,9 +2023,14 @@ module.exports = StatsBar;
 
 },{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx":[function(require,module,exports){
 var React = require('react');
-var $ = require('jquery');
+
+var ResponsiveTabsMixin = require('./tabs/responsive_tabs_mixin.js');
+var TabsMenu = require('./tabs/tabs_menu.jsx');
+var TabsDropdown = require('./tabs/tabs_dropdown.jsx');
+var TabSections = require('./tabs/tab_sections.jsx');
 
 var Tabs = React.createClass({displayName: "Tabs",
+  mixins: [ResponsiveTabsMixin],
   getDefaultProps : function(){
     return {
       id : "",
@@ -2047,13 +2052,6 @@ var Tabs = React.createClass({displayName: "Tabs",
       openTabIndex : this._validTabIndex(this.props.openTabIndex) ? this.props.openTabIndex : 0
     };
   },
-  componentDidMount : function(){
-    this._adjustTabsForScreenSize();
-    this._addWindowResizeEvent();
-  },
-  componentDidUpdate : function(){
-    this._adjustTabsForScreenSize();
-  },
   componentWillReceiveProps: function(nextProps) {
     if(this._validTabIndex(nextProps.openTabIndex)){
       this.setState({
@@ -2063,40 +2061,128 @@ var Tabs = React.createClass({displayName: "Tabs",
   },
   render: function() {
     return (
-      React.createElement("nav", {className: "pt-tabs"}, 
-        React.createElement("ul", {ref: "tabs", className: "pt-tabs-menu", key: "pt-tabs-menu-" + Math.random()}, 
-          this._buildTabs()
-        ), 
+      React.createElement("nav", {className: "pt-tabs", key: this.props.key}, 
+        React.createElement(TabsMenu, {ref: "tabs", tabs: this.props.children, openTabIndex: this.state.openTabIndex, onChange: this._onTabChange}), 
+        React.createElement(TabsDropdown, {tabs: this.props.children, openTabIndex: this.state.openTabIndex, onChange: this._onTabChange}), 
+        React.createElement(TabSections, {tabs: this.props.children, openTabIndex: this.state.openTabIndex})
+      )
+    );
+  },
+  _validTabIndex : function(openTabIndex){
+    if(isNaN(parseInt(openTabIndex))){
+      return false;
+    }
 
-        React.createElement("div", {className: "pt-drop-down-tabs"}, 
-          React.createElement("div", {ref: "selectTabTitle", className: "selected-tab-title", onClick: this._toggleTabDropdown}, 
-            this._determineTabDropdownTitle()
-          ), 
-          React.createElement("ul", {ref: "tabsDropdown"}, 
-            this._buildTabs()
-          )
-        ), 
+    if(openTabIndex > this.props.children.length){
+      return false;
+    }
 
-        React.createElement("section", {className: "pt-tabs-content-sections"}, 
-          this._buildTabContentSections()
+    return true;
+  },
+  _onTabChange : function(index){
+    this.setState({
+      openTabIndex : index
+    });
+    this.props.onChange(index);
+  }
+});
+
+Tabs.Tab = React.createClass({displayName: "Tab",
+  getDefaultProps : function(){
+    return {
+      title : "",
+      id : ""
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.string,
+    id : React.PropTypes.string
+  },
+  render: function() {
+    return (
+      React.createElement("div", null, this.props.children)
+    );
+  }
+});
+
+module.exports = Tabs;
+
+
+},{"./tabs/responsive_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js","./tabs/tab_sections.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx","./tabs/tabs_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx","./tabs/tabs_menu.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js":[function(require,module,exports){
+var React = require('react');
+
+var BuildTabsMixin = {
+  _buildTabs : function(onClick){
+    var that = this;
+    return React.Children.map(this.props.tabs, function(tab, index){
+      return (
+        React.createElement(InternalTab, {title: tab.props.title, id: tab.id, onClick: onClick, key: index, index: index, tabIsOpen: that._isTabOpen(index)})
+      );
+    });
+  },
+  _isTabOpen : function(index) {
+    return (this.props.openTabIndex === index);
+  },
+};
+
+var InternalTab = React.createClass({displayName: "InternalTab",
+  getDefaultProps : function(){
+    return {
+      title : "",
+      tabIsOpen : false,
+      index : -1,
+      id : "",
+      onClick : function(){}
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.string,
+    tabIsOpen : React.PropTypes.bool,
+    index : React.PropTypes.number,
+    id : React.PropTypes.string,
+    onClick : React.PropTypes.func
+  },
+  getInitialState : function(){
+    return {
+      tabIsOpen : this.props.tabIsOpen
+    };
+  },
+  componentWillReceiveProps: function(newProps){
+    this.setState({
+      tabIsOpen : newProps.tabIsOpen
+    });
+  },
+  render: function() {
+    return (
+      React.createElement("li", {className: "pt-tab " + this._isTabOpen(), id: this.props.id}, 
+        React.createElement("a", {href: "javascript:void(0);", onClick: this._handleClick}, 
+          React.createElement("span", null, this.props.title)
         )
       )
     );
   },
-  _determineTabDropdownTitle : function(){
-    var that = this;
-    return React.Children.map(this.props.children, function(tab, index){
-      if(index === that.state.openTabIndex){
-        return tab.props.title;
-      }
-    });
+  _isTabOpen : function(){
+    return this.state.tabIsOpen ? "tab-open" : "";
   },
-  _toggleTabDropdown : function(event){
-    if(this.refs.selectTabTitle.getDOMNode().classList.contains("show-dropdown")) {
-      this.refs.selectTabTitle.getDOMNode().classList.remove("show-dropdown");
-    } else {
-      this.refs.selectTabTitle.getDOMNode().classList.add("show-dropdown");
-    }
+  _handleClick : function(event){
+    event.preventDefault();
+    this.props.onClick(this.props.index);
+  }
+});
+
+module.exports = BuildTabsMixin;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js":[function(require,module,exports){
+var $ = require('jquery');
+
+var ResponsiveTabsMixin = {
+  componentDidMount : function(){
+    this._adjustTabsForScreenSize();
+    this._addWindowResizeEvent();
+  },
+  componentDidUpdate : function(){
+    this._adjustTabsForScreenSize();
   },
   _addWindowResizeEvent : function(){
     $(window).resize(this._adjustTabsForScreenSize);
@@ -2151,109 +2237,44 @@ var Tabs = React.createClass({displayName: "Tabs",
   _tabToShowIndex : function(visibleTabs){
     return visibleTabs.length;
   },
-  _validTabIndex : function(openTabIndex){
-    if(isNaN(parseInt(openTabIndex))){
-      return false;
-    }
+};
 
-    if(openTabIndex > this.props.children.length){
-      return false;
-    }
+module.exports = ResponsiveTabsMixin;
 
-    return true;
+
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx":[function(require,module,exports){
+var React = require('react');
+
+var BuildTabsMixin = require('./build_tabs_mixin.js');
+
+var TabSections = React.createClass({displayName: "TabSections",
+  mixins: [BuildTabsMixin],
+  getDefaultProps : function(){
+    return {
+      tabs : [],
+      openTabIndex: null
+    };
   },
-  _buildTabs : function(){
-    var that = this;
-    return React.Children.map(this.props.children, function(tab, index){
-      return (
-        React.createElement(InternalTab, {title: tab.props.title, id: tab.id, onClick: that._onTabChange, key: index, index: index, tabIsOpen: that._isTabOpen(index)})
-      );
-    });
+  propTypes : {
+    title : React.PropTypes.array,
+    openTabIndex : React.PropTypes.number
   },
-  _onTabChange : function(index){
-    this.setState({
-      openTabIndex : index
-    });
-    this.props.onChange(index);
-    if(this.props.showAllTabs){
-      this._toggleTabDropdown();
-    }
-  },
-  _isTabOpen : function(index) {
-    return (this.state.openTabIndex === index);
+  render: function() {
+    return (
+      React.createElement("section", {className: "pt-tabs-content-sections"}, 
+        this._buildTabContentSections()
+      )
+    );
   },
   _buildTabContentSections : function(){
     var that = this;
-    return React.Children.map(this.props.children, function(tab, index){
+    return React.Children.map(this.props.tabs, function(tab, index){
       return (
         React.createElement(InternalTabContent, {key: index, tabContentIsVisible: that._isTabOpen(index)}, 
           tab.props.children
         )
       );
     });
-  }
-});
-
-Tabs.Tab = React.createClass({displayName: "Tab",
-  getDefaultProps : function(){
-    return {
-      title : "",
-      id : ""
-    };
-  },
-  propTypes : {
-    title : React.PropTypes.string,
-    id : React.PropTypes.string
-  },
-  render: function() {
-    return (
-      React.createElement("div", null, this.props.children)
-    );
-  }
-});
-
-var InternalTab = React.createClass({displayName: "InternalTab",
-  getDefaultProps : function(){
-    return {
-      title : "",
-      tabIsOpen : false,
-      index : -1,
-      id : "",
-      onClick : function(){}
-    };
-  },
-  propTypes : {
-    title : React.PropTypes.string,
-    tabIsOpen : React.PropTypes.bool,
-    index : React.PropTypes.number,
-    id : React.PropTypes.string,
-    onClick : React.PropTypes.func
-  },
-  getInitialState : function(){
-    return {
-      tabIsOpen : this.props.tabIsOpen
-    };
-  },
-  componentWillReceiveProps: function(newProps){
-    this.setState({
-      tabIsOpen : newProps.tabIsOpen
-    });
-  },
-  render: function() {
-    return (
-      React.createElement("li", {className: "pt-tab " + this._isTabOpen(), id: this.props.id}, 
-        React.createElement("a", {href: "javascript:void(0);", onClick: this._handleClick}, 
-          React.createElement("span", null, this.props.title)
-        )
-      )
-    );
-  },
-  _isTabOpen : function(){
-    return this.state.tabIsOpen ? "tab-open" : "";
-  },
-  _handleClick : function(event){
-    event.preventDefault();
-    this.props.onClick(this.props.index);
   }
 });
 
@@ -2278,10 +2299,99 @@ var InternalTabContent = React.createClass({displayName: "InternalTabContent",
   }
 });
 
-module.exports = Tabs;
+module.exports = TabSections;
 
 
-},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){
+},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx":[function(require,module,exports){
+var React = require('react');
+
+var BuildTabsMixin = require('./build_tabs_mixin.js');
+
+var TabsDropdown = React.createClass({displayName: "TabsDropdown",
+  mixins: [BuildTabsMixin],
+  getDefaultProps : function(){
+    return {
+      tabs : [],
+      openTabIndex: null,
+      onChange : function(){}
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.array,
+    openTabIndex : React.PropTypes.number,
+    onChange : React.PropTypes.func
+  },
+  render: function() {
+    return (
+      React.createElement("div", {className: "pt-drop-down-tabs"}, 
+        React.createElement("div", {ref: "selectTabTitle", className: "selected-tab-title", onClick: this._toggleTabDropdown}, 
+          this._determineTabDropdownTitle()
+        ), 
+        React.createElement("ul", {ref: "tabsDropdown"}, 
+          this._buildTabs(this._handleOnClick)
+        )
+      )
+    );
+  },
+  _determineTabDropdownTitle : function(){
+    var that = this;
+    return React.Children.map(this.props.tabs, function(tab, index){
+      if(index === that.props.openTabIndex){
+        return tab.props.title;
+      }
+    });
+  },
+  _handleOnClick : function(event){
+    this.props.onChange(event);
+    this._toggleTabDropdown();
+  },
+  _toggleTabDropdown : function(event){
+    if(this.refs.selectTabTitle.getDOMNode().classList.contains("show-dropdown")) {
+      this.refs.selectTabTitle.getDOMNode().classList.remove("show-dropdown");
+    } else {
+      this.refs.selectTabTitle.getDOMNode().classList.add("show-dropdown");
+    }
+  }
+});
+
+module.exports = TabsDropdown;
+
+
+},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx":[function(require,module,exports){
+var React = require('react');
+
+var BuildTabsMixin = require('./build_tabs_mixin.js');
+
+var TabsMenu = React.createClass({displayName: "TabsMenu",
+  mixins: [BuildTabsMixin],
+  getDefaultProps : function(){
+    return {
+      tabs : [],
+      openTabIndex: null,
+      onChange : function(){}
+    };
+  },
+  propTypes : {
+    title : React.PropTypes.array,
+    openTabIndex : React.PropTypes.number,
+    onChange : React.PropTypes.func
+  },
+  render: function() {
+    return (
+      React.createElement("ul", {className: "pt-tabs-menu", key: "pt-tabs-menu-" + Math.random()}, 
+        this._buildTabs(this._handleOnClick)
+      )
+    );
+  },
+  _handleOnClick : function(event){
+    this.props.onChange(event);
+  }
+});
+
+module.exports = TabsMenu;
+
+
+},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
