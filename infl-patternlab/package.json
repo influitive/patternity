@@ -55,6 +55,7 @@
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.4",
     "js-beautify": "^1.5.5",
+    "jquery": "^1.9.1",
     "lodash": "^3.7.0",
     "pretty-hrtime": "^1.0.0",
     "vinyl-buffer": "^1.0.0",

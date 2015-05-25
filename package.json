@@ -54,7 +54,7 @@
   "dependencies": {
     "classnames": "^1.1.4",
     "es5-shim": "^4.1.0",
-    "jquery": "^2.1.4",
+    "jquery": "^1.9.1",
     "lodash": "^3.7.0",
     "node-bourbon": "~1.2.3",
     "react": "^0.12.2"
