@@ -183,22 +183,22 @@ var ChallengesPagePattern = React.createClass({
       <div className="challenges-page-pattern page-pattern">
         <Pattern title="challenges page demo">
           <Tabs showAllTabs={false}>
-            <Tabs.Tab title="Available">
+            <Tabs.Tab title="Available" id="available-tab">
               <Card.Container>
                 {this._buildCards(this.state.available.challenges)}
               </Card.Container>
             </Tabs.Tab>
-            <Tabs.Tab title="Started">
+            <Tabs.Tab title="Started" id="started-tab">
               <Card.Container>
                 {this._buildCards(this.state.started.challenges)}
               </Card.Container>
             </Tabs.Tab>
-            <Tabs.Tab title="Later">
+            <Tabs.Tab title="Later" id="later-tab">
               <Card.Container>
                 {this._buildCards(this.state.later.challenges)}
               </Card.Container>
             </Tabs.Tab>
-            <Tabs.Tab title="Complete">
+            <Tabs.Tab title="Complete" id="complete-tab">
               <Card.Container>
                 {this._buildCards(this.state.completed.challenges)}
               </Card.Container>
@@ -285,10 +285,11 @@ var ChallengesPagePattern = React.createClass({
     }
     var that = this;
     this._animateCardStatusChange(document.getElementById("card-" + challangeId), function(){
-      that._animateChallengeTab("available");
-      that.setState({
-        available : availableChallenges,
-        later : laterChallenges
+      that._animateChallengeTab("available", function(){
+        that.setState({
+          available : availableChallenges,
+          later : laterChallenges
+        });
       });
     });
   },
@@ -305,14 +306,15 @@ var ChallengesPagePattern = React.createClass({
     }
     var that = this;
     this._animateCardStatusChange(document.getElementById("card-" + challangeId), function(){
-      that._animateChallengeTab("later");
-      that.setState({
-        available : availableChallenges,
-        later : laterChallenges
+      that._animateChallengeTab("later", function(){
+        that.setState({
+          available : availableChallenges,
+          later : laterChallenges
+        });
       });
     });
   },
-  //move this to an animation mixin
+  //move this to an animation mixin and rename
   _animateCardStatusChange : function(card, callback){
     var scale = 1;
 
@@ -329,22 +331,39 @@ var ChallengesPagePattern = React.createClass({
       }
     }
   },
-  _animateChallengeTab : function(){
+  //move this to an animation mixin and rename
+  _animateChallengeTab : function(tabName, callback){
+    var tab = document.getElementById(tabName + "-tab");
+    var title = tab.querySelector("a span");
 
+    var startPosition = 0;
+    var endPosition = -10;
+    var position = 0;
+
+    requestAnimationFrame(moveUp);
+
+    function moveUp(){
+      position = position - 2;
+      title.style.transform = 'translate(0px, ' + position + 'px)';
+
+      if(position >= endPosition){
+        requestAnimationFrame(moveUp);
+      } else {
+        requestAnimationFrame(moveDown);
+      }
+    }
+
+    function moveDown(){
+      position = position + 2;
+      title.style.transform = 'translate(0px, ' + position + 'px)';
+
+      if(position <= startPosition){
+        requestAnimationFrame(moveDown);
+      } else {
+        callback();
+      }
+    }
   }
 });
 
 module.exports = ChallengesPagePattern;
-
-        // <div key={card.id} ref={"card-" + card.id} className="pt-challenge-card">
-        //   <h2>{card.title}</h2>
-        //   <p>{card.description}</p>
-        //   <span className="participants">{card.participants}</span>
-        //   <span className="points">{card.points}</span>
-        //   <div className="actions">
-        //     <ButtonGroup>
-        //       <button className="secondary" onClick={that._laterChallenge} data-id={card.id}>Later</button>
-        //       <button className="success">View</button>
-        //     </ButtonGroup>
-        //   </div>
-        // </div>

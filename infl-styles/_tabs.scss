@@ -34,6 +34,10 @@
         overflow: hidden;
         text-overflow: ellipsis;
 
+        span {
+          display: block;
+        }
+
         &:hover {
           color: $theme-color-primary;
         }

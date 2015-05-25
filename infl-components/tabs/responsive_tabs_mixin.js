@@ -83,6 +83,7 @@ var ResponsiveTabsMixin = {
   _addLastTabStyling : function(){
     var tabMenu = this.refs.tabs.getDOMNode();
     var tabs = tabMenu.querySelectorAll(".pt-tab");
+
     for(var i=0; i < tabs.length; i++){
       if(tabs[i].classList.contains("hide")) {
         tabs[i - 1].classList.add("last-tab");
