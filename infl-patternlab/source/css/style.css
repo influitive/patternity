@@ -2692,7 +2692,7 @@ textarea {
   position: relative;
   color: #08a5c5;
 }
-.pt-tabs .pt-tabs-menu .pt-tab:last-child:after {
+.pt-tabs .pt-tabs-menu .pt-tab:last-child:after, .pt-tabs .pt-tabs-menu .pt-tab.last-tab:after {
   position: absolute;
   left: 100%;
   content: '';
@@ -2701,11 +2701,11 @@ textarea {
 }
 .pt-tabs .pt-drop-down-tabs {
   position: absolute;
-  left: 10000px;
+  left: -10000px;
 }
 .pt-tabs.show-all .pt-tabs-menu {
   position: absolute;
-  left: 10000px;
+  left: -10000px;
 }
 .pt-tabs.show-all .pt-drop-down-tabs {
   position: initial;
@@ -2789,7 +2789,7 @@ textarea {
     position: relative;
     color: #08a5c5;
   }
-  .pt-tabs .pt-tabs-menu .pt-tab:last-child:after {
+  .pt-tabs .pt-tabs-menu .pt-tab:last-child:after, .pt-tabs .pt-tabs-menu .pt-tab.last-tab:after {
     display: none;
   }
 }

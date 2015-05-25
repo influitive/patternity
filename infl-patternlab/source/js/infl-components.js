@@ -2197,6 +2197,8 @@ var ResponsiveTabsMixin = {
     } else {
       this._toggleTabVisibility(tabs, tabsMinWidthWidth, visibleTabs);
     }
+
+    this._adjustLastTabStyling();
   },
   _visibleTabs : function(tabs){
     var visibleTabs = [];
@@ -2223,7 +2225,15 @@ var ResponsiveTabsMixin = {
   },
   _hideTab : function(visibleTabs){
     visibleTabs[this._tabToHideIndex(visibleTabs)].classList.add("hide");
+    this._openVisibleTab(visibleTabs);
     this._adjustTabsForScreenSize();
+  },
+  _openVisibleTab : function(visibleTabs){
+    if(this._tabToHideIndex(visibleTabs) === this.state.openTabIndex){
+      this.setState({
+        openTabIndex : 0
+      });
+    }
   },
   _showTab : function(tabs, visibleTabs){
     if(tabs[this._tabToShowIndex(visibleTabs)]){
@@ -2237,6 +2247,25 @@ var ResponsiveTabsMixin = {
   _tabToShowIndex : function(visibleTabs){
     return visibleTabs.length;
   },
+  _adjustLastTabStyling : function(){
+    this._removeLastTabStyling();
+    this._addLastTabStyling();
+  },
+  _removeLastTabStyling : function(){
+    if(document.querySelector(".last-tab")){
+      document.querySelector(".last-tab").classList.remove("last-tab");
+    }
+  },
+  _addLastTabStyling : function(){
+    var tabMenu = this.refs.tabs.getDOMNode();
+    var tabs = tabMenu.querySelectorAll(".pt-tab");
+    for(var i=0; i < tabs.length; i++){
+      if(tabs[i].classList.contains("hide")) {
+        tabs[i - 1].classList.add("last-tab");
+        break;
+      }
+    }
+  }
 };
 
 module.exports = ResponsiveTabsMixin;
