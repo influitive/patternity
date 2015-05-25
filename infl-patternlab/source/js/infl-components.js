@@ -2116,7 +2116,7 @@ var BuildTabsMixin = {
     var that = this;
     return React.Children.map(this.props.tabs, function(tab, index){
       return (
-        React.createElement(InternalTab, {title: tab.props.title, id: tab.id, onClick: onClick, key: index, index: index, tabIsOpen: that._isTabOpen(index)})
+        React.createElement(InternalTab, {title: tab.props.title, id: tab.props.id, onClick: onClick, key: index, index: index, tabIsOpen: that._isTabOpen(index)})
       );
     });
   },
@@ -2259,6 +2259,7 @@ var ResponsiveTabsMixin = {
   _addLastTabStyling : function(){
     var tabMenu = this.refs.tabs.getDOMNode();
     var tabs = tabMenu.querySelectorAll(".pt-tab");
+
     for(var i=0; i < tabs.length; i++){
       if(tabs[i].classList.contains("hide")) {
         tabs[i - 1].classList.add("last-tab");
@@ -56578,22 +56579,22 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
       React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
         React.createElement(Pattern, {title: "challenges page demo"}, 
           React.createElement(Tabs, {showAllTabs: false}, 
-            React.createElement(Tabs.Tab, {title: "Available"}, 
+            React.createElement(Tabs.Tab, {title: "Available", id: "available-tab"}, 
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.available.challenges)
               )
             ), 
-            React.createElement(Tabs.Tab, {title: "Started"}, 
+            React.createElement(Tabs.Tab, {title: "Started", id: "started-tab"}, 
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.started.challenges)
               )
             ), 
-            React.createElement(Tabs.Tab, {title: "Later"}, 
+            React.createElement(Tabs.Tab, {title: "Later", id: "later-tab"}, 
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.later.challenges)
               )
             ), 
-            React.createElement(Tabs.Tab, {title: "Complete"}, 
+            React.createElement(Tabs.Tab, {title: "Complete", id: "complete-tab"}, 
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.completed.challenges)
               )
@@ -56680,10 +56681,11 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     }
     var that = this;
     this._animateCardStatusChange(document.getElementById("card-" + challangeId), function(){
-      that._animateChallengeTab("available");
-      that.setState({
-        available : availableChallenges,
-        later : laterChallenges
+      that._animateChallengeTab("available", function(){
+        that.setState({
+          available : availableChallenges,
+          later : laterChallenges
+        });
       });
     });
   },
@@ -56700,14 +56702,15 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     }
     var that = this;
     this._animateCardStatusChange(document.getElementById("card-" + challangeId), function(){
-      that._animateChallengeTab("later");
-      that.setState({
-        available : availableChallenges,
-        later : laterChallenges
+      that._animateChallengeTab("later", function(){
+        that.setState({
+          available : availableChallenges,
+          later : laterChallenges
+        });
       });
     });
   },
-  //move this to an animation mixin
+  //move this to an animation mixin and rename
   _animateCardStatusChange : function(card, callback){
     var scale = 1;
 
@@ -56724,25 +56727,42 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
       }
     }
   },
-  _animateChallengeTab : function(){
+  //move this to an animation mixin and rename
+  _animateChallengeTab : function(tabName, callback){
+    var tab = document.getElementById(tabName + "-tab");
+    var title = tab.querySelector("a span");
 
+    var startPosition = 0;
+    var endPosition = -10;
+    var position = 0;
+
+    requestAnimationFrame(moveUp);
+
+    function moveUp(){
+      position = position - 2;
+      title.style.transform = 'translate(0px, ' + position + 'px)';
+
+      if(position >= endPosition){
+        requestAnimationFrame(moveUp);
+      } else {
+        requestAnimationFrame(moveDown);
+      }
+    }
+
+    function moveDown(){
+      position = position + 2;
+      title.style.transform = 'translate(0px, ' + position + 'px)';
+
+      if(position <= startPosition){
+        requestAnimationFrame(moveDown);
+      } else {
+        callback();
+      }
+    }
   }
 });
 
 module.exports = ChallengesPagePattern;
-
-        // <div key={card.id} ref={"card-" + card.id} className="pt-challenge-card">
-        //   <h2>{card.title}</h2>
-        //   <p>{card.description}</p>
-        //   <span className="participants">{card.participants}</span>
-        //   <span className="points">{card.points}</span>
-        //   <div className="actions">
-        //     <ButtonGroup>
-        //       <button className="secondary" onClick={that._laterChallenge} data-id={card.id}>Later</button>
-        //       <button className="success">View</button>
-        //     </ButtonGroup>
-        //   </div>
-        // </div>
 
 
 },{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
