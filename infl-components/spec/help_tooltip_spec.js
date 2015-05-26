@@ -28,12 +28,12 @@ describe('Help Tooltip Component', function() {
   }
 
   function populateTestRefs(){
-    helpTooltipElement = subject.refs.helpTooltip.getDOMNode();
-    tipElement = subject.refs.tip.getDOMNode();
-    closeElement = subject.refs.close.getDOMNode();
-    titleElement = subject.refs.title.getDOMNode();
-    helpElement = subject.refs.help.getDOMNode();
-    detailsElement = subject.refs.details.getDOMNode();
+    helpTooltipElement = React.findDOMNode(subject.refs.helpTooltip);
+    tipElement = React.findDOMNode(subject.refs.tip);
+    closeElement = React.findDOMNode(subject.refs.close);
+    titleElement = React.findDOMNode(subject.refs.title);
+    helpElement = React.findDOMNode(subject.refs.help);
+    detailsElement = React.findDOMNode(subject.refs.details);
   }
 
   function simulateMouseOver(from, to) {

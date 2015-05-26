@@ -23,11 +23,11 @@ describe('Button Dropdown Component', function() {
   }
 
   function populateTestRefs(){
-    buttonDropdownElement = subject.refs.buttonDropdown.getDOMNode();
-    buttonDropdownTitle   = subject.refs.title.getDOMNode();
-    buttonDropdownIcon    = subject.refs.icon.getDOMNode();
-    buttonDropdownButton  = subject.refs.button.getDOMNode();
-    buttonDropdownOptions = subject.refs.options.getDOMNode();
+    buttonDropdownElement = React.findDOMNode(subject.refs.buttonDropdown);
+    buttonDropdownTitle   = React.findDOMNode(subject.refs.title);
+    buttonDropdownIcon    = React.findDOMNode(subject.refs.icon);
+    buttonDropdownButton  = React.findDOMNode(subject.refs.button);
+    buttonDropdownOptions = React.findDOMNode(subject.refs.options);
   }
 
   it('will render the button dropdown', function() {

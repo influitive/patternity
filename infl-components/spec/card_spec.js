@@ -15,7 +15,7 @@ describe('Card Component', function() {
     }
 
     function populateTestRefs(){
-      cardElement = subject.refs.card.getDOMNode();
+      cardElement = React.findDOMNode(subject.refs.card);
     }
 
     it('will render the card component', function () {
@@ -43,7 +43,7 @@ describe('Card Component', function() {
     }
 
     function populateTestRefs(){
-      cardContainerElement = subject.refs.container.getDOMNode();
+      cardContainerElement = React.findDOMNode(subject.refs.container);
     }
 
     it('will render the card component', function () {

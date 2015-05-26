@@ -1,3 +1,4 @@
+var React = require('react');
 var $ = require('jquery');
 
 var ResponsiveTabsMixin = {
@@ -12,7 +13,7 @@ var ResponsiveTabsMixin = {
     $(window).resize(this._adjustTabsForScreenSize);
   },
   _adjustTabsForScreenSize : function(){
-    var tabs = this.refs.tabs.getDOMNode();
+    var tabs = React.findDOMNode(this.refs.tabs);
     var visibleTabs = this._visibleTabs(tabs.children);
     var tabsMinWidthWidth = visibleTabs.length * tabs.firstChild.clientWidth;
 
@@ -81,7 +82,7 @@ var ResponsiveTabsMixin = {
     }
   },
   _addLastTabStyling : function(){
-    var tabMenu = this.refs.tabs.getDOMNode();
+    var tabMenu = React.findDOMNode(this.refs.tabs);
     var tabs = tabMenu.querySelectorAll(".pt-tab");
 
     for(var i=0; i < tabs.length; i++){

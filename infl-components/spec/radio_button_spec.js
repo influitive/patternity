@@ -25,9 +25,9 @@ describe('Radio Button Component', function() {
   }
 
   function populateTestRefs(){
-    radioButtonElement = subject.refs.radioButton.getDOMNode();
-    nativeRadioButtonElement = subject.refs.nativeRadioButton.getDOMNode();
-    labelElement = subject.refs.label.getDOMNode();
+    radioButtonElement = React.findDOMNode(subject.refs.radioButton);
+    nativeRadioButtonElement = React.findDOMNode(subject.refs.nativeRadioButton);
+    labelElement = React.findDOMNode(subject.refs.label);
   }
 
   it('will render the radio button component', function() {

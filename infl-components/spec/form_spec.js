@@ -17,7 +17,7 @@ describe('Form Component', function() {
 
   function renderForm(formComponent){
     subject = ReactTestUtils.renderIntoDocument(formComponent);
-    formElement = subject.refs.form.getDOMNode();
+    formElement = React.findDOMNode(subject.refs.form);
   }
 
   describe('Form', function () {
@@ -182,7 +182,7 @@ describe('Form Component', function() {
 
     function renderFormColumn(formColumnComponent){
       subject = ReactTestUtils.renderIntoDocument(formColumnComponent);
-      formColumnElement = subject.refs.column.getDOMNode();
+      formColumnElement = React.findDOMNode(subject.refs.column);
     }
 
     it('will render the form column', function() {
@@ -231,7 +231,7 @@ describe('Form Component', function() {
 
     function renderFormRow(formRowComponent){
       subject = ReactTestUtils.renderIntoDocument(formRowComponent);
-      formRowElement = subject.refs.row.getDOMNode();
+      formRowElement = React.findDOMNode(subject.refs.row);
     }
 
     it('will render the form row', function() {
@@ -265,7 +265,7 @@ describe('Form Component', function() {
 
     function renderFormActions(formActionsComponent){
       subject = ReactTestUtils.renderIntoDocument(formActionsComponent);
-      formActionsElement = subject.refs.actions.getDOMNode();
+      formActionsElement = React.findDOMNode(subject.refs.actions);
     }
 
     it('will render the form actions component', function() {
@@ -288,9 +288,9 @@ describe('Form Component', function() {
 
     function renderFormActions(formActionsComponent){
       subject = ReactTestUtils.renderIntoDocument(formActionsComponent);
-      formTitleElement = subject.refs.title.getDOMNode();
-      formTitleActionsElement = subject.refs.actions.getDOMNode();
-      formTitleDescriptionElement = subject.refs.description.getDOMNode();
+      formTitleElement = React.findDOMNode(subject.refs.title);
+      formTitleActionsElement = React.findDOMNode(subject.refs.actions);
+      formTitleDescriptionElement = React.findDOMNode(subject.refs.description);
     }
 
     it('will render the form title component', function() {
@@ -327,7 +327,7 @@ describe('Form Component', function() {
 
     function renderFormSection(formSectionComponent){
       subject = ReactTestUtils.renderIntoDocument(formSectionComponent);
-      formSectionElement = subject.refs.section.getDOMNode();
+      formSectionElement = React.findDOMNode(subject.refs.section);
     }
 
     it('will render the form section component', function() {
@@ -365,8 +365,8 @@ describe('Form Component', function() {
 
     function renderFormSectionTitle(formSectionTitleComponent){
       subject = ReactTestUtils.renderIntoDocument(formSectionTitleComponent);
-      formSectionTitleElement = subject.refs.title.getDOMNode();
-      formSectionTitleDescriptionElement = subject.refs.description.getDOMNode();
+      formSectionTitleElement = React.findDOMNode(subject.refs.title);
+      formSectionTitleDescriptionElement = React.findDOMNode(subject.refs.description);
     }
 
     it('will render the form section title component', function() {
@@ -396,7 +396,7 @@ describe('Form Component', function() {
 
     function renderFormAlert(formAlertComponent){
       subject = ReactTestUtils.renderIntoDocument(formAlertComponent);
-      formAlertElement = subject.refs.alert.getDOMNode();
+      formAlertElement = React.findDOMNode(subject.refs.alert);
     }
 
     it('will render the form alert component', function() {
