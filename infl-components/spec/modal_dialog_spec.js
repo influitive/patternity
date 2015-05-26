@@ -27,9 +27,9 @@ describe('Modal Dialog Component', function() {
   }
 
   function populateTestRefs(){
-    modalDialogElement = subject.refs.modalDialog.getDOMNode();
-    closeElement = subject.refs.close.getDOMNode();
-    modalElement = subject.refs.modal.getDOMNode();
+    modalDialogElement = React.findDOMNode(subject.refs.modalDialog);
+    closeElement = React.findDOMNode(subject.refs.close);
+    modalElement = React.findDOMNode(subject.refs.modal);
   }
 
   function buildModalDialog(config){

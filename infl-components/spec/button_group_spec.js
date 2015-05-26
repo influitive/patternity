@@ -13,7 +13,7 @@ describe('Button Group Component', function() {
 
   function renderButtonGroup(buttonGroupComponent){
     subject = ReactTestUtils.renderIntoDocument(buttonGroupComponent);
-    buttonGroupElement = subject.refs.buttonGroup.getDOMNode();
+    buttonGroupElement = React.findDOMNode(subject.refs.buttonGroup);
   }
 
   it('will render the button group', function() {

@@ -41,10 +41,10 @@ var TabsDropdown = React.createClass({
     this._toggleTabDropdown();
   },
   _toggleTabDropdown : function(event){
-    if(this.refs.selectTabTitle.getDOMNode().classList.contains("show-dropdown")) {
-      this.refs.selectTabTitle.getDOMNode().classList.remove("show-dropdown");
+    if(React.findDOMNode(this.refs.selectTabTitle).classList.contains("show-dropdown")) {
+      React.findDOMNode(this.refs.selectTabTitle).classList.remove("show-dropdown");
     } else {
-      this.refs.selectTabTitle.getDOMNode().classList.add("show-dropdown");
+      React.findDOMNode(this.refs.selectTabTitle).classList.add("show-dropdown");
     }
   }
 });

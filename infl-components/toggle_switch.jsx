@@ -57,7 +57,7 @@ var ToggleSwitch = React.createClass({
   },
   _clickCheckBox : function(){
     if(this.props.enabled){
-      this.refs.checkbox.getDOMNode().click();
+      React.findDOMNode(this.refs.checkbox).click();
     }
   },
   _handleChange : function(event){

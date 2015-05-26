@@ -12,7 +12,7 @@ describe('Icon Component', function() {
 
   beforeEach(function() {
     subject = ReactTestUtils.renderIntoDocument(<Icon icon={'remove'} />);
-    iconElement = subject.refs.icon.getDOMNode();
+    iconElement = React.findDOMNode(subject.refs.icon);
   });
 
   context('influitive icon', function() {

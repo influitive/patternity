@@ -12,7 +12,7 @@ describe('Sidebar', function() {
       <Sidebar></Sidebar>
     );
 
-    expect(subject.refs.sidebar.getDOMNode().childNodes.length).to.equal(0);
+    expect(React.findDOMNode(subject.refs.sidebar).childNodes.length).to.equal(0);
   });
 
   it('will have 1 element if it has 1 children', function () {
@@ -22,7 +22,7 @@ describe('Sidebar', function() {
       </Sidebar>
     );
 
-    expect(subject.refs.sidebar.getDOMNode().childNodes.length).to.equal(1);
+    expect(React.findDOMNode(subject.refs.sidebar).childNodes.length).to.equal(1);
   });
 
   it('will have many elements if it has many children', function () {
@@ -34,7 +34,7 @@ describe('Sidebar', function() {
       </Sidebar>
     );
 
-    expect(subject.refs.sidebar.getDOMNode().childNodes.length).to.equal(3);
+    expect(React.findDOMNode(subject.refs.sidebar).childNodes.length).to.equal(3);
   });
 
   describe('Sidebar.Heading', function() {
@@ -54,14 +54,14 @@ describe('Sidebar', function() {
     it('will have the correct title', function () {
       var subject = TestUtils.renderIntoDocument(<SidebarHeading {...heading} />);
 
-      expect(subject.refs.heading.getDOMNode().firstChild.firstChild.firstChild.nodeValue).to.equal(title);
+      expect(React.findDOMNode(subject.refs.heading).firstChild.firstChild.firstChild.nodeValue).to.equal(title);
     });
 
     //Not sure how to test this case within React
     xit('will NOT have the message if one is not passed', function () {
       var subject = TestUtils.renderIntoDocument(<SidebarHeading {...heading} />);
 
-      // expect(subject.refs.heading.getDOMNode().lastChild.firstChild.nodeValue).to.equal(message);
+      // expect(React.findDOMNode(subject.refs.heading).lastChild.firstChild.nodeValue).to.equal(message);
     });
 
     it('will have the message if one is passed', function () {
@@ -69,7 +69,7 @@ describe('Sidebar', function() {
       heading.message = message;
       var subject = TestUtils.renderIntoDocument(<SidebarHeading {...heading} />);
 
-      expect(subject.refs.heading.getDOMNode().lastChild.firstChild.nodeValue).to.equal(message);
+      expect(React.findDOMNode(subject.refs.heading).lastChild.firstChild.nodeValue).to.equal(message);
     });
   });
 
@@ -105,32 +105,32 @@ describe('Sidebar', function() {
     it('will have a list title', function () {
       var subject = TestUtils.renderIntoDocument(<Sidebar.NavList key={key} title={title} />);
 
-      expect(subject.refs.title.getDOMNode().firstChild.firstChild.nodeValue).to.equal(title);
+      expect(React.findDOMNode(subject.refs.title).firstChild.firstChild.nodeValue).to.equal(title);
     });
 
     describe("Build", function(){
       it('will render an empty list by default', function () {
         var subject = TestUtils.renderIntoDocument(<Sidebar.NavList key={key} title={title} />);
 
-        expect(subject.refs.list.getDOMNode().childNodes.length).to.equal(0);
+        expect(React.findDOMNode(subject.refs.list).childNodes.length).to.equal(0);
       });
 
       it('will render an empty list if an empty array is passed', function () {
         var subject = TestUtils.renderIntoDocument(<Sidebar.NavList key={key} title={title} listItems={buildListItems(0)} />);
 
-        expect(subject.refs.list.getDOMNode().childNodes.length).to.equal(0);
+        expect(React.findDOMNode(subject.refs.list).childNodes.length).to.equal(0);
       });
 
       it('will render a list with 1 item if an array of 1 item is passed', function () {
         var subject = TestUtils.renderIntoDocument(<Sidebar.NavList key={key} title={title} listItems={buildListItems(1)} />);
 
-        expect(subject.refs.list.getDOMNode().childNodes.length).to.equal(1);
+        expect(React.findDOMNode(subject.refs.list).childNodes.length).to.equal(1);
       });
 
       it('will render a list with many items if an array of many items is passed', function () {
         var subject = TestUtils.renderIntoDocument(<Sidebar.NavList key={key} title={title} listItems={buildListItems(3)} />);
 
-        expect(subject.refs.list.getDOMNode().childNodes.length).to.equal(3);
+        expect(React.findDOMNode(subject.refs.list).childNodes.length).to.equal(3);
       });
     });
 
@@ -138,12 +138,12 @@ describe('Sidebar', function() {
       it('will have a name', function () {
         var subject = TestUtils.renderIntoDocument(<Sidebar.NavList key={key} title={title} listItems={buildListItems(1)} />);
 
-        expect(subject.refs.list.getDOMNode().firstChild.firstChild.lastChild.firstChild.nodeValue).to.equal(listItemName);
+        expect(React.findDOMNode(subject.refs.list).firstChild.firstChild.lastChild.firstChild.nodeValue).to.equal(listItemName);
       });
 
       it('will create the correct component that is passed in', function () {
         var subject = TestUtils.renderIntoDocument(<Sidebar.NavList key={key} title={title} listItems={buildListItems(1)} />);
-        expect(subject.refs.list.getDOMNode().firstChild.firstChild.nodeName).to.equal(listItemComponent.toUpperCase());
+        expect(React.findDOMNode(subject.refs.list).firstChild.firstChild.nodeName).to.equal(listItemComponent.toUpperCase());
       });
     });
   });

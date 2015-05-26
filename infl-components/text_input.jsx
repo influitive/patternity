@@ -74,7 +74,7 @@ var TextInput = React.createClass({
   },
   _setInputFocus : function(autofocus){
     if(autofocus){
-      this.refs.input.getDOMNode().focus();
+      React.findDOMNode(this.refs.input).focus();
     }
   },
   _determineInputStyling : function(){

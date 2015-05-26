@@ -23,7 +23,7 @@ describe('Loading Component', function() {
   }
 
   function populateTestRefs(){
-    loadingElement = subject.refs.loading.getDOMNode();
+    loadingElement = React.findDOMNode(subject.refs.loading);
   }
 
   it('will render the loading component', function() {
