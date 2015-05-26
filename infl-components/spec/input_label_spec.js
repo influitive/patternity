@@ -25,8 +25,8 @@ describe('Input Label Component', function() {
   }
 
   function populateTestRefs(){
-    inputLabelElement = subject.refs.inputLabel.getDOMNode();
-    labelElement = subject.refs.label.getDOMNode();
+    inputLabelElement = React.findDOMNode(subject.refs.inputLabel);
+    labelElement = React.findDOMNode(subject.refs.label);
   }
 
   it('will render the input label component', function() {

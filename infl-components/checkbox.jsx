@@ -53,7 +53,7 @@ var Checkbox = React.createClass({
   },
   _clickCheckBox : function(){
     if(this.props.enabled){
-      this.refs.nativeCheckbox.getDOMNode().click();
+      React.findDOMNode(this.refs.nativeCheckbox).click();
     }
   },
   _handleChange : function(event){

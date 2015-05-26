@@ -56,7 +56,7 @@ var RadioButton = React.createClass({
   },
   _clickRadioButton : function(){
     if(this.props.enabled){
-      this.refs.nativeRadioButton.getDOMNode().click();
+      React.findDOMNode(this.refs.nativeRadioButton).click();
     }
   },
   _handleChange : function(event){

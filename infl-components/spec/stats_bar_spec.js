@@ -17,7 +17,7 @@ describe('Stats Bar Component', function() {
     }
 
     function populateTestRefs(){
-      statsBarElement = subject.refs.statsBar.getDOMNode();
+      statsBarElement = React.findDOMNode(subject.refs.statsBar);
     }
 
     it('will render the stats bar', function() {
@@ -62,9 +62,9 @@ describe('Stats Bar Component', function() {
     }
 
     function populateTestRefs(){
-      statElement = subject.refs.stat.getDOMNode();
-      statTitleElement = subject.refs.title.getDOMNode();
-      statValueElement = subject.refs.value.getDOMNode();
+      statElement = React.findDOMNode(subject.refs.stat);
+      statTitleElement = React.findDOMNode(subject.refs.title);
+      statValueElement = React.findDOMNode(subject.refs.value);
     }
 
     it('will render the stats bar stat', function() {

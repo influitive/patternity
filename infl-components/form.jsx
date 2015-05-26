@@ -62,10 +62,10 @@ var Form = React.createClass({
   },
   _determineNumberOfColumns : function(){
     var columns = [];
-    for(var i = 0; i < this.refs.form.getDOMNode().children.length; i++) {
-      if(this._isFormColumn(this.refs.form.getDOMNode().children[i])){
-        columns.push(this.refs.form.getDOMNode().children[i]);
-      } else if(this._isFormRow(this.refs.form.getDOMNode().children[i]) || this._isFormAction(this.refs.form.getDOMNode().children[i])) {
+    for(var i = 0; i < React.findDOMNode(this.refs.form).children.length; i++) {
+      if(this._isFormColumn(React.findDOMNode(this.refs.form).children[i])){
+        columns.push(React.findDOMNode(this.refs.form).children[i]);
+      } else if(this._isFormRow(React.findDOMNode(this.refs.form).children[i]) || this._isFormAction(React.findDOMNode(this.refs.form).children[i])) {
         this._styleColumns(columns);
         columns = [];
       }

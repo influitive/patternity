@@ -860,7 +860,7 @@ var Checkbox = React.createClass({displayName: "Checkbox",
   },
   _clickCheckBox : function(){
     if(this.props.enabled){
-      this.refs.nativeCheckbox.getDOMNode().click();
+      React.findDOMNode(this.refs.nativeCheckbox).click();
     }
   },
   _handleChange : function(event){
@@ -997,10 +997,10 @@ var Form = React.createClass({displayName: "Form",
   },
   _determineNumberOfColumns : function(){
     var columns = [];
-    for(var i = 0; i < this.refs.form.getDOMNode().children.length; i++) {
-      if(this._isFormColumn(this.refs.form.getDOMNode().children[i])){
-        columns.push(this.refs.form.getDOMNode().children[i]);
-      } else if(this._isFormRow(this.refs.form.getDOMNode().children[i]) || this._isFormAction(this.refs.form.getDOMNode().children[i])) {
+    for(var i = 0; i < React.findDOMNode(this.refs.form).children.length; i++) {
+      if(this._isFormColumn(React.findDOMNode(this.refs.form).children[i])){
+        columns.push(React.findDOMNode(this.refs.form).children[i]);
+      } else if(this._isFormRow(React.findDOMNode(this.refs.form).children[i]) || this._isFormAction(React.findDOMNode(this.refs.form).children[i])) {
         this._styleColumns(columns);
         columns = [];
       }
@@ -1723,7 +1723,7 @@ var RadioButton = React.createClass({displayName: "RadioButton",
   },
   _clickRadioButton : function(){
     if(this.props.enabled){
-      this.refs.nativeRadioButton.getDOMNode().click();
+      React.findDOMNode(this.refs.nativeRadioButton).click();
     }
   },
   _handleChange : function(event){
@@ -1830,7 +1830,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     });
   },
   _selectedOption : function(){
-    var select = this.refs.select.getDOMNode();
+    var select = React.findDOMNode(this.refs.select);
     return select.options[select.selectedIndex];
   },
   _buildMessage: function(){
@@ -2174,6 +2174,7 @@ module.exports = BuildTabsMixin;
 
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js":[function(require,module,exports){
+var React = require('react');
 var $ = require('jquery');
 
 var ResponsiveTabsMixin = {
@@ -2188,7 +2189,7 @@ var ResponsiveTabsMixin = {
     $(window).resize(this._adjustTabsForScreenSize);
   },
   _adjustTabsForScreenSize : function(){
-    var tabs = this.refs.tabs.getDOMNode();
+    var tabs = React.findDOMNode(this.refs.tabs);
     var visibleTabs = this._visibleTabs(tabs.children);
     var tabsMinWidthWidth = visibleTabs.length * tabs.firstChild.clientWidth;
 
@@ -2257,7 +2258,7 @@ var ResponsiveTabsMixin = {
     }
   },
   _addLastTabStyling : function(){
-    var tabMenu = this.refs.tabs.getDOMNode();
+    var tabMenu = React.findDOMNode(this.refs.tabs);
     var tabs = tabMenu.querySelectorAll(".pt-tab");
 
     for(var i=0; i < tabs.length; i++){
@@ -2272,7 +2273,7 @@ var ResponsiveTabsMixin = {
 module.exports = ResponsiveTabsMixin;
 
 
-},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx":[function(require,module,exports){
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx":[function(require,module,exports){
 var React = require('react');
 
 var BuildTabsMixin = require('./build_tabs_mixin.js');
@@ -2376,10 +2377,10 @@ var TabsDropdown = React.createClass({displayName: "TabsDropdown",
     this._toggleTabDropdown();
   },
   _toggleTabDropdown : function(event){
-    if(this.refs.selectTabTitle.getDOMNode().classList.contains("show-dropdown")) {
-      this.refs.selectTabTitle.getDOMNode().classList.remove("show-dropdown");
+    if(React.findDOMNode(this.refs.selectTabTitle).classList.contains("show-dropdown")) {
+      React.findDOMNode(this.refs.selectTabTitle).classList.remove("show-dropdown");
     } else {
-      this.refs.selectTabTitle.getDOMNode().classList.add("show-dropdown");
+      React.findDOMNode(this.refs.selectTabTitle).classList.add("show-dropdown");
     }
   }
 });
@@ -2498,7 +2499,7 @@ var TextInput = React.createClass({displayName: "TextInput",
   },
   _setInputFocus : function(autofocus){
     if(autofocus){
-      this.refs.input.getDOMNode().focus();
+      React.findDOMNode(this.refs.input).focus();
     }
   },
   _determineInputStyling : function(){
@@ -2611,7 +2612,7 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
   },
   _clickCheckBox : function(){
     if(this.props.enabled){
-      this.refs.checkbox.getDOMNode().click();
+      React.findDOMNode(this.refs.checkbox).click();
     }
   },
   _handleChange : function(event){
@@ -29301,7 +29302,9 @@ var isUnitlessNumber = {
   columnCount: true,
   flex: true,
   flexGrow: true,
+  flexPositive: true,
   flexShrink: true,
+  flexNegative: true,
   fontWeight: true,
   lineClamp: true,
   lineHeight: true,
@@ -29314,7 +29317,9 @@ var isUnitlessNumber = {
 
   // SVG-related properties
   fillOpacity: true,
-  strokeOpacity: true
+  strokeDashoffset: true,
+  strokeOpacity: true,
+  strokeWidth: true
 };
 
 /**
@@ -32401,6 +32406,7 @@ var HTMLDOMPropertyConfig = {
     headers: null,
     height: MUST_USE_ATTRIBUTE,
     hidden: MUST_USE_ATTRIBUTE | HAS_BOOLEAN_VALUE,
+    high: null,
     href: null,
     hrefLang: null,
     htmlFor: null,
@@ -32411,6 +32417,7 @@ var HTMLDOMPropertyConfig = {
     lang: null,
     list: MUST_USE_ATTRIBUTE,
     loop: MUST_USE_PROPERTY | HAS_BOOLEAN_VALUE,
+    low: null,
     manifest: MUST_USE_ATTRIBUTE,
     marginHeight: null,
     marginWidth: null,
@@ -32425,6 +32432,7 @@ var HTMLDOMPropertyConfig = {
     name: null,
     noValidate: HAS_BOOLEAN_VALUE,
     open: HAS_BOOLEAN_VALUE,
+    optimum: null,
     pattern: null,
     placeholder: null,
     poster: null,
@@ -32438,6 +32446,7 @@ var HTMLDOMPropertyConfig = {
     rowSpan: null,
     sandbox: null,
     scope: null,
+    scoped: HAS_BOOLEAN_VALUE,
     scrolling: null,
     seamless: MUST_USE_ATTRIBUTE | HAS_BOOLEAN_VALUE,
     selected: MUST_USE_PROPERTY | HAS_BOOLEAN_VALUE,
@@ -32479,7 +32488,9 @@ var HTMLDOMPropertyConfig = {
     itemID: MUST_USE_ATTRIBUTE,
     itemRef: MUST_USE_ATTRIBUTE,
     // property is supported for OpenGraph in meta tags.
-    property: null
+    property: null,
+    // IE-only attribute that controls focus behavior
+    unselectable: MUST_USE_ATTRIBUTE
   },
   DOMAttributeNames: {
     acceptCharset: 'accept-charset',
@@ -33095,7 +33106,7 @@ if ("production" !== process.env.NODE_ENV) {
       if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
         console.debug(
           'Download the React DevTools for a better development experience: ' +
-          'http://fb.me/react-devtools'
+          'https://fb.me/react-devtools'
         );
       }
     }
@@ -33122,7 +33133,7 @@ if ("production" !== process.env.NODE_ENV) {
       if (!expectedFeatures[i]) {
         console.error(
           'One or more ES5 shim/shams expected by React are not available: ' +
-          'http://fb.me/react-warning-polyfills'
+          'https://fb.me/react-warning-polyfills'
         );
         break;
       }
@@ -33130,7 +33141,7 @@ if ("production" !== process.env.NODE_ENV) {
   }
 }
 
-React.version = '0.13.1';
+React.version = '0.13.3';
 
 module.exports = React;
 
@@ -34855,7 +34866,7 @@ var ReactClass = {
         ("production" !== process.env.NODE_ENV ? warning(
           this instanceof Constructor,
           'Something is calling a React component directly. Use a factory or ' +
-          'JSX instead. See: http://fb.me/react-legacyfactory'
+          'JSX instead. See: https://fb.me/react-legacyfactory'
         ) : null);
       }
 
@@ -35067,20 +35078,38 @@ ReactComponent.prototype.forceUpdate = function(callback) {
  */
 if ("production" !== process.env.NODE_ENV) {
   var deprecatedAPIs = {
-    getDOMNode: 'getDOMNode',
-    isMounted: 'isMounted',
-    replaceProps: 'replaceProps',
-    replaceState: 'replaceState',
-    setProps: 'setProps'
+    getDOMNode: [
+      'getDOMNode',
+      'Use React.findDOMNode(component) instead.'
+    ],
+    isMounted: [
+      'isMounted',
+      'Instead, make sure to clean up subscriptions and pending requests in ' +
+      'componentWillUnmount to prevent memory leaks.'
+    ],
+    replaceProps: [
+      'replaceProps',
+      'Instead, call React.render again at the top level.'
+    ],
+    replaceState: [
+      'replaceState',
+      'Refactor your code to use setState instead (see ' +
+      'https://github.com/facebook/react/issues/3236).'
+    ],
+    setProps: [
+      'setProps',
+      'Instead, call React.render again at the top level.'
+    ]
   };
-  var defineDeprecationWarning = function(methodName, displayName) {
+  var defineDeprecationWarning = function(methodName, info) {
     try {
       Object.defineProperty(ReactComponent.prototype, methodName, {
         get: function() {
           ("production" !== process.env.NODE_ENV ? warning(
             false,
-            '%s(...) is deprecated in plain JavaScript React classes.',
-            displayName
+            '%s(...) is deprecated in plain JavaScript React classes. %s',
+            info[0],
+            info[1]
           ) : null);
           return undefined;
         }
@@ -35435,6 +35464,14 @@ var ReactCompositeComponentMixin = {
         this.getName() || 'a component'
       ) : null);
       ("production" !== process.env.NODE_ENV ? warning(
+        !inst.getDefaultProps ||
+        inst.getDefaultProps.isReactClassApproved,
+        'getDefaultProps was defined on %s, a plain JavaScript class. ' +
+        'This is only supported for classes created using React.createClass. ' +
+        'Use a static property to define defaultProps instead.',
+        this.getName() || 'a component'
+      ) : null);
+      ("production" !== process.env.NODE_ENV ? warning(
         !inst.propTypes,
         'propTypes was defined as an instance property on %s. Use a static ' +
         'property to define propTypes instead.',
@@ -35470,6 +35507,7 @@ var ReactCompositeComponentMixin = {
     this._pendingReplaceState = false;
     this._pendingForceUpdate = false;
 
+    var childContext;
     var renderedElement;
 
     var previouslyMounting = ReactLifeCycle.currentlyMountingInstance;
@@ -35484,7 +35522,8 @@ var ReactCompositeComponentMixin = {
         }
       }
 
-      renderedElement = this._renderValidatedComponent();
+      childContext = this._getValidatedChildContext(context);
+      renderedElement = this._renderValidatedComponent(childContext);
     } finally {
       ReactLifeCycle.currentlyMountingInstance = previouslyMounting;
     }
@@ -35498,7 +35537,7 @@ var ReactCompositeComponentMixin = {
       this._renderedComponent,
       rootID,
       transaction,
-      this._processChildContext(context)
+      this._mergeChildContext(context, childContext)
     );
     if (inst.componentDidMount) {
       transaction.getReactMountReady().enqueue(inst.componentDidMount, inst);
@@ -35628,7 +35667,7 @@ var ReactCompositeComponentMixin = {
    * @return {object}
    * @private
    */
-  _processChildContext: function(currentContext) {
+  _getValidatedChildContext: function(currentContext) {
     var inst = this._instance;
     var childContext = inst.getChildContext && inst.getChildContext();
     if (childContext) {
@@ -35653,6 +35692,13 @@ var ReactCompositeComponentMixin = {
           name
         ) : invariant(name in inst.constructor.childContextTypes));
       }
+      return childContext;
+    }
+    return null;
+  },
+
+  _mergeChildContext: function(currentContext, childContext) {
+    if (childContext) {
       return assign({}, currentContext, childContext);
     }
     return currentContext;
@@ -35912,6 +35958,10 @@ var ReactCompositeComponentMixin = {
       return inst.state;
     }
 
+    if (replace && queue.length === 1) {
+      return queue[0];
+    }
+
     var nextState = assign({}, replace ? queue[0] : inst.state);
     for (var i = replace ? 1 : 0; i < queue.length; i++) {
       var partial = queue[i];
@@ -35981,13 +36031,14 @@ var ReactCompositeComponentMixin = {
   _updateRenderedComponent: function(transaction, context) {
     var prevComponentInstance = this._renderedComponent;
     var prevRenderedElement = prevComponentInstance._currentElement;
-    var nextRenderedElement = this._renderValidatedComponent();
+    var childContext = this._getValidatedChildContext();
+    var nextRenderedElement = this._renderValidatedComponent(childContext);
     if (shouldUpdateReactComponent(prevRenderedElement, nextRenderedElement)) {
       ReactReconciler.receiveComponent(
         prevComponentInstance,
         nextRenderedElement,
         transaction,
-        this._processChildContext(context)
+        this._mergeChildContext(context, childContext)
       );
     } else {
       // These two IDs are actually the same! But nothing should rely on that.
@@ -36003,7 +36054,7 @@ var ReactCompositeComponentMixin = {
         this._renderedComponent,
         thisID,
         transaction,
-        context
+        this._mergeChildContext(context, childContext)
       );
       this._replaceNodeWithMarkupByID(prevComponentID, nextMarkup);
     }
@@ -36041,11 +36092,12 @@ var ReactCompositeComponentMixin = {
   /**
    * @private
    */
-  _renderValidatedComponent: function() {
+  _renderValidatedComponent: function(childContext) {
     var renderedComponent;
     var previousContext = ReactContext.current;
-    ReactContext.current = this._processChildContext(
-      this._currentElement._context
+    ReactContext.current = this._mergeChildContext(
+      this._currentElement._context,
+      childContext
     );
     ReactCurrentOwner.current = this;
     try {
@@ -36414,6 +36466,7 @@ var ReactDOM = mapObject({
 
   // SVG
   circle: 'circle',
+  clipPath: 'clipPath',
   defs: 'defs',
   ellipse: 'ellipse',
   g: 'g',
@@ -36565,11 +36618,13 @@ function assertValidProps(props) {
       'Can only set one of `children` or `props.dangerouslySetInnerHTML`.'
     ) : invariant(props.children == null));
     ("production" !== process.env.NODE_ENV ? invariant(
-      props.dangerouslySetInnerHTML.__html != null,
+      typeof props.dangerouslySetInnerHTML === 'object' &&
+      '__html' in props.dangerouslySetInnerHTML,
       '`props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`. ' +
-      'Please visit http://fb.me/react-invariant-dangerously-set-inner-html ' +
+      'Please visit https://fb.me/react-invariant-dangerously-set-inner-html ' +
       'for more information.'
-    ) : invariant(props.dangerouslySetInnerHTML.__html != null));
+    ) : invariant(typeof props.dangerouslySetInnerHTML === 'object' &&
+    '__html' in props.dangerouslySetInnerHTML));
   }
   if ("production" !== process.env.NODE_ENV) {
     ("production" !== process.env.NODE_ENV ? warning(
@@ -36877,6 +36932,8 @@ ReactDOMComponent.Mixin = {
       if (propKey === STYLE) {
         if (nextProp) {
           nextProp = this._previousStyleCopy = assign({}, nextProp);
+        } else {
+          this._previousStyleCopy = null;
         }
         if (lastProp) {
           // Unset styles on `lastProp` but not on `nextProp`.
@@ -39373,7 +39430,7 @@ function warnAndMonitorForKeyUse(message, element, parentType) {
 
   ("production" !== process.env.NODE_ENV ? warning(
     false,
-    message + '%s%s See http://fb.me/react-warning-keys for more information.',
+    message + '%s%s See https://fb.me/react-warning-keys for more information.',
     parentOrOwnerAddendum,
     childOwnerAddendum
   ) : null);
@@ -39497,9 +39554,9 @@ function warnForPropsMutation(propName, element) {
 
   ("production" !== process.env.NODE_ENV ? warning(
     false,
-    'Don\'t set .props.%s of the React component%s. ' +
-    'Instead, specify the correct value when ' +
-    'initially creating the element.%s',
+    'Don\'t set .props.%s of the React component%s. Instead, specify the ' +
+    'correct value when initially creating the element or use ' +
+    'React.cloneElement to make a new element with updated props.%s',
     propName,
     elementInfo,
     ownerInfo
@@ -43909,6 +43966,7 @@ var ReactUpdates = require("./ReactUpdates");
 var SyntheticEvent = require("./SyntheticEvent");
 
 var assign = require("./Object.assign");
+var emptyObject = require("./emptyObject");
 
 var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -44250,6 +44308,9 @@ assign(
 );
 
 ReactShallowRenderer.prototype.render = function(element, context) {
+  if (!context) {
+    context = emptyObject;
+  }
   var transaction = ReactUpdates.ReactReconcileTransaction.getPooled();
   this._render(element, transaction, context);
   ReactUpdates.ReactReconcileTransaction.release(transaction);
@@ -44390,7 +44451,7 @@ for (eventType in topLevelTypes) {
 
 module.exports = ReactTestUtils;
 
-},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCompositeComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCompositeComponent.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactEmptyComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionChildMapping.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCompositeComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCompositeComponent.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactEmptyComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./emptyObject":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionChildMapping.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45495,6 +45556,7 @@ var MUST_USE_ATTRIBUTE = DOMProperty.injection.MUST_USE_ATTRIBUTE;
 
 var SVGDOMPropertyConfig = {
   Properties: {
+    clipPath: MUST_USE_ATTRIBUTE,
     cx: MUST_USE_ATTRIBUTE,
     cy: MUST_USE_ATTRIBUTE,
     d: MUST_USE_ATTRIBUTE,
@@ -45540,6 +45602,7 @@ var SVGDOMPropertyConfig = {
     y: MUST_USE_ATTRIBUTE
   },
   DOMAttributeNames: {
+    clipPath: 'clip-path',
     fillOpacity: 'fill-opacity',
     fontFamily: 'font-family',
     fontSize: 'font-size',
@@ -48467,6 +48530,7 @@ var shouldWrap = {
   // Force wrapping for SVG elements because if they get created inside a <div>,
   // they will be initialized in the wrong namespace (and will not display).
   'circle': true,
+  'clipPath': true,
   'defs': true,
   'ellipse': true,
   'g': true,
@@ -48509,6 +48573,7 @@ var markupWrap = {
   'th': trWrap,
 
   'circle': svgWrap,
+  'clipPath': svgWrap,
   'defs': svgWrap,
   'ellipse': svgWrap,
   'g': svgWrap,
@@ -48856,6 +48921,7 @@ assign(
 function isInternalComponentType(type) {
   return (
     typeof type === 'function' &&
+    typeof type.prototype !== 'undefined' &&
     typeof type.prototype.mountComponent === 'function' &&
     typeof type.prototype.receiveComponent === 'function'
   );
@@ -50125,11 +50191,14 @@ module.exports = traverseAllChildren;
  * @providesModule update
  */
 
+ /* global hasOwnProperty:true */
+
 'use strict';
 
 var assign = require("./Object.assign");
 var keyOf = require("./keyOf");
 var invariant = require("./invariant");
+var hasOwnProperty = {}.hasOwnProperty;
 
 function shallowCopy(x) {
   if (Array.isArray(x)) {
@@ -50189,7 +50258,7 @@ function update(value, spec) {
     COMMAND_SET
   ) : invariant(typeof spec === 'object'));
 
-  if (spec.hasOwnProperty(COMMAND_SET)) {
+  if (hasOwnProperty.call(spec, COMMAND_SET)) {
     ("production" !== process.env.NODE_ENV ? invariant(
       Object.keys(spec).length === 1,
       'Cannot have more than one key in an object with %s',
@@ -50201,7 +50270,7 @@ function update(value, spec) {
 
   var nextValue = shallowCopy(value);
 
-  if (spec.hasOwnProperty(COMMAND_MERGE)) {
+  if (hasOwnProperty.call(spec, COMMAND_MERGE)) {
     var mergeObj = spec[COMMAND_MERGE];
     ("production" !== process.env.NODE_ENV ? invariant(
       mergeObj && typeof mergeObj === 'object',
@@ -50218,21 +50287,21 @@ function update(value, spec) {
     assign(nextValue, spec[COMMAND_MERGE]);
   }
 
-  if (spec.hasOwnProperty(COMMAND_PUSH)) {
+  if (hasOwnProperty.call(spec, COMMAND_PUSH)) {
     invariantArrayCase(value, spec, COMMAND_PUSH);
     spec[COMMAND_PUSH].forEach(function(item) {
       nextValue.push(item);
     });
   }
 
-  if (spec.hasOwnProperty(COMMAND_UNSHIFT)) {
+  if (hasOwnProperty.call(spec, COMMAND_UNSHIFT)) {
     invariantArrayCase(value, spec, COMMAND_UNSHIFT);
     spec[COMMAND_UNSHIFT].forEach(function(item) {
       nextValue.unshift(item);
     });
   }
 
-  if (spec.hasOwnProperty(COMMAND_SPLICE)) {
+  if (hasOwnProperty.call(spec, COMMAND_SPLICE)) {
     ("production" !== process.env.NODE_ENV ? invariant(
       Array.isArray(value),
       'Expected %s target to be an array; got %s',
@@ -50258,7 +50327,7 @@ function update(value, spec) {
     });
   }
 
-  if (spec.hasOwnProperty(COMMAND_APPLY)) {
+  if (hasOwnProperty.call(spec, COMMAND_APPLY)) {
     ("production" !== process.env.NODE_ENV ? invariant(
       typeof spec[COMMAND_APPLY] === 'function',
       'update(): expected spec of %s to be a function; got %s.',
@@ -56578,7 +56647,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     return (
       React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
         React.createElement(Pattern, {title: "challenges page demo"}, 
-          React.createElement(Tabs, {showAllTabs: false}, 
+          React.createElement(Tabs, {showAllTabs: true}, 
             React.createElement(Tabs.Tab, {title: "Available", id: "available-tab"}, 
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.available.challenges)

@@ -73,7 +73,7 @@ var SelectDropdown = React.createClass({
     });
   },
   _selectedOption : function(){
-    var select = this.refs.select.getDOMNode();
+    var select = React.findDOMNode(this.refs.select);
     return select.options[select.selectedIndex];
   },
   _buildMessage: function(){
