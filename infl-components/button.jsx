@@ -1,5 +1,4 @@
 var React = require('react');
-var Icon = require('./icon.jsx');
 
 var Button = React.createClass({
 
@@ -14,26 +13,22 @@ var Button = React.createClass({
   },
 
   render : function() {
-    var icon;
-    if (this.props.icon) {
-        icon = (<Icon icon={ this.props.icon } />);
-    }
+    return (
+      <button disabled={ this.props.disabled } className={ this._getClasses() } onClick={ this._onClick }>
+        { this.props.children }
+      </button>
+    );
+  },
 
+  _getClasses : function() {
     var classes = 'button';
     if (this.props.primary) classes += ' primary';
     else if (this.props.secondary) classes += ' secondary';
     if (this.props.className) classes += ' '+this.props.className;
-
-    return (
-      <button disabled={ this.props.disabled } className={ classes } onClick={ this._onClick }>
-        { icon }
-        <span className="text">
-            { this.props.children }
-        </span>
-      </button>
-
-    );
+    if (this.props.icon) classes += ' ic ic-'+this.props.icon;
+    return classes;
   },
+
 
   _onClick : function(e) {
     if (this.props.onClick) {
