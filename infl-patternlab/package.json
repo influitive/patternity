@@ -60,5 +60,8 @@
     "pretty-hrtime": "^1.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^0.13.3"
   }
 }

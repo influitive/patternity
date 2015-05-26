@@ -58,5 +58,8 @@
     "lodash": "^3.7.0",
     "node-bourbon": "~1.2.3",
     "react": "^0.13.3"
+  },
+  "peerDependencies": {
+    "react": "^0.13.3"
   }
 }
