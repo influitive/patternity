@@ -56706,7 +56706,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     return (
       React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
         React.createElement(Pattern, {title: "challenges page demo"}, 
-          React.createElement(Tabs, {showAllTabs: false}, 
+          React.createElement(Tabs, {showAllTabs: true}, 
             React.createElement(Tabs.Tab, {title: "Available", id: "available-tab"}, 
               React.createElement(Card.Container, null, 
                 this._buildCards(this.state.available.challenges)
