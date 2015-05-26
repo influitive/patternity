@@ -69,10 +69,14 @@ var ButtonPattern = React.createClass({
                 &lt;button&gt;HTML Button Tag&lt;/button&gt;
                 &lt;a href="javascript://" class="button"&gt;Button Link&lt;/a&gt;
               </Code.HTML>
+              <Code.Props patternProps={this._getProps()} />
             </Code>
           </Pattern.Detail>
 
           <Require>
+            <Require.JS>
+            var Button = require("patternity/infl-components/button.jsx");
+            </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/button";
             </Require.CSS>
@@ -80,6 +84,52 @@ var ButtonPattern = React.createClass({
         </Pattern>
       </div>
     );
+  },
+  _getProps : function(){
+    return {
+      icon : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "adds an icon class to the button"
+      },
+      className : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "css class name"
+      },
+      primary : {
+        type : "boolean",
+        default : "",
+        required : false,
+        description : "use primary button styling"
+      },
+      secondary : {
+        type : "boolean",
+        default : "",
+        required : false,
+        description : "use secondary button styling"
+      },
+      onClick : {
+        type : "function",
+        default : "",
+        required : false,
+        description : "on click handler"
+      },
+      href : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "URL to load (optional)"
+      },
+      disabled : {
+        type : "boolean",
+        default : "",
+        required : false,
+        description : "disabled state"
+      }
+    };
   },
   _handleChange : function(name, value){
     var currentState = this.state;
