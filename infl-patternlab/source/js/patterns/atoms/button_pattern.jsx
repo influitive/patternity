@@ -3,6 +3,7 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
+var Button            = require("../../../../infl-components/button.jsx");
 var Form            = require("../../../../infl-components/form.jsx");
 var InputLabel      = require("../../../../infl-components/input_label.jsx");
 var RadioButton     = require("../../../../infl-components/radio_button.jsx");
@@ -20,17 +21,23 @@ var ButtonPattern = React.createClass({
     return (
       <div className="button-pattern">
         <Pattern title="button">
-          <p>We have a variety of buttons that are used in specific circumstances.  The default and primary styling will be affected by white labeling.  Buttons can also have icons.  View demo to see an example.</p>
-          <p>Buttons can either be an HTML tag "button" or an anchor with a ".button" class</p>
+          <p>We have a variety of buttons that are used in specific circumstances.
+          The default and primary styling will be affected by white labeling.  Buttons can also have icons.  View demo to see an example.</p>
+          <p>Buttons can implemented using the React "Button" component, the HTML button tag, or an anchor with a ".button" class</p>
 
           <Pattern.Detail title="Button">
             <Pattern.Show>
-              <button>Default Button</button>
+              <Button>Button Component</Button><br/><br/>
+              <Button icon="check">Icon Button Component</Button><br/><br/>
+              <Button className="button-customized">Custom Button Component</Button><br/><br/>
+              <button>HTML Button tag</button><br/><br/>
+              <a href="javascript://" className="button">Button Link</a>
             </Pattern.Show>
 
             <Pattern.Demo title="Button Demo">
               <div className="demo-output">
                 <div className="demo-pattern">
+
                   <h4>Button</h4>
                   <div className={"demo-pattern-example " + this._isInverse()}>
                     <button className={this.state.type + " " + this._isInverse()}>
@@ -38,6 +45,7 @@ var ButtonPattern = React.createClass({
                       <span>Sample Button</span>
                     </button>
                   </div>
+
                 </div>
                 <Code>
                   <Code.HTML>
@@ -55,8 +63,11 @@ var ButtonPattern = React.createClass({
 
             <Code>
               <Code.HTML>
-                &lt;button&gt;Default Button&lt;/button&gt;
-                &lt;a href="#" class="button"&gt;Default Button&lt;/a&gt;
+                &lt;Button&gt;Button Component&lt;/Button&gt;
+                &lt;Button icon="check"&gt;Icon Button Component&lt;/Button&gt;
+                &lt;Button className="button-customized"&gt;Custom Button Component&lt;/Button&gt;
+                &lt;button&gt;HTML Button Tag&lt;/button&gt;
+                &lt;a href="javascript://" class="button"&gt;Button Link&lt;/a&gt;
               </Code.HTML>
             </Code>
           </Pattern.Detail>

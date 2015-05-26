@@ -159,6 +159,11 @@ button {
       }
     }
   }
+
+  &.ic:before {
+    vertical-align: bottom;
+    margin-right: 0.5em;
+  }
 }
 
 .button-dropdown {

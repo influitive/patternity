@@ -1320,6 +1320,11 @@ button.secondary.inverse:hover {
   box-shadow: none;
   background-color: transparent;
 }
+.button.ic:before,
+button.ic:before {
+  vertical-align: bottom;
+  margin-right: 0.5em;
+}
 
 .button-dropdown {
   position: relative;
@@ -3545,6 +3550,13 @@ body {
 }
 .page-pattern footer {
   text-align: center;
+}
+
+.button.button-customized {
+  font-size: 120%;
+  background-color: red;
+  color: white;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */
