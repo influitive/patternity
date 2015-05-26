@@ -51254,11 +51254,15 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
                 "<Button className=\"button-customized\">Custom Button Component</Button>" + ' ' +
                 "<button>HTML Button Tag</button>" + ' ' +
                 "<a href=\"javascript://\" class=\"button\">Button Link</a>"
-              )
+              ), 
+              React.createElement(Code.Props, {patternProps: this._getProps()})
             )
           ), 
 
           React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+            "var Button = require(\"patternity/infl-components/button.jsx\");"
+            ), 
             React.createElement(Require.CSS, null, 
               "@import \"patternity/infl-styles/button\";"
             )
@@ -51266,6 +51270,52 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
         )
       )
     );
+  },
+  _getProps : function(){
+    return {
+      icon : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "adds an icon class to the button"
+      },
+      className : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "css class name"
+      },
+      primary : {
+        type : "boolean",
+        default : "",
+        required : false,
+        description : "use primary button styling"
+      },
+      secondary : {
+        type : "boolean",
+        default : "",
+        required : false,
+        description : "use secondary button styling"
+      },
+      onClick : {
+        type : "function",
+        default : "",
+        required : false,
+        description : "on click handler"
+      },
+      href : {
+        type : "string",
+        default : "",
+        required : false,
+        description : "URL to load (optional)"
+      },
+      disabled : {
+        type : "boolean",
+        default : "",
+        required : false,
+        description : "disabled state"
+      }
+    };
   },
   _handleChange : function(name, value){
     var currentState = this.state;
