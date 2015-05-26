@@ -1,16 +1,24 @@
 var React = require('react');
+window.React = React;
+
 var $ = require('jquery');
 
 var PopoverFloater = React.createClass({
 
   propTypes : {
-    children: React.PropTypes.object
+    children: React.PropTypes.object,
+    targetElement: React.PropTypes.object
   },
 
   getInitialState: function() {
     return {
-      isVisible : false
+      isVisible : false,
+      hasBeenRendered : false
     };
+  },
+
+  isVisible: function() {
+    return this.state.isVisible;
   },
 
   componentWillMount: function() {
@@ -22,12 +30,35 @@ var PopoverFloater = React.createClass({
     this._hide();
   },
 
+  componentWillUpdate : function() {
+    if (this.state.isVisible && !this.state.hasBeenRendered) {
+      this.setState({
+        hasBeenRendered : true
+      });
+    }
+  },
+
+  componentDidUpdate : function() {
+    if (this.state.isVisible) {
+      var me = this;
+      setTimeout(function() {
+//        console.log('componentDidUpdate');
+        me._resetPosition();
+      }, 1);
+    }
+  },
+
   render: function() {
+    window.pop = this;
+
+    // this line makes it so the contents of the popover are not rendered until they are needed, and not destroyed when hidden
+    var children = (this.state.isVisible || this.state.hasBeenRendered) ? this.props.children : null;
+
     return (
       <div ref="popover" className={this._classes()}>
         <div className="arrow-top"/>
         <div className="arrow-top-inner"/>
-        { this.props.children }
+        { children }
       </div>
       );
   },
@@ -55,6 +86,20 @@ var PopoverFloater = React.createClass({
   },
 
   _show: function(targetElement) {
+
+    this.setState({
+      targetElement : targetElement,
+      isVisible : true
+    }, function() {
+      var me = this;
+      setTimeout(function() {
+        me._addEvents();
+      },50);
+    });
+  },
+
+  _resetPosition: function() {
+    var targetElement = this.state.targetElement;
     var popoverNode = React.findDOMNode(this.refs.popover);
     var popover = $(popoverNode);
     var tW = $(targetElement).width();
@@ -69,15 +114,6 @@ var PopoverFloater = React.createClass({
     var left = tOL + (tW - pW)/2;
     popoverNode.style.top = top+'px';
     popoverNode.style.left = left+'px';
-
-    this.setState({
-      isVisible : true
-    }, function() {
-      var me = this;
-      setTimeout(function() {
-        me._addEvents();
-      },50);
-    });
   },
 
   _windowClick : function(e) {
@@ -114,19 +150,30 @@ PopoverFloater.clickEvent = function(e) {
 };
 
 var Popover = React.createClass({
+
+  isOpen : function() {
+    return (this.refs.second && typeof this.refs.second.isVisible==='function')? this.refs.second.isVisible() : false;
+  },
+
   render : function() {
     var first = this.props.children[0];
     first.props['data-popover'] = 'popover';
     first.props.onClick = PopoverFloater.clickEvent.bind(this);
+//    first.ref = 'link';
 
     var second = this.props.children[1];
+//    second.ref = 'menu';
 
-    return (<span className={ this.props.className }>
+    return (<span ref="wrapper" className={ this.props.className }>
       { first }
-      <PopoverFloater ref="popover">
+      <PopoverFloater ref="popover" >
         { second }
       </PopoverFloater>
     </span>);
+  },
+
+  _getLink : function() {
+    return React.findDOMNode(this.props.children[0]);
   }
 });
 
