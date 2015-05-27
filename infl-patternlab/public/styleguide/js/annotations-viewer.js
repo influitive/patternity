@@ -218,9 +218,6 @@ var annotationsViewer = {
 	* @param  {Object}      event info
 	*/
 	receiveIframeMessage: function(event) {
-
-		// var data = (typeof event.data !== "string") ? event.data : JSON.parse(event.data);
-
 		var data;
 		if(typeof event.data !== "string") {
 			data = event.data;
