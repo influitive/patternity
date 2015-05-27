@@ -45,6 +45,12 @@ var PopoverPattern = React.createClass({
         defaultValue : "[...] ",
         required : true,
         description : "Children elements to show within the popover."
+      },
+      autoclose : {
+        type : "boolean",
+        defaultValue : "false",
+        required : false,
+        description : "clicking inside the popover will automatically close it"
       }
     };
   }
