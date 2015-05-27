@@ -101,25 +101,25 @@ var ButtonDropdownPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title to appear on button."
       },
       type : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Button type: success, danger, primary, important, secondary."
       },
       options : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of react link elements, or html hrefs."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of react link elements, or html hrefs."
       }

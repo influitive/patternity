@@ -114,7 +114,7 @@ var FormColumnPattern = React.createClass({
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of Form Row React elements."
       }

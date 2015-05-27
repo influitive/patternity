@@ -96,7 +96,7 @@ var FormSectionPattern = React.createClass({
     return {
       hideDivider : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Hides the divider for the section."
       }
@@ -106,13 +106,13 @@ var FormSectionPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the form section."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of React Elements, HTML, etc."
       }

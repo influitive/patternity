@@ -89,43 +89,43 @@ var ButtonPattern = React.createClass({
     return {
       icon : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "adds an icon class to the button"
       },
       className : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "css class name"
       },
       primary : {
         type : "boolean",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "use primary button styling"
       },
       secondary : {
         type : "boolean",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "use secondary button styling"
       },
       onClick : {
         type : "function",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "on click handler"
       },
       href : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "URL to load (optional)"
       },
       disabled : {
         type : "boolean",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "disabled state"
       }

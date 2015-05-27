@@ -50,19 +50,19 @@ var ContentPattern = React.createClass({
     return {
       hasInnerPanel : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the contents inner panel is rendered."
       },
       hasBackgroundColour : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the content has a background colour of white or is transparent."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of html, rect components, etc."
       }

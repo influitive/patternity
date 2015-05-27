@@ -50771,7 +50771,7 @@ Code.Props = React.createClass({displayName: "Props",
         React.createElement("tr", {key: key}, 
           React.createElement("td", null, key), 
           React.createElement("td", null, value.type), 
-          React.createElement("td", null, value.default), 
+          React.createElement("td", null, value.defaultValue), 
           React.createElement("td", {className: "code-props-required"}, 
             that._isPropRequired(value.required)
           ), 
@@ -51087,25 +51087,25 @@ var ButtonDropdownPattern = React.createClass({displayName: "ButtonDropdownPatte
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title to appear on button."
       },
       type : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Button type: success, danger, primary, important, secondary."
       },
       options : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of react link elements, or html hrefs."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of react link elements, or html hrefs."
       }
@@ -51252,19 +51252,19 @@ var ButtonGroupPattern = React.createClass({displayName: "ButtonGroupPattern",
     return {
       layout : {
         type : "string",
-        default : "inline",
+        defaultValue : "inline",
         required : false,
         description : "Determines if the button group is inline or stacked."
       },
       grouped : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the button group shoul be grouped, not space between the buttons."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of button(s) or link(s) with .button class."
       }

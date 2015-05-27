@@ -86,31 +86,31 @@ var TabsPattern = React.createClass({
     return {
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the tab component."
       },
       key : {
         type : "string",
-        default : "unique string",
+        defaultValue : "unique string",
         required : false,
         description : "react key of the tabs.  defaults to a unique value."
       },
       openTabIndex : {
         type : "integer",
-        default : "0",
+        defaultValue : "0",
         required : false,
         description : "Index of which tab will be open first."
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback for when the tab changes.  Called with the index of that tab."
       },
       children : {
         type : "array",
-        default : "[...] ",
+        defaultValue : "[...] ",
         required : true,
         description : "Array of Tabs.Tab components."
       }
@@ -120,13 +120,13 @@ var TabsPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title that will be displayed on the tab."
       },
       children : {
         type : "array",
-        default : "[...] ",
+        defaultValue : "[...] ",
         required : true,
         description : "Array of react elements, html, text that will be the tab content."
       }

@@ -100,19 +100,19 @@ var ButtonGroupPattern = React.createClass({
     return {
       layout : {
         type : "string",
-        default : "inline",
+        defaultValue : "inline",
         required : false,
         description : "Determines if the button group is inline or stacked."
       },
       grouped : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the button group shoul be grouped, not space between the buttons."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of button(s) or link(s) with .button class."
       }

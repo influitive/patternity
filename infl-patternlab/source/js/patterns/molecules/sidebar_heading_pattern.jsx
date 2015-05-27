@@ -55,25 +55,25 @@ var SidebarHeadingPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the Sidebar Heading."
       },
       message : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Optional message to be displayed under the title."
       },
       headingComponent : {
         type : "react link or a tag",
-        default : "undefined",
+        defaultValue : "undefined",
         required : false,
         description : "Determines if the title should be a link or not."
       },
       headingComponentParams : {
         type : "object",
-        default : "{ }",
+        defaultValue : "{ }",
         required : false,
         description : "Prams to be passed with the headingComponent if defined."
       }

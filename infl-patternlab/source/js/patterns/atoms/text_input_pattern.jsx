@@ -161,97 +161,97 @@ var TextInputPattern = React.createClass({
     return {
       type: {
         type : "string",
-        default : "text",
+        defaultValue : "text",
         required : false,
         description : "can be one of text, password, url, email, search, number."
       },
       placeholder : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "placeholder text for the input."
       },
       name: {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "name for the input used with form tag."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "html id for the input."
       },
       pattern : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "regex used to validate the input value."
       },
       message : {
         type : "string or array",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "displayed under the input used for a hint, error, etc. text."
       },
       value : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "default value of the input."
       },
       required : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is marked as required."
       },
       error : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is highlighted as an error field."
       },
       valid : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is highlighted as a valid field."
       },
       readOnly : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is read only but will still submit with a form."
       },
       disabled : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is disabled and will not submit with a form."
       },
       clearable : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true will have additional UI functionality of being able to clear the input value."
       },
       onCleared : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback that is called with the user clears the field.  Depends on clearable being true."
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback with event when the text input changes.  Only called if enabled."
       },
       autofocus : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "When true it will set the focus to the input"
       }

@@ -192,19 +192,19 @@ var FontsPattern = React.createClass({
     return {
       layout : {
         type : "string",
-        default : "inline",
+        defaultValue : "inline",
         required : false,
         description : "Determines InputLabel layout is either 'stacked' or 'inline'."
       },
       label : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Value of the label."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Input can be TextInput, SelectDropdown, ToggleSwitch, checkbox, etc."
       }

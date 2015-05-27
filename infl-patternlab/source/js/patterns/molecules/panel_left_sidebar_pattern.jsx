@@ -50,13 +50,13 @@ var PanelLeftSidebarPattern = React.createClass({
     return {
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "HTML id for the section tag."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of patternity components.  Sidebar and Content."
       }

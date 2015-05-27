@@ -116,25 +116,25 @@ var LoadingPattern = React.createClass({
     return {
       size : {
         type : "string",
-        default : "medium",
+        defaultValue : "medium",
         required : false,
         description : "one of small, medium, large"
       },
       type: {
         type : "string",
-        default : "dark",
+        defaultValue : "dark",
         required : false,
         description : "one of dark or light"
       },
       isModal : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "determines if loading should be a modal dialog."
       },
       isBlock : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "determines if loading should display inline or block."
       }

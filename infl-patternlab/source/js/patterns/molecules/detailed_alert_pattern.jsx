@@ -158,49 +158,49 @@ var DetailedAlertPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the action alert."
       },
       showIcon : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the alert will have an icon."
       },
       type : {
         type : "string",
-        default : "info",
+        defaultValue : "info",
         required : false,
         description : "Type of alert can be success, error, warning, info or ''."
       },
       showAlert : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the alert is visible or not."
       },
       onClose : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Called when alert is closed."
       },
       hideIn : {
         type : "integer",
-        default : "0",
+        defaultValue : "0",
         required : false,
         description : "If greater than zero it determines the interval until the input is hidden in seconds."
       },
       closeable : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the alert is closeable or not."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, html, react elements."
       }
@@ -210,19 +210,19 @@ var DetailedAlertPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Title of details."
       },
       action : {
         type : "react element, button",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "User action associated with details."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : true,
         description : "Array of text, html, react elements."
       }

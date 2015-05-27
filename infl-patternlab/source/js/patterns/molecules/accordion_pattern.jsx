@@ -135,43 +135,43 @@ var AccordionPattern = React.createClass({
     return {
       openSectionIndex : {
         type : "integer",
-        default : "-1",
+        defaultValue : "-1",
         required : false,
         description : "Will open the section indicated if enabled starts at 0."
       },
       uniqueIdentifier : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Unique identfier for this accordion."
       },
       sections: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : true,
         description : "Array of section objects."
       },
       'sections.header' : {
         type : "React Element, DOM Node, String",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Section header."
       },
       'sections.body' : {
         type : "React Element, DOM Node, String",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Section body."
       },
       'sections.key' : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Unique identifier for this accordion section."
       },
       'sections.isEnabled' : {
         type : "boolean",
-        default : 'true',
+        defaultValue : 'true',
         required : false,
         description : "Determines if this section is enabled or not."
       }

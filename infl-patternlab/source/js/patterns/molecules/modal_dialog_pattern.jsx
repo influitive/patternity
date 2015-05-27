@@ -203,43 +203,43 @@ var ModalDialogPattern = React.createClass({
     return {
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the modal."
       },
       closeable : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the modal can be closed."
       },
       size : {
         type : "string",
-        default : "medium",
+        defaultValue : "medium",
         required : false,
         description : "Determines modal size can be small, medium or large."
       },
       onClose : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Optional callback function when the modal is closed."
       },
       isModalOpen : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the modal is open or not defaults to false."
       },
       scrollingBody : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Controls styling to make the modal full screen height and body of the modal scroll."
       },
       lightbox : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if background is greyed out or not.  defaults to true."
       }
@@ -249,7 +249,7 @@ var ModalDialogPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title for the modal dialog."
       }
@@ -259,7 +259,7 @@ var ModalDialogPattern = React.createClass({
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, react elements or html."
       }
@@ -269,7 +269,7 @@ var ModalDialogPattern = React.createClass({
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, react elements or html."
       }

@@ -119,7 +119,7 @@ var StatsBarPattern = React.createClass({
     return {
       statType : {
         type : "string",
-        default : "points",
+        defaultValue : "points",
         required : false,
         description : "Type of stats can be points or activity"
       }
@@ -129,13 +129,13 @@ var StatsBarPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Title of the stat"
       },
       value : {
         type : "string or number",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Value of the stat"
       }

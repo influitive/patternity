@@ -116,43 +116,43 @@ var RadioButtonPattern = React.createClass({
     return {
       isChecked : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "determines if the radio button is checked or not"
       },
       enabled : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "determines if the radio button is enabled or disabled"
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback with event when the radio button changes.  Only called if enabled."
       },
       radioName : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "name of the radio button input to be used in a form."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "id of the internal radio button input."
       },
       radioLabel : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "text to accompany the radio button."
       },
       value : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "value of the radio button."
       }
@@ -162,13 +162,13 @@ var RadioButtonPattern = React.createClass({
     return {
       layout : {
         type : "string",
-        default : "inline",
+        defaultValue : "inline",
         required : false,
         description : "determines if the radio button group is displayed stacked or inline."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the internal radio button group."
       },
