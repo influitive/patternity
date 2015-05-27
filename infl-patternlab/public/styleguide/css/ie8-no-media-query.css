@@ -5,7 +5,7 @@
   list-style: none;
 }
 
-.sg-nav > li {
+.sg-nav .sg-nav-item {
   cursor: pointer;
   border-bottom: 0;
   border-right: 1px solid $sg-tint;
@@ -13,7 +13,7 @@
   position: relative;
 }
 
-.svg-nav > li > ol {
+.svg-nav .sg-nav-item .sg-nav-sub {
   position: absolute;
   top: $offset-top;
   left: 0;
