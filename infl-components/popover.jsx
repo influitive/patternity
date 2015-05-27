@@ -184,7 +184,7 @@ var Popover = React.createClass({
   render : function() {
     var first = this.props.children[0];
     var second = this.props.children[1];
-    return (<span className={ this.props.className }>
+    return (<span ref="wrapper" className={ this.props.className }>
       <span ref="link">{ first }</span>
       <PopoverFloater ref="popover" autoclose={this.props.autoclose}>
         { second }
