@@ -51423,43 +51423,43 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
     return {
       icon : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "adds an icon class to the button"
       },
       className : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "css class name"
       },
       primary : {
         type : "boolean",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "use primary button styling"
       },
       secondary : {
         type : "boolean",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "use secondary button styling"
       },
       onClick : {
         type : "function",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "on click handler"
       },
       href : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "URL to load (optional)"
       },
       disabled : {
         type : "boolean",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "disabled state"
       }
@@ -51677,37 +51677,37 @@ var CheckboxPattern = React.createClass({displayName: "CheckboxPattern",
     return {
       isChecked : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "determines if the checkbox is checked or not."
       },
       enabled : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "determines if the checkbox is enabled or disabled."
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "the onChange will be called with an event if enabled."
       },
       checkboxName : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Name of the checkbox input to be used in a form."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the internal checkbox."
       },
       checkboxLabel : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Text to accompany the checkbox."
       }
@@ -51717,13 +51717,13 @@ var CheckboxPattern = React.createClass({displayName: "CheckboxPattern",
     return {
       layout : {
         type : "string",
-        default : "inline",
+        defaultValue : "inline",
         required : false,
         description : "Determines if the checkbox group is displayed stacked or inline."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the checkbox group."
       }
@@ -52376,19 +52376,19 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
     return {
       layout : {
         type : "string",
-        default : "inline",
+        defaultValue : "inline",
         required : false,
         description : "Determines InputLabel layout is either 'stacked' or 'inline'."
       },
       label : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Value of the label."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Input can be TextInput, SelectDropdown, ToggleSwitch, checkbox, etc."
       }
@@ -52594,43 +52594,43 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
     return {
       isChecked : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "determines if the radio button is checked or not"
       },
       enabled : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "determines if the radio button is enabled or disabled"
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback with event when the radio button changes.  Only called if enabled."
       },
       radioName : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "name of the radio button input to be used in a form."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "id of the internal radio button input."
       },
       radioLabel : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "text to accompany the radio button."
       },
       value : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "value of the radio button."
       }
@@ -52640,13 +52640,13 @@ var RadioButtonPattern = React.createClass({displayName: "RadioButtonPattern",
     return {
       layout : {
         type : "string",
-        default : "inline",
+        defaultValue : "inline",
         required : false,
         description : "determines if the radio button group is displayed stacked or inline."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the internal radio button group."
       },
@@ -52747,49 +52747,49 @@ var SelectDropdownPattern = React.createClass({displayName: "SelectDropdownPatte
     return {
       key: {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "react key"
       },
       name : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "name of select"
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback for when the selected value changes.  Only called if enabled."
       },
       value : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Selected value of the dropdown."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : true,
         description : "Array of html option option group elements."
       },
       message : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Hint, error etc. displayed below the select."
       },
       disabled : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the select is disabled or not."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "HTML id for the select dropdown."
       }
@@ -52964,97 +52964,97 @@ var TextInputPattern = React.createClass({displayName: "TextInputPattern",
     return {
       type: {
         type : "string",
-        default : "text",
+        defaultValue : "text",
         required : false,
         description : "can be one of text, password, url, email, search, number."
       },
       placeholder : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "placeholder text for the input."
       },
       name: {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "name for the input used with form tag."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "html id for the input."
       },
       pattern : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "regex used to validate the input value."
       },
       message : {
         type : "string or array",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "displayed under the input used for a hint, error, etc. text."
       },
       value : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "default value of the input."
       },
       required : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is marked as required."
       },
       error : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is highlighted as an error field."
       },
       valid : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is highlighted as a valid field."
       },
       readOnly : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is read only but will still submit with a form."
       },
       disabled : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true input is disabled and will not submit with a form."
       },
       clearable : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "if true will have additional UI functionality of being able to clear the input value."
       },
       onCleared : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback that is called with the user clears the field.  Depends on clearable being true."
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback with event when the text input changes.  Only called if enabled."
       },
       autofocus : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "When true it will set the focus to the input"
       }
@@ -53325,31 +53325,31 @@ var ToggleSwitchPattern = React.createClass({displayName: "ToggleSwitchPattern",
     return {
       id: {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the internal checkbox."
       },
       enabled: {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the switch is enabled or disabled."
       },
       isOn : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Is the on/ off state of the toggle."
       },
       onChange: {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "The onChange will be called with the current state of enabled as a boolean."
       },
       inputName : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Name of the checkbox input to be used in a form."
       }
@@ -53498,43 +53498,43 @@ var AccordionPattern = React.createClass({displayName: "AccordionPattern",
     return {
       openSectionIndex : {
         type : "integer",
-        default : "-1",
+        defaultValue : "-1",
         required : false,
         description : "Will open the section indicated if enabled starts at 0."
       },
       uniqueIdentifier : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Unique identfier for this accordion."
       },
       sections: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : true,
         description : "Array of section objects."
       },
       'sections.header' : {
         type : "React Element, DOM Node, String",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Section header."
       },
       'sections.body' : {
         type : "React Element, DOM Node, String",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Section body."
       },
       'sections.key' : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Unique identifier for this accordion section."
       },
       'sections.isEnabled' : {
         type : "boolean",
-        default : 'true',
+        defaultValue : 'true',
         required : false,
         description : "Determines if this section is enabled or not."
       }
@@ -53725,61 +53725,61 @@ var ActionAlertPattern = React.createClass({displayName: "ActionAlertPattern",
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the action alert."
       },
       showIcon : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the alert will have an icon."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, html, react elements."
       },
       type : {
         type : "string",
-        default : "info",
+        defaultValue : "info",
         required : false,
         description : "Type of alert can be success, error, warning, info or ''."
       },
       showAlert : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the alert is visible or not."
       },
       onClose : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Called when alert is closed."
       },
       hideIn : {
         type : "integer",
-        default : "0",
+        defaultValue : "0",
         required : false,
         description : "If greater than zero it determines the interval until the input is hidden in seconds."
       },
       action : {
         type : "object",
-        default : "title, onClick",
+        defaultValue : "title, onClick",
         required : true,
         description : "The hash for the actions details."
       },
       "action.title" : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Action button title."
       },
       "action.onClick" : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback function for when the action is clicked."
       }
@@ -53980,49 +53980,49 @@ var AlertPattern = React.createClass({displayName: "AlertPattern",
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the action alert."
       },
       showIcon : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the alert will have an icon."
       },
       type : {
         type : "string",
-        default : "info",
+        defaultValue : "info",
         required : false,
         description : "Type of alert can be success, error, warning, info or ''."
       },
       showAlert : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the alert is visible or not."
       },
       onClose : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Called when alert is closed."
       },
       hideIn : {
         type : "integer",
-        default : "0",
+        defaultValue : "0",
         required : false,
         description : "If greater than zero it determines the interval until the input is hidden in seconds."
       },
       closeable : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the alert is closeable or not."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, html, react elements."
       }
@@ -54268,19 +54268,19 @@ var ContentPattern = React.createClass({displayName: "ContentPattern",
     return {
       hasInnerPanel : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the contents inner panel is rendered."
       },
       hasBackgroundColour : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the content has a background colour of white or is transparent."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of html, rect components, etc."
       }
@@ -54474,49 +54474,49 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the action alert."
       },
       showIcon : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the alert will have an icon."
       },
       type : {
         type : "string",
-        default : "info",
+        defaultValue : "info",
         required : false,
         description : "Type of alert can be success, error, warning, info or ''."
       },
       showAlert : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the alert is visible or not."
       },
       onClose : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Called when alert is closed."
       },
       hideIn : {
         type : "integer",
-        default : "0",
+        defaultValue : "0",
         required : false,
         description : "If greater than zero it determines the interval until the input is hidden in seconds."
       },
       closeable : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the alert is closeable or not."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, html, react elements."
       }
@@ -54526,19 +54526,19 @@ var DetailedAlertPattern = React.createClass({displayName: "DetailedAlertPattern
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Title of details."
       },
       action : {
         type : "react element, button",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "User action associated with details."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : true,
         description : "Array of text, html, react elements."
       }
@@ -54677,7 +54677,7 @@ var FormActionsPattern = React.createClass({displayName: "FormActionsPattern",
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Button Group React element."
       }
@@ -54742,7 +54742,7 @@ var FormAlertPattern = React.createClass({displayName: "FormAlertPattern",
     return {
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of Alert React Elements, preferably one."
       }
@@ -54870,7 +54870,7 @@ var FormColumnPattern = React.createClass({displayName: "FormColumnPattern",
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of Form Row React elements."
       }
@@ -54927,49 +54927,49 @@ var FormPattern = React.createClass({displayName: "FormPattern",
     return {
       acceptCharset : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "character encodings that are to be used for the form submission"
       },
       action : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "url"
       },
       autocomplete : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "one of 'on', 'off' defaults to empty string"
       },
       enctype : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "one of 'application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain'. defaults to empty string"
       },
       method : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "one of 'get', 'post'.  defaults to empty string"
       },
       name : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "name of the form"
       },
       novalidate : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "determines if html 5 validation is on."
       },
       target : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "one of '_blank', '_self', '_parent', '_top'"
       }
@@ -55039,13 +55039,13 @@ var FormRowPattern = React.createClass({displayName: "FormRowPattern",
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "array or TextInput, SelectDropdown, Checkbox, RadioButton, etc."
       },
       inputSize : {
         type : "string",
-        default : "large",
+        defaultValue : "large",
         required : false,
         description : "determines how large the input will be small, medium ro large."
       }
@@ -55155,7 +55155,7 @@ var FormSectionPattern = React.createClass({displayName: "FormSectionPattern",
     return {
       hideDivider : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Hides the divider for the section."
       }
@@ -55165,13 +55165,13 @@ var FormSectionPattern = React.createClass({displayName: "FormSectionPattern",
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the form section."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of React Elements, HTML, etc."
       }
@@ -55244,19 +55244,19 @@ var FormTitlePattern = React.createClass({displayName: "FormTitlePattern",
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Title of the form."
       },
       actions : {
         type : "React Element or DOM Node",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Optional actions for the form used in place of Form.Actions.  Actions should be Button Group."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of React Elements, HTML, etc."
       }
@@ -55318,13 +55318,13 @@ var HelpTooltipPattern = React.createClass({displayName: "HelpTooltipPattern",
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the help tooltip."
       },
       children : {
         type : "string",
-        default : "[...] ",
+        defaultValue : "[...] ",
         required : true,
         description : "Array of text, html, react elements."
       }
@@ -55454,25 +55454,25 @@ var LoadingPattern = React.createClass({displayName: "LoadingPattern",
     return {
       size : {
         type : "string",
-        default : "medium",
+        defaultValue : "medium",
         required : false,
         description : "one of small, medium, large"
       },
       type: {
         type : "string",
-        default : "dark",
+        defaultValue : "dark",
         required : false,
         description : "one of dark or light"
       },
       isModal : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "determines if loading should be a modal dialog."
       },
       isBlock : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "determines if loading should display inline or block."
       }
@@ -55751,43 +55751,43 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
     return {
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the modal."
       },
       closeable : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the modal can be closed."
       },
       size : {
         type : "string",
-        default : "medium",
+        defaultValue : "medium",
         required : false,
         description : "Determines modal size can be small, medium or large."
       },
       onClose : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Optional callback function when the modal is closed."
       },
       isModalOpen : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the modal is open or not defaults to false."
       },
       scrollingBody : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Controls styling to make the modal full screen height and body of the modal scroll."
       },
       lightbox : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if background is greyed out or not.  defaults to true."
       }
@@ -55797,7 +55797,7 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title for the modal dialog."
       }
@@ -55807,7 +55807,7 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, react elements or html."
       }
@@ -55817,7 +55817,7 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, react elements or html."
       }
@@ -55943,13 +55943,13 @@ var PanelLeftSidebarPattern = React.createClass({displayName: "PanelLeftSidebarP
     return {
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "HTML id for the section tag."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of patternity components.  Sidebar and Content."
       }
@@ -56070,13 +56070,13 @@ var PopoverPattern = React.createClass({displayName: "PopoverPattern",
     return {
       ref : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "react reference key."
       },
       children : {
         type : "array",
-        default : "[...] ",
+        defaultValue : "[...] ",
         required : true,
         description : "Children elements to show within the popover."
       }
@@ -56147,25 +56147,25 @@ var SidebarHeadingPattern = React.createClass({displayName: "SidebarHeadingPatte
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the Sidebar Heading."
       },
       message : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Optional message to be displayed under the title."
       },
       headingComponent : {
         type : "react link or a tag",
-        default : "undefined",
+        defaultValue : "undefined",
         required : false,
         description : "Determines if the title should be a link or not."
       },
       headingComponentParams : {
         type : "object",
-        default : "{ }",
+        defaultValue : "{ }",
         required : false,
         description : "Prams to be passed with the headingComponent if defined."
       }
@@ -56273,31 +56273,31 @@ var SidebarNavListPattern = React.createClass({displayName: "SidebarNavListPatte
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the Sidebar Nav List."
       },
       listItems: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : true,
         description : "Array of NavListItem objects."
       },
       "listItems.name": {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Name of the list item."
       },
       "listItems.listItemComponent": {
         type : "react element or html DOM node",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Type of component that will be used in the list.  A Link react element or a tag."
       },
       "listItems.listItemComponentProps": {
         type : "object",
-        default : "{ }",
+        defaultValue : "{ }",
         required : true,
         description : "Props to be passed the the listItemComponent."
       }
@@ -56361,7 +56361,7 @@ var SidebarPattern = React.createClass({displayName: "SidebarPattern",
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of Sidebar sub components (Heading, NavList), html, rect components, etc."
       }
@@ -56516,7 +56516,7 @@ var StatsBarPattern = React.createClass({displayName: "StatsBarPattern",
     return {
       statType : {
         type : "string",
-        default : "points",
+        defaultValue : "points",
         required : false,
         description : "Type of stats can be points or activity"
       }
@@ -56526,13 +56526,13 @@ var StatsBarPattern = React.createClass({displayName: "StatsBarPattern",
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Title of the stat"
       },
       value : {
         type : "string or number",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Value of the stat"
       }
@@ -56668,31 +56668,31 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
     return {
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the tab component."
       },
       key : {
         type : "string",
-        default : "unique string",
+        defaultValue : "unique string",
         required : false,
         description : "react key of the tabs.  defaults to a unique value."
       },
       openTabIndex : {
         type : "integer",
-        default : "0",
+        defaultValue : "0",
         required : false,
         description : "Index of which tab will be open first."
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback for when the tab changes.  Called with the index of that tab."
       },
       children : {
         type : "array",
-        default : "[...] ",
+        defaultValue : "[...] ",
         required : true,
         description : "Array of Tabs.Tab components."
       }
@@ -56702,13 +56702,13 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title that will be displayed on the tab."
       },
       children : {
         type : "array",
-        default : "[...] ",
+        defaultValue : "[...] ",
         required : true,
         description : "Array of react elements, html, text that will be the tab content."
       }
