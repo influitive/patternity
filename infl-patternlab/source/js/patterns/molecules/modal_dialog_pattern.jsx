@@ -2,6 +2,7 @@ var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
+var $ = require("jquery");
 
 var Form            = require("../../../../infl-components/form.jsx");
 var InputLabel      = require("../../../../infl-components/input_label.jsx");
@@ -173,8 +174,7 @@ var ModalDialogPattern = React.createClass({
     );
   },
   _showDemoModal : function(){
-    var demoModal = document.getElementById("demo-modal");
-    demoModal.classList.remove("close");
+    $("#demo-modal").removeClass("close");
   },
   _buildDemoJSX : function(){
     return (
