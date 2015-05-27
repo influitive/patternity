@@ -55550,6 +55550,7 @@ var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
+var $ = require("jquery");
 
 var Form            = require("../../../../infl-components/form.jsx");
 var InputLabel      = require("../../../../infl-components/input_label.jsx");
@@ -55721,8 +55722,7 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
     );
   },
   _showDemoModal : function(){
-    var demoModal = document.getElementById("demo-modal");
-    demoModal.classList.remove("close");
+    $("#demo-modal").removeClass("close");
   },
   _buildDemoJSX : function(){
     return (
@@ -55890,7 +55890,7 @@ var ModalControls = React.createClass({displayName: "ModalControls",
 module.exports = ModalDialogPattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
