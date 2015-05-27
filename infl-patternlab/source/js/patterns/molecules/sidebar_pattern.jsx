@@ -50,7 +50,7 @@ var SidebarPattern = React.createClass({
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of Sidebar sub components (Heading, NavList), html, rect components, etc."
       }

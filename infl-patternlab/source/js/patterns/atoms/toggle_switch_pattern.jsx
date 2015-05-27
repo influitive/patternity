@@ -41,31 +41,31 @@ var ToggleSwitchPattern = React.createClass({
     return {
       id: {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the internal checkbox."
       },
       enabled: {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the switch is enabled or disabled."
       },
       isOn : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Is the on/ off state of the toggle."
       },
       onChange: {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "The onChange will be called with the current state of enabled as a boolean."
       },
       inputName : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Name of the checkbox input to be used in a form."
       }

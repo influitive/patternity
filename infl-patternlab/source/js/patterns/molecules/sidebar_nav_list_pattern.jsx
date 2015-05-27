@@ -94,31 +94,31 @@ var SidebarNavListPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the Sidebar Nav List."
       },
       listItems: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : true,
         description : "Array of NavListItem objects."
       },
       "listItems.name": {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Name of the list item."
       },
       "listItems.listItemComponent": {
         type : "react element or html DOM node",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Type of component that will be used in the list.  A Link react element or a tag."
       },
       "listItems.listItemComponentProps": {
         type : "object",
-        default : "{ }",
+        defaultValue : "{ }",
         required : true,
         description : "Props to be passed the the listItemComponent."
       }

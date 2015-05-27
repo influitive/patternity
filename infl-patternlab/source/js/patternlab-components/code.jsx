@@ -157,7 +157,7 @@ Code.Props = React.createClass({
         <tr key={key}>
           <td>{key}</td>
           <td>{value.type}</td>
-          <td>{value.default}</td>
+          <td>{value.defaultValue}</td>
           <td className="code-props-required">
             {that._isPropRequired(value.required)}
           </td>

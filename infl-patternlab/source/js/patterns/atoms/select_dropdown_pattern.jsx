@@ -61,49 +61,49 @@ var SelectDropdownPattern = React.createClass({
     return {
       key: {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "react key"
       },
       name : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "name of select"
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback for when the selected value changes.  Only called if enabled."
       },
       value : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Selected value of the dropdown."
       },
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : true,
         description : "Array of html option option group elements."
       },
       message : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Hint, error etc. displayed below the select."
       },
       disabled : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the select is disabled or not."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "HTML id for the select dropdown."
       }

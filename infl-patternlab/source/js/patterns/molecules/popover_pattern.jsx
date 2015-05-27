@@ -36,13 +36,13 @@ var PopoverPattern = React.createClass({
     return {
       ref : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "react reference key."
       },
       children : {
         type : "array",
-        default : "[...] ",
+        defaultValue : "[...] ",
         required : true,
         description : "Children elements to show within the popover."
       }

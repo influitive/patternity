@@ -57,7 +57,7 @@ var FormActionsPattern = React.createClass({
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Button Group React element."
       }

@@ -136,61 +136,61 @@ var ActionAlertPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the action alert."
       },
       showIcon : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "Determines if the alert will have an icon."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of text, html, react elements."
       },
       type : {
         type : "string",
-        default : "info",
+        defaultValue : "info",
         required : false,
         description : "Type of alert can be success, error, warning, info or ''."
       },
       showAlert : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "Determines if the alert is visible or not."
       },
       onClose : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Called when alert is closed."
       },
       hideIn : {
         type : "integer",
-        default : "0",
+        defaultValue : "0",
         required : false,
         description : "If greater than zero it determines the interval until the input is hidden in seconds."
       },
       action : {
         type : "object",
-        default : "title, onClick",
+        defaultValue : "title, onClick",
         required : true,
         description : "The hash for the actions details."
       },
       "action.title" : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Action button title."
       },
       "action.onClick" : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "Callback function for when the action is clicked."
       }

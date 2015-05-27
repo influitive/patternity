@@ -59,19 +59,19 @@ var FormTitlePattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : true,
         description : "Title of the form."
       },
       actions : {
         type : "React Element or DOM Node",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Optional actions for the form used in place of Form.Actions.  Actions should be Button Group."
       },
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of React Elements, HTML, etc."
       }

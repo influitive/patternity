@@ -56,13 +56,13 @@ var FormRowPattern = React.createClass({
     return {
       children : {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "array or TextInput, SelectDropdown, Checkbox, RadioButton, etc."
       },
       inputSize : {
         type : "string",
-        default : "large",
+        defaultValue : "large",
         required : false,
         description : "determines how large the input will be small, medium ro large."
       }

@@ -113,37 +113,37 @@ var CheckboxPattern = React.createClass({
     return {
       isChecked : {
         type : "boolean",
-        default : "false",
+        defaultValue : "false",
         required : false,
         description : "determines if the checkbox is checked or not."
       },
       enabled : {
         type : "boolean",
-        default : "true",
+        defaultValue : "true",
         required : false,
         description : "determines if the checkbox is enabled or disabled."
       },
       onChange : {
         type : "function",
-        default : "empty function",
+        defaultValue : "empty function",
         required : false,
         description : "the onChange will be called with an event if enabled."
       },
       checkboxName : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Name of the checkbox input to be used in a form."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the internal checkbox."
       },
       checkboxLabel : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Text to accompany the checkbox."
       }
@@ -153,13 +153,13 @@ var CheckboxPattern = React.createClass({
     return {
       layout : {
         type : "string",
-        default : "inline",
+        defaultValue : "inline",
         required : false,
         description : "Determines if the checkbox group is displayed stacked or inline."
       },
       id : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Id for the checkbox group."
       }

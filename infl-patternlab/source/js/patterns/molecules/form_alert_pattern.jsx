@@ -51,7 +51,7 @@ var FormAlertPattern = React.createClass({
     return {
       children: {
         type : "array",
-        default : "[...]",
+        defaultValue : "[...]",
         required : false,
         description : "Array of Alert React Elements, preferably one."
       }

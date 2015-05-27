@@ -48,13 +48,13 @@ var HelpTooltipPattern = React.createClass({
     return {
       title : {
         type : "string",
-        default : "",
+        defaultValue : "",
         required : false,
         description : "Title of the help tooltip."
       },
       children : {
         type : "string",
-        default : "[...] ",
+        defaultValue : "[...] ",
         required : true,
         description : "Array of text, html, react elements."
       }
