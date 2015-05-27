@@ -1566,18 +1566,26 @@ module.exports = PanelLeftSideBar;
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx":[function(require,module,exports){
 var React = require('react');
+window.React = React;
+
 var $ = require('jquery');
 
 var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
   propTypes : {
-    children: React.PropTypes.object
+    children: React.PropTypes.object,
+    targetElement: React.PropTypes.object
   },
 
   getInitialState: function() {
     return {
-      isVisible : false
+      isVisible : false,
+      hasBeenRendered : false
     };
+  },
+
+  isVisible: function() {
+    return this.state.isVisible;
   },
 
   componentWillMount: function() {
@@ -1589,12 +1597,35 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
     this._hide();
   },
 
+  componentWillUpdate : function() {
+    if (this.state.isVisible && !this.state.hasBeenRendered) {
+      this.setState({
+        hasBeenRendered : true
+      });
+    }
+  },
+
+  componentDidUpdate : function() {
+    if (this.state.isVisible) {
+      var me = this;
+      setTimeout(function() {
+//        console.log('componentDidUpdate');
+        me._resetPosition();
+      }, 1);
+    }
+  },
+
   render: function() {
+    window.pop = this;
+
+    // this line makes it so the contents of the popover are not rendered until they are needed, and not destroyed when hidden
+    var children = (this.state.isVisible || this.state.hasBeenRendered) ? this.props.children : null;
+
     return (
       React.createElement("div", {ref: "popover", className: this._classes()}, 
         React.createElement("div", {className: "arrow-top"}), 
         React.createElement("div", {className: "arrow-top-inner"}), 
-         this.props.children
+         children 
       )
       );
   },
@@ -1622,6 +1653,20 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
   },
 
   _show: function(targetElement) {
+
+    this.setState({
+      targetElement : targetElement,
+      isVisible : true
+    }, function() {
+      var me = this;
+      setTimeout(function() {
+        me._addEvents();
+      },50);
+    });
+  },
+
+  _resetPosition: function() {
+    var targetElement = this.state.targetElement;
     var popoverNode = React.findDOMNode(this.refs.popover);
     var popover = $(popoverNode);
     var tW = $(targetElement).width();
@@ -1636,15 +1681,6 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
     var left = tOL + (tW - pW)/2;
     popoverNode.style.top = top+'px';
     popoverNode.style.left = left+'px';
-
-    this.setState({
-      isVisible : true
-    }, function() {
-      var me = this;
-      setTimeout(function() {
-        me._addEvents();
-      },50);
-    });
   },
 
   _windowClick : function(e) {
@@ -1681,19 +1717,30 @@ PopoverFloater.clickEvent = function(e) {
 };
 
 var Popover = React.createClass({displayName: "Popover",
+
+  isOpen : function() {
+    return (this.refs.second && typeof this.refs.second.isVisible==='function')? this.refs.second.isVisible() : false;
+  },
+
   render : function() {
     var first = this.props.children[0];
     first.props['data-popover'] = 'popover';
     first.props.onClick = PopoverFloater.clickEvent.bind(this);
+//    first.ref = 'link';
 
     var second = this.props.children[1];
+//    second.ref = 'menu';
 
-    return (React.createElement("span", {className:  this.props.className}, 
+    return (React.createElement("span", {ref: "wrapper", className:  this.props.className}, 
        first, 
       React.createElement(PopoverFloater, {ref: "popover"}, 
          second 
       )
     ));
+  },
+
+  _getLink : function() {
+    return React.findDOMNode(this.props.children[0]);
   }
 });
 
