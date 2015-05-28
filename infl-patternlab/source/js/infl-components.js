@@ -1570,6 +1570,14 @@ window.React = React;
 
 var $ = require('jquery');
 
+function isChildOf(child, parent) {
+  do {
+    if (child == parent) return true;
+  }
+  while (child = child.parentNode);
+  return false;
+}
+
 var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
   propTypes : {
@@ -1684,6 +1692,10 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
   },
 
   _windowClick : function(e) {
+    var popoverNode = React.findDOMNode(this.refs.popover);
+    var isChild = isChildOf(e.target, popoverNode);
+    if (isChild && !this.props.autoclose) return;
+
     this.setState({
       isVisible : false
     }, function() {
@@ -1717,30 +1729,43 @@ PopoverFloater.clickEvent = function(e) {
 };
 
 var Popover = React.createClass({displayName: "Popover",
+  propTypes: {
+    autoclose: React.PropTypes.bool,
+  },
 
-  isOpen : function() {
-    return (this.refs.second && typeof this.refs.second.isVisible==='function')? this.refs.second.isVisible() : false;
+  componentDidMount: function() {
+    this._onClickEvent = this._onClick.bind(this);
+    var a = this.refs.link.getDOMNode();
+    if (a && a.childNodes[0]) {
+      a.childNodes[0].addEventListener('click', this._onClickEvent);
+    }
+  },
+
+  componentWillUnmount: function() {
+    var a = this.refs.link.getDOMNode();
+    if (a && a.childNodes[0]) {
+      a.childNodes[0].removeEventListener('click', this._onClickEvent);
+    }
   },
 
   render : function() {
     var first = this.props.children[0];
-    first.props['data-popover'] = 'popover';
-    first.props.onClick = PopoverFloater.clickEvent.bind(this);
-//    first.ref = 'link';
-
     var second = this.props.children[1];
-//    second.ref = 'menu';
-
     return (React.createElement("span", {ref: "wrapper", className:  this.props.className}, 
-       first, 
-      React.createElement(PopoverFloater, {ref: "popover"}, 
+      React.createElement("span", {ref: "link"},  first ), 
+      React.createElement(PopoverFloater, {ref: "popover", autoclose: this.props.autoclose}, 
          second 
       )
     ));
   },
 
-  _getLink : function() {
-    return React.findDOMNode(this.props.children[0]);
+  _onClick : function(e) {
+    var popover = this.refs.popover.getDOMNode();
+    var a = this.refs.link.getDOMNode();
+    this.refs.popover.toggle(a);
+    e.preventDefault();
+    e.stopPropagation();
+    e.cancelBubble = true;
   }
 });
 
@@ -56079,6 +56104,12 @@ var PopoverPattern = React.createClass({displayName: "PopoverPattern",
         defaultValue : "[...] ",
         required : true,
         description : "Children elements to show within the popover."
+      },
+      autoclose : {
+        type : "boolean",
+        defaultValue : "false",
+        required : false,
+        description : "clicking inside the popover will automatically close it"
       }
     };
   }
