@@ -3087,6 +3087,11 @@ DIV.pt-popover.is-visible {
   position: relative;
   height: 400px;
 }
+.pt-challenge-card * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .pt-challenge-card .pt-card-notice {
   position: absolute;
   top: 0px;
