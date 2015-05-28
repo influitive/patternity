@@ -2,6 +2,12 @@
   position: relative;
   height: 400px;
 
+  & * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   .pt-card-notice {
     position: absolute;
     top: 0px;
