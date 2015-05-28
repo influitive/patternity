@@ -14,6 +14,18 @@ html {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url("../fonts/ProximaNova-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Proxima Nova Light Bold';
+  src: url("../fonts/ProximaNova-Semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Proxima Nova Light Italic';
+  src: url("../fonts/ProximaNova-LightIt.ttf") format("truetype");
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -3157,18 +3169,6 @@ DIV.pt-popover.is-visible {
   background-color: #27B8D9;
 }
 
-@font-face {
-  font-family: 'Proxima Nova Light';
-  src: url("../fonts/ProximaNova-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Proxima Nova Light Bold';
-  src: url("../fonts/ProximaNova-Semibold.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Proxima Nova Light Italic';
-  src: url("../fonts/ProximaNova-LightIt.ttf") format("truetype");
-}
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;

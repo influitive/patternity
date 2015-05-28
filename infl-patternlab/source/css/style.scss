@@ -23,7 +23,6 @@ $path_to_proxima_nova_light_italic_font : url('../fonts/ProximaNova-LightIt.ttf'
   font-weight: normal;
   font-style: normal;
 }
-@import "infl-styles/all";
 
 @font-face {
   font-family: 'Proxima Nova Light';
@@ -39,6 +38,8 @@ $path_to_proxima_nova_light_italic_font : url('../fonts/ProximaNova-LightIt.ttf'
   font-family: 'Proxima Nova Light Italic';
   src: $path_to_proxima_nova_light_italic_font format('truetype');
 }
+
+@import "infl-styles/all";
 
 //to force the styles to take affect in the pattern lab
 body {
