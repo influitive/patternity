@@ -56624,6 +56624,12 @@ var TextInput       = require("../../../../infl-components/text_input.jsx");
 var Tabs   = require("../../../../infl-components/tabs.jsx");
 
 var TabsPattern = React.createClass({displayName: "TabsPattern",
+  getInitialState : function(){
+    return {
+      showAllTabs : false,
+      openTabIndex : null
+    };
+  },
   render : function(){
     return (
       React.createElement("div", {className: "tabs-pattern"}, 
@@ -56631,6 +56637,9 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
           React.createElement("p", null, "The Tabs component handles displaying data in a tab format.  It has one sub-component Tab."), 
 
           React.createElement(Pattern.Detail, {title: "Tabs"}, 
+            React.createElement("p", null, "Tabs have 2 ways of being responsive."), 
+            React.createElement("p", null, "The first (showAllTabs=false/default) is to hide the right most tabs as the screen shrinks.  The idea being that the most important items are on the left, they will be prioritized as the screen shrinks."), 
+            React.createElement("p", null, "The second (showAllTabs=true) is to convert the tabs into a dropdown menu when there is not enough room to display all the tabs"), 
             React.createElement(Pattern.Show, null, 
               React.createElement(Tabs, null, 
                 React.createElement(Tabs.Tab, {title: "First Tab"}, 
@@ -56646,6 +56655,48 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
                   React.createElement("p", null, "This is the third tabs content.")
                 )
               )
+            ), 
+
+            React.createElement(Pattern.Demo, {title: "Tabs Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Tabs"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(Tabs, {showAllTabs: this.state.showAllTabs, openTabIndex: this.state.openTabIndex}, 
+                      React.createElement(Tabs.Tab, {title: "First Tab"}, 
+                        React.createElement("h2", null, "First Tab"), 
+                        React.createElement("p", null, "This is the first tabs content.")
+                      ), 
+                      React.createElement(Tabs.Tab, {title: "Second Tab"}, 
+                        React.createElement("h2", null, "Second Tab"), 
+                        React.createElement("p", null, "This is the second tabs content.")
+                      ), 
+                      React.createElement(Tabs.Tab, {title: "Third Tab"}, 
+                        React.createElement("h2", null, "Third Tab"), 
+                        React.createElement("p", null, "This is the third tabs content.")
+                      )
+                    )
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.JSX, null, 
+                    this._buildDemoJSX()
+                  )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
+                )
+              ), 
+              React.createElement(TabsControls, {
+                showAllTabs: this.state.showAllTabs, 
+                openTabIndex: this.state.openTabIndex, 
+                view: this.state.view, 
+                onChange: this._handleChange})
             ), 
 
             React.createElement(Code, null, 
@@ -56695,6 +56746,37 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
       )
     );
   },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+  },
+  _buildDemoProps : function(){
+    return (
+      '{' +
+        '\topenTabIndex : ' + this.state.openTabIndex  + '",\n' +
+        '\tshowAllTabs : ' + this.state.showAllTabs  + '\n' +
+      '}'
+    );
+  },
+  _buildDemoJSX : function(){
+    return (
+      '<Tabs showAllTabs={' + this.state.showAllTabs + '} openTabIndex={' + this.state.openTabIndex + '} >' +
+        '\t<Tabs.Tab title="First Tab">\n' +
+          '\t\t<h2>First Tab</h2>\n' +
+          '\t\t<p>This is the first tabs content.</p>\n' +
+        '\t</Tabs.Tab>\n' +
+        '\t<Tabs.Tab title="Second Tab">\n' +
+          '\t\t<h2>Second Tab</h2>\n' +
+          '\t\t<p>This is the second tabs content.</p>\n' +
+        '\t</Tabs.Tab>\n' +
+        '\t<Tabs.Tab title="Third Tab">\n' +
+          '\t\t<h2>Third Tab</h2>\n' +
+          '\t\t<p>This is the third tabs content.</p>\n' +
+        '\t</Tabs.Tab>\n' +
+      '</Tabs>'
+    );
+  },
   _buildTabsProps : function(){
     return {
       id : {
@@ -56726,6 +56808,12 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
         defaultValue : "[...] ",
         required : true,
         description : "Array of Tabs.Tab components."
+      },
+      showAllTabs : {
+        type : "boolean",
+        defaultValue : "false",
+        required : false,
+        description : "When true it will enable tabs displaying in a drop down when the number of tabs don't fit on the page.  When false the right most tab is hidden when the tabs don't fit the width of the page."
       }
     };
   },
@@ -56744,6 +56832,57 @@ var TabsPattern = React.createClass({displayName: "TabsPattern",
         description : "Array of react elements, html, text that will be the tab content."
       }
     };
+  }
+});
+
+var TabsControls = React.createClass({displayName: "TabsControls",
+  getDefaultProps : function(){
+    return {
+      showAllTabs : true,
+      onChange : function(){},
+      openTabIndex : null
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Tabs Controls"), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Show All Tabs"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.showAllTabs, onChange: this._handleBooleanChange, radioName: "showAllTabs", radioLabel: "True", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.showAllTabs, onChange: this._handleBooleanChange, radioName: "showAllTabs", radioLabel: "False", value: "false"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement("p", null, "To view the responsive feature of the tabs see the ", React.createElement("a", {href: "javascript:void(0);", onClick: this._goToChallnegePageDemo}, "Challenge Page Demo"))
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "openTabIndex"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.openTabIndex === null, onChange: this._handleOpenTabIndexChange, radioName: "openTabIndex", radioLabel: "No open tab index", value: "null"}), 
+                React.createElement(RadioButton, {isChecked: this.props.openTabIndex === 0, onChange: this._handleOpenTabIndexChange, radioName: "openTabIndex", radioLabel: "First Tab", value: "0"}), 
+                React.createElement(RadioButton, {isChecked: this.props.openTabIndex === 1, onChange: this._handleOpenTabIndexChange, radioName: "openTabIndex", radioLabel: "Second Tab", value: "1"}), 
+                React.createElement(RadioButton, {isChecked: this.props.openTabIndex === 2, onChange: this._handleOpenTabIndexChange, radioName: "openTabIndex", radioLabel: "Third Tab", value: "2"})
+              )
+            )
+          )
+        )
+      )
+    );
+  },
+  _handleBooleanChange : function(event){
+    this.props.onChange(event.target.name, event.target.value === "true");
+  },
+  _handleOpenTabIndexChange : function(event){
+    var value = (event.target.value === "null") ? null : parseInt(event.target.value);
+    this.props.onChange(event.target.name, value);
+  },
+  _goToChallnegePageDemo : function(){
+    var challengesLink = document.getElementById("link-challenges-page-demo");
+    challengesLink.click();
   }
 });
 
