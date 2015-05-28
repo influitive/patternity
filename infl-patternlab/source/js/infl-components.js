@@ -56895,6 +56895,10 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 
 var _ = require("lodash");
 
+var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
+var Sidebar           = require("../../../../infl-components/sidebar.jsx");
+var Content           = require("../../../../infl-components/content.jsx");
+
 var Tabs  = require("../../../../infl-components/tabs.jsx");
 var ButtonGroup  = require("../../../../infl-components/button_group.jsx");
 var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.jsx");
@@ -57066,39 +57070,92 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             status : "completed",
             startedOn : "",
             unlocked : false
-          }]
-        }
+          }
+        ]
+      },
+      tabStyling : "hide-tabs"
     };
   },
   render : function(){
     return (
       React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
         React.createElement(Pattern, {title: "challenges page demo"}, 
-          React.createElement(Tabs, {showAllTabs: true}, 
-            React.createElement(Tabs.Tab, {title: "Available", id: "available-tab"}, 
-              React.createElement(Card.Container, null, 
-                this._buildCards(this.state.available.challenges)
-              )
+          React.createElement(PanelLeftSidebar, {id: "form-page"}, 
+            React.createElement(Sidebar, null, 
+              React.createElement(Sidebar.Heading, {title: "Responsive Tabs Options"}), 
+              React.createElement(Sidebar.NavList, {
+                  title: "Select Responsive Styling", 
+                  key: "responsive-styling", 
+                  listItems: this._responsiveSizingItems()})
             ), 
-            React.createElement(Tabs.Tab, {title: "Started", id: "started-tab"}, 
-              React.createElement(Card.Container, null, 
-                this._buildCards(this.state.started.challenges)
-              )
-            ), 
-            React.createElement(Tabs.Tab, {title: "Later", id: "later-tab"}, 
-              React.createElement(Card.Container, null, 
-                this._buildCards(this.state.later.challenges)
-              )
-            ), 
-            React.createElement(Tabs.Tab, {title: "Complete", id: "complete-tab"}, 
-              React.createElement(Card.Container, null, 
-                this._buildCards(this.state.completed.challenges)
+            React.createElement(Content, null, 
+              React.createElement(Tabs, {showAllTabs: this._tabStyling()}, 
+                React.createElement(Tabs.Tab, {title: "Available", id: "available-tab"}, 
+                  React.createElement(Card.Container, null, 
+                    this._buildCards(this.state.available.challenges)
+                  )
+                ), 
+                React.createElement(Tabs.Tab, {title: "Started", id: "started-tab"}, 
+                  React.createElement(Card.Container, null, 
+                    this._buildCards(this.state.started.challenges)
+                  )
+                ), 
+                React.createElement(Tabs.Tab, {title: "Later", id: "later-tab"}, 
+                  React.createElement(Card.Container, null, 
+                    this._buildCards(this.state.later.challenges)
+                  )
+                ), 
+                React.createElement(Tabs.Tab, {title: "Complete", id: "complete-tab"}, 
+                  React.createElement(Card.Container, null, 
+                    this._buildCards(this.state.completed.challenges)
+                  )
+                )
               )
             )
           )
         )
       )
     );
+  },
+  _responsiveSizingItems : function(){
+    var that = this;
+    return [
+      {
+        name : "Hide Tabs",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : this._isActiveStyling("hide-tabs"),
+          href : "javascript:void(0);",
+          onClick : function(){
+            that._switchActiveStyling("hide-tabs");
+          }
+        },
+        key : "hide-tabs"
+      },
+      {
+        name : "Show All Tabs",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : this._isActiveStyling("show-all-tabs"),
+          href : "javascript:void(0);",
+          onClick : function(){
+            that._switchActiveStyling("show-all-tabs");
+          }
+        },
+        key : "two-column"
+      }
+    ];
+  },
+  _tabStyling : function(){
+    return this.state.tabStyling === "show-all-tabs";
+  },
+  _isActiveStyling : function(styling){
+    return styling === this.state.tabStyling ? "active" : "";
+  },
+  _switchActiveStyling : function(styling){
+    this.setState({
+      tabStyling : styling
+    });
   },
   _buildCards : function(cards){
     var that = this;
@@ -57261,7 +57318,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
 module.exports = ChallengesPagePattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 

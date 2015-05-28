@@ -3,6 +3,10 @@ var Pattern   = require('../../patternlab-components/pattern.jsx');
 
 var _ = require("lodash");
 
+var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
+var Sidebar           = require("../../../../infl-components/sidebar.jsx");
+var Content           = require("../../../../infl-components/content.jsx");
+
 var Tabs  = require("../../../../infl-components/tabs.jsx");
 var ButtonGroup  = require("../../../../infl-components/button_group.jsx");
 var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.jsx");
@@ -174,39 +178,92 @@ var ChallengesPagePattern = React.createClass({
             status : "completed",
             startedOn : "",
             unlocked : false
-          }]
-        }
+          }
+        ]
+      },
+      tabStyling : "hide-tabs"
     };
   },
   render : function(){
     return (
       <div className="challenges-page-pattern page-pattern">
         <Pattern title="challenges page demo">
-          <Tabs showAllTabs={true}>
-            <Tabs.Tab title="Available" id="available-tab">
-              <Card.Container>
-                {this._buildCards(this.state.available.challenges)}
-              </Card.Container>
-            </Tabs.Tab>
-            <Tabs.Tab title="Started" id="started-tab">
-              <Card.Container>
-                {this._buildCards(this.state.started.challenges)}
-              </Card.Container>
-            </Tabs.Tab>
-            <Tabs.Tab title="Later" id="later-tab">
-              <Card.Container>
-                {this._buildCards(this.state.later.challenges)}
-              </Card.Container>
-            </Tabs.Tab>
-            <Tabs.Tab title="Complete" id="complete-tab">
-              <Card.Container>
-                {this._buildCards(this.state.completed.challenges)}
-              </Card.Container>
-            </Tabs.Tab>
-          </Tabs>
+          <PanelLeftSidebar id="form-page">
+            <Sidebar>
+              <Sidebar.Heading title="Responsive Tabs Options" />
+              <Sidebar.NavList
+                  title="Select Responsive Styling"
+                  key="responsive-styling"
+                  listItems={this._responsiveSizingItems()} />
+            </Sidebar>
+            <Content>
+              <Tabs showAllTabs={this._tabStyling()}>
+                <Tabs.Tab title="Available" id="available-tab">
+                  <Card.Container>
+                    {this._buildCards(this.state.available.challenges)}
+                  </Card.Container>
+                </Tabs.Tab>
+                <Tabs.Tab title="Started" id="started-tab">
+                  <Card.Container>
+                    {this._buildCards(this.state.started.challenges)}
+                  </Card.Container>
+                </Tabs.Tab>
+                <Tabs.Tab title="Later" id="later-tab">
+                  <Card.Container>
+                    {this._buildCards(this.state.later.challenges)}
+                  </Card.Container>
+                </Tabs.Tab>
+                <Tabs.Tab title="Complete" id="complete-tab">
+                  <Card.Container>
+                    {this._buildCards(this.state.completed.challenges)}
+                  </Card.Container>
+                </Tabs.Tab>
+              </Tabs>
+            </Content>
+          </PanelLeftSidebar>
         </Pattern>
       </div>
     );
+  },
+  _responsiveSizingItems : function(){
+    var that = this;
+    return [
+      {
+        name : "Hide Tabs",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : this._isActiveStyling("hide-tabs"),
+          href : "javascript:void(0);",
+          onClick : function(){
+            that._switchActiveStyling("hide-tabs");
+          }
+        },
+        key : "hide-tabs"
+      },
+      {
+        name : "Show All Tabs",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : this._isActiveStyling("show-all-tabs"),
+          href : "javascript:void(0);",
+          onClick : function(){
+            that._switchActiveStyling("show-all-tabs");
+          }
+        },
+        key : "two-column"
+      }
+    ];
+  },
+  _tabStyling : function(){
+    return this.state.tabStyling === "show-all-tabs";
+  },
+  _isActiveStyling : function(styling){
+    return styling === this.state.tabStyling ? "active" : "";
+  },
+  _switchActiveStyling : function(styling){
+    this.setState({
+      tabStyling : styling
+    });
   },
   _buildCards : function(cards){
     var that = this;
