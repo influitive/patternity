@@ -112,13 +112,13 @@ var PopoverFloater = React.createClass({
     var popover = $(popoverNode);
     var tW = $(targetElement).width();
     var tH = $(targetElement).height();
-    var tOT = targetElement.offsetTop;
-    var tOL = targetElement.offsetLeft;
+    var tOT = $(targetElement).position().top;
+    var tOL = $(targetElement).position().left;
     var pW = popover.width();
     //var pH = popover.height();
 
     // position the popover centered below the target element
-    var top = tOT + tH + 18;
+    var top = tOT + tH + 10;
     var left = tOL + (tW - pW)/2;
     popoverNode.style.top = top+'px';
     popoverNode.style.left = left+'px';
@@ -184,8 +184,9 @@ var Popover = React.createClass({
   render : function() {
     var first = this.props.children[0];
     var second = this.props.children[1];
-    return (<span ref="wrapper" className={ this.props.className }>
-      <span ref="link">{ first }</span>
+    var classes = 'pt-popoverwrapper '+this.props.className;
+    return (<span ref="wrapper" className={ classes }>
+      <span className="pt-popover-link" ref="link">{ first }</span>
       <PopoverFloater ref="popover" autoclose={this.props.autoclose}>
         { second }
       </PopoverFloater>
