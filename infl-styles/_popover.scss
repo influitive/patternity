@@ -60,6 +60,16 @@ DIV.pt-popover {
   }
 }
 
+.pt-popover-wrapper {
+  position:relative;
+  box-sizing: border-box;
+}
+
+.pt-popover-link {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
 DIV.pt-popover.is-visible {
   display:block;
 }
