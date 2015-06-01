@@ -100,9 +100,15 @@ var icons = {
   
     "search": "search",
   
+    "share-facebook-circular": "share-facebook-circular",
+  
     "share-facebook": "share-facebook",
   
+    "share-linkedin-circular": "share-linkedin-circular",
+  
     "share-linkedin": "share-linkedin",
+  
+    "share-twitter-circular": "share-twitter-circular",
   
     "share-twitter": "share-twitter",
   
