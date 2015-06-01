@@ -104,6 +104,14 @@
 //      }
     }
 
+    $caseStudyColour : #8533D6;
+    $reviewColour : #CCBC0A;
+    $surveyColour : #CC0A0A;
+    $referralColour : #0753B5;
+    $educationalColour : #3F8F03;
+    $funColour : #CC7C0C;
+    $socialSharingColour : #40B6DE;
+
     .pt-challenge-type {
       margin: 0px 0px 1.3em;
       padding: 2px 10px;
@@ -113,12 +121,32 @@
       cursor : pointer;
       font-size: 13px;
 
-      &.webinar {
-        background-color: #D6960D;
+      &.social-sharing {
+        background-color: $socialSharingColour;
       }
 
-      &.social {
-        background-color: #27B8D9;
+      &.fun {
+        background-color: $funColour;
+      }
+
+      &.educational {
+        background-color: $educationalColour;
+      }
+
+      &.referral {
+        background-color: $referralColour;
+      }
+
+      &.survey {
+        background-color: $surveyColour;
+      }
+
+      &.review {
+        background-color: $reviewColour;
+      }
+
+      &.case-study {
+        background-color: $caseStudyColour;
       }
     }
   }

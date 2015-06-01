@@ -63,10 +63,18 @@ var ChallengeType = React.createClass({
   },
   render : function(){
     return (
-      <span className={"pt-challenge-type " + this.props.type.toLowerCase()} onClick={this.props.onClick}>
+      <span className={"pt-challenge-type " + this._formatChallengeTypeClassName()} onClick={this.props.onClick}>
         {this.props.type.toLowerCase()}
       </span>
     );
+  },
+  _formatChallengeTypeClassName : function(){
+    var typeArray = this.props.type.split(' ');
+    var typeClassName = "";
+    for( var i = 0; i < typeArray.length; i++){
+      typeClassName += typeArray[i].toLowerCase() + "-";
+    }
+    return typeClassName.substring(0, typeClassName.length - 1);
   }
 });
 

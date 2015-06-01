@@ -2901,7 +2901,7 @@ DIV.pt-popover DIV.pt-popovermenu {
 DIV.pt-popover DIV.pt-popovermenu > A {
   display: block;
   padding: 0em 1em;
-  display: block;
+  white-space: nowrap;
   vertical-align: top;
   line-height: 1.8em;
   text-decoration: none;
@@ -2939,6 +2939,16 @@ DIV.pt-popover DIV.arrow-top-inner {
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
   border-bottom: 14px solid white;
+}
+
+.pt-popover-wrapper {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.pt-popover-link {
+  box-sizing: border-box;
+  display: inline-block;
 }
 
 DIV.pt-popover.is-visible {
@@ -3168,11 +3178,26 @@ DIV.pt-popover.is-visible {
   cursor: pointer;
   font-size: 13px;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.webinar {
-  background-color: #D6960D;
+.pt-challenge-card .pt-challenge-details .pt-challenge-type.social-sharing {
+  background-color: #40B6DE;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.social {
-  background-color: #27B8D9;
+.pt-challenge-card .pt-challenge-details .pt-challenge-type.fun {
+  background-color: #CC7C0C;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type.educational {
+  background-color: #3F8F03;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type.referral {
+  background-color: #0753B5;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type.survey {
+  background-color: #CC0A0A;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type.review {
+  background-color: #CCBC0A;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type.case-study {
+  background-color: #8533D6;
 }
 
 body {

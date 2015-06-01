@@ -689,10 +689,18 @@ var ChallengeType = React.createClass({displayName: "ChallengeType",
   },
   render : function(){
     return (
-      React.createElement("span", {className: "pt-challenge-type " + this.props.type.toLowerCase(), onClick: this.props.onClick}, 
+      React.createElement("span", {className: "pt-challenge-type " + this._formatChallengeTypeClassName(), onClick: this.props.onClick}, 
         this.props.type.toLowerCase()
       )
     );
+  },
+  _formatChallengeTypeClassName : function(){
+    var typeArray = this.props.type.split(' ');
+    var typeClassName = "";
+    for( var i = 0; i < typeArray.length; i++){
+      typeClassName += typeArray[i].toLowerCase() + "-";
+    }
+    return typeClassName.substring(0, typeClassName.length - 1);
   }
 });
 
@@ -1679,13 +1687,13 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
     var popover = $(popoverNode);
     var tW = $(targetElement).width();
     var tH = $(targetElement).height();
-    var tOT = targetElement.offsetTop;
-    var tOL = targetElement.offsetLeft;
+    var tOT = $(targetElement).position().top;
+    var tOL = $(targetElement).position().left;
     var pW = popover.width();
     //var pH = popover.height();
 
     // position the popover centered below the target element
-    var top = tOT + tH + 18;
+    var top = tOT + tH + 10;
     var left = tOL + (tW - pW)/2;
     popoverNode.style.top = top+'px';
     popoverNode.style.left = left+'px';
@@ -1751,8 +1759,9 @@ var Popover = React.createClass({displayName: "Popover",
   render : function() {
     var first = this.props.children[0];
     var second = this.props.children[1];
-    return (React.createElement("span", {ref: "wrapper", className:  this.props.className}, 
-      React.createElement("span", {ref: "link"},  first ), 
+    var classes = 'pt-popoverwrapper '+this.props.className;
+    return (React.createElement("span", {ref: "wrapper", className:  classes }, 
+      React.createElement("span", {className: "pt-popover-link", ref: "link"},  first ), 
       React.createElement(PopoverFloater, {ref: "popover", autoclose: this.props.autoclose}, 
          second 
       )
@@ -56921,7 +56930,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "LinkedIn referral help",
             stage_count : 0,
             stage_types : [],
-            type : "Webinar",
+            type : "Social Sharing",
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "",
@@ -56942,7 +56951,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "LinkedIn referral help",
             stage_count : 0,
             stage_types : [],
-            type : "Social",
+            type : "Fun",
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "",
@@ -56963,7 +56972,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "Some Challenge",
             stage_count : 0,
             stage_types : [],
-            type : "Social",
+            type : "Educational",
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "",
@@ -56984,7 +56993,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "Some Challenge",
             stage_count : 0,
             stage_types : [],
-            type : "Social",
+            type : "Referral",
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "",
@@ -57005,7 +57014,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "LinkedIn referral help",
             stage_count : 0,
             stage_types : [],
-            type : "Social",
+            type : "Survey",
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "",
@@ -57031,7 +57040,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "LinkedIn referral help",
             stage_count : 0,
             stage_types : [],
-            type : "Social",
+            type : "Review",
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "",
@@ -57061,7 +57070,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "LinkedIn referral help",
             stage_count : 0,
             stage_types : [],
-            type : "Social",
+            type : "Case Study",
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "2015-03-02T14:46:34.913-05:00",
