@@ -50,10 +50,6 @@ var icons = {
   
     "exclamation-circle-o": "exclamation-circle-o",
   
-    "fb-filled": "fb-filled",
-  
-    "fb": "fb",
-  
     "flag": "flag",
   
     "gear": "gear",
@@ -67,10 +63,6 @@ var icons = {
     "heart": "heart",
   
     "info-circle-o": "info-circle-o",
-  
-    "linkedin-filled": "linkedin-filled",
-  
-    "linkedin": "linkedin",
   
     "list": "list",
   
@@ -129,10 +121,6 @@ var icons = {
     "times": "times",
   
     "trash": "trash",
-  
-    "twitter-filled": "twitter-filled",
-  
-    "twitter": "twitter",
   
     "unlock": "unlock",
   
