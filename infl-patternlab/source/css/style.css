@@ -1190,6 +1190,7 @@ button:hover {
   background-color: #f3f3f3;
   color: #666666;
   box-shadow: 0px 2px #eeeeee;
+  cursor: pointer;
 }
 .button.disabled,
 button.disabled {
