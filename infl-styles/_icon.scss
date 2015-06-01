@@ -497,132 +497,162 @@
 }
 
 
-.ic.ic-share:before {
+.ic.ic-share-facebook:before {
   content: "\E032"
+}
+
+@mixin ic-share-facebook() {
+  font-family: 'influicons';
+  content: "\E032"
+}
+
+
+.ic.ic-share-linkedin:before {
+  content: "\E033"
+}
+
+@mixin ic-share-linkedin() {
+  font-family: 'influicons';
+  content: "\E033"
+}
+
+
+.ic.ic-share-twitter:before {
+  content: "\E034"
+}
+
+@mixin ic-share-twitter() {
+  font-family: 'influicons';
+  content: "\E034"
+}
+
+
+.ic.ic-share:before {
+  content: "\E035"
 }
 
 @mixin ic-share() {
   font-family: 'influicons';
-  content: "\E032"
+  content: "\E035"
 }
 
 
 .ic.ic-speech-2:before {
-  content: "\E033"
+  content: "\E036"
 }
 
 @mixin ic-speech-2() {
   font-family: 'influicons';
-  content: "\E033"
+  content: "\E036"
 }
 
 
 .ic.ic-speech:before {
-  content: "\E034"
+  content: "\E037"
 }
 
 @mixin ic-speech() {
   font-family: 'influicons';
-  content: "\E034"
+  content: "\E037"
 }
 
 
 .ic.ic-star:before {
-  content: "\E035"
+  content: "\E038"
 }
 
 @mixin ic-star() {
   font-family: 'influicons';
-  content: "\E035"
+  content: "\E038"
 }
 
 
 .ic.ic-support:before {
-  content: "\E036"
+  content: "\E039"
 }
 
 @mixin ic-support() {
   font-family: 'influicons';
-  content: "\E036"
+  content: "\E039"
 }
 
 
 .ic.ic-target:before {
-  content: "\E037"
+  content: "\E03A"
 }
 
 @mixin ic-target() {
   font-family: 'influicons';
-  content: "\E037"
+  content: "\E03A"
 }
 
 
 .ic.ic-times-circle-o:before {
-  content: "\E038"
+  content: "\E03B"
 }
 
 @mixin ic-times-circle-o() {
   font-family: 'influicons';
-  content: "\E038"
+  content: "\E03B"
 }
 
 
 .ic.ic-times:before {
-  content: "\E039"
+  content: "\E03C"
 }
 
 @mixin ic-times() {
   font-family: 'influicons';
-  content: "\E039"
+  content: "\E03C"
 }
 
 
 .ic.ic-trash:before {
-  content: "\E03A"
+  content: "\E03D"
 }
 
 @mixin ic-trash() {
   font-family: 'influicons';
-  content: "\E03A"
+  content: "\E03D"
 }
 
 
 .ic.ic-twitter-filled:before {
-  content: "\E03B"
+  content: "\E03E"
 }
 
 @mixin ic-twitter-filled() {
   font-family: 'influicons';
-  content: "\E03B"
+  content: "\E03E"
 }
 
 
 .ic.ic-twitter:before {
-  content: "\E03C"
+  content: "\E03F"
 }
 
 @mixin ic-twitter() {
   font-family: 'influicons';
-  content: "\E03C"
+  content: "\E03F"
 }
 
 
 .ic.ic-unlock:before {
-  content: "\E03D"
+  content: "\E040"
 }
 
 @mixin ic-unlock() {
   font-family: 'influicons';
-  content: "\E03D"
+  content: "\E040"
 }
 
 
 .ic.ic-user:before {
-  content: "\E03E"
+  content: "\E041"
 }
 
 @mixin ic-user() {
   font-family: 'influicons';
-  content: "\E03E"
+  content: "\E041"
 }
 

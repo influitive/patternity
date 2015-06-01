@@ -100,6 +100,12 @@ var icons = {
   
     "search": "search",
   
+    "share-facebook": "share-facebook",
+  
+    "share-linkedin": "share-linkedin",
+  
+    "share-twitter": "share-twitter",
+  
     "share": "share",
   
     "speech-2": "speech-2",
