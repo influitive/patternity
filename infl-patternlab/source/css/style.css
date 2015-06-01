@@ -3177,6 +3177,7 @@ DIV.pt-popover.is-visible {
   display: inline-block;
   cursor: pointer;
   font-size: 13px;
+  background-color: #666666;
 }
 .pt-challenge-card .pt-challenge-details .pt-challenge-type.social-sharing {
   background-color: #40B6DE;
