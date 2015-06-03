@@ -27,10 +27,6 @@ var PopoverFloater = React.createClass({
     };
   },
 
-  isVisible: function() {
-    return this.state.isVisible;
-  },
-
   componentWillMount: function() {
     this._windowClickEvent = this._windowClick.bind(this);
   },
@@ -52,17 +48,9 @@ var PopoverFloater = React.createClass({
     if (this.state.isVisible) {
       var me = this;
       setTimeout(function() {
-        me._doupdate();
+        me._resetPosition();
       }, 1);
     }
-  },
-  _doupdate: function() {
-    if (this._lastIsVisible !== this.state.isVisible) {
-      if (this.state.isVisible && this.props.onOpen) this.props.onOpen();
-      else if (this.props.onClose) this.props.onClose();
-      this._lastIsVisible = this.state.isVisible;
-    }
-    this._resetPosition();
   },
 
   render: function() {
@@ -97,6 +85,7 @@ var PopoverFloater = React.createClass({
       isVisible: false
     }, function () {
       this._removeEvents();
+      if (this.props.onClose) this.props.onClose();
     });
   },
 
@@ -108,7 +97,8 @@ var PopoverFloater = React.createClass({
       var me = this;
       setTimeout(function() {
         me._addEvents();
-      },50);
+      },20);
+      if (this.props.onOpen) this.props.onOpen();
     });
   },
 
@@ -135,19 +125,12 @@ var PopoverFloater = React.createClass({
   },
 
   _windowClick : function(e) {
-    console.log('window click');
     var popoverNode = React.findDOMNode(this.refs.popover);
     var isChild = isChildOf(e.target, popoverNode);
     if (isChild && !this.props.autoclose) {
       return;
     }
-
-    this.setState({
-      isVisible : false
-    }, function() {
-      this._removeEvents();
-    });
-
+    this._hide();
   },
 
   _addEvents : function() {
