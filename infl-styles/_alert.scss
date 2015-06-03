@@ -41,6 +41,7 @@
   .alert-body {
     overflow: hidden;
     position: relative;
+    line-height: 1.2em; // prevents cut off text
   }
 
   &.hasIcon {
