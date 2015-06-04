@@ -75,15 +75,15 @@
   .pt-card-container {
 
     & > * {
-      width: 100%;
-      margin-right: 0;
+      width: 96%;
+      margin: 0px auto;
 
       &:nth-child(3n) {
-        margin-right: 0;
+        margin-right: auto;
       }
 
       &:nth-child(2n) {
-        margin-right: 0;
+        margin-right: auto;
       }
     }
   }

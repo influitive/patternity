@@ -1590,7 +1590,9 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
   propTypes : {
     children: React.PropTypes.object,
-    targetElement: React.PropTypes.object
+    targetElement: React.PropTypes.object,
+    onOpen: React.PropTypes.func,
+    onClose: React.PropTypes.func
   },
 
   getInitialState: function() {
@@ -1598,10 +1600,6 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
       isVisible : false,
       hasBeenRendered : false
     };
-  },
-
-  isVisible: function() {
-    return this.state.isVisible;
   },
 
   componentWillMount: function() {
@@ -1625,15 +1623,12 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
     if (this.state.isVisible) {
       var me = this;
       setTimeout(function() {
-//        console.log('componentDidUpdate');
         me._resetPosition();
       }, 1);
     }
   },
 
   render: function() {
-    window.pop = this;
-
     // this line makes it so the contents of the popover are not rendered until they are needed, and not destroyed when hidden
     var children = (this.state.isVisible || this.state.hasBeenRendered) ? this.props.children : null;
 
@@ -1665,11 +1660,11 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
       isVisible: false
     }, function () {
       this._removeEvents();
+      if (this.props.onClose) this.props.onClose();
     });
   },
 
   _show: function(targetElement) {
-
     this.setState({
       targetElement : targetElement,
       isVisible : true
@@ -1677,8 +1672,13 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
       var me = this;
       setTimeout(function() {
         me._addEvents();
-      },50);
+      },20);
+      if (this.props.onOpen) this.props.onOpen();
     });
+  },
+
+  recenter: function() {
+    this._resetPosition();
   },
 
   _resetPosition: function() {
@@ -1702,21 +1702,17 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
   _windowClick : function(e) {
     var popoverNode = React.findDOMNode(this.refs.popover);
     var isChild = isChildOf(e.target, popoverNode);
-    if (isChild && !this.props.autoclose) return;
-
-    this.setState({
-      isVisible : false
-    }, function() {
-      this._removeEvents();
-    });
-
+    if (isChild && !this.props.autoclose) {
+      return;
+    }
+    this._hide();
   },
 
   _addEvents : function() {
-    $(document).on('click', this._windowClickEvent);
+    document.addEventListener('click', this._windowClickEvent, true);
   },
   _removeEvents : function() {
-    $(document).off('click', this._windowClickEvent);
+    document.removeEventListener('click', this._windowClickEvent, true);
   }
 
 });
@@ -1739,6 +1735,8 @@ PopoverFloater.clickEvent = function(e) {
 var Popover = React.createClass({displayName: "Popover",
   propTypes: {
     autoclose: React.PropTypes.bool,
+    onOpen: React.PropTypes.func,
+    onClose: React.PropTypes.func
   },
 
   componentDidMount: function() {
@@ -1762,10 +1760,21 @@ var Popover = React.createClass({displayName: "Popover",
     var classes = 'pt-popoverwrapper '+this.props.className;
     return (React.createElement("span", {ref: "wrapper", className:  classes }, 
       React.createElement("span", {className: "pt-popover-link", ref: "link"},  first ), 
-      React.createElement(PopoverFloater, {ref: "popover", autoclose: this.props.autoclose}, 
+      React.createElement(PopoverFloater, {ref: "popover", autoclose: this.props.autoclose, onOpen: this._onOpen, onClose: this._onClose}, 
          second 
       )
     ));
+  },
+
+  _onOpen: function() {
+    if (this.props.onOpen) this.props.onOpen(this);
+  },
+  _onClose: function() {
+    if (this.props.onClose) this.props.onClose(this);
+  },
+
+  recenter: function() {
+    this.refs.popover.recenter();
   },
 
   _onClick : function(e) {
@@ -52134,10 +52143,6 @@ var icons = {
   
     "exclamation-circle-o": "exclamation-circle-o",
   
-    "fb-filled": "fb-filled",
-  
-    "fb": "fb",
-  
     "flag": "flag",
   
     "gear": "gear",
@@ -52151,10 +52156,6 @@ var icons = {
     "heart": "heart",
   
     "info-circle-o": "info-circle-o",
-  
-    "linkedin-filled": "linkedin-filled",
-  
-    "linkedin": "linkedin",
   
     "list": "list",
   
@@ -52184,6 +52185,18 @@ var icons = {
   
     "search": "search",
   
+    "share-facebook-circular": "share-facebook-circular",
+  
+    "share-facebook": "share-facebook",
+  
+    "share-linkedin-circular": "share-linkedin-circular",
+  
+    "share-linkedin": "share-linkedin",
+  
+    "share-twitter-circular": "share-twitter-circular",
+  
+    "share-twitter": "share-twitter",
+  
     "share": "share",
   
     "speech-2": "speech-2",
@@ -52201,10 +52214,6 @@ var icons = {
     "times": "times",
   
     "trash": "trash",
-  
-    "twitter-filled": "twitter-filled",
-  
-    "twitter": "twitter",
   
     "unlock": "unlock",
   
