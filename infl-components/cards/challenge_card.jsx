@@ -1,49 +1,72 @@
 var React   = require('react');
 var classNames = require('classnames');
+var $ = require('jquery');
 
 var Icon = require('../icon.jsx');
 var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({
+  PropTypes : {
+    id : React.PropTypes.string
+  },
+
   getDefaultProps : function(){
     return {
       id : ""
     };
   },
-  PropTypes : {
-    id : React.PropTypes.string
+
+  componentDidMount : function(){
+    this._adjustDescriptionHeight();
   },
+
   render: function () {
     return (
       <div className="pt-challenge-card" id={this.props.id}>
-        <Card>
+        <Card ref="card">
           {this.props.children}
         </Card>
       </div>
     );
+  },
+
+  _adjustDescriptionHeight : function(){
+    var card = React.findDOMNode(this.refs.card);
+    var cardHeight = card.offsetHeight;
+    var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
+    var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
+    var titleHeight = $(card).find(".headline").outerHeight(true);
+    var statusHeight = $(card).find(".pt-challenge-type").outerHeight(true);
+    var description = card.querySelector(".description");
+
+    description.style.height = (cardHeight - actionsHeight - titleHeight - statusHeight - imageHeight) + "px";
   }
 });
 
 ChallengeCard.Details = React.createClass({
+  PropTypes : {
+    type : React.PropTypes.string,
+    headline : React.PropTypes.string,
+    description : React.PropTypes.string,
+    onFilterByType : React.PropTypes.func,
+    participantCount : React.PropTypes.number
+  },
+
   getDefaultProps : function(){
     return {
       type : "",
       headline : "",
       description : "",
-      onFilterByType : function(){}
+      onFilterByType : function(){},
+      participantCount : 0
     };
   },
-  PropTypes : {
-    type : React.PropTypes.string,
-    headline : React.PropTypes.string,
-    description : React.PropTypes.string,
-    onFilterByType : React.PropTypes.func
-  },
+
   render : function(){
     return (
       <div className="pt-challenge-details">
         <h4 className="headline">{this.props.headline}</h4>
-        <ChallengeType type={this.props.type} onClick={this.props.onFilterByType} />
+        <ChallengeType type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
         <p ref="description" className="description">{this.props.description}</p>
       </div>
     );
@@ -51,23 +74,34 @@ ChallengeCard.Details = React.createClass({
 });
 
 var ChallengeType = React.createClass({
+  PropTypes : {
+    type : React.PropTypes.string,
+    onClick : React.PropTypes.func,
+    participantCount : React.PropTypes.number
+  },
+
   getDefaultProps : function(){
     return {
       type : "",
-      onClick : function(){}
+      onClick : function(){},
+      participantCount : 0
     };
   },
-  PropTypes : {
-    type : React.PropTypes.string,
-    onClick : React.PropTypes.func
-  },
+
   render : function(){
     return (
-      <span className={"pt-challenge-type " + this._formatChallengeTypeClassName()} onClick={this.props.onClick}>
-        {this.props.type.toLowerCase()}
-      </span>
+      <div className="pt-challenge-status">
+        <span className={"pt-challenge-type " + this._formatChallengeTypeClassName()} onClick={this.props.onClick}>
+          {this.props.type.toLowerCase()}
+        </span>
+        <span className="pt-challenge-participant-count">
+          <Icon icon="user" />
+          <span className="count">{this.props.participantCount}</span>
+        </span>
+      </div>
     );
   },
+
   _formatChallengeTypeClassName : function(){
     var typeArray = this.props.type.split(' ');
     var typeClassName = "";
