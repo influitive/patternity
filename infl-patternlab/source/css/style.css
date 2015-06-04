@@ -725,7 +725,7 @@ h4.list-title {
   transition: opacity 0.5s ease-in-out;
 }
 .accordion .accordion-section .section-heading.open + .section-details {
-  max-height: 1000px;
+  max-height: 2000px;
   -webkit-transition: max-height 0.5s ease-in;
   -moz-transition: max-height 0.5s ease-in;
   transition: max-height 0.5s ease-in;

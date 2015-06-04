@@ -26,7 +26,7 @@ $transition-out-time : 0.5s;
       }
 
       &.open + .section-details {
-        max-height: 1000px;
+        max-height: 2000px;
         @include transition(max-height $transition-out-time ease-in);
       }
 
