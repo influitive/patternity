@@ -37,7 +37,6 @@
 }
 
 .pt-card-container {
-
   & > * {
     display: inline-block;
     vertical-align: top;
@@ -49,6 +48,25 @@
       margin-right: 0;
     }
   }
+}
+
+.ie8 {
+  .pt-card-container {
+    width: 768px;
+
+    & > * {
+      width: 241px;
+      margin-right: 15px;
+    }
+
+    .pt-challenge-card {
+      .pt-challenge-image {
+        img {
+          top: 0px;
+        }
+      }
+    }
+    }
 }
 
 /* Small Devices, Tablets */
