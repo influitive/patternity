@@ -120,7 +120,7 @@
     $funColour : #CC7C0C;
     $socialSharingColour : #40B6DE;
 
-    .pt-challenge-status {
+    .pt-challenge-type-count {
         overflow: hidden;
 
       .pt-challenge-type {
@@ -172,6 +172,7 @@
         display: block;
         float: right;
         text-align: right;
+        font-size: 15px;
 
         .ic-user {
           position: relative;
