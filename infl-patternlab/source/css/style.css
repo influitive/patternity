@@ -3085,8 +3085,9 @@ DIV.pt-popover.is-visible {
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   .pt-card-container > * {
-    width: 96%;
-    margin: 0px auto;
+    width: 95%;
+    margin: 0px auto 20px;
+    display: block;
   }
   .pt-card-container > *:nth-child(3n) {
     margin-right: auto;

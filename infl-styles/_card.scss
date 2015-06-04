@@ -75,8 +75,9 @@
   .pt-card-container {
 
     & > * {
-      width: 96%;
-      margin: 0px auto;
+      width: 95%;
+      margin: 0px auto 20px;
+      display: block;
 
       &:nth-child(3n) {
         margin-right: auto;
