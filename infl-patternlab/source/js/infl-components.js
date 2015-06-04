@@ -662,10 +662,10 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
     var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
     var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
     var titleHeight = $(card).find(".headline").outerHeight(true);
-    var statusHeight = $(card).find(".pt-challenge-type").outerHeight(true);
+    var typeHeight = $(card).find(".pt-challenge-type").outerHeight(true);
     var description = card.querySelector(".description");
 
-    description.style.height = (cardHeight - actionsHeight - titleHeight - statusHeight - imageHeight) + "px";
+    description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
   }
 });
 
@@ -692,14 +692,14 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
     return (
       React.createElement("div", {className: "pt-challenge-details"}, 
         React.createElement("h4", {className: "headline"}, this.props.headline), 
-        React.createElement(ChallengeType, {type: this.props.type, onClick: this.props.onFilterByType, participantCount: this.props.participantCount}), 
+        React.createElement(ChallengeTypeCount, {type: this.props.type, onClick: this.props.onFilterByType, participantCount: this.props.participantCount}), 
         React.createElement("p", {ref: "description", className: "description"}, this.props.description)
       )
     );
   }
 });
 
-var ChallengeType = React.createClass({displayName: "ChallengeType",
+var ChallengeTypeCount = React.createClass({displayName: "ChallengeTypeCount",
   PropTypes : {
     type : React.PropTypes.string,
     onClick : React.PropTypes.func,
@@ -716,7 +716,7 @@ var ChallengeType = React.createClass({displayName: "ChallengeType",
 
   render : function(){
     return (
-      React.createElement("div", {className: "pt-challenge-status"}, 
+      React.createElement("div", {className: "pt-challenge-type-count"}, 
         React.createElement("span", {className: "pt-challenge-type " + this._formatChallengeTypeClassName(), onClick: this.props.onClick}, 
           this.props.type.toLowerCase()
         ), 

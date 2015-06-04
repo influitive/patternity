@@ -3214,10 +3214,10 @@ DIV.pt-popover.is-visible {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
   /* IE6-8 */
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count {
   overflow: hidden;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type {
   margin: 0px 0px 1.3em;
   padding: 2px 10px;
   font-variant: small-caps;
@@ -3231,33 +3231,34 @@ DIV.pt-popover.is-visible {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.social-sharing {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.social-sharing {
   background-color: #40B6DE;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.fun {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.fun {
   background-color: #CC7C0C;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.educational {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.educational {
   background-color: #3F8F03;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.referral {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.referral {
   background-color: #0753B5;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.survey {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.survey {
   background-color: #CC0A0A;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.review {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.review {
   background-color: #CCBC0A;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.case-study {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.case-study {
   background-color: #8533D6;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-participant-count {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-participant-count {
   display: block;
   float: right;
   text-align: right;
+  font-size: 15px;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-participant-count .ic-user {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-participant-count .ic-user {
   position: relative;
   top: 2px;
   left: -2px;

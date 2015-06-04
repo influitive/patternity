@@ -36,10 +36,10 @@ var ChallengeCard = React.createClass({
     var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
     var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
     var titleHeight = $(card).find(".headline").outerHeight(true);
-    var statusHeight = $(card).find(".pt-challenge-type").outerHeight(true);
+    var typeHeight = $(card).find(".pt-challenge-type").outerHeight(true);
     var description = card.querySelector(".description");
 
-    description.style.height = (cardHeight - actionsHeight - titleHeight - statusHeight - imageHeight) + "px";
+    description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
   }
 });
 
@@ -66,14 +66,14 @@ ChallengeCard.Details = React.createClass({
     return (
       <div className="pt-challenge-details">
         <h4 className="headline">{this.props.headline}</h4>
-        <ChallengeType type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
+        <ChallengeTypeCount type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
         <p ref="description" className="description">{this.props.description}</p>
       </div>
     );
   }
 });
 
-var ChallengeType = React.createClass({
+var ChallengeTypeCount = React.createClass({
   PropTypes : {
     type : React.PropTypes.string,
     onClick : React.PropTypes.func,
@@ -90,7 +90,7 @@ var ChallengeType = React.createClass({
 
   render : function(){
     return (
-      <div className="pt-challenge-status">
+      <div className="pt-challenge-type-count">
         <span className={"pt-challenge-type " + this._formatChallengeTypeClassName()} onClick={this.props.onClick}>
           {this.props.type.toLowerCase()}
         </span>
