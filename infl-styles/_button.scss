@@ -1,4 +1,4 @@
-$text-button-color : #999999;
+$text-button-color : $medium-grey;
 $text-button-color-hover : lighten($text-button-color, 10%);
 
 .button,
@@ -132,8 +132,8 @@ button {
 
   &.secondary {
     background-color: transparent;
-    color: darken($text-button-color, 20%) !important;
-    border: 1px solid darken($text-button-color, 20%);
+    color: $text-button-color!important;
+    border: 1px solid $text-button-color;
     box-shadow: none;
     top: 1px;
     position: relative;
@@ -141,8 +141,8 @@ button {
     &:hover {
       background-color: transparent !important;
       text-shadow: none;
-      border: 1px solid $text-button-color;
-      color: $text-button-color-hover !important;
+      border: 1px solid darken($text-button-color, 20%);
+      color: darken($text-button-color-hover, 20%) !important;
       box-shadow: none;
     }
 

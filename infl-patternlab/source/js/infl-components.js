@@ -626,50 +626,73 @@ module.exports = Card;
 },{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
 var React   = require('react');
 var classNames = require('classnames');
+var $ = require('jquery');
 
 var Icon = require('../icon.jsx');
 var Card = require('./card.jsx');
 
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
+  PropTypes : {
+    id : React.PropTypes.string
+  },
+
   getDefaultProps : function(){
     return {
       id : ""
     };
   },
-  PropTypes : {
-    id : React.PropTypes.string
+
+  componentDidMount : function(){
+    this._adjustDescriptionHeight();
   },
+
   render: function () {
     return (
       React.createElement("div", {className: "pt-challenge-card", id: this.props.id}, 
-        React.createElement(Card, null, 
+        React.createElement(Card, {ref: "card"}, 
           this.props.children
         )
       )
     );
+  },
+
+  _adjustDescriptionHeight : function(){
+    var card = React.findDOMNode(this.refs.card);
+    var cardHeight = card.offsetHeight;
+    var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
+    var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
+    var titleHeight = $(card).find(".headline").outerHeight(true);
+    var statusHeight = $(card).find(".pt-challenge-type").outerHeight(true);
+    var description = card.querySelector(".description");
+
+    description.style.height = (cardHeight - actionsHeight - titleHeight - statusHeight - imageHeight) + "px";
   }
 });
 
 ChallengeCard.Details = React.createClass({displayName: "Details",
+  PropTypes : {
+    type : React.PropTypes.string,
+    headline : React.PropTypes.string,
+    description : React.PropTypes.string,
+    onFilterByType : React.PropTypes.func,
+    participantCount : React.PropTypes.number
+  },
+
   getDefaultProps : function(){
     return {
       type : "",
       headline : "",
       description : "",
-      onFilterByType : function(){}
+      onFilterByType : function(){},
+      participantCount : 0
     };
   },
-  PropTypes : {
-    type : React.PropTypes.string,
-    headline : React.PropTypes.string,
-    description : React.PropTypes.string,
-    onFilterByType : React.PropTypes.func
-  },
+
   render : function(){
     return (
       React.createElement("div", {className: "pt-challenge-details"}, 
         React.createElement("h4", {className: "headline"}, this.props.headline), 
-        React.createElement(ChallengeType, {type: this.props.type, onClick: this.props.onFilterByType}), 
+        React.createElement(ChallengeType, {type: this.props.type, onClick: this.props.onFilterByType, participantCount: this.props.participantCount}), 
         React.createElement("p", {ref: "description", className: "description"}, this.props.description)
       )
     );
@@ -677,23 +700,34 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
 });
 
 var ChallengeType = React.createClass({displayName: "ChallengeType",
+  PropTypes : {
+    type : React.PropTypes.string,
+    onClick : React.PropTypes.func,
+    participantCount : React.PropTypes.number
+  },
+
   getDefaultProps : function(){
     return {
       type : "",
-      onClick : function(){}
+      onClick : function(){},
+      participantCount : 0
     };
   },
-  PropTypes : {
-    type : React.PropTypes.string,
-    onClick : React.PropTypes.func
-  },
+
   render : function(){
     return (
-      React.createElement("span", {className: "pt-challenge-type " + this._formatChallengeTypeClassName(), onClick: this.props.onClick}, 
-        this.props.type.toLowerCase()
+      React.createElement("div", {className: "pt-challenge-status"}, 
+        React.createElement("span", {className: "pt-challenge-type " + this._formatChallengeTypeClassName(), onClick: this.props.onClick}, 
+          this.props.type.toLowerCase()
+        ), 
+        React.createElement("span", {className: "pt-challenge-participant-count"}, 
+          React.createElement(Icon, {icon: "user"}), 
+          React.createElement("span", {className: "count"}, this.props.participantCount)
+        )
       )
     );
   },
+
   _formatChallengeTypeClassName : function(){
     var typeArray = this.props.type.split(' ');
     var typeClassName = "";
@@ -860,7 +894,7 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 

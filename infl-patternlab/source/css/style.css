@@ -1265,7 +1265,7 @@ button.danger:hover {
 button.text {
   background-color: transparent;
   border: none;
-  color: #999999 !important;
+  color: #969696 !important;
   -webkit-transition: color 0.15s ease-in-out;
   -moz-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
@@ -1277,7 +1277,7 @@ button.text {
 button.text:hover {
   background-color: transparent;
   text-shadow: none;
-  color: #b3b3b3 !important;
+  color: #b0b0b0 !important;
   box-shadow: none;
   text-decoration: underline;
 }
@@ -1294,8 +1294,8 @@ button.text.inverse:hover {
 .button.secondary,
 button.secondary {
   background-color: transparent;
-  color: #666666 !important;
-  border: 1px solid #666666;
+  color: #969696 !important;
+  border: 1px solid #969696;
   box-shadow: none;
   top: 1px;
   position: relative;
@@ -1304,8 +1304,8 @@ button.secondary {
 button.secondary:hover {
   background-color: transparent !important;
   text-shadow: none;
-  border: 1px solid #999999;
-  color: #b3b3b3 !important;
+  border: 1px solid #636363;
+  color: #7d7d7d !important;
   box-shadow: none;
 }
 .button.secondary.inverse,
@@ -1358,11 +1358,11 @@ button.ic:before {
   background-color: transparent !important;
   text-shadow: none;
   box-shadow: none;
-  color: #b3b3b3 !important;
-  border: 1px solid #999999;
+  color: #b0b0b0 !important;
+  border: 1px solid #969696;
 }
 .button-dropdown.show button.secondary + .options {
-  border: 1px solid #999999;
+  border: 1px solid #969696;
 }
 .button-dropdown button {
   position: relative;
@@ -1415,13 +1415,13 @@ button.ic:before {
   background-color: #fff;
 }
 .button-dropdown button.secondary + .options .option a {
-  color: #b3b3b3 !important;
+  color: #b0b0b0 !important;
 }
 .button-dropdown button.secondary + .options .option:hover {
   background-color: #fff;
 }
 .button-dropdown button.secondary + .options .option:hover a {
-  color: #666666 !important;
+  color: #636363 !important;
 }
 .button-dropdown .options {
   max-height: 0px;
@@ -3036,9 +3036,9 @@ DIV.pt-popover.is-visible {
   bottom: 0px;
   left: 0px;
   width: 100%;
-  padding: 10px;
+  padding: 10px 10px 20px;
   text-align: center;
-  border-top: 1px solid #969696;
+  border-top: 1px solid #d0d2d3;
   background-color: #fff;
 }
 .pt-card .pt-card-actions .button-group {
@@ -3164,6 +3164,7 @@ DIV.pt-popover.is-visible {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  border-bottom: 1px solid #d0d2d3;
 }
 .pt-challenge-card .pt-challenge-image img {
   width: 100%;
@@ -3176,48 +3177,90 @@ DIV.pt-popover.is-visible {
 }
 .pt-challenge-card .pt-challenge-image.no-image {
   height: 24px;
+  border-bottom: 0px;
 }
 .pt-challenge-card .pt-challenge-image.no-image img {
   display: none;
 }
 .pt-challenge-card .pt-challenge-details {
   padding: 0px 20px;
+  color: #969696;
 }
 .pt-challenge-card .pt-challenge-details .description {
-  color: #969696;
-  height: 110px;
+  overflow: hidden;
+  position: relative;
+}
+.pt-challenge-card .pt-challenge-details .description:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY4JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 68%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(68%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 68%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 68%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 68%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 68%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+  /* IE6-8 */
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-status {
   overflow: hidden;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type {
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type {
   margin: 0px 0px 1.3em;
   padding: 2px 10px;
   font-variant: small-caps;
   color: #fff;
-  display: inline-block;
-  cursor: pointer;
+  display: block;
+  float: left;
+  max-width: 125px;
   font-size: 13px;
   background-color: #666666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.social-sharing {
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.social-sharing {
   background-color: #40B6DE;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.fun {
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.fun {
   background-color: #CC7C0C;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.educational {
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.educational {
   background-color: #3F8F03;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.referral {
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.referral {
   background-color: #0753B5;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.survey {
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.survey {
   background-color: #CC0A0A;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.review {
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.review {
   background-color: #CCBC0A;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type.case-study {
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-type.case-study {
   background-color: #8533D6;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-participant-count {
+  display: block;
+  float: right;
+  text-align: right;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-status .pt-challenge-participant-count .ic-user {
+  position: relative;
+  top: 2px;
+  left: -2px;
 }
 
 body {

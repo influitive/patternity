@@ -63,6 +63,7 @@
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    border-bottom: 1px solid $light-grey;
 
     img {
       width: 100%;
@@ -76,6 +77,7 @@
 
     &.no-image {
       height: 24px;
+      border-bottom: 0px;
 
       img {
         display: none;
@@ -85,11 +87,29 @@
 
   .pt-challenge-details {
     padding: 0px 20px;
+    color: $medium-grey;
 
     .description {
-      color: $medium-grey;
-      height: 110px;
       overflow: hidden;
+      position: relative;
+
+       &:before {
+         content : "";
+         display: block;
+         width: 100%;
+         height: 10px;
+         position: absolute;
+         left: 0px;
+         bottom: 0px;
+         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY4JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+         background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 68%); /* FF3.6+ */
+         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(68%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+         background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 68%); /* Chrome10+,Safari5.1+ */
+         background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 68%); /* Opera 11.10+ */
+         background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 68%); /* IE10+ */
+         background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 68%); /* W3C */
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+       }
     }
 
     $caseStudyColour : #8533D6;
@@ -100,42 +120,64 @@
     $funColour : #CC7C0C;
     $socialSharingColour : #40B6DE;
 
-    .pt-challenge-type {
-      margin: 0px 0px 1.3em;
-      padding: 2px 10px;
-      font-variant: small-caps;
-      color: #fff;
-      display: inline-block;
-      cursor : pointer;
-      font-size: 13px;
-      background-color: $dark-grey;
+    .pt-challenge-status {
+        overflow: hidden;
 
-      &.social-sharing {
-        background-color: $socialSharingColour;
+      .pt-challenge-type {
+        margin: 0px 0px 1.3em;
+        padding: 2px 10px;
+        font-variant: small-caps;
+        color: #fff;
+        display: block;
+        float: left;
+        max-width: 125px;
+  //      removed until we add the functionality to click
+  //      cursor : pointer;
+        font-size: 13px;
+        background-color: $dark-grey;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &.social-sharing {
+          background-color: $socialSharingColour;
+        }
+
+        &.fun {
+          background-color: $funColour;
+        }
+
+        &.educational {
+          background-color: $educationalColour;
+        }
+
+        &.referral {
+          background-color: $referralColour;
+        }
+
+        &.survey {
+          background-color: $surveyColour;
+        }
+
+        &.review {
+          background-color: $reviewColour;
+        }
+
+        &.case-study {
+          background-color: $caseStudyColour;
+        }
       }
 
-      &.fun {
-        background-color: $funColour;
-      }
+      .pt-challenge-participant-count {
+        display: block;
+        float: right;
+        text-align: right;
 
-      &.educational {
-        background-color: $educationalColour;
-      }
-
-      &.referral {
-        background-color: $referralColour;
-      }
-
-      &.survey {
-        background-color: $surveyColour;
-      }
-
-      &.review {
-        background-color: $reviewColour;
-      }
-
-      &.case-study {
-        background-color: $caseStudyColour;
+        .ic-user {
+          position: relative;
+          top: 2px;
+          left: -2px;
+        }
       }
     }
   }
