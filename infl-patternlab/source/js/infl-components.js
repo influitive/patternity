@@ -811,7 +811,7 @@ var Points = React.createClass({displayName: "Points",
   render : function(){
     return (
       React.createElement("span", {className: "pt-card-points"}, 
-        React.createElement(Icon, {icon: "coins"}), 
+        React.createElement(Icon, {icon: "coins-old"}), 
         this.props.points
       )
     );
@@ -52170,6 +52170,8 @@ var icons = {
     "close": "close",
   
     "code": "code",
+  
+    "coins-old": "coins-old",
   
     "coins": "coins",
   
