@@ -40,6 +40,8 @@ var icons = {
   
     "code": "code",
   
+    "coins-old": "coins-old",
+  
     "coins": "coins",
   
     "copy": "copy",
