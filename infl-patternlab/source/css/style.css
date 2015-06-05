@@ -1050,128 +1050,132 @@ h4.list-title {
   content: "";
 }
 
-.ic.ic-list:before {
+.ic.ic-link:before {
   content: "";
 }
 
-.ic.ic-lock:before {
+.ic.ic-list:before {
   content: "";
 }
 
-.ic.ic-mail:before {
+.ic.ic-lock:before {
   content: "";
 }
 
-.ic.ic-merge:before {
+.ic.ic-mail:before {
   content: "";
 }
 
-.ic.ic-minus:before {
+.ic.ic-merge:before {
   content: "";
 }
 
-.ic.ic-pencil:before {
+.ic.ic-minus:before {
   content: "";
 }
 
-.ic.ic-pin:before {
+.ic.ic-pencil:before {
   content: "";
 }
 
-.ic.ic-plus:before {
+.ic.ic-pin:before {
   content: "";
 }
 
-.ic.ic-question-circle-o:before {
+.ic.ic-plus:before {
   content: "";
 }
 
-.ic.ic-quote-close:before {
+.ic.ic-question-circle-o:before {
   content: "";
 }
 
-.ic.ic-quote-fill-close:before {
+.ic.ic-quote-close:before {
   content: "";
 }
 
-.ic.ic-quote-fill-open:before {
+.ic.ic-quote-fill-close:before {
   content: "";
 }
 
-.ic.ic-quote-open:before {
+.ic.ic-quote-fill-open:before {
   content: "";
 }
 
-.ic.ic-search:before {
+.ic.ic-quote-open:before {
   content: "";
 }
 
-.ic.ic-share-facebook-circular:before {
+.ic.ic-search:before {
   content: "";
 }
 
-.ic.ic-share-facebook:before {
+.ic.ic-share-facebook-circular:before {
   content: "";
 }
 
-.ic.ic-share-linkedin-circular:before {
+.ic.ic-share-facebook:before {
   content: "";
 }
 
-.ic.ic-share-linkedin:before {
+.ic.ic-share-linkedin-circular:before {
   content: "";
 }
 
-.ic.ic-share-twitter-circular:before {
+.ic.ic-share-linkedin:before {
   content: "";
 }
 
-.ic.ic-share-twitter:before {
+.ic.ic-share-twitter-circular:before {
   content: "";
 }
 
-.ic.ic-share:before {
+.ic.ic-share-twitter:before {
   content: "";
 }
 
-.ic.ic-speech-2:before {
+.ic.ic-share:before {
   content: "";
 }
 
-.ic.ic-speech:before {
+.ic.ic-speech-2:before {
   content: "";
 }
 
-.ic.ic-star:before {
+.ic.ic-speech:before {
   content: "";
 }
 
-.ic.ic-support:before {
+.ic.ic-star:before {
   content: "";
 }
 
-.ic.ic-target:before {
+.ic.ic-support:before {
   content: "";
 }
 
-.ic.ic-times-circle-o:before {
+.ic.ic-target:before {
   content: "";
 }
 
-.ic.ic-times:before {
+.ic.ic-times-circle-o:before {
   content: "";
 }
 
-.ic.ic-trash:before {
+.ic.ic-times:before {
   content: "";
 }
 
-.ic.ic-unlock:before {
+.ic.ic-trash:before {
   content: "";
 }
 
-.ic.ic-user:before {
+.ic.ic-unlock:before {
   content: "";
+}
+
+.ic.ic-user:before {
+  content: "";
 }
 
 .button,
@@ -2535,128 +2539,132 @@ textarea {
   content: "";
 }
 
-.ic.ic-list:before {
+.ic.ic-link:before {
   content: "";
 }
 
-.ic.ic-lock:before {
+.ic.ic-list:before {
   content: "";
 }
 
-.ic.ic-mail:before {
+.ic.ic-lock:before {
   content: "";
 }
 
-.ic.ic-merge:before {
+.ic.ic-mail:before {
   content: "";
 }
 
-.ic.ic-minus:before {
+.ic.ic-merge:before {
   content: "";
 }
 
-.ic.ic-pencil:before {
+.ic.ic-minus:before {
   content: "";
 }
 
-.ic.ic-pin:before {
+.ic.ic-pencil:before {
   content: "";
 }
 
-.ic.ic-plus:before {
+.ic.ic-pin:before {
   content: "";
 }
 
-.ic.ic-question-circle-o:before {
+.ic.ic-plus:before {
   content: "";
 }
 
-.ic.ic-quote-close:before {
+.ic.ic-question-circle-o:before {
   content: "";
 }
 
-.ic.ic-quote-fill-close:before {
+.ic.ic-quote-close:before {
   content: "";
 }
 
-.ic.ic-quote-fill-open:before {
+.ic.ic-quote-fill-close:before {
   content: "";
 }
 
-.ic.ic-quote-open:before {
+.ic.ic-quote-fill-open:before {
   content: "";
 }
 
-.ic.ic-search:before {
+.ic.ic-quote-open:before {
   content: "";
 }
 
-.ic.ic-share-facebook-circular:before {
+.ic.ic-search:before {
   content: "";
 }
 
-.ic.ic-share-facebook:before {
+.ic.ic-share-facebook-circular:before {
   content: "";
 }
 
-.ic.ic-share-linkedin-circular:before {
+.ic.ic-share-facebook:before {
   content: "";
 }
 
-.ic.ic-share-linkedin:before {
+.ic.ic-share-linkedin-circular:before {
   content: "";
 }
 
-.ic.ic-share-twitter-circular:before {
+.ic.ic-share-linkedin:before {
   content: "";
 }
 
-.ic.ic-share-twitter:before {
+.ic.ic-share-twitter-circular:before {
   content: "";
 }
 
-.ic.ic-share:before {
+.ic.ic-share-twitter:before {
   content: "";
 }
 
-.ic.ic-speech-2:before {
+.ic.ic-share:before {
   content: "";
 }
 
-.ic.ic-speech:before {
+.ic.ic-speech-2:before {
   content: "";
 }
 
-.ic.ic-star:before {
+.ic.ic-speech:before {
   content: "";
 }
 
-.ic.ic-support:before {
+.ic.ic-star:before {
   content: "";
 }
 
-.ic.ic-target:before {
+.ic.ic-support:before {
   content: "";
 }
 
-.ic.ic-times-circle-o:before {
+.ic.ic-target:before {
   content: "";
 }
 
-.ic.ic-times:before {
+.ic.ic-times-circle-o:before {
   content: "";
 }
 
-.ic.ic-trash:before {
+.ic.ic-times:before {
   content: "";
 }
 
-.ic.ic-unlock:before {
+.ic.ic-trash:before {
   content: "";
 }
 
-.ic.ic-user:before {
+.ic.ic-unlock:before {
   content: "";
+}
+
+.ic.ic-user:before {
+  content: "";
 }
 
 .pt-tabs {
@@ -3251,26 +3259,56 @@ DIV.pt-popover.is-visible {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.social-sharing {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.social-sharing, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.social-media, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.twitter, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.facebook, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.linkedin {
   background-color: #40B6DE;
 }
 .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.fun {
   background-color: #CC7C0C;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.educational {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.educational, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.education, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.training, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.product-update {
   background-color: #3F8F03;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.referral {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.referral, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.reference, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.reference-group {
   background-color: #0753B5;
 }
 .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.survey {
   background-color: #CC0A0A;
 }
-.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.review {
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.review, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.reviews, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.quora {
   background-color: #CCBC0A;
 }
 .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.case-study {
   background-color: #8533D6;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.testimonial {
+  background-color: #D60060;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.be-a-reference {
+  background-color: #BA75D1;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.advocate-suggestions, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.advocate-instructions {
+  background-color: #34BD1C;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.product-feedback {
+  background-color: #E022B1;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.feedback, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.voting {
+  background-color: #0AA69B;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.activities {
+  background-color: #D65200;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.beta-access {
+  background-color: #f28500;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.product-feedback {
+  background-color: #ADA639;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.communication, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.advocate-instructions {
+  background-color: #C9697E;
+}
+.pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.suggest-an-advocate, .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-type.advocate-suggestions {
+  background-color: #69C9B4;
 }
 .pt-challenge-card .pt-challenge-details .pt-challenge-type-count .pt-challenge-participant-count {
   display: block;
