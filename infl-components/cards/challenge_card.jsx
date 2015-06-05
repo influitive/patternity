@@ -67,9 +67,13 @@ ChallengeCard.Details = React.createClass({
       <div className="pt-challenge-details">
         <h4 className="headline">{this.props.headline}</h4>
         <ChallengeTypeCount type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
-        <p ref="description" className="description">{this.props.description}</p>
+        <p ref="description" className="description" dangerouslySetInnerHTML={this._sanitizeDescription()}></p>
       </div>
     );
+  },
+
+  _sanitizeDescription : function(){
+    return {__html: this.props.description}
   }
 });
 

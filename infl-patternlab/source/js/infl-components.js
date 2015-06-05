@@ -693,9 +693,13 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
       React.createElement("div", {className: "pt-challenge-details"}, 
         React.createElement("h4", {className: "headline"}, this.props.headline), 
         React.createElement(ChallengeTypeCount, {type: this.props.type, onClick: this.props.onFilterByType, participantCount: this.props.participantCount}), 
-        React.createElement("p", {ref: "description", className: "description"}, this.props.description)
+        React.createElement("p", {ref: "description", className: "description", dangerouslySetInnerHTML: this._sanitizeDescription()})
       )
     );
+  },
+
+  _sanitizeDescription : function(){
+    return {__html: this.props.description}
   }
 });
 
@@ -56986,7 +56990,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
           {
             points : 1000,
             featured : false,
-            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            description : "Loremd&#39;s ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             createdAt : "2015-03-02T14:46:34.913-05:00",
             headline : "Your community manifesto.  Pass it on.",
             id : 2,
