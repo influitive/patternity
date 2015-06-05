@@ -903,6 +903,18 @@ h4.list-title {
   color: #08a5c5;
 }
 
+@media only screen and (max-width: 480px) {
+  .alert-msg .pt-alert-action {
+    bottom: 15px;
+    left: 46px;
+    right: auto;
+    top: auto;
+  }
+  .alert-msg .pt-alert-action + .alert-body {
+    padding-right: 0px;
+    padding-bottom: 50px;
+  }
+}
 .ic:before {
   display: inline-block;
   font-family: "influicons";
