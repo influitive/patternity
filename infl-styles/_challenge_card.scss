@@ -112,13 +112,23 @@
        }
     }
 
-    $caseStudyColour : #8533D6;
-    $reviewColour : #CCBC0A;
-    $surveyColour : #CC0A0A;
-    $referralColour : #0753B5;
-    $educationalColour : #3F8F03;
-    $funColour : #CC7C0C;
-    $socialSharingColour : #40B6DE;
+    $tagPurple :      #8533D6;
+    $tagDeepYellow :  #CCBC0A;
+    $tagRed :         #CC0A0A;
+    $tagDarkBlue :    #0753B5;
+    $tagDarkGreen :   #3F8F03;
+    $tagLightGreen :  #34BD1C;
+    $tagOrange:       #CC7C0C;
+    $tagLightBlue :   #40B6DE;
+    $tagPink :        #E022B1;
+    $tagTurqoius:     #0AA69B;
+    $tagRust:         #D65200;
+    $tagLightPurple:  #BA75D1;
+    $tagFuschia:      #D60060;
+    $tagMint:         #69C9B4;
+    $tagRose:         #C9697E;
+    $tagOlive:        #ADA639;
+    $tagTangerine:    #f28500;
 
     .pt-challenge-type-count {
         overflow: hidden;
@@ -139,32 +149,87 @@
         overflow: hidden;
         text-overflow: ellipsis;
 
-        &.social-sharing {
-          background-color: $socialSharingColour;
+        &.social-sharing,
+        &.social-media,
+        &.twitter,
+        &.facebook,
+        &.linkedin {
+          background-color: $tagLightBlue;
         }
 
         &.fun {
-          background-color: $funColour;
+          background-color: $tagOrange;
         }
 
-        &.educational {
-          background-color: $educationalColour;
+        &.educational,
+        &.education,
+        &.training,
+        &.product-update {
+          background-color: $tagDarkGreen;
         }
 
-        &.referral {
-          background-color: $referralColour;
+        &.referral,
+        &.reference,
+        &.reference-group {
+          background-color: $tagDarkBlue;
         }
 
         &.survey {
-          background-color: $surveyColour;
+          background-color: $tagRed;
         }
 
-        &.review {
-          background-color: $reviewColour;
+        &.review,
+        &.reviews,
+        &.quora {
+          background-color: $tagDeepYellow;
         }
 
         &.case-study {
-          background-color: $caseStudyColour;
+          background-color: $tagPurple;
+        }
+
+        &.testimonial {
+          background-color: $tagFuschia;
+        }
+
+        &.be-a-reference {
+          background-color: $tagLightPurple;
+        }
+
+        &.advocate-suggestions,
+        &.advocate-instructions {
+          background-color: $tagLightGreen;
+        }
+
+        &.product-feedback {
+          background-color: $tagPink;
+        }
+
+        &.feedback,
+        &.voting {
+          background-color: $tagTurqoius;
+        }
+
+        &.activities {
+          background-color: $tagRust;
+        }
+
+        &.beta-access {
+          background-color: $tagTangerine;
+        }
+
+        &.product-feedback {
+          background-color: $tagOlive;
+        }
+
+        &.communication,
+        &.advocate-instructions {
+          background-color: $tagRose;
+        }
+
+        &.suggest-an-advocate,
+        &.advocate-suggestions {
+          background-color : $tagMint;
         }
       }
 
