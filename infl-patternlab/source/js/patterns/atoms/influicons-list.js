@@ -66,6 +66,8 @@ var icons = {
   
     "info-circle-o": "info-circle-o",
   
+    "link": "link",
+  
     "list": "list",
   
     "lock": "lock",
