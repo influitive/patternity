@@ -186,7 +186,7 @@ module.exports = Accordion;
 
 },{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react/addons":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/addons.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx":[function(require,module,exports){
 var React = require('react');
-var AlertMixin = require('./alert/alert_mixin');
+var AlertMixin = require('./alert/alert_mixin.jsx');
 
 var DetailedAlert = {};
 
@@ -229,9 +229,9 @@ var Alert = React.createClass({displayName: "Alert",
 module.exports = Alert;
 
 
-},{"./alert/alert_mixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx":[function(require,module,exports){
+},{"./alert/alert_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx":[function(require,module,exports){
 var React = require('react');
-var AlertMixin = require('./alert_mixin');
+var AlertMixin = require('./alert_mixin.jsx');
 
 var ActionAlert = React.createClass({displayName: "ActionAlert",
   mixins: [AlertMixin],
@@ -301,7 +301,7 @@ var AlertAction = React.createClass({
 module.exports = ActionAlert;
 
 
-},{"./alert_mixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js":[function(require,module,exports){
+},{"./alert_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx":[function(require,module,exports){
 var React = require('react');
 
 var hideInTimeout;
@@ -379,7 +379,7 @@ module.exports = AlertMixin;
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx":[function(require,module,exports){
 var React = require('react');
-var AlertMixin = require('./alert_mixin');
+var AlertMixin = require('./alert_mixin.jsx');
 
 var DetailedAlert = {};
 
@@ -446,7 +446,7 @@ DetailedAlert.Detail = React.createClass({displayName: "Detail",
 module.exports = DetailedAlert;
 
 
-},{"./alert_mixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button.jsx":[function(require,module,exports){
+},{"./alert_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Button = React.createClass({displayName: "Button",

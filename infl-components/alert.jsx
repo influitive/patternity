@@ -1,5 +1,5 @@
 var React = require('react');
-var AlertMixin = require('./alert/alert_mixin');
+var AlertMixin = require('./alert/alert_mixin.jsx');
 
 var DetailedAlert = {};
 
