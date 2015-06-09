@@ -134,10 +134,10 @@ var PopoverFloater = React.createClass({
   },
 
   _addEvents : function() {
-    document.addEventListener('click', this._windowClickEvent, true);
+    $(document).on('click', this._windowClickEvent, true);
   },
   _removeEvents : function() {
-    document.removeEventListener('click', this._windowClickEvent, true);
+    $(document).off('click', this._windowClickEvent, true);
   }
 
 });
@@ -168,14 +168,14 @@ var Popover = React.createClass({
     this._onClickEvent = this._onClick.bind(this);
     var a = this.refs.link.getDOMNode();
     if (a && a.childNodes[0]) {
-      a.childNodes[0].addEventListener('click', this._onClickEvent);
+      $(a.childNodes[0]).on('click', this._onClickEvent);
     }
   },
 
   componentWillUnmount: function() {
     var a = this.refs.link.getDOMNode();
     if (a && a.childNodes[0]) {
-      a.childNodes[0].removeEventListener('click', this._onClickEvent);
+      $(a.childNodes[0]).off('click', this._onClickEvent);
     }
   },
 
