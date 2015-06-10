@@ -58,6 +58,7 @@
     "jquery": "^1.9.1",
     "lodash": "^3.7.0",
     "node-bourbon": "~1.2.3",
+    "node-neat": "^1.7.2",
     "react": "^0.13.1"
   },
   "peerDependencies": {

@@ -13,6 +13,69 @@ Install patternity as a node module.
   npm install --save influitive/patternity
 ```
 
+# Compilation
+
+Patternity JSX components can be included in a normal module bundler fashion by requiring components
+like so
+
+```javascript
+var Alert = require('patternity/infl-components/alert');
+```
+
+Styles require a bit more work (until our whole build pipeline is on Webpack, at which point there's
+nothing extra to do).
+
+To inform your build pipeline about the location of patternity's styles, you must add patternity's
+includePaths into the compilation step. You can achieve this like so:
+
+```javascript
+// Gulp - gulpfile.js
+
+gulp.task('sass', function () {
+  return gulp.src("application.scss", { base: './app/assets/stylesheets' })
+    .pipe(
+      sass({includePaths: require('patternity').includePaths})
+    )
+    .pipe(gulp.dest("public/assets");
+});
+```
+
+```javascript
+// Webpack - webpack.config.js
+// See https://github.com/jtangelder/sass-loader#sass-options for further instructions
+
+function includePaths () {
+  var paths = require('patternity').includePaths;
+
+  return paths.map(function(p){
+    return ["includePaths[]=", p].join('');
+  }).join('&');
+}
+
+module.exports = {
+  // ... whatever config
+  module: {
+    loaders: [
+      { test: /.scss$/, loader: "style!css!sass?" + includePaths() }
+    ]
+  }
+};
+```
+
+At this point, scss files can import patternity files using imports such as:
+
+```scss
+@import 'infl-styles/dependencies';
+@import 'infl-styles/alert';
+```
+
+Note that the 'dependencies' requirement is due to SCSS's poor handling of duplicate imports whereby
+if each module (ie 'alert') were to import its dependencies, and you imported multiple of those modules,
+SCSS would actually duplicate the 'dependencies'.
+
+Ideally we'd like each module to define its deps for composability, but for now we require that the
+app implementing patternity also import its dependencies (once), then whatever subsequent modules.
+
 # React
 
 Most component are implemented using Facebook's [React][react] architecture.
