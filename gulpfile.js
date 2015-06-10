@@ -1,7 +1,16 @@
 var gulp = require('gulp');
+var gulpReplace = require('gulp-replace');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
- 
+
+function adustIconNames(codepoints) {
+  for(var i = 0; i < codepoints.length; i++){
+    var orderingCodeIndex = codepoints[i].name.indexOf("-") + 1;
+    codepoints[i].name = codepoints[i].name.substring(orderingCodeIndex);
+  }
+  return codepoints;
+}
+
 gulp.task('influicons', function(){
 
   // use SVG files from this directory
@@ -16,6 +25,8 @@ gulp.task('influicons', function(){
     }))
 
     .on('codepoints', function(codepoints, options) {
+
+      codepoints = adustIconNames(codepoints);
 
       // generate a static CSS demo file
       gulp.src('infl-icons/templates/influicons.css')
@@ -56,7 +67,7 @@ gulp.task('influicons', function(){
           className: 'ic'
         }))
         .pipe(gulp.dest('infl-patternlab/source/js/patterns/atoms/'));
-      
+
 
     })
     .pipe(gulp.dest('infl-fonts/'));

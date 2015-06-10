@@ -40,8 +40,6 @@ var icons = {
   
     "code": "code",
   
-    "coins-old": "coins-old",
-  
     "coins": "coins",
   
     "copy": "copy",
@@ -129,6 +127,8 @@ var icons = {
     "unlock": "unlock",
   
     "user": "user",
+  
+    "coins-old": "coins-old",
   
 
 };

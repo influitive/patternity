@@ -57,7 +57,7 @@ inflComp.ChallengesPagePattern    = require("./patterns/pages/challenges_page_pa
 module.exports = inflComp;
 
 
-},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/cards/card_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/cards/card_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -184,7 +184,7 @@ var AccordionBody = React.createClass({displayName: "AccordionBody",
 module.exports = Accordion;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react/addons":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/addons.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react/addons":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/addons.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx":[function(require,module,exports){
 var React = require('react');
 var AlertMixin = require('./alert/alert_mixin.jsx');
 
@@ -229,7 +229,7 @@ var Alert = React.createClass({displayName: "Alert",
 module.exports = Alert;
 
 
-},{"./alert/alert_mixin.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx":[function(require,module,exports){
+},{"./alert/alert_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx":[function(require,module,exports){
 var React = require('react');
 var AlertMixin = require('./alert_mixin.jsx');
 
@@ -301,7 +301,7 @@ var AlertAction = React.createClass({
 module.exports = ActionAlert;
 
 
-},{"./alert_mixin.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx":[function(require,module,exports){
+},{"./alert_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx":[function(require,module,exports){
 var React = require('react');
 
 var hideInTimeout;
@@ -377,7 +377,7 @@ var AlertMixin = {
 module.exports = AlertMixin;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx":[function(require,module,exports){
 var React = require('react');
 var AlertMixin = require('./alert_mixin.jsx');
 
@@ -446,7 +446,7 @@ DetailedAlert.Detail = React.createClass({displayName: "Detail",
 module.exports = DetailedAlert;
 
 
-},{"./alert_mixin.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button.jsx":[function(require,module,exports){
+},{"./alert_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/alert_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Button = React.createClass({displayName: "Button",
@@ -494,7 +494,7 @@ var Button = React.createClass({displayName: "Button",
 module.exports = Button;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx":[function(require,module,exports){
 var React = require('react');
 
 var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
@@ -553,7 +553,7 @@ var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
 module.exports = ButtonDropdown;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -583,7 +583,7 @@ var ButtonGroup = React.createClass({displayName: "ButtonGroup",
 module.exports = ButtonGroup;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx":[function(require,module,exports){
 var React   = require('react');
 
 var ButtonGroup = require('../button_group.jsx');
@@ -623,7 +623,7 @@ Card.Actions = React.createClass({displayName: "Actions",
 module.exports = Card;
 
 
-},{"../button_group.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
+},{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
 var React   = require('react');
 var classNames = require('classnames');
 var $ = require('jquery');
@@ -898,7 +898,7 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../icon.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./card.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -986,7 +986,7 @@ Checkbox.Group = React.createClass({displayName: "Group",
 module.exports = Checkbox;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Content = React.createClass({displayName: "Content",
@@ -1026,7 +1026,7 @@ var Content = React.createClass({displayName: "Content",
 module.exports = Content;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Form = React.createClass({displayName: "Form",
@@ -1244,7 +1244,7 @@ Form.Alert = React.createClass({displayName: "Alert",
 module.exports = Form;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx":[function(require,module,exports){
 var React = require('react');
 
 var HelpTooltip = React.createClass({displayName: "HelpTooltip",
@@ -1333,7 +1333,7 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
 module.exports = HelpTooltip;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -1361,7 +1361,7 @@ var Icon = React.createClass({displayName: "Icon",
 module.exports = Icon;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx":[function(require,module,exports){
 var React = require('react');
 
 var InputLabel = React.createClass({displayName: "InputLabel",
@@ -1417,7 +1417,7 @@ var InputLabel = React.createClass({displayName: "InputLabel",
 module.exports = InputLabel;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx":[function(require,module,exports){
 var React   = require('react');
 var classNames = require('classnames');
 
@@ -1452,7 +1452,7 @@ var Loading = React.createClass({displayName: "Loading",
 module.exports = Loading;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx":[function(require,module,exports){
 var React = require('react');
 
 var ModalDialog = React.createClass({displayName: "ModalDialog",
@@ -1586,7 +1586,7 @@ ModalDialog.Footer = React.createClass({displayName: "Footer",
 module.exports = ModalDialog;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx":[function(require,module,exports){
 var React = require('react');
 
 var PanelLeftSideBar = React.createClass({displayName: "PanelLeftSideBar",
@@ -1610,7 +1610,7 @@ var PanelLeftSideBar = React.createClass({displayName: "PanelLeftSideBar",
 module.exports = PanelLeftSideBar;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx":[function(require,module,exports){
 var React = require('react');
 window.React = React;
 
@@ -1840,7 +1840,7 @@ Popover.Menu = React.createClass({displayName: "Menu",
 module.exports = Popover;
 
 
-},{"jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx":[function(require,module,exports){
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -1930,7 +1930,7 @@ RadioButton.Group = React.createClass({displayName: "Group",
 module.exports = RadioButton;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx":[function(require,module,exports){
 var React = require('react');
 
 var SelectDropdown = React.createClass({displayName: "SelectDropdown",
@@ -2023,7 +2023,7 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
 module.exports = SelectDropdown;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Sidebar = React.createClass({displayName: "Sidebar",
@@ -2136,7 +2136,7 @@ var ListItem = React.createClass({displayName: "ListItem",
 module.exports = Sidebar;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/stats_bar.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/stats_bar.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -2197,7 +2197,7 @@ StatsBar.Stat = React.createClass({displayName: "Stat",
 module.exports = StatsBar;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx":[function(require,module,exports){
 var React = require('react');
 
 var ResponsiveTabsMixin = require('./tabs/responsive_tabs_mixin.js');
@@ -2284,7 +2284,7 @@ Tabs.Tab = React.createClass({displayName: "Tab",
 module.exports = Tabs;
 
 
-},{"./tabs/responsive_tabs_mixin.js":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js","./tabs/tab_sections.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx","./tabs/tabs_dropdown.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx","./tabs/tabs_menu.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js":[function(require,module,exports){
+},{"./tabs/responsive_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js","./tabs/tab_sections.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx","./tabs/tabs_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx","./tabs/tabs_menu.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js":[function(require,module,exports){
 var React = require('react');
 
 var BuildTabsMixin = {
@@ -2349,7 +2349,7 @@ var InternalTab = React.createClass({displayName: "InternalTab",
 module.exports = BuildTabsMixin;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js":[function(require,module,exports){
 var React = require('react');
 var $ = require('jquery');
 
@@ -2550,7 +2550,7 @@ module.exports = ResponsiveTabsMixin;
 // module.exports = ResponsiveTabsMixin;
 
 
-},{"jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx":[function(require,module,exports){
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx":[function(require,module,exports){
 var React = require('react');
 
 var BuildTabsMixin = require('./build_tabs_mixin.js');
@@ -2610,7 +2610,7 @@ var InternalTabContent = React.createClass({displayName: "InternalTabContent",
 module.exports = TabSections;
 
 
-},{"./build_tabs_mixin.js":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx":[function(require,module,exports){
+},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx":[function(require,module,exports){
 var React = require('react');
 
 var BuildTabsMixin = require('./build_tabs_mixin.js');
@@ -2665,7 +2665,7 @@ var TabsDropdown = React.createClass({displayName: "TabsDropdown",
 module.exports = TabsDropdown;
 
 
-},{"./build_tabs_mixin.js":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx":[function(require,module,exports){
+},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx":[function(require,module,exports){
 var React = require('react');
 
 var BuildTabsMixin = require('./build_tabs_mixin.js');
@@ -2699,7 +2699,7 @@ var TabsMenu = React.createClass({displayName: "TabsMenu",
 module.exports = TabsMenu;
 
 
-},{"./build_tabs_mixin.js":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){
+},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -2829,7 +2829,7 @@ var TextInput = React.createClass({displayName: "TextInput",
 module.exports = TextInput;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -2901,7 +2901,7 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
 module.exports = ToggleSwitch;
 
 
-},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -2961,13 +2961,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js":[function(require,module,exports){
-/*!
-  Copyright (c) 2015 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js":[function(require,module,exports){
 function classNames() {
 	var classes = '';
 	var arg;
@@ -2994,19 +2988,12 @@ function classNames() {
 	return classes.substr(1);
 }
 
-// safely export classNames for node / browserify
+// safely export classNames in case the script is included directly on a page
 if (typeof module !== 'undefined' && module.exports) {
 	module.exports = classNames;
 }
 
-// safely export classNames for RequireJS
-if (typeof define !== 'undefined' && define.amd) {
-	define('classnames', [], function() {
-		return classNames;
-	});
-}
-
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v1.11.3
  * http://jquery.com/
@@ -13359,7 +13346,7 @@ return jQuery;
 
 }));
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js":[function(require,module,exports){
 /**
 The following batches are equivalent:
 
@@ -13416,7 +13403,7 @@ if (typeof define === "function" && define.amd) {
 }
 
 
-},{"./lib/beautify":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify.js","./lib/beautify-css":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-css.js","./lib/beautify-html":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-html.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-css.js":[function(require,module,exports){
+},{"./lib/beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify.js","./lib/beautify-css":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-css.js","./lib/beautify-html":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-html.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-css.js":[function(require,module,exports){
 (function (global){
 /*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
 /*
@@ -13494,10 +13481,6 @@ if (typeof define === "function" && define.amd) {
             indentSize = parseInt(indentSize, 10);
         }
 
-        if(options.indent_with_tabs){
-            indentCharacter = '\t';
-            indentSize = 1;
-        }
 
         // tokenizer
         var whiteRe = /^\s+$/;
@@ -13513,7 +13496,6 @@ if (typeof define === "function" && define.amd) {
         }
 
         function peek(skipWhitespace) {
-            var result = '';
             var prev_pos = pos;
             if (skipWhitespace) {
                 eatWhitespace();
@@ -13636,16 +13618,15 @@ if (typeof define === "function" && define.amd) {
         };
 
         print.newLine = function(keepWhitespace) {
+            if (!keepWhitespace) {
+                print.trim();
+            }
+
             if (output.length) {
-                if (!keepWhitespace && output[output.length - 1] !== '\n') {
-                    print.trim();
-                }
-
                 output.push('\n');
-
-                if (basebaseIndentString) {
-                    output.push(basebaseIndentString);
-                }
+            }
+            if (basebaseIndentString) {
+                output.push(basebaseIndentString);
             }
         };
         print.singleSpace = function() {
@@ -13662,6 +13643,9 @@ if (typeof define === "function" && define.amd) {
 
 
         var output = [];
+        if (basebaseIndentString) {
+            output.push(basebaseIndentString);
+        }
         /*_____________________--------------------_____________________*/
 
         var insideRule = false;
@@ -13679,19 +13663,15 @@ if (typeof define === "function" && define.amd) {
             if (!ch) {
                 break;
             } else if (ch === '/' && peek() === '*') { /* css comment */
-                var header = indentLevel === 0;
-
-                if (isAfterNewline || header) {
-                    print.newLine();
-                }
-
+                var header = lookBack("");
+                print.newLine();
                 output.push(eatComment());
                 print.newLine();
                 if (header) {
                     print.newLine(true);
                 }
             } else if (ch === '/' && peek() === '/') { // single line comment
-                if (!isAfterNewline && last_top_ch !== '{' ) {
+                if (!isAfterNewline && last_top_ch !== '{') {
                     print.trim();
                 }
                 print.singleSpace();
@@ -13705,17 +13685,7 @@ if (typeof define === "function" && define.amd) {
                 output.push(ch);
 
                 // strip trailing space, if present, for hash property checks
-                var variableOrRule = peekString(": ,;{}()[]/='\"");
-
-                if (variableOrRule.match(/[ :]$/)) {
-                    // we have a variable or pseudo-class, add it and insert one space before continuing
-                    next();
-                    variableOrRule = eatString(": ").replace(/\s$/, '');
-                    output.push(variableOrRule);
-                    print.singleSpace();
-                }
-
-                variableOrRule = variableOrRule.replace(/\s$/, '')
+                var variableOrRule = peekString(": ,;{}()[]/='\"").replace(/\s$/, '');
 
                 // might be a nesting at-rule
                 if (variableOrRule in css_beautify.NESTED_AT_RULE) {
@@ -13723,6 +13693,12 @@ if (typeof define === "function" && define.amd) {
                     if (variableOrRule in css_beautify.CONDITIONAL_GROUP_RULE) {
                         enteringConditionalGroup = true;
                     }
+                } else if (': '.indexOf(variableOrRule[variableOrRule.length - 1]) >= 0) {
+                    //we have a variable, add it and insert one space before continuing
+                    next();
+                    variableOrRule = eatString(": ").replace(/\s$/, '');
+                    output.push(variableOrRule);
+                    print.singleSpace();
                 }
             } else if (ch === '{') {
                 if (peek(true) === '}') {
@@ -13835,12 +13811,7 @@ if (typeof define === "function" && define.amd) {
         }
 
 
-        var sweetCode = '';
-        if (basebaseIndentString) {
-            sweetCode += basebaseIndentString;
-        }
-
-        sweetCode += output.join('').replace(/[\r\n\t ]+$/, '');
+        var sweetCode = output.join('').replace(/[\r\n\t ]+$/, '');
 
         // establish end_with_newline
         if (end_with_newline) {
@@ -13889,7 +13860,7 @@ if (typeof define === "function" && define.amd) {
 }());
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-html.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-html.js":[function(require,module,exports){
 (function (global){
 /*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
 /*
@@ -13946,7 +13917,7 @@ if (typeof define === "function" && define.amd) {
     max_preserve_newlines (default unlimited) - maximum number of line breaks to be preserved in one chunk
     indent_handlebars (default false) - format and indent {{#foo}} and {{/foo}}
     end_with_newline (false)          - end with a newline
-    extra_liners (default [head,body,/html]) -List of tags that should have an extra newline before them.
+
 
     e.g.
 
@@ -13959,8 +13930,7 @@ if (typeof define === "function" && define.amd) {
       'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u'],
       'preserve_newlines': true,
       'max_preserve_newlines': 5,
-      'indent_handlebars': false,
-      'extra_liners': ['/html']
+      'indent_handlebars': false
     });
 */
 
@@ -13993,8 +13963,7 @@ if (typeof define === "function" && define.amd) {
             indent_handlebars,
             wrap_attributes,
             wrap_attributes_indent_size,
-            end_with_newline,
-            extra_liners;
+            end_with_newline;
 
         options = options || {};
 
@@ -14018,14 +13987,6 @@ if (typeof define === "function" && define.amd) {
         wrap_attributes = (options.wrap_attributes === undefined) ? 'auto' : options.wrap_attributes;
         wrap_attributes_indent_size = (options.wrap_attributes_indent_size === undefined) ? indent_size : parseInt(options.wrap_attributes_indent_size, 10) || indent_size;
         end_with_newline = (options.end_with_newline === undefined) ? false : options.end_with_newline;
-        extra_liners = Array.isArray(options.extra_liners) ?
-            options.extra_liners.concat() : (typeof options.extra_liners === 'string') ?
-            options.extra_liners.split(',') : 'head,body,/html'.split(',');
-
-        if(options.indent_with_tabs){
-            indent_character = '\t';
-            indent_size = 1;
-        }
 
         function Parser() {
 
@@ -14044,8 +14005,8 @@ if (typeof define === "function" && define.amd) {
 
             this.Utils = { //Uilities made available to the various functions
                 whitespace: "\n\r\t ".split(''),
-                single_token: 'br,input,link,meta,source,!doctype,basefont,base,area,hr,wbr,param,img,isindex,?xml,embed,?php,?,?='.split(','), //all the single tags for HTML
-                extra_liners: extra_liners, //for tags that need a line of whitespace before them
+                single_token: 'br,input,link,meta,!doctype,basefont,base,area,hr,wbr,param,img,isindex,?xml,embed,?php,?,?='.split(','), //all the single tags for HTML
+                extra_liners: 'head,body,/html'.split(','), //for tags that need a line of whitespace before them
                 in_array: function(what, arr) {
                     for (var i = 0; i < arr.length; i++) {
                         if (what === arr[i]) {
@@ -14056,7 +14017,8 @@ if (typeof define === "function" && define.amd) {
                 }
             };
 
-            // Return true if the given text is composed entirely of whitespace.
+            // Return true iff the given text is composed entirely of
+            // whitespace.
             this.is_whitespace = function(text) {
                 for (var n = 0; n < text.length; text++) {
                     if (!this.Utils.in_array(text.charAt(n), this.Utils.whitespace)) {
@@ -14121,8 +14083,6 @@ if (typeof define === "function" && define.amd) {
                         if (peek3 === '{{#' || peek3 === '{{/') {
                             // These are tags and not content.
                             break;
-                        } else if (peek3 === '{{!') {
-                            return [this.get_tag(), 'TK_TAG_HANDLEBARS_COMMENT'];
                         } else if (this.input.substr(this.pos, 2) === '{{') {
                             if (this.get_tag(true) === '{{else}}') {
                                 break;
@@ -14285,7 +14245,7 @@ if (typeof define === "function" && define.amd) {
 
                     if (indent_handlebars && !tag_start_char) {
                         if (content.length >= 2 && content[content.length - 1] === '{' && content[content.length - 2] === '{') {
-                            if (input_char === '#' || input_char === '/' || input_char === '!') {
+                            if (input_char === '#' || input_char === '/') {
                                 tag_start = this.pos - 3;
                             } else {
                                 tag_start = this.pos - 2;
@@ -14298,13 +14258,6 @@ if (typeof define === "function" && define.amd) {
                     content.push(input_char); //inserts character at-a-time (or string)
 
                     if (content[1] && content[1] === '!') { //if we're in a comment, do something special
-                        // We treat all comments as literals, even more than preformatted tags
-                        // we just look for the appropriate close tag
-                        content = [this.get_comment(tag_start)];
-                        break;
-                    }
-
-                    if (indent_handlebars && content[1] && content[1] === '{' && content[2] && content[2] === '!') { //if we're in a comment, do something special
                         // We treat all comments as literals, even more than preformatted tags
                         // we just look for the appropriate close tag
                         content = [this.get_comment(tag_start)];
@@ -14436,9 +14389,6 @@ if (typeof define === "function" && define.amd) {
                             matched = true;
                         } else if (comment.indexOf('<!--') === 0) { // <!-- comment ...
                             delimiter = '-->';
-                            matched = true;
-                        } else if (comment.indexOf('{{!') === 0) { // {{! handlebars comment
-                            delimiter = '}}';
                             matched = true;
                         }
                     }
@@ -14715,10 +14665,6 @@ if (typeof define === "function" && define.amd) {
                     }
                     multi_parser.current_mode = 'CONTENT';
                     break;
-                case 'TK_TAG_HANDLEBARS_COMMENT':
-                    multi_parser.print_token(multi_parser.token_text);
-                    multi_parser.current_mode = 'TAG';
-                    break;
                 case 'TK_CONTENT':
                     multi_parser.print_token(multi_parser.token_text);
                     multi_parser.current_mode = 'TAG';
@@ -14816,7 +14762,7 @@ if (typeof define === "function" && define.amd) {
 }());
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./beautify-css.js":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-css.js","./beautify.js":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify.js":[function(require,module,exports){
+},{"./beautify-css.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify-css.js","./beautify.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/lib/beautify.js":[function(require,module,exports){
 (function (global){
 /*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
 /*
@@ -15085,7 +15031,6 @@ if (typeof define === "function" && define.amd) {
 
         opt.indent_size = options.indent_size ? parseInt(options.indent_size, 10) : 4;
         opt.indent_char = options.indent_char ? options.indent_char : ' ';
-        opt.eol = options.eol ? options.eol : '\n';
         opt.preserve_newlines = (options.preserve_newlines === undefined) ? true : options.preserve_newlines;
         opt.break_chained_methods = (options.break_chained_methods === undefined) ? false : options.break_chained_methods;
         opt.max_preserve_newlines = (options.max_preserve_newlines === undefined) ? 0 : parseInt(options.max_preserve_newlines, 10);
@@ -15111,8 +15056,6 @@ if (typeof define === "function" && define.amd) {
             opt.indent_char = '\t';
             opt.indent_size = 1;
         }
-
-        opt.eol = opt.eol.replace(/\\r/, '\r').replace(/\\n/, '\n')
 
         //----------------------------------
         indent_string = '';
@@ -15176,10 +15119,6 @@ if (typeof define === "function" && define.amd) {
             sweet_code = output.get_code();
             if (opt.end_with_newline) {
                 sweet_code += '\n';
-            }
-
-            if (opt.eol != '\n') {
-                sweet_code = sweet_code.replace(/[\r]?[\n]/mg, opt.eol);
             }
 
             return sweet_code;
@@ -15345,7 +15284,6 @@ if (typeof define === "function" && define.amd) {
                     (last_type === 'TK_WORD' && flags.mode === MODE.BlockStatement
                         && !flags.in_case
                         && !(current_token.text === '--' || current_token.text === '++')
-                        && last_last_text !== 'function'
                         && current_token.type !== 'TK_WORD' && current_token.type !== 'TK_RESERVED') ||
                     (flags.mode === MODE.ObjectLiteral && (
                         (flags.last_text === ':' && flags.ternary_depth === 0) || (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['get', 'set']))))
@@ -15467,11 +15405,6 @@ if (typeof define === "function" && define.amd) {
                 if (opt.space_before_conditional) {
                     output.space_before_token = true;
                 }
-            }
-
-            // Should be a space between await and an IIFE
-            if(current_token.text === '(' && last_type === 'TK_RESERVED' && flags.last_word === 'await'){
-                output.space_before_token = true;
             }
 
             // Support of this kind of newline preservation.
@@ -15695,7 +15628,7 @@ if (typeof define === "function" && define.amd) {
                     }
                 }
                 if (last_type === 'TK_RESERVED' || last_type === 'TK_WORD') {
-                    if (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['get', 'set', 'new', 'return', 'export', 'async'])) {
+                    if (last_type === 'TK_RESERVED' && in_array(flags.last_text, ['get', 'set', 'new', 'return', 'export'])) {
                         output.space_before_token = true;
                     } else if (last_type === 'TK_RESERVED' && flags.last_text === 'default' && last_last_text === 'export') {
                         output.space_before_token = true;
@@ -16304,7 +16237,7 @@ if (typeof define === "function" && define.amd) {
 
         // words which should always start on new line.
         this.line_starters = 'continue,try,throw,return,var,let,const,if,switch,case,default,for,while,break,function,import,export'.split(',');
-        var reserved_words = this.line_starters.concat(['do', 'in', 'else', 'get', 'set', 'new', 'catch', 'finally', 'typeof', 'yield', 'async', 'await']);
+        var reserved_words = this.line_starters.concat(['do', 'in', 'else', 'get', 'set', 'new', 'catch', 'finally', 'typeof', 'yield']);
 
         var n_newlines, whitespace_before_token, in_html_comment, tokens, parser_pos;
         var input_length;
@@ -16339,13 +16272,13 @@ if (typeof define === "function" && define.amd) {
 
                 if (next.type === 'TK_START_BLOCK' || next.type === 'TK_START_EXPR') {
                     next.parent = last;
-                    open_stack.push(open);
                     open = next;
+                    open_stack.push(next);
                 }  else if ((next.type === 'TK_END_BLOCK' || next.type === 'TK_END_EXPR') &&
                     (open && (
                         (next.text === ']' && open.text === '[') ||
                         (next.text === ')' && open.text === '(') ||
-                        (next.text === '}' && open.text === '{')))) {
+                        (next.text === '}' && open.text === '}')))) {
                     next.parent = open.parent;
                     open = open_stack.pop();
                 }
@@ -16538,7 +16471,7 @@ if (typeof define === "function" && define.amd) {
             if (c === '`' || c === "'" || c === '"' || // string
                 (
                     (c === '/') || // regexp
-                    (opts.e4x && c === "<" && input.slice(parser_pos - 1).match(/^<([-a-zA-Z:0-9_.]+|{[^{}]*}|!\[CDATA\[[\s\S]*?\]\])(\s+[-a-zA-Z:0-9_.]+\s*=\s*('[^']*'|"[^"]*"|{.*?}))*\s*(\/?)\s*>/)) // xml
+                    (opts.e4x && c === "<" && input.slice(parser_pos - 1).match(/^<([-a-zA-Z:0-9_.]+|{[^{}]*}|!\[CDATA\[[\s\S]*?\]\])\s*([-a-zA-Z:0-9_.]+=('[^']*'|"[^"]*"|{[^{}]*})\s*)*\/?\s*>/)) // xml
                 ) && ( // regex and xml can only appear in specific locations during parsing
                     (last_token.type === 'TK_RESERVED' && in_array(last_token.text , ['return', 'case', 'throw', 'else', 'do', 'typeof', 'yield'])) ||
                     (last_token.type === 'TK_END_EXPR' && last_token.text === ')' &&
@@ -16579,7 +16512,7 @@ if (typeof define === "function" && define.amd) {
                     //
                     // handle e4x xml literals
                     //
-                    var xmlRegExp = /<(\/?)([-a-zA-Z:0-9_.]+|{[^{}]*}|!\[CDATA\[[\s\S]*?\]\])(\s+[-a-zA-Z:0-9_.]+\s*=\s*('[^']*'|"[^"]*"|{.*?}))*\s*(\/?)\s*>/g;
+                    var xmlRegExp = /<(\/?)([-a-zA-Z:0-9_.]+|{[^{}]*}|!\[CDATA\[[\s\S]*?\]\])\s*([-a-zA-Z:0-9_.]+=('[^']*'|"[^"]*"|{[^{}]*})\s*)*(\/?)\s*>/g;
                     var xmlStr = input.slice(parser_pos - 1);
                     var match = xmlRegExp.exec(xmlStr);
                     if (match && match.index === 0) {
@@ -16602,9 +16535,8 @@ if (typeof define === "function" && define.amd) {
                             match = xmlRegExp.exec(xmlStr);
                         }
                         var xmlLength = match ? match.index + match[0].length : xmlStr.length;
-                        xmlStr = xmlStr.slice(0, xmlLength);
                         parser_pos += xmlLength - 1;
-                        return [xmlStr, "TK_STRING"];
+                        return [xmlStr.slice(0, xmlLength), "TK_STRING"];
                     }
                 } else {
                     //
@@ -16616,11 +16548,6 @@ if (typeof define === "function" && define.amd) {
                             (esc || (input.charAt(parser_pos) !== sep &&
                             (sep === '`' || !acorn.newline.test(input.charAt(parser_pos)))))) {
                         resulting_string += input.charAt(parser_pos);
-                        // Handle \r\n linebreaks after escapes or in template strings
-                        if (input.charAt(parser_pos) === '\r' && input.charAt(parser_pos + 1) === '\n') {
-                            parser_pos += 1;
-                            resulting_string += '\n';
-                        }
                         if (esc) {
                             if (input.charAt(parser_pos) === 'x' || input.charAt(parser_pos) === 'u') {
                                 has_char_escapes = true;
@@ -16822,11 +16749,11 @@ if (typeof define === "function" && define.amd) {
 }());
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js":[function(require,module,exports){
 (function (global){
 /**
  * @license
- * lodash 3.9.3 (Custom Build) <https://lodash.com/>
+ * lodash 3.7.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern -d -o ./index.js`
  * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
@@ -16839,7 +16766,7 @@ if (typeof define === "function" && define.amd) {
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '3.9.3';
+  var VERSION = '3.7.0';
 
   /** Used to compose bitmasks for wrapper metadata. */
   var BIND_FLAG = 1,
@@ -16914,7 +16841,7 @@ if (typeof define === "function" && define.amd) {
       reInterpolate = /<%=([\s\S]+?)%>/g;
 
   /** Used to match property names within property paths. */
-  var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\n\\]|\\.)*?\1)\]/,
+  var reIsDeepProp = /\.|\[(?:[^[\]]+|(["'])(?:(?!\1)[^\n\\]|\\.)*?)\1\]/,
       reIsPlainProp = /^\w*$/,
       rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\n\\]|\\.)*?)\2)\]/g;
 
@@ -16943,9 +16870,6 @@ if (typeof define === "function" && define.amd) {
 
   /** Used to detect host constructors (Safari > 5). */
   var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-  /** Used to detect unsigned integer values. */
-  var reIsUint = /^\d+$/;
 
   /** Used to match latin-1 supplementary letters (excluding mathematical operators). */
   var reLatin1 = /[\xc0-\xd6\xd8-\xde\xdf-\xf6\xf8-\xff]/g;
@@ -16981,8 +16905,9 @@ if (typeof define === "function" && define.amd) {
     'Array', 'ArrayBuffer', 'Date', 'Error', 'Float32Array', 'Float64Array',
     'Function', 'Int8Array', 'Int16Array', 'Int32Array', 'Math', 'Number',
     'Object', 'RegExp', 'Set', 'String', '_', 'clearTimeout', 'document',
-    'isFinite', 'parseFloat', 'parseInt', 'setTimeout', 'TypeError', 'Uint8Array',
-    'Uint8ClampedArray', 'Uint16Array', 'Uint32Array', 'WeakMap', 'window'
+    'isFinite', 'parseInt', 'setTimeout', 'TypeError', 'Uint8Array',
+    'Uint8ClampedArray', 'Uint16Array', 'Uint32Array', 'WeakMap',
+    'window'
   ];
 
   /** Used to make template sourceURLs easier to identify. */
@@ -17103,7 +17028,7 @@ if (typeof define === "function" && define.amd) {
   /**
    * Used as a reference to the global object.
    *
-   * The `this` value is used if it's the global object to avoid Greasemonkey's
+   * The `this` value is used if it is the global object to avoid Greasemonkey's
    * restricted `window` object, otherwise the `window` object is used.
    */
   var root = freeGlobal || ((freeWindow !== (this && this.window)) && freeWindow) || freeSelf || this;
@@ -17115,28 +17040,19 @@ if (typeof define === "function" && define.amd) {
    * sorts them in ascending order without guaranteeing a stable sort.
    *
    * @private
-   * @param {*} value The value to compare.
-   * @param {*} other The other value to compare.
+   * @param {*} value The value to compare to `other`.
+   * @param {*} other The value to compare to `value`.
    * @returns {number} Returns the sort order indicator for `value`.
    */
   function baseCompareAscending(value, other) {
     if (value !== other) {
-      var valIsNull = value === null,
-          valIsUndef = value === undefined,
-          valIsReflexive = value === value;
-
-      var othIsNull = other === null,
-          othIsUndef = other === undefined,
+      var valIsReflexive = value === value,
           othIsReflexive = other === other;
 
-      if ((value > other && !othIsNull) || !valIsReflexive ||
-          (valIsNull && !othIsUndef && othIsReflexive) ||
-          (valIsUndef && othIsReflexive)) {
+      if (value > other || !valIsReflexive || (value === undefined && othIsReflexive)) {
         return 1;
       }
-      if ((value < other && !valIsNull) || !othIsReflexive ||
-          (othIsNull && !valIsUndef && valIsReflexive) ||
-          (othIsUndef && valIsReflexive)) {
+      if (value < other || !othIsReflexive || (other === undefined && valIsReflexive)) {
         return -1;
       }
     }
@@ -17204,7 +17120,7 @@ if (typeof define === "function" && define.amd) {
   }
 
   /**
-   * Converts `value` to a string if it's not one. An empty string is returned
+   * Converts `value` to a string if it is not one. An empty string is returned
    * for `null` or `undefined` values.
    *
    * @private
@@ -17216,6 +17132,17 @@ if (typeof define === "function" && define.amd) {
       return value;
     }
     return value == null ? '' : (value + '');
+  }
+
+  /**
+   * Used by `_.max` and `_.min` as the default callback for string values.
+   *
+   * @private
+   * @param {string} string The string to inspect.
+   * @returns {number} Returns the code unit of the first character of the string.
+   */
+  function charAtCallback(string) {
+    return string.charCodeAt(0);
   }
 
   /**
@@ -17540,7 +17467,7 @@ if (typeof define === "function" && define.amd) {
         stringProto = String.prototype;
 
     /** Used to detect DOM support. */
-    var document = (document = context.window) ? document.document : null;
+    var document = (document = context.window) && document.document;
 
     /** Used to resolve the decompiled source of functions. */
     var fnToString = Function.prototype.toString;
@@ -17562,24 +17489,26 @@ if (typeof define === "function" && define.amd) {
 
     /** Used to detect if a method is native. */
     var reIsNative = RegExp('^' +
-      escapeRegExp(fnToString.call(hasOwnProperty))
-      .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+      escapeRegExp(objToString)
+      .replace(/toString|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
     );
 
     /** Native method references. */
-    var ArrayBuffer = getNative(context, 'ArrayBuffer'),
-        bufferSlice = getNative(ArrayBuffer && new ArrayBuffer(0), 'slice'),
+    var ArrayBuffer = isNative(ArrayBuffer = context.ArrayBuffer) && ArrayBuffer,
+        bufferSlice = isNative(bufferSlice = ArrayBuffer && new ArrayBuffer(0).slice) && bufferSlice,
         ceil = Math.ceil,
         clearTimeout = context.clearTimeout,
         floor = Math.floor,
-        getPrototypeOf = getNative(Object, 'getPrototypeOf'),
-        parseFloat = context.parseFloat,
+        getOwnPropertySymbols = isNative(getOwnPropertySymbols = Object.getOwnPropertySymbols) && getOwnPropertySymbols,
+        getPrototypeOf = isNative(getPrototypeOf = Object.getPrototypeOf) && getPrototypeOf,
         push = arrayProto.push,
-        Set = getNative(context, 'Set'),
+        preventExtensions = isNative(Object.preventExtensions = Object.preventExtensions) && preventExtensions,
+        propertyIsEnumerable = objectProto.propertyIsEnumerable,
+        Set = isNative(Set = context.Set) && Set,
         setTimeout = context.setTimeout,
         splice = arrayProto.splice,
-        Uint8Array = getNative(context, 'Uint8Array'),
-        WeakMap = getNative(context, 'WeakMap');
+        Uint8Array = isNative(Uint8Array = context.Uint8Array) && Uint8Array,
+        WeakMap = isNative(WeakMap = context.WeakMap) && WeakMap;
 
     /** Used to clone array buffers. */
     var Float64Array = (function() {
@@ -17587,21 +17516,37 @@ if (typeof define === "function" && define.amd) {
       // where the array buffer's `byteLength` is not a multiple of the typed
       // array's `BYTES_PER_ELEMENT`.
       try {
-        var func = getNative(context, 'Float64Array'),
+        var func = isNative(func = context.Float64Array) && func,
             result = new func(new ArrayBuffer(10), 0, 1) && func;
       } catch(e) {}
-      return result || null;
+      return result;
+    }());
+
+    /** Used as `baseAssign`. */
+    var nativeAssign = (function() {
+      // Avoid `Object.assign` in Firefox 34-37 which have an early implementation
+      // with a now defunct try/catch behavior. See https://bugzilla.mozilla.org/show_bug.cgi?id=1103344
+      // for more details.
+      //
+      // Use `Object.preventExtensions` on a plain object instead of simply using
+      // `Object('x')` because Chrome and IE fail to throw an error when attempting
+      // to assign values to readonly indexes of strings in strict mode.
+      var object = { '1': 0 },
+          func = preventExtensions && isNative(func = Object.assign) && func;
+
+      try { func(preventExtensions(object), 'xo'); } catch(e) {}
+      return !object[1] && func;
     }());
 
     /* Native method references for those with the same name as other `lodash` methods. */
-    var nativeCreate = getNative(Object, 'create'),
-        nativeIsArray = getNative(Array, 'isArray'),
+    var nativeIsArray = isNative(nativeIsArray = Array.isArray) && nativeIsArray,
+        nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate,
         nativeIsFinite = context.isFinite,
-        nativeKeys = getNative(Object, 'keys'),
+        nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys,
         nativeMax = Math.max,
         nativeMin = Math.min,
-        nativeNow = getNative(Date, 'now'),
-        nativeNumIsFinite = getNative(Number, 'isFinite'),
+        nativeNow = isNative(nativeNow = Date.now) && nativeNow,
+        nativeNumIsFinite = isNative(nativeNumIsFinite = Number.isFinite) && nativeNumIsFinite,
         nativeParseInt = context.parseInt,
         nativeRandom = Math.random;
 
@@ -17610,8 +17555,8 @@ if (typeof define === "function" && define.amd) {
         POSITIVE_INFINITY = Number.POSITIVE_INFINITY;
 
     /** Used as references for the maximum length and index of an array. */
-    var MAX_ARRAY_LENGTH = 4294967295,
-        MAX_ARRAY_INDEX = MAX_ARRAY_LENGTH - 1,
+    var MAX_ARRAY_LENGTH = Math.pow(2, 32) - 1,
+        MAX_ARRAY_INDEX =  MAX_ARRAY_LENGTH - 1,
         HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
 
     /** Used as the size, in bytes, of each `Float64Array` element. */
@@ -17621,7 +17566,7 @@ if (typeof define === "function" && define.amd) {
      * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
      * of an array-like value.
      */
-    var MAX_SAFE_INTEGER = 9007199254740991;
+    var MAX_SAFE_INTEGER = Math.pow(2, 53) - 1;
 
     /** Used to store function metadata. */
     var metaMap = WeakMap && new WeakMap;
@@ -17670,31 +17615,30 @@ if (typeof define === "function" && define.amd) {
      * `filter`, `flatten`, `flattenDeep`, `flow`, `flowRight`, `forEach`,
      * `forEachRight`, `forIn`, `forInRight`, `forOwn`, `forOwnRight`, `functions`,
      * `groupBy`, `indexBy`, `initial`, `intersection`, `invert`, `invoke`, `keys`,
-     * `keysIn`, `map`, `mapKeys`, `mapValues`, `matches`, `matchesProperty`,
-     * `memoize`, `merge`, `method`, `methodOf`, `mixin`, `negate`, `omit`, `once`,
-     * `pairs`, `partial`, `partialRight`, `partition`, `pick`, `plant`, `pluck`,
-     * `property`, `propertyOf`, `pull`, `pullAt`, `push`, `range`, `rearg`,
-     * `reject`, `remove`, `rest`, `restParam`, `reverse`, `set`, `shuffle`,
-     * `slice`, `sort`, `sortBy`, `sortByAll`, `sortByOrder`, `splice`, `spread`,
-     * `take`, `takeRight`, `takeRightWhile`, `takeWhile`, `tap`, `throttle`,
-     * `thru`, `times`, `toArray`, `toPlainObject`, `transform`, `union`, `uniq`,
-     * `unshift`, `unzip`, `unzipWith`, `values`, `valuesIn`, `where`, `without`,
-     * `wrap`, `xor`, `zip`, `zipObject`, `zipWith`
+     * `keysIn`, `map`, `mapValues`, `matches`, `matchesProperty`, `memoize`,
+     * `merge`, `mixin`, `negate`, `omit`, `once`, `pairs`, `partial`, `partialRight`,
+     * `partition`, `pick`, `plant`, `pluck`, `property`, `propertyOf`, `pull`,
+     * `pullAt`, `push`, `range`, `rearg`, `reject`, `remove`, `rest`, `reverse`,
+     * `shuffle`, `slice`, `sort`, `sortBy`, `sortByAll`, `sortByOrder`, `splice`,
+     * `spread`, `take`, `takeRight`, `takeRightWhile`, `takeWhile`, `tap`,
+     * `throttle`, `thru`, `times`, `toArray`, `toPlainObject`, `transform`,
+     * `union`, `uniq`, `unshift`, `unzip`, `values`, `valuesIn`, `where`,
+     * `without`, `wrap`, `xor`, `zip`, and `zipObject`
      *
      * The wrapper methods that are **not** chainable by default are:
      * `add`, `attempt`, `camelCase`, `capitalize`, `clone`, `cloneDeep`, `deburr`,
      * `endsWith`, `escape`, `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`,
-     * `findLast`, `findLastIndex`, `findLastKey`, `findWhere`, `first`, `get`,
-     * `gt`, `gte`, `has`, `identity`, `includes`, `indexOf`, `inRange`, `isArguments`,
-     * `isArray`, `isBoolean`, `isDate`, `isElement`, `isEmpty`, `isEqual`, `isError`,
-     * `isFinite` `isFunction`, `isMatch`, `isNative`, `isNaN`, `isNull`, `isNumber`,
-     * `isObject`, `isPlainObject`, `isRegExp`, `isString`, `isUndefined`,
-     * `isTypedArray`, `join`, `kebabCase`, `last`, `lastIndexOf`, `lt`, `lte`,
-     * `max`, `min`, `noConflict`, `noop`, `now`, `pad`, `padLeft`, `padRight`,
-     * `parseInt`, `pop`, `random`, `reduce`, `reduceRight`, `repeat`, `result`,
-     * `runInContext`, `shift`, `size`, `snakeCase`, `some`, `sortedIndex`,
-     * `sortedLastIndex`, `startCase`, `startsWith`, `sum`, `template`, `trim`,
-     * `trimLeft`, `trimRight`, `trunc`, `unescape`, `uniqueId`, `value`, and `words`
+     * `findLast`, `findLastIndex`, `findLastKey`, `findWhere`, `first`, `has`,
+     * `identity`, `includes`, `indexOf`, `inRange`, `isArguments`, `isArray`,
+     * `isBoolean`, `isDate`, `isElement`, `isEmpty`, `isEqual`, `isError`, `isFinite`
+     * `isFunction`, `isMatch`, `isNative`, `isNaN`, `isNull`, `isNumber`, `isObject`,
+     * `isPlainObject`, `isRegExp`, `isString`, `isUndefined`, `isTypedArray`,
+     * `join`, `kebabCase`, `last`, `lastIndexOf`, `max`, `min`, `noConflict`,
+     * `noop`, `now`, `pad`, `padLeft`, `padRight`, `parseInt`, `pop`, `random`,
+     * `reduce`, `reduceRight`, `repeat`, `result`, `runInContext`, `shift`, `size`,
+     * `snakeCase`, `some`, `sortedIndex`, `sortedLastIndex`, `startCase`, `startsWith`,
+     * `sum`, `template`, `trim`, `trimLeft`, `trimRight`, `trunc`, `unescape`,
+     * `uniqueId`, `value`, and `words`
      *
      * The wrapper method `sample` will return a wrapped value when `n` is provided,
      * otherwise an unwrapped value is returned.
@@ -17778,6 +17722,24 @@ if (typeof define === "function" && define.amd) {
       for (var key in new Ctor) { props.push(key); }
 
       /**
+       * Detect if functions can be decompiled by `Function#toString`
+       * (all but Firefox OS certified apps, older Opera mobile browsers, and
+       * the PlayStation 3; forced `false` for Windows 8 apps).
+       *
+       * @memberOf _.support
+       * @type boolean
+       */
+      support.funcDecomp = /\bthis\b/.test(function() { return this; });
+
+      /**
+       * Detect if `Function#name` is supported (all but IE).
+       *
+       * @memberOf _.support
+       * @type boolean
+       */
+      support.funcNames = typeof Function.name == 'string';
+
+      /**
        * Detect if the DOM is supported.
        *
        * @memberOf _.support
@@ -17787,6 +17749,24 @@ if (typeof define === "function" && define.amd) {
         support.dom = document.createDocumentFragment().nodeType === 11;
       } catch(e) {
         support.dom = false;
+      }
+
+      /**
+       * Detect if `arguments` object indexes are non-enumerable.
+       *
+       * In Firefox < 4, IE < 9, PhantomJS, and Safari < 5.1 `arguments` object
+       * indexes are non-enumerable. Chrome < 25 and Node.js < 0.11.0 treat
+       * `arguments` object indexes as non-enumerable and fail `hasOwnProperty`
+       * checks for indexes that exceed the number of function parameters and
+       * whose associated argument values are `0`.
+       *
+       * @memberOf _.support
+       * @type boolean
+       */
+      try {
+        support.nonEnumArgs = !propertyIsEnumerable.call(arguments, 1);
+      } catch(e) {
+        support.nonEnumArgs = true;
       }
     }(1, 0));
 
@@ -18187,35 +18167,6 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * A specialized version of `baseExtremum` for arrays which invokes `iteratee`
-     * with one argument: (value).
-     *
-     * @private
-     * @param {Array} array The array to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
-     * @param {Function} comparator The function used to compare values.
-     * @param {*} exValue The initial extremum value.
-     * @returns {*} Returns the extremum value.
-     */
-    function arrayExtremum(array, iteratee, comparator, exValue) {
-      var index = -1,
-          length = array.length,
-          computed = exValue,
-          result = computed;
-
-      while (++index < length) {
-        var value = array[index],
-            current = +iteratee(value);
-
-        if (comparator(current, computed)) {
-          computed = current;
-          result = value;
-        }
-      }
-      return result;
-    }
-
-    /**
      * A specialized version of `_.filter` for arrays without support for callback
      * shorthands and `this` binding.
      *
@@ -18255,6 +18206,48 @@ if (typeof define === "function" && define.amd) {
 
       while (++index < length) {
         result[index] = iteratee(array[index], index, array);
+      }
+      return result;
+    }
+
+    /**
+     * A specialized version of `_.max` for arrays without support for iteratees.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @returns {*} Returns the maximum value.
+     */
+    function arrayMax(array) {
+      var index = -1,
+          length = array.length,
+          result = NEGATIVE_INFINITY;
+
+      while (++index < length) {
+        var value = array[index];
+        if (value > result) {
+          result = value;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * A specialized version of `_.min` for arrays without support for iteratees.
+     *
+     * @private
+     * @param {Array} array The array to iterate over.
+     * @returns {*} Returns the minimum value.
+     */
+    function arrayMin(array) {
+      var index = -1,
+          length = array.length,
+          result = POSITIVE_INFINITY;
+
+      while (++index < length) {
+        var value = array[index];
+        if (value < result) {
+          result = value;
+        }
       }
       return result;
     }
@@ -18389,8 +18382,10 @@ if (typeof define === "function" && define.amd) {
      * @returns {Object} Returns `object`.
      */
     function assignWith(object, source, customizer) {
+      var props = keys(source);
+      push.apply(props, getSymbols(source));
+
       var index = -1,
-          props = keys(source),
           length = props.length;
 
       while (++index < length) {
@@ -18415,11 +18410,11 @@ if (typeof define === "function" && define.amd) {
      * @param {Object} source The source object.
      * @returns {Object} Returns `object`.
      */
-    function baseAssign(object, source) {
+    var baseAssign = nativeAssign || function(object, source) {
       return source == null
         ? object
-        : baseCopy(source, keys(source), object);
-    }
+        : baseCopy(source, getSymbols(source), baseCopy(source, keys(source), object));
+    };
 
     /**
      * The base implementation of `_.at` without support for string collections
@@ -18432,9 +18427,8 @@ if (typeof define === "function" && define.amd) {
      */
     function baseAt(collection, props) {
       var index = -1,
-          isNil = collection == null,
-          isArr = !isNil && isArrayLike(collection),
-          length = isArr ? collection.length : 0,
+          length = collection.length,
+          isArr = isLength(length),
           propsLength = props.length,
           result = Array(propsLength);
 
@@ -18443,7 +18437,7 @@ if (typeof define === "function" && define.amd) {
         if (isArr) {
           result[index] = isIndex(key, length) ? collection[key] : undefined;
         } else {
-          result[index] = isNil ? undefined : collection[key];
+          result[index] = collection[key];
         }
       }
       return result;
@@ -18575,14 +18569,14 @@ if (typeof define === "function" && define.amd) {
      * @returns {Object} Returns the new object.
      */
     var baseCreate = (function() {
-      function object() {}
+      function Object() {}
       return function(prototype) {
         if (isObject(prototype)) {
-          object.prototype = prototype;
-          var result = new object;
-          object.prototype = null;
+          Object.prototype = prototype;
+          var result = new Object;
+          Object.prototype = null;
         }
-        return result || {};
+        return result || context.Object();
       };
     }());
 
@@ -18692,32 +18686,6 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Gets the extremum value of `collection` invoking `iteratee` for each value
-     * in `collection` to generate the criterion by which the value is ranked.
-     * The `iteratee` is invoked with three arguments: (value, index|key, collection).
-     *
-     * @private
-     * @param {Array|Object|string} collection The collection to iterate over.
-     * @param {Function} iteratee The function invoked per iteration.
-     * @param {Function} comparator The function used to compare values.
-     * @param {*} exValue The initial extremum value.
-     * @returns {*} Returns the extremum value.
-     */
-    function baseExtremum(collection, iteratee, comparator, exValue) {
-      var computed = exValue,
-          result = computed;
-
-      baseEach(collection, function(value, index, collection) {
-        var current = +iteratee(value, index, collection);
-        if (comparator(current, computed) || (current === exValue && current === result)) {
-          computed = current;
-          result = value;
-        }
-      });
-      return result;
-    }
-
-    /**
      * The base implementation of `_.fill` without an iteratee call guard.
      *
      * @private
@@ -18796,8 +18764,8 @@ if (typeof define === "function" && define.amd) {
      *
      * @private
      * @param {Array} array The array to flatten.
-     * @param {boolean} [isDeep] Specify a deep flatten.
-     * @param {boolean} [isStrict] Restrict flattening to arrays-like objects.
+     * @param {boolean} isDeep Specify a deep flatten.
+     * @param {boolean} isStrict Restrict flattening to arrays and `arguments` objects.
      * @returns {Array} Returns the new flattened array.
      */
     function baseFlatten(array, isDeep, isStrict) {
@@ -18808,8 +18776,8 @@ if (typeof define === "function" && define.amd) {
 
       while (++index < length) {
         var value = array[index];
-        if (isObjectLike(value) && isArrayLike(value) &&
-            (isStrict || isArray(value) || isArguments(value))) {
+
+        if (isObjectLike(value) && isLength(value.length) && (isArray(value) || isArguments(value))) {
           if (isDeep) {
             // Recursively flatten arrays (susceptible to call stack limits).
             value = baseFlatten(value, isDeep, isStrict);
@@ -18817,6 +18785,7 @@ if (typeof define === "function" && define.amd) {
           var valIndex = -1,
               valLength = value.length;
 
+          result.length += valLength;
           while (++valIndex < valLength) {
             result[++resIndex] = value[valIndex];
           }
@@ -18933,13 +18902,13 @@ if (typeof define === "function" && define.amd) {
       if (pathKey !== undefined && pathKey in toObject(object)) {
         path = [pathKey];
       }
-      var index = 0,
+      var index = -1,
           length = path.length;
 
-      while (object != null && index < length) {
-        object = object[path[index++]];
+      while (object != null && ++index < length) {
+        var result = object = object[path[index]];
       }
-      return (index && index == length) ? object : undefined;
+      return result;
     }
 
     /**
@@ -18956,10 +18925,18 @@ if (typeof define === "function" && define.amd) {
      * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
      */
     function baseIsEqual(value, other, customizer, isLoose, stackA, stackB) {
+      // Exit early for identical values.
       if (value === other) {
-        return true;
+        // Treat `+0` vs. `-0` as not equal.
+        return value !== 0 || (1 / value == 1 / other);
       }
-      if (value == null || other == null || (!isObject(value) && !isObjectLike(other))) {
+      var valType = typeof value,
+          othType = typeof other;
+
+      // Exit early for unlike primitive values.
+      if ((valType != 'function' && valType != 'object' && othType != 'function' && othType != 'object') ||
+          value == null || other == null) {
+        // Return `false` unless both values are `NaN`.
         return value !== value && other !== other;
       }
       return baseIsEqualDeep(value, other, baseIsEqual, customizer, isLoose, stackA, stackB);
@@ -19010,11 +18987,11 @@ if (typeof define === "function" && define.amd) {
         return equalByTag(object, other, objTag);
       }
       if (!isLoose) {
-        var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
-            othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
+        var valWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
+            othWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
 
-        if (objIsWrapped || othIsWrapped) {
-          return equalFunc(objIsWrapped ? object.value() : object, othIsWrapped ? other.value() : other, customizer, isLoose, stackA, stackB);
+        if (valWrapped || othWrapped) {
+          return equalFunc(valWrapped ? object.value() : object, othWrapped ? other.value() : other, customizer, isLoose, stackA, stackB);
         }
       }
       if (!isSameTag) {
@@ -19049,43 +19026,41 @@ if (typeof define === "function" && define.amd) {
      *
      * @private
      * @param {Object} object The object to inspect.
-     * @param {Array} matchData The propery names, values, and compare flags to match.
+     * @param {Array} props The source property names to match.
+     * @param {Array} values The source values to match.
+     * @param {Array} strictCompareFlags Strict comparison flags for source values.
      * @param {Function} [customizer] The function to customize comparing objects.
      * @returns {boolean} Returns `true` if `object` is a match, else `false`.
      */
-    function baseIsMatch(object, matchData, customizer) {
-      var index = matchData.length,
-          length = index,
+    function baseIsMatch(object, props, values, strictCompareFlags, customizer) {
+      var index = -1,
+          length = props.length,
           noCustomizer = !customizer;
 
-      if (object == null) {
-        return !length;
-      }
-      object = toObject(object);
-      while (index--) {
-        var data = matchData[index];
-        if ((noCustomizer && data[2])
-              ? data[1] !== object[data[0]]
-              : !(data[0] in object)
+      while (++index < length) {
+        if ((noCustomizer && strictCompareFlags[index])
+              ? values[index] !== object[props[index]]
+              : !(props[index] in object)
             ) {
           return false;
         }
       }
+      index = -1;
       while (++index < length) {
-        data = matchData[index];
-        var key = data[0],
+        var key = props[index],
             objValue = object[key],
-            srcValue = data[1];
+            srcValue = values[index];
 
-        if (noCustomizer && data[2]) {
-          if (objValue === undefined && !(key in object)) {
-            return false;
-          }
+        if (noCustomizer && strictCompareFlags[index]) {
+          var result = objValue !== undefined || (key in object);
         } else {
-          var result = customizer ? customizer(objValue, srcValue, key) : undefined;
-          if (!(result === undefined ? baseIsEqual(srcValue, objValue, customizer, true) : result)) {
-            return false;
+          result = customizer ? customizer(objValue, srcValue, key) : undefined;
+          if (result === undefined) {
+            result = baseIsEqual(srcValue, objValue, customizer, true);
           }
+        }
+        if (!result) {
+          return false;
         }
       }
       return true;
@@ -19102,7 +19077,8 @@ if (typeof define === "function" && define.amd) {
      */
     function baseMap(collection, iteratee) {
       var index = -1,
-          result = isArrayLike(collection) ? Array(collection.length) : [];
+          length = getLength(collection),
+          result = isLength(length) ? Array(length) : [];
 
       baseEach(collection, function(value, key, collection) {
         result[++index] = iteratee(value, key, collection);
@@ -19118,34 +19094,50 @@ if (typeof define === "function" && define.amd) {
      * @returns {Function} Returns the new function.
      */
     function baseMatches(source) {
-      var matchData = getMatchData(source);
-      if (matchData.length == 1 && matchData[0][2]) {
-        var key = matchData[0][0],
-            value = matchData[0][1];
+      var props = keys(source),
+          length = props.length;
 
-        return function(object) {
-          if (object == null) {
-            return false;
-          }
-          return object[key] === value && (value !== undefined || (key in toObject(object)));
-        };
+      if (!length) {
+        return constant(true);
+      }
+      if (length == 1) {
+        var key = props[0],
+            value = source[key];
+
+        if (isStrictComparable(value)) {
+          return function(object) {
+            if (object == null) {
+              return false;
+            }
+            return object[key] === value && (value !== undefined || (key in toObject(object)));
+          };
+        }
+      }
+      var values = Array(length),
+          strictCompareFlags = Array(length);
+
+      while (length--) {
+        value = source[props[length]];
+        values[length] = value;
+        strictCompareFlags[length] = isStrictComparable(value);
       }
       return function(object) {
-        return baseIsMatch(object, matchData);
+        return object != null && baseIsMatch(toObject(object), props, values, strictCompareFlags);
       };
     }
 
     /**
-     * The base implementation of `_.matchesProperty` which does not clone `srcValue`.
+     * The base implementation of `_.matchesProperty` which does not which does
+     * not clone `value`.
      *
      * @private
      * @param {string} path The path of the property to get.
-     * @param {*} srcValue The value to compare.
+     * @param {*} value The value to compare.
      * @returns {Function} Returns the new function.
      */
-    function baseMatchesProperty(path, srcValue) {
+    function baseMatchesProperty(path, value) {
       var isArr = isArray(path),
-          isCommon = isKey(path) && isStrictComparable(srcValue),
+          isCommon = isKey(path) && isStrictComparable(value),
           pathKey = (path + '');
 
       path = toPath(path);
@@ -19163,9 +19155,9 @@ if (typeof define === "function" && define.amd) {
           key = last(path);
           object = toObject(object);
         }
-        return object[key] === srcValue
-          ? (srcValue !== undefined || (key in object))
-          : baseIsEqual(srcValue, object[key], undefined, true);
+        return object[key] === value
+          ? (value !== undefined || (key in object))
+          : baseIsEqual(value, object[key], null, true);
       };
     }
 
@@ -19185,9 +19177,11 @@ if (typeof define === "function" && define.amd) {
       if (!isObject(object)) {
         return object;
       }
-      var isSrcArr = isArrayLike(source) && (isArray(source) || isTypedArray(source)),
-          props = isSrcArr ? null : keys(source);
-
+      var isSrcArr = isLength(source.length) && (isArray(source) || isTypedArray(source));
+      if (!isSrcArr) {
+        var props = keys(source);
+        push.apply(props, getSymbols(source));
+      }
       arrayEach(props || source, function(srcValue, key) {
         if (props) {
           key = srcValue;
@@ -19206,7 +19200,7 @@ if (typeof define === "function" && define.amd) {
           if (isCommon) {
             result = srcValue;
           }
-          if ((result !== undefined || (isSrcArr && !(key in object))) &&
+          if ((isSrcArr || result !== undefined) &&
               (isCommon || (result === result ? (result !== value) : (value === value)))) {
             object[key] = result;
           }
@@ -19246,10 +19240,10 @@ if (typeof define === "function" && define.amd) {
 
       if (isCommon) {
         result = srcValue;
-        if (isArrayLike(srcValue) && (isArray(srcValue) || isTypedArray(srcValue))) {
+        if (isLength(srcValue.length) && (isArray(srcValue) || isTypedArray(srcValue))) {
           result = isArray(value)
             ? value
-            : (isArrayLike(value) ? arrayCopy(value) : []);
+            : (getLength(value) ? arrayCopy(value) : []);
         }
         else if (isPlainObject(srcValue) || isArguments(srcValue)) {
           result = isArguments(value)
@@ -19311,9 +19305,9 @@ if (typeof define === "function" && define.amd) {
      * @returns {Array} Returns `array`.
      */
     function basePullAt(array, indexes) {
-      var length = array ? indexes.length : 0;
+      var length = indexes.length;
       while (length--) {
-        var index = indexes[length];
+        var index = parseFloat(indexes[length]);
         if (index != previous && isIndex(index)) {
           var previous = index;
           splice.call(array, index, 1);
@@ -19626,7 +19620,7 @@ if (typeof define === "function" && define.amd) {
           var mid = (low + high) >>> 1,
               computed = array[mid];
 
-          if ((retHighest ? (computed <= value) : (computed < value)) && computed !== null) {
+          if (retHighest ? (computed <= value) : (computed < value)) {
             low = mid + 1;
           } else {
             high = mid;
@@ -19656,23 +19650,17 @@ if (typeof define === "function" && define.amd) {
       var low = 0,
           high = array ? array.length : 0,
           valIsNaN = value !== value,
-          valIsNull = value === null,
           valIsUndef = value === undefined;
 
       while (low < high) {
         var mid = floor((low + high) / 2),
             computed = iteratee(array[mid]),
-            isDef = computed !== undefined,
             isReflexive = computed === computed;
 
         if (valIsNaN) {
           var setLow = isReflexive || retHighest;
-        } else if (valIsNull) {
-          setLow = isReflexive && isDef && (retHighest || computed != null);
         } else if (valIsUndef) {
-          setLow = isReflexive && (retHighest || isDef);
-        } else if (computed == null) {
-          setLow = false;
+          setLow = isReflexive && (retHighest || computed !== undefined);
         } else {
           setLow = retHighest ? (computed <= value) : (computed < value);
         }
@@ -19803,12 +19791,12 @@ if (typeof define === "function" && define.amd) {
       while (++argsIndex < argsLength) {
         result[argsIndex] = args[argsIndex];
       }
-      var offset = argsIndex;
+      var pad = argsIndex;
       while (++rightIndex < rightLength) {
-        result[offset + rightIndex] = partials[rightIndex];
+        result[pad + rightIndex] = partials[rightIndex];
       }
       while (++holdersIndex < holdersLength) {
-        result[offset + holders[holdersIndex]] = args[argsIndex++];
+        result[pad + holders[holdersIndex]] = args[argsIndex++];
       }
       return result;
     }
@@ -19862,19 +19850,19 @@ if (typeof define === "function" && define.amd) {
       return restParam(function(object, sources) {
         var index = -1,
             length = object == null ? 0 : sources.length,
-            customizer = length > 2 ? sources[length - 2] : undefined,
-            guard = length > 2 ? sources[2] : undefined,
-            thisArg = length > 1 ? sources[length - 1] : undefined;
+            customizer = length > 2 && sources[length - 2],
+            guard = length > 2 && sources[2],
+            thisArg = length > 1 && sources[length - 1];
 
         if (typeof customizer == 'function') {
           customizer = bindCallback(customizer, thisArg, 5);
           length -= 2;
         } else {
-          customizer = typeof thisArg == 'function' ? thisArg : undefined;
+          customizer = typeof thisArg == 'function' ? thisArg : null;
           length -= (customizer ? 1 : 0);
         }
         if (guard && isIterateeCall(sources[0], sources[1], guard)) {
-          customizer = length < 3 ? undefined : customizer;
+          customizer = length < 3 ? null : customizer;
           length = 1;
         }
         while (++index < length) {
@@ -19999,20 +19987,8 @@ if (typeof define === "function" && define.amd) {
      */
     function createCtorWrapper(Ctor) {
       return function() {
-        // Use a `switch` statement to work with class constructors.
-        // See https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-function-objects-call-thisargument-argumentslist
-        // for more details.
-        var args = arguments;
-        switch (args.length) {
-          case 0: return new Ctor;
-          case 1: return new Ctor(args[0]);
-          case 2: return new Ctor(args[0], args[1]);
-          case 3: return new Ctor(args[0], args[1], args[2]);
-          case 4: return new Ctor(args[0], args[1], args[2], args[3]);
-          case 5: return new Ctor(args[0], args[1], args[2], args[3], args[4]);
-        }
         var thisBinding = baseCreate(Ctor.prototype),
-            result = Ctor.apply(thisBinding, args);
+            result = Ctor.apply(thisBinding, arguments);
 
         // Mimic the constructor's `return` behavior.
         // See https://es5.github.io/#x13.2.2 for more details.
@@ -20043,24 +20019,32 @@ if (typeof define === "function" && define.amd) {
      * Creates a `_.max` or `_.min` function.
      *
      * @private
-     * @param {Function} comparator The function used to compare values.
-     * @param {*} exValue The initial extremum value.
+     * @param {Function} arrayFunc The function to get the extremum value from an array.
+     * @param {boolean} [isMin] Specify returning the minimum, instead of the maximum,
+     *  extremum value.
      * @returns {Function} Returns the new extremum function.
      */
-    function createExtremum(comparator, exValue) {
+    function createExtremum(arrayFunc, isMin) {
       return function(collection, iteratee, thisArg) {
         if (thisArg && isIterateeCall(collection, iteratee, thisArg)) {
           iteratee = null;
         }
-        iteratee = getCallback(iteratee, thisArg, 3);
-        if (iteratee.length == 1) {
-          collection = toIterable(collection);
-          var result = arrayExtremum(collection, iteratee, comparator, exValue);
-          if (!(collection.length && result === exValue)) {
-            return result;
+        var func = getCallback(),
+            noIteratee = iteratee == null;
+
+        if (!(func === baseCallback && noIteratee)) {
+          noIteratee = false;
+          iteratee = func(iteratee, thisArg, 3);
+        }
+        if (noIteratee) {
+          var isArr = isArray(collection);
+          if (!isArr && isString(collection)) {
+            iteratee = charAtCallback;
+          } else {
+            return arrayFunc(isArr ? collection : toIterable(collection));
           }
         }
-        return baseExtremum(collection, iteratee, comparator, exValue);
+        return extremumBy(collection, iteratee, isMin);
       };
     }
 
@@ -20080,7 +20064,7 @@ if (typeof define === "function" && define.amd) {
           return index > -1 ? collection[index] : undefined;
         }
         return baseFind(collection, predicate, eachFunc);
-      };
+      }
     }
 
     /**
@@ -20123,8 +20107,11 @@ if (typeof define === "function" && define.amd) {
      */
     function createFlow(fromRight) {
       return function() {
+        var length = arguments.length;
+        if (!length) {
+          return function() { return arguments[0]; };
+        }
         var wrapper,
-            length = arguments.length,
             index = fromRight ? length : -1,
             leftIndex = 0,
             funcs = Array(length);
@@ -20134,18 +20121,16 @@ if (typeof define === "function" && define.amd) {
           if (typeof func != 'function') {
             throw new TypeError(FUNC_ERROR_TEXT);
           }
-          if (!wrapper && LodashWrapper.prototype.thru && getFuncName(func) == 'wrapper') {
-            wrapper = new LodashWrapper([]);
-          }
+          var funcName = wrapper ? '' : getFuncName(func);
+          wrapper = funcName == 'wrapper' ? new LodashWrapper([]) : wrapper;
         }
         index = wrapper ? -1 : length;
         while (++index < length) {
           func = funcs[index];
+          funcName = getFuncName(func);
 
-          var funcName = getFuncName(func),
-              data = funcName == 'wrapper' ? getData(func) : null;
-
-          if (data && isLaziable(data[0]) && data[1] == (ARY_FLAG | CURRY_FLAG | PARTIAL_FLAG | REARG_FLAG) && !data[4].length && data[9] == 1) {
+          var data = funcName == 'wrapper' ? getData(func) : null;
+          if (data && isLaziable(data[0])) {
             wrapper = wrapper[getFuncName(data[0])].apply(wrapper, data[3]);
           } else {
             wrapper = (func.length == 1 && isLaziable(func)) ? wrapper[funcName]() : wrapper.thru(func);
@@ -20157,7 +20142,7 @@ if (typeof define === "function" && define.amd) {
             return wrapper.plant(args[0]).value();
           }
           var index = 0,
-              result = length ? funcs[index].apply(this, args) : args[0];
+              result = funcs[index].apply(this, args);
 
           while (++index < length) {
             result = funcs[index].call(this, result);
@@ -20216,28 +20201,6 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Creates a function for `_.mapKeys` or `_.mapValues`.
-     *
-     * @private
-     * @param {boolean} [isMapKeys] Specify mapping keys instead of values.
-     * @returns {Function} Returns the new map function.
-     */
-    function createObjectMapper(isMapKeys) {
-      return function(object, iteratee, thisArg) {
-        var result = {};
-        iteratee = getCallback(iteratee, thisArg, 3);
-
-        baseForOwn(object, function(value, key, object) {
-          var mapped = iteratee(value, key, object);
-          key = isMapKeys ? mapped : key;
-          value = isMapKeys ? value : mapped;
-          result[key] = value;
-        });
-        return result;
-      };
-    }
-
-    /**
      * Creates a function for `_.padLeft` or `_.padRight`.
      *
      * @private
@@ -20247,7 +20210,7 @@ if (typeof define === "function" && define.amd) {
     function createPadDir(fromRight) {
       return function(string, length, chars) {
         string = baseToString(string);
-        return (fromRight ? string : '') + createPadding(string, length, chars) + (fromRight ? '' : string);
+        return string && ((fromRight ? string : '') + createPadding(string, length, chars) + (fromRight ? '' : string));
       };
     }
 
@@ -20306,8 +20269,10 @@ if (typeof define === "function" && define.amd) {
           isBindKey = bitmask & BIND_KEY_FLAG,
           isCurry = bitmask & CURRY_FLAG,
           isCurryBound = bitmask & CURRY_BOUND_FLAG,
-          isCurryRight = bitmask & CURRY_RIGHT_FLAG,
-          Ctor = isBindKey ? null : createCtorWrapper(func);
+          isCurryRight = bitmask & CURRY_RIGHT_FLAG;
+
+      var Ctor = !isBindKey && createCtorWrapper(func),
+          key = func;
 
       function wrapper() {
         // Avoid `arguments` object use disqualifying optimizations by
@@ -20354,18 +20319,17 @@ if (typeof define === "function" && define.amd) {
             return result;
           }
         }
-        var thisBinding = isBind ? thisArg : this,
-            fn = isBindKey ? thisBinding[func] : func;
-
+        var thisBinding = isBind ? thisArg : this;
+        if (isBindKey) {
+          func = thisBinding[key];
+        }
         if (argPos) {
           args = reorder(args, argPos);
         }
         if (isAry && ary < args.length) {
           args.length = ary;
         }
-        if (this && this !== root && this instanceof wrapper) {
-          fn = Ctor || createCtorWrapper(func);
-        }
+        var fn = (this && this !== root && this instanceof wrapper) ? (Ctor || createCtorWrapper(func)) : func;
         return fn.apply(thisBinding, args);
       }
       return wrapper;
@@ -20439,10 +20403,10 @@ if (typeof define === "function" && define.amd) {
      */
     function createSortedIndex(retHighest) {
       return function(array, value, iteratee, thisArg) {
-        var callback = getCallback(iteratee);
-        return (iteratee == null && callback === baseCallback)
+        var func = getCallback(iteratee);
+        return (func === baseCallback && iteratee == null)
           ? binaryIndex(array, value, retHighest)
-          : binaryIndexBy(array, value, callback(iteratee, thisArg, 1), retHighest);
+          : binaryIndexBy(array, value, func(iteratee, thisArg, 1), retHighest);
       };
     }
 
@@ -20528,35 +20492,40 @@ if (typeof define === "function" && define.amd) {
     function equalArrays(array, other, equalFunc, customizer, isLoose, stackA, stackB) {
       var index = -1,
           arrLength = array.length,
-          othLength = other.length;
+          othLength = other.length,
+          result = true;
 
       if (arrLength != othLength && !(isLoose && othLength > arrLength)) {
         return false;
       }
-      // Ignore non-index properties.
-      while (++index < arrLength) {
+      // Deep compare the contents, ignoring non-numeric properties.
+      while (result && ++index < arrLength) {
         var arrValue = array[index],
-            othValue = other[index],
-            result = customizer ? customizer(isLoose ? othValue : arrValue, isLoose ? arrValue : othValue, index) : undefined;
+            othValue = other[index];
 
-        if (result !== undefined) {
-          if (result) {
-            continue;
-          }
-          return false;
+        result = undefined;
+        if (customizer) {
+          result = isLoose
+            ? customizer(othValue, arrValue, index)
+            : customizer(arrValue, othValue, index);
         }
-        // Recursively compare arrays (susceptible to call stack limits).
-        if (isLoose) {
-          if (!arraySome(other, function(othValue) {
-                return arrValue === othValue || equalFunc(arrValue, othValue, customizer, isLoose, stackA, stackB);
-              })) {
-            return false;
+        if (result === undefined) {
+          // Recursively compare arrays (susceptible to call stack limits).
+          if (isLoose) {
+            var othIndex = othLength;
+            while (othIndex--) {
+              othValue = other[othIndex];
+              result = (arrValue && arrValue === othValue) || equalFunc(arrValue, othValue, customizer, isLoose, stackA, stackB);
+              if (result) {
+                break;
+              }
+            }
+          } else {
+            result = (arrValue && arrValue === othValue) || equalFunc(arrValue, othValue, customizer, isLoose, stackA, stackB);
           }
-        } else if (!(arrValue === othValue || equalFunc(arrValue, othValue, customizer, isLoose, stackA, stackB))) {
-          return false;
         }
       }
-      return true;
+      return !!result;
     }
 
     /**
@@ -20587,7 +20556,8 @@ if (typeof define === "function" && define.amd) {
           // Treat `NaN` vs. `NaN` as equal.
           return (object != +object)
             ? other != +other
-            : object == +other;
+            // But, treat `-0` vs. `+0` as not equal.
+            : (object == 0 ? ((1 / object) == (1 / other)) : object == +other);
 
         case regexpTag:
         case stringTag:
@@ -20621,22 +20591,29 @@ if (typeof define === "function" && define.amd) {
       if (objLength != othLength && !isLoose) {
         return false;
       }
-      var index = objLength;
-      while (index--) {
-        var key = objProps[index];
-        if (!(isLoose ? key in other : hasOwnProperty.call(other, key))) {
-          return false;
-        }
-      }
-      var skipCtor = isLoose;
-      while (++index < objLength) {
-        key = objProps[index];
-        var objValue = object[key],
-            othValue = other[key],
-            result = customizer ? customizer(isLoose ? othValue : objValue, isLoose? objValue : othValue, key) : undefined;
+      var skipCtor = isLoose,
+          index = -1;
 
-        // Recursively compare objects (susceptible to call stack limits).
-        if (!(result === undefined ? equalFunc(objValue, othValue, customizer, isLoose, stackA, stackB) : result)) {
+      while (++index < objLength) {
+        var key = objProps[index],
+            result = isLoose ? key in other : hasOwnProperty.call(other, key);
+
+        if (result) {
+          var objValue = object[key],
+              othValue = other[key];
+
+          result = undefined;
+          if (customizer) {
+            result = isLoose
+              ? customizer(othValue, objValue, key)
+              : customizer(objValue, othValue, key);
+          }
+          if (result === undefined) {
+            // Recursively compare objects (susceptible to call stack limits).
+            result = (objValue && objValue === othValue) || equalFunc(objValue, othValue, customizer, isLoose, stackA, stackB);
+          }
+        }
+        if (!result) {
           return false;
         }
         skipCtor || (skipCtor = key == 'constructor');
@@ -20654,6 +20631,34 @@ if (typeof define === "function" && define.amd) {
         }
       }
       return true;
+    }
+
+    /**
+     * Gets the extremum value of `collection` invoking `iteratee` for each value
+     * in `collection` to generate the criterion by which the value is ranked.
+     * The `iteratee` is invoked with three arguments: (value, index, collection).
+     *
+     * @private
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @param {boolean} [isMin] Specify returning the minimum, instead of the
+     *  maximum, extremum value.
+     * @returns {*} Returns the extremum value.
+     */
+    function extremumBy(collection, iteratee, isMin) {
+      var exValue = isMin ? POSITIVE_INFINITY : NEGATIVE_INFINITY,
+          computed = exValue,
+          result = computed;
+
+      baseEach(collection, function(value, index, collection) {
+        var current = iteratee(value, index, collection);
+        if ((isMin ? (current < computed) : (current > computed)) ||
+            (current === exValue && current === result)) {
+          computed = current;
+          result = value;
+        }
+      });
+      return result;
     }
 
     /**
@@ -20689,20 +20694,29 @@ if (typeof define === "function" && define.amd) {
      * @param {Function} func The function to query.
      * @returns {string} Returns the function name.
      */
-    function getFuncName(func) {
-      var result = func.name,
-          array = realNames[result],
-          length = array ? array.length : 0;
-
-      while (length--) {
-        var data = array[length],
-            otherFunc = data.func;
-        if (otherFunc == null || otherFunc == func) {
-          return data.name;
-        }
+    var getFuncName = (function() {
+      if (!support.funcNames) {
+        return constant('');
       }
-      return result;
-    }
+      if (constant.name == 'constant') {
+        return baseProperty('name');
+      }
+      return function(func) {
+        var result = func.name,
+            array = realNames[result],
+            length = array ? array.length : 0;
+
+        while (length--) {
+          var data = array[length],
+              otherFunc = data.func;
+
+          if (otherFunc == null || otherFunc == func) {
+            return data.name;
+          }
+        }
+        return result;
+      };
+    }());
 
     /**
      * Gets the appropriate "indexOf" function. If the `_.indexOf` method is
@@ -20723,7 +20737,7 @@ if (typeof define === "function" && define.amd) {
      * Gets the "length" property value of `object`.
      *
      * **Note:** This function is used to avoid a [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792)
-     * that affects Safari on at least iOS 8.1-8.3 ARM64.
+     * in Safari on iOS 8.1 ARM64.
      *
      * @private
      * @param {Object} object The object to query.
@@ -20732,34 +20746,15 @@ if (typeof define === "function" && define.amd) {
     var getLength = baseProperty('length');
 
     /**
-     * Gets the propery names, values, and compare flags of `object`.
+     * Creates an array of the own symbols of `object`.
      *
      * @private
      * @param {Object} object The object to query.
-     * @returns {Array} Returns the match data of `object`.
+     * @returns {Array} Returns the array of symbols.
      */
-    function getMatchData(object) {
-      var result = pairs(object),
-          length = result.length;
-
-      while (length--) {
-        result[length][2] = isStrictComparable(result[length][1]);
-      }
-      return result;
-    }
-
-    /**
-     * Gets the native function at `key` of `object`.
-     *
-     * @private
-     * @param {Object} object The object to query.
-     * @param {string} key The key of the method to get.
-     * @returns {*} Returns the function if it's native, else `undefined`.
-     */
-    function getNative(object, key) {
-      var value = object == null ? undefined : object[key];
-      return isNative(value) ? value : undefined;
-    }
+    var getSymbols = !getOwnPropertySymbols ? constant([]) : function(object) {
+      return getOwnPropertySymbols(toObject(object));
+    };
 
     /**
      * Gets the view, applying any `transforms` to the `start` and `end` positions.
@@ -20882,17 +20877,6 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Checks if `value` is array-like.
-     *
-     * @private
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
-     */
-    function isArrayLike(value) {
-      return value != null && isLength(getLength(value));
-    }
-
-    /**
      * Checks if `value` is a valid array-like index.
      *
      * @private
@@ -20901,7 +20885,7 @@ if (typeof define === "function" && define.amd) {
      * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
      */
     function isIndex(value, length) {
-      value = (typeof value == 'number' || reIsUint.test(value)) ? +value : -1;
+      value = +value;
       length = length == null ? MAX_SAFE_INTEGER : length;
       return value > -1 && value % 1 == 0 && value < length;
     }
@@ -20920,9 +20904,13 @@ if (typeof define === "function" && define.amd) {
         return false;
       }
       var type = typeof index;
-      if (type == 'number'
-          ? (isArrayLike(object) && isIndex(index, object.length))
-          : (type == 'string' && index in object)) {
+      if (type == 'number') {
+        var length = getLength(object),
+            prereq = isLength(length) && isIndex(index, length);
+      } else {
+        prereq = type == 'string' && index in object;
+      }
+      if (prereq) {
         var other = object[index];
         return value === value ? (value === other) : (other !== other);
       }
@@ -20958,15 +20946,7 @@ if (typeof define === "function" && define.amd) {
      */
     function isLaziable(func) {
       var funcName = getFuncName(func);
-      if (!(funcName in LazyWrapper.prototype)) {
-        return false;
-      }
-      var other = lodash[funcName];
-      if (func === other) {
-        return true;
-      }
-      var data = getData(other);
-      return !!data && func === data[0];
+      return !!funcName && func === lodash[funcName] && funcName in LazyWrapper.prototype;
     }
 
     /**
@@ -20991,7 +20971,7 @@ if (typeof define === "function" && define.amd) {
      *  equality comparisons, else `false`.
      */
     function isStrictComparable(value) {
-      return value === value && !isObject(value);
+      return value === value && (value === 0 ? ((1 / value) > 0) : !isObject(value));
     }
 
     /**
@@ -21065,7 +21045,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * A specialized version of `_.pick` which picks `object` properties specified
+     * A specialized version of `_.pick` that picks `object` properties specified
      * by `props`.
      *
      * @private
@@ -21090,7 +21070,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * A specialized version of `_.pick` which picks `object` properties `predicate`
+     * A specialized version of `_.pick` that picks `object` properties `predicate`
      * returns truthy for.
      *
      * @private
@@ -21206,10 +21186,11 @@ if (typeof define === "function" && define.amd) {
     function shimKeys(object) {
       var props = keysIn(object),
           propsLength = props.length,
-          length = propsLength && object.length;
+          length = propsLength && object.length,
+          support = lodash.support;
 
-      var allowIndexes = !!length && isLength(length) &&
-        (isArray(object) || isArguments(object));
+      var allowIndexes = length && isLength(length) &&
+        (isArray(object) || (support.nonEnumArgs && isArguments(object)));
 
       var index = -1,
           result = [];
@@ -21224,7 +21205,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Converts `value` to an array-like object if it's not one.
+     * Converts `value` to an array-like object if it is not one.
      *
      * @private
      * @param {*} value The value to process.
@@ -21234,14 +21215,14 @@ if (typeof define === "function" && define.amd) {
       if (value == null) {
         return [];
       }
-      if (!isArrayLike(value)) {
+      if (!isLength(getLength(value))) {
         return values(value);
       }
       return isObject(value) ? value : Object(value);
     }
 
     /**
-     * Converts `value` to an object if it's not one.
+     * Converts `value` to an object if it is not one.
      *
      * @private
      * @param {*} value The value to process.
@@ -21252,7 +21233,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Converts `value` to property path array if it's not one.
+     * Converts `value` to property path array if it is not one.
      *
      * @private
      * @param {*} value The value to process.
@@ -21351,9 +21332,12 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Creates an array of unique `array` values not included in the other
-     * provided arrays using [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
-     * for equality comparisons.
+     * Creates an array excluding all values of the provided arrays using
+     * `SameValueZero` for equality comparisons.
+     *
+     * **Note:** [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * comparisons are like strict equality comparisons, e.g. `===`, except that
+     * `NaN` matches `NaN`.
      *
      * @static
      * @memberOf _
@@ -21367,7 +21351,7 @@ if (typeof define === "function" && define.amd) {
      * // => [1, 3]
      */
     var difference = restParam(function(array, values) {
-      return isArrayLike(array)
+      return (isArray(array) || isArguments(array))
         ? baseDifference(array, baseFlatten(values, false, true))
         : [];
     });
@@ -21762,10 +21746,13 @@ if (typeof define === "function" && define.amd) {
 
     /**
      * Gets the index at which the first occurrence of `value` is found in `array`
-     * using [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
-     * for equality comparisons. If `fromIndex` is negative, it is used as the offset
-     * from the end of `array`. If `array` is sorted providing `true` for `fromIndex`
-     * performs a faster binary search.
+     * using `SameValueZero` for equality comparisons. If `fromIndex` is negative,
+     * it is used as the offset from the end of `array`. If `array` is sorted
+     * providing `true` for `fromIndex` performs a faster binary search.
+     *
+     * **Note:** [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * comparisons are like strict equality comparisons, e.g. `===`, except that
+     * `NaN` matches `NaN`.
      *
      * @static
      * @memberOf _
@@ -21825,9 +21812,12 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Creates an array of unique values that are included in all of the provided
-     * arrays using [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * Creates an array of unique values in all provided arrays using `SameValueZero`
      * for equality comparisons.
+     *
+     * **Note:** [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * comparisons are like strict equality comparisons, e.g. `===`, except that
+     * `NaN` matches `NaN`.
      *
      * @static
      * @memberOf _
@@ -21838,19 +21828,27 @@ if (typeof define === "function" && define.amd) {
      * _.intersection([1, 2], [4, 2], [2, 1]);
      * // => [2]
      */
-    var intersection = restParam(function(arrays) {
-      var othLength = arrays.length,
-          othIndex = othLength,
-          caches = Array(length),
+    function intersection() {
+      var args = [],
+          argsIndex = -1,
+          argsLength = arguments.length,
+          caches = [],
           indexOf = getIndexOf(),
           isCommon = indexOf == baseIndexOf,
           result = [];
 
-      while (othIndex--) {
-        var value = arrays[othIndex] = isArrayLike(value = arrays[othIndex]) ? value : [];
-        caches[othIndex] = (isCommon && value.length >= 120) ? createCache(othIndex && value) : null;
+      while (++argsIndex < argsLength) {
+        var value = arguments[argsIndex];
+        if (isArray(value) || isArguments(value)) {
+          args.push(value);
+          caches.push((isCommon && value.length >= 120) ? createCache(argsIndex && value) : null);
+        }
       }
-      var array = arrays[0],
+      argsLength = args.length;
+      if (argsLength < 2) {
+        return result;
+      }
+      var array = args[0],
           index = -1,
           length = array ? array.length : 0,
           seen = caches[0];
@@ -21859,10 +21857,10 @@ if (typeof define === "function" && define.amd) {
       while (++index < length) {
         value = array[index];
         if ((seen ? cacheIndexOf(seen, value) : indexOf(result, value, 0)) < 0) {
-          var othIndex = othLength;
-          while (--othIndex) {
-            var cache = caches[othIndex];
-            if ((cache ? cacheIndexOf(cache, value) : indexOf(arrays[othIndex], value, 0)) < 0) {
+          argsIndex = argsLength;
+          while (--argsIndex) {
+            var cache = caches[argsIndex];
+            if ((cache ? cacheIndexOf(cache, value) : indexOf(args[argsIndex], value, 0)) < 0) {
               continue outer;
             }
           }
@@ -21873,7 +21871,7 @@ if (typeof define === "function" && define.amd) {
         }
       }
       return result;
-    });
+    }
 
     /**
      * Gets the last element of `array`.
@@ -21946,11 +21944,14 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Removes all provided values from `array` using
-     * [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
-     * for equality comparisons.
+     * Removes all provided values from `array` using `SameValueZero` for equality
+     * comparisons.
      *
-     * **Note:** Unlike `_.without`, this method mutates `array`.
+     * **Notes:**
+     *  - Unlike `_.without`, this method mutates `array`
+     *  - [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     *    comparisons are like strict equality comparisons, e.g. `===`, except
+     *    that `NaN` matches `NaN`
      *
      * @static
      * @memberOf _
@@ -22014,6 +22015,7 @@ if (typeof define === "function" && define.amd) {
      * // => [10, 20]
      */
     var pullAt = restParam(function(array, indexes) {
+      array || (array = []);
       indexes = baseFlatten(indexes);
 
       var result = baseAt(array, indexes);
@@ -22379,9 +22381,12 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Creates an array of unique values, in order, from all of the provided arrays
-     * using [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
-     * for equality comparisons.
+     * Creates an array of unique values, in order, of the provided arrays using
+     * `SameValueZero` for equality comparisons.
+     *
+     * **Note:** [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * comparisons are like strict equality comparisons, e.g. `===`, except that
+     * `NaN` matches `NaN`.
      *
      * @static
      * @memberOf _
@@ -22398,9 +22403,8 @@ if (typeof define === "function" && define.amd) {
     });
 
     /**
-     * Creates a duplicate-free version of an array, using
-     * [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
-     * for equality comparisons, in which only the first occurence of each element
+     * Creates a duplicate-free version of an array, using `SameValueZero` for
+     * equality comparisons, in which only the first occurence of each element
      * is kept. Providing `true` for `isSorted` performs a faster search algorithm
      * for sorted arrays. If an iteratee function is provided it is invoked for
      * each element in the array to generate the criterion by which uniqueness
@@ -22417,6 +22421,10 @@ if (typeof define === "function" && define.amd) {
      * If an object is provided for `iteratee` the created `_.matches` style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
+     *
+     * **Note:** [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * comparisons are like strict equality comparisons, e.g. `===`, except that
+     * `NaN` matches `NaN`.
      *
      * @static
      * @memberOf _
@@ -22456,9 +22464,9 @@ if (typeof define === "function" && define.amd) {
         iteratee = isIterateeCall(array, isSorted, thisArg) ? null : isSorted;
         isSorted = false;
       }
-      var callback = getCallback();
-      if (!(iteratee == null && callback === baseCallback)) {
-        iteratee = callback(iteratee, thisArg, 3);
+      var func = getCallback();
+      if (!(func === baseCallback && iteratee == null)) {
+        iteratee = func(iteratee, thisArg, 3);
       }
       return (isSorted && getIndexOf() == baseIndexOf)
         ? sortedUniq(array, iteratee)
@@ -22467,7 +22475,7 @@ if (typeof define === "function" && define.amd) {
 
     /**
      * This method is like `_.zip` except that it accepts an array of grouped
-     * elements and creates an array regrouping the elements to their pre-zip
+     * elements and creates an array regrouping the elements to their pre-`_.zip`
      * configuration.
      *
      * @static
@@ -22484,19 +22492,10 @@ if (typeof define === "function" && define.amd) {
      * // => [['fred', 'barney'], [30, 40], [true, false]]
      */
     function unzip(array) {
-      if (!(array && array.length)) {
-        return [];
-      }
       var index = -1,
-          length = 0;
+          length = (array && array.length && arrayMax(arrayMap(array, getLength))) >>> 0,
+          result = Array(length);
 
-      array = arrayFilter(array, function(group) {
-        if (isArrayLike(group)) {
-          length = nativeMax(group.length, length);
-          return true;
-        }
-      });
-      var result = Array(length);
       while (++index < length) {
         result[index] = arrayMap(array, baseProperty(index));
       }
@@ -22504,44 +22503,12 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * This method is like `_.unzip` except that it accepts an iteratee to specify
-     * how regrouped values should be combined. The `iteratee` is bound to `thisArg`
-     * and invoked with four arguments: (accumulator, value, index, group).
+     * Creates an array excluding all provided values using `SameValueZero` for
+     * equality comparisons.
      *
-     * @static
-     * @memberOf _
-     * @category Array
-     * @param {Array} array The array of grouped elements to process.
-     * @param {Function} [iteratee] The function to combine regrouped values.
-     * @param {*} [thisArg] The `this` binding of `iteratee`.
-     * @returns {Array} Returns the new array of regrouped elements.
-     * @example
-     *
-     * var zipped = _.zip([1, 2], [10, 20], [100, 200]);
-     * // => [[1, 10, 100], [2, 20, 200]]
-     *
-     * _.unzipWith(zipped, _.add);
-     * // => [3, 30, 300]
-     */
-    function unzipWith(array, iteratee, thisArg) {
-      var length = array ? array.length : 0;
-      if (!length) {
-        return [];
-      }
-      var result = unzip(array);
-      if (iteratee == null) {
-        return result;
-      }
-      iteratee = bindCallback(iteratee, thisArg, 4);
-      return arrayMap(result, function(group) {
-        return arrayReduce(group, iteratee, undefined, true);
-      });
-    }
-
-    /**
-     * Creates an array excluding all provided values using
-     * [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
-     * for equality comparisons.
+     * **Note:** [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * comparisons are like strict equality comparisons, e.g. `===`, except that
+     * `NaN` matches `NaN`.
      *
      * @static
      * @memberOf _
@@ -22555,13 +22522,13 @@ if (typeof define === "function" && define.amd) {
      * // => [3]
      */
     var without = restParam(function(array, values) {
-      return isArrayLike(array)
+      return (isArray(array) || isArguments(array))
         ? baseDifference(array, values)
         : [];
     });
 
     /**
-     * Creates an array of unique values that is the [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)
+     * Creates an array that is the [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)
      * of the provided arrays.
      *
      * @static
@@ -22580,7 +22547,7 @@ if (typeof define === "function" && define.amd) {
 
       while (++index < length) {
         var array = arguments[index];
-        if (isArrayLike(array)) {
+        if (isArray(array) || isArguments(array)) {
           var result = result
             ? baseDifference(result, array).concat(baseDifference(array, result))
             : array;
@@ -22645,38 +22612,6 @@ if (typeof define === "function" && define.amd) {
       }
       return result;
     }
-
-    /**
-     * This method is like `_.zip` except that it accepts an iteratee to specify
-     * how grouped values should be combined. The `iteratee` is bound to `thisArg`
-     * and invoked with four arguments: (accumulator, value, index, group).
-     *
-     * @static
-     * @memberOf _
-     * @category Array
-     * @param {...Array} [arrays] The arrays to process.
-     * @param {Function} [iteratee] The function to combine grouped values.
-     * @param {*} [thisArg] The `this` binding of `iteratee`.
-     * @returns {Array} Returns the new array of grouped elements.
-     * @example
-     *
-     * _.zipWith([1, 2], [10, 20], [100, 200], _.add);
-     * // => [111, 222]
-     */
-    var zipWith = restParam(function(arrays) {
-      var length = arrays.length,
-          iteratee = length > 2 ? arrays[length - 2] : undefined,
-          thisArg = length > 1 ? arrays[length - 1] : undefined;
-
-      if (length > 2 && typeof iteratee == 'function') {
-        length -= 2;
-      } else {
-        iteratee = (length > 1 && typeof thisArg == 'function') ? (--length, thisArg) : undefined;
-        thisArg = undefined;
-      }
-      arrays.length = length;
-      return unzipWith(arrays, iteratee, thisArg);
-    });
 
     /*------------------------------------------------------------------------*/
 
@@ -22953,6 +22888,10 @@ if (typeof define === "function" && define.amd) {
      * // => ['barney', 'pebbles']
      */
     var at = restParam(function(collection, props) {
+      var length = collection ? getLength(collection) : 0;
+      if (isLength(length)) {
+        collection = toIterable(collection);
+      }
       return baseAt(collection, baseFlatten(props));
     });
 
@@ -23325,10 +23264,13 @@ if (typeof define === "function" && define.amd) {
     });
 
     /**
-     * Checks if `value` is in `collection` using
-     * [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
-     * for equality comparisons. If `fromIndex` is negative, it is used as the offset
-     * from the end of `collection`.
+     * Checks if `value` is in `collection` using `SameValueZero` for equality
+     * comparisons. If `fromIndex` is negative, it is used as the offset from
+     * the end of `collection`.
+     *
+     * **Note:** [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+     * comparisons are like strict equality comparisons, e.g. `===`, except that
+     * `NaN` matches `NaN`.
      *
      * @static
      * @memberOf _
@@ -23423,7 +23365,7 @@ if (typeof define === "function" && define.amd) {
     });
 
     /**
-     * Invokes the method at `path` of each element in `collection`, returning
+     * Invokes the method at `path` on each element in `collection`, returning
      * an array of the results of each invoked method. Any additional arguments
      * are provided to each invoked method. If `methodName` is a function it is
      * invoked for, and `this` bound to, each element in `collection`.
@@ -23448,10 +23390,11 @@ if (typeof define === "function" && define.amd) {
       var index = -1,
           isFunc = typeof path == 'function',
           isProp = isKey(path),
-          result = isArrayLike(collection) ? Array(collection.length) : [];
+          length = getLength(collection),
+          result = isLength(length) ? Array(length) : [];
 
       baseEach(collection, function(value) {
-        var func = isFunc ? path : ((isProp && value != null) ? value[path] : null);
+        var func = isFunc ? path : (isProp && value != null && value[path]);
         result[++index] = func ? func.apply(value, args) : invokePath(value, path, args);
       });
       return result;
@@ -23473,15 +23416,14 @@ if (typeof define === "function" && define.amd) {
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
-     * Many lodash methods are guarded to work as iteratees for methods like
+     * Many lodash methods are guarded to work as interatees for methods like
      * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
      *
      * The guarded methods are:
-     * `ary`, `callback`, `chunk`, `clone`, `create`, `curry`, `curryRight`,
-     * `drop`, `dropRight`, `every`, `fill`, `flatten`, `invert`, `max`, `min`,
-     * `parseInt`, `slice`, `sortBy`, `take`, `takeRight`, `template`, `trim`,
-     * `trimLeft`, `trimRight`, `trunc`, `random`, `range`, `sample`, `some`,
-     * `sum`, `uniq`, and `words`
+     * `ary`, `callback`, `chunk`, `clone`, `create`, `curry`, `curryRight`, `drop`,
+     * `dropRight`, `every`, `fill`, `flatten`, `invert`, `max`, `min`, `parseInt`,
+     * `slice`, `sortBy`, `take`, `takeRight`, `template`, `trim`, `trimLeft`,
+     * `trimRight`, `trunc`, `random`, `range`, `sample`, `some`, `uniq`, and `words`
      *
      * @static
      * @memberOf _
@@ -23617,7 +23559,7 @@ if (typeof define === "function" && define.amd) {
      * value. The `iteratee` is bound to `thisArg` and invoked with four arguments:
      * (accumulator, value, index|key, collection).
      *
-     * Many lodash methods are guarded to work as iteratees for methods like
+     * Many lodash methods are guarded to work as interatees for methods like
      * `_.reduce`, `_.reduceRight`, and `_.transform`.
      *
      * The guarded methods are:
@@ -23669,11 +23611,22 @@ if (typeof define === "function" && define.amd) {
      * }, []);
      * // => [4, 5, 2, 3, 0, 1]
      */
-    var reduceRight = createReduce(arrayReduceRight, baseEachRight);
+    var reduceRight =  createReduce(arrayReduceRight, baseEachRight);
 
     /**
      * The opposite of `_.filter`; this method returns the elements of `collection`
      * that `predicate` does **not** return truthy for.
+     *
+     * If a property name is provided for `predicate` the created `_.property`
+     * style callback returns the property value of the given element.
+     *
+     * If a value is also provided for `thisArg` the created `_.matchesProperty`
+     * style callback returns `true` for elements that have a matching property
+     * value, else `false`.
+     *
+     * If an object is provided for `predicate` the created `_.matches` style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
      *
      * @static
      * @memberOf _
@@ -23739,20 +23692,8 @@ if (typeof define === "function" && define.amd) {
         var length = collection.length;
         return length > 0 ? collection[baseRandom(0, length - 1)] : undefined;
       }
-      var index = -1,
-          result = toArray(collection),
-          length = result.length,
-          lastIndex = length - 1;
-
-      n = nativeMin(n < 0 ? 0 : (+n || 0), length);
-      while (++index < n) {
-        var rand = baseRandom(index, lastIndex),
-            value = result[rand];
-
-        result[rand] = result[index];
-        result[index] = value;
-      }
-      result.length = n;
+      var result = shuffle(collection);
+      result.length = nativeMin(n < 0 ? 0 : (+n || 0), result.length);
       return result;
     }
 
@@ -23771,7 +23712,20 @@ if (typeof define === "function" && define.amd) {
      * // => [4, 1, 3, 2]
      */
     function shuffle(collection) {
-      return sample(collection, POSITIVE_INFINITY);
+      collection = toIterable(collection);
+
+      var index = -1,
+          length = collection.length,
+          result = Array(length);
+
+      while (++index < length) {
+        var rand = baseRandom(0, index);
+        if (index != rand) {
+          result[index] = result[rand];
+        }
+        result[rand] = collection[index];
+      }
+      return result;
     }
 
     /**
@@ -24397,13 +24351,12 @@ if (typeof define === "function" && define.amd) {
     var curryRight = createCurry(CURRY_RIGHT_FLAG);
 
     /**
-     * Creates a debounced function that delays invoking `func` until after `wait`
-     * milliseconds have elapsed since the last time the debounced function was
-     * invoked. The debounced function comes with a `cancel` method to cancel
-     * delayed invocations. Provide an options object to indicate that `func`
-     * should be invoked on the leading and/or trailing edge of the `wait` timeout.
-     * Subsequent calls to the debounced function return the result of the last
-     * `func` invocation.
+     * Creates a function that delays invoking `func` until after `wait` milliseconds
+     * have elapsed since the last time it was invoked. The created function comes
+     * with a `cancel` method to cancel delayed invocations. Provide an options
+     * object to indicate that `func` should be invoked on the leading and/or
+     * trailing edge of the `wait` timeout. Subsequent calls to the debounced
+     * function return the result of the last `func` invocation.
      *
      * **Note:** If `leading` and `trailing` options are `true`, `func` is invoked
      * on the trailing edge of the timeout only if the the debounced function is
@@ -24717,14 +24670,14 @@ if (typeof define === "function" && define.amd) {
       }
       var memoized = function() {
         var args = arguments,
-            key = resolver ? resolver.apply(this, args) : args[0],
-            cache = memoized.cache;
+            cache = memoized.cache,
+            key = resolver ? resolver.apply(this, args) : args[0];
 
         if (cache.has(key)) {
           return cache.get(key);
         }
         var result = func.apply(this, args);
-        memoized.cache = cache.set(key, result);
+        cache.set(key, result);
         return result;
       };
       memoized.cache = new memoize.Cache;
@@ -24971,12 +24924,12 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Creates a throttled function that only invokes `func` at most once per
-     * every `wait` milliseconds. The throttled function comes with a `cancel`
-     * method to cancel delayed invocations. Provide an options object to indicate
-     * that `func` should be invoked on the leading and/or trailing edge of the
-     * `wait` timeout. Subsequent calls to the throttled function return the
-     * result of the last `func` call.
+     * Creates a function that only invokes `func` at most once per every `wait`
+     * milliseconds. The created function comes with a `cancel` method to cancel
+     * delayed invocations. Provide an options object to indicate that `func`
+     * should be invoked on the leading and/or trailing edge of the `wait` timeout.
+     * Subsequent calls to the throttled function return the result of the last
+     * `func` call.
      *
      * **Note:** If `leading` and `trailing` options are `true`, `func` is invoked
      * on the trailing edge of the timeout only if the the throttled function is
@@ -25116,9 +25069,8 @@ if (typeof define === "function" && define.amd) {
         customizer = isDeep;
         isDeep = false;
       }
-      return typeof customizer == 'function'
-        ? baseClone(value, isDeep, bindCallback(customizer, thisArg, 1))
-        : baseClone(value, isDeep);
+      customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 1);
+      return baseClone(value, isDeep, customizer);
     }
 
     /**
@@ -25167,57 +25119,8 @@ if (typeof define === "function" && define.amd) {
      * // => 20
      */
     function cloneDeep(value, customizer, thisArg) {
-      return typeof customizer == 'function'
-        ? baseClone(value, true, bindCallback(customizer, thisArg, 1))
-        : baseClone(value, true);
-    }
-
-    /**
-     * Checks if `value` is greater than `other`.
-     *
-     * @static
-     * @memberOf _
-     * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if `value` is greater than `other`, else `false`.
-     * @example
-     *
-     * _.gt(3, 1);
-     * // => true
-     *
-     * _.gt(3, 3);
-     * // => false
-     *
-     * _.gt(1, 3);
-     * // => false
-     */
-    function gt(value, other) {
-      return value > other;
-    }
-
-    /**
-     * Checks if `value` is greater than or equal to `other`.
-     *
-     * @static
-     * @memberOf _
-     * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if `value` is greater than or equal to `other`, else `false`.
-     * @example
-     *
-     * _.gte(3, 1);
-     * // => true
-     *
-     * _.gte(3, 3);
-     * // => true
-     *
-     * _.gte(1, 3);
-     * // => false
-     */
-    function gte(value, other) {
-      return value >= other;
+      customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 1);
+      return baseClone(value, true, customizer);
     }
 
     /**
@@ -25237,7 +25140,8 @@ if (typeof define === "function" && define.amd) {
      * // => false
      */
     function isArguments(value) {
-      return isObjectLike(value) && isArrayLike(value) && objToString.call(value) == argsTag;
+      var length = isObjectLike(value) ? value.length : undefined;
+      return isLength(length) && objToString.call(value) == argsTag;
     }
 
     /**
@@ -25358,9 +25262,10 @@ if (typeof define === "function" && define.amd) {
       if (value == null) {
         return true;
       }
-      if (isArrayLike(value) && (isArray(value) || isString(value) || isArguments(value) ||
+      var length = getLength(value);
+      if (isLength(length) && (isArray(value) || isString(value) || isArguments(value) ||
           (isObjectLike(value) && isFunction(value.splice)))) {
-        return !value.length;
+        return !length;
       }
       return !keys(value).length;
     }
@@ -25380,7 +25285,6 @@ if (typeof define === "function" && define.amd) {
      *
      * @static
      * @memberOf _
-     * @alias eq
      * @category Lang
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
@@ -25410,9 +25314,12 @@ if (typeof define === "function" && define.amd) {
      * // => true
      */
     function isEqual(value, other, customizer, thisArg) {
-      customizer = typeof customizer == 'function' ? bindCallback(customizer, thisArg, 3) : undefined;
+      customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 3);
+      if (!customizer && isStrictComparable(value) && isStrictComparable(other)) {
+        return value === other;
+      }
       var result = customizer ? customizer(value, other) : undefined;
-      return  result === undefined ? baseIsEqual(value, other, customizer) : !!result;
+      return result === undefined ? baseIsEqual(value, other, customizer) : !!result;
     }
 
     /**
@@ -25514,7 +25421,7 @@ if (typeof define === "function" && define.amd) {
       // Avoid a V8 JIT bug in Chrome 19-20.
       // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
       var type = typeof value;
-      return !!value && (type == 'object' || type == 'function');
+      return type == 'function' || (!!value && type == 'object');
     }
 
     /**
@@ -25557,8 +25464,33 @@ if (typeof define === "function" && define.amd) {
      * // => true
      */
     function isMatch(object, source, customizer, thisArg) {
-      customizer = typeof customizer == 'function' ? bindCallback(customizer, thisArg, 3) : undefined;
-      return baseIsMatch(object, getMatchData(source), customizer);
+      var props = keys(source),
+          length = props.length;
+
+      if (!length) {
+        return true;
+      }
+      if (object == null) {
+        return false;
+      }
+      customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 3);
+      object = toObject(object);
+      if (!customizer && length == 1) {
+        var key = props[0],
+            value = source[key];
+
+        if (isStrictComparable(value)) {
+          return value === object[key] && (value !== undefined || (key in object));
+        }
+      }
+      var values = Array(length),
+          strictCompareFlags = Array(length);
+
+      while (length--) {
+        value = values[length] = source[props[length]];
+        strictCompareFlags[length] = isStrictComparable(value);
+      }
+      return baseIsMatch(object, props, values, strictCompareFlags, customizer);
     }
 
     /**
@@ -25698,8 +25630,8 @@ if (typeof define === "function" && define.amd) {
       if (!(value && objToString.call(value) == objectTag)) {
         return false;
       }
-      var valueOf = getNative(value, 'valueOf'),
-          objProto = valueOf && (objProto = getPrototypeOf(valueOf)) && getPrototypeOf(objProto);
+      var valueOf = value.valueOf,
+          objProto = isNative(valueOf) && (objProto = getPrototypeOf(valueOf)) && getPrototypeOf(objProto);
 
       return objProto
         ? (value == objProto || getPrototypeOf(value) == objProto)
@@ -25723,7 +25655,7 @@ if (typeof define === "function" && define.amd) {
      * // => false
      */
     function isRegExp(value) {
-      return isObjectLike(value) && objToString.call(value) == regexpTag;
+      return (isObjectLike(value) && objToString.call(value) == regexpTag) || false;
     }
 
     /**
@@ -25784,54 +25716,6 @@ if (typeof define === "function" && define.amd) {
      */
     function isUndefined(value) {
       return value === undefined;
-    }
-
-    /**
-     * Checks if `value` is less than `other`.
-     *
-     * @static
-     * @memberOf _
-     * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if `value` is less than `other`, else `false`.
-     * @example
-     *
-     * _.lt(1, 3);
-     * // => true
-     *
-     * _.lt(3, 3);
-     * // => false
-     *
-     * _.lt(3, 1);
-     * // => false
-     */
-    function lt(value, other) {
-      return value < other;
-    }
-
-    /**
-     * Checks if `value` is less than or equal to `other`.
-     *
-     * @static
-     * @memberOf _
-     * @category Lang
-     * @param {*} value The value to compare.
-     * @param {*} other The other value to compare.
-     * @returns {boolean} Returns `true` if `value` is less than or equal to `other`, else `false`.
-     * @example
-     *
-     * _.lte(1, 3);
-     * // => true
-     *
-     * _.lte(3, 3);
-     * // => true
-     *
-     * _.lte(3, 1);
-     * // => false
-     */
-    function lte(value, other) {
-      return value <= other;
     }
 
     /**
@@ -25898,6 +25782,7 @@ if (typeof define === "function" && define.amd) {
      *
      * **Note:** This method mutates `object` and is based on
      * [`Object.assign`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.assign).
+     *
      *
      * @static
      * @memberOf _
@@ -26228,7 +26113,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Gets the property value at `path` of `object`. If the resolved value is
+     * Gets the property value of `path` on `object`. If the resolved value is
      * `undefined` the `defaultValue` is used in its place.
      *
      * @static
@@ -26286,14 +26171,10 @@ if (typeof define === "function" && define.amd) {
       if (!result && !isKey(path)) {
         path = toPath(path);
         object = path.length == 1 ? object : baseGet(object, baseSlice(path, 0, -1));
-        if (object == null) {
-          return false;
-        }
         path = last(path);
-        result = hasOwnProperty.call(object, path);
+        result = object != null && hasOwnProperty.call(object, path);
       }
-      return result || (isLength(object.length) && isIndex(path, object.length) &&
-        (isArray(object) || isArguments(object)));
+      return result;
     }
 
     /**
@@ -26374,9 +26255,12 @@ if (typeof define === "function" && define.amd) {
      * // => ['0', '1']
      */
     var keys = !nativeKeys ? shimKeys : function(object) {
-      var Ctor = object == null ? null : object.constructor;
+      if (object) {
+        var Ctor = object.constructor,
+            length = object.length;
+      }
       if ((typeof Ctor == 'function' && Ctor.prototype === object) ||
-          (typeof object != 'function' && isArrayLike(object))) {
+          (typeof object != 'function' && isLength(length))) {
         return shimKeys(object);
       }
       return isObject(object) ? nativeKeys(object) : [];
@@ -26413,7 +26297,7 @@ if (typeof define === "function" && define.amd) {
       }
       var length = object.length;
       length = (length && isLength(length) &&
-        (isArray(object) || isArguments(object)) && length) || 0;
+        (isArray(object) || (support.nonEnumArgs && isArguments(object))) && length) || 0;
 
       var Ctor = object.constructor,
           index = -1,
@@ -26432,28 +26316,6 @@ if (typeof define === "function" && define.amd) {
       }
       return result;
     }
-
-    /**
-     * The opposite of `_.mapValues`; this method creates an object with the
-     * same values as `object` and keys generated by running each own enumerable
-     * property of `object` through `iteratee`.
-     *
-     * @static
-     * @memberOf _
-     * @category Object
-     * @param {Object} object The object to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
-     *  per iteration.
-     * @param {*} [thisArg] The `this` binding of `iteratee`.
-     * @returns {Object} Returns the new mapped object.
-     * @example
-     *
-     * _.mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
-     *   return key + value;
-     * });
-     * // => { 'a1': 1, 'b2': 2 }
-     */
-    var mapKeys = createObjectMapper(true);
 
     /**
      * Creates an object with the same keys as `object` and values generated by
@@ -26496,7 +26358,15 @@ if (typeof define === "function" && define.amd) {
      * _.mapValues(users, 'age');
      * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
      */
-    var mapValues = createObjectMapper();
+    function mapValues(object, iteratee, thisArg) {
+      var result = {};
+      iteratee = getCallback(iteratee, thisArg, 3);
+
+      baseForOwn(object, function(value, key, object) {
+        result[key] = iteratee(value, key, object);
+      });
+      return result;
+    }
 
     /**
      * Recursively merges own enumerable properties of the source object(s), that
@@ -26551,6 +26421,11 @@ if (typeof define === "function" && define.amd) {
     /**
      * The opposite of `_.pick`; this method creates an object composed of the
      * own and inherited enumerable properties of `object` that are not omitted.
+     * Property names may be specified as individual arguments or as arrays of
+     * property names. If `predicate` is provided it is invoked for each property
+     * of `object` omitting the properties `predicate` returns truthy for. The
+     * predicate is bound to `thisArg` and invoked with three arguments:
+     * (value, key, object).
      *
      * @static
      * @memberOf _
@@ -26600,8 +26475,6 @@ if (typeof define === "function" && define.amd) {
      * // => [['barney', 36], ['fred', 40]] (iteration order is not guaranteed)
      */
     function pairs(object) {
-      object = toObject(object);
-
       var index = -1,
           props = keys(object),
           length = props.length,
@@ -26722,13 +26595,13 @@ if (typeof define === "function" && define.amd) {
 
       var index = -1,
           length = path.length,
-          lastIndex = length - 1,
+          endIndex = length - 1,
           nested = object;
 
       while (nested != null && ++index < length) {
         var key = path[index];
         if (isObject(nested)) {
-          if (index == lastIndex) {
+          if (index == endIndex) {
             nested[key] = value;
           } else if (nested[key] == null) {
             nested[key] = isIndex(path[index + 1]) ? [] : {};
@@ -26778,7 +26651,7 @@ if (typeof define === "function" && define.amd) {
           if (isArr) {
             accumulator = isArray(object) ? new Ctor : [];
           } else {
-            accumulator = baseCreate(isFunction(Ctor) ? Ctor.prototype : null);
+            accumulator = baseCreate(isFunction(Ctor) && Ctor.prototype);
           }
         } else {
           accumulator = {};
@@ -27057,7 +26930,7 @@ if (typeof define === "function" && define.amd) {
      * use a third-party library like [_he_](https://mths.be/he).
      *
      * Though the ">" character is escaped for symmetry, characters like
-     * ">" and "/" don't need escaping in HTML and have no special meaning
+     * ">" and "/" don't require escaping in HTML and have no special meaning
      * unless they're part of a tag or unquoted attribute value.
      * See [Mathias Bynens's article](https://mathiasbynens.be/notes/ambiguous-ampersands)
      * (under "semi-related fun fact") for more details.
@@ -27134,7 +27007,7 @@ if (typeof define === "function" && define.amd) {
     });
 
     /**
-     * Pads `string` on the left and right sides if it's shorter than `length`.
+     * Pads `string` on the left and right sides if it is shorter than `length`.
      * Padding characters are truncated if they can't be evenly divided by `length`.
      *
      * @static
@@ -27172,7 +27045,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Pads `string` on the left side if it's shorter than `length`. Padding
+     * Pads `string` on the left side if it is shorter than `length`. Padding
      * characters are truncated if they exceed `length`.
      *
      * @static
@@ -27196,7 +27069,7 @@ if (typeof define === "function" && define.amd) {
     var padLeft = createPadDir();
 
     /**
-     * Pads `string` on the right side if it's shorter than `length`. Padding
+     * Pads `string` on the right side if it is shorter than `length`. Padding
      * characters are truncated if they exceed `length`.
      *
      * @static
@@ -27677,7 +27550,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Truncates `string` if it's longer than the given maximum string length.
+     * Truncates `string` if it is longer than the given maximum string length.
      * The last characters of the truncated string are replaced with the omission
      * string which defaults to "...".
      *
@@ -27891,9 +27764,7 @@ if (typeof define === "function" && define.amd) {
       if (guard && isIterateeCall(func, thisArg, guard)) {
         thisArg = null;
       }
-      return isObjectLike(func)
-        ? matches(func)
-        : baseCallback(func, thisArg);
+      return baseCallback(func, thisArg);
     }
 
     /**
@@ -27938,7 +27809,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Creates a function that performs a deep comparison between a given object
+     * Creates a function which performs a deep comparison between a given object
      * and `source`, returning `true` if the given object has equivalent property
      * values, else `false`.
      *
@@ -27967,7 +27838,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Creates a function that compares the property value of `path` on a given
+     * Creates a function which compares the property value of `path` on a given
      * object to `value`.
      *
      * **Note:** This method supports comparing arrays, booleans, `Date` objects,
@@ -27978,7 +27849,7 @@ if (typeof define === "function" && define.amd) {
      * @memberOf _
      * @category Utility
      * @param {Array|string} path The path of the property to get.
-     * @param {*} srcValue The value to match.
+     * @param {*} value The value to compare.
      * @returns {Function} Returns the new function.
      * @example
      *
@@ -27990,19 +27861,17 @@ if (typeof define === "function" && define.amd) {
      * _.find(users, _.matchesProperty('user', 'fred'));
      * // => { 'user': 'fred' }
      */
-    function matchesProperty(path, srcValue) {
-      return baseMatchesProperty(path, baseClone(srcValue, true));
+    function matchesProperty(path, value) {
+      return baseMatchesProperty(path, baseClone(value, true));
     }
 
     /**
-     * Creates a function that invokes the method at `path` on a given object.
-     * Any additional arguments are provided to the invoked method.
+     * Creates a function which invokes the method at `path` on a given object.
      *
      * @static
      * @memberOf _
      * @category Utility
      * @param {Array|string} path The path of the method to invoke.
-     * @param {...*} [args] The arguments to invoke the method with.
      * @returns {Function} Returns the new function.
      * @example
      *
@@ -28020,19 +27889,17 @@ if (typeof define === "function" && define.amd) {
     var method = restParam(function(path, args) {
       return function(object) {
         return invokePath(object, path, args);
-      };
+      }
     });
 
     /**
-     * The opposite of `_.method`; this method creates a function that invokes
-     * the method at a given path on `object`. Any additional arguments are
-     * provided to the invoked method.
+     * The opposite of `_.method`; this method creates a function which invokes
+     * the method at a given path on `object`.
      *
      * @static
      * @memberOf _
      * @category Utility
      * @param {Object} object The object to query.
-     * @param {...*} [args] The arguments to invoke the method with.
      * @returns {Function} Returns the new function.
      * @example
      *
@@ -28076,6 +27943,9 @@ if (typeof define === "function" && define.amd) {
      *   });
      * }
      *
+     * // use `_.runInContext` to avoid conflicts (esp. in Node.js)
+     * var _ = require('lodash').runInContext();
+     *
      * _.mixin({ 'vowels': vowels });
      * _.vowels('fred');
      * // => ['e']
@@ -28090,8 +27960,8 @@ if (typeof define === "function" && define.amd) {
     function mixin(object, source, options) {
       if (options == null) {
         var isObj = isObject(source),
-            props = isObj ? keys(source) : null,
-            methodNames = (props && props.length) ? baseFunctions(source, props) : null;
+            props = isObj && keys(source),
+            methodNames = props && props.length && baseFunctions(source, props);
 
         if (!(methodNames ? methodNames.length : isObj)) {
           methodNames = false;
@@ -28158,7 +28028,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * A no-operation function that returns `undefined` regardless of the
+     * A no-operation function which returns `undefined` regardless of the
      * arguments it receives.
      *
      * @static
@@ -28176,7 +28046,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * Creates a function that returns the property value at `path` on a
+     * Creates a function which returns the property value at `path` on a
      * given object.
      *
      * @static
@@ -28202,7 +28072,7 @@ if (typeof define === "function" && define.amd) {
     }
 
     /**
-     * The opposite of `_.property`; this method creates a function that returns
+     * The opposite of `_.property`; this method creates a function which returns
      * the property value at a given path on `object`.
      *
      * @static
@@ -28423,7 +28293,7 @@ if (typeof define === "function" && define.amd) {
      * _.max(users, 'age');
      * // => { 'user': 'fred', 'age': 40 }
      */
-    var max = createExtremum(gt, NEGATIVE_INFINITY);
+    var max = createExtremum(arrayMax);
 
     /**
      * Gets the minimum value of `collection`. If `collection` is empty or falsey
@@ -28472,7 +28342,7 @@ if (typeof define === "function" && define.amd) {
      * _.min(users, 'age');
      * // => { 'user': 'barney', 'age': 36 }
      */
-    var min = createExtremum(lt, POSITIVE_INFINITY);
+    var min = createExtremum(arrayMin, true);
 
     /**
      * Gets the sum of the values in `collection`.
@@ -28510,12 +28380,12 @@ if (typeof define === "function" && define.amd) {
       if (thisArg && isIterateeCall(collection, iteratee, thisArg)) {
         iteratee = null;
       }
-      var callback = getCallback(),
+      var func = getCallback(),
           noIteratee = iteratee == null;
 
-      if (!(noIteratee && callback === baseCallback)) {
+      if (!(func === baseCallback && noIteratee)) {
         noIteratee = false;
-        iteratee = callback(iteratee, thisArg, 3);
+        iteratee = func(iteratee, thisArg, 3);
       }
       return noIteratee
         ? arraySum(isArray(collection) ? collection : toIterable(collection))
@@ -28594,7 +28464,6 @@ if (typeof define === "function" && define.amd) {
     lodash.keys = keys;
     lodash.keysIn = keysIn;
     lodash.map = map;
-    lodash.mapKeys = mapKeys;
     lodash.mapValues = mapValues;
     lodash.matches = matches;
     lodash.matchesProperty = matchesProperty;
@@ -28643,7 +28512,6 @@ if (typeof define === "function" && define.amd) {
     lodash.union = union;
     lodash.uniq = uniq;
     lodash.unzip = unzip;
-    lodash.unzipWith = unzipWith;
     lodash.values = values;
     lodash.valuesIn = valuesIn;
     lodash.where = where;
@@ -28652,7 +28520,6 @@ if (typeof define === "function" && define.amd) {
     lodash.xor = xor;
     lodash.zip = zip;
     lodash.zipObject = zipObject;
-    lodash.zipWith = zipWith;
 
     // Add aliases.
     lodash.backflow = flowRight;
@@ -28694,8 +28561,6 @@ if (typeof define === "function" && define.amd) {
     lodash.findWhere = findWhere;
     lodash.first = first;
     lodash.get = get;
-    lodash.gt = gt;
-    lodash.gte = gte;
     lodash.has = has;
     lodash.identity = identity;
     lodash.includes = includes;
@@ -28725,8 +28590,6 @@ if (typeof define === "function" && define.amd) {
     lodash.kebabCase = kebabCase;
     lodash.last = last;
     lodash.lastIndexOf = lastIndexOf;
-    lodash.lt = lt;
-    lodash.lte = lte;
     lodash.max = max;
     lodash.min = min;
     lodash.noConflict = noConflict;
@@ -28763,7 +28626,6 @@ if (typeof define === "function" && define.amd) {
     lodash.all = every;
     lodash.any = some;
     lodash.contains = includes;
-    lodash.eq = isEqual;
     lodash.detect = find;
     lodash.foldl = reduce;
     lodash.foldr = reduceRight;
@@ -28907,13 +28769,8 @@ if (typeof define === "function" && define.amd) {
 
     LazyWrapper.prototype.slice = function(start, end) {
       start = start == null ? 0 : (+start || 0);
+      var result = start < 0 ? this.takeRight(-start) : this.drop(start);
 
-      var result = this;
-      if (start < 0) {
-        result = this.takeRight(-start);
-      } else if (start) {
-        result = this.drop(start);
-      }
       if (end !== undefined) {
         end = (+end || 0);
         result = end < 0 ? result.dropRight(-end) : result.take(end - start);
@@ -28936,6 +28793,7 @@ if (typeof define === "function" && define.amd) {
 
       lodash.prototype[methodName] = function() {
         var args = arguments,
+            length = args.length,
             chainAll = this.__chain__,
             value = this.__wrapped__,
             isHybrid = !!this.__actions__.length,
@@ -29049,7 +28907,7 @@ if (typeof define === "function" && define.amd) {
     if (moduleExports) {
       (freeModule.exports = _)._ = _;
     }
-    // Export for Rhino with CommonJS support.
+    // Export for Narwhal or Rhino -require.
     else {
       freeExports._ = _;
     }
@@ -29061,10 +28919,10 @@ if (typeof define === "function" && define.amd) {
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/addons.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/addons.js":[function(require,module,exports){
 module.exports = require('./lib/ReactWithAddons');
 
-},{"./lib/ReactWithAddons":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactWithAddons.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js":[function(require,module,exports){
+},{"./lib/ReactWithAddons":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactWithAddons.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -29091,7 +28949,7 @@ var AutoFocusMixin = {
 
 module.exports = AutoFocusMixin;
 
-},{"./focusNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/focusNode.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/BeforeInputEventPlugin.js":[function(require,module,exports){
+},{"./focusNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/focusNode.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/BeforeInputEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015 Facebook, Inc.
  * All rights reserved.
@@ -29586,7 +29444,7 @@ var BeforeInputEventPlugin = {
 
 module.exports = BeforeInputEventPlugin;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./FallbackCompositionState":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/FallbackCompositionState.js","./SyntheticCompositionEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticCompositionEvent.js","./SyntheticInputEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticInputEvent.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSCore.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./FallbackCompositionState":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/FallbackCompositionState.js","./SyntheticCompositionEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticCompositionEvent.js","./SyntheticInputEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticInputEvent.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSCore.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -29698,7 +29556,7 @@ var CSSCore = {
 module.exports = CSSCore;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSProperty.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSProperty.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -29823,7 +29681,7 @@ var CSSProperty = {
 
 module.exports = CSSProperty;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSPropertyOperations.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSPropertyOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -30005,7 +29863,7 @@ var CSSPropertyOperations = {
 module.exports = CSSPropertyOperations;
 
 }).call(this,require('_process'))
-},{"./CSSProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSProperty.js","./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./camelizeStyleName":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/camelizeStyleName.js","./dangerousStyleValue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/dangerousStyleValue.js","./hyphenateStyleName":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/hyphenateStyleName.js","./memoizeStringOnly":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/memoizeStringOnly.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CallbackQueue.js":[function(require,module,exports){
+},{"./CSSProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSProperty.js","./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./camelizeStyleName":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/camelizeStyleName.js","./dangerousStyleValue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/dangerousStyleValue.js","./hyphenateStyleName":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/hyphenateStyleName.js","./memoizeStringOnly":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/memoizeStringOnly.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CallbackQueue.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -30105,7 +29963,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 module.exports = CallbackQueue;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ChangeEventPlugin.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ChangeEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -30487,7 +30345,7 @@ var ChangeEventPlugin = {
 
 module.exports = ChangeEventPlugin;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./isEventSupported":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isEventSupported.js","./isTextInputElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextInputElement.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ClientReactRootIndex.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./isEventSupported":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isEventSupported.js","./isTextInputElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextInputElement.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ClientReactRootIndex.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -30512,7 +30370,7 @@ var ClientReactRootIndex = {
 
 module.exports = ClientReactRootIndex;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMChildrenOperations.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMChildrenOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -30650,7 +30508,7 @@ var DOMChildrenOperations = {
 module.exports = DOMChildrenOperations;
 
 }).call(this,require('_process'))
-},{"./Danger":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Danger.js","./ReactMultiChildUpdateTypes":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./setTextContent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setTextContent.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js":[function(require,module,exports){
+},{"./Danger":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Danger.js","./ReactMultiChildUpdateTypes":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./setTextContent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setTextContent.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -30949,7 +30807,7 @@ var DOMProperty = {
 module.exports = DOMProperty;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -31141,7 +30999,7 @@ var DOMPropertyOperations = {
 module.exports = DOMPropertyOperations;
 
 }).call(this,require('_process'))
-},{"./DOMProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./quoteAttributeValueForBrowser":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/quoteAttributeValueForBrowser.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Danger.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./quoteAttributeValueForBrowser":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/quoteAttributeValueForBrowser.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Danger.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -31328,7 +31186,7 @@ var Danger = {
 module.exports = Danger;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./createNodesFromMarkup":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createNodesFromMarkup.js","./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","./getMarkupWrap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getMarkupWrap.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DefaultEventPluginOrder.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./createNodesFromMarkup":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createNodesFromMarkup.js","./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","./getMarkupWrap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getMarkupWrap.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DefaultEventPluginOrder.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -31367,7 +31225,7 @@ var DefaultEventPluginOrder = [
 
 module.exports = DefaultEventPluginOrder;
 
-},{"./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EnterLeaveEventPlugin.js":[function(require,module,exports){
+},{"./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EnterLeaveEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -31507,7 +31365,7 @@ var EnterLeaveEventPlugin = {
 
 module.exports = EnterLeaveEventPlugin;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./SyntheticMouseEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./SyntheticMouseEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -31579,7 +31437,7 @@ var EventConstants = {
 
 module.exports = EventConstants;
 
-},{"./keyMirror":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventListener.js":[function(require,module,exports){
+},{"./keyMirror":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventListener.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -31669,7 +31527,7 @@ var EventListener = {
 module.exports = EventListener;
 
 }).call(this,require('_process'))
-},{"./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js":[function(require,module,exports){
+},{"./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -31947,7 +31805,7 @@ var EventPluginHub = {
 module.exports = EventPluginHub;
 
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginRegistry.js","./EventPluginUtils":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginUtils.js","./accumulateInto":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/forEachAccumulated.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginRegistry.js":[function(require,module,exports){
+},{"./EventPluginRegistry":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginRegistry.js","./EventPluginUtils":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginUtils.js","./accumulateInto":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/forEachAccumulated.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginRegistry.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32227,7 +32085,7 @@ var EventPluginRegistry = {
 module.exports = EventPluginRegistry;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginUtils.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginUtils.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32448,7 +32306,7 @@ var EventPluginUtils = {
 module.exports = EventPluginUtils;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32590,7 +32448,7 @@ var EventPropagators = {
 module.exports = EventPropagators;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./accumulateInto":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/forEachAccumulated.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./accumulateInto":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/forEachAccumulated.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32634,7 +32492,7 @@ var ExecutionEnvironment = {
 
 module.exports = ExecutionEnvironment;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/FallbackCompositionState.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/FallbackCompositionState.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32725,7 +32583,7 @@ PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
 
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./getTextContentAccessor":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getTextContentAccessor.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/HTMLDOMPropertyConfig.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./getTextContentAccessor":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getTextContentAccessor.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/HTMLDOMPropertyConfig.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32936,7 +32794,7 @@ var HTMLDOMPropertyConfig = {
 
 module.exports = HTMLDOMPropertyConfig;
 
-},{"./DOMProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedStateMixin.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedStateMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32977,7 +32835,7 @@ var LinkedStateMixin = {
 
 module.exports = LinkedStateMixin;
 
-},{"./ReactLink":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLink.js","./ReactStateSetters":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactStateSetters.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedValueUtils.js":[function(require,module,exports){
+},{"./ReactLink":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLink.js","./ReactStateSetters":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactStateSetters.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedValueUtils.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33133,7 +32991,7 @@ var LinkedValueUtils = {
 module.exports = LinkedValueUtils;
 
 }).call(this,require('_process'))
-},{"./ReactPropTypes":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypes.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LocalEventTrapMixin.js":[function(require,module,exports){
+},{"./ReactPropTypes":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypes.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LocalEventTrapMixin.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -33190,7 +33048,7 @@ var LocalEventTrapMixin = {
 module.exports = LocalEventTrapMixin;
 
 }).call(this,require('_process'))
-},{"./ReactBrowserEventEmitter":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./accumulateInto":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/forEachAccumulated.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/MobileSafariClickEventPlugin.js":[function(require,module,exports){
+},{"./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./accumulateInto":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/forEachAccumulated.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/MobileSafariClickEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33248,7 +33106,7 @@ var MobileSafariClickEventPlugin = {
 
 module.exports = MobileSafariClickEventPlugin;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js":[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -33297,7 +33155,7 @@ function assign(target, sources) {
 
 module.exports = assign;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33413,7 +33271,7 @@ var PooledClass = {
 module.exports = PooledClass;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33565,7 +33423,7 @@ React.version = '0.13.3';
 module.exports = React;
 
 }).call(this,require('_process'))
-},{"./EventPluginUtils":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginUtils.js","./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactChildren":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildren.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponent.js","./ReactContext":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactDOM":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOM.js","./ReactDOMTextComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextComponent.js","./ReactDefaultInjection":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultInjection.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./ReactInstanceHandles":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactPropTypes":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypes.js","./ReactReconciler":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./ReactServerRendering":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactServerRendering.js","./findDOMNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/findDOMNode.js","./onlyChild":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/onlyChild.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js":[function(require,module,exports){
+},{"./EventPluginUtils":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginUtils.js","./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactChildren":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildren.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponent.js","./ReactContext":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactDOM":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOM.js","./ReactDOMTextComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextComponent.js","./ReactDefaultInjection":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultInjection.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactPropTypes":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypes.js","./ReactReconciler":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./ReactServerRendering":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactServerRendering.js","./findDOMNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/findDOMNode.js","./onlyChild":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/onlyChild.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33596,7 +33454,7 @@ var ReactBrowserComponentMixin = {
 
 module.exports = ReactBrowserComponentMixin;
 
-},{"./findDOMNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/findDOMNode.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js":[function(require,module,exports){
+},{"./findDOMNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/findDOMNode.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33949,7 +33807,7 @@ var ReactBrowserEventEmitter = assign({}, ReactEventEmitterMixin, {
 
 module.exports = ReactBrowserEventEmitter;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./EventPluginRegistry":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginRegistry.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactEventEmitterMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEventEmitterMixin.js","./ViewportMetrics":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ViewportMetrics.js","./isEventSupported":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isEventSupported.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCSSTransitionGroup.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./EventPluginRegistry":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginRegistry.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactEventEmitterMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEventEmitterMixin.js","./ViewportMetrics":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ViewportMetrics.js","./isEventSupported":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isEventSupported.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCSSTransitionGroup.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -34019,7 +33877,7 @@ var ReactCSSTransitionGroup = React.createClass({
 
 module.exports = ReactCSSTransitionGroup;
 
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./React":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactCSSTransitionGroupChild":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCSSTransitionGroupChild.js","./ReactTransitionGroup":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionGroup.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCSSTransitionGroupChild.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactCSSTransitionGroupChild":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCSSTransitionGroupChild.js","./ReactTransitionGroup":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionGroup.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCSSTransitionGroupChild.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34167,7 +34025,7 @@ var ReactCSSTransitionGroupChild = React.createClass({
 module.exports = ReactCSSTransitionGroupChild;
 
 }).call(this,require('_process'))
-},{"./CSSCore":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSCore.js","./React":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactTransitionEvents":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionEvents.js","./onlyChild":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/onlyChild.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildReconciler.js":[function(require,module,exports){
+},{"./CSSCore":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSCore.js","./React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactTransitionEvents":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionEvents.js","./onlyChild":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/onlyChild.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildReconciler.js":[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -34294,7 +34152,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 
-},{"./ReactReconciler":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./flattenChildren":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/flattenChildren.js","./instantiateReactComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/instantiateReactComponent.js","./shouldUpdateReactComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shouldUpdateReactComponent.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildren.js":[function(require,module,exports){
+},{"./ReactReconciler":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./flattenChildren":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/flattenChildren.js","./instantiateReactComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/instantiateReactComponent.js","./shouldUpdateReactComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shouldUpdateReactComponent.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34447,7 +34305,7 @@ var ReactChildren = {
 module.exports = ReactChildren;
 
 }).call(this,require('_process'))
-},{"./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactFragment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./traverseAllChildren":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/traverseAllChildren.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js":[function(require,module,exports){
+},{"./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactFragment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./traverseAllChildren":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/traverseAllChildren.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -35393,7 +35251,7 @@ var ReactClass = {
 module.exports = ReactClass;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponent.js","./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactErrorUtils":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactErrorUtils.js","./ReactInstanceMap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLifeCycle.js","./ReactPropTypeLocationNames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocations.js","./ReactUpdateQueue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdateQueue.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./keyMirror":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponent.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponent.js","./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactErrorUtils":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactErrorUtils.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLifeCycle.js","./ReactPropTypeLocationNames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocations.js","./ReactUpdateQueue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdateQueue.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./keyMirror":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -35547,7 +35405,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = ReactComponent;
 
 }).call(this,require('_process'))
-},{"./ReactUpdateQueue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdateQueue.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentBrowserEnvironment.js":[function(require,module,exports){
+},{"./ReactUpdateQueue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdateQueue.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentBrowserEnvironment.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -35594,7 +35452,7 @@ var ReactComponentBrowserEnvironment = {
 
 module.exports = ReactComponentBrowserEnvironment;
 
-},{"./ReactDOMIDOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIDOperations.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentEnvironment.js":[function(require,module,exports){
+},{"./ReactDOMIDOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIDOperations.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentEnvironment.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -35655,7 +35513,7 @@ var ReactComponentEnvironment = {
 module.exports = ReactComponentEnvironment;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentWithPureRenderMixin.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentWithPureRenderMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -35704,7 +35562,7 @@ var ReactComponentWithPureRenderMixin = {
 
 module.exports = ReactComponentWithPureRenderMixin;
 
-},{"./shallowEqual":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shallowEqual.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCompositeComponent.js":[function(require,module,exports){
+},{"./shallowEqual":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shallowEqual.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCompositeComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -36617,7 +36475,7 @@ var ReactCompositeComponent = {
 module.exports = ReactCompositeComponent;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactComponentEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentEnvironment.js","./ReactContext":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./ReactInstanceMap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLifeCycle.js","./ReactNativeComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js","./ReactPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactPropTypeLocationNames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocations.js","./ReactReconciler":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./emptyObject":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./shouldUpdateReactComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactContext.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactComponentEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentEnvironment.js","./ReactContext":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLifeCycle.js","./ReactNativeComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js","./ReactPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactPropTypeLocationNames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocations.js","./ReactReconciler":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./emptyObject":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./shouldUpdateReactComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactContext.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -36695,7 +36553,7 @@ var ReactContext = {
 module.exports = ReactContext;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./emptyObject":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./emptyObject":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -36729,7 +36587,7 @@ var ReactCurrentOwner = {
 
 module.exports = ReactCurrentOwner;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOM.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOM.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -36908,7 +36766,7 @@ var ReactDOM = mapObject({
 module.exports = ReactDOM;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./mapObject":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/mapObject.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMButton.js":[function(require,module,exports){
+},{"./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./mapObject":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/mapObject.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMButton.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -36972,7 +36830,7 @@ var ReactDOMButton = ReactClass.createClass({
 
 module.exports = ReactDOMButton;
 
-},{"./AutoFocusMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js","./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./keyMirror":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMComponent.js":[function(require,module,exports){
+},{"./AutoFocusMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js","./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./keyMirror":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -37482,7 +37340,7 @@ ReactDOMComponent.injection = {
 module.exports = ReactDOMComponent;
 
 }).call(this,require('_process'))
-},{"./CSSPropertyOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSPropertyOperations.js","./DOMProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./DOMPropertyOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactBrowserEventEmitter":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactComponentBrowserEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactMultiChild":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChild.js","./ReactPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./escapeTextContentForBrowser":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./isEventSupported":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isEventSupported.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMForm.js":[function(require,module,exports){
+},{"./CSSPropertyOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSPropertyOperations.js","./DOMProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./DOMPropertyOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactComponentBrowserEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactMultiChild":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChild.js","./ReactPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./escapeTextContentForBrowser":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./isEventSupported":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isEventSupported.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMForm.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -37531,7 +37389,7 @@ var ReactDOMForm = ReactClass.createClass({
 
 module.exports = ReactDOMForm;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIDOperations.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIDOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -37699,7 +37557,7 @@ ReactPerf.measureMethods(ReactDOMIDOperations, 'ReactDOMIDOperations', {
 module.exports = ReactDOMIDOperations;
 
 }).call(this,require('_process'))
-},{"./CSSPropertyOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSPropertyOperations.js","./DOMChildrenOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMChildrenOperations.js","./DOMPropertyOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./setInnerHTML":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setInnerHTML.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIframe.js":[function(require,module,exports){
+},{"./CSSPropertyOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSPropertyOperations.js","./DOMChildrenOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMChildrenOperations.js","./DOMPropertyOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./setInnerHTML":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setInnerHTML.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIframe.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -37744,7 +37602,7 @@ var ReactDOMIframe = ReactClass.createClass({
 
 module.exports = ReactDOMIframe;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMImg.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMImg.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -37790,7 +37648,7 @@ var ReactDOMImg = ReactClass.createClass({
 
 module.exports = ReactDOMImg;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMInput.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMInput.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -37967,7 +37825,7 @@ var ReactDOMInput = ReactClass.createClass({
 module.exports = ReactDOMInput;
 
 }).call(this,require('_process'))
-},{"./AutoFocusMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMOption.js":[function(require,module,exports){
+},{"./AutoFocusMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMOption.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38019,7 +37877,7 @@ var ReactDOMOption = ReactClass.createClass({
 module.exports = ReactDOMOption;
 
 }).call(this,require('_process'))
-},{"./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMSelect.js":[function(require,module,exports){
+},{"./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMSelect.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -38197,7 +38055,7 @@ var ReactDOMSelect = ReactClass.createClass({
 
 module.exports = ReactDOMSelect;
 
-},{"./AutoFocusMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js","./LinkedValueUtils":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMSelection.js":[function(require,module,exports){
+},{"./AutoFocusMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js","./LinkedValueUtils":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMSelection.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -38410,7 +38268,7 @@ var ReactDOMSelection = {
 
 module.exports = ReactDOMSelection;
 
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./getNodeForCharacterOffset":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getNodeForCharacterOffset.js","./getTextContentAccessor":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getTextContentAccessor.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextComponent.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./getNodeForCharacterOffset":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getNodeForCharacterOffset.js","./getTextContentAccessor":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getTextContentAccessor.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextComponent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -38527,7 +38385,7 @@ assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 
-},{"./DOMPropertyOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactComponentBrowserEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactDOMComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMComponent.js","./escapeTextContentForBrowser":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextarea.js":[function(require,module,exports){
+},{"./DOMPropertyOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactComponentBrowserEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactDOMComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMComponent.js","./escapeTextContentForBrowser":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextarea.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38667,7 +38525,7 @@ var ReactDOMTextarea = ReactClass.createClass({
 module.exports = ReactDOMTextarea;
 
 }).call(this,require('_process'))
-},{"./AutoFocusMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultBatchingStrategy.js":[function(require,module,exports){
+},{"./AutoFocusMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultBatchingStrategy.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -38740,7 +38598,7 @@ var ReactDefaultBatchingStrategy = {
 
 module.exports = ReactDefaultBatchingStrategy;
 
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./Transaction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js","./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultInjection.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./Transaction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js","./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultInjection.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38899,7 +38757,7 @@ module.exports = {
 };
 
 }).call(this,require('_process'))
-},{"./BeforeInputEventPlugin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/BeforeInputEventPlugin.js","./ChangeEventPlugin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ChangeEventPlugin.js","./ClientReactRootIndex":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ClientReactRootIndex.js","./DefaultEventPluginOrder":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DefaultEventPluginOrder.js","./EnterLeaveEventPlugin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EnterLeaveEventPlugin.js","./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./HTMLDOMPropertyConfig":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/HTMLDOMPropertyConfig.js","./MobileSafariClickEventPlugin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/MobileSafariClickEventPlugin.js","./ReactBrowserComponentMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactComponentBrowserEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactDOMButton":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMButton.js","./ReactDOMComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMComponent.js","./ReactDOMForm":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMForm.js","./ReactDOMIDOperations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIDOperations.js","./ReactDOMIframe":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIframe.js","./ReactDOMImg":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMImg.js","./ReactDOMInput":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMInput.js","./ReactDOMOption":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMOption.js","./ReactDOMSelect":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMSelect.js","./ReactDOMTextComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextComponent.js","./ReactDOMTextarea":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextarea.js","./ReactDefaultBatchingStrategy":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultBatchingStrategy.js","./ReactDefaultPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerf.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactEventListener":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEventListener.js","./ReactInjection":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInjection.js","./ReactInstanceHandles":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactReconcileTransaction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconcileTransaction.js","./SVGDOMPropertyConfig":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SVGDOMPropertyConfig.js","./SelectEventPlugin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SelectEventPlugin.js","./ServerReactRootIndex":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ServerReactRootIndex.js","./SimpleEventPlugin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SimpleEventPlugin.js","./createFullPageComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createFullPageComponent.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerf.js":[function(require,module,exports){
+},{"./BeforeInputEventPlugin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/BeforeInputEventPlugin.js","./ChangeEventPlugin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ChangeEventPlugin.js","./ClientReactRootIndex":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ClientReactRootIndex.js","./DefaultEventPluginOrder":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DefaultEventPluginOrder.js","./EnterLeaveEventPlugin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EnterLeaveEventPlugin.js","./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./HTMLDOMPropertyConfig":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/HTMLDOMPropertyConfig.js","./MobileSafariClickEventPlugin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/MobileSafariClickEventPlugin.js","./ReactBrowserComponentMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactComponentBrowserEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactDOMButton":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMButton.js","./ReactDOMComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMComponent.js","./ReactDOMForm":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMForm.js","./ReactDOMIDOperations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIDOperations.js","./ReactDOMIframe":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMIframe.js","./ReactDOMImg":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMImg.js","./ReactDOMInput":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMInput.js","./ReactDOMOption":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMOption.js","./ReactDOMSelect":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMSelect.js","./ReactDOMTextComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextComponent.js","./ReactDOMTextarea":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMTextarea.js","./ReactDefaultBatchingStrategy":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultBatchingStrategy.js","./ReactDefaultPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerf.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactEventListener":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEventListener.js","./ReactInjection":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInjection.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactReconcileTransaction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconcileTransaction.js","./SVGDOMPropertyConfig":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SVGDOMPropertyConfig.js","./SelectEventPlugin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SelectEventPlugin.js","./ServerReactRootIndex":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ServerReactRootIndex.js","./SimpleEventPlugin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SimpleEventPlugin.js","./createFullPageComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createFullPageComponent.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerf.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39165,7 +39023,7 @@ var ReactDefaultPerf = {
 
 module.exports = ReactDefaultPerf;
 
-},{"./DOMProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./ReactDefaultPerfAnalysis":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerfAnalysis.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./performanceNow":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/performanceNow.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerfAnalysis.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./ReactDefaultPerfAnalysis":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerfAnalysis.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./performanceNow":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/performanceNow.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerfAnalysis.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39371,7 +39229,7 @@ var ReactDefaultPerfAnalysis = {
 
 module.exports = ReactDefaultPerfAnalysis;
 
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -39679,7 +39537,7 @@ ReactElement.isValidElement = function(object) {
 module.exports = ReactElement;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactContext":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactContext":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -40144,7 +40002,7 @@ var ReactElementValidator = {
 module.exports = ReactElementValidator;
 
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactFragment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./ReactNativeComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js","./ReactPropTypeLocationNames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocations.js","./getIteratorFn":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getIteratorFn.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js":[function(require,module,exports){
+},{"./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactFragment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./ReactNativeComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js","./ReactPropTypeLocationNames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocations.js","./getIteratorFn":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getIteratorFn.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -40239,7 +40097,7 @@ var ReactEmptyComponent = {
 module.exports = ReactEmptyComponent;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactInstanceMap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactErrorUtils.js":[function(require,module,exports){
+},{"./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactErrorUtils.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40271,7 +40129,7 @@ var ReactErrorUtils = {
 
 module.exports = ReactErrorUtils;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEventEmitterMixin.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEventEmitterMixin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40321,7 +40179,7 @@ var ReactEventEmitterMixin = {
 
 module.exports = ReactEventEmitterMixin;
 
-},{"./EventPluginHub":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEventListener.js":[function(require,module,exports){
+},{"./EventPluginHub":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEventListener.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40504,7 +40362,7 @@ var ReactEventListener = {
 
 module.exports = ReactEventListener;
 
-},{"./EventListener":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventListener.js","./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactInstanceHandles":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./getEventTarget":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventTarget.js","./getUnboundedScrollPosition":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getUnboundedScrollPosition.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js":[function(require,module,exports){
+},{"./EventListener":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventListener.js","./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./getEventTarget":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventTarget.js","./getUnboundedScrollPosition":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getUnboundedScrollPosition.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -40689,7 +40547,7 @@ var ReactFragment = {
 module.exports = ReactFragment;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInjection.js":[function(require,module,exports){
+},{"./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInjection.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40731,7 +40589,7 @@ var ReactInjection = {
 
 module.exports = ReactInjection;
 
-},{"./DOMProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./EventPluginHub":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./ReactBrowserEventEmitter":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactComponentEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentEnvironment.js","./ReactDOMComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMComponent.js","./ReactEmptyComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactNativeComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js","./ReactPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactRootIndex":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRootIndex.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInputSelection.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./EventPluginHub":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactComponentEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentEnvironment.js","./ReactDOMComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMComponent.js","./ReactEmptyComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactNativeComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js","./ReactPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactRootIndex":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRootIndex.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInputSelection.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40866,7 +40724,7 @@ var ReactInputSelection = {
 
 module.exports = ReactInputSelection;
 
-},{"./ReactDOMSelection":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMSelection.js","./containsNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/containsNode.js","./focusNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/focusNode.js","./getActiveElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getActiveElement.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js":[function(require,module,exports){
+},{"./ReactDOMSelection":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDOMSelection.js","./containsNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/containsNode.js","./focusNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/focusNode.js","./getActiveElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getActiveElement.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -41202,7 +41060,7 @@ var ReactInstanceHandles = {
 module.exports = ReactInstanceHandles;
 
 }).call(this,require('_process'))
-},{"./ReactRootIndex":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRootIndex.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js":[function(require,module,exports){
+},{"./ReactRootIndex":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRootIndex.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41251,7 +41109,7 @@ var ReactInstanceMap = {
 
 module.exports = ReactInstanceMap;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLifeCycle.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLifeCycle.js":[function(require,module,exports){
 /**
  * Copyright 2015, Facebook, Inc.
  * All rights reserved.
@@ -41288,7 +41146,7 @@ var ReactLifeCycle = {
 
 module.exports = ReactLifeCycle;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLink.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLink.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41361,7 +41219,7 @@ ReactLink.PropTypes = {
 
 module.exports = ReactLink;
 
-},{"./React":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMarkupChecksum.js":[function(require,module,exports){
+},{"./React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMarkupChecksum.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41409,7 +41267,7 @@ var ReactMarkupChecksum = {
 
 module.exports = ReactMarkupChecksum;
 
-},{"./adler32":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/adler32.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js":[function(require,module,exports){
+},{"./adler32":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/adler32.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -42300,7 +42158,7 @@ ReactPerf.measureMethods(ReactMount, 'ReactMount', {
 module.exports = ReactMount;
 
 }).call(this,require('_process'))
-},{"./DOMProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./ReactBrowserEventEmitter":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./ReactEmptyComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactInstanceHandles":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactInstanceMap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactMarkupChecksum":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMarkupChecksum.js","./ReactPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactReconciler":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./ReactUpdateQueue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdateQueue.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./containsNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/containsNode.js","./emptyObject":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js","./getReactRootElementInContainer":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getReactRootElementInContainer.js","./instantiateReactComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./setInnerHTML":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setInnerHTML.js","./shouldUpdateReactComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChild.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js","./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./ReactEmptyComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactMarkupChecksum":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMarkupChecksum.js","./ReactPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactReconciler":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./ReactUpdateQueue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdateQueue.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./containsNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/containsNode.js","./emptyObject":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js","./getReactRootElementInContainer":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getReactRootElementInContainer.js","./instantiateReactComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./setInnerHTML":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setInnerHTML.js","./shouldUpdateReactComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChild.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -42730,7 +42588,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 
-},{"./ReactChildReconciler":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildReconciler.js","./ReactComponentEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentEnvironment.js","./ReactMultiChildUpdateTypes":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./ReactReconciler":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChildUpdateTypes.js":[function(require,module,exports){
+},{"./ReactChildReconciler":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildReconciler.js","./ReactComponentEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentEnvironment.js","./ReactMultiChildUpdateTypes":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./ReactReconciler":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMultiChildUpdateTypes.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -42763,7 +42621,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 
 module.exports = ReactMultiChildUpdateTypes;
 
-},{"./keyMirror":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js":[function(require,module,exports){
+},{"./keyMirror":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -42870,7 +42728,7 @@ var ReactNativeComponent = {
 module.exports = ReactNativeComponent;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactOwner.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactOwner.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -42982,7 +42840,7 @@ var ReactOwner = {
 module.exports = ReactOwner;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43086,7 +42944,7 @@ function _noMeasure(objName, fnName, func) {
 module.exports = ReactPerf;
 
 }).call(this,require('_process'))
-},{"_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTransferer.js":[function(require,module,exports){
+},{"_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTransferer.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43196,7 +43054,7 @@ var ReactPropTransferer = {
 
 module.exports = ReactPropTransferer;
 
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","./joinClasses":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/joinClasses.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","./joinClasses":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/joinClasses.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43224,7 +43082,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = ReactPropTypeLocationNames;
 
 }).call(this,require('_process'))
-},{"_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocations.js":[function(require,module,exports){
+},{"_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocations.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43248,7 +43106,7 @@ var ReactPropTypeLocations = keyMirror({
 
 module.exports = ReactPropTypeLocations;
 
-},{"./keyMirror":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypes.js":[function(require,module,exports){
+},{"./keyMirror":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypes.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43597,7 +43455,7 @@ function getPreciseType(propValue) {
 
 module.exports = ReactPropTypes;
 
-},{"./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactFragment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./ReactPropTypeLocationNames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js","./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPutListenerQueue.js":[function(require,module,exports){
+},{"./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactFragment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./ReactPropTypeLocationNames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTypeLocationNames.js","./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPutListenerQueue.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43653,7 +43511,7 @@ PooledClass.addPoolingTo(ReactPutListenerQueue);
 
 module.exports = ReactPutListenerQueue;
 
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconcileTransaction.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconcileTransaction.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43829,7 +43687,7 @@ PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
 
-},{"./CallbackQueue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactInputSelection":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInputSelection.js","./ReactPutListenerQueue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js":[function(require,module,exports){
+},{"./CallbackQueue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactInputSelection":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInputSelection.js","./ReactPutListenerQueue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43953,7 +43811,7 @@ var ReactReconciler = {
 module.exports = ReactReconciler;
 
 }).call(this,require('_process'))
-},{"./ReactElementValidator":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./ReactRef":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRef.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRef.js":[function(require,module,exports){
+},{"./ReactElementValidator":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElementValidator.js","./ReactRef":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRef.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRef.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44024,7 +43882,7 @@ ReactRef.detachRefs = function(instance, element) {
 
 module.exports = ReactRef;
 
-},{"./ReactOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactOwner.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRootIndex.js":[function(require,module,exports){
+},{"./ReactOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactOwner.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactRootIndex.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44055,7 +43913,7 @@ var ReactRootIndex = {
 
 module.exports = ReactRootIndex;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactServerRendering.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactServerRendering.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44137,7 +43995,7 @@ module.exports = {
 };
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactInstanceHandles":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactMarkupChecksum":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMarkupChecksum.js","./ReactServerRenderingTransaction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactServerRenderingTransaction.js","./emptyObject":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js","./instantiateReactComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactServerRenderingTransaction.js":[function(require,module,exports){
+},{"./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactMarkupChecksum":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMarkupChecksum.js","./ReactServerRenderingTransaction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactServerRenderingTransaction.js","./emptyObject":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js","./instantiateReactComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactServerRenderingTransaction.js":[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -44250,7 +44108,7 @@ PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
 
-},{"./CallbackQueue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactPutListenerQueue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js","./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactStateSetters.js":[function(require,module,exports){
+},{"./CallbackQueue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactPutListenerQueue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js","./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactStateSetters.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44356,7 +44214,7 @@ ReactStateSetters.Mixin = {
 
 module.exports = ReactStateSetters;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTestUtils.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTestUtils.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44870,7 +44728,7 @@ for (eventType in topLevelTypes) {
 
 module.exports = ReactTestUtils;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./React":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactBrowserEventEmitter":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCompositeComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCompositeComponent.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactEmptyComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactInstanceHandles":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactInstanceMap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./emptyObject":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionChildMapping.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactBrowserEventEmitter":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCompositeComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCompositeComponent.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactEmptyComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./emptyObject":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionChildMapping.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44975,7 +44833,7 @@ var ReactTransitionChildMapping = {
 
 module.exports = ReactTransitionChildMapping;
 
-},{"./ReactChildren":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildren.js","./ReactFragment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionEvents.js":[function(require,module,exports){
+},{"./ReactChildren":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactChildren.js","./ReactFragment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionEvents.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45086,7 +44944,7 @@ var ReactTransitionEvents = {
 
 module.exports = ReactTransitionEvents;
 
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionGroup.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionGroup.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45316,7 +45174,7 @@ var ReactTransitionGroup = React.createClass({
 
 module.exports = ReactTransitionGroup;
 
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./React":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactTransitionChildMapping":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionChildMapping.js","./cloneWithProps":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cloneWithProps.js","./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdateQueue.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactTransitionChildMapping":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionChildMapping.js","./cloneWithProps":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cloneWithProps.js","./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdateQueue.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -45615,7 +45473,7 @@ var ReactUpdateQueue = {
 module.exports = ReactUpdateQueue;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactInstanceMap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLifeCycle.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactLifeCycle.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -45897,7 +45755,7 @@ var ReactUpdates = {
 module.exports = ReactUpdates;
 
 }).call(this,require('_process'))
-},{"./CallbackQueue":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactReconciler":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./Transaction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactWithAddons.js":[function(require,module,exports){
+},{"./CallbackQueue":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPerf.js","./ReactReconciler":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactReconciler.js","./Transaction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactWithAddons.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -45953,7 +45811,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = React;
 
 }).call(this,require('_process'))
-},{"./LinkedStateMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedStateMixin.js","./React":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactCSSTransitionGroup":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCSSTransitionGroup.js","./ReactComponentWithPureRenderMixin":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentWithPureRenderMixin.js","./ReactDefaultPerf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerf.js","./ReactFragment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./ReactTestUtils":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTestUtils.js","./ReactTransitionGroup":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionGroup.js","./ReactUpdates":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./cloneWithProps":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cloneWithProps.js","./cx":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cx.js","./update":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/update.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SVGDOMPropertyConfig.js":[function(require,module,exports){
+},{"./LinkedStateMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/LinkedStateMixin.js","./React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js","./ReactCSSTransitionGroup":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCSSTransitionGroup.js","./ReactComponentWithPureRenderMixin":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactComponentWithPureRenderMixin.js","./ReactDefaultPerf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactDefaultPerf.js","./ReactFragment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./ReactTestUtils":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTestUtils.js","./ReactTransitionGroup":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactTransitionGroup.js","./ReactUpdates":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactUpdates.js","./cloneWithProps":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cloneWithProps.js","./cx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cx.js","./update":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/update.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SVGDOMPropertyConfig.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46047,7 +45905,7 @@ var SVGDOMPropertyConfig = {
 
 module.exports = SVGDOMPropertyConfig;
 
-},{"./DOMProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SelectEventPlugin.js":[function(require,module,exports){
+},{"./DOMProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/DOMProperty.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SelectEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46242,7 +46100,7 @@ var SelectEventPlugin = {
 
 module.exports = SelectEventPlugin;
 
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./ReactInputSelection":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInputSelection.js","./SyntheticEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./getActiveElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getActiveElement.js","./isTextInputElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextInputElement.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./shallowEqual":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shallowEqual.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ServerReactRootIndex.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPropagators":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./ReactInputSelection":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInputSelection.js","./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./getActiveElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getActiveElement.js","./isTextInputElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextInputElement.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./shallowEqual":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shallowEqual.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ServerReactRootIndex.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46273,7 +46131,7 @@ var ServerReactRootIndex = {
 
 module.exports = ServerReactRootIndex;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SimpleEventPlugin.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SimpleEventPlugin.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -46701,7 +46559,7 @@ var SimpleEventPlugin = {
 module.exports = SimpleEventPlugin;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginUtils":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginUtils.js","./EventPropagators":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./SyntheticClipboardEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticClipboardEvent.js","./SyntheticDragEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticDragEvent.js","./SyntheticEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./SyntheticFocusEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticFocusEvent.js","./SyntheticKeyboardEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticKeyboardEvent.js","./SyntheticMouseEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js","./SyntheticTouchEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticTouchEvent.js","./SyntheticUIEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js","./SyntheticWheelEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticWheelEvent.js","./getEventCharCode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventCharCode.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticClipboardEvent.js":[function(require,module,exports){
+},{"./EventConstants":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventConstants.js","./EventPluginUtils":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPluginUtils.js","./EventPropagators":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/EventPropagators.js","./SyntheticClipboardEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticClipboardEvent.js","./SyntheticDragEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticDragEvent.js","./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./SyntheticFocusEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticFocusEvent.js","./SyntheticKeyboardEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticKeyboardEvent.js","./SyntheticMouseEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js","./SyntheticTouchEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticTouchEvent.js","./SyntheticUIEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js","./SyntheticWheelEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticWheelEvent.js","./getEventCharCode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventCharCode.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticClipboardEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46746,7 +46604,7 @@ SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
 
-},{"./SyntheticEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticCompositionEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticCompositionEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46791,7 +46649,7 @@ SyntheticEvent.augmentClass(
 
 module.exports = SyntheticCompositionEvent;
 
-},{"./SyntheticEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticDragEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticDragEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46830,7 +46688,7 @@ SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
 
-},{"./SyntheticMouseEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js":[function(require,module,exports){
+},{"./SyntheticMouseEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46996,7 +46854,7 @@ PooledClass.addPoolingTo(SyntheticEvent, PooledClass.threeArgumentPooler);
 
 module.exports = SyntheticEvent;
 
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","./getEventTarget":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventTarget.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticFocusEvent.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./PooledClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/PooledClass.js","./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","./getEventTarget":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventTarget.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticFocusEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47035,7 +46893,7 @@ SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
 
-},{"./SyntheticUIEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticInputEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticInputEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47081,7 +46939,7 @@ SyntheticEvent.augmentClass(
 
 module.exports = SyntheticInputEvent;
 
-},{"./SyntheticEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticKeyboardEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticKeyboardEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47168,7 +47026,7 @@ SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
 
-},{"./SyntheticUIEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js","./getEventCharCode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventCharCode.js","./getEventKey":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventKey.js","./getEventModifierState":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventModifierState.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js","./getEventCharCode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventCharCode.js","./getEventKey":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventKey.js","./getEventModifierState":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventModifierState.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47249,7 +47107,7 @@ SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
 
-},{"./SyntheticUIEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js","./ViewportMetrics":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ViewportMetrics.js","./getEventModifierState":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventModifierState.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticTouchEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js","./ViewportMetrics":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ViewportMetrics.js","./getEventModifierState":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventModifierState.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticTouchEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47297,7 +47155,7 @@ SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
 
-},{"./SyntheticUIEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js","./getEventModifierState":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventModifierState.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js","./getEventModifierState":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventModifierState.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticUIEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47359,7 +47217,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
 
-},{"./SyntheticEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./getEventTarget":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventTarget.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticWheelEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticEvent.js","./getEventTarget":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventTarget.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticWheelEvent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47420,7 +47278,7 @@ SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
 
-},{"./SyntheticMouseEvent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js":[function(require,module,exports){
+},{"./SyntheticMouseEvent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/SyntheticMouseEvent.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Transaction.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47661,7 +47519,7 @@ var Transaction = {
 module.exports = Transaction;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ViewportMetrics.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ViewportMetrics.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47690,7 +47548,7 @@ var ViewportMetrics = {
 
 module.exports = ViewportMetrics;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/accumulateInto.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/accumulateInto.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -47756,7 +47614,7 @@ function accumulateInto(current, next) {
 module.exports = accumulateInto;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/adler32.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/adler32.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47790,7 +47648,7 @@ function adler32(data) {
 
 module.exports = adler32;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/camelize.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/camelize.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47822,7 +47680,7 @@ function camelize(string) {
 
 module.exports = camelize;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/camelizeStyleName.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/camelizeStyleName.js":[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -47864,7 +47722,7 @@ function camelizeStyleName(string) {
 
 module.exports = camelizeStyleName;
 
-},{"./camelize":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/camelize.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cloneWithProps.js":[function(require,module,exports){
+},{"./camelize":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/camelize.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cloneWithProps.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47923,7 +47781,7 @@ function cloneWithProps(child, props) {
 module.exports = cloneWithProps;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactPropTransferer":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTransferer.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/containsNode.js":[function(require,module,exports){
+},{"./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactPropTransferer":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactPropTransferer.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/containsNode.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47967,7 +47825,7 @@ function containsNode(outerNode, innerNode) {
 
 module.exports = containsNode;
 
-},{"./isTextNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextNode.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createArrayFromMixed.js":[function(require,module,exports){
+},{"./isTextNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextNode.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createArrayFromMixed.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48053,7 +47911,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 
-},{"./toArray":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/toArray.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createFullPageComponent.js":[function(require,module,exports){
+},{"./toArray":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/toArray.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createFullPageComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48115,7 +47973,7 @@ function createFullPageComponent(tag) {
 module.exports = createFullPageComponent;
 
 }).call(this,require('_process'))
-},{"./ReactClass":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createNodesFromMarkup.js":[function(require,module,exports){
+},{"./ReactClass":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactClass.js","./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createNodesFromMarkup.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48205,7 +48063,7 @@ function createNodesFromMarkup(markup, handleScript) {
 module.exports = createNodesFromMarkup;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./createArrayFromMixed":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createArrayFromMixed.js","./getMarkupWrap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getMarkupWrap.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cx.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./createArrayFromMixed":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/createArrayFromMixed.js","./getMarkupWrap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getMarkupWrap.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/cx.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48261,7 +48119,7 @@ function cx(classNames) {
 module.exports = cx;
 
 }).call(this,require('_process'))
-},{"./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/dangerousStyleValue.js":[function(require,module,exports){
+},{"./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/dangerousStyleValue.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48319,7 +48177,7 @@ function dangerousStyleValue(name, value) {
 
 module.exports = dangerousStyleValue;
 
-},{"./CSSProperty":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSProperty.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js":[function(require,module,exports){
+},{"./CSSProperty":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/CSSProperty.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48353,7 +48211,7 @@ emptyFunction.thatReturnsArgument = function(arg) { return arg; };
 
 module.exports = emptyFunction;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyObject.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48377,7 +48235,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = emptyObject;
 
 }).call(this,require('_process'))
-},{"_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js":[function(require,module,exports){
+},{"_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48417,7 +48275,7 @@ function escapeTextContentForBrowser(text) {
 
 module.exports = escapeTextContentForBrowser;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/findDOMNode.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/findDOMNode.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48490,7 +48348,7 @@ function findDOMNode(componentOrElement) {
 module.exports = findDOMNode;
 
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactInstanceMap":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactMount":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./isNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isNode.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/flattenChildren.js":[function(require,module,exports){
+},{"./ReactCurrentOwner":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCurrentOwner.js","./ReactInstanceMap":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceMap.js","./ReactMount":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactMount.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./isNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isNode.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/flattenChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48548,7 +48406,7 @@ function flattenChildren(children) {
 module.exports = flattenChildren;
 
 }).call(this,require('_process'))
-},{"./traverseAllChildren":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/traverseAllChildren.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/focusNode.js":[function(require,module,exports){
+},{"./traverseAllChildren":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/traverseAllChildren.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/focusNode.js":[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -48577,7 +48435,7 @@ function focusNode(node) {
 
 module.exports = focusNode;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/forEachAccumulated.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/forEachAccumulated.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48608,7 +48466,7 @@ var forEachAccumulated = function(arr, cb, scope) {
 
 module.exports = forEachAccumulated;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getActiveElement.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getActiveElement.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48637,7 +48495,7 @@ function getActiveElement() /*?DOMElement*/ {
 
 module.exports = getActiveElement;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventCharCode.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventCharCode.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48689,7 +48547,7 @@ function getEventCharCode(nativeEvent) {
 
 module.exports = getEventCharCode;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventKey.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventKey.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48794,7 +48652,7 @@ function getEventKey(nativeEvent) {
 
 module.exports = getEventKey;
 
-},{"./getEventCharCode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventCharCode.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventModifierState.js":[function(require,module,exports){
+},{"./getEventCharCode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventCharCode.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventModifierState.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48841,7 +48699,7 @@ function getEventModifierState(nativeEvent) {
 
 module.exports = getEventModifierState;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventTarget.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getEventTarget.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48872,7 +48730,7 @@ function getEventTarget(nativeEvent) {
 
 module.exports = getEventTarget;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getIteratorFn.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getIteratorFn.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48916,7 +48774,7 @@ function getIteratorFn(maybeIterable) {
 
 module.exports = getIteratorFn;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getMarkupWrap.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getMarkupWrap.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49035,7 +48893,7 @@ function getMarkupWrap(nodeName) {
 module.exports = getMarkupWrap;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getNodeForCharacterOffset.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getNodeForCharacterOffset.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49110,7 +48968,7 @@ function getNodeForCharacterOffset(root, offset) {
 
 module.exports = getNodeForCharacterOffset;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getReactRootElementInContainer.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getReactRootElementInContainer.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49145,7 +49003,7 @@ function getReactRootElementInContainer(container) {
 
 module.exports = getReactRootElementInContainer;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getTextContentAccessor.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getTextContentAccessor.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49182,7 +49040,7 @@ function getTextContentAccessor() {
 
 module.exports = getTextContentAccessor;
 
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getUnboundedScrollPosition.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getUnboundedScrollPosition.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49222,7 +49080,7 @@ function getUnboundedScrollPosition(scrollable) {
 
 module.exports = getUnboundedScrollPosition;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/hyphenate.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/hyphenate.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49255,7 +49113,7 @@ function hyphenate(string) {
 
 module.exports = hyphenate;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/hyphenateStyleName.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/hyphenateStyleName.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49296,7 +49154,7 @@ function hyphenateStyleName(string) {
 
 module.exports = hyphenateStyleName;
 
-},{"./hyphenate":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/hyphenate.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/instantiateReactComponent.js":[function(require,module,exports){
+},{"./hyphenate":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/hyphenate.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/instantiateReactComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49434,7 +49292,7 @@ function instantiateReactComponent(node, parentCompositeType) {
 module.exports = instantiateReactComponent;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactCompositeComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCompositeComponent.js","./ReactEmptyComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactNativeComponent":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./ReactCompositeComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactCompositeComponent.js","./ReactEmptyComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactEmptyComponent.js","./ReactNativeComponent":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactNativeComponent.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49491,7 +49349,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isEventSupported.js":[function(require,module,exports){
+},{"_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isEventSupported.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49556,7 +49414,7 @@ function isEventSupported(eventNameSuffix, capture) {
 
 module.exports = isEventSupported;
 
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isNode.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isNode.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49583,7 +49441,7 @@ function isNode(object) {
 
 module.exports = isNode;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextInputElement.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextInputElement.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49626,7 +49484,7 @@ function isTextInputElement(elem) {
 
 module.exports = isTextInputElement;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextNode.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isTextNode.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49651,7 +49509,7 @@ function isTextNode(object) {
 
 module.exports = isTextNode;
 
-},{"./isNode":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isNode.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/joinClasses.js":[function(require,module,exports){
+},{"./isNode":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/isNode.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/joinClasses.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49692,7 +49550,7 @@ function joinClasses(className/*, ... */) {
 
 module.exports = joinClasses;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyMirror.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49747,7 +49605,7 @@ var keyMirror = function(obj) {
 module.exports = keyMirror;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49783,7 +49641,7 @@ var keyOf = function(oneKeyObj) {
 
 module.exports = keyOf;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/mapObject.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/mapObject.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49836,7 +49694,7 @@ function mapObject(object, callback, context) {
 
 module.exports = mapObject;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/memoizeStringOnly.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/memoizeStringOnly.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49869,7 +49727,7 @@ function memoizeStringOnly(callback) {
 
 module.exports = memoizeStringOnly;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/onlyChild.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/onlyChild.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49909,7 +49767,7 @@ function onlyChild(children) {
 module.exports = onlyChild;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/performance.js":[function(require,module,exports){
+},{"./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/performance.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49937,7 +49795,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 module.exports = performance || {};
 
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/performanceNow.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/performanceNow.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49965,7 +49823,7 @@ var performanceNow = performance.now.bind(performance);
 
 module.exports = performanceNow;
 
-},{"./performance":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/performance.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/quoteAttributeValueForBrowser.js":[function(require,module,exports){
+},{"./performance":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/performance.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/quoteAttributeValueForBrowser.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49993,7 +49851,7 @@ function quoteAttributeValueForBrowser(value) {
 
 module.exports = quoteAttributeValueForBrowser;
 
-},{"./escapeTextContentForBrowser":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setInnerHTML.js":[function(require,module,exports){
+},{"./escapeTextContentForBrowser":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setInnerHTML.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50082,7 +49940,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 module.exports = setInnerHTML;
 
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setTextContent.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setTextContent.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50124,7 +49982,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 module.exports = setTextContent;
 
-},{"./ExecutionEnvironment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./escapeTextContentForBrowser":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js","./setInnerHTML":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setInnerHTML.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shallowEqual.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ExecutionEnvironment.js","./escapeTextContentForBrowser":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/escapeTextContentForBrowser.js","./setInnerHTML":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/setInnerHTML.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shallowEqual.js":[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50168,7 +50026,7 @@ function shallowEqual(objA, objB) {
 
 module.exports = shallowEqual;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shouldUpdateReactComponent.js":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/shouldUpdateReactComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50272,7 +50130,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 module.exports = shouldUpdateReactComponent;
 
 }).call(this,require('_process'))
-},{"./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/toArray.js":[function(require,module,exports){
+},{"./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/toArray.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -50344,7 +50202,7 @@ function toArray(obj) {
 module.exports = toArray;
 
 }).call(this,require('_process'))
-},{"./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/traverseAllChildren.js":[function(require,module,exports){
+},{"./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/traverseAllChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50597,7 +50455,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 module.exports = traverseAllChildren;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactFragment":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./ReactInstanceHandles":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./getIteratorFn":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getIteratorFn.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/update.js":[function(require,module,exports){
+},{"./ReactElement":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactElement.js","./ReactFragment":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactFragment.js","./ReactInstanceHandles":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/ReactInstanceHandles.js","./getIteratorFn":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/getIteratorFn.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./warning":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/update.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50768,7 +50626,7 @@ function update(value, spec) {
 module.exports = update;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./invariant":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./keyOf":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js":[function(require,module,exports){
+},{"./Object.assign":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/Object.assign.js","./invariant":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/invariant.js","./keyOf":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/keyOf.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/warning.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -50831,10 +50689,10 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"./emptyFunction":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","_process":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js":[function(require,module,exports){
+},{"./emptyFunction":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/emptyFunction.js","_process":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js":[function(require,module,exports){
 module.exports = require('./lib/React');
 
-},{"./lib/React":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx":[function(require,module,exports){
+},{"./lib/React":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/lib/React.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx":[function(require,module,exports){
 var React         = require('react');
 var _             = require('lodash');
 var beautify_html = require('js-beautify').html;
@@ -51011,7 +50869,7 @@ Code.Props = React.createClass({displayName: "Props",
 module.exports = Code;
 
 
-},{"../../../infl-components/icon.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","js-beautify":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","lodash":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx":[function(require,module,exports){
+},{"../../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx":[function(require,module,exports){
 var React       = require('react');
 var ModalDialog = require("../../../infl-components/modal_dialog.jsx");
 
@@ -51144,7 +51002,7 @@ Pattern.SampleLayout = React.createClass({displayName: "SampleLayout",
 module.exports = Pattern;
 
 
-},{"../../../infl-components/modal_dialog.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx":[function(require,module,exports){
+},{"../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx":[function(require,module,exports){
 var React         = require('react');
 var beautify_html = require('js-beautify').html;
 
@@ -51206,7 +51064,7 @@ Require.CSS = React.createClass({displayName: "CSS",
 module.exports = Require;
 
 
-},{"js-beautify":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx":[function(require,module,exports){
+},{"js-beautify":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/js-beautify/js/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -51372,7 +51230,7 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
 module.exports = ButtonDropdownPattern;
 
 
-},{"../../../../infl-components/button_dropdown.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -51554,7 +51412,7 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
 module.exports = ButtonGroupPattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -51784,7 +51642,7 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
 module.exports = ButtonPattern;
 
 
-},{"../../../../infl-components/button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -51983,7 +51841,7 @@ var CheckBoxGroupControls = React.createClass({displayName: "CheckBoxGroupContro
 module.exports = CheckboxPattern;
 
 
-},{"../../../../infl-components/checkbox.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -52062,7 +51920,7 @@ Colours.Colour = React.createClass({displayName: "Colour",
 module.exports = ColourPattern;
 
 
-},{"../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx":[function(require,module,exports){
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -52098,7 +51956,7 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
 module.exports = FontsPattern;
 
 
-},{"../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx":[function(require,module,exports){
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -52130,7 +51988,7 @@ var HeadingsPattern = React.createClass({displayName: "HeadingsPattern",
 module.exports = HeadingsPattern;
 
 
-},{"../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx":[function(require,module,exports){
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx":[function(require,module,exports){
 var React       = require('react');
 var _           = require('lodash');
 var Pattern     = require('../../patternlab-components/pattern.jsx');
@@ -52270,7 +52128,7 @@ var IconDetails = React.createClass({displayName: "IconDetails",
 module.exports = IconPattern;
 
 
-},{"../../../../infl-components/icon.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","./influicons-list.js":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/influicons-list.js","lodash":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/influicons-list.js":[function(require,module,exports){
+},{"../../../../infl-components/icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","./influicons-list.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/influicons-list.js","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/influicons-list.js":[function(require,module,exports){
 // WARNING!! DANGER!! THIS FILE IS AUTOMATIGICALLY GENERATED BY "gulp"
 // THE SOURCE FILE IS infl-icons/templates/influicons-list.js
 
@@ -52312,8 +52170,6 @@ var icons = {
     "close": "close",
   
     "code": "code",
-  
-    "coins-old": "coins-old",
   
     "coins": "coins",
   
@@ -52403,12 +52259,14 @@ var icons = {
   
     "user": "user",
   
+    "coins-old": "coins-old",
+  
 
 };
 
 exports.icons = icons;
 
-},{}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx":[function(require,module,exports){
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -52673,7 +52531,7 @@ var InputLabelControls = React.createClass({displayName: "InputLabelControls",
 module.exports = FontsPattern;
 
 
-},{"../../../../infl-components/checkbox.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -52702,7 +52560,7 @@ var HeadingsPattern = React.createClass({displayName: "HeadingsPattern",
 module.exports = HeadingsPattern;
 
 
-},{"../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx":[function(require,module,exports){
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -52910,7 +52768,7 @@ var RadioButtonControls = React.createClass({displayName: "RadioButtonControls",
 module.exports = RadioButtonPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -53027,7 +52885,7 @@ var SelectDropdownPattern = React.createClass({displayName: "SelectDropdownPatte
 module.exports = SelectDropdownPattern;
 
 
-},{"../../../../infl-components/select_dropdown.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -53469,7 +53327,7 @@ var TextInputOptionControl = React.createClass({displayName: "TextInputOptionCon
 module.exports = TextInputPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -53508,7 +53366,7 @@ var FontsPattern = React.createClass({displayName: "FontsPattern",
 module.exports = FontsPattern;
 
 
-},{"../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx":[function(require,module,exports){
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -53587,7 +53445,7 @@ var ToggleSwitchPattern = React.createClass({displayName: "ToggleSwitchPattern",
 module.exports = ToggleSwitchPattern;
 
 
-},{"../../../../infl-components/toggle_switch.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -53813,7 +53671,7 @@ var AccordionControls = React.createClass({displayName: "AccordionControls",
 module.exports = AccordionPattern;
 
 
-},{"../../../../infl-components/accordion.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/accordion.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -54073,7 +53931,7 @@ var AlertControls = React.createClass({displayName: "AlertControls",
 module.exports = ActionAlertPattern;
 
 
-},{"../../../../infl-components/alert/action_alert.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert/action_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/action_alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -54328,7 +54186,7 @@ var AlertControls = React.createClass({displayName: "AlertControls",
 module.exports = AlertPattern;
 
 
-},{"../../../../infl-components/alert.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../../patternlab-components/pattern.jsx');
 var Code      = require('../../../patternlab-components/code.jsx');
@@ -54442,7 +54300,7 @@ var ContentPattern = React.createClass({displayName: "ContentPattern",
 module.exports = ContentPattern;
 
 
-},{"../../../../../infl-components/cards/card.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx":[function(require,module,exports){
+},{"../../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -54540,7 +54398,7 @@ var ContentPattern = React.createClass({displayName: "ContentPattern",
 module.exports = ContentPattern;
 
 
-},{"../../../../infl-components/content.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -54844,7 +54702,7 @@ var AlertControls = React.createClass({displayName: "AlertControls",
 module.exports = DetailedAlertPattern;
 
 
-},{"../../../../infl-components/alert/detailed_alert.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert/detailed_alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert/detailed_alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -54915,7 +54773,7 @@ var FormActionsPattern = React.createClass({displayName: "FormActionsPattern",
 module.exports = FormActionsPattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -54980,7 +54838,7 @@ var FormAlertPattern = React.createClass({displayName: "FormAlertPattern",
 module.exports = FormAlertPattern;
 
 
-},{"../../../../infl-components/alert.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -55108,7 +54966,7 @@ var FormColumnPattern = React.createClass({displayName: "FormColumnPattern",
 module.exports = FormColumnPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -55207,7 +55065,7 @@ var FormPattern = React.createClass({displayName: "FormPattern",
 module.exports = FormPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -55283,7 +55141,7 @@ var FormRowPattern = React.createClass({displayName: "FormRowPattern",
 module.exports = FormRowPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -55409,7 +55267,7 @@ var FormSectionPattern = React.createClass({displayName: "FormSectionPattern",
 module.exports = FormSectionPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -55494,7 +55352,7 @@ var FormTitlePattern = React.createClass({displayName: "FormTitlePattern",
 module.exports = FormTitlePattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -55562,7 +55420,7 @@ var HelpTooltipPattern = React.createClass({displayName: "HelpTooltipPattern",
 module.exports = HelpTooltipPattern;
 
 
-},{"../../../../infl-components/help_tooltip.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/help_tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -55772,7 +55630,7 @@ var LoadingControls = React.createClass({displayName: "LoadingControls",
 module.exports = LoadingPattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/loading.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -56117,7 +55975,7 @@ var ModalControls = React.createClass({displayName: "ModalControls",
 module.exports = ModalDialogPattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/modal_dialog.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -56209,7 +56067,7 @@ var PanelLeftSidebarPattern = React.createClass({displayName: "PanelLeftSidebarP
 module.exports = PanelLeftSidebarPattern;
 
 
-},{"../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_example1.jsx":[function(require,module,exports){
+},{"../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_example1.jsx":[function(require,module,exports){
 var React = require('react');
 var Code = require('../../patternlab-components/code.jsx');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
@@ -56258,7 +56116,7 @@ module.exports = {
 
 
 
-},{"../../../../infl-components/popover.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/popover.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -56322,7 +56180,7 @@ module.exports = PopoverPattern;
 
 
 
-},{"../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","./popover_example1.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_example1.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx":[function(require,module,exports){
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","./popover_example1.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_example1.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -56409,7 +56267,7 @@ var SidebarHeadingPattern = React.createClass({displayName: "SidebarHeadingPatte
 module.exports = SidebarHeadingPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/sidebar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -56541,7 +56399,7 @@ var SidebarNavListPattern = React.createClass({displayName: "SidebarNavListPatte
 module.exports = SidebarNavListPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/sidebar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -56627,7 +56485,7 @@ var SidebarPattern = React.createClass({displayName: "SidebarPattern",
 module.exports = SidebarPattern;
 
 
-},{"../../../../infl-components/sidebar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -56812,7 +56670,7 @@ var StatBarControls = React.createClass({displayName: "StatBarControls",
 module.exports = StatsBarPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/stats_bar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/stats_bar.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/stats_bar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/stats_bar.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -57091,7 +56949,7 @@ var TabsControls = React.createClass({displayName: "TabsControls",
 module.exports = TabsPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/tabs.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 
@@ -57520,7 +57378,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
 module.exports = ChallengesPagePattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/content.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/sidebar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/tabs.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 
@@ -57801,7 +57659,7 @@ var TwoColumnLayout = React.createClass({displayName: "TwoColumnLayout",
 module.exports = FormPagePattern;
 
 
-},{"../../../../infl-components/alert.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/alert.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/alert.jsx","../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/checkbox.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../../../infl-components/toggle_switch.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/toggle_switch.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');
@@ -57855,5 +57713,5 @@ var StoragePattern = React.createClass({displayName: "StoragePattern",
 module.exports = StoragePattern;
 
 
-},{"../../patternlab-components/code.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
+},{"../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}]},{},["./source/js/application.js"])("./source/js/application.js")
 });
