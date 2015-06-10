@@ -118,6 +118,14 @@ module.exports = function(grunt) {
         var iconfont = require('gulp-iconfont');
         var consolidate = require('gulp-consolidate');
 
+        function adustIconNames(codepoints) {
+				  for(var i = 0; i < codepoints.length; i++){
+				  	var orderingCodeIndex = codepoints[i].name.indexOf("-") + 1;
+				    codepoints[i].name = codepoints[i].name.substring(orderingCodeIndex);
+				  }
+				  return codepoints;
+				}
+
         // use SVG files from this directory
         gulp.src(['../infl-icons/SVG/*.svg'])
 
@@ -130,6 +138,8 @@ module.exports = function(grunt) {
           }))
 
           .on('codepoints', function(codepoints, options) {
+
+          	codepoints = adustIconNames(codepoints);
 
             // generate a static CSS demo file
             gulp.src('../infl-icons/templates/influicons.css')
