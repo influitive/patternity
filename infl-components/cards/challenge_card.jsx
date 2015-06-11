@@ -225,16 +225,18 @@ var ChallengeStatus = React.createClass({
       return this._showUnlockedStatus();
     }
   },
-  _showStartedStatus : function(){
-    var startedOn = new Date(this.props.startedOn);
+  _showStartedStatus : function (){
+    var formattedDate = this._dateString(this.props.startedOn);
+
     return (
-      <span className="completed">Started: {this._monthNames[startedOn.getUTCMonth()]} {startedOn.getUTCDate()}</span>
+      <span className="completed">Started {formattedDate}</span>
     );
   },
-  _showCompletedStatus : function(){
-    var completedOn = new Date(this.props.completedOn);
+  _showCompletedStatus : function (){
+    var formattedDate = this._dateString(this.props.completedOn);
+
     return (
-      <span className="completed">Completed: {this._monthNames[completedOn.getUTCMonth()]} {completedOn.getUTCDate()}</span>
+      <span className="completed">Completed {formattedDate}</span>
     );
   },
   _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -245,6 +247,16 @@ var ChallengeStatus = React.createClass({
         <span>Challenge unlocked!</span>
       </span>
     );
+  },
+  _dateString: function (date) {
+    var formattedDateStr = "";
+
+    if (date) {
+      var parsedDate = new Date(date);
+      formattedDateStr = this._monthNames[parsedDate.getUTCMonth()] + " " + parsedDate.getUTCDate();
+    }
+
+    return formattedDateStr
   }
 });
 
