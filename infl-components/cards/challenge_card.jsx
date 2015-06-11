@@ -223,6 +223,10 @@ var ChallengeStatus = React.createClass({
       return this._showStatus("Completed", this.props.completedOn);
     } else if(this.props.status === "started") {
       return this._showStatus('Started', this.props.startedOn);
+    } else if(this.props.status === "expiring") {
+      return this._showStatus('Expiring Soon');
+    } else if(this.props.status === "limited_expiring") {
+      return this._showStatus('Expiring & Limited');
     } else if(this.props.status === "limited") {
       return this._showStatus('Limited');
     } else if(this.props.unlocked) {
