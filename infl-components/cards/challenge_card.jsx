@@ -217,29 +217,27 @@ var ChallengeStatus = React.createClass({
     );
   },
   _determineStatusDetails : function(){
-    if(this.props.status === "completed") {
-      return this._showCompletedStatus();
+    // TODO if date was always stored in the same place, this could be refactored
+
+    if (this.props.status === "completed") {
+      return this._showStatus("Completed", this.props.completedOn);
     } else if(this.props.status === "started") {
-      return this._showStartedStatus();
+      return this._showStatus('Started', this.props.startedOn);
+    } else if(this.props.status === "limited") {
+      return this._showStatus('Limited');
     } else if(this.props.unlocked) {
       return this._showUnlockedStatus();
     }
   },
-  _showStartedStatus : function (){
-    var formattedDate = this._dateString(this.props.startedOn);
+
+  _showStatus: function (title, date) {
+    var formattedDate = this._dateString(date);
 
     return (
-      <span className="completed">Started {formattedDate}</span>
+      <span className="completed">{title} {formattedDate}</span>
     );
   },
-  _showCompletedStatus : function (){
-    var formattedDate = this._dateString(this.props.completedOn);
 
-    return (
-      <span className="completed">Completed {formattedDate}</span>
-    );
-  },
-  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
   _showUnlockedStatus : function(){
     return (
       <span className="unlocked status-icon">
@@ -248,6 +246,8 @@ var ChallengeStatus = React.createClass({
       </span>
     );
   },
+
+  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
   _dateString: function (date) {
     var formattedDateStr = "";
 
