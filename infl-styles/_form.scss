@@ -1,5 +1,3 @@
-@import './icon_font';
-
 input[type='email'],
 input[type='text'],
 input[type='tel'],
@@ -244,6 +242,6 @@ textarea {
   }
 }
 
-@import './form_layout';
-@import './checkbox';
-@import './radio_button';
+@import 'form_layout';
+@import 'checkbox';
+@import 'radio_button';
