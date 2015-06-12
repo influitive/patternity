@@ -675,7 +675,9 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
     headline : React.PropTypes.string,
     description : React.PropTypes.string,
     onFilterByType : React.PropTypes.func,
-    participantCount : React.PropTypes.number
+    participantCount : React.PropTypes.number,
+    challengeActions : React.PropTypes.object,
+    challengeId : React.PropTypes.string,
   },
 
   getDefaultProps : function(){
@@ -684,14 +686,16 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
       headline : "",
       description : "",
       onFilterByType : function(){},
-      participantCount : 0
+      participantCount : 0,
+      challengeActions : {view: function(){}},
+      challengeId :""
     };
   },
 
   render : function(){
     return (
       React.createElement("div", {className: "pt-challenge-details"}, 
-        React.createElement("h4", {className: "headline"}, this.props.headline), 
+        React.createElement("h4", {className: "headline", onClick: this.props.challengeActions.view, "data-challenge-id": this.props.challengeId}, this.props.headline), 
         React.createElement(ChallengeTypeCount, {type: this.props.type, onClick: this.props.onFilterByType, participantCount: this.props.participantCount}), 
         React.createElement("p", {ref: "description", className: "description", dangerouslySetInnerHTML: this._sanitizeDescription()})
       )
@@ -748,15 +752,19 @@ ChallengeCard.Image = React.createClass({displayName: "Image",
   getDefaultProps : function(){
     return {
       image : null,
+      challengeActions : {view: function(){}},
+      challengeId :""
     };
   },
   PropTypes : {
     image : React.PropTypes.string,
+    challengeActions : React.PropTypes.object,
+    challengeId : React.PropTypes.string,    
   },
   render : function(){
     return (
       React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage()}, 
-        React.createElement("img", {src: this.props.image, alt: "Challenge Image"})
+        React.createElement("img", {src: this.props.image, alt: "Challenge Image", onClick: this.props.challengeActions.view, "data-challenge-id": this.props.challengeId})
       )
     );
   },
@@ -843,27 +851,31 @@ var ChallengeStatus = React.createClass({displayName: "ChallengeStatus",
     );
   },
   _determineStatusDetails : function(){
-    if(this.props.status === "completed") {
-      return this._showCompletedStatus();
+    // TODO if date was always stored in the same place, this could be refactored
+
+    if (this.props.status === "completed") {
+      return this._showStatus("Completed", this.props.completedOn);
     } else if(this.props.status === "started") {
-      return this._showStartedStatus();
+      return this._showStatus('Started', this.props.startedOn);
+    } else if(this.props.status === "expiring") {
+      return this._showStatus('Expiring Soon');
+    } else if(this.props.status === "limited_expiring") {
+      return this._showStatus('Expiring & Limited');
+    } else if(this.props.status === "limited") {
+      return this._showStatus('Limited');
     } else if(this.props.unlocked) {
       return this._showUnlockedStatus();
     }
   },
-  _showStartedStatus : function(){
-    var startedOn = new Date(this.props.startedOn);
+
+  _showStatus: function (title, date) {
+    var formattedDate = this._dateString(date);
+
     return (
-      React.createElement("span", {className: "completed"}, "Started: ", this._monthNames[startedOn.getUTCMonth()], " ", startedOn.getUTCDate())
+      React.createElement("span", {className: "completed"}, title, " ", formattedDate)
     );
   },
-  _showCompletedStatus : function(){
-    var completedOn = new Date(this.props.completedOn);
-    return (
-      React.createElement("span", {className: "completed"}, "Completed: ", this._monthNames[completedOn.getUTCMonth()], " ", completedOn.getUTCDate())
-    );
-  },
-  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+
   _showUnlockedStatus : function(){
     return (
       React.createElement("span", {className: "unlocked status-icon"}, 
@@ -871,6 +883,18 @@ var ChallengeStatus = React.createClass({displayName: "ChallengeStatus",
         React.createElement("span", null, "Challenge unlocked!")
       )
     );
+  },
+
+  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  _dateString: function (date) {
+    var formattedDateStr = "";
+
+    if (date) {
+      var parsedDate = new Date(date);
+      formattedDateStr = this._monthNames[parsedDate.getUTCMonth()] + " " + parsedDate.getUTCDate();
+    }
+
+    return formattedDateStr
   }
 });
 
@@ -1747,10 +1771,20 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
   },
 
   _addEvents : function() {
-    $(document).on('click', this._windowClickEvent, true);
+    if (typeof document.attachEvent=='function' || typeof document.attachEvent=='object') {
+      document.attachEvent('click', this._windowClickEvent, true);
+    }
+    else {
+      document.addEventListener('click', this._windowClickEvent, true);
+    }
   },
   _removeEvents : function() {
-    $(document).off('click', this._windowClickEvent, true);
+    if (typeof document.detachEvent=='function' || typeof document.detachEvent=='object') {
+      document.detachEvent('click', this._windowClickEvent, true);
+    }
+    else {
+      document.removeEventListener('click', this._windowClickEvent, true);
+    }
   }
 
 });

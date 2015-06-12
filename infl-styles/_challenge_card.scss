@@ -73,6 +73,7 @@
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
       vertical-align:top;
+      cursor : pointer;
     }
 
     &.no-image {
@@ -88,6 +89,13 @@
   .pt-challenge-details {
     padding: 0px 20px;
     color: $medium-grey;
+
+    .headline {
+      &:hover {
+        cursor : pointer;
+        text-decoration: underline;
+      }
+    }
 
     .description {
       overflow: hidden;
