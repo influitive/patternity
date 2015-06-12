@@ -600,6 +600,18 @@ th {
   margin: 1.5em;
 }
 
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url("~patternity/infl-fonts/ProximaNova-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Proxima Nova Light Bold';
+  src: url("~patternity/infl-fonts/ProximaNova-Semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Proxima Nova Light Italic';
+  src: url("~patternity/infl-fonts/ProximaNova-LightIt.ttf") format("truetype");
+}
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-size: 15px;
@@ -709,6 +721,13 @@ h4.list-title {
     font-size: $baseline-font-size !important;
     line-height: $baseline;
 }*/
+@font-face {
+  font-family: "influicons";
+  src: url("~patternity/infl-fonts/influicons.eot");
+  src: url("~patternity/infl-fonts/influicons.eot?#iefix") format("eot"), url("~patternity/infl-fonts/influicons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 .ic:before {
   display: inline-block;
   font-family: "influicons";
@@ -3210,6 +3229,7 @@ DIV.pt-popover.is-visible {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   vertical-align: top;
+  cursor: pointer;
 }
 .pt-challenge-card .pt-challenge-image.no-image {
   height: 24px;
@@ -3221,6 +3241,10 @@ DIV.pt-popover.is-visible {
 .pt-challenge-card .pt-challenge-details {
   padding: 0px 20px;
   color: #969696;
+}
+.pt-challenge-card .pt-challenge-details .headline:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 .pt-challenge-card .pt-challenge-details .description {
   overflow: hidden;
