@@ -50,8 +50,7 @@ ChallengeCard.Details = React.createClass({
     description : React.PropTypes.string,
     onFilterByType : React.PropTypes.func,
     participantCount : React.PropTypes.number,
-    challengeActions : React.PropTypes.object,
-    challengeId : React.PropTypes.string,
+    onHeadlineClick : React.PropTypes.func
   },
 
   getDefaultProps : function(){
@@ -61,15 +60,14 @@ ChallengeCard.Details = React.createClass({
       description : "",
       onFilterByType : function(){},
       participantCount : 0,
-      challengeActions : {view: function(){}},
-      challengeId :""
+      onHeadlineClick : function(){}
     };
   },
 
   render : function(){
     return (
       <div className="pt-challenge-details">
-        <h4 className="headline" onClick={this.props.challengeActions.view} data-challenge-id={this.props.challengeId}>{this.props.headline}</h4>
+        <h4 className="headline" onClick={this.props.onHeadlineClick}>{this.props.headline}</h4>
         <ChallengeTypeCount type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
         <p ref="description" className="description" dangerouslySetInnerHTML={this._sanitizeDescription()}></p>
       </div>
@@ -126,19 +124,17 @@ ChallengeCard.Image = React.createClass({
   getDefaultProps : function(){
     return {
       image : null,
-      challengeActions : {view: function(){}},
-      challengeId :""
+      onImageClick : function(){}
     };
   },
   PropTypes : {
     image : React.PropTypes.string,
-    challengeActions : React.PropTypes.object,
-    challengeId : React.PropTypes.string,    
+    onImageClick : React.PropTypes.func  
   },
   render : function(){
     return (
       <div className={"pt-challenge-image " + this._doesChallengeHaveAnImage()}  >
-        <img src={this.props.image} alt="Challenge Image" onClick={this.props.challengeActions.view} data-challenge-id={this.props.challengeId}/>
+        <img src={this.props.image} alt="Challenge Image" onClick={this.props.onImageClick} />
       </div>
     );
   },
