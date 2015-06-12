@@ -22,7 +22,7 @@ var ChallengeCard = React.createClass({
 
   render: function () {
     return (
-      <div className="pt-challenge-card" id={this.props.id}>
+      <div className="pt-challenge-card slide-in-up animated" id={this.props.id}>
         <Card ref="card">
           {this.props.children}
         </Card>
@@ -129,7 +129,7 @@ ChallengeCard.Image = React.createClass({
   },
   PropTypes : {
     image : React.PropTypes.string,
-    onImageClick : React.PropTypes.func  
+    onImageClick : React.PropTypes.func
   },
   render : function(){
     return (
