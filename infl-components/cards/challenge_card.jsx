@@ -49,7 +49,9 @@ ChallengeCard.Details = React.createClass({
     headline : React.PropTypes.string,
     description : React.PropTypes.string,
     onFilterByType : React.PropTypes.func,
-    participantCount : React.PropTypes.number
+    participantCount : React.PropTypes.number,
+    challengeActions : React.PropTypes.object,
+    challengeId : React.PropTypes.string,
   },
 
   getDefaultProps : function(){
@@ -58,14 +60,16 @@ ChallengeCard.Details = React.createClass({
       headline : "",
       description : "",
       onFilterByType : function(){},
-      participantCount : 0
+      participantCount : 0,
+      challengeActions : {view: function(){}},
+      challengeId :""
     };
   },
 
   render : function(){
     return (
       <div className="pt-challenge-details">
-        <h4 className="headline">{this.props.headline}</h4>
+        <h4 className="headline" onClick={this.props.challengeActions.view} data-challenge-id={this.props.challengeId}>{this.props.headline}</h4>
         <ChallengeTypeCount type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
         <p ref="description" className="description" dangerouslySetInnerHTML={this._sanitizeDescription()}></p>
       </div>
@@ -122,15 +126,19 @@ ChallengeCard.Image = React.createClass({
   getDefaultProps : function(){
     return {
       image : null,
+      challengeActions : {view: function(){}},
+      challengeId :""
     };
   },
   PropTypes : {
     image : React.PropTypes.string,
+    challengeActions : React.PropTypes.object,
+    challengeId : React.PropTypes.string,    
   },
   render : function(){
     return (
-      <div className={"pt-challenge-image " + this._doesChallengeHaveAnImage()}>
-        <img src={this.props.image} alt="Challenge Image" />
+      <div className={"pt-challenge-image " + this._doesChallengeHaveAnImage()}  >
+        <img src={this.props.image} alt="Challenge Image" onClick={this.props.challengeActions.view} data-challenge-id={this.props.challengeId}/>
       </div>
     );
   },
