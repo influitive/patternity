@@ -192,6 +192,7 @@ var Popover = React.createClass({
   },
 
   componentWillUnmount: function() {
+    if (!this.refs.link) return;
     var a = this.refs.link.getDOMNode();
     if (a && a.childNodes[0]) {
       $(a.childNodes[0]).off('click', this._onClickEvent);
