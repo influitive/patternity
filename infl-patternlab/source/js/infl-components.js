@@ -630,30 +630,55 @@ var $ = require('jquery');
 
 var Icon = require('../icon.jsx');
 var Card = require('./card.jsx');
+var animate = require("../utilities/animate.js");
 
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
   PropTypes : {
-    id : React.PropTypes.string
+    id : React.PropTypes.string,
+    animateEntrance : React.PropTypes.bool
   },
 
   getDefaultProps : function(){
     return {
-      id : ""
+      id : "",
+      animateEntrance : false
     };
   },
 
   componentDidMount : function(){
+    this._animateCardEntrance();
     this._adjustDescriptionHeight();
   },
 
   render: function () {
     return (
-      React.createElement("div", {className: "pt-challenge-card", id: this.props.id}, 
+      React.createElement("div", {ref: "challengeCard", className: "pt-challenge-card hide", id: this.props.id}, 
         React.createElement(Card, {ref: "card"}, 
           this.props.children
         )
       )
     );
+  },
+
+  _animateCardEntrance : function(){
+    var challengeCard = React.findDOMNode(this.refs.challengeCard)
+
+    if(this.props.animateEntrance){
+      setTimeout(this._runAnimation(challengeCard), this._determineEntranceTime());
+    } else {
+      $(challengeCard).removeClass("hide");
+    }
+  },
+
+  _runAnimation : function(challengeCard){
+    return function() {
+      $(challengeCard).removeClass("hide");
+      animate.run(challengeCard, "slide-in-up");
+    };
+  },
+
+  _determineEntranceTime : function(){
+    return Math.floor(Math.random() * 500);
   },
 
   _adjustDescriptionHeight : function(){
@@ -676,8 +701,7 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
     description : React.PropTypes.string,
     onFilterByType : React.PropTypes.func,
     participantCount : React.PropTypes.number,
-    challengeActions : React.PropTypes.object,
-    challengeId : React.PropTypes.string,
+    onHeadlineClick : React.PropTypes.func
   },
 
   getDefaultProps : function(){
@@ -687,15 +711,14 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
       description : "",
       onFilterByType : function(){},
       participantCount : 0,
-      challengeActions : {view: function(){}},
-      challengeId :""
+      onHeadlineClick : function(){}
     };
   },
 
   render : function(){
     return (
       React.createElement("div", {className: "pt-challenge-details"}, 
-        React.createElement("h4", {className: "headline", onClick: this.props.challengeActions.view, "data-challenge-id": this.props.challengeId}, this.props.headline), 
+        React.createElement("h4", {className: "headline", onClick: this.props.onHeadlineClick}, this.props.headline), 
         React.createElement(ChallengeTypeCount, {type: this.props.type, onClick: this.props.onFilterByType, participantCount: this.props.participantCount}), 
         React.createElement("p", {ref: "description", className: "description", dangerouslySetInnerHTML: this._sanitizeDescription()})
       )
@@ -752,19 +775,17 @@ ChallengeCard.Image = React.createClass({displayName: "Image",
   getDefaultProps : function(){
     return {
       image : null,
-      challengeActions : {view: function(){}},
-      challengeId :""
+      onImageClick : function(){}
     };
   },
   PropTypes : {
     image : React.PropTypes.string,
-    challengeActions : React.PropTypes.object,
-    challengeId : React.PropTypes.string,    
+    onImageClick : React.PropTypes.func
   },
   render : function(){
     return (
       React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage()}, 
-        React.createElement("img", {src: this.props.image, alt: "Challenge Image", onClick: this.props.challengeActions.view, "data-challenge-id": this.props.challengeId})
+        React.createElement("img", {src: this.props.image, alt: "Challenge Image", onClick: this.props.onImageClick})
       )
     );
   },
@@ -922,7 +943,7 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -1648,6 +1669,13 @@ function isChildOf(child, parent) {
   return false;
 }
 
+function cancelEvent(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  e.cancelBubble = true;
+  return false;
+}
+
 var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
   propTypes : {
@@ -1764,6 +1792,10 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
   _windowClick : function(e) {
     var popoverNode = React.findDOMNode(this.refs.popover);
     var isChild = isChildOf(e.target, popoverNode);
+    var isObject = e.target.nodeName=='OBJECT' || e.target.nodeName=='EMBED';
+    if (isObject) { // don't close the popover when clicking on the flash component of ZeroClipboard
+      return false;
+    }
     if (isChild && !this.props.autoclose) {
       return;
     }
@@ -1798,9 +1830,7 @@ PopoverFloater.clickEvent = function(e) {
     var popoverName = elm.getAttribute('data-popover');
     var popover = this.refs[popoverName];
     popover.toggle(elm);
-    e.preventDefault();
-    e.stopPropagation();
-    e.cancelBubble = true;
+    return cancelEvent(e);
   }
 };
 
@@ -1853,9 +1883,7 @@ var Popover = React.createClass({displayName: "Popover",
     var popover = this.refs.popover.getDOMNode();
     var a = this.refs.link.getDOMNode();
     this.refs.popover.toggle(a);
-    e.preventDefault();
-    e.stopPropagation();
-    e.cancelBubble = true;
+    return cancelEvent(e);
   }
 });
 
@@ -2935,7 +2963,35 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
 module.exports = ToggleSwitch;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js":[function(require,module,exports){
+var $ = require('jquery');
+
+var Animate = function(){
+  function run(element, animation, infinite, animationEndCallback){
+    infinite = infinite || false;
+    animationEndCallback = animationEndCallback || function(){};
+
+    $(element).addClass("animated " + animation + isInfinite(infinite));
+
+    $(element).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(event){
+      $(event.target).removeClass('animated ' + animation + " infinite");
+      animationEndCallback();
+    });
+  }
+
+  function isInfinite(infinite){
+    return infinite ? " infinite" : "";
+  }
+
+  return {
+    run : run
+  };
+};
+
+module.exports = new Animate();
+
+
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -57255,7 +57311,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     var that = this;
     return cards.map(function(card){
       return (
-        React.createElement(ChallengeCard, {key: card.id, id: "card-" + card.id}, 
+        React.createElement(ChallengeCard, {key: card.id, id: "card-" + card.id, animateEntrance: true}, 
           React.createElement(ChallengeCard.Notice, {
               points: card.points, 
               status: card.status, 

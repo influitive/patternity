@@ -269,7 +269,7 @@ var ChallengesPagePattern = React.createClass({
     var that = this;
     return cards.map(function(card){
       return (
-        <ChallengeCard key={card.id} id={"card-" + card.id}>
+        <ChallengeCard key={card.id} id={"card-" + card.id} animateEntrance={true}>
           <ChallengeCard.Notice
               points={card.points}
               status={card.status}

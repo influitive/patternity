@@ -2,6 +2,10 @@
   position: relative;
   height: 400px;
 
+  &.hide {
+    visibility : hidden;
+  }
+
   & * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

@@ -4,30 +4,55 @@ var $ = require('jquery');
 
 var Icon = require('../icon.jsx');
 var Card = require('./card.jsx');
+var animate = require("../utilities/animate.js");
 
 var ChallengeCard = React.createClass({
   PropTypes : {
-    id : React.PropTypes.string
+    id : React.PropTypes.string,
+    animateEntrance : React.PropTypes.bool
   },
 
   getDefaultProps : function(){
     return {
-      id : ""
+      id : "",
+      animateEntrance : false
     };
   },
 
   componentDidMount : function(){
+    this._animateCardEntrance();
     this._adjustDescriptionHeight();
   },
 
   render: function () {
     return (
-      <div className="pt-challenge-card slide-in-up animated" id={this.props.id}>
+      <div ref="challengeCard" className="pt-challenge-card hide" id={this.props.id}>
         <Card ref="card">
           {this.props.children}
         </Card>
       </div>
     );
+  },
+
+  _animateCardEntrance : function(){
+    var challengeCard = React.findDOMNode(this.refs.challengeCard)
+
+    if(this.props.animateEntrance){
+      setTimeout(this._runAnimation(challengeCard), this._determineEntranceTime());
+    } else {
+      $(challengeCard).removeClass("hide");
+    }
+  },
+
+  _runAnimation : function(challengeCard){
+    return function() {
+      $(challengeCard).removeClass("hide");
+      animate.run(challengeCard, "slide-in-up");
+    };
+  },
+
+  _determineEntranceTime : function(){
+    return Math.floor(Math.random() * 500);
   },
 
   _adjustDescriptionHeight : function(){
