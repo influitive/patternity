@@ -12,6 +12,8 @@ var Animate = function(){
         $(event.target).removeClass('animated ' + animation + " infinite");
         animationEndCallback(event.target);
       });
+    } else {
+      animationEndCallback(eelement);
     }
   }
 
