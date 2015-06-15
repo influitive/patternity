@@ -45,9 +45,10 @@ var ChallengeCard = React.createClass({
   },
 
   _runAnimation : function(challengeCard){
+    var that = this;
     return function() {
       $(challengeCard).removeClass("hide");
-      this._adjustDescriptionHeight();
+      that._adjustDescriptionHeight();
       animate.run(challengeCard, "slide-in-up");
     };
   },
