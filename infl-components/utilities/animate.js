@@ -9,7 +9,7 @@ var Animate = function(){
 
     $(element).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(event){
       $(event.target).removeClass('animated ' + animation + " infinite");
-      animationEndCallback();
+      animationEndCallback(event.target);
     });
   }
 
