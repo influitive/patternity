@@ -3116,12 +3116,10 @@ DIV.pt-popover.is-visible {
 .pt-card-container > * {
   display: inline-block;
   vertical-align: top;
-  width: calc(96% / 3);
-  margin-right: 2%;
+  width: calc(94% / 3);
+  margin-right: 1%;
+  margin-left: 1%;
   margin-bottom: 20px;
-}
-.pt-card-container > *:nth-child(3n) {
-  margin-right: 0;
 }
 
 .ie8 .pt-card-container {
@@ -3165,6 +3163,9 @@ DIV.pt-popover.is-visible {
 .pt-challenge-card {
   position: relative;
   height: 400px;
+}
+.pt-challenge-card.hide {
+  visibility: hidden;
 }
 .pt-challenge-card * {
   -webkit-box-sizing: border-box;
@@ -3285,6 +3286,7 @@ DIV.pt-popover.is-visible {
   display: block;
   float: left;
   max-width: 125px;
+  cursor: pointer;
   font-size: 13px;
   background-color: #666666;
   white-space: nowrap;
@@ -3352,6 +3354,112 @@ DIV.pt-popover.is-visible {
   position: relative;
   top: 2px;
   left: -2px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+    -ms-transform: translate3d(0, -15px, 0);
+    -webkit-transform: translate3d(0, -15px, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -8px, 0);
+    -ms-transform: translate3d(0, -8px, 0);
+    -webkit-transform: translate3d(0, -8px, 0);
+  }
+  90% {
+    transform: translate3d(0, -3px, 0);
+    -ms-transform: translate3d(0, -3px, 0);
+    -webkit-transform: translate3d(0, -3px, 0);
+  }
+}
+.bounce {
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  animation-name: bounce;
+  transform-origin: center bottom;
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+  20% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  60%, 100% {
+    transform: scale3d(0, 0, 0);
+  }
+}
+.shrink {
+  -webkit-animation-name: shrink;
+  -moz-animation-name: shrink;
+  -o-animation-name: shrink;
+  animation-name: shrink;
+}
+
+@keyframes slide-left {
+  0%, 10% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.slide-left {
+  -webkit-animation-name: slide-left;
+  -moz-animation-name: slide-left;
+  -o-animation-name: slide-left;
+  animation-name: slide-left;
+}
+
+@keyframes slide-in-up {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.slide-in-up {
+  -webkit-animation-name: slide-in-up;
+  -moz-animation-name: slide-in-up;
+  -o-animation-name: slide-in-up;
+  animation-name: slide-in-up;
 }
 
 body {
