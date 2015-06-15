@@ -647,7 +647,10 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
 
   componentDidMount : function(){
     this._animateCardEntrance();
-    this._adjustDescriptionHeight();
+  },
+
+  componentDidUpdate : function(){
+    this._animateCardEntrance();
   },
 
   render: function () {
@@ -667,12 +670,15 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
       setTimeout(this._runAnimation(challengeCard), this._determineEntranceTime());
     } else {
       $(challengeCard).removeClass("hide");
+      this._adjustDescriptionHeight();
     }
   },
 
   _runAnimation : function(challengeCard){
+    var that = this;
     return function() {
       $(challengeCard).removeClass("hide");
+      that._adjustDescriptionHeight();
       animate.run(challengeCard, "slide-in-up");
     };
   },
@@ -2975,7 +2981,7 @@ var Animate = function(){
 
     $(element).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(event){
       $(event.target).removeClass('animated ' + animation + " infinite");
-      animationEndCallback();
+      animationEndCallback(event.target);
     });
   }
 

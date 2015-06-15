@@ -23,6 +23,10 @@ var ChallengeCard = React.createClass({
     this._animateCardEntrance();
   },
 
+  componentDidUpdate : function(){
+    this._animateCardEntrance();
+  },
+
   render: function () {
     return (
       <div ref="challengeCard" className="pt-challenge-card hide" id={this.props.id}>
