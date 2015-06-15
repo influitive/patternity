@@ -21,7 +21,6 @@ var ChallengeCard = React.createClass({
 
   componentDidMount : function(){
     this._animateCardEntrance();
-    this._adjustDescriptionHeight();
   },
 
   render: function () {
@@ -41,12 +40,14 @@ var ChallengeCard = React.createClass({
       setTimeout(this._runAnimation(challengeCard), this._determineEntranceTime());
     } else {
       $(challengeCard).removeClass("hide");
+      this._adjustDescriptionHeight();
     }
   },
 
   _runAnimation : function(challengeCard){
     return function() {
       $(challengeCard).removeClass("hide");
+      this._adjustDescriptionHeight();
       animate.run(challengeCard, "slide-in-up");
     };
   },
