@@ -11,6 +11,13 @@ function isChildOf(child, parent) {
   return false;
 }
 
+function cancelEvent(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  e.cancelBubble = true;
+  return false;
+}
+
 var PopoverFloater = React.createClass({
 
   propTypes : {
@@ -127,6 +134,10 @@ var PopoverFloater = React.createClass({
   _windowClick : function(e) {
     var popoverNode = React.findDOMNode(this.refs.popover);
     var isChild = isChildOf(e.target, popoverNode);
+    var isObject = e.target.nodeName=='OBJECT' || e.target.nodeName=='EMBED';
+    if (isObject) { // don't close the popover when clicking on the flash component of ZeroClipboard
+      return false;
+    }
     if (isChild && !this.props.autoclose) {
       return;
     }
@@ -161,9 +172,7 @@ PopoverFloater.clickEvent = function(e) {
     var popoverName = elm.getAttribute('data-popover');
     var popover = this.refs[popoverName];
     popover.toggle(elm);
-    e.preventDefault();
-    e.stopPropagation();
-    e.cancelBubble = true;
+    return cancelEvent(e);
   }
 };
 
@@ -216,9 +225,7 @@ var Popover = React.createClass({
     var popover = this.refs.popover.getDOMNode();
     var a = this.refs.link.getDOMNode();
     this.refs.popover.toggle(a);
-    e.preventDefault();
-    e.stopPropagation();
-    e.cancelBubble = true;
+    return cancelEvent(e);
   }
 });
 
