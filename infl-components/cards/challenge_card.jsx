@@ -1,10 +1,11 @@
-var React   = require('react');
-var classNames = require('classnames');
-var $ = require('jquery');
+var React         = require('react');
+var classNames    = require('classnames');
+var $             = require('jquery');
 
-var Icon = require('../icon.jsx');
-var Card = require('./card.jsx');
-var animate = require("../utilities/animate.js");
+var Icon          = require('../icon.jsx');
+var Card          = require('./card.jsx');
+var animate       = require("../utilities/animate.js");
+var addLineBreaks = require("../utilities/html.js").addLineBreaks;
 
 var ChallengeCard = React.createClass({
   PropTypes : {
@@ -106,7 +107,9 @@ ChallengeCard.Details = React.createClass({
   },
 
   _sanitizeDescription : function(){
-    return {__html: this.props.description}
+    var description_with_breaks = addLineBreaks(this.props.description);
+
+    return {__html: description_with_breaks};
   }
 });
 
