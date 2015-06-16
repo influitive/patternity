@@ -24,7 +24,7 @@ var ChallengeCard = React.createClass({
   },
 
   componentDidUpdate : function(){
-    this._animateCardEntrance();
+    this._adjustDescriptionHeight();
   },
 
   render: function () {
