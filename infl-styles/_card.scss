@@ -71,16 +71,7 @@
   .pt-card-container {
 
     & > * {
-      width: calc(98% / 2);
-      margin-right: 2%;
-
-      &:nth-child(3n) {
-        margin-right: 2%;
-      }
-
-      &:nth-child(2n) {
-        margin-right: 0;
-      }
+      width: calc(96% / 2);
     }
   }
 }
