@@ -126,7 +126,9 @@ var PopoverFloater = React.createClass({
 
     // position the popover centered below the target element
     var top = tOT + tH + 10;
+    if (top<0) top = 0;
     var left = tOL + (tW - pW)/2;
+    if (left<0) left = 0;
     popoverNode.style.top = top+'px';
     popoverNode.style.left = left+'px';
   },
