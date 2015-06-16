@@ -107,9 +107,13 @@ ChallengeCard.Details = React.createClass({
   },
 
   _sanitizeDescription : function(){
-    var description_with_breaks = addLineBreaks(this.props.description);
+    var description_with_breaks = this.props.description;
 
-    return {__html: description_with_breaks};
+    if (this.props.description) {
+      description_with_breaks = addLineBreaks(this.props.description);
+    }
+
+    return {__html: description_with_breaks}
   }
 });
 
