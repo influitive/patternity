@@ -259,3 +259,65 @@
     }
   }
 }
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (max-height: 763px) and (max-width: 500px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (max-height: 763px) and (max-width: 500px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (max-height: 763px) and (max-width: 500px),
+only screen and (        min-device-pixel-ratio: 2)      and (max-height: 763px) and (max-width: 500px),
+only screen and (                min-resolution: 192dpi) and (max-height: 763px) and (max-width: 500px),
+only screen and (                min-resolution: 2dppx)  and (max-height: 763px) and (max-width: 500px) {
+  .pt-challenge-card {
+    height: 464px;
+  }
+}
+
+@media only screen and (max-height: 763px) and (max-width: 500px) {
+  .pt-challenge-card {
+    height: 464px;
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (max-height: 568px) and (max-width: 500px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (max-height: 568px) and (max-width: 500px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (max-height: 568px) and (max-width: 500px),
+only screen and (        min-device-pixel-ratio: 2)      and (max-height: 568px) and (max-width: 500px),
+only screen and (                min-resolution: 192dpi) and (max-height: 568px) and (max-width: 500px),
+only screen and (                min-resolution: 2dppx)  and (max-height: 568px) and (max-width: 500px) {
+  .pt-challenge-card {
+    height: 393px;
+  }
+}
+
+@media only screen and (max-height: 568px) and (max-width: 500px) {
+  .pt-challenge-card {
+    height: 393px;
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (max-height: 480px) and (max-width: 500px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (max-height: 480px) and (max-width: 500px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (max-height: 480px) and (max-width: 500px),
+only screen and (        min-device-pixel-ratio: 2)      and (max-height: 480px) and (max-width: 500px),
+only screen and (                min-resolution: 192dpi) and (max-height: 480px) and (max-width: 500px),
+only screen and (                min-resolution: 2dppx)  and (max-height: 480px) and (max-width: 500px) {
+  .pt-challenge-card {
+    height: 318px;
+
+    .description {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-height: 480px) and (max-width: 500px) {
+  .pt-challenge-card {
+    height: 318px;
+
+    .description {
+      display: none;
+    }
+  }
+}
