@@ -3367,7 +3367,34 @@ DIV.pt-popover.is-visible {
   animation-iteration-count: infinite;
 }
 
-@keyframes bounce,
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+    -ms-transform: translate3d(0, -15px, 0);
+    -webkit-transform: translate3d(0, -15px, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -8px, 0);
+    -ms-transform: translate3d(0, -8px, 0);
+    -webkit-transform: translate3d(0, -8px, 0);
+  }
+  90% {
+    transform: translate3d(0, -3px, 0);
+    -ms-transform: translate3d(0, -3px, 0);
+    -webkit-transform: translate3d(0, -3px, 0);
+  }
+}
 @-webkit-keyframes bounce {
   0%, 20%, 53%, 80%, 100% {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -3404,7 +3431,23 @@ DIV.pt-popover.is-visible {
   transform-origin: center bottom;
 }
 
-@keyframes shrink,
+@keyframes shrink {
+  0% {
+    transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+  20% {
+    transform: scale3d(1.05, 1.05, 1.05);
+    -ms-transform: scale3d(1.05, 1.05, 1.05);
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  }
+  60%, 100% {
+    transform: scale3d(0, 0, 0);
+    -ms-transform: scale3d(0, 0, 0);
+    -webkit-transform: scale3d(0, 0, 0);
+  }
+}
 @-webkit-keyframes shrink {
   0% {
     transform: scale3d(1, 1, 1);
@@ -3429,7 +3472,18 @@ DIV.pt-popover.is-visible {
   animation-name: shrink;
 }
 
-@keyframes slide-left,
+@keyframes slide-left {
+  0%, 10% {
+    transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  40%, 100% {
+    transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+  }
+}
 @-webkit-keyframes slide-left {
   0%, 10% {
     transform: translate3d(0, 0, 0);
@@ -3449,8 +3503,7 @@ DIV.pt-popover.is-visible {
   animation-name: slide-left;
 }
 
-@keyframes slide-in-up,
-@-webkit-keyframes slide-in-up {
+@keyframes fade-in-up {
   0% {
     transform: translate3d(0, 100%, 0);
     -ms-transform: translate3d(0, 100%, 0);
@@ -3467,11 +3520,28 @@ DIV.pt-popover.is-visible {
     opacity: 1;
   }
 }
-.slide-in-up {
-  -webkit-animation-name: slide-in-up;
-  -moz-animation-name: slide-in-up;
-  -o-animation-name: slide-in-up;
-  animation-name: slide-in-up;
+@-webkit-keyframes fade-in-up {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.fade-in-up {
+  -webkit-animation-name: fade-in-up;
+  -moz-animation-name: fade-in-up;
+  -o-animation-name: fade-in-up;
+  animation-name: fade-in-up;
 }
 
 body {
