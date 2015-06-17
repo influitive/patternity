@@ -6,14 +6,14 @@ var Animate = function(){
       infinite = infinite || false;
       animationEndCallback = animationEndCallback || function(){};
 
-      $(element).addClass("animated " + animation + isInfinite(infinite));
+      $(element).toggleClass("animated " + animation + isInfinite(infinite));
 
       $(element).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(event){
         $(event.target).removeClass('animated ' + animation + " infinite");
         animationEndCallback(event.target);
       });
     } else {
-      animationEndCallback(eelement);
+      animationEndCallback(element);
     }
   }
 
