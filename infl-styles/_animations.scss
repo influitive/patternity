@@ -17,8 +17,7 @@
   }
 }
 
-@keyframes bounce,
-@-webkit-keyframes bounce {
+@mixin bounce() {
   0%, 20%, 53%, 80%, 100% {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -50,6 +49,14 @@
   }
 }
 
+@keyframes bounce {
+  @include bounce();
+}
+
+@-webkit-keyframes bounce {
+  @include bounce();
+}
+
 .bounce {
   -webkit-animation-name: bounce;
   -moz-animation-name:    bounce;
@@ -58,9 +65,8 @@
   transform-origin: center bottom;
 }
 
-@keyframes shrink,
-@-webkit-keyframes shrink {
-  0% {
+@mixin shrink() {
+    0% {
     transform: scale3d(1, 1, 1);
     -ms-transform: scale3d(1, 1, 1);
     -webkit-transform: scale3d(1, 1, 1);
@@ -79,6 +85,14 @@
   }
 }
 
+@keyframes shrink {
+  @include shrink();
+}
+
+@-webkit-keyframes shrink {
+  @include shrink();
+}
+
 .shrink {
   -webkit-animation-name: shrink;
   -moz-animation-name:    shrink;
@@ -86,9 +100,8 @@
   animation-name:         shrink;
 }
 
-@keyframes slide-left,
-@-webkit-keyframes slide-left {
-  0%, 10% {
+@mixin slide-left() {
+    0%, 10% {
     transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
@@ -101,6 +114,14 @@
   }
 }
 
+@keyframes slide-left {
+  @include slide-left();
+}
+
+@-webkit-keyframes slide-left {
+  @include slide-left();
+}
+
 .slide-left {
   -webkit-animation-name: slide-left;
   -moz-animation-name:    slide-left;
@@ -108,8 +129,7 @@
   animation-name:         slide-left;
 }
 
-@keyframes slide-in-up,
-@-webkit-keyframes slide-in-up {
+@mixin fade-in-up() {
   0% {
     transform: translate3d(0, 100%, 0);
     -ms-transform: translate3d(0, 100%, 0);
@@ -129,11 +149,19 @@
   }
 }
 
+@keyframes fade-in-up {
+  @include fade-in-up();
+}
+
+@-webkit-keyframes fade-in-up {
+  @include fade-in-up();
+}
 
 
-.slide-in-up {
-  -webkit-animation-name: slide-in-up;
-  -moz-animation-name:    slide-in-up;
-  -o-animation-name:      slide-in-up;
-  animation-name:         slide-in-up;
+
+.fade-in-up {
+  -webkit-animation-name: fade-in-up;
+  -moz-animation-name:    fade-in-up;
+  -o-animation-name:      fade-in-up;
+  animation-name:         fade-in-up;
 }

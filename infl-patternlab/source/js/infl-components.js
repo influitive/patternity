@@ -680,7 +680,7 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
     return function() {
       $(challengeCard).removeClass("hide");
       that._adjustDescriptionHeight();
-      animate.run(challengeCard, "slide-in-up");
+      animate.run(challengeCard, "fade-in-up");
     };
   },
 
@@ -57288,7 +57288,6 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
   render : function(){
     return (
       React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
-        React.createElement("span", {className: "animated bounce infinite"}, "test"), 
         React.createElement(Pattern, {title: "challenges page demo"}, 
           React.createElement(PanelLeftSidebar, {id: "form-page"}, 
             React.createElement(Sidebar, null, 
