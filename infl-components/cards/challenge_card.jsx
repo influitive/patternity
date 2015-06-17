@@ -42,7 +42,7 @@ var ChallengeCard = React.createClass({
     var challengeCard = React.findDOMNode(this.refs.challengeCard)
 
     if(this.props.animateEntrance){
-      setTimeout(this._runAnimation(challengeCard), this._determineEntranceTime());
+      this._runAnimation(challengeCard);
     } else {
       $(challengeCard).removeClass("hide");
       this._adjustDescriptionHeight();
@@ -50,16 +50,30 @@ var ChallengeCard = React.createClass({
   },
 
   _runAnimation : function(challengeCard){
-    var that = this;
-    return function() {
-      $(challengeCard).removeClass("hide");
-      that._adjustDescriptionHeight();
-      animate.run(challengeCard, "fade-in-up");
-    };
+    $(challengeCard).removeClass("hide");
+    this._adjustDescriptionHeight();
+    this._addAnimationDelay();
+    animate.run(challengeCard, "fade-in-up", undefined, this._removeAnimationDelay);
+  },
+
+  _addAnimationDelay : function(){
+    var challengeCard = React.findDOMNode(this.refs.challengeCard);
+    challengeCard.style['-webkit-animation-delay'] = this._determineEntranceTime() + 's';
+    challengeCard.style['-moz-animation-delay'] = this._determineEntranceTime() + 's';
+    challengeCard.style['-o-animation-delay'] = this._determineEntranceTime() + 's';
+    challengeCard.style['animation-delay'] = this._determineEntranceTime() + 's';
   },
 
   _determineEntranceTime : function(){
-    return Math.floor(Math.random() * 500);
+    return Math.random(0, 1.5).toFixed(2);
+  },
+
+  _removeAnimationDelay : function(){
+    var challengeCard = React.findDOMNode(this.refs.challengeCard);
+    challengeCard.style['-webkit-animation-delay'] = "";
+    challengeCard.style['-moz-animation-delay'] = "";
+    challengeCard.style['-o-animation-delay'] = "";
+    challengeCard.style['animation-delay'] = "";
   },
 
   _adjustDescriptionHeight : function(){
