@@ -624,13 +624,14 @@ module.exports = Card;
 
 
 },{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
-var React   = require('react');
-var classNames = require('classnames');
-var $ = require('jquery');
+var React         = require('react');
+var classNames    = require('classnames');
+var $             = require('jquery');
 
-var Icon = require('../icon.jsx');
-var Card = require('./card.jsx');
-var animate = require("../utilities/animate.js");
+var Icon          = require('../icon.jsx');
+var Card          = require('./card.jsx');
+var animate       = require("../utilities/animate.js");
+var addLineBreaks = require("../utilities/html.js").addLineBreaks;
 
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
   PropTypes : {
@@ -650,7 +651,7 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
   },
 
   componentDidUpdate : function(){
-    this._animateCardEntrance();
+    this._adjustDescriptionHeight();
   },
 
   render: function () {
@@ -732,7 +733,13 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
   },
 
   _sanitizeDescription : function(){
-    return {__html: this.props.description}
+    var description_with_breaks = this.props.description;
+
+    if (this.props.description) {
+      description_with_breaks = addLineBreaks(this.props.description);
+    }
+
+    return {__html: description_with_breaks}
   }
 });
 
@@ -949,7 +956,7 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","../utilities/html.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/html.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -1790,7 +1797,9 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
     // position the popover centered below the target element
     var top = tOT + tH + 10;
+    if (top<0) top = 0;
     var left = tOL + (tW - pW)/2;
+    if (left<0) left = 0;
     popoverNode.style.top = top+'px';
     popoverNode.style.left = left+'px';
   },
@@ -1856,6 +1865,7 @@ var Popover = React.createClass({displayName: "Popover",
   },
 
   componentWillUnmount: function() {
+    if (!this.refs.link) return;
     var a = this.refs.link.getDOMNode();
     if (a && a.childNodes[0]) {
       $(a.childNodes[0]).off('click', this._onClickEvent);
@@ -2974,15 +2984,19 @@ var $ = require('jquery');
 
 var Animate = function(){
   function run(element, animation, infinite, animationEndCallback){
-    infinite = infinite || false;
-    animationEndCallback = animationEndCallback || function(){};
+    if(isAnimationSupported()) {
+      infinite = infinite || false;
+      animationEndCallback = animationEndCallback || function(){};
 
-    $(element).addClass("animated " + animation + isInfinite(infinite));
+      $(element).toggleClass("animated " + animation + isInfinite(infinite));
 
-    $(element).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(event){
-      $(event.target).removeClass('animated ' + animation + " infinite");
-      animationEndCallback(event.target);
-    });
+      $(element).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(event){
+        $(event.target).removeClass('animated ' + animation + " infinite");
+        animationEndCallback(event.target);
+      });
+    } else {
+      animationEndCallback(element);
+    }
   }
 
   function isInfinite(infinite){
@@ -2994,10 +3008,49 @@ var Animate = function(){
   };
 };
 
+var isAnimationSupported = function(){
+  var animation = false,
+      animationstring = 'animation',
+      keyframeprefix = '',
+      domPrefixes = 'Webkit Moz O ms Khtml'.split(' '),
+      pfx  = '',
+      elm = document.createElement('div');
+
+  if( elm.style.animationName !== undefined ) { animation = true; }
+
+  if( animation === false ) {
+    for( var i = 0; i < domPrefixes.length; i++ ) {
+      if( elm.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+        pfx = domPrefixes[ i ];
+        animationstring = pfx + 'Animation';
+        keyframeprefix = '-' + pfx.toLowerCase() + '-';
+        animation = true;
+        break;
+      }
+    }
+  }
+
+  return animation;
+};
+
 module.exports = new Animate();
 
 
-},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/html.js":[function(require,module,exports){
+var HTML = function(){
+  function addLineBreaks(str) {
+    return str.replace(/\n/g, "<br />");
+  }
+
+  return {
+    addLineBreaks : addLineBreaks
+  };
+};
+
+module.exports = new HTML();
+
+
+},{}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -57235,6 +57288,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
   render : function(){
     return (
       React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
+        React.createElement("span", {className: "animated bounce infinite"}, "test"), 
         React.createElement(Pattern, {title: "challenges page demo"}, 
           React.createElement(PanelLeftSidebar, {id: "form-page"}, 
             React.createElement(Sidebar, null, 
