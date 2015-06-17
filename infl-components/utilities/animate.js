@@ -2,12 +2,11 @@ var $ = require('jquery');
 
 var Animate = function(){
   function run(element, animation, infinite, animationEndCallback){
+    infinite = infinite || false;
+    animationEndCallback = animationEndCallback || function(){};
+
     if(isAnimationSupported()) {
-      infinite = infinite || false;
-      animationEndCallback = animationEndCallback || function(){};
-
-      $(element).toggleClass("animated " + animation + isInfinite(infinite));
-
+      $(element).addClass("animated " + animation + isInfinite(infinite));
       $(element).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(event){
         $(event.target).removeClass('animated ' + animation + " infinite");
         animationEndCallback(event.target);
