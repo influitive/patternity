@@ -610,60 +610,24 @@ th {
 
 @font-face {
   font-family: 'Proxima Nova Light';
-  src: url("~patternity/infl-fonts/ProximaNova-Light.eot");
-  src: url("~patternity/infl-fonts/ProximaNova-Light.eot?#iefix") format("embedded-opentype"), url("~patternity/infl-fonts/ProximaNova-Light.woff2") format("woff2"), url("~patternity/infl-fonts/ProximaNova-Light.woff") format("woff"), url("~patternity/infl-fonts/ProximaNova-Light.ttf") format("truetype");
+  src: url("fonts/ProximaNova-Light.eot");
+  src: url("fonts/ProximaNova-Light.eot?#iefix") format("embedded-opentype"), url("fonts/ProximaNova-Light.woff2") format("woff2"), url("fonts/ProximaNova-Light.woff") format("woff"), url("fonts/ProximaNova-Light.ttf") format("truetype");
 }
 @font-face {
   font-family: 'Proxima Nova Light Italic';
-  src: url("~patternity/infl-fonts/ProximaNova-LightIt.eot");
-  src: url("~patternity/infl-fonts/ProximaNova-LightIt.eot?#iefix") format("embedded-opentype"), url("~patternity/infl-fonts/ProximaNova-LightIt.woff2") format("woff2"), url("~patternity/infl-fonts/ProximaNova-LightIt.woff") format("woff"), url("~patternity/infl-fonts/ProximaNova-LightIt.ttf") format("truetype");
+  src: url("fonts/ProximaNova-LightIt.eot");
+  src: url("fonts/ProximaNova-LightIt.eot?#iefix") format("embedded-opentype"), url("fonts/ProximaNova-LightIt.woff2") format("woff2"), url("fonts/ProximaNova-LightIt.woff") format("woff"), url("fonts/ProximaNova-LightIt.ttf") format("truetype");
 }
 @font-face {
   font-family: 'Proxima Nova Semibold';
-  src: url("~patternity/infl-fonts/ProximaNova-Semibold.eot");
-  src: url("~patternity/infl-fonts/ProximaNova-Semibold.eot?#iefix") format("embedded-opentype"), url("~patternity/infl-fonts/ProximaNova-Semibold.woff2") format("woff2"), url("~patternity/infl-fonts/ProximaNova-Semibold.woff") format("woff"), url("~patternity/infl-fonts/ProximaNova-Semibold.ttf") format("truetype");
+  src: url("fonts/ProximaNova-Semibold.eot");
+  src: url("fonts/ProximaNova-Semibold.eot?#iefix") format("embedded-opentype"), url("fonts/ProximaNova-Semibold.woff2") format("woff2"), url("fonts/ProximaNova-Semibold.woff") format("woff"), url("fonts/ProximaNova-Semibold.ttf") format("truetype");
 }
 @font-face {
   font-family: 'Proxima Nova Semibold Italic';
-  src: url("~patternity/infl-fonts/ProximaNova-SemiboldIt.eot");
-  src: url("~patternity/infl-fonts/ProximaNova-SemiboldIt.eot?#iefix") format("embedded-opentype"), url("~patternity/infl-fonts/ProximaNova-SemiboldIt.woff2") format("woff2"), url("~patternity/infl-fonts/ProximaNova-SemiboldIt.woff") format("woff"), url("~patternity/infl-fonts/ProximaNova-SemiboldIt.ttf") format("truetype");
+  src: url("fonts/ProximaNova-SemiboldIt.eot");
+  src: url("fonts/ProximaNova-SemiboldIt.eot?#iefix") format("embedded-opentype"), url("fonts/ProximaNova-SemiboldIt.woff2") format("woff2"), url("fonts/ProximaNova-SemiboldIt.woff") format("woff"), url("fonts/ProximaNova-SemiboldIt.ttf") format("truetype");
 }
-/*
-@font-face {
-  font-family: 'Proxima Nova Light';
-  src: url('webfonts/ProximaNova-Light.eot');
-  src: url('webfonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
-    url('webfonts/ProximaNova-Light.woff2') format('woff2'),
-    url('webfonts/ProximaNova-Light.woff') format('woff'),
-    url('webfonts/ProximaNova-Light.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Proxima Nova Light Italic';
-  src: url('webfonts/ProximaNova-LightIt.eot');
-  src: url('webfonts/ProximaNova-LightIt.eot?#iefix') format('embedded-opentype'),
-  url('webfonts/ProximaNova-LightIt.woff2') format('woff2'),
-  url('webfonts/ProximaNova-LightIt.woff') format('woff'),
-  url('webfonts/ProximaNova-LightIt.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Proxima Nova Semibold';
-  src: url('webfonts/ProximaNova-Semibold.eot');
-  src: url('webfonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
-    url('webfonts/ProximaNova-Semibold.woff2') format('woff2'),
-    url('webfonts/ProximaNova-Semibold.woff') format('woff'),
-    url('webfonts/ProximaNova-Semibold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Proxima Nova Semibold Italic';
-  src: url('webfonts/ProximaNova-SemiboldIt.eot');
-  src: url('webfonts/ProximaNova-SemiboldIt.eot?#iefix') format('embedded-opentype'),
-    url('webfonts/ProximaNova-SemiboldIt.woff2') format('woff2'),
-    url('webfonts/ProximaNova-SemiboldIt.woff') format('woff'),
-    url('webfonts/ProximaNova-SemiboldIt.ttf') format('truetype');
-}
-*/
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-size: 15px;
