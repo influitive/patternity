@@ -1800,6 +1800,10 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
     if (top<0) top = 0;
     var left = tOL + (tW - pW)/2;
     if (left<0) left = 0;
+    if (left+pW+10 > window.innerWidth) {
+      left = window.innerWidth - pW - 10;
+      // todo: in this scenario the arrow pointing to the target element would need to be manually positioned instead of being in the middle
+    }
     popoverNode.style.top = top+'px';
     popoverNode.style.left = left+'px';
   },
