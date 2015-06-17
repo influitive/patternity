@@ -21,34 +21,35 @@ var Animate = function(){
     return infinite ? " infinite" : "";
   }
 
-  return {
-    run : run
-  };
-};
+  function isAnimationSupported(){
+    var animation = false,
+        animationstring = 'animation',
+        keyframeprefix = '',
+        domPrefixes = 'Webkit Moz O ms Khtml'.split(' '),
+        pfx  = '',
+        elm = document.createElement('div');
 
-var isAnimationSupported = function(){
-  var animation = false,
-      animationstring = 'animation',
-      keyframeprefix = '',
-      domPrefixes = 'Webkit Moz O ms Khtml'.split(' '),
-      pfx  = '',
-      elm = document.createElement('div');
+    if( elm.style.animationName !== undefined ) { animation = true; }
 
-  if( elm.style.animationName !== undefined ) { animation = true; }
-
-  if( animation === false ) {
-    for( var i = 0; i < domPrefixes.length; i++ ) {
-      if( elm.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
-        pfx = domPrefixes[ i ];
-        animationstring = pfx + 'Animation';
-        keyframeprefix = '-' + pfx.toLowerCase() + '-';
-        animation = true;
-        break;
+    if( animation === false ) {
+      for( var i = 0; i < domPrefixes.length; i++ ) {
+        if( elm.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+          pfx = domPrefixes[ i ];
+          animationstring = pfx + 'Animation';
+          keyframeprefix = '-' + pfx.toLowerCase() + '-';
+          animation = true;
+          break;
+        }
       }
     }
+
+    return animation;
   }
 
-  return animation;
+  return {
+    run : run,
+    isAnimationSupported : isAnimationSupported
+  };
 };
 
 module.exports = new Animate();
