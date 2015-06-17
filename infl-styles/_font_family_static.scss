@@ -1,0 +1,42 @@
+// Note these urls are in a webpack specific format (unfortunately)
+// Webpack will look to node_modules with any url prepended with ~
+// I couldn't (yet) get webpack to understand a relative url from patternity's perspective
+
+// Note these urls are in a webpack specific format (unfortunately)
+// Webpack will look to node_modules with any url prepended with ~
+// I couldn't (yet) get webpack to understand a relative url from patternity's perspective
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('fonts/ProximaNova-Light.eot');
+  src: url('fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
+    url('fonts/ProximaNova-Light.woff2') format('woff2'),
+    url('fonts/ProximaNova-Light.woff') format('woff'),
+    url('fonts/ProximaNova-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light Italic';
+  src: url('fonts/ProximaNova-LightIt.eot');
+  src: url('fonts/ProximaNova-LightIt.eot?#iefix') format('embedded-opentype'),
+  url('fonts/ProximaNova-LightIt.woff2') format('woff2'),
+  url('fonts/ProximaNova-LightIt.woff') format('woff'),
+  url('fonts/ProximaNova-LightIt.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Semibold';
+  src: url('fonts/ProximaNova-Semibold.eot');
+  src: url('fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/ProximaNova-Semibold.woff2') format('woff2'),
+    url('fonts/ProximaNova-Semibold.woff') format('woff'),
+    url('fonts/ProximaNova-Semibold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Proxima Nova Semibold Italic';
+  src: url('fonts/ProximaNova-SemiboldIt.eot');
+  src: url('fonts/ProximaNova-SemiboldIt.eot?#iefix') format('embedded-opentype'),
+    url('fonts/ProximaNova-SemiboldIt.woff2') format('woff2'),
+    url('fonts/ProximaNova-SemiboldIt.woff') format('woff'),
+    url('fonts/ProximaNova-SemiboldIt.ttf') format('truetype');
+}
