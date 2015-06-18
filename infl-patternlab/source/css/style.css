@@ -1653,7 +1653,8 @@ input[type='url'],
 input[type='search'],
 input[type='number'],
 .select-box,
-select {
+select,
+.pt-multi-select {
   border-radius: 2px;
   border: solid 1px #d0d2d3;
   font-size: inherit;
@@ -2131,6 +2132,95 @@ textarea {
 }
 .pt-radio-button-group.stacked .pt-radio-button:last-child {
   margin-bottom: 0px;
+}
+
+/* move to its own css file*/
+.pt-simple-popover {
+  position: absolute;
+  display: none;
+}
+.pt-simple-popover.open {
+  display: block;
+}
+
+.pt-multi-select {
+  position: relative;
+  display: inline-block;
+  padding-right: 30px;
+  height: auto;
+  min-height: 2.5em;
+}
+.pt-multi-select:after {
+  font-family: 'influicons';
+  content: "";
+  display: block;
+  position: absolute;
+  font-size: 20px;
+  top: 8px;
+  right: 5px;
+  z-index: 1;
+}
+.pt-multi-select .multi-select {
+  display: inline-block;
+  min-width: 150px;
+  min-height: 30px;
+}
+.pt-multi-select .multi-select input[type='text'] {
+  border-radius: 0px;
+  border: 0px;
+  line-height: 2em;
+  height: 2em;
+  margin-top: 3px;
+  display: none;
+}
+.pt-multi-select .multi-select input[type='text']:focus {
+  outline: 0;
+}
+.pt-multi-select .multi-select .pt-multi-select-native {
+  position: absolute;
+  left: -1000px;
+}
+.pt-multi-select .multi-select .selected-options .selected-option {
+  display: inline-block;
+  border: 1px solid #d0d2d3;
+  padding: 5px 10px 5px 20px;
+  margin-top: 3px;
+  background-color: #eeeeee;
+  position: relative;
+  margin-right: 5px;
+}
+.pt-multi-select .multi-select .selected-options .selected-option:before {
+  font-family: 'influicons';
+  content: "";
+  display: block;
+  position: absolute;
+  font-size: 13px;
+  top: 8px;
+  left: 5px;
+  z-index: 1;
+}
+.pt-multi-select .multi-select .selected-options .selected-option:hover {
+  cursor: pointer;
+}
+.pt-multi-select .pt-simple-popover {
+  top: 40px;
+  left: -1px;
+  border: 1px solid #d0d2d3;
+  border-radius: 2px;
+  background-color: #fff;
+  min-width: 150px;
+  display: none;
+}
+.pt-multi-select .pt-simple-popover.open {
+  display: block;
+}
+.pt-multi-select .pt-simple-popover .pt-multi-select-option {
+  display: block;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.pt-multi-select .pt-simple-popover .pt-multi-select-option:hover {
+  background-color: #eeeeee;
 }
 
 .help-tooltip {

@@ -23,11 +23,13 @@ var ButtonDropdownPattern = React.createClass({
 
           <Pattern.Detail title="Button Dropdown">
             <Pattern.Show>
-              <ButtonDropdown title="Button Title">
-                <a href="#">Option 1</a>
-                <a href="#">Option 2</a>
-                <a href="#">Option 3</a>
-              </ButtonDropdown>
+              <div style={{ height: "200px"}}>
+                <ButtonDropdown title="Button Title">
+                  <a href="#">Option 1</a>
+                  <a href="#">Option 2</a>
+                  <a href="#">Option 3</a>
+                </ButtonDropdown>
+              </div>
             </Pattern.Show>
 
             <Pattern.Demo title="Button Dropdown Demo">
