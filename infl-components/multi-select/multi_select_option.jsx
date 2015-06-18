@@ -8,7 +8,8 @@ var MultiSelectOption = React.createClass({
       React.PropTypes.string,
       React.PropTypes.number
     ]),
-    optionIsSelected : React.PropTypes.bool.isRequired
+    optionIsSelected : React.PropTypes.bool.isRequired,
+    filteredOption : React.PropTypes.bool.isRequired
   },
 
   getDefaultProps : function(){
@@ -24,7 +25,7 @@ var MultiSelectOption = React.createClass({
   },
 
   _isOptionSelected : function(){
-    return this.props.optionIsSelected ? "hide" : "";
+    return this.props.optionIsSelected || this.props.filteredOption ? "hide" : "";
   },
 
   _handleClick : function(event){

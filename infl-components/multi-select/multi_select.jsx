@@ -71,6 +71,7 @@ var MultiSelect = React.createClass({
 
     for(var i = 0; i < modifiedOptions.length; i++){
       modifiedOptions[i].optionIsSelected = false;
+      modifiedOptions[i].filteredOption = false;
     }
 
     this.setState({
@@ -118,6 +119,9 @@ var MultiSelect = React.createClass({
 
   _toggleOptions : function(event){
     event.stopPropagation();
+
+    React.findDOMNode(this.refs.typeAhead).focus();
+
     this.setState({
       showOptions : !this.state.showOptions
     });
@@ -125,16 +129,32 @@ var MultiSelect = React.createClass({
 
   _handleTypeAheadChange : function(event){
     this.props.onTypeAheadChange(event.target.value);
+    this._adjustInputWidth(event.target);
 
-    // var filteredOptions = this._filterOptions(event.target.value);
+    var filteredOptions = this._filterOptions(event.target.value.toLowerCase());
 
     this.setState({
-      typeAhead : event.target.value
+      typeAhead : event.target.value,
+      options : filteredOptions
     });
   },
 
-  _filterOptions : function(filterText){
+  _adjustInputWidth : function(input){
+    input.style.width = (input.value.length + 1) * 8 + "px";
+  },
 
+  _filterOptions : function(filterText){
+    var filteredOptions = this.state.options;
+
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].name.toLowerCase().indexOf(filterText) === 0){
+        filteredOptions[i].filteredOption = false;
+      } else {
+        filteredOptions[i].filteredOption = true;
+      }
+    }
+
+    return filteredOptions;
   },
 
   _buildMultiSelectOptions : function(){
@@ -152,6 +172,7 @@ var MultiSelect = React.createClass({
           name={option.name}
           value={option.value}
           optionIsSelected={option.optionIsSelected}
+          filteredOption={option.filteredOption}
           onClick={that._handleOptionSelect}/>
       );
     });
@@ -161,7 +182,7 @@ var MultiSelect = React.createClass({
     var optionsToShow = false;
 
     for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].optionIsSelected === false){
+      if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false){
         optionsToShow = true;
         break;
       }
