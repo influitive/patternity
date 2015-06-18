@@ -15,7 +15,7 @@ var IconPattern = React.createClass({
       <div className="icons-pattern">
         <Pattern title="icons">
           <p>All our icons are provided via a custom font.  This allows the size of the icon to be changed via font-size and the colour to be changed via font color.</p>
-          <p>In order to standardize how icons are displayed, use the Icon react component to render an icon</p>
+          <p>In order to standardize how icons are displayed, use the Icon react component to render an icon, use the CSS "ic" class, or the corresponding SASS mixin.</p>
 
           <div className="icons-container">
             {this._buildIcons()}
@@ -121,6 +121,9 @@ var IconDetails = React.createClass({
             <Code.HTML>
               {this._buildHTMLExample()}
             </Code.HTML>
+            <Code.SCSS>
+              {this._buildSCSSExample()}
+            </Code.SCSS>
           </Code>
         </Pattern.Detail>
       </div>
@@ -131,6 +134,11 @@ var IconDetails = React.createClass({
   },
   _buildHTMLExample : function(){
     return '<span class="ic ic-' +  this.props.code + '"></span>';
+  },
+  _buildSCSSExample : function(){
+    return 'SPAN.customIcon {\n'+
+      '  @include ic-link();\n'+
+      '}\n';
   }
 });
 

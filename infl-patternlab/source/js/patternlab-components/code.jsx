@@ -45,6 +45,24 @@ Code.JSX = React.createClass({
   }
 });
 
+Code.SCSS = React.createClass({
+  render : function(){
+    return (
+      <div className="code-js">
+        <h5 className="code-title">SASS Mixin</h5>
+        <pre className="code">
+          <code>
+            {this._formatCode()}
+          </code>
+        </pre>
+      </div>
+      );
+  },
+  _formatCode : function(){
+    return this.props.children.toString();
+  }
+});
+
 Code.JS = React.createClass({
   render : function(){
     return (
