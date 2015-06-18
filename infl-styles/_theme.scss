@@ -3,9 +3,17 @@ $theme-color-primary : #08a5c5 !default;
 $theme-color-secondary: #046f99;
 
 $info-color: #08a5c5; /* blue */
+$info-color-lighter: lighten(#08a5c5,10%);
+$info-color-darker: darken(#08a5c5,10%);
 $success-color : #8BC540; /* green */
+$success-color-lighter : lighten(#8BC540,10%);
+$success-color-darker : darken(#8BC540,10%);
 $error-color : #c54040; /* red */
+$error-color-lighter : lighten(#c54040,10%);
+$error-color-darker : darken(#c54040,10%);
 $warning-color : #ffcc00; /* yellow */
+$warning-color-ligther : lighten(#ffcc00,10%);
+$warning-color-darker : darken(#ffcc00,10%);
 
 $darker-grey: #444444;
 $dark-grey: #666666;
