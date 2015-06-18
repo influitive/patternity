@@ -2185,20 +2185,17 @@ textarea {
   min-height: 30px;
   z-index: 1;
 }
-.pt-multi-select .multi-select input[type='text'] {
+.pt-multi-select .multi-select .type-ahead {
   border-radius: 0px;
   border: 0px;
   line-height: 2em;
   height: 2em;
   margin-top: 3px;
+  width: 5px;
   display: none;
 }
-.pt-multi-select .multi-select input[type='text']:focus {
+.pt-multi-select .multi-select .type-ahead:focus {
   outline: 0;
-}
-.pt-multi-select .multi-select .pt-multi-select-native {
-  position: absolute;
-  left: -1000px;
 }
 .pt-multi-select .multi-select .selected-options .selected-option {
   display: inline-block;
@@ -2219,6 +2216,10 @@ textarea {
 }
 .pt-multi-select .multi-select .selected-options .selected-option:hover {
   cursor: pointer;
+}
+.pt-multi-select .pt-multi-select-native {
+  position: absolute;
+  left: -1000px;
 }
 .pt-multi-select .pt-simple-popover {
   left: -1px;
