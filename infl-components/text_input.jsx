@@ -114,11 +114,12 @@ var TextInput = React.createClass({
     }, this.props.onCleared());
   },
   _buildMessage: function(){
-    if(typeof this.props.message === "string"){
+    if (typeof this.props.message === "string") {
       return (<span className="input-message">{this.props.message}</span>);
-    } else {
+    }
+    else {
       return this.props.message.map(function(message){
-        return (<span className="input-message">{message}</span>);
+        return (<span key={message.id || message.key} className="input-message">{message}</span>);
       });
     }
   }
