@@ -12,24 +12,49 @@
 .pt-multi-select {
   position: relative;
   display: inline-block;
-  padding-right: 30px;
   height: auto;
   min-height: 2.5em;
+  min-width: 150px;
 
   &:after {
     @include ic-chevron-down();
     display: block;
     position: absolute;
     font-size: 20px;
-    top: 8px;
+    top: 7px;
     right: 5px;
-    z-index: 1;
+    z-index: -1;
+  }
+
+  &.open {
+    &:after {
+      @include ic-chevron-up();
+    }
+  }
+
+  .clear-all {
+    position: absolute;
+    right: 30px;
+    top: 7px;
+    font-size: 20px;
+    display: none;
+    z-index: 2;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.show {
+      display: block;
+    }
   }
 
   .multi-select {
     display: inline-block;
-    min-width: 150px;
+    width: 100%;
+    padding-right: 55px;
     min-height: 30px;
+    z-index: 1;
 
     input[type='text'] {
       border-radius: 0px;
@@ -56,20 +81,18 @@
     .selected-options {
       .selected-option {
         display: inline-block;
-        border: 1px solid $light-grey;
-        padding: 5px 10px 5px 20px;
-        margin-top: 3px;
+        padding: 5px 30px 5px 10px;
         background-color: $lighter-grey;
         position: relative;
-        margin-right: 5px;
+        margin: 3px 5px 3px 0px;
 
         &:before {
           @include ic-close();
           display: block;
           position: absolute;
-          font-size: 13px;
-          top: 8px;
-          left: 5px;
+          font-size: 16px;
+          top: 6px;
+          right: 5px;
           z-index: 1;
         }
 
@@ -81,13 +104,14 @@
   }
 
   .pt-simple-popover {
-    top: 40px;
     left: -1px;
     border: 1px solid $light-grey;
+    border-top-color: #fff;
     border-radius: 2px;
     background-color: #fff;
     min-width: 150px;
     display: none;
+    padding-top: 5px;
 
     &.open {
       display: block;
@@ -96,10 +120,21 @@
     .pt-multi-select-option {
       display: block;
       padding: 5px 10px;
-      cursor: pointer;
+
+      &.hide {
+        display: none;
+      }
 
       &:hover {
         background-color: $lighter-grey;
+        cursor: pointer;
+      }
+
+      &.no-hover {
+        &:hover {
+          background-color: transparent;
+          cursor: auto;
+        }
       }
     }
   }

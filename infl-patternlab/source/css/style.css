@@ -2146,9 +2146,9 @@ textarea {
 .pt-multi-select {
   position: relative;
   display: inline-block;
-  padding-right: 30px;
   height: auto;
   min-height: 2.5em;
+  min-width: 150px;
 }
 .pt-multi-select:after {
   font-family: 'influicons';
@@ -2156,14 +2156,34 @@ textarea {
   display: block;
   position: absolute;
   font-size: 20px;
-  top: 8px;
+  top: 7px;
   right: 5px;
-  z-index: 1;
+  z-index: -1;
+}
+.pt-multi-select.open:after {
+  font-family: 'influicons';
+  content: "";
+}
+.pt-multi-select .clear-all {
+  position: absolute;
+  right: 30px;
+  top: 7px;
+  font-size: 20px;
+  display: none;
+  z-index: 2;
+}
+.pt-multi-select .clear-all:hover {
+  cursor: pointer;
+}
+.pt-multi-select .clear-all.show {
+  display: block;
 }
 .pt-multi-select .multi-select {
   display: inline-block;
-  min-width: 150px;
+  width: 100%;
+  padding-right: 55px;
   min-height: 30px;
+  z-index: 1;
 }
 .pt-multi-select .multi-select input[type='text'] {
   border-radius: 0px;
@@ -2182,34 +2202,33 @@ textarea {
 }
 .pt-multi-select .multi-select .selected-options .selected-option {
   display: inline-block;
-  border: 1px solid #d0d2d3;
-  padding: 5px 10px 5px 20px;
-  margin-top: 3px;
+  padding: 5px 30px 5px 10px;
   background-color: #eeeeee;
   position: relative;
-  margin-right: 5px;
+  margin: 3px 5px 3px 0px;
 }
 .pt-multi-select .multi-select .selected-options .selected-option:before {
   font-family: 'influicons';
   content: "";
   display: block;
   position: absolute;
-  font-size: 13px;
-  top: 8px;
-  left: 5px;
+  font-size: 16px;
+  top: 6px;
+  right: 5px;
   z-index: 1;
 }
 .pt-multi-select .multi-select .selected-options .selected-option:hover {
   cursor: pointer;
 }
 .pt-multi-select .pt-simple-popover {
-  top: 40px;
   left: -1px;
   border: 1px solid #d0d2d3;
+  border-top-color: #fff;
   border-radius: 2px;
   background-color: #fff;
   min-width: 150px;
   display: none;
+  padding-top: 5px;
 }
 .pt-multi-select .pt-simple-popover.open {
   display: block;
@@ -2217,10 +2236,17 @@ textarea {
 .pt-multi-select .pt-simple-popover .pt-multi-select-option {
   display: block;
   padding: 5px 10px;
-  cursor: pointer;
+}
+.pt-multi-select .pt-simple-popover .pt-multi-select-option.hide {
+  display: none;
 }
 .pt-multi-select .pt-simple-popover .pt-multi-select-option:hover {
   background-color: #eeeeee;
+  cursor: pointer;
+}
+.pt-multi-select .pt-simple-popover .pt-multi-select-option.no-hover:hover {
+  background-color: transparent;
+  cursor: auto;
 }
 
 .help-tooltip {
