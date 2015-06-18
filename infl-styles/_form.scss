@@ -7,7 +7,8 @@ input[type='url'],
 input[type='search'],
 input[type='number'],
 .select-box,
-select {
+select,
+.pt-multi-select{
   border-radius: 2px;
   border: solid 1px $light-grey;
   font-size: inherit;
@@ -245,3 +246,4 @@ textarea {
 @import 'form_layout';
 @import 'checkbox';
 @import 'radio_button';
+@import "multi_select";

@@ -18,6 +18,7 @@ inflComp.InputLabelPattern        = require("./patterns/atoms/input_label_patter
 inflComp.ButtonPattern            = require("./patterns/atoms/button_pattern.jsx");
 inflComp.ButtonDropdownPattern    = require("./patterns/atoms/button_dropdown_pattern.jsx");
 inflComp.ButtonGroupPattern       = require("./patterns/atoms/button_group_pattern.jsx");
+inflComp.MultiSelectPattern       = require("./patterns/atoms/multi_select_pattern.jsx");
 
 /* Moleclues */
 inflComp.FormPattern              = require("./patterns/molecules/form_pattern.jsx");

@@ -1,0 +1,106 @@
+/* move to its own css file*/
+.pt-simple-popover {
+  position: absolute;
+  display: none;
+
+  &.open {
+    display: block;
+  }
+}
+
+
+.pt-multi-select {
+  position: relative;
+  display: inline-block;
+  padding-right: 30px;
+  height: auto;
+  min-height: 2.5em;
+
+  &:after {
+    @include ic-chevron-down();
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    top: 8px;
+    right: 5px;
+    z-index: 1;
+  }
+
+  .multi-select {
+    display: inline-block;
+    min-width: 150px;
+    min-height: 30px;
+
+    input[type='text'] {
+      border-radius: 0px;
+      border: 0px;
+      line-height: 2em;
+      height: 2em;
+      margin-top: 3px;
+
+
+      display: none;
+
+
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .pt-multi-select-native{
+      position: absolute;
+      left: -1000px;
+    }
+
+    .selected-options {
+      .selected-option {
+        display: inline-block;
+        border: 1px solid $light-grey;
+        padding: 5px 10px 5px 20px;
+        margin-top: 3px;
+        background-color: $lighter-grey;
+        position: relative;
+        margin-right: 5px;
+
+        &:before {
+          @include ic-close();
+          display: block;
+          position: absolute;
+          font-size: 13px;
+          top: 8px;
+          left: 5px;
+          z-index: 1;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .pt-simple-popover {
+    top: 40px;
+    left: -1px;
+    border: 1px solid $light-grey;
+    border-radius: 2px;
+    background-color: #fff;
+    min-width: 150px;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+
+    .pt-multi-select-option {
+      display: block;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $lighter-grey;
+      }
+    }
+  }
+}
