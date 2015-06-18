@@ -1,41 +1,116 @@
 var React = require('react');
 
+var SimplePopover = require('./simple_popover.jsx');
+var ClearAll = require('./clear_all.jsx');
+var NativeSelect = require('./native_select.jsx');
+var SelectedOptions = require('./selected_options.jsx');
+var MultiSelectOption = require('./multi_select_option.jsx');
+
 var MultiSelect = React.createClass({
   propTypes: {
     options: React.PropTypes.array,
-    name : React.PropTypes.string
+    name : React.PropTypes.string,
+    onChange : React.PropTypes.func
   },
 
   getDefaultProps : function(){
     return {
       options : [],
-      name : "multiSelect"
+      name : "multiSelect",
+      onChange : function(){}
     };
   },
 
   getInitialState : function(){
-    var options = this.props.options;
     return {
       typeAhead : "",
-      options : options,
+      options : [],
       selectedOptions : [],
       showOptions : false
     };
   },
 
+  componentWillMount : function(){
+    this._preProcessOptions();
+  },
+
+  componentDidMount : function(){
+    this._adjustPopoverSize();
+    this._adjustPopoverPosition();
+  },
+
+  componentDidUpdate : function(){
+    this._adjustPopoverSize();
+    this._adjustPopoverPosition();
+    this._handleChange();
+  },
+
   render: function() {
     return (
-      <span className="pt-multi-select">
+      <span ref="multiSelectContainer" className={"pt-multi-select " + this._areOptionsVisible()}>
+        <ClearAll hasSelectedOptions={this._hasSelectedOptions()} onClearAll={this._handleClearAll}/>
+
         <span className="multi-select" onClick={this._toggleOptions}>
           <input type="text" ref="typeAhead" className="type-ahead" name="typeAhead" value={this.state.typeAhead} onChange={this._handleChange} />
           <SelectedOptions options={this.state.selectedOptions} removeSelectedOption={this._handleSelectedOptionRemoved} />
           <NativeSelect selectedOptions={this.state.selectedOptions} name={this.props.name} />
         </span>
-        <SimplePopover isOpen={this.state.showOptions}>
+
+        <SimplePopover ref="popover" isOpen={this.state.showOptions}>
           {this._buildMultiSelectOptions()}
         </SimplePopover>
       </span>
     );
+  },
+
+  _preProcessOptions : function(){
+    var modifiedOptions = this.props.options;
+
+    for(var i = 0; i < modifiedOptions.length; i++){
+      modifiedOptions[i].optionIsSelected = false;
+    }
+
+    this.setState({
+      options : modifiedOptions
+    });
+  },
+
+  _adjustPopoverSize : function(){
+    var popover = React.findDOMNode(this.refs.popover);
+    var multiSelectContainer = React.findDOMNode(this.refs.multiSelectContainer);
+    popover.style.width = multiSelectContainer.offsetWidth + "px";
+  },
+
+  _adjustPopoverPosition : function(){
+    var popover = React.findDOMNode(this.refs.popover);
+    var multiSelectContainer = React.findDOMNode(this.refs.multiSelectContainer);
+    popover.style.top = (multiSelectContainer.clientHeight - 1) + "px";
+  },
+
+  _handleChange : function(){
+    var newlyAddedOption = this.state.selectedOptions[this.state.selectedOptions.length - 1];
+    this.props.onChange(newlyAddedOption, this.state.selectedOptions);
+  },
+
+  _hasSelectedOptions : function(){
+    return this.state.selectedOptions.length > 0;
+  },
+
+  _handleClearAll : function(){
+    var currentOptions = this.state.options;
+
+    for(var i = 0; i < this.state.options.length; i ++){
+      currentOptions[i].optionIsSelected =  false;
+    }
+
+    this.setState({
+      options : currentOptions,
+      selectedOptions : []
+    });
+  },
+
+  _areOptionsVisible : function(){
+    return this.state.showOptions ? "open" : "";
   },
 
   _toggleOptions : function(event){
@@ -52,12 +127,36 @@ var MultiSelect = React.createClass({
   },
 
   _buildMultiSelectOptions : function(){
+    if(!this._anyOptionsToShow()){
+      return (
+        <span className="pt-multi-select-option no-hover">No Results Found</span>
+      );
+    }
+
     var that = this;
     return this.state.options.map(function(option, index){
       return (
-        <MultiSelectOption key={index} name={option.name} value={option.value} onClick={that._handleOptionSelect}/>
+        <MultiSelectOption
+          key={index}
+          name={option.name}
+          value={option.value}
+          optionIsSelected={option.optionIsSelected}
+          onClick={that._handleOptionSelect}/>
       );
     });
+  },
+
+  _anyOptionsToShow : function(){
+    var optionsToShow = false;
+
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].optionIsSelected === false){
+        optionsToShow = true;
+        break;
+      }
+    }
+
+    return optionsToShow;
   },
 
   _handleOptionSelect : function(option){
@@ -68,15 +167,15 @@ var MultiSelect = React.createClass({
       selectedOptions : currentSelectedOptions
     });
 
-    this._removeSelectedOptionFromOptions(option);
+    this._hideSelectedOptionFromOptions(option);
   },
 
-  _removeSelectedOptionFromOptions : function(option){
+  _hideSelectedOptionFromOptions : function(option){
     var currentOptions = this.state.options;
 
     for(var i = 0; i < this.state.options.length; i++){
       if(this.state.options[i].name === option.name && this.state.options[i].value === option.value){
-        currentOptions.splice(i, 1);
+        currentOptions[i].optionIsSelected = true;
         break;
       }
     }
@@ -88,7 +187,13 @@ var MultiSelect = React.createClass({
 
   _handleSelectedOptionRemoved : function(option){
     var currentOptions = this.state.options;
-    currentOptions.push(option);
+
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].name === option.name && this.state.options[i].value === option.value){
+        currentOptions[i].optionIsSelected = false;
+        break;
+      }
+    }
 
     this.setState({
       options : currentOptions
@@ -100,8 +205,8 @@ var MultiSelect = React.createClass({
   _removeOptionFromSelectedOptions : function(option){
     var currentSelectedOptions = this.state.selectedOptions;
 
-    for(var i = 0; i < this.state.selectedOptions.length; i++){
-      if(this.state.selectedOptions[i].name === option.name && this.state.selectedOptions[i].value === option.value){
+    for(var i = 0; i < currentSelectedOptions.length; i++){
+      if(currentSelectedOptions[i].name === option.name && currentSelectedOptions[i].value === option.value){
         currentSelectedOptions.splice(i, 1);
         break;
       }
@@ -110,144 +215,6 @@ var MultiSelect = React.createClass({
     this.setState({
       selectedOptions : currentSelectedOptions
     });
-  }
-});
-
-var NativeSelect = React.createClass({
-  PropTypes : {
-    selectedOptions : React.PropTypes.array.isRequired,
-    name : React.PropTypes.string.isRequired
-  },
-
-  render : function(){
-    return (
-      <select name={this.props.name} multiple="multiple" className="pt-multi-select-native" value={this._buildSelectedValues()}>
-        {this._buildOptions()}
-      </select>
-    );
-  },
-
-  _buildOptions : function(){
-    return this.props.selectedOptions.map(function(option, index){
-      return (
-        <option key={index} value={option.value}>{option.name}</option>
-      );
-    });
-  },
-
-  _buildSelectedValues : function(){
-    return this.props.selectedOptions.map(function(option, index){
-      return option.value;
-    });
-  }
-});
-
-var SelectedOptions = React.createClass({
-  PropTypes : {
-    options : React.PropTypes.array.isRequired,
-    removeSelectedOption : React.PropTypes.func.isRequired
-  },
-
-  render : function(){
-    return (
-      <div className="selected-options">
-        {this._buildSelectedOptions()}
-      </div>
-    );
-  },
-
-  _buildSelectedOptions : function(){
-    var that = this;
-    return this.props.options.map(function(option, index){
-      return (
-        <SelectedOption key={index} name={option.name} value={option.value} onClick={that.props.removeSelectedOption} />
-      );
-    });
-  }
-});
-
-var SelectedOption = React.createClass({
-  PropTypes : {
-    name : React.PropTypes.string.isRequired,
-    onClick : React.PropTypes.func.isRequired,
-    value : React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
-    ])
-  },
-
-  getDefaultProps : function(){
-    return {
-      value : ""
-    };
-  },
-
-  render : function(){
-    return (
-      <span className="selected-option" onClick={this._handleClick}>{this.props.name}</span>
-    );
-  },
-
-  _handleClick : function(event){
-    event.stopPropagation();
-    this.props.onClick({
-      name : this.props.name,
-      value :this.props.value
-    });
-  }
-});
-
-var MultiSelectOption = React.createClass({
-  PropTypes : {
-    name : React.PropTypes.string.isRequired,
-    onClick : React.PropTypes.func.isRequired,
-    value : React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
-    ])
-  },
-
-  getDefaultProps : function(){
-    return {
-      value : ""
-    };
-  },
-
-  render : function(){
-    return (
-      <span className="pt-multi-select-option" onClick={this._handleClick}>{this.props.name}</span>
-    );
-  },
-
-  _handleClick : function(event){
-    this.props.onClick({
-      name : this.props.name,
-      value :this.props.value
-    });
-  }
-});
-
-var SimplePopover = React.createClass({
-  propTypes: {
-    isOpen: React.PropTypes.bool
-  },
-
-  getDefaultProps : function(){
-    return {
-      isOpen : false
-    };
-  },
-
-  render : function(){
-    return (
-      <span className={"pt-simple-popover " + this._isPopoverOpen()}>
-        {this.props.children}
-      </span>
-    );
-  },
-
-  _isPopoverOpen : function(){
-    return this.props.isOpen ? "open" : ""
   }
 });
 
