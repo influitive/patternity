@@ -56,26 +56,19 @@
     min-height: 30px;
     z-index: 1;
 
-    input[type='text'] {
+    .type-ahead {
       border-radius: 0px;
       border: 0px;
       line-height: 2em;
       height: 2em;
       margin-top: 3px;
-
+      width: 5px;
 
       display: none;
-
-
 
       &:focus {
         outline: 0;
       }
-    }
-
-    .pt-multi-select-native{
-      position: absolute;
-      left: -1000px;
     }
 
     .selected-options {
@@ -101,6 +94,11 @@
         }
       }
     }
+  }
+
+  .pt-multi-select-native{
+    position: absolute;
+    left: -1000px;
   }
 
   .pt-simple-popover {

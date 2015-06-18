@@ -1699,14 +1699,16 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
   propTypes: {
     options: React.PropTypes.array,
     name : React.PropTypes.string,
-    onChange : React.PropTypes.func
+    onOptionChange : React.PropTypes.func,
+    onTypeAheadChange : React.PropTypes.func
   },
 
   getDefaultProps : function(){
     return {
       options : [],
       name : "multiSelect",
-      onChange : function(){}
+      onOptionChange : function(){},
+      onTypeAheadChange : function(){}
     };
   },
 
@@ -1731,7 +1733,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
   componentDidUpdate : function(){
     this._adjustPopoverSize();
     this._adjustPopoverPosition();
-    this._handleChange();
+    this._handleOptionChange();
   },
 
   render: function() {
@@ -1740,10 +1742,11 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
         React.createElement(ClearAll, {hasSelectedOptions: this._hasSelectedOptions(), onClearAll: this._handleClearAll}), 
 
         React.createElement("span", {className: "multi-select", onClick: this._toggleOptions}, 
-          React.createElement("input", {type: "text", ref: "typeAhead", className: "type-ahead", name: "typeAhead", value: this.state.typeAhead, onChange: this._handleChange}), 
           React.createElement(SelectedOptions, {options: this.state.selectedOptions, removeSelectedOption: this._handleSelectedOptionRemoved}), 
-          React.createElement(NativeSelect, {selectedOptions: this.state.selectedOptions, name: this.props.name})
+          React.createElement("input", {type: "text", ref: "typeAhead", className: "type-ahead", name: "typeAhead", value: this.state.typeAhead, onChange: this._handleTypeAheadChange})
         ), 
+
+        React.createElement(NativeSelect, {selectedOptions: this.state.selectedOptions, name: this.props.name}), 
 
         React.createElement(SimplePopover, {ref: "popover", isOpen: this.state.showOptions}, 
           this._buildMultiSelectOptions()
@@ -1776,9 +1779,9 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     popover.style.top = (multiSelectContainer.clientHeight - 1) + "px";
   },
 
-  _handleChange : function(){
+  _handleOptionChange : function(){
     var newlyAddedOption = this.state.selectedOptions[this.state.selectedOptions.length - 1];
-    this.props.onChange(newlyAddedOption, this.state.selectedOptions);
+    this.props.onOptionChange(newlyAddedOption, this.state.selectedOptions);
   },
 
   _hasSelectedOptions : function(){
@@ -1809,10 +1812,18 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     });
   },
 
-  _handleChange : function(event){
+  _handleTypeAheadChange : function(event){
+    this.props.onTypeAheadChange(event.target.value);
+
+    // var filteredOptions = this._filterOptions(event.target.value);
+
     this.setState({
       typeAhead : event.target.value
     });
+  },
+
+  _filterOptions : function(filterText){
+
   },
 
   _buildMultiSelectOptions : function(){
