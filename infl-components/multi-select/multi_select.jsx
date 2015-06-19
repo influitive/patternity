@@ -1,5 +1,6 @@
 var React = require('react');
 var $ = require('jquery');
+var _ = require('lodash');
 
 var ClearAll = require('./clear_all.jsx');
 var NativeSelect = require('./native_select.jsx');
@@ -116,8 +117,14 @@ var MultiSelect = React.createClass({
       if(this.state.selectedOptions.length > 0){
         this._handleSelectedOptionRemoved(this.state.selectedOptions[this.state.selectedOptions.length - 1]);
       }
+    } else if(keyCode === DOWN_ARROW_KEY_CODE){
+      if(this._anyOptionsToShow()){
+        this._nextFocusedOption();
+      }
     } else if(keyCode === UP_ARROW_KEY_CODE){
-
+      if(this._anyOptionsToShow()){
+        this._previousFocusedOption();
+      }
     }
   },
 
@@ -125,14 +132,76 @@ var MultiSelect = React.createClass({
   _anyOptionsToShow : function(){
     var optionsToShow = false;
 
-    for(var i = 0; i < this.props.options.length; i++){
-      if(this.props.options[i].optionIsSelected === false && this.props.options[i].filteredOption === false){
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false){
         optionsToShow = true;
         break;
       }
     }
 
     return optionsToShow;
+  },
+
+  _nextFocusedOption : function(){
+    var currentFocusedOptionIndex = -1;
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].name === this.state.focusedOption.name && this.state.options[i].value === this.state.focusedOption.value) {
+        currentFocusedOptionIndex = i;
+        break;
+      }
+    }
+
+    var nextFocusedOption = {};
+    for(var i = 0; i < this.state.options.length; i++){
+      if(i > currentFocusedOptionIndex && this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+        nextFocusedOption = this.state.options[i]
+        break;
+      }
+    }
+
+    if(_.isEmpty(nextFocusedOption)){
+      for(var i = 0; i < this.state.options.length; i++){
+        if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+          nextFocusedOption = this.state.options[i]
+          break;
+        }
+      }
+    }
+
+    this.setState({
+      focusedOption : nextFocusedOption
+    });
+  },
+
+  _previousFocusedOption : function(){
+    var currentFocusedOptionIndex = -1;
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].name === this.state.focusedOption.name && this.state.options[i].value === this.state.focusedOption.value) {
+        currentFocusedOptionIndex = i;
+        break;
+      }
+    }
+
+    var previousFocusedOption = {};
+    for(var i = this.state.options.length - 1; i >= 0 ; i--){
+      if(i < currentFocusedOptionIndex && this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+        previousFocusedOption = this.state.options[i]
+        break;
+      }
+    }
+
+    if(_.isEmpty(previousFocusedOption)){
+      for(var i = this.state.options.length - 1; i >= 0; i--){
+        if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+          previousFocusedOption = this.state.options[i]
+          break;
+        }
+      }
+    }
+
+    this.setState({
+      focusedOption : previousFocusedOption
+    });
   },
 
   _addHideEvent : function(){
@@ -238,10 +307,19 @@ var MultiSelect = React.createClass({
       this._resetInputWidth();
     }
 
+    var focusedOption = {};
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+        focusedOption = this.state.options[i]
+        break;
+      }
+    }
+
     this.setState({
       typeAhead : event.target.value,
       options : filteredOptions,
-      placeholder : showPlaceholder
+      placeholder : showPlaceholder,
+      focusedOption : focusedOption
     });
   },
 

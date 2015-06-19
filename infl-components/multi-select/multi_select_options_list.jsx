@@ -54,7 +54,7 @@ var MultiSelectOptionsList = React.createClass({
     }
 
     return optionsToShow;
-  },
+  }
 });
 
 module.exports = MultiSelectOptionsList;
