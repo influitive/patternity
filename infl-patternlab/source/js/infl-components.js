@@ -1717,7 +1717,8 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       typeAhead : "",
       options : [],
       selectedOptions : [],
-      showOptions : false
+      showOptions : false,
+      placeholder : true
     };
   },
 
@@ -1741,8 +1742,11 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       React.createElement("span", {ref: "multiSelectContainer", className: "pt-multi-select " + this._areOptionsVisible()}, 
         React.createElement(ClearAll, {hasSelectedOptions: this._hasSelectedOptions(), onClearAll: this._handleClearAll}), 
 
-        React.createElement("span", {className: "multi-select", onClick: this._toggleOptions}, 
-          React.createElement(SelectedOptions, {options: this.state.selectedOptions, removeSelectedOption: this._handleSelectedOptionRemoved}), 
+        React.createElement("span", {className: "multi-select", onClick: this._showOptions}, 
+          React.createElement(SelectedOptions, {
+            options: this.state.selectedOptions, 
+            removeSelectedOption: this._handleSelectedOptionRemoved, 
+            showPlaceholder: this.state.placeholder}), 
           React.createElement("input", {type: "text", ref: "typeAhead", className: "type-ahead", name: "typeAhead", value: this.state.typeAhead, onChange: this._handleTypeAheadChange})
         ), 
 
@@ -1794,11 +1798,14 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
     for(var i = 0; i < this.state.options.length; i ++){
       currentOptions[i].optionIsSelected =  false;
+      currentOptions[i].filteredOption =  false;
     }
 
     this.setState({
       options : currentOptions,
-      selectedOptions : []
+      selectedOptions : [],
+      placeholder : true,
+      typeAhead : ""
     });
   },
 
@@ -1806,13 +1813,13 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     return this.state.showOptions ? "open" : "";
   },
 
-  _toggleOptions : function(event){
+  _showOptions : function(event){
     event.stopPropagation();
 
     React.findDOMNode(this.refs.typeAhead).focus();
 
     this.setState({
-      showOptions : !this.state.showOptions
+      showOptions : true
     });
   },
 
@@ -1822,9 +1829,15 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
     var filteredOptions = this._filterOptions(event.target.value.toLowerCase());
 
+    var showPlaceholder = false;
+    if(event.target.value.length === 0){
+      showPlaceholder = true;
+    }
+
     this.setState({
       typeAhead : event.target.value,
-      options : filteredOptions
+      options : filteredOptions,
+      placeholder : showPlaceholder
     });
   },
 
@@ -1833,6 +1846,15 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
   },
 
   _filterOptions : function(filterText){
+    var filteredOptions = this.state.options;
+
+    if(filterText.length === 0){
+      for(var i = 0; i < this.state.options.length; i++){
+        filteredOptions[i].filteredOption = false;
+      }
+      return filteredOptions;
+    }
+
     var filteredOptions = this.state.options;
 
     for(var i = 0; i < this.state.options.length; i++){
@@ -1885,7 +1907,11 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     currentSelectedOptions.push(option);
 
     this.setState({
-      selectedOptions : currentSelectedOptions
+      selectedOptions : currentSelectedOptions,
+      typeAhead : "",
+      placeholder : false
+    }, function(){
+      React.findDOMNode(this.refs.typeAhead).focus();
     });
 
     this._hideSelectedOptionFromOptions(option);
@@ -1916,8 +1942,14 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       }
     }
 
+    var showPlaceholder = false;
+    if(currentOptions.length === 0){
+      showPlaceholder = true;
+    }
+
     this.setState({
-      options : currentOptions
+      options : currentOptions,
+      placeholder : showPlaceholder
     });
 
     this._removeOptionFromSelectedOptions(option);
@@ -2025,7 +2057,8 @@ var React = require('react');
 var SelectedOptions = React.createClass({displayName: "SelectedOptions",
   PropTypes : {
     options : React.PropTypes.array.isRequired,
-    removeSelectedOption : React.PropTypes.func.isRequired
+    removeSelectedOption : React.PropTypes.func.isRequired,
+    showPlaceholder : React.PropTypes.bool.isRequired
   },
 
   render : function(){
@@ -2037,6 +2070,12 @@ var SelectedOptions = React.createClass({displayName: "SelectedOptions",
   },
 
   _buildSelectedOptions : function(){
+    if(this.props.showPlaceholder){
+      return (
+        React.createElement("span", {className: "placeholder-text"}, "Select...")
+      );
+    }
+
     var that = this;
     return this.props.options.map(function(option, index){
       return (
