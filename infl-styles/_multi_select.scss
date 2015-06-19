@@ -130,16 +130,9 @@
         display: none;
       }
 
-      &:hover {
+      &.hover {
         background-color: $lighter-grey;
         cursor: pointer;
-      }
-
-      &.no-hover {
-        &:hover {
-          background-color: transparent;
-          cursor: auto;
-        }
       }
     }
   }
