@@ -290,21 +290,14 @@ var MultiSelect = React.createClass({
       }
     }
 
-    var currentOptions = this.state.options;
     for(var i = 0; i < this.state.options.length; i++){
       currentOptions[i].filteredOption = false;
-    }
-
-    var showPlaceholder = false;
-    if(currentOptions.length === 0){
-      showPlaceholder = true;
     }
 
     this.setState({
       options : currentOptions,
       placeholder : showPlaceholder,
-      typeAhead : "",
-      options : currentOptions
+      typeAhead : ""
     }, function(){
       React.findDOMNode(this.refs.typeAhead).focus();
     });
@@ -322,8 +315,14 @@ var MultiSelect = React.createClass({
       }
     }
 
+    var showPlaceholder = false;
+    if(currentSelectedOptions.length === 0){
+      showPlaceholder = true;
+    }
+
     this.setState({
-      selectedOptions : currentSelectedOptions
+      selectedOptions : currentSelectedOptions,
+      placeholder : showPlaceholder
     });
   }
 });
