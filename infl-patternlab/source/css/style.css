@@ -2192,6 +2192,7 @@ textarea {
   height: 2em;
   margin-top: 3px;
   width: 5px;
+  background-color: transparent;
 }
 .pt-multi-select .multi-select .type-ahead:focus {
   outline: 0;
