@@ -2191,10 +2191,19 @@ textarea {
   line-height: 2em;
   height: 2em;
   margin-top: 3px;
-  width: 5px;
+  width: 100px;
 }
 .pt-multi-select .multi-select .type-ahead:focus {
   outline: 0;
+}
+.pt-multi-select .multi-select .selected-options {
+  display: inline-block;
+}
+.pt-multi-select .multi-select .selected-options .placeholder-text {
+  color: #d0d2d3;
+  position: absolute;
+  top: 10px;
+  left: 15px;
 }
 .pt-multi-select .multi-select .selected-options .selected-option {
   display: inline-block;
