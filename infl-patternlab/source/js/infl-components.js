@@ -1689,6 +1689,7 @@ module.exports = ClearAll;
 },{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select.jsx":[function(require,module,exports){
 var React = require('react');
 var $ = require('jquery');
+var _ = require('lodash');
 
 var ClearAll = require('./clear_all.jsx');
 var NativeSelect = require('./native_select.jsx');
@@ -1805,8 +1806,14 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       if(this.state.selectedOptions.length > 0){
         this._handleSelectedOptionRemoved(this.state.selectedOptions[this.state.selectedOptions.length - 1]);
       }
+    } else if(keyCode === DOWN_ARROW_KEY_CODE){
+      if(this._anyOptionsToShow()){
+        this._nextFocusedOption();
+      }
     } else if(keyCode === UP_ARROW_KEY_CODE){
-
+      if(this._anyOptionsToShow()){
+        this._previousFocusedOption();
+      }
     }
   },
 
@@ -1814,14 +1821,76 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
   _anyOptionsToShow : function(){
     var optionsToShow = false;
 
-    for(var i = 0; i < this.props.options.length; i++){
-      if(this.props.options[i].optionIsSelected === false && this.props.options[i].filteredOption === false){
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false){
         optionsToShow = true;
         break;
       }
     }
 
     return optionsToShow;
+  },
+
+  _nextFocusedOption : function(){
+    var currentFocusedOptionIndex = -1;
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].name === this.state.focusedOption.name && this.state.options[i].value === this.state.focusedOption.value) {
+        currentFocusedOptionIndex = i;
+        break;
+      }
+    }
+
+    var nextFocusedOption = {};
+    for(var i = 0; i < this.state.options.length; i++){
+      if(i > currentFocusedOptionIndex && this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+        nextFocusedOption = this.state.options[i]
+        break;
+      }
+    }
+
+    if(_.isEmpty(nextFocusedOption)){
+      for(var i = 0; i < this.state.options.length; i++){
+        if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+          nextFocusedOption = this.state.options[i]
+          break;
+        }
+      }
+    }
+
+    this.setState({
+      focusedOption : nextFocusedOption
+    });
+  },
+
+  _previousFocusedOption : function(){
+    var currentFocusedOptionIndex = -1;
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].name === this.state.focusedOption.name && this.state.options[i].value === this.state.focusedOption.value) {
+        currentFocusedOptionIndex = i;
+        break;
+      }
+    }
+
+    var previousFocusedOption = {};
+    for(var i = this.state.options.length - 1; i >= 0 ; i--){
+      if(i < currentFocusedOptionIndex && this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+        previousFocusedOption = this.state.options[i]
+        break;
+      }
+    }
+
+    if(_.isEmpty(previousFocusedOption)){
+      for(var i = this.state.options.length - 1; i >= 0; i--){
+        if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+          previousFocusedOption = this.state.options[i]
+          break;
+        }
+      }
+    }
+
+    this.setState({
+      focusedOption : previousFocusedOption
+    });
   },
 
   _addHideEvent : function(){
@@ -1927,10 +1996,19 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       this._resetInputWidth();
     }
 
+    var focusedOption = {};
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
+        focusedOption = this.state.options[i]
+        break;
+      }
+    }
+
     this.setState({
       typeAhead : event.target.value,
       options : filteredOptions,
-      placeholder : showPlaceholder
+      placeholder : showPlaceholder,
+      focusedOption : focusedOption
     });
   },
 
@@ -2070,7 +2148,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 module.exports = MultiSelect;
 
 
-},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
+},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
 var React = require('react');
 
 var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
@@ -2198,7 +2276,7 @@ var MultiSelectOptionsList = React.createClass({displayName: "MultiSelectOptions
     }
 
     return optionsToShow;
-  },
+  }
 });
 
 module.exports = MultiSelectOptionsList;
