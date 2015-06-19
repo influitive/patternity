@@ -2466,38 +2466,46 @@ var React = require('react');
 var SelectDropdown = React.createClass({displayName: "SelectDropdown",
   getDefaultProps: function() {
     return {
-      children : [],
-      onChange : function(){},
       name : "",
       value : "",
       disabled : false,
+      children : [],
+      onChange : function(){},
       message : "",
       id : ""
     };
   },
   propTypes : {
     name: React.PropTypes.string,
+    value: React.PropTypes.string,
+    disabled :  React.PropTypes.bool,
     children: React.PropTypes.array,
     onChange : React.PropTypes.func,
-    disabled :  React.PropTypes.bool,
     message: React.PropTypes.string,
     id: React.PropTypes.string
   },
+  getValue: function() {
+    return this.state.value;
+  },
   getInitialState: function() {
     return {
-      title: "",
-      value : this.props.value
+      value : this.props.value,
+      title: this.props.title
     };
   },
-  componentDidMount : function(){
-    this.setState({
-      title : this._determineSelectTitle()
-    });
+  componentDidMount : function() {
+    var s = this._selectedOption();
+    if (s && this.state.title != s.text) {
+      this.setState({
+        title: s.text
+      });
+    }
   },
-  componentWillReceiveProps : function(newProps){
+  componentWillReceiveProps : function(newProps) {
     this.setState({
-      value : newProps.value
-    }, this._updateTitleAfterDOMUpdate);
+      value : newProps.value,
+      title : this._getSelectedOptionText()
+    });
   },
   render : function(){
     return (
@@ -2505,39 +2513,35 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
         React.createElement("span", {className: "select-box", ref: "select-wrapper"}, 
           React.createElement("span", {className: "title", ref: "title"}, this.state.title), 
           React.createElement("select", {className: "default", name: this.props.name, disabled: this.props.disabled, ref: "select", onChange: this._handleChange, value: this.state.value}, 
-              this.props.children
+            this.props.children
           )
         ), 
         this._buildMessage()
       )
     );
   },
-  _updateTitleAfterDOMUpdate : function(){
-    this.setState({
-      title : this._determineSelectTitle()
-    });
-  },
   _isDisabled : function(){
     return this.props.disabled ? "is-disabled" : "";
   },
-  _determineSelectTitle : function(){
-    return this._selectedOption().text;
-  },
   _handleChange : function(event){
-    if(!this.props.disabled){
-      this.props.onChange(event);
-      this._updateSelectState();
+    if (!this.props.disabled) {
+      this.setState({
+        title : this._selectedOption().text,
+        value : this._selectedOption().value
+      }, function() {
+        this.props.onChange(event);
+      });
     }
   },
-  _updateSelectState : function(){
-    this.setState({
-      title : this._selectedOption().text,
-      value : this._selectedOption().value
-    });
+  _getSelectedOptionText : function() {
+    var s = this._selectedOption();
+    return (s && s.text)? s.text : '';
   },
   _selectedOption : function(){
-    var select = React.findDOMNode(this.refs.select);
-    return select.options[select.selectedIndex];
+    if (this.refs && this.refs.select) {
+      var select = React.findDOMNode(this.refs.select);
+      return select.options[select.selectedIndex];
+    }
   },
   _buildMessage: function(){
     if(typeof this.props.message === "string"){
@@ -53490,7 +53494,7 @@ var SelectDropdownPattern = React.createClass({displayName: "SelectDropdownPatte
         React.createElement(Pattern, {title: "select dropdown"}, 
           React.createElement(Pattern.Detail, {title: "Select Dropdown"}, 
             React.createElement(Pattern.Show, null, 
-              React.createElement(SelectDropdown, null, 
+              React.createElement(SelectDropdown, {value: "3"}, 
                 React.createElement("optgroup", {label: "Option Group 1"}, 
                     React.createElement("option", {value: "1"}, "option 1"), 
                     React.createElement("option", {value: "2"}, "option 2"), 
@@ -53505,16 +53509,16 @@ var SelectDropdownPattern = React.createClass({displayName: "SelectDropdownPatte
             ), 
             React.createElement(Code, null, 
               React.createElement(Code.JSX, null, 
-                "<SelectDropdown key=\"key\" name=\"select_name\" onChange=\"handle_change_callback\">" + ' ' +
+                "<SelectDropdown key=\"key\" name=\"select_name\" onChange=\"handle_change_callback\" value=\"value 3\">" + ' ' +
                   "<optgroup label=\"label\">" + ' ' +
-                    "<option value=\"value\">option name</option>" + ' ' +
-                    "<option value=\"value\">option name</option>" + ' ' +
-                    "<option value=\"value\">option name</option>" + ' ' +
+                    "<option value=\"value 1\">option name</option>" + ' ' +
+                    "<option value=\"value 2\">option name</option>" + ' ' +
+                    "<option value=\"value 3\">option name</option>" + ' ' +
                   "</optgroup>" + ' ' +
                   "<optgroup label=\"label\">" + ' ' +
-                    "<option value=\"value\">option name</option>" + ' ' +
-                    "<option value=\"value\">option name</option>" + ' ' +
-                    "<option value=\"value\">option name</option>" + ' ' +
+                    "<option value=\"value 4\">option name</option>" + ' ' +
+                    "<option value=\"value 5\">option name</option>" + ' ' +
+                    "<option value=\"value 6\">option name</option>" + ' ' +
                   "</optgroup>" + ' ' +
                 "</SelectDropdown>"
               ), 
