@@ -104,6 +104,8 @@ var MultiSelect = React.createClass({
   },
 
   _handleKeyDown : function(event){
+    event.stopPropagation();
+
     if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
       this._determineKeyCodeAction(event.keyCode);
     }
@@ -115,7 +117,7 @@ var MultiSelect = React.createClass({
         this._handleOptionSelect(this.state.focusedOption);
       }
     } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
-      if(this.state.selectedOptions.length > 0){
+      if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0){
         this._handleSelectedOptionRemoved(this.state.selectedOptions[this.state.selectedOptions.length - 1]);
       }
     } else if(keyCode === DOWN_ARROW_KEY_CODE){
