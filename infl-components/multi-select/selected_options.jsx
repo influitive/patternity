@@ -3,7 +3,8 @@ var React = require('react');
 var SelectedOptions = React.createClass({
   PropTypes : {
     options : React.PropTypes.array.isRequired,
-    removeSelectedOption : React.PropTypes.func.isRequired
+    removeSelectedOption : React.PropTypes.func.isRequired,
+    showPlaceholder : React.PropTypes.bool.isRequired
   },
 
   render : function(){
@@ -15,6 +16,12 @@ var SelectedOptions = React.createClass({
   },
 
   _buildSelectedOptions : function(){
+    if(this.props.showPlaceholder){
+      return (
+        <span className="placeholder-text">Select...</span>
+      );
+    }
+
     var that = this;
     return this.props.options.map(function(option, index){
       return (

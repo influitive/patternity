@@ -28,7 +28,8 @@ var MultiSelect = React.createClass({
       typeAhead : "",
       options : [],
       selectedOptions : [],
-      showOptions : false
+      showOptions : false,
+      placeholder : true
     };
   },
 
@@ -52,8 +53,11 @@ var MultiSelect = React.createClass({
       <span ref="multiSelectContainer" className={"pt-multi-select " + this._areOptionsVisible()}>
         <ClearAll hasSelectedOptions={this._hasSelectedOptions()} onClearAll={this._handleClearAll}/>
 
-        <span className="multi-select" onClick={this._toggleOptions}>
-          <SelectedOptions options={this.state.selectedOptions} removeSelectedOption={this._handleSelectedOptionRemoved} />
+        <span className="multi-select" onClick={this._showOptions}>
+          <SelectedOptions
+            options={this.state.selectedOptions}
+            removeSelectedOption={this._handleSelectedOptionRemoved}
+            showPlaceholder={this.state.placeholder} />
           <input type="text" ref="typeAhead" className="type-ahead" name="typeAhead" value={this.state.typeAhead} onChange={this._handleTypeAheadChange} />
         </span>
 
@@ -105,11 +109,14 @@ var MultiSelect = React.createClass({
 
     for(var i = 0; i < this.state.options.length; i ++){
       currentOptions[i].optionIsSelected =  false;
+      currentOptions[i].filteredOption =  false;
     }
 
     this.setState({
       options : currentOptions,
-      selectedOptions : []
+      selectedOptions : [],
+      placeholder : true,
+      typeAhead : ""
     });
   },
 
@@ -117,13 +124,13 @@ var MultiSelect = React.createClass({
     return this.state.showOptions ? "open" : "";
   },
 
-  _toggleOptions : function(event){
+  _showOptions : function(event){
     event.stopPropagation();
 
     React.findDOMNode(this.refs.typeAhead).focus();
 
     this.setState({
-      showOptions : !this.state.showOptions
+      showOptions : true
     });
   },
 
@@ -133,9 +140,15 @@ var MultiSelect = React.createClass({
 
     var filteredOptions = this._filterOptions(event.target.value.toLowerCase());
 
+    var showPlaceholder = false;
+    if(event.target.value.length === 0){
+      showPlaceholder = true;
+    }
+
     this.setState({
       typeAhead : event.target.value,
-      options : filteredOptions
+      options : filteredOptions,
+      placeholder : showPlaceholder
     });
   },
 
@@ -143,7 +156,20 @@ var MultiSelect = React.createClass({
     input.style.width = (input.value.length + 1) * 8 + "px";
   },
 
+  _resetInputWidth : function(){
+    React.findDOMNode(this.refs.typeAhead).width = "5px";
+  },
+
   _filterOptions : function(filterText){
+    var filteredOptions = this.state.options;
+
+    if(filterText.length === 0){
+      for(var i = 0; i < this.state.options.length; i++){
+        filteredOptions[i].filteredOption = false;
+      }
+      return filteredOptions;
+    }
+
     var filteredOptions = this.state.options;
 
     for(var i = 0; i < this.state.options.length; i++){
@@ -196,7 +222,12 @@ var MultiSelect = React.createClass({
     currentSelectedOptions.push(option);
 
     this.setState({
-      selectedOptions : currentSelectedOptions
+      selectedOptions : currentSelectedOptions,
+      typeAhead : "",
+      placeholder : false
+    }, function(){
+      React.findDOMNode(this.refs.typeAhead).focus();
+      this._resetInputWidth();
     });
 
     this._hideSelectedOptionFromOptions(option);
@@ -227,8 +258,14 @@ var MultiSelect = React.createClass({
       }
     }
 
+    var showPlaceholder = false;
+    if(currentOptions.length === 0){
+      showPlaceholder = true;
+    }
+
     this.setState({
-      options : currentOptions
+      options : currentOptions,
+      placeholder : showPlaceholder
     });
 
     this._removeOptionFromSelectedOptions(option);
