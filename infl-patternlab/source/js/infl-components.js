@@ -1690,11 +1690,10 @@ module.exports = ClearAll;
 var React = require('react');
 var $ = require('jquery');
 
-var SimplePopover = require('./simple_popover.jsx');
 var ClearAll = require('./clear_all.jsx');
 var NativeSelect = require('./native_select.jsx');
 var SelectedOptions = require('./selected_options.jsx');
-var MultiSelectOption = require('./multi_select_option.jsx');
+var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
 var MultiSelect = React.createClass({displayName: "MultiSelect",
   propTypes: {
@@ -1756,11 +1755,15 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
           React.createElement("input", {type: "text", ref: "typeAhead", className: "type-ahead", name: "typeAhead", value: this.state.typeAhead, onChange: this._handleTypeAheadChange})
         ), 
 
-        React.createElement(NativeSelect, {selectedOptions: this.state.selectedOptions, name: this.props.name}), 
+        React.createElement(NativeSelect, {
+          selectedOptions: this.state.selectedOptions, 
+          name: this.props.name}), 
 
-        React.createElement(SimplePopover, {ref: "popover", isOpen: this.state.showOptions}, 
-          this._buildMultiSelectOptions()
-        )
+        React.createElement(MultiSelectOptionsList, {
+          ref: "popover", 
+          handleOptionSelect: this._handleOptionSelect, 
+          options: this.state.options, 
+          showOptions: this.state.showOptions})
       )
     );
   },
@@ -1897,40 +1900,6 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     return filteredOptions;
   },
 
-  _buildMultiSelectOptions : function(){
-    if(!this._anyOptionsToShow()){
-      return (
-        React.createElement("span", {className: "pt-multi-select-option no-hover"}, "No Results Found")
-      );
-    }
-
-    var that = this;
-    return this.state.options.map(function(option, index){
-      return (
-        React.createElement(MultiSelectOption, {
-          key: index, 
-          name: option.name, 
-          value: option.value, 
-          optionIsSelected: option.optionIsSelected, 
-          filteredOption: option.filteredOption, 
-          onClick: that._handleOptionSelect})
-      );
-    });
-  },
-
-  _anyOptionsToShow : function(){
-    var optionsToShow = false;
-
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false){
-        optionsToShow = true;
-        break;
-      }
-    }
-
-    return optionsToShow;
-  },
-
   _handleOptionSelect : function(option){
     var currentSelectedOptions = this.state.selectedOptions;
     currentSelectedOptions.push(option);
@@ -2018,8 +1987,9 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 module.exports = MultiSelect;
 
 
-},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_option.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","./simple_popover.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/simple_popover.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
+},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
 var React = require('react');
+var $ = require('jquery');
 
 var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
   PropTypes : {
@@ -2030,7 +2000,8 @@ var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
       React.PropTypes.number
     ]),
     optionIsSelected : React.PropTypes.bool.isRequired,
-    filteredOption : React.PropTypes.bool.isRequired
+    filteredOption : React.PropTypes.bool.isRequired,
+    showAsFocusedOption : React.PropTypes.bool.isRequired,
   },
 
   getDefaultProps : function(){
@@ -2041,7 +2012,13 @@ var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
 
   render : function(){
     return (
-      React.createElement("span", {className: "pt-multi-select-option " + this._isOptionSelected(), onClick: this._handleClick}, this.props.name)
+      React.createElement("span", {
+        className: "pt-multi-select-option " + this._isOptionSelected(), 
+        onClick: this._handleClick, 
+        onMouseOver: this._handleMouseOver, 
+        onMouseOut: this._handleMouseOut}, 
+          this.props.name
+      )
     );
   },
 
@@ -2056,13 +2033,80 @@ var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
       name : this.props.name,
       value :this.props.value
     });
+  },
+
+  _handleMouseOver : function(event){
+    $(event.target).addClass("hover");
+  },
+
+  _handleMouseOut : function(event){
+    $(event.target).removeClass("hover");
   }
 });
 
 module.exports = MultiSelectOption;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx":[function(require,module,exports){
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx":[function(require,module,exports){
+var React = require('react');
+
+var SimplePopover = require('./simple_popover.jsx');
+var MultiSelectOption = require('./multi_select_option.jsx');
+
+var MultiSelectOptionsList = React.createClass({displayName: "MultiSelectOptionsList",
+  PropTypes : {
+    options : React.PropTypes.array.isRequired,
+    handleOptionSelect : React.PropTypes.func.isRequired,
+    showOptions : React.PropTypes.bool.isRequired
+  },
+
+  render : function(){
+    return (
+      React.createElement(SimplePopover, {isOpen: this.props.showOptions}, 
+        this._buildMultiSelectOptions()
+      )
+    );
+  },
+
+  _buildMultiSelectOptions : function(){
+    if(!this._anyOptionsToShow()){
+      return (
+        React.createElement("span", {className: "pt-multi-select-option"}, "No Results Found")
+      );
+    }
+
+    var that = this;
+    return this.props.options.map(function(option, index){
+      return (
+        React.createElement(MultiSelectOption, {
+          key: index, 
+          name: option.name, 
+          value: option.value, 
+          optionIsSelected: option.optionIsSelected, 
+          filteredOption: option.filteredOption, 
+          onClick: that.props.handleOptionSelect})
+      );
+    });
+  },
+
+  _anyOptionsToShow : function(){
+    var optionsToShow = false;
+
+    for(var i = 0; i < this.props.options.length; i++){
+      if(this.props.options[i].optionIsSelected === false && this.props.options[i].filteredOption === false){
+        optionsToShow = true;
+        break;
+      }
+    }
+
+    return optionsToShow;
+  },
+});
+
+module.exports = MultiSelectOptionsList;
+
+
+},{"./multi_select_option.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx","./simple_popover.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/simple_popover.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx":[function(require,module,exports){
 var React = require('react');
 
 var NativeSelect = React.createClass({displayName: "NativeSelect",

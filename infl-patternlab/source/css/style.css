@@ -2249,13 +2249,9 @@ textarea {
 .pt-multi-select .pt-simple-popover .pt-multi-select-option.hide {
   display: none;
 }
-.pt-multi-select .pt-simple-popover .pt-multi-select-option:hover {
+.pt-multi-select .pt-simple-popover .pt-multi-select-option.hover {
   background-color: #eeeeee;
   cursor: pointer;
-}
-.pt-multi-select .pt-simple-popover .pt-multi-select-option.no-hover:hover {
-  background-color: transparent;
-  cursor: auto;
 }
 
 .help-tooltip {

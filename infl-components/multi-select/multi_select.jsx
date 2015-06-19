@@ -1,11 +1,10 @@
 var React = require('react');
 var $ = require('jquery');
 
-var SimplePopover = require('./simple_popover.jsx');
 var ClearAll = require('./clear_all.jsx');
 var NativeSelect = require('./native_select.jsx');
 var SelectedOptions = require('./selected_options.jsx');
-var MultiSelectOption = require('./multi_select_option.jsx');
+var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
 var MultiSelect = React.createClass({
   propTypes: {
@@ -67,11 +66,15 @@ var MultiSelect = React.createClass({
           <input type="text" ref="typeAhead" className="type-ahead" name="typeAhead" value={this.state.typeAhead} onChange={this._handleTypeAheadChange} />
         </span>
 
-        <NativeSelect selectedOptions={this.state.selectedOptions} name={this.props.name} />
+        <NativeSelect
+          selectedOptions={this.state.selectedOptions}
+          name={this.props.name} />
 
-        <SimplePopover ref="popover" isOpen={this.state.showOptions}>
-          {this._buildMultiSelectOptions()}
-        </SimplePopover>
+        <MultiSelectOptionsList
+          ref="popover"
+          handleOptionSelect={this._handleOptionSelect}
+          options={this.state.options}
+          showOptions={this.state.showOptions} />
       </span>
     );
   },
@@ -182,7 +185,7 @@ var MultiSelect = React.createClass({
   },
 
   _resetInputWidth : function(){
-    React.findDOMNode(this.refs.typeAhead).style.width = "5px";
+    React.findDOMNode(this.refs.typeAhead).style.width = "";
   },
 
   _filterOptions : function(filterText){
@@ -206,40 +209,6 @@ var MultiSelect = React.createClass({
     }
 
     return filteredOptions;
-  },
-
-  _buildMultiSelectOptions : function(){
-    if(!this._anyOptionsToShow()){
-      return (
-        <span className="pt-multi-select-option no-hover">No Results Found</span>
-      );
-    }
-
-    var that = this;
-    return this.state.options.map(function(option, index){
-      return (
-        <MultiSelectOption
-          key={index}
-          name={option.name}
-          value={option.value}
-          optionIsSelected={option.optionIsSelected}
-          filteredOption={option.filteredOption}
-          onClick={that._handleOptionSelect}/>
-      );
-    });
-  },
-
-  _anyOptionsToShow : function(){
-    var optionsToShow = false;
-
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false){
-        optionsToShow = true;
-        break;
-      }
-    }
-
-    return optionsToShow;
   },
 
   _handleOptionSelect : function(option){
