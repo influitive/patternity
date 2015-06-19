@@ -1979,21 +1979,14 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       }
     }
 
-    var currentOptions = this.state.options;
     for(var i = 0; i < this.state.options.length; i++){
       currentOptions[i].filteredOption = false;
-    }
-
-    var showPlaceholder = false;
-    if(currentOptions.length === 0){
-      showPlaceholder = true;
     }
 
     this.setState({
       options : currentOptions,
       placeholder : showPlaceholder,
-      typeAhead : "",
-      options : currentOptions
+      typeAhead : ""
     }, function(){
       React.findDOMNode(this.refs.typeAhead).focus();
     });
@@ -2011,8 +2004,14 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       }
     }
 
+    var showPlaceholder = false;
+    if(currentSelectedOptions.length === 0){
+      showPlaceholder = true;
+    }
+
     this.setState({
-      selectedOptions : currentSelectedOptions
+      selectedOptions : currentSelectedOptions,
+      placeholder : showPlaceholder
     });
   }
 });
@@ -3464,8 +3463,8 @@ var TextInput = React.createClass({displayName: "TextInput",
       return (React.createElement("span", {className: "input-message"}, this.props.message));
     }
     else {
-      return this.props.message.map(function(message){
-        return (React.createElement("span", {key: message.id || message.key, className: "input-message"}, message));
+      return this.props.message.map(function(message, i){
+        return (React.createElement("span", {key: i, className: "input-message"}, message));
       });
     }
   }
