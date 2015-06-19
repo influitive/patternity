@@ -2249,7 +2249,7 @@ textarea {
 .pt-multi-select .pt-simple-popover .pt-multi-select-option.hide {
   display: none;
 }
-.pt-multi-select .pt-simple-popover .pt-multi-select-option.hover {
+.pt-multi-select .pt-simple-popover .pt-multi-select-option.has-focus {
   background-color: #eeeeee;
   cursor: pointer;
 }

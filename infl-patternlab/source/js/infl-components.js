@@ -1695,6 +1695,14 @@ var NativeSelect = require('./native_select.jsx');
 var SelectedOptions = require('./selected_options.jsx');
 var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
+var DOWN_ARROW_KEY_CODE = 40;
+var UP_ARROW_KEY_CODE = 38;
+var ENTER_KEY_CODE = 13;
+var BACK_SPACE_KEY_CODE = 8;
+var DELETE_KEY_CODE = 46;
+
+var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE];
+
 var MultiSelect = React.createClass({displayName: "MultiSelect",
   propTypes: {
     options: React.PropTypes.array,
@@ -1718,7 +1726,8 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       options : [],
       selectedOptions : [],
       showOptions : false,
-      placeholder : true
+      placeholder : true,
+      focusedOption : {}
     };
   },
 
@@ -1748,7 +1757,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
   render: function() {
     return (
-      React.createElement("span", {ref: "multiSelectContainer", className: "pt-multi-select " + this._areOptionsVisible()}, 
+      React.createElement("span", {ref: "multiSelectContainer", className: "pt-multi-select " + this._areOptionsVisible(), onKeyDown: this._handleKeyDown}, 
         React.createElement(ClearAll, {hasSelectedOptions: this._hasSelectedOptions(), onClearAll: this._handleClearAll}), 
 
         React.createElement("span", {className: "multi-select", onClick: this._showOptions}, 
@@ -1768,9 +1777,51 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
           ref: "popover", 
           handleOptionSelect: this._handleOptionSelect, 
           options: this.state.options, 
-          showOptions: this.state.showOptions})
+          showOptions: this.state.showOptions, 
+          onOptionHasFocus: this._handleOptionHasFocus, 
+          focusedOption: this.state.focusedOption})
       )
     );
+  },
+
+  _handleOptionHasFocus : function(option){
+    this.setState({
+      focusedOption : option
+    });
+  },
+
+  _handleKeyDown : function(event){
+    if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
+      this._determineKeyCodeAction(event.keyCode);
+    }
+  },
+
+  _determineKeyCodeAction : function(keyCode){
+    if(keyCode === ENTER_KEY_CODE){
+      if(this._anyOptionsToShow()){
+        this._handleOptionSelect(this.state.focusedOption);
+      }
+    } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
+      if(this.state.selectedOptions.length > 0){
+        this._handleSelectedOptionRemoved(this.state.selectedOptions[this.state.selectedOptions.length - 1]);
+      }
+    } else if(keyCode === UP_ARROW_KEY_CODE){
+
+    }
+  },
+
+  // duplicate from multi_select_options.  needs refactor
+  _anyOptionsToShow : function(){
+    var optionsToShow = false;
+
+    for(var i = 0; i < this.props.options.length; i++){
+      if(this.props.options[i].optionIsSelected === false && this.props.options[i].filteredOption === false){
+        optionsToShow = true;
+        break;
+      }
+    }
+
+    return optionsToShow;
   },
 
   _addHideEvent : function(){
@@ -1801,8 +1852,10 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       modifiedOptions[i].filteredOption = false;
     }
 
+    var that = this;
     this.setState({
-      options : modifiedOptions
+      options : modifiedOptions,
+      focusedOption : modifiedOptions[0]
     });
   },
 
@@ -1945,8 +1998,17 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       }
     }
 
+    var focusedOption = {};
+    for(var i = 0; i < currentOptions.length; i++){
+      if(currentOptions[i].optionIsSelected === false) {
+        focusedOption = currentOptions[i];
+        break;
+      }
+    }
+
     this.setState({
-      options : currentOptions
+      options : currentOptions,
+      focusedOption : focusedOption
     });
   },
 
@@ -1964,9 +2026,18 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       currentOptions[i].filteredOption = false;
     }
 
+    var focusedOption = {};
+    for(var i = 0; i < currentOptions.length; i++){
+      if(currentOptions[i].optionIsSelected === false) {
+        focusedOption = currentOptions[i];
+        break;
+      }
+    }
+
     this.setState({
       options : currentOptions,
-      typeAhead : ""
+      typeAhead : "",
+      focusedOption : focusedOption
     });
 
     this._removeOptionFromSelectedOptions(option);
@@ -2001,7 +2072,6 @@ module.exports = MultiSelect;
 
 },{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
 var React = require('react');
-var $ = require('jquery');
 
 var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
   PropTypes : {
@@ -2013,7 +2083,8 @@ var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
     ]),
     optionIsSelected : React.PropTypes.bool.isRequired,
     filteredOption : React.PropTypes.bool.isRequired,
-    showAsFocusedOption : React.PropTypes.bool.isRequired,
+    onOptionHasFocus : React.PropTypes.func.isRequired,
+    focusedOption : React.PropTypes.object.isRequired
   },
 
   getDefaultProps : function(){
@@ -2025,7 +2096,7 @@ var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
   render : function(){
     return (
       React.createElement("span", {
-        className: "pt-multi-select-option " + this._isOptionSelected(), 
+        className: "pt-multi-select-option " + this._isOptionSelected() + " " + this._doesOptionHaveFocus(), 
         onClick: this._handleClick, 
         onMouseOver: this._handleMouseOver, 
         onMouseOut: this._handleMouseOut}, 
@@ -2038,6 +2109,14 @@ var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
     return this.props.optionIsSelected || this.props.filteredOption ? "hide" : "";
   },
 
+  _doesOptionHaveFocus : function(){
+    if(this.props.name === this.props.focusedOption.name && this.props.value === this.props.focusedOption.value){
+      return "has-focus";
+    } else {
+      return "";
+    }
+  },
+
   _handleClick : function(event){
     event.stopPropagation();
 
@@ -2048,18 +2127,21 @@ var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
   },
 
   _handleMouseOver : function(event){
-    $(event.target).addClass("hover");
+    this.props.onOptionHasFocus({
+      name : this.props.name,
+      value :this.props.value
+    });
   },
 
   _handleMouseOut : function(event){
-    $(event.target).removeClass("hover");
+    this.props.onOptionHasFocus({});
   }
 });
 
 module.exports = MultiSelectOption;
 
 
-},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx":[function(require,module,exports){
 var React = require('react');
 
 var SimplePopover = require('./simple_popover.jsx');
@@ -2069,7 +2151,9 @@ var MultiSelectOptionsList = React.createClass({displayName: "MultiSelectOptions
   PropTypes : {
     options : React.PropTypes.array.isRequired,
     handleOptionSelect : React.PropTypes.func.isRequired,
-    showOptions : React.PropTypes.bool.isRequired
+    showOptions : React.PropTypes.bool.isRequired,
+    onOptionHasFocus : React.PropTypes.func.isRequired,
+    focusedOption : React.PropTypes.object.isRequired
   },
 
   render : function(){
@@ -2096,7 +2180,9 @@ var MultiSelectOptionsList = React.createClass({displayName: "MultiSelectOptions
           value: option.value, 
           optionIsSelected: option.optionIsSelected, 
           filteredOption: option.filteredOption, 
-          onClick: that.props.handleOptionSelect})
+          onClick: that.props.handleOptionSelect, 
+          onOptionHasFocus: that.props.onOptionHasFocus, 
+          focusedOption: that.props.focusedOption})
       );
     });
   },
