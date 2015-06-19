@@ -1985,10 +1985,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
     this.setState({
       options : currentOptions,
-      placeholder : showPlaceholder,
       typeAhead : ""
-    }, function(){
-      React.findDOMNode(this.refs.typeAhead).focus();
     });
 
     this._removeOptionFromSelectedOptions(option);
@@ -2012,6 +2009,8 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     this.setState({
       selectedOptions : currentSelectedOptions,
       placeholder : showPlaceholder
+    }, function(){
+      React.findDOMNode(this.refs.typeAhead).focus();
     });
   }
 });
