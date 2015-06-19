@@ -4,13 +4,16 @@ var SelectedOptions = React.createClass({
   PropTypes : {
     options : React.PropTypes.array.isRequired,
     removeSelectedOption : React.PropTypes.func.isRequired,
-    showPlaceholder : React.PropTypes.bool.isRequired
+    showPlaceholder : React.PropTypes.bool.isRequired,
+    typeAhead : React.PropTypes.string.isRequired,
+    handleTypeAheadChange : React.PropTypes.func.isRequired
   },
 
   render : function(){
     return (
       <div className="selected-options">
         {this._buildSelectedOptions()}
+        <input type="text" ref="typeAhead" className="type-ahead" id="type-ahead" name="typeAhead" value={this.props.typeAhead} onChange={this.props.handleTypeAheadChange} />
       </div>
     );
   },
