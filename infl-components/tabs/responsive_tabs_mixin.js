@@ -15,6 +15,7 @@ var ResponsiveTabsMixin = {
   _adjustTabsForScreenSize : function(){
     var tabs = React.findDOMNode(this.refs.tabs);
     var visibleTabs = this._visibleTabs(tabs.children);
+    if (!tabs.firstChild) return;
     var tabsMinWidthWidth = visibleTabs.length * tabs.firstChild.clientWidth;
 
     if(this.props.showAllTabs){
@@ -44,7 +45,7 @@ var ResponsiveTabsMixin = {
   _toggleTabVisibility : function(tabs, tabsMinWidthWidth, visibleTabs){
     if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
       this._hideTab(visibleTabs);
-    } else if(tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
+    } else if(tabs.firstChild && tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
       this._showTab(tabs.children, visibleTabs);
     }
   },
