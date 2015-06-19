@@ -33,8 +33,12 @@ var MultiSelect = React.createClass({
     };
   },
 
+  componentWillReceiveProps : function(nextProps){
+    this._preProcessOptions(nextProps.options);
+  },
+
   componentWillMount : function(){
-    this._preProcessOptions();
+    this._preProcessOptions(this.props.options);
     this._addHideEvent();
   },
 
@@ -62,8 +66,9 @@ var MultiSelect = React.createClass({
           <SelectedOptions
             options={this.state.selectedOptions}
             removeSelectedOption={this._handleSelectedOptionRemoved}
-            showPlaceholder={this.state.placeholder} />
-          <input type="text" ref="typeAhead" className="type-ahead" name="typeAhead" value={this.state.typeAhead} onChange={this._handleTypeAheadChange} />
+            showPlaceholder={this.state.placeholder}
+            typeAhead={this.state.typeAhead}
+            handleTypeAheadChange={this._handleTypeAheadChange} />
         </span>
 
         <NativeSelect
@@ -88,16 +93,19 @@ var MultiSelect = React.createClass({
 
   _hideOptions : function(){
     this.setState({
-      showOptions : false
+      showOptions : false,
+      typeAhead : ""
     });
+
+    this._resetInputWidth();
   },
 
   _removeHideEvent : function(){
     $(window).unbind("click");
   },
 
-  _preProcessOptions : function(){
-    var modifiedOptions = this.props.options;
+  _preProcessOptions : function(options){
+    var modifiedOptions = options;
 
     for(var i = 0; i < modifiedOptions.length; i++){
       modifiedOptions[i].optionIsSelected = false;
@@ -153,7 +161,7 @@ var MultiSelect = React.createClass({
   _showOptions : function(event){
     event.stopPropagation();
 
-    React.findDOMNode(this.refs.typeAhead).focus();
+    document.getElementById("type-ahead").focus();
 
     this.setState({
       showOptions : true
@@ -173,6 +181,10 @@ var MultiSelect = React.createClass({
       showPlaceholder = true;
     }
 
+    if(event.target.value.length === 0){
+      this._resetInputWidth();
+    }
+
     this.setState({
       typeAhead : event.target.value,
       options : filteredOptions,
@@ -185,7 +197,7 @@ var MultiSelect = React.createClass({
   },
 
   _resetInputWidth : function(){
-    React.findDOMNode(this.refs.typeAhead).style.width = "";
+    document.getElementById("type-ahead").style.width = "";
   },
 
   _filterOptions : function(filterText){
@@ -229,7 +241,7 @@ var MultiSelect = React.createClass({
       placeholder : false,
       options : currentOptions
     }, function(){
-      React.findDOMNode(this.refs.typeAhead).focus();
+      document.getElementById("type-ahead").focus();
       that._hideSelectedOptionFromOptions(option);
     });
   },
@@ -290,7 +302,7 @@ var MultiSelect = React.createClass({
       selectedOptions : currentSelectedOptions,
       placeholder : showPlaceholder
     }, function(){
-      React.findDOMNode(this.refs.typeAhead).focus();
+      document.getElementById("type-ahead").focus();
     });
   }
 });
