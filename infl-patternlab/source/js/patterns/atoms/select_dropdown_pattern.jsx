@@ -12,7 +12,7 @@ var SelectDropdownPattern = React.createClass({
         <Pattern title="select dropdown">
           <Pattern.Detail title="Select Dropdown">
             <Pattern.Show>
-              <SelectDropdown>
+              <SelectDropdown value="3">
                 <optgroup label="Option Group 1">
                     <option value="1">option 1</option>
                     <option value="2">option 2</option>
@@ -27,16 +27,16 @@ var SelectDropdownPattern = React.createClass({
             </Pattern.Show>
             <Code>
               <Code.JSX>
-                &lt;SelectDropdown key="key" name="select_name" onChange="handle_change_callback"&gt;
+                &lt;SelectDropdown key="key" name="select_name" onChange="handle_change_callback" value="value 3"&gt;
                   &lt;optgroup label="label"&gt;
-                    &lt;option value="value"&gt;option name&lt;/option&gt;
-                    &lt;option value="value"&gt;option name&lt;/option&gt;
-                    &lt;option value="value"&gt;option name&lt;/option&gt;
+                    &lt;option value="value 1"&gt;option name&lt;/option&gt;
+                    &lt;option value="value 2"&gt;option name&lt;/option&gt;
+                    &lt;option value="value 3"&gt;option name&lt;/option&gt;
                   &lt;/optgroup&gt;
                   &lt;optgroup label="label"&gt;
-                    &lt;option value="value"&gt;option name&lt;/option&gt;
-                    &lt;option value="value"&gt;option name&lt;/option&gt;
-                    &lt;option value="value"&gt;option name&lt;/option&gt;
+                    &lt;option value="value 4"&gt;option name&lt;/option&gt;
+                    &lt;option value="value 5"&gt;option name&lt;/option&gt;
+                    &lt;option value="value 6"&gt;option name&lt;/option&gt;
                   &lt;/optgroup&gt;
                 &lt;/SelectDropdown&gt;
               </Code.JSX>
