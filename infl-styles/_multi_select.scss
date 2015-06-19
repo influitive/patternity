@@ -62,7 +62,7 @@
       line-height: 2em;
       height: 2em;
       margin-top: 3px;
-      width: 5px;
+      width: 100px;
 
       &:focus {
         outline: 0;
@@ -70,6 +70,15 @@
     }
 
     .selected-options {
+      display: inline-block;
+
+      .placeholder-text {
+        color: $light-grey;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+      }
+
       .selected-option {
         display: inline-block;
         padding: 5px 30px 5px 10px;
