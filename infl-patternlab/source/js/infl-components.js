@@ -1701,8 +1701,9 @@ var UP_ARROW_KEY_CODE = 38;
 var ENTER_KEY_CODE = 13;
 var BACK_SPACE_KEY_CODE = 8;
 var DELETE_KEY_CODE = 46;
+var ESCAPE_KEY_CODE = 27;
 
-var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE];
+var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE];
 
 var MultiSelect = React.createClass({displayName: "MultiSelect",
   propTypes: {
@@ -1814,6 +1815,8 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       if(this._anyOptionsToShow()){
         this._previousFocusedOption();
       }
+    } else if(keyCode === ESCAPE_KEY_CODE){
+      this._hideOptions();
     }
   },
 
@@ -3232,6 +3235,7 @@ var ResponsiveTabsMixin = {
   _adjustTabsForScreenSize : function(){
     var tabs = React.findDOMNode(this.refs.tabs);
     var visibleTabs = this._visibleTabs(tabs.children);
+    if (!tabs.firstChild) return;
     var tabsMinWidthWidth = visibleTabs.length * tabs.firstChild.clientWidth;
 
     if(this.props.showAllTabs){
@@ -3261,7 +3265,7 @@ var ResponsiveTabsMixin = {
   _toggleTabVisibility : function(tabs, tabsMinWidthWidth, visibleTabs){
     if(tabs.parentNode.clientWidth <= tabsMinWidthWidth) {
       this._hideTab(visibleTabs);
-    } else if(tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
+    } else if(tabs.firstChild && tabs.parentNode.clientWidth > (tabsMinWidthWidth + tabs.firstChild.clientWidth)) {
       this._showTab(tabs.children, visibleTabs);
     }
   },

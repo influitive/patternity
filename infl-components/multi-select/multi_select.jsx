@@ -12,8 +12,9 @@ var UP_ARROW_KEY_CODE = 38;
 var ENTER_KEY_CODE = 13;
 var BACK_SPACE_KEY_CODE = 8;
 var DELETE_KEY_CODE = 46;
+var ESCAPE_KEY_CODE = 27;
 
-var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE];
+var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE];
 
 var MultiSelect = React.createClass({
   propTypes: {
@@ -125,6 +126,8 @@ var MultiSelect = React.createClass({
       if(this._anyOptionsToShow()){
         this._previousFocusedOption();
       }
+    } else if(keyCode === ESCAPE_KEY_CODE){
+      this._hideOptions();
     }
   },
 
