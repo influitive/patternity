@@ -6,6 +6,14 @@ var NativeSelect = require('./native_select.jsx');
 var SelectedOptions = require('./selected_options.jsx');
 var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
+var DOWN_ARROW_KEY_CODE = 40;
+var UP_ARROW_KEY_CODE = 38;
+var ENTER_KEY_CODE = 13;
+var BACK_SPACE_KEY_CODE = 8;
+var DELETE_KEY_CODE = 46;
+
+var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE];
+
 var MultiSelect = React.createClass({
   propTypes: {
     options: React.PropTypes.array,
@@ -29,7 +37,8 @@ var MultiSelect = React.createClass({
       options : [],
       selectedOptions : [],
       showOptions : false,
-      placeholder : true
+      placeholder : true,
+      focusedOption : {}
     };
   },
 
@@ -59,7 +68,7 @@ var MultiSelect = React.createClass({
 
   render: function() {
     return (
-      <span ref="multiSelectContainer" className={"pt-multi-select " + this._areOptionsVisible()}>
+      <span ref="multiSelectContainer" className={"pt-multi-select " + this._areOptionsVisible()} onKeyDown={this._handleKeyDown}>
         <ClearAll hasSelectedOptions={this._hasSelectedOptions()} onClearAll={this._handleClearAll}/>
 
         <span className="multi-select" onClick={this._showOptions}>
@@ -79,9 +88,51 @@ var MultiSelect = React.createClass({
           ref="popover"
           handleOptionSelect={this._handleOptionSelect}
           options={this.state.options}
-          showOptions={this.state.showOptions} />
+          showOptions={this.state.showOptions}
+          onOptionHasFocus={this._handleOptionHasFocus}
+          focusedOption={this.state.focusedOption} />
       </span>
     );
+  },
+
+  _handleOptionHasFocus : function(option){
+    this.setState({
+      focusedOption : option
+    });
+  },
+
+  _handleKeyDown : function(event){
+    if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
+      this._determineKeyCodeAction(event.keyCode);
+    }
+  },
+
+  _determineKeyCodeAction : function(keyCode){
+    if(keyCode === ENTER_KEY_CODE){
+      if(this._anyOptionsToShow()){
+        this._handleOptionSelect(this.state.focusedOption);
+      }
+    } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
+      if(this.state.selectedOptions.length > 0){
+        this._handleSelectedOptionRemoved(this.state.selectedOptions[this.state.selectedOptions.length - 1]);
+      }
+    } else if(keyCode === UP_ARROW_KEY_CODE){
+
+    }
+  },
+
+  // duplicate from multi_select_options.  needs refactor
+  _anyOptionsToShow : function(){
+    var optionsToShow = false;
+
+    for(var i = 0; i < this.props.options.length; i++){
+      if(this.props.options[i].optionIsSelected === false && this.props.options[i].filteredOption === false){
+        optionsToShow = true;
+        break;
+      }
+    }
+
+    return optionsToShow;
   },
 
   _addHideEvent : function(){
@@ -112,8 +163,10 @@ var MultiSelect = React.createClass({
       modifiedOptions[i].filteredOption = false;
     }
 
+    var that = this;
     this.setState({
-      options : modifiedOptions
+      options : modifiedOptions,
+      focusedOption : modifiedOptions[0]
     });
   },
 
@@ -256,8 +309,17 @@ var MultiSelect = React.createClass({
       }
     }
 
+    var focusedOption = {};
+    for(var i = 0; i < currentOptions.length; i++){
+      if(currentOptions[i].optionIsSelected === false) {
+        focusedOption = currentOptions[i];
+        break;
+      }
+    }
+
     this.setState({
-      options : currentOptions
+      options : currentOptions,
+      focusedOption : focusedOption
     });
   },
 
@@ -275,9 +337,18 @@ var MultiSelect = React.createClass({
       currentOptions[i].filteredOption = false;
     }
 
+    var focusedOption = {};
+    for(var i = 0; i < currentOptions.length; i++){
+      if(currentOptions[i].optionIsSelected === false) {
+        focusedOption = currentOptions[i];
+        break;
+      }
+    }
+
     this.setState({
       options : currentOptions,
-      typeAhead : ""
+      typeAhead : "",
+      focusedOption : focusedOption
     });
 
     this._removeOptionFromSelectedOptions(option);

@@ -130,7 +130,7 @@
         display: none;
       }
 
-      &.hover {
+      &.has-focus {
         background-color: $lighter-grey;
         cursor: pointer;
       }

@@ -1,5 +1,4 @@
 var React = require('react');
-var $ = require('jquery');
 
 var MultiSelectOption = React.createClass({
   PropTypes : {
@@ -11,7 +10,8 @@ var MultiSelectOption = React.createClass({
     ]),
     optionIsSelected : React.PropTypes.bool.isRequired,
     filteredOption : React.PropTypes.bool.isRequired,
-    showAsFocusedOption : React.PropTypes.bool.isRequired,
+    onOptionHasFocus : React.PropTypes.func.isRequired,
+    focusedOption : React.PropTypes.object.isRequired
   },
 
   getDefaultProps : function(){
@@ -23,7 +23,7 @@ var MultiSelectOption = React.createClass({
   render : function(){
     return (
       <span
-        className={"pt-multi-select-option " + this._isOptionSelected()}
+        className={"pt-multi-select-option " + this._isOptionSelected() + " " + this._doesOptionHaveFocus()}
         onClick={this._handleClick}
         onMouseOver={this._handleMouseOver}
         onMouseOut={this._handleMouseOut} >
@@ -36,6 +36,14 @@ var MultiSelectOption = React.createClass({
     return this.props.optionIsSelected || this.props.filteredOption ? "hide" : "";
   },
 
+  _doesOptionHaveFocus : function(){
+    if(this.props.name === this.props.focusedOption.name && this.props.value === this.props.focusedOption.value){
+      return "has-focus";
+    } else {
+      return "";
+    }
+  },
+
   _handleClick : function(event){
     event.stopPropagation();
 
@@ -46,11 +54,14 @@ var MultiSelectOption = React.createClass({
   },
 
   _handleMouseOver : function(event){
-    $(event.target).addClass("hover");
+    this.props.onOptionHasFocus({
+      name : this.props.name,
+      value :this.props.value
+    });
   },
 
   _handleMouseOut : function(event){
-    $(event.target).removeClass("hover");
+    this.props.onOptionHasFocus({});
   }
 });
 
