@@ -1,4 +1,5 @@
 var React = require('react');
+var $ = require('jquery');
 
 var SimplePopover = require('./simple_popover.jsx');
 var ClearAll = require('./clear_all.jsx');
@@ -35,6 +36,11 @@ var MultiSelect = React.createClass({
 
   componentWillMount : function(){
     this._preProcessOptions();
+    this._addHideEvent();
+  },
+
+  componentWillUnmount : function(){
+    this._removeHideEvent();
   },
 
   componentDidMount : function(){
@@ -68,6 +74,23 @@ var MultiSelect = React.createClass({
         </SimplePopover>
       </span>
     );
+  },
+
+  _addHideEvent : function(){
+    var that = this;
+    $(window).click(function(){
+      that._hideOptions();
+    });
+  },
+
+  _hideOptions : function(){
+    this.setState({
+      showOptions : false
+    });
+  },
+
+  _removeHideEvent : function(){
+    $(window).unbind("click");
   },
 
   _preProcessOptions : function(){
@@ -135,13 +158,15 @@ var MultiSelect = React.createClass({
   },
 
   _handleTypeAheadChange : function(event){
+    event.stopPropagation();
+
     this.props.onTypeAheadChange(event.target.value);
     this._adjustInputWidth(event.target);
 
     var filteredOptions = this._filterOptions(event.target.value.toLowerCase());
 
     var showPlaceholder = false;
-    if(event.target.value.length === 0){
+    if(event.target.value.length === 0 && this.state.selectedOptions.length === 0){
       showPlaceholder = true;
     }
 
@@ -157,7 +182,7 @@ var MultiSelect = React.createClass({
   },
 
   _resetInputWidth : function(){
-    React.findDOMNode(this.refs.typeAhead).width = "5px";
+    React.findDOMNode(this.refs.typeAhead).style.width = "5px";
   },
 
   _filterOptions : function(filterText){
@@ -221,16 +246,23 @@ var MultiSelect = React.createClass({
     var currentSelectedOptions = this.state.selectedOptions;
     currentSelectedOptions.push(option);
 
+    var currentOptions = this.state.options;
+    for(var i = 0; i < this.state.options.length; i++){
+      currentOptions[i].filteredOption = false;
+    }
+
+    this._resetInputWidth();
+
+    var that = this;
     this.setState({
       selectedOptions : currentSelectedOptions,
       typeAhead : "",
-      placeholder : false
+      placeholder : false,
+      options : currentOptions
     }, function(){
       React.findDOMNode(this.refs.typeAhead).focus();
-      this._resetInputWidth();
+      that._hideSelectedOptionFromOptions(option);
     });
-
-    this._hideSelectedOptionFromOptions(option);
   },
 
   _hideSelectedOptionFromOptions : function(option){
@@ -258,6 +290,11 @@ var MultiSelect = React.createClass({
       }
     }
 
+    var currentOptions = this.state.options;
+    for(var i = 0; i < this.state.options.length; i++){
+      currentOptions[i].filteredOption = false;
+    }
+
     var showPlaceholder = false;
     if(currentOptions.length === 0){
       showPlaceholder = true;
@@ -265,7 +302,11 @@ var MultiSelect = React.createClass({
 
     this.setState({
       options : currentOptions,
-      placeholder : showPlaceholder
+      placeholder : showPlaceholder,
+      typeAhead : "",
+      options : currentOptions
+    }, function(){
+      React.findDOMNode(this.refs.typeAhead).focus();
     });
 
     this._removeOptionFromSelectedOptions(option);
