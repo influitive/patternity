@@ -29,6 +29,8 @@ var MultiSelectOption = React.createClass({
   },
 
   _handleClick : function(event){
+    event.stopPropagation();
+
     this.props.onClick({
       name : this.props.name,
       value :this.props.value

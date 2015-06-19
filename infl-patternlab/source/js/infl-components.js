@@ -1688,6 +1688,7 @@ module.exports = ClearAll;
 
 },{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select.jsx":[function(require,module,exports){
 var React = require('react');
+var $ = require('jquery');
 
 var SimplePopover = require('./simple_popover.jsx');
 var ClearAll = require('./clear_all.jsx');
@@ -1724,6 +1725,11 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
   componentWillMount : function(){
     this._preProcessOptions();
+    this._addHideEvent();
+  },
+
+  componentWillUnmount : function(){
+    this._removeHideEvent();
   },
 
   componentDidMount : function(){
@@ -1757,6 +1763,23 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
         )
       )
     );
+  },
+
+  _addHideEvent : function(){
+    var that = this;
+    $(window).click(function(){
+      that._hideOptions();
+    });
+  },
+
+  _hideOptions : function(){
+    this.setState({
+      showOptions : false
+    });
+  },
+
+  _removeHideEvent : function(){
+    $(window).unbind("click");
   },
 
   _preProcessOptions : function(){
@@ -1824,13 +1847,15 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
   },
 
   _handleTypeAheadChange : function(event){
+    event.stopPropagation();
+
     this.props.onTypeAheadChange(event.target.value);
     this._adjustInputWidth(event.target);
 
     var filteredOptions = this._filterOptions(event.target.value.toLowerCase());
 
     var showPlaceholder = false;
-    if(event.target.value.length === 0){
+    if(event.target.value.length === 0 && this.state.selectedOptions.length === 0){
       showPlaceholder = true;
     }
 
@@ -1843,6 +1868,10 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
   _adjustInputWidth : function(input){
     input.style.width = (input.value.length + 1) * 8 + "px";
+  },
+
+  _resetInputWidth : function(){
+    React.findDOMNode(this.refs.typeAhead).style.width = "5px";
   },
 
   _filterOptions : function(filterText){
@@ -1906,15 +1935,23 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     var currentSelectedOptions = this.state.selectedOptions;
     currentSelectedOptions.push(option);
 
+    var currentOptions = this.state.options;
+    for(var i = 0; i < this.state.options.length; i++){
+      currentOptions[i].filteredOption = false;
+    }
+
+    this._resetInputWidth();
+
+    var that = this;
     this.setState({
       selectedOptions : currentSelectedOptions,
       typeAhead : "",
-      placeholder : false
+      placeholder : false,
+      options : currentOptions
     }, function(){
       React.findDOMNode(this.refs.typeAhead).focus();
+      that._hideSelectedOptionFromOptions(option);
     });
-
-    this._hideSelectedOptionFromOptions(option);
   },
 
   _hideSelectedOptionFromOptions : function(option){
@@ -1942,6 +1979,11 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       }
     }
 
+    var currentOptions = this.state.options;
+    for(var i = 0; i < this.state.options.length; i++){
+      currentOptions[i].filteredOption = false;
+    }
+
     var showPlaceholder = false;
     if(currentOptions.length === 0){
       showPlaceholder = true;
@@ -1949,7 +1991,11 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
     this.setState({
       options : currentOptions,
-      placeholder : showPlaceholder
+      placeholder : showPlaceholder,
+      typeAhead : "",
+      options : currentOptions
+    }, function(){
+      React.findDOMNode(this.refs.typeAhead).focus();
     });
 
     this._removeOptionFromSelectedOptions(option);
@@ -1974,7 +2020,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 module.exports = MultiSelect;
 
 
-},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_option.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","./simple_popover.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/simple_popover.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
+},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_option.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","./simple_popover.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/simple_popover.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
 var React = require('react');
 
 var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
@@ -2006,6 +2052,8 @@ var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
   },
 
   _handleClick : function(event){
+    event.stopPropagation();
+
     this.props.onClick({
       name : this.props.name,
       value :this.props.value
@@ -2113,6 +2161,7 @@ var SelectedOption = React.createClass({displayName: "SelectedOption",
 
   _handleClick : function(event){
     event.stopPropagation();
+
     this.props.onClick({
       name : this.props.name,
       value :this.props.value
