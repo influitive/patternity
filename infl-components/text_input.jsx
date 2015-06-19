@@ -118,8 +118,8 @@ var TextInput = React.createClass({
       return (<span className="input-message">{this.props.message}</span>);
     }
     else {
-      return this.props.message.map(function(message){
-        return (<span key={message.id || message.key} className="input-message">{message}</span>);
+      return this.props.message.map(function(message, i){
+        return (<span key={i} className="input-message">{message}</span>);
       });
     }
   }
