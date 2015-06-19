@@ -1794,10 +1794,12 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
   },
 
   _handleKeyDown : function(event){
-    event.stopPropagation();
-    event.preventDefault();
+    if(event.keyCode === TAB_KEY_CODE){
+      event.preventDefault();
+    }
 
     if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
+      event.stopPropagation();
       this._determineKeyCodeAction(event.keyCode);
     }
   },
