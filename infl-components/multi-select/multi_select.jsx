@@ -13,8 +13,9 @@ var ENTER_KEY_CODE = 13;
 var BACK_SPACE_KEY_CODE = 8;
 var DELETE_KEY_CODE = 46;
 var ESCAPE_KEY_CODE = 27;
+var TAB_KEY_CODE = 9;
 
-var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE];
+var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
 
 var MultiSelect = React.createClass({
   propTypes: {
@@ -105,6 +106,7 @@ var MultiSelect = React.createClass({
 
   _handleKeyDown : function(event){
     event.stopPropagation();
+    event.preventDefault();
 
     if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
       this._determineKeyCodeAction(event.keyCode);
@@ -120,7 +122,7 @@ var MultiSelect = React.createClass({
       if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0){
         this._handleSelectedOptionRemoved(this.state.selectedOptions[this.state.selectedOptions.length - 1]);
       }
-    } else if(keyCode === DOWN_ARROW_KEY_CODE){
+    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE){
       if(this._anyOptionsToShow()){
         this._nextFocusedOption();
       }
