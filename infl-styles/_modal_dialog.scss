@@ -137,3 +137,14 @@
     }
   }
 }
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 600px) {
+  .pt-modal-dialog {
+    &.large,
+    &.medium,
+    &.small  {
+      width: 95%;
+    }
+  }
+}
