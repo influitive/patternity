@@ -223,9 +223,13 @@ ChallengeCard.Notice = React.createClass({
             completedOn={this.props.completedOn}
             startedOn={this.props.startedOn}
             unlocked={this.props.unlocked} />
-        <Points points={this.props.points} />
+          {this.pointsHTML()}
       </div>
     );
+  },
+
+  pointsHTML: function () {
+    return this.props.points === 0 ? null : <Points points={this.props.points} />;
   }
 });
 
