@@ -65,9 +65,9 @@ var SelectDropdown = React.createClass({
       this.setState({
         title : this._selectedOption().text,
         value : this._selectedOption().value
-      }, function() {
-        this.props.onChange(event);
       });
+
+      this.props.onChange(event);
     }
   },
   _getSelectedOptionText : function() {

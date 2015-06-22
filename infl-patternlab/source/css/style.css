@@ -3094,7 +3094,6 @@ DIV.pt-popover {
   top: 0;
   left: 0;
   text-align: left;
-  max-width: 100%;
 }
 DIV.pt-popover DIV.pt-popovermenu {
   padding: 0;
@@ -3395,7 +3394,7 @@ DIV.pt-popover.is-visible {
   display: block;
   position: absolute;
   bottom: 0px;
-  right: 0px;
+  right: -10px;
 }
 .pt-challenge-card .pt-challenge-details .headline:hover {
   cursor: pointer;
