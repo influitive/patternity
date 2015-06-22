@@ -2570,6 +2570,12 @@ textarea {
   margin-right: 0px;
 }
 
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 600px) {
+  .pt-modal-dialog .pt-modal.large, .pt-modal-dialog .pt-modal.medium, .pt-modal-dialog .pt-modal.small {
+    width: 95%;
+  }
+}
 .ic:before {
   display: inline-block;
   font-family: "influicons";
@@ -3374,6 +3380,22 @@ DIV.pt-popover.is-visible {
 .pt-challenge-card .pt-challenge-details {
   padding: 0px 20px;
   color: #969696;
+}
+.pt-challenge-card .pt-challenge-details .headline {
+  line-height: 20px;
+  max-height: 60px;
+  overflow: hidden;
+  position: relative;
+}
+.pt-challenge-card .pt-challenge-details .headline .last-visible-word {
+  position: relative;
+}
+.pt-challenge-card .pt-challenge-details .headline .last-visible-word:after {
+  content: "...";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
 .pt-challenge-card .pt-challenge-details .headline:hover {
   cursor: pointer;
