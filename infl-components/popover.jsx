@@ -53,11 +53,15 @@ var PopoverFloater = React.createClass({
 
   componentDidUpdate : function() {
     if (this.state.isVisible) {
-      var me = this;
-      setTimeout(function() {
-        me._resetPosition();
-      }, 1);
+      this._updatePosition();
     }
+  },
+
+  _updatePosition : function() {
+    var me = this;
+    setTimeout(function() {
+      me.resetPosition();
+    }, 1);
   },
 
   render: function() {
@@ -109,13 +113,10 @@ var PopoverFloater = React.createClass({
     });
   },
 
-  recenter: function() {
-    this._resetPosition();
-  },
-
-  _resetPosition: function() {
+  resetPosition: function() {
     var targetElement = this.state.targetElement;
     var popoverNode = React.findDOMNode(this.refs.popover);
+
     var popover = $(popoverNode);
     var tW = $(targetElement).width();
     var tH = $(targetElement).height();
@@ -128,13 +129,25 @@ var PopoverFloater = React.createClass({
     var top = tOT + tH + 10;
     if (top<0) top = 0;
     var left = tOL + (tW - pW)/2;
-    if (left<0) left = 0;
-    if (left+pW+10 > window.innerWidth) {
+
+    // restrict right edge to the width of the screen
+    if (left + pW + 10 > window.innerWidth) {
       left = window.innerWidth - pW - 10;
       // todo: in this scenario the arrow pointing to the target element would need to be manually positioned instead of being in the middle
     }
+
     popoverNode.style.top = top+'px';
     popoverNode.style.left = left+'px';
+
+    var offset = popover.offset();
+    // if the parent element is absolutely positioned need to account for that
+    var isAbsolute = popoverNode.parentNode.className.indexOf('is-absolute')>-1;
+    if (isAbsolute && offset.left + pW + 10 > window.innerWidth) {
+      var pO = $(popoverNode.parentNode).offset();
+      var absLeft = window.innerWidth - pW - 10;
+      var relLeft = absLeft - pO.left;
+      popoverNode.style.left = relLeft+'px';
+    }
   },
 
   _windowClick : function(e) {
@@ -169,18 +182,19 @@ var PopoverFloater = React.createClass({
 
 });
 
-PopoverFloater.clickEvent = function(e) {
-  var elm = (window.event && window.event.srcEvent)? window.event.srcElement : e.target;
-  while (!elm.getAttribute('data-popover') && elm.parentNode) {
-    elm = elm.parentNode;
-  }
-  if (elm.getAttribute('data-popover')) {
-    var popoverName = elm.getAttribute('data-popover');
-    var popover = this.refs[popoverName];
-    popover.toggle(elm);
-    return cancelEvent(e);
-  }
-};
+// deprecated, this is no longer required for the popover menu / link combo element
+//PopoverFloater.clickEvent = function(e) {
+//  var elm = (window.event && window.event.srcEvent)? window.event.srcElement : e.target;
+//  while (!elm.getAttribute('data-popover') && elm.parentNode) {
+//    elm = elm.parentNode;
+//  }
+//  if (elm.getAttribute('data-popover')) {
+//    var popoverName = elm.getAttribute('data-popover');
+//    var popover = this.refs[popoverName];
+//    popover.toggle(elm);
+//    return cancelEvent(e);
+//  }
+//};
 
 var Popover = React.createClass({
   propTypes: {
@@ -225,11 +239,10 @@ var Popover = React.createClass({
   },
 
   recenter: function() {
-    this.refs.popover.recenter();
+    this.refs.popover.resetPosition();
   },
 
   _onClick : function(e) {
-    var popover = this.refs.popover.getDOMNode();
     var a = this.refs.link.getDOMNode();
     this.refs.popover.toggle(a);
     return cancelEvent(e);
