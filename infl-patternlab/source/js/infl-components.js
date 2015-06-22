@@ -737,14 +737,55 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
     };
   },
 
+  componentDidMount : function(){
+    this._adjustHeadline();
+  },
+
+  componentDidUpdate : function(){
+    this._adjustHeadline();
+  },
+
   render : function(){
     return (
       React.createElement("div", {className: "pt-challenge-details"}, 
-        React.createElement("h4", {className: "headline", onClick: this.props.onHeadlineClick}, this.props.headline), 
+        React.createElement("h4", {className: "headline", ref: "headline", onClick: this.props.onHeadlineClick}, this.props.headline), 
         React.createElement(ChallengeTypeCount, {type: this.props.type, onClick: this.props.onFilterByType, participantCount: this.props.participantCount}), 
         React.createElement("p", {ref: "description", className: "description", dangerouslySetInnerHTML: this._sanitizeDescription()})
       )
     );
+  },
+
+  _adjustHeadline : function(){
+    var headline = React.findDOMNode(this.refs.headline);
+    var headlineMaxHeight = parseInt($(headline).css("max-height"));
+
+    if(headline.clientHeight === headlineMaxHeight){
+      this._ellipsisHeadlineText(headline, headlineMaxHeight);
+    }
+  },
+
+  _ellipsisHeadlineText : function(headline, headlineMaxHeight){
+    this._convertWordsToElements(headline);
+    var lastVisibleWordElement = this._findLastVisibleWord(headline, headlineMaxHeight);
+    $(lastVisibleWordElement).addClass("last-visible-word");
+  },
+
+  _convertWordsToElements : function(headline) {
+    $(headline).html('<span>' + $(headline).html().replace(/ /g,'</span> <span>') + '</span>');
+  },
+
+  _findLastVisibleWord : function(headline, headlineMaxHeight){
+    var words = $(headline).find("span");
+    var lastVisibleWordElement = null;
+
+    for(var i = 0; i < words.length; i++){
+      if($(words[i]).position().top >= headlineMaxHeight){
+        lastVisibleWordElement = words[i-1];
+        break;
+      }
+    }
+
+    return lastVisibleWordElement;
   },
 
   _sanitizeDescription : function(){
@@ -58027,7 +58068,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             featured : false,
             description : "Look to generate new referrals?  Try creating a new referral challenge and featuring it!",
             createdAt : "2015-03-02T14:46:34.913-05:00",
-            headline : "How to use LinkedIn suggestions in the referral challenge",
+            headline : "How to use LinkedIn suggestions in the referral challenge. How to use LinkedIn suggestions in the referral challenge.",
             id : 1,
             image : "http://manofdepravity.com/wp-content/uploads/2010/02/Shaking-Hands3.jpg",
             name : "LinkedIn referral help",

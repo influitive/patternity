@@ -23,7 +23,7 @@ var ChallengesPagePattern = React.createClass({
             featured : false,
             description : "Look to generate new referrals?  Try creating a new referral challenge and featuring it!",
             createdAt : "2015-03-02T14:46:34.913-05:00",
-            headline : "How to use LinkedIn suggestions in the referral challenge",
+            headline : "How to use LinkedIn suggestions in the referral challenge. How to use LinkedIn suggestions in the referral challenge.",
             id : 1,
             image : "http://manofdepravity.com/wp-content/uploads/2010/02/Shaking-Hands3.jpg",
             name : "LinkedIn referral help",

@@ -95,6 +95,23 @@
     color: $medium-grey;
 
     .headline {
+      line-height: 20px;
+      max-height: 60px;
+      overflow: hidden;
+      position: relative;
+
+      .last-visible-word {
+        position: relative;
+
+        &:after {
+          content : "...";
+          display: block;
+          position: absolute;
+          bottom : 0px;
+          right: -10px;
+        }
+      }
+
       &:hover {
         cursor : pointer;
         text-decoration: underline;
