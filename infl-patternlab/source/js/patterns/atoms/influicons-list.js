@@ -130,6 +130,8 @@ var icons = {
   
     "star-fill": "star-fill",
   
+    "jump-menu": "jump-menu",
+  
     "coins-old": "coins-old",
   
 

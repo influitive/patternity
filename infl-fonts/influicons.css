@@ -86,4 +86,5 @@
 .ic.ic-unlock:before { content: "\E03E" }
 .ic.ic-user:before { content: "\E03F" }
 .ic.ic-star-fill:before { content: "\E040" }
-.ic.ic-coins-old:before { content: "\E041" }
+.ic.ic-jump-menu:before { content: "\E041" }
+.ic.ic-coins-old:before { content: "\E042" }
