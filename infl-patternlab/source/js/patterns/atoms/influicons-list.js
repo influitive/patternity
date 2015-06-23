@@ -128,6 +128,8 @@ var icons = {
   
     "user": "user",
   
+    "star-fill": "star-fill",
+  
     "coins-old": "coins-old",
   
 

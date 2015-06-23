@@ -635,12 +635,22 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-star-fill:before {
   content: "\E040"
+}
+
+@mixin ic-star-fill() {
+  font-family: 'influicons';
+  content: "\E040"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E041"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E040"
+  content: "\E041"
 }
 
