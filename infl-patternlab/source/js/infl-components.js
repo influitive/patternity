@@ -2892,10 +2892,10 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
     };
   },
   componentDidMount : function() {
-    var s = this._selectedOption();
-    if (s && this.state.title != s.text) {
+    var selectedOption = this._selectedOption();
+    if (selectedOption && this.state.title != selectedOption.text) {
       this.setState({
-        title: s.text
+        title: selectedOption.text
       });
     }
   },
@@ -2927,13 +2927,13 @@ var SelectDropdown = React.createClass({displayName: "SelectDropdown",
         title : this._selectedOption().text,
         value : this._selectedOption().value
       });
-console.log(event);
+
       this.props.onChange(event);
     }
   },
   _getSelectedOptionText : function() {
-    var s = this._selectedOption();
-    return (s && s.text)? s.text : '';
+    var selectedOption = this._selectedOption();
+    return (selectedOption && selectedOption.text)? selectedOption.text : '';
   },
   _selectedOption : function(){
     if (this.refs && this.refs.select) {
@@ -53291,6 +53291,8 @@ var icons = {
     "unlock": "unlock",
   
     "user": "user",
+  
+    "star-fill": "star-fill",
   
     "coins-old": "coins-old",
   
