@@ -645,12 +645,22 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-jump-menu:before {
   content: "\E041"
+}
+
+@mixin ic-jump-menu() {
+  font-family: 'influicons';
+  content: "\E041"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E042"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E041"
+  content: "\E042"
 }
 
