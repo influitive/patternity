@@ -1,6 +1,6 @@
 var React = require('react');
 
-var BuildTabsMixin = require('./build_tabs_mixin.js');
+var BuildTabsMixin = require('./build_tabs_mixin.jsx');
 
 var TabsDropdown = React.createClass({
   mixins: [BuildTabsMixin],

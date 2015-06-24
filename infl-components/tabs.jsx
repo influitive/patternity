@@ -1,6 +1,6 @@
 var React = require('react');
 
-var ResponsiveTabsMixin = require('./tabs/responsive_tabs_mixin.js');
+var ResponsiveTabsMixin = require('./tabs/responsive_tabs_mixin.jsx');
 var TabsMenu = require('./tabs/tabs_menu.jsx');
 var TabsDropdown = require('./tabs/tabs_dropdown.jsx');
 var TabSections = require('./tabs/tab_sections.jsx');
