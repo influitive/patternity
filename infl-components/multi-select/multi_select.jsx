@@ -1,23 +1,15 @@
 var React = require('react');
 var $ = require('jquery');
-var _ = require('lodash');
 
 var ClearAll = require('./clear_all.jsx');
 var NativeSelect = require('./native_select.jsx');
 var SelectedOptions = require('./selected_options.jsx');
 var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
-
-var DOWN_ARROW_KEY_CODE = 40;
-var UP_ARROW_KEY_CODE = 38;
-var ENTER_KEY_CODE = 13;
-var BACK_SPACE_KEY_CODE = 8;
-var DELETE_KEY_CODE = 46;
-var ESCAPE_KEY_CODE = 27;
-var TAB_KEY_CODE = 9;
-
-var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
+var KeyCodeMixin = require('./key_code_mixin.jsx');
 
 var MultiSelect = React.createClass({
+  mixins: [KeyCodeMixin],
+
   propTypes: {
     options: React.PropTypes.array,
     name : React.PropTypes.string,
@@ -93,7 +85,8 @@ var MultiSelect = React.createClass({
           options={this.state.options}
           showOptions={this.state.showOptions}
           onOptionHasFocus={this._handleOptionHasFocus}
-          focusedOption={this.state.focusedOption} />
+          focusedOption={this.state.focusedOption}
+          anyOptionsToShow={this._anyOptionsToShow} />
       </span>
     );
   },
@@ -104,40 +97,6 @@ var MultiSelect = React.createClass({
     });
   },
 
-  _handleKeyDown : function(event){
-    if(event.keyCode === TAB_KEY_CODE){
-      event.preventDefault();
-    }
-
-    if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
-      event.stopPropagation();
-      this._determineKeyCodeAction(event.keyCode);
-    }
-  },
-
-  _determineKeyCodeAction : function(keyCode){
-    if(keyCode === ENTER_KEY_CODE){
-      if(this._anyOptionsToShow()){
-        this._handleOptionSelect(this.state.focusedOption);
-      }
-    } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
-      if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0){
-        this._handleSelectedOptionRemoved(this.state.selectedOptions[this.state.selectedOptions.length - 1]);
-      }
-    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE){
-      if(this._anyOptionsToShow()){
-        this._nextFocusedOption();
-      }
-    } else if(keyCode === UP_ARROW_KEY_CODE){
-      if(this._anyOptionsToShow()){
-        this._previousFocusedOption();
-      }
-    } else if(keyCode === ESCAPE_KEY_CODE){
-      this._hideOptions();
-    }
-  },
-
-  // duplicate from multi_select_options.  needs refactor
   _anyOptionsToShow : function(){
     var optionsToShow = false;
 
@@ -149,68 +108,6 @@ var MultiSelect = React.createClass({
     }
 
     return optionsToShow;
-  },
-
-  _nextFocusedOption : function(){
-    var currentFocusedOptionIndex = -1;
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].name === this.state.focusedOption.name && this.state.options[i].value === this.state.focusedOption.value) {
-        currentFocusedOptionIndex = i;
-        break;
-      }
-    }
-
-    var nextFocusedOption = {};
-    for(var i = 0; i < this.state.options.length; i++){
-      if(i > currentFocusedOptionIndex && this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-        nextFocusedOption = this.state.options[i]
-        break;
-      }
-    }
-
-    if(_.isEmpty(nextFocusedOption)){
-      for(var i = 0; i < this.state.options.length; i++){
-        if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-          nextFocusedOption = this.state.options[i]
-          break;
-        }
-      }
-    }
-
-    this.setState({
-      focusedOption : nextFocusedOption
-    });
-  },
-
-  _previousFocusedOption : function(){
-    var currentFocusedOptionIndex = -1;
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].name === this.state.focusedOption.name && this.state.options[i].value === this.state.focusedOption.value) {
-        currentFocusedOptionIndex = i;
-        break;
-      }
-    }
-
-    var previousFocusedOption = {};
-    for(var i = this.state.options.length - 1; i >= 0 ; i--){
-      if(i < currentFocusedOptionIndex && this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-        previousFocusedOption = this.state.options[i]
-        break;
-      }
-    }
-
-    if(_.isEmpty(previousFocusedOption)){
-      for(var i = this.state.options.length - 1; i >= 0; i--){
-        if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-          previousFocusedOption = this.state.options[i]
-          break;
-        }
-      }
-    }
-
-    this.setState({
-      focusedOption : previousFocusedOption
-    });
   },
 
   _addHideEvent : function(){
@@ -353,7 +250,7 @@ var MultiSelect = React.createClass({
     var filteredOptions = this.state.options;
 
     for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].name.toLowerCase().indexOf(filterText) === 0){
+      if(this.state.options[i].name.toLowerCase().indexOf(filterText) > -1){
         filteredOptions[i].filteredOption = false;
       } else {
         filteredOptions[i].filteredOption = true;

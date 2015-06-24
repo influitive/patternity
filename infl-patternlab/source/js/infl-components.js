@@ -1731,15 +1731,9 @@ var ClearAll = React.createClass({displayName: "ClearAll",
 module.exports = ClearAll;
 
 
-},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/key_code_mixin.jsx":[function(require,module,exports){
 var React = require('react');
-var $ = require('jquery');
 var _ = require('lodash');
-
-var ClearAll = require('./clear_all.jsx');
-var NativeSelect = require('./native_select.jsx');
-var SelectedOptions = require('./selected_options.jsx');
-var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
 var DOWN_ARROW_KEY_CODE = 40;
 var UP_ARROW_KEY_CODE = 38;
@@ -1751,7 +1745,148 @@ var TAB_KEY_CODE = 9;
 
 var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
 
+var KeyCodeMixin = {
+  _handleKeyDown : function(event){
+    if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
+      event.stopPropagation();
+      this._preventDefaultForTab(event);
+      this._determineKeyCodeAction(event.keyCode);
+    }
+  },
+
+  _preventDefaultForTab : function(event){
+    if(event.keyCode === TAB_KEY_CODE){
+      event.preventDefault();
+    }
+  },
+
+  _determineKeyCodeAction : function(keyCode){
+    if(keyCode === ENTER_KEY_CODE){
+      this._handleEnter();
+    } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
+      this._handleBackspaceDelete();
+    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE){
+      this._handleDownArrowTab();
+    } else if(keyCode === UP_ARROW_KEY_CODE){
+      this._handleUpArrow();
+    } else if(keyCode === ESCAPE_KEY_CODE){
+      this._hideOptions();
+    }
+  },
+
+  _handleEnter : function(){
+    if(this._anyOptionsToShow()){
+      this._handleOptionSelect(this.state.focusedOption);
+    }
+  },
+
+  _handleBackspaceDelete : function(){
+    if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0){
+      var optionToRemove = this.state.selectedOptions[this.state.selectedOptions.length - 1];
+      this._handleSelectedOptionRemoved(optionToRemove);
+    }
+  },
+
+  _handleDownArrowTab : function(){
+    if(this._anyOptionsToShow()){
+      this._nextFocusedOption();
+    }
+  },
+
+  _handleUpArrow : function(){
+    if(this._anyOptionsToShow()){
+      this._previousFocusedOption();
+    }
+  },
+
+  _nextFocusedOption : function(){
+    var currentFocusedOptionIndex = this._findFocusedOption();
+
+    var nextFocusedOption = {};
+    for(var i = 0; i < this.state.options.length; i++){
+      if(i > currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
+        nextFocusedOption = this.state.options[i]
+        break;
+      }
+    }
+
+    if(_.isEmpty(nextFocusedOption)){
+      for(var i = 0; i < this.state.options.length; i++){
+        if(this._optionCanHaveFocus(this.state.options[i])) {
+          nextFocusedOption = this.state.options[i]
+          break;
+        }
+      }
+    }
+
+    this.setState({
+      focusedOption : nextFocusedOption
+    });
+  },
+
+  _previousFocusedOption : function(){
+    var currentFocusedOptionIndex = this._findFocusedOption();
+
+    var previousFocusedOption = {};
+    for(var i = this.state.options.length - 1; i >= 0 ; i--){
+      if(i < currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
+        previousFocusedOption = this.state.options[i]
+        break;
+      }
+    }
+
+    if(_.isEmpty(previousFocusedOption)){
+      for(var i = this.state.options.length - 1; i >= 0; i--){
+        if(this._optionCanHaveFocus(this.state.options[i])) {
+          previousFocusedOption = this.state.options[i]
+          break;
+        }
+      }
+    }
+
+    this.setState({
+      focusedOption : previousFocusedOption
+    });
+  },
+
+  _findFocusedOption : function(){
+    var currentFocusedOptionIndex = -1;
+
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this._isFocusedOption(this.state.options[i])) {
+        currentFocusedOptionIndex = i;
+        break;
+      }
+    }
+
+    return currentFocusedOptionIndex;
+  },
+
+  _isFocusedOption : function(option){
+    return option.name === this.state.focusedOption.name && option.value === this.state.focusedOption.value
+  },
+
+  _optionCanHaveFocus : function(option){
+    return option.optionIsSelected === false && option.filteredOption === false
+  }
+};
+
+module.exports = KeyCodeMixin;
+
+
+},{"lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select.jsx":[function(require,module,exports){
+var React = require('react');
+var $ = require('jquery');
+
+var ClearAll = require('./clear_all.jsx');
+var NativeSelect = require('./native_select.jsx');
+var SelectedOptions = require('./selected_options.jsx');
+var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
+var KeyCodeMixin = require('./key_code_mixin.jsx');
+
 var MultiSelect = React.createClass({displayName: "MultiSelect",
+  mixins: [KeyCodeMixin],
+
   propTypes: {
     options: React.PropTypes.array,
     name : React.PropTypes.string,
@@ -1827,7 +1962,8 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
           options: this.state.options, 
           showOptions: this.state.showOptions, 
           onOptionHasFocus: this._handleOptionHasFocus, 
-          focusedOption: this.state.focusedOption})
+          focusedOption: this.state.focusedOption, 
+          anyOptionsToShow: this._anyOptionsToShow})
       )
     );
   },
@@ -1838,40 +1974,6 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     });
   },
 
-  _handleKeyDown : function(event){
-    if(event.keyCode === TAB_KEY_CODE){
-      event.preventDefault();
-    }
-
-    if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
-      event.stopPropagation();
-      this._determineKeyCodeAction(event.keyCode);
-    }
-  },
-
-  _determineKeyCodeAction : function(keyCode){
-    if(keyCode === ENTER_KEY_CODE){
-      if(this._anyOptionsToShow()){
-        this._handleOptionSelect(this.state.focusedOption);
-      }
-    } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
-      if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0){
-        this._handleSelectedOptionRemoved(this.state.selectedOptions[this.state.selectedOptions.length - 1]);
-      }
-    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE){
-      if(this._anyOptionsToShow()){
-        this._nextFocusedOption();
-      }
-    } else if(keyCode === UP_ARROW_KEY_CODE){
-      if(this._anyOptionsToShow()){
-        this._previousFocusedOption();
-      }
-    } else if(keyCode === ESCAPE_KEY_CODE){
-      this._hideOptions();
-    }
-  },
-
-  // duplicate from multi_select_options.  needs refactor
   _anyOptionsToShow : function(){
     var optionsToShow = false;
 
@@ -1883,68 +1985,6 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     }
 
     return optionsToShow;
-  },
-
-  _nextFocusedOption : function(){
-    var currentFocusedOptionIndex = -1;
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].name === this.state.focusedOption.name && this.state.options[i].value === this.state.focusedOption.value) {
-        currentFocusedOptionIndex = i;
-        break;
-      }
-    }
-
-    var nextFocusedOption = {};
-    for(var i = 0; i < this.state.options.length; i++){
-      if(i > currentFocusedOptionIndex && this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-        nextFocusedOption = this.state.options[i]
-        break;
-      }
-    }
-
-    if(_.isEmpty(nextFocusedOption)){
-      for(var i = 0; i < this.state.options.length; i++){
-        if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-          nextFocusedOption = this.state.options[i]
-          break;
-        }
-      }
-    }
-
-    this.setState({
-      focusedOption : nextFocusedOption
-    });
-  },
-
-  _previousFocusedOption : function(){
-    var currentFocusedOptionIndex = -1;
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].name === this.state.focusedOption.name && this.state.options[i].value === this.state.focusedOption.value) {
-        currentFocusedOptionIndex = i;
-        break;
-      }
-    }
-
-    var previousFocusedOption = {};
-    for(var i = this.state.options.length - 1; i >= 0 ; i--){
-      if(i < currentFocusedOptionIndex && this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-        previousFocusedOption = this.state.options[i]
-        break;
-      }
-    }
-
-    if(_.isEmpty(previousFocusedOption)){
-      for(var i = this.state.options.length - 1; i >= 0; i--){
-        if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-          previousFocusedOption = this.state.options[i]
-          break;
-        }
-      }
-    }
-
-    this.setState({
-      focusedOption : previousFocusedOption
-    });
   },
 
   _addHideEvent : function(){
@@ -2087,7 +2127,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     var filteredOptions = this.state.options;
 
     for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].name.toLowerCase().indexOf(filterText) === 0){
+      if(this.state.options[i].name.toLowerCase().indexOf(filterText) > -1){
         filteredOptions[i].filteredOption = false;
       } else {
         filteredOptions[i].filteredOption = true;
@@ -2202,7 +2242,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 module.exports = MultiSelect;
 
 
-},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
+},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./key_code_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/key_code_mixin.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
 var React = require('react');
 
 var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",
@@ -2285,7 +2325,8 @@ var MultiSelectOptionsList = React.createClass({displayName: "MultiSelectOptions
     handleOptionSelect : React.PropTypes.func.isRequired,
     showOptions : React.PropTypes.bool.isRequired,
     onOptionHasFocus : React.PropTypes.func.isRequired,
-    focusedOption : React.PropTypes.object.isRequired
+    focusedOption : React.PropTypes.object.isRequired,
+    anyOptionsToShow : React.PropTypes.func.isRequired
   },
 
   render : function(){
@@ -2297,7 +2338,7 @@ var MultiSelectOptionsList = React.createClass({displayName: "MultiSelectOptions
   },
 
   _buildMultiSelectOptions : function(){
-    if(!this._anyOptionsToShow()){
+    if(!this.props.anyOptionsToShow()){
       return (
         React.createElement("span", {className: "pt-multi-select-option"}, "No Results Found")
       );
@@ -2317,19 +2358,6 @@ var MultiSelectOptionsList = React.createClass({displayName: "MultiSelectOptions
           focusedOption: that.props.focusedOption})
       );
     });
-  },
-
-  _anyOptionsToShow : function(){
-    var optionsToShow = false;
-
-    for(var i = 0; i < this.props.options.length; i++){
-      if(this.props.options[i].optionIsSelected === false && this.props.options[i].filteredOption === false){
-        optionsToShow = true;
-        break;
-      }
-    }
-
-    return optionsToShow;
   }
 });
 
@@ -3132,7 +3160,7 @@ module.exports = StatsBar;
 },{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx":[function(require,module,exports){
 var React = require('react');
 
-var ResponsiveTabsMixin = require('./tabs/responsive_tabs_mixin.js');
+var ResponsiveTabsMixin = require('./tabs/responsive_tabs_mixin.jsx');
 var TabsMenu = require('./tabs/tabs_menu.jsx');
 var TabsDropdown = require('./tabs/tabs_dropdown.jsx');
 var TabSections = require('./tabs/tab_sections.jsx');
@@ -3216,7 +3244,7 @@ Tabs.Tab = React.createClass({displayName: "Tab",
 module.exports = Tabs;
 
 
-},{"./tabs/responsive_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js","./tabs/tab_sections.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx","./tabs/tabs_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx","./tabs/tabs_menu.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js":[function(require,module,exports){
+},{"./tabs/responsive_tabs_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.jsx","./tabs/tab_sections.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx","./tabs/tabs_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx","./tabs/tabs_menu.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.jsx":[function(require,module,exports){
 var React = require('react');
 
 var BuildTabsMixin = {
@@ -3281,7 +3309,7 @@ var InternalTab = React.createClass({displayName: "InternalTab",
 module.exports = BuildTabsMixin;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.js":[function(require,module,exports){
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/responsive_tabs_mixin.jsx":[function(require,module,exports){
 var React = require('react');
 var $ = require('jquery');
 
@@ -3486,7 +3514,7 @@ module.exports = ResponsiveTabsMixin;
 },{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tab_sections.jsx":[function(require,module,exports){
 var React = require('react');
 
-var BuildTabsMixin = require('./build_tabs_mixin.js');
+var BuildTabsMixin = require('./build_tabs_mixin.jsx');
 
 var TabSections = React.createClass({displayName: "TabSections",
   mixins: [BuildTabsMixin],
@@ -3543,10 +3571,10 @@ var InternalTabContent = React.createClass({displayName: "InternalTabContent",
 module.exports = TabSections;
 
 
-},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx":[function(require,module,exports){
+},{"./build_tabs_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_dropdown.jsx":[function(require,module,exports){
 var React = require('react');
 
-var BuildTabsMixin = require('./build_tabs_mixin.js');
+var BuildTabsMixin = require('./build_tabs_mixin.jsx');
 
 var TabsDropdown = React.createClass({displayName: "TabsDropdown",
   mixins: [BuildTabsMixin],
@@ -3598,10 +3626,10 @@ var TabsDropdown = React.createClass({displayName: "TabsDropdown",
 module.exports = TabsDropdown;
 
 
-},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx":[function(require,module,exports){
+},{"./build_tabs_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/tabs_menu.jsx":[function(require,module,exports){
 var React = require('react');
 
-var BuildTabsMixin = require('./build_tabs_mixin.js');
+var BuildTabsMixin = require('./build_tabs_mixin.jsx');
 
 var TabsMenu = React.createClass({displayName: "TabsMenu",
   mixins: [BuildTabsMixin],
@@ -3632,7 +3660,7 @@ var TabsMenu = React.createClass({displayName: "TabsMenu",
 module.exports = TabsMenu;
 
 
-},{"./build_tabs_mixin.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){
+},{"./build_tabs_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs/build_tabs_mixin.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 

@@ -9,7 +9,8 @@ var MultiSelectOptionsList = React.createClass({
     handleOptionSelect : React.PropTypes.func.isRequired,
     showOptions : React.PropTypes.bool.isRequired,
     onOptionHasFocus : React.PropTypes.func.isRequired,
-    focusedOption : React.PropTypes.object.isRequired
+    focusedOption : React.PropTypes.object.isRequired,
+    anyOptionsToShow : React.PropTypes.func.isRequired
   },
 
   render : function(){
@@ -21,7 +22,7 @@ var MultiSelectOptionsList = React.createClass({
   },
 
   _buildMultiSelectOptions : function(){
-    if(!this._anyOptionsToShow()){
+    if(!this.props.anyOptionsToShow()){
       return (
         <span className="pt-multi-select-option">No Results Found</span>
       );
@@ -41,19 +42,6 @@ var MultiSelectOptionsList = React.createClass({
           focusedOption={that.props.focusedOption} />
       );
     });
-  },
-
-  _anyOptionsToShow : function(){
-    var optionsToShow = false;
-
-    for(var i = 0; i < this.props.options.length; i++){
-      if(this.props.options[i].optionIsSelected === false && this.props.options[i].filteredOption === false){
-        optionsToShow = true;
-        break;
-      }
-    }
-
-    return optionsToShow;
   }
 });
 
