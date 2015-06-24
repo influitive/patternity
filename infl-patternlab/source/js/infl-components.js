@@ -1918,20 +1918,12 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       currentOptions[i].filteredOption =  false;
     }
 
-    var focusedOption = {};
-    for(var i = 0; i < currentOptions.length; i++){
-      if(currentOptions[i].optionIsSelected === false) {
-        focusedOption = currentOptions[i];
-        break;
-      }
-    }
-
     this.setState({
       options : currentOptions,
       selectedOptions : [],
       placeholder : true,
       typeAhead : "",
-      focusedOption : focusedOption
+      focusedOption : this._findOptionToGiveFocusToNext(currentOptions)
     }, function(){
       document.getElementById("type-ahead").focus();
     });
@@ -1945,23 +1937,6 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     this.setState({
       showOptions : true
     });
-  },
-
-  _findFocusedOption : function(){
-    var currentFocusedOptionIndex = -1;
-
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this._isFocusedOption(this.state.options[i])) {
-        currentFocusedOptionIndex = i;
-        break;
-      }
-    }
-
-    return currentFocusedOptionIndex;
-  },
-
-  _isFocusedOption : function(option){
-    return option.name === this.state.focusedOption.name && option.value === this.state.focusedOption.value
   },
 
   _handleTypeAheadChange : function(event){
@@ -1978,7 +1953,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
       typeAhead : event.target.value,
       options : this._filterOptions(event.target.value.toLowerCase()),
       placeholder : this._showPlaceholder(event.target.value),
-      focusedOption : this._findFocusedOption()
+      focusedOption : this._findOptionToGiveFocusToNext(this.state.options)
     });
   },
 
@@ -2083,13 +2058,17 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     var focusedOption = {};
 
     for(var i = 0; i < options.length; i++){
-      if(options[i].optionIsSelected === false) {
+      if(this._optionCanHaveFocus(options[i])) {
         focusedOption = options[i];
         break;
       }
     }
 
     return focusedOption;
+  },
+
+  _optionCanHaveFocus : function(option){
+    return option.optionIsSelected === false && option.filteredOption === false
   },
 
   _removeOptionFromSelectedOptions : function(option){
@@ -2164,7 +2143,7 @@ var TAB_KEY_CODE = 9;
 
 var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
 
-var KeyCodeMixin = {
+var MultiSelectKeyCodeMixin = {
   _handleKeyDown : function(event){
     if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
       event.stopPropagation();
@@ -2219,7 +2198,7 @@ var KeyCodeMixin = {
   },
 
   _nextFocusedOption : function(){
-    var currentFocusedOptionIndex = this._findFocusedOption();
+    var currentFocusedOptionIndex = this._findFocusedOptionIndex();
 
     var nextFocusedOption = {};
     for(var i = 0; i < this.state.options.length; i++){
@@ -2244,7 +2223,7 @@ var KeyCodeMixin = {
   },
 
   _previousFocusedOption : function(){
-    var currentFocusedOptionIndex = this._findFocusedOption();
+    var currentFocusedOptionIndex = this._findFocusedOptionIndex();
 
     var previousFocusedOption = {};
     for(var i = this.state.options.length - 1; i >= 0 ; i--){
@@ -2268,12 +2247,25 @@ var KeyCodeMixin = {
     });
   },
 
-  _optionCanHaveFocus : function(option){
-    return option.optionIsSelected === false && option.filteredOption === false
-  }
+  _findFocusedOptionIndex : function(){
+    var currentFocusedOptionIndex = -1;
+
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this._isFocusedOption(this.state.options[i])) {
+        currentFocusedOptionIndex = i;
+        break;
+      }
+    }
+
+    return currentFocusedOptionIndex;
+  },
+
+  _isFocusedOption : function(option){
+    return option.name === this.state.focusedOption.name && option.value === this.state.focusedOption.value
+  },
 };
 
-module.exports = KeyCodeMixin;
+module.exports = MultiSelectKeyCodeMixin;
 
 
 },{"lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){

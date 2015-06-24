@@ -184,20 +184,12 @@ var MultiSelect = React.createClass({
       currentOptions[i].filteredOption =  false;
     }
 
-    var focusedOption = {};
-    for(var i = 0; i < currentOptions.length; i++){
-      if(currentOptions[i].optionIsSelected === false) {
-        focusedOption = currentOptions[i];
-        break;
-      }
-    }
-
     this.setState({
       options : currentOptions,
       selectedOptions : [],
       placeholder : true,
       typeAhead : "",
-      focusedOption : focusedOption
+      focusedOption : this._findOptionToGiveFocusToNext(currentOptions)
     }, function(){
       document.getElementById("type-ahead").focus();
     });
@@ -211,23 +203,6 @@ var MultiSelect = React.createClass({
     this.setState({
       showOptions : true
     });
-  },
-
-  _findFocusedOption : function(){
-    var currentFocusedOptionIndex = -1;
-
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this._isFocusedOption(this.state.options[i])) {
-        currentFocusedOptionIndex = i;
-        break;
-      }
-    }
-
-    return currentFocusedOptionIndex;
-  },
-
-  _isFocusedOption : function(option){
-    return option.name === this.state.focusedOption.name && option.value === this.state.focusedOption.value
   },
 
   _handleTypeAheadChange : function(event){
@@ -244,7 +219,7 @@ var MultiSelect = React.createClass({
       typeAhead : event.target.value,
       options : this._filterOptions(event.target.value.toLowerCase()),
       placeholder : this._showPlaceholder(event.target.value),
-      focusedOption : this._findFocusedOption()
+      focusedOption : this._findOptionToGiveFocusToNext(this.state.options)
     });
   },
 
@@ -349,13 +324,17 @@ var MultiSelect = React.createClass({
     var focusedOption = {};
 
     for(var i = 0; i < options.length; i++){
-      if(options[i].optionIsSelected === false) {
+      if(this._optionCanHaveFocus(options[i])) {
         focusedOption = options[i];
         break;
       }
     }
 
     return focusedOption;
+  },
+
+  _optionCanHaveFocus : function(option){
+    return option.optionIsSelected === false && option.filteredOption === false
   },
 
   _removeOptionFromSelectedOptions : function(option){

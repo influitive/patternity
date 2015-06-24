@@ -11,7 +11,7 @@ var TAB_KEY_CODE = 9;
 
 var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
 
-var KeyCodeMixin = {
+var MultiSelectKeyCodeMixin = {
   _handleKeyDown : function(event){
     if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
       event.stopPropagation();
@@ -66,7 +66,7 @@ var KeyCodeMixin = {
   },
 
   _nextFocusedOption : function(){
-    var currentFocusedOptionIndex = this._findFocusedOption();
+    var currentFocusedOptionIndex = this._findFocusedOptionIndex();
 
     var nextFocusedOption = {};
     for(var i = 0; i < this.state.options.length; i++){
@@ -91,7 +91,7 @@ var KeyCodeMixin = {
   },
 
   _previousFocusedOption : function(){
-    var currentFocusedOptionIndex = this._findFocusedOption();
+    var currentFocusedOptionIndex = this._findFocusedOptionIndex();
 
     var previousFocusedOption = {};
     for(var i = this.state.options.length - 1; i >= 0 ; i--){
@@ -115,9 +115,22 @@ var KeyCodeMixin = {
     });
   },
 
-  _optionCanHaveFocus : function(option){
-    return option.optionIsSelected === false && option.filteredOption === false
-  }
+  _findFocusedOptionIndex : function(){
+    var currentFocusedOptionIndex = -1;
+
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this._isFocusedOption(this.state.options[i])) {
+        currentFocusedOptionIndex = i;
+        break;
+      }
+    }
+
+    return currentFocusedOptionIndex;
+  },
+
+  _isFocusedOption : function(option){
+    return option.name === this.state.focusedOption.name && option.value === this.state.focusedOption.value
+  },
 };
 
-module.exports = KeyCodeMixin;
+module.exports = MultiSelectKeyCodeMixin;
