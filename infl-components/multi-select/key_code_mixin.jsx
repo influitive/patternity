@@ -115,23 +115,6 @@ var KeyCodeMixin = {
     });
   },
 
-  _findFocusedOption : function(){
-    var currentFocusedOptionIndex = -1;
-
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this._isFocusedOption(this.state.options[i])) {
-        currentFocusedOptionIndex = i;
-        break;
-      }
-    }
-
-    return currentFocusedOptionIndex;
-  },
-
-  _isFocusedOption : function(option){
-    return option.name === this.state.focusedOption.name && option.value === this.state.focusedOption.value
-  },
-
   _optionCanHaveFocus : function(option){
     return option.optionIsSelected === false && option.filteredOption === false
   }
