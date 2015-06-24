@@ -1742,6 +1742,36 @@ var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
 var MultiSelectKeyCodeMixin = require('./multi_select_key_code_mixin.jsx');
 
+var Icon = require('../icon.jsx');
+
+var MultiSelectArrow = React.createClass({displayName: "MultiSelectArrow",
+  PropTypes : {
+    hideOptions : React.PropTypes.func.isRequired,
+    showOptions : React.PropTypes.func.isRequired,
+    areOptionsOpen : React.PropTypes.bool.isRequired
+  },
+
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-multi-select-arrow", onClick: this._toggleOptions}, 
+        React.createElement(Icon, {icon: this._determineArrowDirection()})
+      )
+    );
+  },
+
+  _determineArrowDirection : function(){
+    return this.props.areOptionsOpen ? "chevron-up" : "chevron-down";
+  },
+
+  _toggleOptions : function(event){
+    if(this.props.areOptionsOpen){
+      this.props.hideOptions(event);
+    } else {
+      this.props.showOptions(event);
+    }
+  }
+});
+
 var MultiSelect = React.createClass({displayName: "MultiSelect",
   mixins: [
     MultiSelectKeyCodeMixin,
@@ -1800,9 +1830,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
   render: function() {
     return (
-      React.createElement("span", {ref: "multiSelectContainer", className: "pt-multi-select " + this._areOptionsVisible(), onKeyDown: this._handleKeyDown}, 
-        React.createElement(ClearAll, {hasSelectedOptions: this._hasSelectedOptions(), onClearAll: this._handleClearAll}), 
-
+      React.createElement("span", {ref: "multiSelectContainer", className: "pt-multi-select", onKeyDown: this._handleKeyDown}, 
         React.createElement("span", {className: "multi-select", onClick: this._showOptions}, 
           React.createElement(SelectedOptions, {
             options: this.state.selectedOptions, 
@@ -1823,7 +1851,13 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
           showOptions: this.state.showOptions, 
           onOptionHasFocus: this._handleOptionHasFocus, 
           focusedOption: this.state.focusedOption, 
-          anyOptionsToShow: this._anyOptionsToShow})
+          anyOptionsToShow: this._anyOptionsToShow}), 
+
+          React.createElement(ClearAll, {hasSelectedOptions: this._hasSelectedOptions(), onClearAll: this._handleClearAll}), 
+          React.createElement(MultiSelectArrow, {
+            hideOptions: this._hideOptions, 
+            showOptions: this._showOptions, 
+            areOptionsOpen: this.state.showOptions})
       )
     );
   },
@@ -1930,10 +1964,6 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
     }, function(){
       document.getElementById("type-ahead").focus();
     });
-  },
-
-  _areOptionsVisible : function(){
-    return this.state.showOptions ? "open" : "";
   },
 
   _showOptions : function(event){
@@ -2113,7 +2143,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 module.exports = MultiSelect;
 
 
-},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_key_code_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_key_code_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx":[function(require,module,exports){
 var React = require('react');
 var _ = require('lodash');
 
@@ -53662,7 +53692,30 @@ var MultiSelectPattern = React.createClass({displayName: "MultiSelectPattern",
   },
   _buildMultiSelectProps : function(){
     return {
-
+      options : {
+        type : "array",
+        defaultValue : "[]",
+        required : false,
+        description : "Array of options objects that contain name and value"
+      },
+      name : {
+        type : "string",
+        defaultValue : "''",
+        required : false,
+        description : "Name of the native select that can be used for form submission"
+      },
+      onOptionChange : {
+        type : "function",
+        defaultValue : "empty function",
+        required : false,
+        description : "Callback for when an option is added.  Called with the newly added option and the selected option list."
+      },
+      onTypeAheadChange : {
+        type : "function",
+        defaultValue : "empty function",
+        required : false,
+        description : "Callback for when the type ahead text changes.  Called with the updated type ahead text.  This can be used to add ajax functionality to multi-select."
+      }
     };
   }
 });
