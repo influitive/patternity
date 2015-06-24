@@ -16,20 +16,12 @@
   min-height: 2.5em;
   min-width: 150px;
 
-  &:after {
-    @include ic-chevron-down();
-    display: block;
+  .pt-multi-select-arrow {
     position: absolute;
     font-size: 20px;
     top: 7px;
     right: 5px;
-    z-index: -1;
-  }
-
-  &.open {
-    &:after {
-      @include ic-chevron-up();
-    }
+    z-index: 2;
   }
 
   .clear-all {
@@ -134,6 +126,26 @@
       &.has-focus {
         background-color: $lighter-grey;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+.ie8 {
+  .pt-multi-select {
+    .multi-select {
+      .type-ahead {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .pt-multi-select {
+    .multi-select {
+      .type-ahead {
+        display: none;
       }
     }
   }

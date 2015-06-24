@@ -2158,19 +2158,12 @@ textarea {
   min-height: 2.5em;
   min-width: 150px;
 }
-.pt-multi-select:after {
-  font-family: 'influicons';
-  content: "";
-  display: block;
+.pt-multi-select .pt-multi-select-arrow {
   position: absolute;
   font-size: 20px;
   top: 7px;
   right: 5px;
-  z-index: -1;
-}
-.pt-multi-select.open:after {
-  font-family: 'influicons';
-  content: "";
+  z-index: 2;
 }
 .pt-multi-select .clear-all {
   position: absolute;
@@ -2263,6 +2256,15 @@ textarea {
   cursor: pointer;
 }
 
+.ie8 .pt-multi-select .multi-select .type-ahead {
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .pt-multi-select .multi-select .type-ahead {
+    display: none;
+  }
+}
 .help-tooltip {
   position: relative;
   display: inline-block;

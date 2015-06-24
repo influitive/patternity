@@ -8,6 +8,36 @@ var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
 var MultiSelectKeyCodeMixin = require('./multi_select_key_code_mixin.jsx');
 
+var Icon = require('../icon.jsx');
+
+var MultiSelectArrow = React.createClass({
+  PropTypes : {
+    hideOptions : React.PropTypes.func.isRequired,
+    showOptions : React.PropTypes.func.isRequired,
+    areOptionsOpen : React.PropTypes.bool.isRequired
+  },
+
+  render : function(){
+    return (
+      <span className="pt-multi-select-arrow" onClick={this._toggleOptions}>
+        <Icon icon={this._determineArrowDirection()} />
+      </span>
+    );
+  },
+
+  _determineArrowDirection : function(){
+    return this.props.areOptionsOpen ? "chevron-up" : "chevron-down";
+  },
+
+  _toggleOptions : function(event){
+    if(this.props.areOptionsOpen){
+      this.props.hideOptions(event);
+    } else {
+      this.props.showOptions(event);
+    }
+  }
+});
+
 var MultiSelect = React.createClass({
   mixins: [
     MultiSelectKeyCodeMixin,
@@ -66,9 +96,7 @@ var MultiSelect = React.createClass({
 
   render: function() {
     return (
-      <span ref="multiSelectContainer" className={"pt-multi-select " + this._areOptionsVisible()} onKeyDown={this._handleKeyDown}>
-        <ClearAll hasSelectedOptions={this._hasSelectedOptions()} onClearAll={this._handleClearAll}/>
-
+      <span ref="multiSelectContainer" className="pt-multi-select" onKeyDown={this._handleKeyDown}>
         <span className="multi-select" onClick={this._showOptions}>
           <SelectedOptions
             options={this.state.selectedOptions}
@@ -90,6 +118,12 @@ var MultiSelect = React.createClass({
           onOptionHasFocus={this._handleOptionHasFocus}
           focusedOption={this.state.focusedOption}
           anyOptionsToShow={this._anyOptionsToShow} />
+
+          <ClearAll hasSelectedOptions={this._hasSelectedOptions()} onClearAll={this._handleClearAll}/>
+          <MultiSelectArrow
+            hideOptions={this._hideOptions}
+            showOptions={this._showOptions}
+            areOptionsOpen={this.state.showOptions} />
       </span>
     );
   },
@@ -196,10 +230,6 @@ var MultiSelect = React.createClass({
     }, function(){
       document.getElementById("type-ahead").focus();
     });
-  },
-
-  _areOptionsVisible : function(){
-    return this.state.showOptions ? "open" : "";
   },
 
   _showOptions : function(event){

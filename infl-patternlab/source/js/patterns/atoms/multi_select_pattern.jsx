@@ -66,7 +66,30 @@ var MultiSelectPattern = React.createClass({
   },
   _buildMultiSelectProps : function(){
     return {
-
+      options : {
+        type : "array",
+        defaultValue : "[]",
+        required : false,
+        description : "Array of options objects that contain name and value"
+      },
+      name : {
+        type : "string",
+        defaultValue : "''",
+        required : false,
+        description : "Name of the native select that can be used for form submission"
+      },
+      onOptionChange : {
+        type : "function",
+        defaultValue : "empty function",
+        required : false,
+        description : "Callback for when an option is added.  Called with the newly added option and the selected option list."
+      },
+      onTypeAheadChange : {
+        type : "function",
+        defaultValue : "empty function",
+        required : false,
+        description : "Callback for when the type ahead text changes.  Called with the updated type ahead text.  This can be used to add ajax functionality to multi-select."
+      }
     };
   }
 });
