@@ -1731,133 +1731,7 @@ var ClearAll = React.createClass({displayName: "ClearAll",
 module.exports = ClearAll;
 
 
-},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/key_code_mixin.jsx":[function(require,module,exports){
-var React = require('react');
-var _ = require('lodash');
-
-var DOWN_ARROW_KEY_CODE = 40;
-var UP_ARROW_KEY_CODE = 38;
-var ENTER_KEY_CODE = 13;
-var BACK_SPACE_KEY_CODE = 8;
-var DELETE_KEY_CODE = 46;
-var ESCAPE_KEY_CODE = 27;
-var TAB_KEY_CODE = 9;
-
-var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
-
-var KeyCodeMixin = {
-  _handleKeyDown : function(event){
-    if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
-      event.stopPropagation();
-      this._preventDefaultForTab(event);
-      this._determineKeyCodeAction(event.keyCode);
-    }
-  },
-
-  _preventDefaultForTab : function(event){
-    if(event.keyCode === TAB_KEY_CODE){
-      event.preventDefault();
-    }
-  },
-
-  _determineKeyCodeAction : function(keyCode){
-    if(keyCode === ENTER_KEY_CODE){
-      this._handleEnter();
-    } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
-      this._handleBackspaceDelete();
-    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE){
-      this._handleDownArrowTab();
-    } else if(keyCode === UP_ARROW_KEY_CODE){
-      this._handleUpArrow();
-    } else if(keyCode === ESCAPE_KEY_CODE){
-      this._hideOptions();
-    }
-  },
-
-  _handleEnter : function(){
-    if(this._anyOptionsToShow()){
-      this._handleOptionSelect(this.state.focusedOption);
-    }
-  },
-
-  _handleBackspaceDelete : function(){
-    if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0){
-      var optionToRemove = this.state.selectedOptions[this.state.selectedOptions.length - 1];
-      this._handleSelectedOptionRemoved(optionToRemove);
-    }
-  },
-
-  _handleDownArrowTab : function(){
-    if(this._anyOptionsToShow()){
-      this._nextFocusedOption();
-    }
-  },
-
-  _handleUpArrow : function(){
-    if(this._anyOptionsToShow()){
-      this._previousFocusedOption();
-    }
-  },
-
-  _nextFocusedOption : function(){
-    var currentFocusedOptionIndex = this._findFocusedOption();
-
-    var nextFocusedOption = {};
-    for(var i = 0; i < this.state.options.length; i++){
-      if(i > currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
-        nextFocusedOption = this.state.options[i]
-        break;
-      }
-    }
-
-    if(_.isEmpty(nextFocusedOption)){
-      for(var i = 0; i < this.state.options.length; i++){
-        if(this._optionCanHaveFocus(this.state.options[i])) {
-          nextFocusedOption = this.state.options[i]
-          break;
-        }
-      }
-    }
-
-    this.setState({
-      focusedOption : nextFocusedOption
-    });
-  },
-
-  _previousFocusedOption : function(){
-    var currentFocusedOptionIndex = this._findFocusedOption();
-
-    var previousFocusedOption = {};
-    for(var i = this.state.options.length - 1; i >= 0 ; i--){
-      if(i < currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
-        previousFocusedOption = this.state.options[i]
-        break;
-      }
-    }
-
-    if(_.isEmpty(previousFocusedOption)){
-      for(var i = this.state.options.length - 1; i >= 0; i--){
-        if(this._optionCanHaveFocus(this.state.options[i])) {
-          previousFocusedOption = this.state.options[i]
-          break;
-        }
-      }
-    }
-
-    this.setState({
-      focusedOption : previousFocusedOption
-    });
-  },
-
-  _optionCanHaveFocus : function(option){
-    return option.optionIsSelected === false && option.filteredOption === false
-  }
-};
-
-module.exports = KeyCodeMixin;
-
-
-},{"lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select.jsx":[function(require,module,exports){
 var React = require('react');
 var $ = require('jquery');
 
@@ -1866,11 +1740,11 @@ var NativeSelect = require('./native_select.jsx');
 var SelectedOptions = require('./selected_options.jsx');
 var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
-var KeyCodeMixin = require('./key_code_mixin.jsx');
+var MultiSelectKeyCodeMixin = require('./multi_select_key_code_mixin.jsx');
 
 var MultiSelect = React.createClass({displayName: "MultiSelect",
   mixins: [
-    KeyCodeMixin,
+    MultiSelectKeyCodeMixin,
   ],
 
   propTypes: {
@@ -2094,6 +1968,7 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 
     this.props.onTypeAheadChange(event.target.value);
     this._adjustInputWidth(event.target);
+
     if(event.target.value.length === 0){
       this._resetInputWidth();
     }
@@ -2238,7 +2113,133 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 module.exports = MultiSelect;
 
 
-},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./key_code_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/key_code_mixin.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
+},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_key_code_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx":[function(require,module,exports){
+var React = require('react');
+var _ = require('lodash');
+
+var DOWN_ARROW_KEY_CODE = 40;
+var UP_ARROW_KEY_CODE = 38;
+var ENTER_KEY_CODE = 13;
+var BACK_SPACE_KEY_CODE = 8;
+var DELETE_KEY_CODE = 46;
+var ESCAPE_KEY_CODE = 27;
+var TAB_KEY_CODE = 9;
+
+var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
+
+var KeyCodeMixin = {
+  _handleKeyDown : function(event){
+    if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
+      event.stopPropagation();
+      this._preventDefaultForTab(event);
+      this._determineKeyCodeAction(event.keyCode);
+    }
+  },
+
+  _preventDefaultForTab : function(event){
+    if(event.keyCode === TAB_KEY_CODE){
+      event.preventDefault();
+    }
+  },
+
+  _determineKeyCodeAction : function(keyCode){
+    if(keyCode === ENTER_KEY_CODE){
+      this._handleEnter();
+    } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
+      this._handleBackspaceDelete();
+    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE){
+      this._handleDownArrowTab();
+    } else if(keyCode === UP_ARROW_KEY_CODE){
+      this._handleUpArrow();
+    } else if(keyCode === ESCAPE_KEY_CODE){
+      this._hideOptions();
+    }
+  },
+
+  _handleEnter : function(){
+    if(this._anyOptionsToShow()){
+      this._handleOptionSelect(this.state.focusedOption);
+    }
+  },
+
+  _handleBackspaceDelete : function(){
+    if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0){
+      var optionToRemove = this.state.selectedOptions[this.state.selectedOptions.length - 1];
+      this._handleSelectedOptionRemoved(optionToRemove);
+    }
+  },
+
+  _handleDownArrowTab : function(){
+    if(this._anyOptionsToShow()){
+      this._nextFocusedOption();
+    }
+  },
+
+  _handleUpArrow : function(){
+    if(this._anyOptionsToShow()){
+      this._previousFocusedOption();
+    }
+  },
+
+  _nextFocusedOption : function(){
+    var currentFocusedOptionIndex = this._findFocusedOption();
+
+    var nextFocusedOption = {};
+    for(var i = 0; i < this.state.options.length; i++){
+      if(i > currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
+        nextFocusedOption = this.state.options[i]
+        break;
+      }
+    }
+
+    if(_.isEmpty(nextFocusedOption)){
+      for(var i = 0; i < this.state.options.length; i++){
+        if(this._optionCanHaveFocus(this.state.options[i])) {
+          nextFocusedOption = this.state.options[i]
+          break;
+        }
+      }
+    }
+
+    this.setState({
+      focusedOption : nextFocusedOption
+    });
+  },
+
+  _previousFocusedOption : function(){
+    var currentFocusedOptionIndex = this._findFocusedOption();
+
+    var previousFocusedOption = {};
+    for(var i = this.state.options.length - 1; i >= 0 ; i--){
+      if(i < currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
+        previousFocusedOption = this.state.options[i]
+        break;
+      }
+    }
+
+    if(_.isEmpty(previousFocusedOption)){
+      for(var i = this.state.options.length - 1; i >= 0; i--){
+        if(this._optionCanHaveFocus(this.state.options[i])) {
+          previousFocusedOption = this.state.options[i]
+          break;
+        }
+      }
+    }
+
+    this.setState({
+      focusedOption : previousFocusedOption
+    });
+  },
+
+  _optionCanHaveFocus : function(option){
+    return option.optionIsSelected === false && option.filteredOption === false
+  }
+};
+
+module.exports = KeyCodeMixin;
+
+
+},{"lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_option.jsx":[function(require,module,exports){
 var React = require('react');
 
 var MultiSelectOption = React.createClass({displayName: "MultiSelectOption",

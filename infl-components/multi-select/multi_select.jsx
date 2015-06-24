@@ -6,11 +6,11 @@ var NativeSelect = require('./native_select.jsx');
 var SelectedOptions = require('./selected_options.jsx');
 var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
-var KeyCodeMixin = require('./key_code_mixin.jsx');
+var MultiSelectKeyCodeMixin = require('./multi_select_key_code_mixin.jsx');
 
 var MultiSelect = React.createClass({
   mixins: [
-    KeyCodeMixin,
+    MultiSelectKeyCodeMixin,
   ],
 
   propTypes: {
@@ -234,6 +234,7 @@ var MultiSelect = React.createClass({
 
     this.props.onTypeAheadChange(event.target.value);
     this._adjustInputWidth(event.target);
+
     if(event.target.value.length === 0){
       this._resetInputWidth();
     }
