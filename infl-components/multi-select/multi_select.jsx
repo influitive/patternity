@@ -5,10 +5,13 @@ var ClearAll = require('./clear_all.jsx');
 var NativeSelect = require('./native_select.jsx');
 var SelectedOptions = require('./selected_options.jsx');
 var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
+
 var KeyCodeMixin = require('./key_code_mixin.jsx');
 
 var MultiSelect = React.createClass({
-  mixins: [KeyCodeMixin],
+  mixins: [
+    KeyCodeMixin,
+  ],
 
   propTypes: {
     options: React.PropTypes.array,
@@ -166,7 +169,9 @@ var MultiSelect = React.createClass({
     return this.state.selectedOptions.length > 0;
   },
 
-  _handleClearAll : function(){
+  _handleClearAll : function(event){
+    event.stopPropagation();
+
     var currentOptions = this.state.options;
 
     for(var i = 0; i < this.state.options.length; i ++){
@@ -174,11 +179,22 @@ var MultiSelect = React.createClass({
       currentOptions[i].filteredOption =  false;
     }
 
+    var focusedOption = {};
+    for(var i = 0; i < currentOptions.length; i++){
+      if(currentOptions[i].optionIsSelected === false) {
+        focusedOption = currentOptions[i];
+        break;
+      }
+    }
+
     this.setState({
       options : currentOptions,
       selectedOptions : [],
       placeholder : true,
-      typeAhead : ""
+      typeAhead : "",
+      focusedOption : focusedOption
+    }, function(){
+      document.getElementById("type-ahead").focus();
     });
   },
 
@@ -196,37 +212,45 @@ var MultiSelect = React.createClass({
     });
   },
 
+  _findFocusedOption : function(){
+    var currentFocusedOptionIndex = -1;
+
+    for(var i = 0; i < this.state.options.length; i++){
+      if(this._isFocusedOption(this.state.options[i])) {
+        currentFocusedOptionIndex = i;
+        break;
+      }
+    }
+
+    return currentFocusedOptionIndex;
+  },
+
+  _isFocusedOption : function(option){
+    return option.name === this.state.focusedOption.name && option.value === this.state.focusedOption.value
+  },
+
   _handleTypeAheadChange : function(event){
     event.stopPropagation();
 
     this.props.onTypeAheadChange(event.target.value);
     this._adjustInputWidth(event.target);
-
-    var filteredOptions = this._filterOptions(event.target.value.toLowerCase());
-
-    var showPlaceholder = false;
-    if(event.target.value.length === 0 && this.state.selectedOptions.length === 0){
-      showPlaceholder = true;
-    }
-
     if(event.target.value.length === 0){
       this._resetInputWidth();
     }
 
-    var focusedOption = {};
-    for(var i = 0; i < this.state.options.length; i++){
-      if(this.state.options[i].optionIsSelected === false && this.state.options[i].filteredOption === false) {
-        focusedOption = this.state.options[i]
-        break;
-      }
-    }
-
     this.setState({
       typeAhead : event.target.value,
-      options : filteredOptions,
-      placeholder : showPlaceholder,
-      focusedOption : focusedOption
+      options : this._filterOptions(event.target.value.toLowerCase()),
+      placeholder : this._showPlaceholder(event.target.value),
+      focusedOption : this._findFocusedOption()
     });
+  },
+
+  _showPlaceholder : function(filterText){
+    if(filterText.length === 0 && this.state.selectedOptions.length === 0){
+      return true;
+    }
+    return false;
   },
 
   _adjustInputWidth : function(input){
@@ -238,15 +262,21 @@ var MultiSelect = React.createClass({
   },
 
   _filterOptions : function(filterText){
-    var filteredOptions = this.state.options;
-
     if(filterText.length === 0){
-      for(var i = 0; i < this.state.options.length; i++){
-        filteredOptions[i].filteredOption = false;
-      }
-      return filteredOptions;
+      return this._resetFilteredOptions(this.state.options);
     }
 
+    return this._filterOptionsBasedOnText(filterText);
+  },
+
+  _resetFilteredOptions : function(options){
+    for(var i = 0; i < this.state.options.length; i++){
+      options[i].filteredOption = false;
+    }
+    return options;
+  },
+
+  _filterOptionsBasedOnText : function(filterText){
     var filteredOptions = this.state.options;
 
     for(var i = 0; i < this.state.options.length; i++){
@@ -264,11 +294,6 @@ var MultiSelect = React.createClass({
     var currentSelectedOptions = this.state.selectedOptions;
     currentSelectedOptions.push(option);
 
-    var currentOptions = this.state.options;
-    for(var i = 0; i < this.state.options.length; i++){
-      currentOptions[i].filteredOption = false;
-    }
-
     this._resetInputWidth();
 
     var that = this;
@@ -276,7 +301,7 @@ var MultiSelect = React.createClass({
       selectedOptions : currentSelectedOptions,
       typeAhead : "",
       placeholder : false,
-      options : currentOptions
+      options : this._resetFilteredOptions(this.state.options)
     }, function(){
       document.getElementById("type-ahead").focus();
       that._hideSelectedOptionFromOptions(option);
@@ -293,17 +318,9 @@ var MultiSelect = React.createClass({
       }
     }
 
-    var focusedOption = {};
-    for(var i = 0; i < currentOptions.length; i++){
-      if(currentOptions[i].optionIsSelected === false) {
-        focusedOption = currentOptions[i];
-        break;
-      }
-    }
-
     this.setState({
       options : currentOptions,
-      focusedOption : focusedOption
+      focusedOption : this._findOptionToGiveFocusToNext(currentOptions)
     });
   },
 
@@ -317,25 +334,26 @@ var MultiSelect = React.createClass({
       }
     }
 
-    for(var i = 0; i < this.state.options.length; i++){
-      currentOptions[i].filteredOption = false;
-    }
+    this.setState({
+      options : this._resetFilteredOptions(currentOptions),
+      typeAhead : "",
+      focusedOption : this._findOptionToGiveFocusToNext(currentOptions)
+    });
 
+    this._removeOptionFromSelectedOptions(option);
+  },
+
+  _findOptionToGiveFocusToNext : function(options){
     var focusedOption = {};
-    for(var i = 0; i < currentOptions.length; i++){
-      if(currentOptions[i].optionIsSelected === false) {
-        focusedOption = currentOptions[i];
+
+    for(var i = 0; i < options.length; i++){
+      if(options[i].optionIsSelected === false) {
+        focusedOption = options[i];
         break;
       }
     }
 
-    this.setState({
-      options : currentOptions,
-      typeAhead : "",
-      focusedOption : focusedOption
-    });
-
-    this._removeOptionFromSelectedOptions(option);
+    return focusedOption;
   },
 
   _removeOptionFromSelectedOptions : function(option){
@@ -348,14 +366,9 @@ var MultiSelect = React.createClass({
       }
     }
 
-    var showPlaceholder = false;
-    if(currentSelectedOptions.length === 0){
-      showPlaceholder = true;
-    }
-
     this.setState({
       selectedOptions : currentSelectedOptions,
-      placeholder : showPlaceholder
+      placeholder : this._showPlaceholder("")
     }, function(){
       document.getElementById("type-ahead").focus();
     });
