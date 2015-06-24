@@ -1741,36 +1741,7 @@ var SelectedOptions = require('./selected_options.jsx');
 var MultiSelectOptionsList = require('./multi_select_options_list.jsx');
 
 var MultiSelectKeyCodeMixin = require('./multi_select_key_code_mixin.jsx');
-
-var Icon = require('../icon.jsx');
-
-var MultiSelectArrow = React.createClass({displayName: "MultiSelectArrow",
-  PropTypes : {
-    hideOptions : React.PropTypes.func.isRequired,
-    showOptions : React.PropTypes.func.isRequired,
-    areOptionsOpen : React.PropTypes.bool.isRequired
-  },
-
-  render : function(){
-    return (
-      React.createElement("span", {className: "pt-multi-select-arrow", onClick: this._toggleOptions}, 
-        React.createElement(Icon, {icon: this._determineArrowDirection()})
-      )
-    );
-  },
-
-  _determineArrowDirection : function(){
-    return this.props.areOptionsOpen ? "chevron-up" : "chevron-down";
-  },
-
-  _toggleOptions : function(event){
-    if(this.props.areOptionsOpen){
-      this.props.hideOptions(event);
-    } else {
-      this.props.showOptions(event);
-    }
-  }
-});
+var MultiSelectArrow = require('./multi_select_arrow.jsx');
 
 var MultiSelect = React.createClass({displayName: "MultiSelect",
   mixins: [
@@ -2143,7 +2114,43 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
 module.exports = MultiSelect;
 
 
-},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_key_code_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx":[function(require,module,exports){
+},{"./clear_all.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx","./multi_select_arrow.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_arrow.jsx","./multi_select_key_code_mixin.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx","./multi_select_options_list.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_options_list.jsx","./native_select.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/native_select.jsx","./selected_options.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/selected_options.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_arrow.jsx":[function(require,module,exports){
+var React = require('react');
+
+var Icon = require('../icon.jsx');
+
+var MultiSelectArrow = React.createClass({displayName: "MultiSelectArrow",
+  PropTypes : {
+    hideOptions : React.PropTypes.func.isRequired,
+    showOptions : React.PropTypes.func.isRequired,
+    areOptionsOpen : React.PropTypes.bool.isRequired
+  },
+
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-multi-select-arrow", onClick: this._toggleOptions}, 
+        React.createElement(Icon, {icon: this._determineArrowDirection()})
+      )
+    );
+  },
+
+  _determineArrowDirection : function(){
+    return this.props.areOptionsOpen ? "chevron-up" : "chevron-down";
+  },
+
+  _toggleOptions : function(event){
+    if(this.props.areOptionsOpen){
+      this.props.hideOptions(event);
+    } else {
+      this.props.showOptions(event);
+    }
+  }
+});
+
+module.exports = MultiSelectArrow;
+
+
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/multi-select/multi_select_key_code_mixin.jsx":[function(require,module,exports){
 var React = require('react');
 var _ = require('lodash');
 
