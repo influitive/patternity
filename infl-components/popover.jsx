@@ -35,7 +35,10 @@ var PopoverFloater = React.createClass({
   },
 
   componentWillMount: function() {
-    this._windowClickEvent = this._windowClick.bind(this);
+    var me = this;
+    this._windowClickEvent = function(e) {
+      me._windowClick(e);
+    };
   },
 
   componentWillUnmount: function() {
@@ -204,7 +207,11 @@ var Popover = React.createClass({
   },
 
   componentDidMount: function() {
-    this._onClickEvent = this._onClick.bind(this);
+    var me = this;
+    this._onClickEvent = function(e) {
+      me._onClick(e);
+    };
+
     var a = this.refs.link.getDOMNode();
     if (a && a.childNodes[0]) {
       $(a.childNodes[0]).on('click', this._onClickEvent);
@@ -238,7 +245,7 @@ var Popover = React.createClass({
     if (this.props.onClose) this.props.onClose(this);
   },
 
-  recenter: function() {
+  resetPosition: function() {
     this.refs.popover.resetPosition();
   },
 
