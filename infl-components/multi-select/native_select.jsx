@@ -8,7 +8,7 @@ var NativeSelect = React.createClass({
 
   render : function(){
     return (
-      <select name={this.props.name} multiple="multiple" className="pt-multi-select-native .default" value={this._buildSelectedValues()}>
+      <select name={this.props.name} multiple="multiple" className="pt-multi-select-native default" value={this._buildSelectedValues()}>
         {this._buildOptions()}
       </select>
     );
