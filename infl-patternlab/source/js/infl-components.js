@@ -777,7 +777,7 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
   },
 
   _wordsHaveNotAlreadyBeenConverted : function(headline){
-    return headline.children.length === 1;
+    return headline.children.length === 0;
   },
 
   _findLastVisibleWord : function(headline, headlineMaxHeight){
@@ -2422,7 +2422,7 @@ var NativeSelect = React.createClass({displayName: "NativeSelect",
 
   render : function(){
     return (
-      React.createElement("select", {name: this.props.name, multiple: "multiple", className: "pt-multi-select-native .default", value: this._buildSelectedValues()}, 
+      React.createElement("select", {name: this.props.name, multiple: "multiple", className: "pt-multi-select-native default", value: this._buildSelectedValues()}, 
         this._buildOptions()
       )
     );

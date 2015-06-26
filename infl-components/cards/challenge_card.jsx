@@ -150,7 +150,7 @@ ChallengeCard.Details = React.createClass({
   },
 
   _wordsHaveNotAlreadyBeenConverted : function(headline){
-    return headline.children.length === 1;
+    return headline.children.length === 0;
   },
 
   _findLastVisibleWord : function(headline, headlineMaxHeight){
