@@ -144,7 +144,14 @@ ChallengeCard.Details = React.createClass({
   },
 
   _convertWordsToElements : function(headline) {
-    $(headline).html('<span>' + $(headline).html().replace(/ /g,'</span> <span>') + '</span>');
+    if(this._wordsHaveNotAlreadyBeenConverted(headline)){
+      $(headline).html('<span>' + $(headline).html().replace(/ /g,'</span> <span>') + '</span>');
+    }
+  },
+
+  _wordsHaveNotAlreadyBeenConverted : function(headline){
+    // console.log(headline.children);
+    return true;
   },
 
   _findLastVisibleWord : function(headline, headlineMaxHeight){
