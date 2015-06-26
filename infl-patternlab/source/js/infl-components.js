@@ -777,7 +777,6 @@ ChallengeCard.Details = React.createClass({displayName: "Details",
   },
 
   _wordsHaveNotAlreadyBeenConverted : function(headline){
-    console.log(headline.children.length);
     return headline.children.length === 1;
   },
 
