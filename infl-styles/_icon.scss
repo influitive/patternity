@@ -655,12 +655,22 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-multi:before {
   content: "\E042"
+}
+
+@mixin ic-multi() {
+  font-family: 'influicons';
+  content: "\E042"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E043"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E042"
+  content: "\E043"
 }
 
