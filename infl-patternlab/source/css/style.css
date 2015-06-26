@@ -984,8 +984,12 @@ h6 {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-multi:before {
   content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 @font-face {
@@ -2853,8 +2857,12 @@ textarea {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-multi:before {
   content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 .pt-tabs {
@@ -3337,6 +3345,17 @@ DIV.pt-popover.is-visible {
   color: #fff;
   z-index: 2;
   height: 24px;
+}
+.pt-challenge-card .pt-card-notice .pt-challenge-card-multiple-stage {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  padding-right: 5px;
+  border-right: 1px solid #fff;
+}
+.pt-challenge-card .pt-card-notice .pt-challenge-card-multiple-stage .ic-multi {
+  position: relative;
+  top: 3px;
 }
 .pt-challenge-card .pt-card-notice .pt-challenge-status {
   float: left;

@@ -871,7 +871,8 @@ ChallengeCard.Notice = React.createClass({displayName: "Notice",
       status : "",
       completedOn : "",
       startedOn : "",
-      unlocked : false
+      unlocked : false,
+      stageCount : 0
     };
   },
   PropTypes : {
@@ -880,11 +881,13 @@ ChallengeCard.Notice = React.createClass({displayName: "Notice",
     status : React.PropTypes.string,
     completedOn : React.PropTypes.string,
     startedOn : React.PropTypes.string,
-    unlocked : React.PropTypes.bool
+    unlocked : React.PropTypes.bool,
+    stageCount : React.PropTypes.number
   },
   render : function(){
     return (
       React.createElement("div", {className: "pt-card-notice"}, 
+        this._multipuleStages(), 
         React.createElement(ChallengeStatus, {
             createdAt: this.props.createdAt, 
             status: this.props.status, 
@@ -898,6 +901,18 @@ ChallengeCard.Notice = React.createClass({displayName: "Notice",
 
   pointsHTML: function () {
     return this.props.points === 0 ? null : React.createElement(Points, {points: this.props.points});
+  },
+
+  _multipuleStages : function(){
+    if(this.props.stageCount === 0){
+      return "";
+    }
+
+    return (
+      React.createElement("span", {className: "pt-challenge-card-multiple-stage"}, 
+        React.createElement(Icon, {icon: "multi"})
+      )
+    );
   }
 });
 
@@ -2593,7 +2608,10 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
   },
 
   componentWillMount: function() {
-    this._windowClickEvent = this._windowClick.bind(this);
+    var me = this;
+    this._windowClickEvent = function(e) {
+      me._windowClick(e);
+    };
   },
 
   componentWillUnmount: function() {
@@ -2762,7 +2780,11 @@ var Popover = React.createClass({displayName: "Popover",
   },
 
   componentDidMount: function() {
-    this._onClickEvent = this._onClick.bind(this);
+    var me = this;
+    this._onClickEvent = function(e) {
+      me._onClick(e);
+    };
+
     var a = this.refs.link.getDOMNode();
     if (a && a.childNodes[0]) {
       $(a.childNodes[0]).on('click', this._onClickEvent);
@@ -2796,7 +2818,7 @@ var Popover = React.createClass({displayName: "Popover",
     if (this.props.onClose) this.props.onClose(this);
   },
 
-  recenter: function() {
+  resetPosition: function() {
     this.refs.popover.resetPosition();
   },
 
@@ -53350,6 +53372,8 @@ var icons = {
   
     "jump-menu": "jump-menu",
   
+    "multi": "multi",
+  
     "coins-old": "coins-old",
   
 
@@ -58170,7 +58194,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             id : 1,
             image : "http://manofdepravity.com/wp-content/uploads/2010/02/Shaking-Hands3.jpg",
             name : "LinkedIn referral help",
-            stage_count : 0,
+            stage_count : 5,
             stage_types : [],
             type : "Social Sharing",
             participantCount : 5,
@@ -58419,7 +58443,8 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
               createdAt: card.createdAt, 
               completedOn: card.completedOn, 
               startedOn: card.startedOn, 
-              unlocked: card.unlocked}), 
+              unlocked: card.unlocked, 
+              stageCount: card['stage_count']}), 
           React.createElement(ChallengeCard.Image, {image: card.image}), 
           React.createElement(ChallengeCard.Details, {type: card.type, headline: card.headline, description: card.description}), 
           React.createElement(ChallengeCard.Actions, null, 

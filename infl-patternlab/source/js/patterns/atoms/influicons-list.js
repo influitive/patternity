@@ -132,6 +132,8 @@ var icons = {
   
     "jump-menu": "jump-menu",
   
+    "multi": "multi",
+  
     "coins-old": "coins-old",
   
 

@@ -244,7 +244,8 @@ ChallengeCard.Notice = React.createClass({
       status : "",
       completedOn : "",
       startedOn : "",
-      unlocked : false
+      unlocked : false,
+      stageCount : 0
     };
   },
   PropTypes : {
@@ -253,11 +254,13 @@ ChallengeCard.Notice = React.createClass({
     status : React.PropTypes.string,
     completedOn : React.PropTypes.string,
     startedOn : React.PropTypes.string,
-    unlocked : React.PropTypes.bool
+    unlocked : React.PropTypes.bool,
+    stageCount : React.PropTypes.number
   },
   render : function(){
     return (
       <div className="pt-card-notice">
+        {this._multipuleStages()}
         <ChallengeStatus
             createdAt={this.props.createdAt}
             status={this.props.status}
@@ -271,6 +274,18 @@ ChallengeCard.Notice = React.createClass({
 
   pointsHTML: function () {
     return this.props.points === 0 ? null : <Points points={this.props.points} />;
+  },
+
+  _multipuleStages : function(){
+    if(this.props.stageCount === 0){
+      return "";
+    }
+
+    return (
+      <span className="pt-challenge-card-multiple-stage">
+        <Icon icon="multi" />
+      </span>
+    );
   }
 });
 

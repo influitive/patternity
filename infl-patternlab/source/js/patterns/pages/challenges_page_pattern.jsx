@@ -27,7 +27,7 @@ var ChallengesPagePattern = React.createClass({
             id : 1,
             image : "http://manofdepravity.com/wp-content/uploads/2010/02/Shaking-Hands3.jpg",
             name : "LinkedIn referral help",
-            stage_count : 0,
+            stage_count : 5,
             stage_types : [],
             type : "Social Sharing",
             participantCount : 5,
@@ -276,7 +276,8 @@ var ChallengesPagePattern = React.createClass({
               createdAt={card.createdAt}
               completedOn={card.completedOn}
               startedOn={card.startedOn}
-              unlocked={card.unlocked} />
+              unlocked={card.unlocked}
+              stageCount={card['stage_count']} />
           <ChallengeCard.Image image={card.image} />
           <ChallengeCard.Details type={card.type} headline={card.headline} description={card.description} />
           <ChallengeCard.Actions>

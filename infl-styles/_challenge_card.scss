@@ -23,6 +23,19 @@
     z-index: 2;
     height: 24px;
 
+    .pt-challenge-card-multiple-stage{
+      display: block;
+      float: left;
+      margin-right: 10px;
+      padding-right: 5px;
+      border-right: 1px solid #fff;
+
+      .ic-multi {
+        position: relative;
+        top: 3px;
+      }
+    }
+
     .pt-challenge-status {
       float: left;
       font-size: 12px;
