@@ -150,8 +150,8 @@ ChallengeCard.Details = React.createClass({
   },
 
   _wordsHaveNotAlreadyBeenConverted : function(headline){
-    // console.log(headline.children);
-    return true;
+    console.log(headline.children.length);
+    return headline.children.length === 1;
   },
 
   _findLastVisibleWord : function(headline, headlineMaxHeight){

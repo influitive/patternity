@@ -2184,8 +2184,7 @@ textarea {
   display: block;
 }
 .pt-multi-select .multi-select {
-  display: inline-block;
-  width: 100%;
+  display: block;
   padding-right: 55px;
   min-height: 30px;
   z-index: 1;
@@ -2233,7 +2232,7 @@ textarea {
 }
 .pt-multi-select .pt-multi-select-native {
   position: absolute;
-  left: -1000px;
+  left: -10000px;
 }
 .pt-multi-select .pt-simple-popover {
   left: -1px;
