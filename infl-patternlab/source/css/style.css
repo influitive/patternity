@@ -3352,10 +3352,12 @@ DIV.pt-popover.is-visible {
   margin-right: 10px;
   padding-right: 5px;
   border-right: 1px solid #fff;
+  margin-top: 1px;
+  font-size: 16px;
 }
 .pt-challenge-card .pt-card-notice .pt-challenge-card-multiple-stage .ic-multi {
   position: relative;
-  top: 3px;
+  top: 1px;
 }
 .pt-challenge-card .pt-card-notice .pt-challenge-status {
   float: left;
