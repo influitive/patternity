@@ -277,7 +277,7 @@ ChallengeCard.Notice = React.createClass({
   },
 
   _multipuleStages : function(){
-    if(this.props.stageCount === 0){
+    if(this.props.stageCount > 1){
       return "";
     }
 
