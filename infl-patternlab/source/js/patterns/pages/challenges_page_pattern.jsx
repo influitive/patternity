@@ -37,7 +37,8 @@ var ChallengesPagePattern = React.createClass({
             //Not part of the data we get back yet
             status : "available",
             startedOn : "",
-            unlocked : true
+            unlocked : true,
+            multiple_completion : true
           },
           {
             points : 1000,
@@ -277,7 +278,7 @@ var ChallengesPagePattern = React.createClass({
               completedOn={card.completedOn}
               startedOn={card.startedOn}
               unlocked={card.unlocked}
-              stageCount={card['stage_count']} />
+              multipleCompletion={card['multiple_completion']} />
           <ChallengeCard.Image image={card.image} />
           <ChallengeCard.Details type={card.type} headline={card.headline} description={card.description} />
           <ChallengeCard.Actions>
