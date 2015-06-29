@@ -90,11 +90,11 @@ var MultiSelect = React.createClass({
           focusedOption={this.state.focusedOption}
           anyOptionsToShow={this._anyOptionsToShow} />
 
-          <ClearAll hasSelectedOptions={this._hasSelectedOptions()} onClearAll={this._handleClearAll}/>
-          <MultiSelectArrow
-            hideOptions={this._hideOptions}
-            showOptions={this._showOptions}
-            areOptionsOpen={this.state.showOptions} />
+        <ClearAll hasSelectedOptions={this._hasSelectedOptions()} onClearAll={this._handleClearAll}/>
+        <MultiSelectArrow
+          hideOptions={this._hideOptions}
+          showOptions={this._showOptions}
+          areOptionsOpen={this.state.showOptions} />
       </span>
     );
   },

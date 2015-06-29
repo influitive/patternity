@@ -878,7 +878,7 @@ ChallengeCard.Notice = React.createClass({displayName: "Notice",
       completedOn : "",
       startedOn : "",
       unlocked : false,
-      stageCount : 0
+      multipleCompletion : false
     };
   },
   PropTypes : {
@@ -888,12 +888,12 @@ ChallengeCard.Notice = React.createClass({displayName: "Notice",
     completedOn : React.PropTypes.string,
     startedOn : React.PropTypes.string,
     unlocked : React.PropTypes.bool,
-    stageCount : React.PropTypes.number
+    multipleCompletion : React.PropTypes.bool
   },
   render : function(){
     return (
       React.createElement("div", {className: "pt-card-notice"}, 
-        this._multipuleStages(), 
+        this._multipuleCompletion(), 
         React.createElement(ChallengeStatus, {
             createdAt: this.props.createdAt, 
             status: this.props.status, 
@@ -909,8 +909,8 @@ ChallengeCard.Notice = React.createClass({displayName: "Notice",
     return this.props.points === 0 ? null : React.createElement(Points, {points: this.props.points});
   },
 
-  _multipuleStages : function(){
-    if(this.props.stageCount === 1){
+  _multipuleCompletion : function(){
+    if(!this.props.multipleCompletion){
       return "";
     }
 
@@ -1845,11 +1845,11 @@ var MultiSelect = React.createClass({displayName: "MultiSelect",
           focusedOption: this.state.focusedOption, 
           anyOptionsToShow: this._anyOptionsToShow}), 
 
-          React.createElement(ClearAll, {hasSelectedOptions: this._hasSelectedOptions(), onClearAll: this._handleClearAll}), 
-          React.createElement(MultiSelectArrow, {
-            hideOptions: this._hideOptions, 
-            showOptions: this._showOptions, 
-            areOptionsOpen: this.state.showOptions})
+        React.createElement(ClearAll, {hasSelectedOptions: this._hasSelectedOptions(), onClearAll: this._handleClearAll}), 
+        React.createElement(MultiSelectArrow, {
+          hideOptions: this._hideOptions, 
+          showOptions: this._showOptions, 
+          areOptionsOpen: this.state.showOptions})
       )
     );
   },
@@ -58210,7 +58210,8 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             //Not part of the data we get back yet
             status : "available",
             startedOn : "",
-            unlocked : true
+            unlocked : true,
+            multiple_completion : true
           },
           {
             points : 1000,
@@ -58450,7 +58451,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
               completedOn: card.completedOn, 
               startedOn: card.startedOn, 
               unlocked: card.unlocked, 
-              stageCount: card['stage_count']}), 
+              multipleCompletion: card['multiple_completion']}), 
           React.createElement(ChallengeCard.Image, {image: card.image}), 
           React.createElement(ChallengeCard.Details, {type: card.type, headline: card.headline, description: card.description}), 
           React.createElement(ChallengeCard.Actions, null, 
