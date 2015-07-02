@@ -18,6 +18,7 @@
     left: 0px;
     width: 100%;
     padding: 2px 10px;
+    background-color: $darker-grey; //fallback for ie8
     background-color: rgba(68, 68, 68, 0.7); // $darker-grey with opacity change
     color: #fff;
     z-index: 2;
