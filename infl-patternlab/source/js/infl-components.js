@@ -324,6 +324,9 @@ var AlertMixin = {
     this._hideAlert(this.props.hideIn);
   },
   componentWillUpdate : function(nextProps){
+    console.log(nextProps);
+    console.log(this.props);
+
     this._clearHideInTimeout();
     this._hideAlert(nextProps.hideIn);
   },
@@ -2582,6 +2585,10 @@ window.React = React;
 
 var $ = require('jquery');
 
+function isIOS() {
+  return navigator.userAgent.indexOf('iPhone')>-1;
+}
+
 function isChildOf(child, parent) {
   do {
     if (child == parent) return true;
@@ -2746,19 +2753,29 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
   },
 
   _addEvents : function() {
-    if (typeof document.attachEvent=='function' || typeof document.attachEvent=='object') {
-      document.attachEvent('click', this._windowClickEvent, true);
+    if (isIOS()) {
+      document.addEventListener('touchstart', this._windowClickEvent, true);
     }
     else {
-      document.addEventListener('click', this._windowClickEvent, true);
+      if (typeof document.attachEvent == 'function' || typeof document.attachEvent == 'object') {
+        document.attachEvent('click', this._windowClickEvent, true);
+      }
+      else {
+        document.addEventListener('click', this._windowClickEvent, true);
+      }
     }
   },
   _removeEvents : function() {
-    if (typeof document.detachEvent=='function' || typeof document.detachEvent=='object') {
-      document.detachEvent('click', this._windowClickEvent, true);
+    if (isIOS()) {
+      document.removeEventListener('touchstart', this._windowClickEvent, true);
     }
     else {
-      document.removeEventListener('click', this._windowClickEvent, true);
+      if (typeof document.detachEvent == 'function' || typeof document.detachEvent == 'object') {
+        document.detachEvent('click', this._windowClickEvent, true);
+      }
+      else {
+        document.removeEventListener('click', this._windowClickEvent, true);
+      }
     }
   }
 
