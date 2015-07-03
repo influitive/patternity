@@ -137,10 +137,13 @@ textarea {
 }
 
 .pt-select {
+  display: inline-block;
+
   .select-box {
     display: inline-block;
     position: relative;
     padding-right: 30px;
+    width: 100%;
 
     &:after {
       @include ic-chevron-down();
@@ -154,6 +157,14 @@ textarea {
 
     &:focus {
       outline: auto 5px -webkit-focus-ring-color;
+    }
+
+    .title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      width: 100%;
     }
 
     select {

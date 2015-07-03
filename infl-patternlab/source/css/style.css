@@ -1779,10 +1779,14 @@ textarea {
   line-height: 2.21em;
 }
 
+.pt-select {
+  display: inline-block;
+}
 .pt-select .select-box {
   display: inline-block;
   position: relative;
   padding-right: 30px;
+  width: 100%;
 }
 .pt-select .select-box:after {
   font-family: 'influicons';
@@ -1796,6 +1800,13 @@ textarea {
 }
 .pt-select .select-box:focus {
   outline: auto 5px -webkit-focus-ring-color;
+}
+.pt-select .select-box .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 100%;
 }
 .pt-select .select-box select {
   width: 100%;
@@ -3340,6 +3351,7 @@ DIV.pt-popover.is-visible {
   left: 0px;
   width: 100%;
   padding: 2px 10px;
+  background-color: #444444;
   background-color: rgba(68, 68, 68, 0.7);
   color: #fff;
   z-index: 2;
