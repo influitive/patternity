@@ -58,6 +58,18 @@ DIV.pt-popover {
     border-right: 14px solid transparent;
     border-bottom: 14px solid white;
   }
+
+  &.edge-restricted {
+    margin-top: -10px;
+
+    DIV.arrow-top {
+      display:none;
+    }
+    DIV.arrow-top-inner {
+      display:none;
+    }
+  }
+
 }
 
 .pt-popover-wrapper {
