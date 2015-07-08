@@ -1,6 +1,7 @@
 var HTML = function(){
   function addLineBreaks(str) {
-    return str.replace(/\n/g, "<br />");
+    //It was adding </br> after li elements
+    return str.replace(/[^\<\/li\>]\n/g, "<br />");
   }
 
   return {
