@@ -36,7 +36,6 @@ describe('Popover Component', function() {
     expect(subject).to.exist;
     expect(React.findDOMNode(subject).nodeName).to.eq('SPAN');
     expect(React.findDOMNode(subject.refs.wrapper).nodeName).to.eq('SPAN');
-    expect(React.findDOMNode(subject.refs.popover).nodeName).to.eq('DIV');
   });
 
   it('the contents of the popover are only rendered when needed', function() {
