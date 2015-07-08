@@ -134,6 +134,8 @@ var icons = {
   
     "multi": "multi",
   
+    "circle-filled": "circle-filled",
+  
     "coins-old": "coins-old",
   
 
