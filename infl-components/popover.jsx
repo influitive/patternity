@@ -40,20 +40,16 @@ var PopoverFloater = React.createClass({
     this._unbindWindowEvents();
   },
 
+  _windowHidePopover: function(e) {
+    if (this.props.onHide) { this.props.onHide(e); }
+  },
+
   _bindWindowEvents: function() {
-    if (this.props.onHide) {
-      var me = this;
-      this._hidePopoverEvent = function(e) {
-        me.props.onHide(e); // communicates up to the parent Popover to hide
-      };
-      $(document).on('click', this._hidePopoverEvent);
-    }
+    $(document).on('click', this._windowHidePopover);
   },
 
   _unbindWindowEvents: function() {
-    if (this.props.onHide) {
-      $(document).off('click', this._hidePopoverEvent);
-    }
+    $(document).off('click', this._windowHidePopover);
   },
 
   render: function() {
