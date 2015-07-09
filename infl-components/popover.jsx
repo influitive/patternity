@@ -60,7 +60,7 @@ var PopoverFloater = React.createClass({
     // this line makes it so the contents of the popover are not rendered until they are needed, and not destroyed when hidden
     var children = this.props.children;
     return (
-      <div ref="popover" className={this._classes()} onClick={this._menuItemClicked}>
+      <div ref="popover" className="pt-popover is-visible" onClick={this._menuItemClicked}>
         <div className="arrow-top"/>
         <div className="arrow-top-inner"/>
         { children }
@@ -74,11 +74,6 @@ var PopoverFloater = React.createClass({
       var realEvent = e.nativeEvent? e.nativeEvent : e;
       return cancelEvent(realEvent);
     }
-  },
-
-  _classes: function() {
-    var c = 'pt-popover is-visible';
-    return c;
   },
 
   resetPosition: function() {
