@@ -324,9 +324,6 @@ var AlertMixin = {
     this._hideAlert(this.props.hideIn);
   },
   componentWillUpdate : function(nextProps){
-    console.log(nextProps);
-    console.log(this.props);
-
     this._clearHideInTimeout();
     this._hideAlert(nextProps.hideIn);
   },
@@ -1389,93 +1386,33 @@ module.exports = Form;
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/help_tooltip.jsx":[function(require,module,exports){
 var React = require('react');
 
+var Icon = require('./icon.jsx');
+var Tooltip = require('./tool_tip.jsx');
+
 var HelpTooltip = React.createClass({displayName: "HelpTooltip",
+  propTypes : {
+    title: React.PropTypes.string
+  },
+
   getDefaultProps: function(){
     return {
       title : ""
     };
   },
-  getInitialState: function() {
-    return {
-      showTooltip: false,
-      showClose: false,
-      wasClicked: false
-    };
-  },
-  propTypes : {
-    title: React.PropTypes.string
-  },
+
   render : function(){
     return (
-      React.createElement("span", {className: "help-tooltip", ref: "helpTooltip"}, 
-        React.createElement("div", {className: "tooltip-content " + this._showTooltip(), ref: "tip"}, 
-          React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this._clickCloseTooltip, ref: "close"}), 
-          React.createElement("h3", {ref: "title"}, this.props.title), 
-          React.createElement("div", {className: "tooltip-details", ref: "details"}, 
-            this.props.children
-          )
-        ), 
-        React.createElement("span", {className: "help ic ic-question-circle-o", 
-          onClick: this._clickTooltip, 
-          onTouchStart: this._clickShowTooltip, 
-          onMouseEnter: this._hoverShowTooltip, 
-          onMouseLeave: this._hoverHideTooltip, 
-          ref: "help"}
-        )
+      React.createElement(Tooltip, {title: this.props.title, element: React.createElement(Icon, {icon: "question-circle-o"})}, 
+        this.props.children
       )
     );
-  },
-  _showTooltip : function(){
-    return this.state.showTooltip ? "" : "hide";
-  },
-  _showClose: function(){
-    return this.state.showClose ? "" : "hide";
-  },
-  _hoverShowTooltip: function() {
-    this._hoverToggleTooltip(true);
-  },
-  _hoverHideTooltip: function() {
-    this._hoverToggleTooltip(false);
-  },
-  _hoverToggleTooltip : function(shouldShow){
-    if(!this.state.wasClicked){
-      this._updateState({
-        showTooltip: shouldShow,
-        showClose: false,
-        wasClicked: false
-      });
-    }
-  },
-  _clickTooltip : function() {
-    if (this.state.showTooltip && this.state.wasClicked) {
-      this._clickCloseTooltip();
-    } else {
-      this._clickShowTooltip();
-    }
-  },
-  _clickShowTooltip : function() {
-    this._updateState({
-      showTooltip: true,
-      showClose: true,
-      wasClicked: true
-    });
-  },
-  _clickCloseTooltip : function(){
-    this._updateState({
-      showTooltip: false,
-      showClose: true,
-      wasClicked: false
-    });
-  },
-  _updateState : function(newState){
-    this.setState(newState);
   }
 });
 
 module.exports = HelpTooltip;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx":[function(require,module,exports){
+},{"./icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./tool_tip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tool_tip.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -2585,125 +2522,63 @@ window.React = React;
 
 var $ = require('jquery');
 
-function isIOS() {
-  return navigator.userAgent.indexOf('iPhone')>-1;
-}
-
-function isChildOf(child, parent) {
-  do {
-    if (child == parent) return true;
-  }
-  while (child = child.parentNode);
-  return false;
-}
-
-function cancelEvent(e) {
-  e.stopPropagation();
-  e.preventDefault();
-  e.cancelBubble = true;
-  return false;
-}
-
 var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
   propTypes : {
     children: React.PropTypes.object,
     targetElement: React.PropTypes.object,
-    onOpen: React.PropTypes.func,
-    onClose: React.PropTypes.func
+    onClick: React.PropTypes.func,
+    onBlur: React.PropTypes.func
   },
 
   getInitialState: function() {
     return {
-      isVisible : false,
-      hasBeenRendered : false
+      top: 0,
+      left: 0,
+      recalculated: false
     };
-  },
-
-  componentWillMount: function() {
-    var me = this;
-    this._windowClickEvent = function(e) {
-      me._windowClick(e);
-    };
-  },
-
-  componentWillUnmount: function() {
-    this._removeEvents();
-    this._hide();
-  },
-
-  componentWillUpdate : function() {
-    if (this.state.isVisible && !this.state.hasBeenRendered) {
-      this.setState({
-        hasBeenRendered : true
-      });
-    }
   },
 
   componentDidUpdate : function() {
-    if (this.state.isVisible) {
-      this._updatePosition();
+    if (!this.state.recalculated) {
+      this._recalculatePosition();
     }
   },
 
-  _updatePosition : function() {
-    var me = this;
-    setTimeout(function() {
-      me.resetPosition();
-    }, 1);
+  componentDidMount : function() {
+    this._recalculatePosition();
   },
 
   render: function() {
     // this line makes it so the contents of the popover are not rendered until they are needed, and not destroyed when hidden
-    var children = (this.state.isVisible || this.state.hasBeenRendered) ? this.props.children : null;
+    var children = this.props.children;
 
     return (
-      React.createElement("div", {ref: "popover", className: this._classes()}, 
+      React.createElement("div", {ref: "popover", className: this._classes(), style: this._getStyle(), onClick: this._menuItemClicked}, 
         React.createElement("div", {className: "arrow-top"}), 
         React.createElement("div", {className: "arrow-top-inner"}), 
          children 
       )
-      );
+    );
+  },
+
+  _menuItemClicked: function(e) {
+    if (this.props.onClick) { this.props.onClick(e); }
+  },
+
+  _getStyle: function() {
+    return {
+      top: this.state.top + 'px',
+      left: this.state.left + 'px'
+    };
   },
 
   _classes: function() {
-    return 'pt-popover' +
-      (this.state.isVisible?' is-visible':'');
-  },
-
-  toggle: function(targetElement) {
-    if (this.state.isVisible) {
-      this._hide();
-    }
-    else {
-      this._show(targetElement);
-    }
-  },
-
-  _hide: function() {
-    this.setState({
-      isVisible: false
-    }, function () {
-      this._removeEvents();
-      if (this.props.onClose) this.props.onClose();
-    });
-  },
-
-  _show: function(targetElement) {
-    this.setState({
-      targetElement : targetElement,
-      isVisible : true
-    }, function() {
-      var me = this;
-      setTimeout(function() {
-        me._addEvents();
-      },20);
-      if (this.props.onOpen) this.props.onOpen();
-    });
+    return 'pt-popover is-visible';
   },
 
   resetPosition: function() {
-    var targetElement = this.state.targetElement;
+    var targetElement = this.props.targetElement;
     var popoverNode = React.findDOMNode(this.refs.popover);
 
     var popover = $(popoverNode);
@@ -2739,61 +2614,46 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
     }
   },
 
-  _windowClick : function(e) {
-    var popoverNode = React.findDOMNode(this.refs.popover);
-    var isChild = isChildOf(e.target, popoverNode);
-    var isObject = e.target.nodeName=='OBJECT' || e.target.nodeName=='EMBED';
-    if (isObject) { // don't close the popover when clicking on the flash component of ZeroClipboard
-      return false;
-    }
-    if (isChild && !this.props.autoclose) {
-      return;
-    }
-    this._hide();
-  },
+  _recalculatePosition: function() {
+    var targetElement = React.findDOMNode(this.props.targetElement);
+    var popoverNode = React.findDOMNode(this);
 
-  _addEvents : function() {
-    if (isIOS()) {
-      document.addEventListener('touchstart', this._windowClickEvent, true);
+    var popover = $(popoverNode);
+    var tW = $(targetElement).width();
+    var tH = $(targetElement).height();
+    var tOT = $(targetElement).position().top;
+    var tOL = $(targetElement).position().left;
+    var pW = popover.width();
+    //var pH = popover.height();
+
+    // position the popover centered below the target element
+    var top = tOT + tH + 10;
+    if (top<0) top = 0;
+    var left = tOL + (tW - pW)/2;
+
+    // restrict right edge to the width of the screen
+    if (left + pW + 10 > window.innerWidth) {
+      left = window.innerWidth - pW - 10;
+      // todo: in this scenario the arrow pointing to the target element would need to be manually positioned instead of being in the middle
     }
-    else {
-      if (typeof document.attachEvent == 'function' || typeof document.attachEvent == 'object') {
-        document.attachEvent('click', this._windowClickEvent, true);
-      }
-      else {
-        document.addEventListener('click', this._windowClickEvent, true);
-      }
+
+    var offset = popover.offset();
+    // if the parent element is absolutely positioned need to account for that
+    var isAbsolute = popoverNode.parentNode.className.indexOf('is-absolute')>-1;
+    if (isAbsolute && offset.left + pW + 10 > window.innerWidth) {
+      var pO = $(popoverNode.parentNode).offset();
+      var absLeft = window.innerWidth - pW - 10;
+      var relLeft = absLeft - pO.left;
+      left = relLeft;
     }
-  },
-  _removeEvents : function() {
-    if (isIOS()) {
-      document.removeEventListener('touchstart', this._windowClickEvent, true);
-    }
-    else {
-      if (typeof document.detachEvent == 'function' || typeof document.detachEvent == 'object') {
-        document.detachEvent('click', this._windowClickEvent, true);
-      }
-      else {
-        document.removeEventListener('click', this._windowClickEvent, true);
-      }
-    }
+
+    this.setState({
+      top: top,
+      left: left,
+      recalculated: true
+    });
   }
-
 });
-
-// deprecated, this is no longer required for the popover menu / link combo element
-//PopoverFloater.clickEvent = function(e) {
-//  var elm = (window.event && window.event.srcEvent)? window.event.srcElement : e.target;
-//  while (!elm.getAttribute('data-popover') && elm.parentNode) {
-//    elm = elm.parentNode;
-//  }
-//  if (elm.getAttribute('data-popover')) {
-//    var popoverName = elm.getAttribute('data-popover');
-//    var popover = this.refs[popoverName];
-//    popover.toggle(elm);
-//    return cancelEvent(e);
-//  }
-//};
 
 var Popover = React.createClass({displayName: "Popover",
   propTypes: {
@@ -2802,53 +2662,85 @@ var Popover = React.createClass({displayName: "Popover",
     onClose: React.PropTypes.func
   },
 
-  componentDidMount: function() {
-    var me = this;
-    this._onClickEvent = function(e) {
-      me._onClick(e);
+  getInitialState: function() {
+    return {
+      isVisible: false
     };
-
-    var a = this.refs.link.getDOMNode();
-    if (a && a.childNodes[0]) {
-      $(a.childNodes[0]).on('click', this._onClickEvent);
-    }
-  },
-
-  componentWillUnmount: function() {
-    if (!this.refs.link) return;
-    var a = this.refs.link.getDOMNode();
-    if (a && a.childNodes[0]) {
-      $(a.childNodes[0]).off('click', this._onClickEvent);
-    }
   },
 
   render : function() {
-    var first = this.props.children[0];
-    var second = this.props.children[1];
+    var link = this.props.children[0];
     var classes = 'pt-popoverwrapper '+this.props.className;
-    return (React.createElement("span", {ref: "wrapper", className:  classes }, 
-      React.createElement("span", {className: "pt-popover-link", ref: "link"},  first ), 
-      React.createElement(PopoverFloater, {ref: "popover", autoclose: this.props.autoclose, onOpen: this._onOpen, onClose: this._onClose}, 
-         second 
+    return (
+      React.createElement("span", {ref: "wrapper", className:  classes }, 
+        React.createElement("span", {className: "pt-popover-link", ref: "link", onClick: this._onClick},  link ), 
+        this._renderPopover()
       )
-    ));
+    );
   },
 
-  _onOpen: function() {
-    if (this.props.onOpen) this.props.onOpen(this);
-  },
-  _onClose: function() {
-    if (this.props.onClose) this.props.onClose(this);
+  _renderPopover: function() {
+    if (this.state.isVisible) {
+      if (this.props.autoclose) { this._bindWindowEvents(); }
+
+      var contents = this.props.children[1];
+      return (
+        React.createElement(PopoverFloater, {ref: "popover", targetElement: this.refs.link, onClick: this._popoverClicked}, 
+           contents 
+        )
+      );
+    } else {
+      if (this.props.autoclose) { this._unbindWindowEvents(); }
+    }
   },
 
   resetPosition: function() {
     this.refs.popover.resetPosition();
   },
 
+  _bindWindowEvents: function() {
+    $(document).on('click', this._hidePopover.bind(this));
+    // $(document).on('touchstart', this._hidePopover.bind(this));
+  },
+
+  _unbindWindowEvents: function() {
+    $(document).off('click', this._hidePopover.bind(this));
+  },
+
+  _popoverClicked: function(e) {
+    if (this.props.autoclose) {
+      this._hidePopover();
+    }
+  },
+
+  _onOpen: function() {
+    if (this.props.onOpen) { this.props.onOpen(this); }
+  },
+
+  _onClose: function() {
+    if (this.props.onClose) { this.props.onClose(this); }
+  },
+
   _onClick : function(e) {
-    var a = this.refs.link.getDOMNode();
-    this.refs.popover.toggle(a);
-    return cancelEvent(e);
+    var isVisible = !this.state.isVisible;
+
+    this.setState({
+      isVisible: isVisible
+    });
+
+    if (isVisible) {
+      this._onOpen();
+    } else {
+      this._onClose();
+    }
+  },
+
+  _hidePopover: function() {
+    this.setState({
+      isVisible: false
+    });
+
+    this._onClose();
   }
 });
 
@@ -3934,7 +3826,127 @@ var ToggleSwitch = React.createClass({displayName: "ToggleSwitch",
 module.exports = ToggleSwitch;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tool_tip.jsx":[function(require,module,exports){
+var React = require('react');
+
+var Tooltip = React.createClass({displayName: "Tooltip",
+  propTypes : {
+    title: React.PropTypes.string.isRequired,
+    element: React.PropTypes.node.isRequired
+  },
+
+  getInitialState: function() {
+    return {
+      showTooltip: false,
+      showClose: false,
+      wasClicked: false
+    };
+  },
+
+  render : function(){
+    return (
+      React.createElement("span", {className: "icon-tooltip", ref: "helpTooltip"}, 
+        React.createElement(Tooltip.Content, {
+          title: this.props.title, 
+          content: this.props.children, 
+          showTooltip: this.state.showTooltip, 
+          showClose: this.state.showClose, 
+          closeToolTip: this._clickCloseTooltip, 
+          ref: "tip"}), 
+        React.createElement("span", {className: "tool-tip-icon", 
+            onClick: this._clickTooltip, 
+            onTouchStart: this._clickShowTooltip, 
+            onMouseEnter: this._hoverShowTooltip, 
+            onMouseLeave: this._hoverHideTooltip, 
+            ref: "help"}, 
+          this.props.element
+        )
+      )
+    );
+  },
+
+  _hoverShowTooltip: function() {
+    this._hoverToggleTooltip(true);
+  },
+  _hoverHideTooltip: function() {
+    this._hoverToggleTooltip(false);
+  },
+  _hoverToggleTooltip : function(shouldShow){
+    if(!this.state.wasClicked){
+      this._updateState({
+        showTooltip: shouldShow,
+        showClose: false,
+        wasClicked: false
+      });
+    }
+  },
+  _clickTooltip : function() {
+    if (this.state.showTooltip && this.state.wasClicked) {
+      this._clickCloseTooltip();
+    } else {
+      this._clickShowTooltip();
+    }
+  },
+  _clickShowTooltip : function() {
+    this._updateState({
+      showTooltip: true,
+      showClose: true,
+      wasClicked: true
+    });
+  },
+  _clickCloseTooltip : function(){
+    this._updateState({
+      showTooltip: false,
+      showClose: true,
+      wasClicked: false
+    });
+  },
+  _updateState : function(newState){
+    this.setState(newState);
+  }
+});
+
+Tooltip.Content = React.createClass({displayName: "Content",
+  propTypes : {
+    title : React.PropTypes.string.isRequired,
+    content : React.PropTypes.array.isRequired,
+    showTooltip : React.PropTypes.bool.isRequired,
+    showClose : React.PropTypes.bool.isRequired,
+    closeToolTip : React.PropTypes.func.isRequired,
+    position : React.PropTypes.oneOf(['top', 'bottom'])
+  },
+
+  getDefaultProps : function(){
+    return {
+      position : "top"
+    };
+  },
+
+  render : function(){
+    return (
+      React.createElement("div", {className: "tooltip-content " + this._showTooltip() + " " + this.props.position, ref: "tip"}, 
+        React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this.props.closeToolTip, ref: "close"}), 
+        React.createElement("h3", {ref: "title"}, this.props.title), 
+        React.createElement("div", {className: "tooltip-details", ref: "details"}, 
+          this.props.content
+        )
+      )
+    );
+  },
+
+  _showTooltip : function(){
+    return this.props.showTooltip ? "" : "hide";
+  },
+
+  _showClose: function(){
+    return this.props.showClose ? "" : "hide";
+  },
+});
+
+module.exports = Tooltip;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js":[function(require,module,exports){
 var $ = require('jquery');
 
 var Animate = function(){
@@ -53396,6 +53408,8 @@ var icons = {
     "jump-menu": "jump-menu",
   
     "multi": "multi",
+  
+    "circle-filled": "circle-filled",
   
     "coins-old": "coins-old",
   
