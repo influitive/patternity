@@ -988,8 +988,12 @@ h6 {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-circle-filled:before {
   content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 @font-face {
@@ -2279,16 +2283,62 @@ textarea {
     display: none;
   }
 }
-.help-tooltip {
+.icon-tooltip {
   position: relative;
   display: inline-block;
   font-weight: normal;
 }
-.help-tooltip h3 {
+.icon-tooltip .tool-tip-icon {
+  font-size: 20px;
+  color: #444444;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.tooltip-content {
+  padding: 13px;
+  padding-bottom: 26px;
+  position: absolute;
+  background-color: #444444;
+  color: #fff;
+  width: 300px;
+  left: calc(-150px + 20px);
+  font-size: 13px;
+  opacity: 0.9;
+  display: block;
+}
+.tooltip-content:after {
+  position: absolute;
+  left: calc((300px / 2) - 10px);
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+}
+.tooltip-content.top {
+  bottom: 42px;
+}
+.tooltip-content.top:after {
+  bottom: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #444444;
+}
+.tooltip-content.bottom {
+  top: 42px;
+}
+.tooltip-content.bottom:after {
+  top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #444444;
+}
+.tooltip-content h3 {
   margin-top: 0px;
   margin-bottom: 5px;
 }
-.help-tooltip .close {
+.tooltip-content .close {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -2300,50 +2350,18 @@ textarea {
   text-shadow: none;
   font-weight: normal;
 }
-.help-tooltip .close.hide {
+.tooltip-content .close.hide {
   display: none;
 }
-.help-tooltip .tooltip-content {
-  padding: 13px;
-  padding-bottom: 26px;
-  position: absolute;
-  background-color: #444444;
-  color: #fff;
-  bottom: 42px;
-  width: 300px;
-  margin-left: calc(-150px + 20px);
-  font-size: 13px;
-  opacity: 0.9;
-  display: block;
-}
-.help-tooltip .tooltip-content.hide {
+.tooltip-content.hide {
   display: none;
 }
-.help-tooltip .tooltip-content a {
+.tooltip-content a {
   color: #08a5c5;
   text-decoration: none;
 }
-.help-tooltip .tooltip-content a:hover {
+.tooltip-content a:hover {
   text-decoration: underline;
-}
-.help-tooltip .tooltip-content:after {
-  position: absolute;
-  bottom: -10px;
-  left: calc((300px / 2) - 10px);
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #444444;
-}
-.help-tooltip .help {
-  font-size: 20px;
-  color: #444444;
-  vertical-align: middle;
-  cursor: pointer;
-  padding: 10px;
 }
 
 .toggle-switch {
@@ -2871,8 +2889,12 @@ textarea {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-circle-filled:before {
   content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 .pt-tabs {
@@ -3411,11 +3433,6 @@ DIV.pt-popover.is-visible {
 }
 .pt-challenge-card .pt-challenge-image img {
   width: 100%;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   vertical-align: top;
   cursor: pointer;
 }
