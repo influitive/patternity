@@ -1,7 +1,7 @@
 var React = require('react');
 
 var Icon = require('./icon.jsx');
-var Tooltip = require('./tool_tip.jsx');
+var Tooltip = require('./tooltip.jsx');
 
 var HelpTooltip = React.createClass({
   propTypes : {
