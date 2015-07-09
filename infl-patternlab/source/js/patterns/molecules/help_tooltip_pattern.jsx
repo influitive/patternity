@@ -37,7 +37,7 @@ var HelpTooltipPattern = React.createClass({
               var HelpTooltip = require("patternity/infl-components/help_tooltip.jsx");
             </Require.JS>
             <Require.CSS>
-              @import "patternity/infl-styles/help_tooltip";
+              @import "patternity/infl-styles/tooltip";
             </Require.CSS>
           </Require>
         </Pattern>
