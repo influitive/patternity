@@ -5,7 +5,6 @@ var $             = require('jquery');
 var Icon          = require('../icon.jsx');
 var Card          = require('./card.jsx');
 var animate       = require("../utilities/animate.js");
-var addLineBreaks = require("../utilities/html.js").addLineBreaks;
 
 var ChallengeCard = React.createClass({
   PropTypes : {
@@ -123,7 +122,7 @@ ChallengeCard.Details = React.createClass({
       <div className="pt-challenge-details">
         <h4 className="headline" ref="headline" onClick={this.props.onHeadlineClick}>{this.props.headline}</h4>
         <ChallengeTypeCount type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
-        <p ref="description" className="description" dangerouslySetInnerHTML={this._sanitizeDescription()}></p>
+        <p ref="description" className="description" dangerouslySetInnerHTML={{__html: this.props.description}}></p>
       </div>
     );
   },
@@ -165,16 +164,6 @@ ChallengeCard.Details = React.createClass({
     }
 
     return lastVisibleWordElement;
-  },
-
-  _sanitizeDescription : function(){
-    var description_with_breaks = this.props.description;
-
-    if (this.props.description) {
-      description_with_breaks = addLineBreaks(this.props.description);
-    }
-
-    return {__html: description_with_breaks}
   }
 });
 
