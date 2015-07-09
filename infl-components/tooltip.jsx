@@ -16,7 +16,7 @@ var Tooltip = React.createClass({
 
   render : function(){
     return (
-      <span className="icon-tooltip" ref="helpTooltip">
+      <span className="pt-tooltip" ref="tooltip">
         <Tooltip.Content
           title={this.props.title}
           content={this.props.children}
@@ -24,12 +24,12 @@ var Tooltip = React.createClass({
           showClose={this.state.showClose}
           closeToolTip={this._clickCloseTooltip}
           ref="tip" />
-        <span className="tool-tip-icon"
+        <span className="tool-tip-element"
             onClick={this._clickTooltip}
             onTouchStart={this._clickShowTooltip}
             onMouseEnter={this._hoverShowTooltip}
             onMouseLeave={this._hoverHideTooltip}
-            ref="help">
+            ref="element">
           {this.props.element}
         </span>
       </span>
@@ -80,7 +80,7 @@ var Tooltip = React.createClass({
 Tooltip.Content = React.createClass({
   propTypes : {
     title : React.PropTypes.string.isRequired,
-    content : React.PropTypes.array.isRequired,
+    content : React.PropTypes.any.isRequired,
     showTooltip : React.PropTypes.bool.isRequired,
     showClose : React.PropTypes.bool.isRequired,
     closeToolTip : React.PropTypes.func.isRequired,

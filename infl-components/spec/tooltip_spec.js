@@ -4,7 +4,7 @@ var ReactTestUtils = React.addons.TestUtils;
 var simulate  = ReactTestUtils.Simulate;
 var simulateNative = ReactTestUtils.SimulateNative;
 
-var HelpTooltip = require("help_tooltip");
+var Tooltip = require("tooltip");
 
 var chai = require("chai");
 var sinon = require("sinon");
@@ -13,26 +13,26 @@ chai.use(sinonChai);
 var expect = chai.expect;
 
 
-xdescribe('Help Tooltip Component', function() {
+describe('Tooltip Component', function() {
   var subject,
-      helpTooltipElement,
+      tooltipElement,
       tipElement,
       closeElement,
       titleElement,
-      helpElement,
+      elementElement,
       detailsElement;
 
-  function renderHelpTooltip(helpTooltipComponent){
-    subject = ReactTestUtils.renderIntoDocument(helpTooltipComponent);
+  function renderHelpTooltip(tooltipComponent){
+    subject = ReactTestUtils.renderIntoDocument(tooltipComponent);
     populateTestRefs();
   }
 
   function populateTestRefs(){
-    helpTooltipElement = React.findDOMNode(subject.refs.helpTooltip);
+    tooltipElement = React.findDOMNode(subject.refs.tooltip);
     tipElement = React.findDOMNode(subject.refs.tip);
     closeElement = React.findDOMNode(subject.refs.tip.refs.close);
     titleElement = React.findDOMNode(subject.refs.title);
-    helpElement = React.findDOMNode(subject.refs.help);
+    elementElement = React.findDOMNode(subject.refs.element);
     detailsElement = React.findDOMNode(subject.refs.tip.refs.details);
   }
 
@@ -43,15 +43,14 @@ xdescribe('Help Tooltip Component', function() {
 
   beforeEach(function(){
       renderHelpTooltip(
-        <HelpTooltip title="Tooltip Title">
+        <Tooltip title="Tooltip Title" element={<span>test</span>}>
             <p>My tooltip Body</p>
-        </HelpTooltip>
+        </Tooltip>
       );
     });
 
-  it('will render the help tooltip component', function() {
-    expect(helpTooltipElement.className).to.contain("icon-tooltip");
-    expect(helpElement.className.split(' ')).to.have.members(['tool-tip-icon', 'ic', 'ic-question-circle-o']);
+  it('will render the tooltip component', function() {
+    expect(tooltipElement.className).to.contain("pt-tooltip");
     expect(tipElement.className).to.contain("tooltip-content");
   });
 
@@ -60,26 +59,26 @@ xdescribe('Help Tooltip Component', function() {
   });
 
   describe('Show/Hide', function () {
-    it('will show the tooltip when the help tooltip is hovered over', function () {
-      simulateNative.mouseOver(helpElement);
+    it('will show the tooltip when the tooltip is hovered over', function () {
+      simulateNative.mouseOver(elementElement);
       expect(tipElement.className).not.to.contain("hide");
     });
 
-    it('will hide the tooltip when the help tooltip is left', function () {
+    it('will hide the tooltip when the tooltip is left', function () {
       var tempMouseFocusElement = ReactTestUtils.renderIntoDocument(<div></div>);
       simulateNative.mouseOver(tempMouseFocusElement);
-      simulateNative.mouseOver(helpElement);
-      simulateNative.mouseOut(helpElement);
+      simulateNative.mouseOver(elementElement);
+      simulateNative.mouseOut(elementElement);
       expect(tipElement.className).to.contain("hide");
     });
 
-    it('will show the tooltip when the help tooltip is clicked', function () {
-      simulate.click(helpElement);
+    it('will show the tooltip when the tooltip is clicked', function () {
+      simulate.click(elementElement);
       expect(tipElement.className).not.to.contain("hide");
     });
 
     it('will hide when the close button is clicked', function () {
-      simulate.click(helpElement);
+      simulate.click(elementElement);
       simulate.click(closeElement);
       expect(tipElement.className).to.contain("hide");
     });
