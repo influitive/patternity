@@ -122,7 +122,7 @@ ChallengeCard.Details = React.createClass({
       <div className="pt-challenge-details">
         <h4 className="headline" ref="headline" onClick={this.props.onHeadlineClick}>{this.props.headline}</h4>
         <ChallengeTypeCount type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
-        <p ref="description" className="description" dangerouslySetInnerHTML={{__html: this.props.description}}></p>
+        <div ref="description" className="description" dangerouslySetInnerHTML={{__html: this.props.description}}></div>
       </div>
     );
   },
