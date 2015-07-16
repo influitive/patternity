@@ -84,10 +84,10 @@
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
     border-bottom: 1px solid $light-grey;
+    text-align: center;
 
     img {
-      width: 100%;
-      vertical-align:top;
+      height: 100%;
       cursor : pointer;
     }
 
