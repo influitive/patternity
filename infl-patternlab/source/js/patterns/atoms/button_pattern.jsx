@@ -13,6 +13,7 @@ var ButtonPattern = React.createClass({
     return {
       type : "",
       inverse : false,
+      disabled : false,
       icon : "",
       isInverseAllowed : false
     };
@@ -27,11 +28,12 @@ var ButtonPattern = React.createClass({
 
           <Pattern.Detail title="Button">
             <Pattern.Show>
-              <Button>Button Component</Button><br/><br/>
-              <Button icon="check">Icon Button Component</Button><br/><br/>
+              <Button>Button</Button><br/><br/>
+              <Button icon="check">Icon Button</Button><br/><br/>
+              <Button type="primary">Primary Button</Button><br/><br/>
+              <Button type="secondary">Secondary Button</Button><br/><br/>
+              <Button disabled={true}>Disabled Button</Button><br/><br/>
               <Button className="button-customized">Custom Button Component</Button><br/><br/>
-              <button>HTML Button tag</button><br/><br/>
-              <a href="javascript://" className="button">Button Link</a>
             </Pattern.Show>
 
             <Pattern.Demo title="Button Demo">
@@ -40,10 +42,11 @@ var ButtonPattern = React.createClass({
 
                   <h4>Button</h4>
                   <div className={"demo-pattern-example " + this._isInverse()}>
-                    <button className={this.state.type + " " + this._isInverse()}>
-                      {this._hasIcon()}
-                      <span>Sample Button</span>
-                    </button>
+
+                    <Button type={this.state.type} inverse={this.state.inverse} disabled={this.state.disabled} icon={this.state.icon} >
+                      Button
+                    </Button>
+
                   </div>
 
                 </div>
@@ -56,6 +59,7 @@ var ButtonPattern = React.createClass({
               <ButtonControls
                 type={this.state.type}
                 inverse={this.state.inverse}
+                disabled={this.state.disabled}
                 icon={this.state.icon}
                 isInverseAllowed={this.state.isInverseAllowed}
                 onChange={this._handleChange} />
@@ -63,11 +67,12 @@ var ButtonPattern = React.createClass({
 
             <Code>
               <Code.HTML>
-                &lt;Button&gt;Button Component&lt;/Button&gt;
+                &lt;Button&gt;Button&lt;/Button&gt;
                 &lt;Button icon="check"&gt;Icon Button Component&lt;/Button&gt;
+                &lt;Button type="primary"&gt;Primary Button&lt;/Button&gt;
+                &lt;Button type="secondary"&gt;Secondary Button&lt;/Button&gt;
+                &lt;Button disabled=(true)&gt;Disabled Button&lt;/Button&gt;
                 &lt;Button className="button-customized"&gt;Custom Button Component&lt;/Button&gt;
-                &lt;button&gt;HTML Button Tag&lt;/button&gt;
-                &lt;a href="javascript://" class="button"&gt;Button Link&lt;/a&gt;
               </Code.HTML>
               <Code.Props patternProps={this._getProps()} />
             </Code>
@@ -99,17 +104,11 @@ var ButtonPattern = React.createClass({
         required : false,
         description : "css class name"
       },
-      primary : {
-        type : "boolean",
+      type : {
+        type : "string",
         defaultValue : "",
         required : false,
-        description : "use primary button styling"
-      },
-      secondary : {
-        type : "boolean",
-        defaultValue : "",
-        required : false,
-        description : "use secondary button styling"
+        description : "one of primary, secondary, important, success, danger, text"
       },
       onClick : {
         type : "function",
@@ -127,7 +126,13 @@ var ButtonPattern = React.createClass({
         type : "boolean",
         defaultValue : "",
         required : false,
-        description : "disabled state"
+        description : "disable the button"
+      },
+      inverse : {
+        type : "boolean",
+        defaultValue : "",
+        required : false,
+        description : "inverse the button colors (only affects 'secondary' and 'text' types)"
       }
     };
   },
@@ -146,12 +151,30 @@ var ButtonPattern = React.createClass({
     return this.state.inverse ? "inverse" : "";
   },
   _buildDemoHTML : function(){
+
+    var type = this.state.type? ' type="'+this.state.type+'"' : '';
+
+    var icon = this.state.icon? ' icon="'+this.state.icon+'"' : '';
+
+    var inverse = '';
+    if ((this.state.type=== "secondary" || this.state.type === "text") && this.state.inverse) {
+      inverse = ' inverse={true}';
+    }
+
+    var disabled = this.state.disabled? ' disabled={true}' : '';
+
+    return (
+      '<Button'+type+icon+inverse+disabled+'>\n' +
+      '\tButton\n'+
+      '</button>'
+      );
+    /*
     return (
       '<button className="' + this.state.type + " " + this._isInverse() + '">\n' +
         this._hasIconHTML() +
         '\t<span>Default Button</span>\n' +
       '</button>'
-    );
+    );*/
   },
   _hasIconHTML : function(){
     if(this.state.icon !== ""){
@@ -172,6 +195,7 @@ var ButtonControls = React.createClass({
     return {
       type : "",
       inverse : false,
+      disabled : false,
       icon : "",
       onChange : function(){},
       isInverseAllowed : false
@@ -188,7 +212,6 @@ var ButtonControls = React.createClass({
                 <RadioButton isChecked={this.props.type === ''} onChange={this._handleChange} radioName="type" radioLabel="Default" value=""></RadioButton>
                 <RadioButton isChecked={this.props.type === 'primary'} onChange={this._handleChange} radioName="type" radioLabel="Primary" value="primary"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'secondary'} onChange={this._handleChange} radioName="type" radioLabel="Secondary" value="secondary"></RadioButton>
-                <RadioButton isChecked={this.props.type === 'disabled'} onChange={this._handleChange} radioName="type" radioLabel="Disabled" value="disabled"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'important'} onChange={this._handleChange} radioName="type" radioLabel="Important" value="important"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'success'} onChange={this._handleChange} radioName="type" radioLabel="Success" value="success"></RadioButton>
                 <RadioButton isChecked={this.props.type === 'danger'} onChange={this._handleChange} radioName="type" radioLabel="Danger" value="danger"></RadioButton>
@@ -209,6 +232,14 @@ var ButtonControls = React.createClass({
               <RadioButton.Group layout="stacked">
                 <RadioButton isChecked={this.props.icon === ''} onChange={this._handleChange} radioName="icon" radioLabel="No Icon" value=""></RadioButton>
                 <RadioButton isChecked={this.props.icon === 'plus'} onChange={this._handleChange} radioName="icon" radioLabel="Add Icon" value="plus"></RadioButton>
+              </RadioButton.Group>
+            </InputLabel>
+          </Form.Row>
+          <Form.Row>
+            <InputLabel label="Disable">
+              <RadioButton.Group layout="stacked">
+                <RadioButton isChecked={this.props.disabled} onChange={this._handleChange} radioName="disabled" radioLabel="Disabled" value="disabled"></RadioButton>
+                <RadioButton isChecked={!this.props.disabled} onChange={this._handleChange} radioName="disabled" radioLabel="Enabled" value=""></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
