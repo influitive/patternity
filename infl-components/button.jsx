@@ -38,6 +38,9 @@ var Button = React.createClass({
 
     if (this.props.className) classes += ' '+this.props.className;
     if (this.props.icon) classes += ' ic ic-'+this.props.icon;
+
+    if (!this.props.children || this.props.children.length===0) classes += ' iconButton';
+
     return classes;
   },
 

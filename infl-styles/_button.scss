@@ -24,6 +24,13 @@ button {
     top: 2px;
   }
 
+  &.ic.iconButton {
+    padding: 0.5em 1em;
+  }
+  &.ic.iconButton:before {
+    margin-right: 0;
+  }
+
   @include transition (background-color 0.15s ease-in-out);
 
   &:hover {
@@ -389,9 +396,13 @@ button {
   }
 
   &.inline {
+
+    max-width:100%;
+
     button,
     .button {
       margin-right: 5px;
+      margin-bottom: 5px;
 
       &:last-child {
         margin-right: 0px;

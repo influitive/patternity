@@ -52636,7 +52636,7 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
                 "<Button type=\"primary\">Primary Button</Button>" + ' ' +
                 "<Button type=\"secondary\">Secondary Button</Button>" + ' ' +
                 "<Button disabled=(true)>Disabled Button</Button>" + ' ' +
-                "<Button icon=\"trash\" />" + ' ' +
+                "<Button icon=\"check\" />" + ' ' +
                 "<Button icon=\"trash\" type=\"danger\" />" + ' ' +
                 "<Button icon=\"close\" disabled=(true) />" + ' ' +
                 "<Button className=\"button-customized\">Custom Button Component</Button>"
