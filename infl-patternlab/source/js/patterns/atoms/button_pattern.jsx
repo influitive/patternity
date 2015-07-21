@@ -15,6 +15,7 @@ var ButtonPattern = React.createClass({
       inverse : false,
       disabled : false,
       icon : "",
+      text : "Sample Button",
       isInverseAllowed : false
     };
   },
@@ -33,6 +34,10 @@ var ButtonPattern = React.createClass({
               <Button type="primary">Primary Button</Button><br/><br/>
               <Button type="secondary">Secondary Button</Button><br/><br/>
               <Button disabled={true}>Disabled Button</Button><br/><br/>
+              <Button icon="check" />
+              <Button icon="trash" type="danger" />
+              <Button icon="close" disabled={true} />
+              <br/><br/>
               <Button className="button-customized">Custom Button Component</Button><br/><br/>
             </Pattern.Show>
 
@@ -44,7 +49,7 @@ var ButtonPattern = React.createClass({
                   <div className={"demo-pattern-example " + this._isInverse()}>
 
                     <Button type={this.state.type} inverse={this.state.inverse} disabled={this.state.disabled} icon={this.state.icon} >
-                      Button
+                      { this.state.text }
                     </Button>
 
                   </div>
@@ -61,6 +66,7 @@ var ButtonPattern = React.createClass({
                 inverse={this.state.inverse}
                 disabled={this.state.disabled}
                 icon={this.state.icon}
+                text={this.state.text}
                 isInverseAllowed={this.state.isInverseAllowed}
                 onChange={this._handleChange} />
             </Pattern.Demo>
@@ -72,6 +78,9 @@ var ButtonPattern = React.createClass({
                 &lt;Button type="primary"&gt;Primary Button&lt;/Button&gt;
                 &lt;Button type="secondary"&gt;Secondary Button&lt;/Button&gt;
                 &lt;Button disabled=(true)&gt;Disabled Button&lt;/Button&gt;
+                &lt;Button icon="check" /&gt;
+                &lt;Button icon="trash" type="danger" /&gt;
+                &lt;Button icon="close" disabled=(true) /&gt;
                 &lt;Button className="button-customized"&gt;Custom Button Component&lt;/Button&gt;
               </Code.HTML>
               <Code.Props patternProps={this._getProps()} />
@@ -163,9 +172,10 @@ var ButtonPattern = React.createClass({
 
     var disabled = this.state.disabled? ' disabled={true}' : '';
 
+    var text = this.state.text? '\tButton\n' : '';
     return (
       '<Button'+type+icon+inverse+disabled+'>\n' +
-      '\tButton\n'+
+      text+
       '</button>'
       );
     /*
@@ -175,19 +185,19 @@ var ButtonPattern = React.createClass({
         '\t<span>Default Button</span>\n' +
       '</button>'
     );*/
-  },
-  _hasIconHTML : function(){
-    if(this.state.icon !== ""){
-      return '<span class="ic ic-' + this.state.icon + '"></span>';
-    }
-    return "";
-  },
-  _hasIcon : function(){
-    if(this.state.icon !== ""){
-      return (<span className={"ic ic-" + this.state.icon}></span>);
-    }
-    return "";
   }
+//  _hasIconHTML : function(){
+//    if(this.state.icon !== ""){
+//      return '<span class="ic ic-' + this.state.icon + '"></span>';
+//    }
+//    return "";
+//  },
+//  _hasIcon : function(){
+//    if(this.state.icon !== ""){
+//      return (<span className={"ic ic-" + this.state.icon}></span>);
+//    }
+//    return "";
+//  }
 });
 
 var ButtonControls = React.createClass({
@@ -197,6 +207,7 @@ var ButtonControls = React.createClass({
       inverse : false,
       disabled : false,
       icon : "",
+      text : "",
       onChange : function(){},
       isInverseAllowed : false
     }
@@ -232,6 +243,14 @@ var ButtonControls = React.createClass({
               <RadioButton.Group layout="stacked">
                 <RadioButton isChecked={this.props.icon === ''} onChange={this._handleChange} radioName="icon" radioLabel="No Icon" value=""></RadioButton>
                 <RadioButton isChecked={this.props.icon === 'plus'} onChange={this._handleChange} radioName="icon" radioLabel="Add Icon" value="plus"></RadioButton>
+              </RadioButton.Group>
+            </InputLabel>
+          </Form.Row>
+          <Form.Row>
+            <InputLabel label="Text">
+              <RadioButton.Group layout="stacked">
+                <RadioButton isChecked={!!this.props.text} onChange={this._handleChange} radioName="text" radioLabel="Sample Text" value="Sample Button"></RadioButton>
+                <RadioButton isChecked={!this.props.text} onChange={this._handleChange} radioName="text" radioLabel="No Text" value=""></RadioButton>
               </RadioButton.Group>
             </InputLabel>
           </Form.Row>
