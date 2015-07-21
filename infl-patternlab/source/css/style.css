@@ -2283,12 +2283,12 @@ textarea {
     display: none;
   }
 }
-.icon-tooltip {
+.pt-tooltip {
   position: relative;
   display: inline-block;
   font-weight: normal;
 }
-.icon-tooltip .tool-tip-icon {
+.pt-tooltip .tool-tip-element {
   font-size: 20px;
   color: #444444;
   vertical-align: middle;
@@ -3199,6 +3199,15 @@ DIV.pt-popover DIV.arrow-top-inner {
   border-right: 14px solid transparent;
   border-bottom: 14px solid white;
 }
+DIV.pt-popover.edge-restricted {
+  margin-top: -10px;
+}
+DIV.pt-popover.edge-restricted DIV.arrow-top {
+  display: none;
+}
+DIV.pt-popover.edge-restricted DIV.arrow-top-inner {
+  display: none;
+}
 
 .pt-popover-wrapper {
   position: relative;
@@ -3430,10 +3439,10 @@ DIV.pt-popover.is-visible {
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
   border-bottom: 1px solid #d0d2d3;
+  text-align: center;
 }
 .pt-challenge-card .pt-challenge-image img {
-  width: 100%;
-  vertical-align: top;
+  height: 100%;
   cursor: pointer;
 }
 .pt-challenge-card .pt-challenge-image.no-image {
@@ -3470,6 +3479,14 @@ DIV.pt-popover.is-visible {
 .pt-challenge-card .pt-challenge-details .description {
   overflow: hidden;
   position: relative;
+}
+.pt-challenge-card .pt-challenge-details .description ol {
+  padding-left: 1.4em;
+  list-style-type: decimal;
+}
+.pt-challenge-card .pt-challenge-details .description ul {
+  list-style-type: disc;
+  padding-left: 1.2em;
 }
 .pt-challenge-card .pt-challenge-details .description:before {
   content: "";
