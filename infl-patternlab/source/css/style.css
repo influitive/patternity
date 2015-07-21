@@ -1588,9 +1588,13 @@ button.ic:before {
 .button-group.stacked.grouped .button.text:last-child {
   border-bottom-width: 0px;
 }
+.button-group.inline {
+  max-width: 100%;
+}
 .button-group.inline button,
 .button-group.inline .button {
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 .button-group.inline button:last-child,
 .button-group.inline .button:last-child {
