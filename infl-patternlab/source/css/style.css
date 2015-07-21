@@ -1264,6 +1264,14 @@ button .loading-spinner {
   position: relative;
   top: 2px;
 }
+.button.ic.iconButton,
+button.ic.iconButton {
+  padding: 0.5em 1em;
+}
+.button.ic.iconButton:before,
+button.ic.iconButton:before {
+  margin-right: 0;
+}
 .button:hover,
 button:hover {
   text-decoration: none;

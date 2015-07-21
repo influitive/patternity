@@ -488,6 +488,9 @@ var Button = React.createClass({displayName: "Button",
 
     if (this.props.className) classes += ' '+this.props.className;
     if (this.props.icon) classes += ' ic ic-'+this.props.icon;
+
+    if (!this.props.children || this.props.children.length===0) classes += ' iconButton';
+
     return classes;
   },
 
@@ -52570,6 +52573,7 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
       inverse : false,
       disabled : false,
       icon : "",
+      text : "Sample Button",
       isInverseAllowed : false
     };
   },
@@ -52588,6 +52592,10 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
               React.createElement(Button, {type: "primary"}, "Primary Button"), React.createElement("br", null), React.createElement("br", null), 
               React.createElement(Button, {type: "secondary"}, "Secondary Button"), React.createElement("br", null), React.createElement("br", null), 
               React.createElement(Button, {disabled: true}, "Disabled Button"), React.createElement("br", null), React.createElement("br", null), 
+              React.createElement(Button, {icon: "check"}), 
+              React.createElement(Button, {icon: "trash", type: "danger"}), 
+              React.createElement(Button, {icon: "close", disabled: true}), 
+              React.createElement("br", null), React.createElement("br", null), 
               React.createElement(Button, {className: "button-customized"}, "Custom Button Component"), React.createElement("br", null), React.createElement("br", null)
             ), 
 
@@ -52599,7 +52607,7 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
                   React.createElement("div", {className: "demo-pattern-example " + this._isInverse()}, 
 
                     React.createElement(Button, {type: this.state.type, inverse: this.state.inverse, disabled: this.state.disabled, icon: this.state.icon}, 
-                      "Button"
+                       this.state.text
                     )
 
                   )
@@ -52616,6 +52624,7 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
                 inverse: this.state.inverse, 
                 disabled: this.state.disabled, 
                 icon: this.state.icon, 
+                text: this.state.text, 
                 isInverseAllowed: this.state.isInverseAllowed, 
                 onChange: this._handleChange})
             ), 
@@ -52627,6 +52636,9 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
                 "<Button type=\"primary\">Primary Button</Button>" + ' ' +
                 "<Button type=\"secondary\">Secondary Button</Button>" + ' ' +
                 "<Button disabled=(true)>Disabled Button</Button>" + ' ' +
+                "<Button icon=\"trash\" />" + ' ' +
+                "<Button icon=\"trash\" type=\"danger\" />" + ' ' +
+                "<Button icon=\"close\" disabled=(true) />" + ' ' +
                 "<Button className=\"button-customized\">Custom Button Component</Button>"
               ), 
               React.createElement(Code.Props, {patternProps: this._getProps()})
@@ -52718,9 +52730,10 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
 
     var disabled = this.state.disabled? ' disabled={true}' : '';
 
+    var text = this.state.text? '\tButton\n' : '';
     return (
       '<Button'+type+icon+inverse+disabled+'>\n' +
-      '\tButton\n'+
+      text+
       '</button>'
       );
     /*
@@ -52730,19 +52743,19 @@ var ButtonPattern = React.createClass({displayName: "ButtonPattern",
         '\t<span>Default Button</span>\n' +
       '</button>'
     );*/
-  },
-  _hasIconHTML : function(){
-    if(this.state.icon !== ""){
-      return '<span class="ic ic-' + this.state.icon + '"></span>';
-    }
-    return "";
-  },
-  _hasIcon : function(){
-    if(this.state.icon !== ""){
-      return (React.createElement("span", {className: "ic ic-" + this.state.icon}));
-    }
-    return "";
   }
+//  _hasIconHTML : function(){
+//    if(this.state.icon !== ""){
+//      return '<span class="ic ic-' + this.state.icon + '"></span>';
+//    }
+//    return "";
+//  },
+//  _hasIcon : function(){
+//    if(this.state.icon !== ""){
+//      return (<span className={"ic ic-" + this.state.icon}></span>);
+//    }
+//    return "";
+//  }
 });
 
 var ButtonControls = React.createClass({displayName: "ButtonControls",
@@ -52752,6 +52765,7 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
       inverse : false,
       disabled : false,
       icon : "",
+      text : "",
       onChange : function(){},
       isInverseAllowed : false
     }
@@ -52787,6 +52801,14 @@ var ButtonControls = React.createClass({displayName: "ButtonControls",
               React.createElement(RadioButton.Group, {layout: "stacked"}, 
                 React.createElement(RadioButton, {isChecked: this.props.icon === '', onChange: this._handleChange, radioName: "icon", radioLabel: "No Icon", value: ""}), 
                 React.createElement(RadioButton, {isChecked: this.props.icon === 'plus', onChange: this._handleChange, radioName: "icon", radioLabel: "Add Icon", value: "plus"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Text"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: !!this.props.text, onChange: this._handleChange, radioName: "text", radioLabel: "Sample Text", value: "Sample Button"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.text, onChange: this._handleChange, radioName: "text", radioLabel: "No Text", value: ""})
               )
             )
           ), 
