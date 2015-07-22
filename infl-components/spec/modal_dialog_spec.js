@@ -5,7 +5,7 @@ var simulate  = ReactTestUtils.Simulate;
 var simulateNative = ReactTestUtils.SimulateNative;
 var _ = require('lodash');
 
-var ModalDailog = require("modal_dialog");
+var ModalDialog = require("modal_dialog");
 var ButtonGroup = require("button_group");
 
 var chai = require("chai");
@@ -46,20 +46,23 @@ describe('Modal Dialog Component', function() {
     _.defaults(defaultConfig, config);
 
     renderModalDialog(
-      <ModalDailog id={config.id} closeable={config.closeable} size={config.size} onClose={config.onClose} isModalOpen={config.isModalOpen} scrollingBody={config.scrollingBody} lightbox={config.lightbox}>
-        <ModalDailog.Header title="Modal Dialog Header Title" />
-        <ModalDailog.Body>
+      <ModalDialog id={config.id} closeable={config.closeable} size={config.size}
+        onClose={config.onClose} isModalOpen={config.isModalOpen}
+        scrollingBody={config.scrollingBody} lightbox={config.lightbox} >
+
+        <ModalDialog.Header title="Modal Dialog Header Title" />
+        <ModalDialog.Body>
             <p>This is the modal body. This is the modal body.</p>
             <p>This is the modal body. This is the modal body.</p>
             <p>This is the modal body. This is the modal body.</p>
-        </ModalDailog.Body>
-        <ModalDailog.Footer>
+        </ModalDialog.Body>
+        <ModalDialog.Footer>
             <ButtonGroup>
                 <button type="text">Cancel</button>
                 <button type="success">Save</button>
             </ButtonGroup>
-        </ModalDailog.Footer>
-      </ModalDailog>
+        </ModalDialog.Footer>
+      </ModalDialog>
     );
   }
 
@@ -79,19 +82,15 @@ describe('Modal Dialog Component', function() {
   });
 
   it('will disabled the scroll of the body when open', function () {
-    buildModalDialog({
-      isModalOpen : true
-    });
-    var bodyElement = document.getElementsByTagName('body')[0];
-    expect(bodyElement.style.overflow).to.equal("hidden");
+    buildModalDialog({ isModalOpen : true });
+
+    expect(document.body.style.overflow).to.equal("hidden");
   });
 
   xit('will enable the scroll of the body when closed', function () {
-    buildModalDialog({
-      isModalOpen : false
-    });
-    var bodyElement = document.getElementsByTagName('body')[0];
-    expect(bodyElement.style.overflow).to.equal("auto");
+    buildModalDialog({ isModalOpen : false });
+
+    expect(document.body.style.overflow).to.equal("auto");
   });
 
   describe('Closeable', function () {
