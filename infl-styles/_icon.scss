@@ -675,12 +675,42 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-private:before {
   content: "\E044"
+}
+
+@mixin ic-private() {
+  font-family: 'influicons';
+  content: "\E044"
+}
+
+
+.ic.ic-globe-locked:before {
+  content: "\E045"
+}
+
+@mixin ic-globe-locked() {
+  font-family: 'influicons';
+  content: "\E045"
+}
+
+
+.ic.ic-private-locked:before {
+  content: "\E046"
+}
+
+@mixin ic-private-locked() {
+  font-family: 'influicons';
+  content: "\E046"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E047"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E044"
+  content: "\E047"
 }
 
