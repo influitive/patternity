@@ -40,6 +40,9 @@ var ModalDialog = React.createClass({
       this._enableBodyScroll();
     }
   },
+  componentWillUnmount: function () {
+    this._onClose();
+  },
   render : function(){
     return (
       <div id={this.props.id} className={"pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody() + " " + this._lightbox()} onClick={this._closeDialog} ref="modalDialog">
@@ -55,9 +58,6 @@ var ModalDialog = React.createClass({
   },
   _scrollingModalBody : function(){
     return this.props.scrollingBody ? "scrolling-body" : "";
-  },
-  _disableBodyScroll : function(){
-    this._getBodyElement().style.overflow = "hidden";
   },
   _lightbox : function(){
     return this.props.lightbox ? "lightbox" : "";
@@ -82,11 +82,13 @@ var ModalDialog = React.createClass({
     this.props.onClose();
     this._enableBodyScroll();
   },
-  _enableBodyScroll : function(){
-    this._getBodyElement().style.overflow = "auto";
+
+  _disableBodyScroll : function () {
+    document.body.style.overflow = "hidden";
   },
-  _getBodyElement : function(){
-    return document.getElementsByTagName('body')[0];
+
+  _enableBodyScroll : function(){
+    document.body.style.overflow = "auto";
   }
 });
 
