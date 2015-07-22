@@ -20,25 +20,21 @@ var ModalDialog = React.createClass({
     lightbox : React.PropTypes.bool
   },
   getInitialState : function(){
-    if (this.props.isModalOpen) {
-      this._disableBodyScroll();
-    }
-    return {
-      isModalOpen : this.props.isModalOpen
-    };
+    return { isModalOpen : this.props.isModalOpen };
   },
   componentWillReceiveProps : function(newProps){
-    this.setState({
-      isModalOpen : newProps.isModalOpen
-    });
+    this.setState({ isModalOpen : newProps.isModalOpen });
   },
   componentDidUpdate: function(){
     if (this.state.isModalOpen) {
       this._disableBodyScroll();
     }
     else {
-      this._enableBodyScroll();
+      this._onClose();
     }
+  },
+  componentDidMount: function () {
+    if (this.props.isModalOpen) { this._disableBodyScroll(); }
   },
   componentWillUnmount: function () {
     this._onClose();
