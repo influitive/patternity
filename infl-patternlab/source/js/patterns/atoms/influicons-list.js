@@ -136,6 +136,12 @@ var icons = {
   
     "circle-filled": "circle-filled",
   
+    "private": "private",
+  
+    "globe-locked": "globe-locked",
+  
+    "private-locked": "private-locked",
+  
     "coins-old": "coins-old",
   
 
