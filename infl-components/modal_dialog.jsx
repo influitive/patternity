@@ -20,25 +20,24 @@ var ModalDialog = React.createClass({
     lightbox : React.PropTypes.bool
   },
   getInitialState : function(){
-    if (this.props.isModalOpen) {
-      this._disableBodyScroll();
-    }
-    return {
-      isModalOpen : this.props.isModalOpen
-    };
+    return { isModalOpen : this.props.isModalOpen };
   },
   componentWillReceiveProps : function(newProps){
-    this.setState({
-      isModalOpen : newProps.isModalOpen
-    });
+    this.setState({ isModalOpen : newProps.isModalOpen });
   },
   componentDidUpdate: function(){
     if (this.state.isModalOpen) {
       this._disableBodyScroll();
     }
     else {
-      this._enableBodyScroll();
+      this._onClose();
     }
+  },
+  componentDidMount: function () {
+    if (this.props.isModalOpen) { this._disableBodyScroll(); }
+  },
+  componentWillUnmount: function () {
+    this._onClose();
   },
   render : function(){
     return (
@@ -55,9 +54,6 @@ var ModalDialog = React.createClass({
   },
   _scrollingModalBody : function(){
     return this.props.scrollingBody ? "scrolling-body" : "";
-  },
-  _disableBodyScroll : function(){
-    this._getBodyElement().style.overflow = "hidden";
   },
   _lightbox : function(){
     return this.props.lightbox ? "lightbox" : "";
@@ -82,11 +78,13 @@ var ModalDialog = React.createClass({
     this.props.onClose();
     this._enableBodyScroll();
   },
-  _enableBodyScroll : function(){
-    this._getBodyElement().style.overflow = "auto";
+
+  _disableBodyScroll : function () {
+    document.body.style.overflow = "hidden";
   },
-  _getBodyElement : function(){
-    return document.getElementsByTagName('body')[0];
+
+  _enableBodyScroll : function(){
+    document.body.style.overflow = "auto";
   }
 });
 
