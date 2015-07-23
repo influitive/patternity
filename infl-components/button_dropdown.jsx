@@ -1,4 +1,5 @@
 var React = require('react');
+// var fileUpload = require("./utilities/file_upload.js");
 
 var ButtonDropdown = React.createClass({
   getInitialState: function() {
@@ -34,6 +35,7 @@ var ButtonDropdown = React.createClass({
     );
   },
   _toggleDropdownOptions: function(event){
+    // fileUpload.upload();
     this.setState({ isDropdownOpen : !this.state.isDropdownOpen });
   },
   _isDropdownOpen : function(){

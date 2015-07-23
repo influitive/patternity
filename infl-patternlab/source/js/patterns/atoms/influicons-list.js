@@ -142,6 +142,8 @@ var icons = {
   
     "private-locked": "private-locked",
   
+    "archive": "archive",
+  
     "coins-old": "coins-old",
   
 
