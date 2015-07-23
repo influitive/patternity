@@ -16,7 +16,7 @@ var HelpTooltip = React.createClass({
 
   render : function(){
     return (
-      <Tooltip title={this.props.title} element={<Icon icon="question-circle-o" />} >
+      <Tooltip title={this.props.title} element={<Icon icon="question-circle-o" />} position="bottom">
         {this.props.children}
       </Tooltip>
     );

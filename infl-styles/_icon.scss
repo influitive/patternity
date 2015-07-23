@@ -705,12 +705,22 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-archive:before {
   content: "\E047"
+}
+
+@mixin ic-archive() {
+  font-family: 'influicons';
+  content: "\E047"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E048"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E047"
+  content: "\E048"
 }
 

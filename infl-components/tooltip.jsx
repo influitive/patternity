@@ -3,7 +3,14 @@ var React = require('react');
 var Tooltip = React.createClass({
   propTypes : {
     title: React.PropTypes.string.isRequired,
-    element: React.PropTypes.node.isRequired
+    element: React.PropTypes.node.isRequired,
+    position : React.PropTypes.oneOf(['top', 'bottom'])
+  },
+
+  getDefaultProps : function(){
+    return {
+      position : 'top'
+    };
   },
 
   getInitialState: function() {
@@ -23,6 +30,7 @@ var Tooltip = React.createClass({
           showTooltip={this.state.showTooltip}
           showClose={this.state.showClose}
           closeToolTip={this._clickCloseTooltip}
+          position={this.props.position}
           ref="tip" />
         <span className="tool-tip-element"
             onClick={this._clickTooltip}
