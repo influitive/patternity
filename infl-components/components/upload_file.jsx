@@ -33,6 +33,8 @@ var UploadFile = React.createClass({
   },
 
   _handleClick : function(event){
+    event.preventDefault();
+    event.stopPropagation();
     if(this.props.withCrop){
       uploadFile.uploadWithCrop(this.props.onSuccess, this.props.cropRatio);
     } else if(this.props.compressFileOptions !== false){

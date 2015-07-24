@@ -11,7 +11,6 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
   }
 
   function uploadWithCrop(onSuccess, ratio){
-console.log(ratio);
     var optionsWithCrop = uploadOptions();
     if(ratio){
       optionsWithCrop.cropRatio = ratio;
