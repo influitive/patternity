@@ -110,7 +110,7 @@ Form.Row = React.createClass({
     };
   },
   propTypes : {
-    inputSize : React.PropTypes.oneOf(['small', 'medium', 'large'])
+    inputSize : React.PropTypes.oneOf(['small', 'medium', 'large', 'full'])
   },
   render: function () {
     return (

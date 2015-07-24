@@ -64,7 +64,7 @@ var FormRowPattern = React.createClass({
         type : "string",
         defaultValue : "large",
         required : false,
-        description : "determines how large the input will be small, medium ro large."
+        description : "determines how large the input will be small, medium, large or full."
       }
     };
   }
