@@ -173,11 +173,16 @@
 
     &.full-input {
       .pt-label {
-        &.inline,
         &.stacked {
           .pt-input,
           .pt-select {
             width: 100%;
+          }
+        }
+        &.inline {
+          .pt-input,
+          .pt-select {
+            width: calc(78.9% - 10px);
           }
         }
       }
