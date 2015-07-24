@@ -171,6 +171,18 @@
       }
     }
 
+    &.full-input {
+      .pt-label {
+        &.inline,
+        &.stacked {
+          .pt-input,
+          .pt-select {
+            width: 100%;
+          }
+        }
+      }
+    }
+
     .pt-label {
       width: 100%;
 

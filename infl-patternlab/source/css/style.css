@@ -2027,6 +2027,11 @@ textarea {
 .pt-form .pt-form-row.large-input .pt-label.stacked .pt-select {
   width: calc(78.9% - 10px);
 }
+.pt-form .pt-form-row.full-input .pt-label.inline .pt-input,
+.pt-form .pt-form-row.full-input .pt-label.inline .pt-select, .pt-form .pt-form-row.full-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.full-input .pt-label.stacked .pt-select {
+  width: 100%;
+}
 .pt-form .pt-form-row .pt-label {
   width: 100%;
 }
