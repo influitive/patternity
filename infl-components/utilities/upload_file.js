@@ -1,32 +1,38 @@
 var _ = require("lodash");
 
-var FileUpload = function(_filepicker){
+var UploadFile = function(initializeFilepicker, uploadOptions){
+
   function init(){
-    _filepicker.init();
+    initializeFilepicker();
   }
 
   function upload(onSuccess){
-    window.filepicker.pick(window.filepicker.options, onSuccess);
+    window.filepicker.pick(uploadOptions(), onSuccess, onError);
   }
 
   function uploadWithCrop(onSuccess, ratio){
-    var optionsWithCrop = window.filepicker.options;
+console.log(ratio);
+    var optionsWithCrop = uploadOptions();
     if(ratio){
       optionsWithCrop.cropRatio = ratio;
     }
     optionsWithCrop.services.push('CONVERT');
 
-    window.filepicker.pick(optionsWithCrop, onSuccess);
+    window.filepicker.pick(optionsWithCrop, onSuccess, onError);
   }
 
   function covertToImage(onSuccess, blob, convertOptions, storageOptions){
     storageOptions = storageOptions || {};
-    window.filepicker.convert(blob, convertOptions, storageOptions, onSuccess);
+    window.filepicker.convert(blob, convertOptions, storageOptions, onSuccess, onError);
   }
 
-  function uploadAndCompress(compressionOptions){
-    var optionsWithCompression = _.extend(window.filepicker.options, compressionOptions);
-    window.filepicker.pick(optionsWithCompression, onSuccess);
+  function uploadAndCompress(onSuccess, compressionOptions){
+    var optionsWithCompression = _.extend(uploadOptions(), compressionOptions);
+    window.filepicker.pick(optionsWithCompression, onSuccess, onError);
+  }
+
+  function onError(FPError){
+    console.log(FPError);
   }
 
   return {
@@ -58,11 +64,6 @@ var InitializeFilepicker = function(){
     "makeDropPane"
   ];
   var filepickerVersion = "v2";
-  var options = {
-    mimetype: 'image/*',
-    services: ['COMPUTER', 'IMAGE_SEARCH', 'URL', 'GOOGLE_DRIVE',
-    'DROPBOX', 'BOX','EVERNOTE', 'GMAIL', 'FACEBOOK', 'INSTAGRAM', 'FLICKR']
-  };
 
   function init(_filepickerVersion){
     if(window.filepicker){
@@ -111,12 +112,21 @@ var InitializeFilepicker = function(){
     window.filepicker.setKey(filepickerApiKey);
   }
 
+  function options(){
+    return {
+      mimetype: 'image/*',
+      services: ['COMPUTER', 'IMAGE_SEARCH', 'URL', 'GOOGLE_DRIVE',
+      'DROPBOX', 'BOX','EVERNOTE', 'GMAIL', 'FACEBOOK', 'INSTAGRAM', 'FLICKR']
+    };
+  }
+
   return {
     init : init,
     options : options
   };
 };
 
-var fileUpload = new FileUpload(new InitializeFilepicker());
-fileUpload.init();
-module.exports = fileUpload;
+var Filepicker = new InitializeFilepicker();
+var uploadFile = new UploadFile(Filepicker.init, Filepicker.options);
+uploadFile.init();
+module.exports = uploadFile;

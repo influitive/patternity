@@ -45,6 +45,7 @@ inflComp.SidebarNavListPattern    = require("./patterns/molecules/sidebar_nav_li
 inflComp.SidebarHeadingPattern    = require("./patterns/molecules/sidebar_heading_pattern.jsx");
 inflComp.StatsBarPattern          = require("./patterns/molecules/stats_bar_pattern.jsx");
 inflComp.CardPattern              = require("./patterns/molecules/cards/card_pattern.jsx");
+inflComp.UploadFilePattern        = require("./patterns/molecules/components/upload_file_pattern.jsx");
 
 /* Utilities */
 inflComp.StoragePattern           = require("./patterns/utilities/storage_pattern.jsx");
@@ -58,7 +59,7 @@ inflComp.ChallengesPagePattern    = require("./patterns/pages/challenges_page_pa
 module.exports = inflComp;
 
 
-},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/multi_select_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/multi_select_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/cards/card_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/multi_select_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/multi_select_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/cards/card_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx","./patterns/molecules/components/upload_file_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/components/upload_file_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -512,7 +513,6 @@ module.exports = Button;
 
 },{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_dropdown.jsx":[function(require,module,exports){
 var React = require('react');
-// var fileUpload = require("./utilities/file_upload.js");
 
 var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
   getInitialState: function() {
@@ -548,7 +548,6 @@ var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
     );
   },
   _toggleDropdownOptions: function(event){
-    // fileUpload.upload();
     this.setState({ isDropdownOpen : !this.state.isDropdownOpen });
   },
   _isDropdownOpen : function(){
@@ -1131,7 +1130,56 @@ Checkbox.Group = React.createClass({displayName: "Group",
 module.exports = Checkbox;
 
 
-},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
+},{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/components/upload_file.jsx":[function(require,module,exports){
+var React = require('react');
+var uploadFile = require('../utilities/upload_file.js');
+
+var UploadFile = React.createClass({displayName: "UploadFile",
+  propTypes: {
+    children: React.PropTypes.oneOfType([
+      React.PropTypes.object,
+      React.PropTypes.array
+    ]).isRequired,
+    onSuccess : React.PropTypes.func.isRequired,
+    withCrop : React.PropTypes.bool,
+    cropRatio : React.PropTypes.number,
+    compressFileOptions : React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.object
+    ])
+  },
+
+  getDefaultProps : function(){
+    return {
+      withCrop : false,
+      cropRatio : undefined,
+      compressFileOptions : false
+    };
+  },
+
+  render: function() {
+    return (
+      React.createElement("span", {className: "pt-file-upload", ref: "fileUpload", onClick: this._handleClick}, 
+        this.props.children
+      )
+    );
+  },
+
+  _handleClick : function(event){
+    if(this.props.withCrop){
+      uploadFile.uploadWithCrop(this.props.onSuccess, this.props.cropRatio);
+    } else if(this.props.compressFileOptions !== false){
+      uploadFile.uploadAndCompress(this.props.onSuccess, this.props.compressFileOptions);
+    } else {
+      uploadFile.upload(this.props.onSuccess);
+    }
+  }
+});
+
+module.exports = UploadFile;
+
+
+},{"../utilities/upload_file.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/upload_file.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Content = React.createClass({displayName: "Content",
@@ -1408,7 +1456,7 @@ var HelpTooltip = React.createClass({displayName: "HelpTooltip",
 
   render : function(){
     return (
-      React.createElement(Tooltip, {title: this.props.title, element: React.createElement(Icon, {icon: "question-circle-o"}), position: "bottom"}, 
+      React.createElement(Tooltip, {title: this.props.title, element: React.createElement(Icon, {icon: "question-circle-o"})}, 
         this.props.children
       )
     );
@@ -3983,7 +4031,142 @@ var Animate = function(){
 module.exports = new Animate();
 
 
-},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/upload_file.js":[function(require,module,exports){
+var _ = require("lodash");
+
+var UploadFile = function(initializeFilepicker, uploadOptions){
+
+  function init(){
+    initializeFilepicker();
+  }
+
+  function upload(onSuccess){
+    window.filepicker.pick(uploadOptions(), onSuccess, onError);
+  }
+
+  function uploadWithCrop(onSuccess, ratio){
+console.log(ratio);
+    var optionsWithCrop = uploadOptions();
+    if(ratio){
+      optionsWithCrop.cropRatio = ratio;
+    }
+    optionsWithCrop.services.push('CONVERT');
+
+    window.filepicker.pick(optionsWithCrop, onSuccess, onError);
+  }
+
+  function covertToImage(onSuccess, blob, convertOptions, storageOptions){
+    storageOptions = storageOptions || {};
+    window.filepicker.convert(blob, convertOptions, storageOptions, onSuccess, onError);
+  }
+
+  function uploadAndCompress(onSuccess, compressionOptions){
+    var optionsWithCompression = _.extend(uploadOptions(), compressionOptions);
+    window.filepicker.pick(optionsWithCompression, onSuccess, onError);
+  }
+
+  function onError(FPError){
+    console.log(FPError);
+  }
+
+  return {
+    init : init,
+    upload : upload,
+    uploadWithCrop : uploadWithCrop,
+    covertToImage : covertToImage,
+    uploadAndCompress : uploadAndCompress
+  };
+};
+
+var InitializeFilepicker = function(){
+  var filepickerApiKey = 'A0HwTllqOQMGhtATyx9euz';
+  var filepickerMethods = [
+    "pick",
+    "pickMultiple",
+    "pickAndStore",
+    "read",
+    "write",
+    "writeUrl",
+    "export",
+    "convert",
+    "store",
+    "storeUrl",
+    "remove",
+    "stat",
+    "setKey",
+    "constructWidget",
+    "makeDropPane"
+  ];
+  var filepickerVersion = "v2";
+
+  function init(_filepickerVersion){
+    if(window.filepicker){
+      return;
+    }
+
+    filepickerVersion = _filepickerVersion || filepickerVersion;
+
+    _addScriptTagToDOM();
+    _buildFilepicker();
+
+    _setFilepickerApiKey();
+  }
+
+  function _addScriptTagToDOM(){
+    var firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(_createScriptTag(),firstScriptTag);
+  }
+
+  function _createScriptTag(){
+    var filepickerScriptTag = document.createElement("script");
+    filepickerScriptTag.type="text/javascript";
+    filepickerScriptTag.async=!0;
+    filepickerScriptTag.src=("https:"===document.location.protocol?"https:":"http:")+"//api.filepicker.io/" + filepickerVersion + "/filepicker.js";
+    return filepickerScriptTag;
+  }
+
+  function _buildFilepicker(){
+    var filepicker={};
+    filepicker._queue=[];
+
+    for(var i = 0 ;i < filepickerMethods.length; i++){
+      filepicker[filepickerMethods[i]] = _buildFilepickerFunction(filepickerMethods[i],filepicker._queue);
+    }
+
+    window.filepicker = filepicker;
+  }
+
+  function _buildFilepickerFunction(method,filepickerQueue){
+    return function(){
+      filepickerQueue.push([method,arguments]);
+    };
+  }
+
+  function _setFilepickerApiKey(){
+    window.filepicker.setKey(filepickerApiKey);
+  }
+
+  function options(){
+    return {
+      mimetype: 'image/*',
+      services: ['COMPUTER', 'IMAGE_SEARCH', 'URL', 'GOOGLE_DRIVE',
+      'DROPBOX', 'BOX','EVERNOTE', 'GMAIL', 'FACEBOOK', 'INSTAGRAM', 'FLICKR']
+    };
+  }
+
+  return {
+    init : init,
+    options : options
+  };
+};
+
+var Filepicker = new InitializeFilepicker();
+var uploadFile = new UploadFile(Filepicker.init, Filepicker.options);
+uploadFile.init();
+module.exports = uploadFile;
+
+
+},{"lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -55576,7 +55759,204 @@ var ContentPattern = React.createClass({displayName: "ContentPattern",
 module.exports = ContentPattern;
 
 
-},{"../../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx":[function(require,module,exports){
+},{"../../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/components/upload_file_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../../patternlab-components/pattern.jsx');
+var Code      = require('../../../patternlab-components/code.jsx');
+var Require   = require('../../../patternlab-components/require.jsx');
+
+var Form            = require("../../../../../infl-components/form.jsx");
+var InputLabel      = require("../../../../../infl-components/input_label.jsx");
+var RadioButton     = require("../../../../../infl-components/radio_button.jsx");
+var SelectDropdown  = require("../../../../../infl-components/select_dropdown.jsx");
+
+var Button = require("../../../../../infl-components/button.jsx");
+
+var UploadFile   = require("../../../../../infl-components/components/upload_file.jsx");
+
+var UploadFilePattern = React.createClass({displayName: "UploadFilePattern",
+  getInitialState : function(){
+    return {
+      withCrop : false,
+      cropRatio : undefined
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "upload-file-pattern"}, 
+        React.createElement(Pattern, {title: "upload file"}, 
+          React.createElement("p", null, "The upload file component allows you to wrap any CTA you would like to initiate a file upload."), 
+
+          React.createElement(Pattern.Detail, {title: "Upload File"}, 
+            React.createElement(Pattern.Show, null, 
+              React.createElement(UploadFile, {onSuccess: function(){}}, 
+                React.createElement(Button, null, "Upload File")
+              )
+            ), 
+
+            React.createElement(Pattern.Demo, {title: "Upload File Demo"}, 
+              React.createElement("div", {className: "demo-output"}, 
+                React.createElement("div", {className: "demo-pattern"}, 
+                  React.createElement("h4", null, "Upload File"), 
+                  React.createElement("div", {className: "demo-pattern-example"}, 
+                    React.createElement(UploadFile, {onSuccess: function(){}, withCrop: this.state.withCrop, cropRatio: this.state.cropRatio}, 
+                      React.createElement(Button, null, "Upload File")
+                    )
+                  )
+                ), 
+                React.createElement(Code, null, 
+                  React.createElement(Code.JSX, null, 
+                    this._buildDemoJSX()
+                  )
+                ), 
+                React.createElement("h5", null, "Props"), 
+                React.createElement("div", {className: "demo-props"}, 
+                  React.createElement("pre", null, 
+                    React.createElement("code", null, 
+                      this._buildDemoProps()
+                    )
+                  )
+                )
+              ), 
+              React.createElement(UploadFileControls, {
+                onChange: this._handleChange, 
+                withCrop: this.state.withCrop, 
+                cropRatio: this.state.cropRatio})
+            ), 
+
+            React.createElement(Code, null, 
+              React.createElement(Code.JSX, null, 
+                "<UploadFile onSuccess={callback_function}>" + ' ' +
+                  "<Button>Upload File</Button>" + ' ' +
+                "</UploadFile>"
+              ), 
+              React.createElement(Code.WithoutJSX, {patternName: "UploadFile"}), 
+              React.createElement(Code.Props, {patternProps: this._buildUploadFileProps()})
+            )
+          ), 
+
+          React.createElement(Require, null, 
+            React.createElement(Require.JS, null, 
+              "var UploadFile = require(\"patternity/infl-components/components/upload_file.jsx\");"
+            )
+          )
+        )
+      )
+    );
+  },
+  _buildDemoProps : function(){
+    return (
+      '{\n' +
+        '\twithCrop : ' + this.state.withCrop + ',\n' +
+        '\tcropRatio : ' + this.state.cropRatio + '\n' +
+        '\tcompressFileOptions : ' + this.state.compressionOptions + '\n' +
+      '}'
+    );
+  },
+  _handleChange : function(name, value){
+    var currentState = this.state;
+    currentState[name] = value;
+    this.setState(currentState);
+  },
+  _buildDemoJSX : function(){
+    return (
+      '<UploadFile onSuccess={callback_function} withCrop={' + this.state.withCrop + '} cropRatio={' + (this.state.cropRatio === undefined ? "" : this.state.cropRatio) + '} compressFileOptions={compress_file_object}>\n' +
+        '\t<Button>Upload File</Button>\n' +
+      '</UploadFile>\n'
+    );
+  },
+  _buildUploadFileProps : function(){
+    return {
+      onSuccess : {
+        type : "function",
+        defaultValue : "",
+        required : true,
+        description : "function called on successful file upload."
+      },
+      withCrop : {
+        type : "boolean",
+        defaultValue : "false",
+        required : false,
+        description : "determines if the file upload will have the crop feature."
+      },
+      cropRatio : {
+        type : "number",
+        defaultValue : "undefined",
+        required : false,
+        description : "determines the crop ratio used when withCrop is true.  if not provided crop will be free form."
+      },
+      compressFileOptions : {
+        type : "object",
+        defaultValue : "empty object",
+        required : false,
+        description : "options used for compressing the file after upload.  see filepicker.io documentation for details."
+      }
+    };
+  }
+});
+
+var UploadFileControls = React.createClass({displayName: "UploadFileControls",
+  PropTypes : {
+    withCrop : React.PropTypes.bool.isRequired,
+    onChange : React.PropTypes.func.isRequired,
+    cropRatio : React.PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.string
+    ]).isRequired
+  },
+
+  render : function(){
+    return (
+      React.createElement("div", {className: "pattern-controls"}, 
+        React.createElement("h4", null, "Upload File Controls"), 
+        React.createElement(Form, null, 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "With Crop"}, 
+              React.createElement(RadioButton.Group, {layout: "stacked"}, 
+                React.createElement(RadioButton, {isChecked: this.props.withCrop, onChange: this._handleBooleanChange, radioName: "withCrop", radioLabel: "Crop", value: "true"}), 
+                React.createElement(RadioButton, {isChecked: !this.props.withCrop, onChange: this._handleBooleanChange, radioName: "withCrop", radioLabel: "No Crop", value: "false"})
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+            React.createElement(InputLabel, {label: "Crop Ratio"}, 
+              React.createElement(SelectDropdown, {
+                  value: this.props.cropRatio === undefined ? "0" : this.props.cropRatio, 
+                  name: "cropRatio", 
+                  onChange: this._handleCropRatioChange, 
+                  disabled: !this.props.withCrop}, 
+                React.createElement("option", {value: "0"}, "Select Ratio"), 
+                React.createElement("option", {value: "0.75"}, "3/4"), 
+                React.createElement("option", {value: "1.25"}, "5/4"), 
+                React.createElement("option", {value: "0.4"}, "2/5")
+              )
+            )
+          ), 
+          React.createElement(Form.Row, null, 
+              "See ", React.createElement("a", {href: "javascript: void(0);", onClick: this._navigateToFilepicker}, "filepicker.io"), " for compression options"
+          )
+        )
+      )
+    );
+  },
+
+  _handleBooleanChange : function(event){
+    this.props.onChange(event.target.name, event.target.value === "true");
+  },
+
+  _handleCropRatioChange : function(event){
+    this.props.onChange(event.target.name, event.target.value === "0" ? undefined : eval(event.target.value));
+  },
+
+  _navigateToFilepicker : function(event){
+    window.open("https://www.filepicker.com/documentation/file_ingestion/javascript_api/compression?v=v2");
+  }
+});
+
+module.exports = UploadFilePattern;
+
+
+},{"../../../../../infl-components/button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button.jsx","../../../../../infl-components/components/upload_file.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/components/upload_file.jsx","../../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../../infl-components/select_dropdown.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/select_dropdown.jsx","../../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 var Code      = require('../../patternlab-components/code.jsx');

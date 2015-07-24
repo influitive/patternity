@@ -4243,4 +4243,12 @@ body {
   font-weight: bold;
 }
 
+#filepicker_shade {
+  z-index: 1600;
+}
+
+.fp__wrapper {
+  z-index: 1601;
+}
+
 /*# sourceMappingURL=style.css.map */
