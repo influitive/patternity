@@ -40,10 +40,22 @@ describe('Checkbox Component', function() {
     expect(checkboxElement.id).to.equal(id);
   });
 
-  it('will render with the passed checkbox label', function() {
+  it('will render with the passed checkboxLabel (deprecated)', function() {
     var label = "My Checkbox";
     renderCheckbox(<Checkbox checkboxLabel={label} />);
     expect(checkboxLabel.innerHTML).to.equal(label);
+  });
+
+  it('will render with the passed checkbox label', function() {
+    var label = "My Checkbox";
+    renderCheckbox(<Checkbox label={label} />);
+    expect(checkboxLabel.innerHTML).to.equal(label);
+  });
+
+  it('will render with the passed checkbox name', function() {
+    var name = "is_a_cool_dude";
+    renderCheckbox(<Checkbox name={name} />);
+    expect(checkboxNative.name).to.equal(name);
   });
 
   describe('Enabled', function () {
