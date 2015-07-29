@@ -37,7 +37,9 @@ describe('Checkbox Component', function() {
   it('will render with the passed id', function() {
     var id = "test-id";
     renderCheckbox(<Checkbox id={id}/>);
+
     expect(checkboxElement.id).to.equal(id);
+    expect(checkboxLabel.htmlFor).to.equal(id);
   });
 
   it('will render with the passed checkboxLabel (deprecated)', function() {

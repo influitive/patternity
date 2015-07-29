@@ -38,7 +38,7 @@ var Checkbox = React.createClass({
     return (
       <span id={this.props.id} className={this._checkboxCSSClasses()} ref="checkbox" onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
         <span className="stylized-checkbox" ref="stylizedCheckbox"></span>
-        <span className="pt-checkbox-label" ref="label">{this._label()}</span>
+        <label htmlFor={this.props.id} className="pt-checkbox-label" ref="label">{this._label()}</label>
         <input id={this.props.id}
           ref="nativeCheckbox"
           name={this._name()}
