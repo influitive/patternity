@@ -22,6 +22,7 @@ var Checkbox = React.createClass({
     id:            React.PropTypes.string,
     enabled:       React.PropTypes.bool,
     isChecked:     React.PropTypes.bool,
+    required:      React.PropTypes.bool,
     onChange:      React.PropTypes.func,
     checkboxName:  React.PropTypes.string,
     checkboxLabel: React.PropTypes.string,
@@ -38,7 +39,10 @@ var Checkbox = React.createClass({
     return (
       <span id={this.props.id} className={this._checkboxCSSClasses()} ref="checkbox" onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
         <span className="stylized-checkbox" ref="stylizedCheckbox"></span>
-        <label htmlFor={this.props.id} className="pt-checkbox-label" ref="label">{this._label()}</label>
+        <label htmlFor={this.props.id} className="pt-checkbox-label" ref="label">
+          { this._label() }
+          { this._icon() }
+        </label>
         <input id={this.props.id}
           ref="nativeCheckbox"
           name={this._name()}
@@ -57,6 +61,7 @@ var Checkbox = React.createClass({
   _checkboxCSSClasses : function(){
     return classNames({
       'pt-checkbox': true,
+      'is-required': this.props.required,
       'isChecked': this.state.isChecked,
       'disabled': !this.props.enabled
     });
@@ -71,19 +76,28 @@ var Checkbox = React.createClass({
     this.props.onChange(event);
   },
   _label: function () {
-    if (this.props.checkboxLabel) { console.warn("checkboxLabel has been deprecated, please use label instead"); }
     // TODO remove checkboxLabel to conform to all other input interfaces
+    if (this.props.checkboxLabel) { console.warn("checkboxLabel has been deprecated, please use label instead"); }
+
     return this.props.checkboxLabel || this.props.label;
   },
   _name: function () {
-    if (this.props.checkboxName) { console.warn("checkboxName has been deprecated, please use name instead"); }
     // TODO remove checkboxName to conform to all other input interfaces
+    if (this.props.checkboxName) { console.warn("checkboxName has been deprecated, please use name instead"); }
+
     return this.props.checkboxName || this.props.name;
+  },
+  _icon: function () {
+    if (this.props.required) {
+      return (
+        <span className="required-input ic ic-asterisk"></span>
+      );
+    }
   }
 });
 
 Checkbox.Group = React.createClass({
-    getDefaultProps: function() {
+  getDefaultProps: function() {
     return {
       id: "",
       layout : "inline"
