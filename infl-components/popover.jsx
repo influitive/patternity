@@ -196,7 +196,7 @@ var Popover = React.createClass({
 Popover.Menu = React.createClass({
   propTypes : {
     className: React.PropTypes.string,
-    children: React.PropTypes.object  // first child is the link, second child is PopOver.Menu
+    children: React.PropTypes.array  // first child is the link, second child is PopOver.Menu
   },
   render : function() {
     return (<div className="pt-popovermenu">
