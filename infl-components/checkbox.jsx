@@ -90,7 +90,7 @@ var Checkbox = React.createClass({
   _icon: function () {
     if (this.props.required) {
       return (
-        <span className="required-input ic ic-asterisk"></span>
+        <span className="required-icon ic ic-asterisk"></span>
       );
     }
   }
