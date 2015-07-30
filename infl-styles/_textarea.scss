@@ -1,0 +1,9 @@
+.pt-textarea {
+  textarea {
+    height: 3em;
+
+    &:focus {
+      height: 5em;
+    }
+  }
+}
