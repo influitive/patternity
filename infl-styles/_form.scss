@@ -38,6 +38,7 @@ textarea {
   input,
   textarea,
   select,
+  &.pt-checkbox .stylized-checkbox, // precedence
   .select-box {
     border-color: $error-color;
     color: $error-color;
