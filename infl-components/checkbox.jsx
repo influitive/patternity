@@ -23,6 +23,7 @@ var Checkbox = React.createClass({
     enabled:       React.PropTypes.bool,
     isChecked:     React.PropTypes.bool,
     required:      React.PropTypes.bool,
+    error:         React.PropTypes.bool,
     onChange:      React.PropTypes.func,
     checkboxName:  React.PropTypes.string,
     checkboxLabel: React.PropTypes.string,
@@ -61,6 +62,7 @@ var Checkbox = React.createClass({
   _checkboxCSSClasses : function(){
     return classNames({
       'pt-checkbox': true,
+      'is-error': this.props.error,
       'is-required': this.props.required,
       'isChecked': this.state.isChecked,
       'disabled': !this.props.enabled
