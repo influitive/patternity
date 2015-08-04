@@ -20,16 +20,28 @@ var ModalDialog = React.createClass({
     lightbox : React.PropTypes.bool
   },
   getInitialState : function(){
-    return { isModalOpen : this.props.isModalOpen };
+    // TODO remove all open/closed state from modal and let calling container handle it
+    return {
+      isModalOpen:    this.props.isModalOpen,
+      isModalClosing: false
+    };
   },
   componentWillReceiveProps : function(newProps){
-    this.setState({ isModalOpen : newProps.isModalOpen });
+    // TODO this should go away once modal_dialog doesn't care about its state anymore
+    // For now we're tracking whether or not a modal was *previously* open and is now closing
+    // so as to trigger the onClose callbacks only once in that case (in case this component)
+    // were still rendered in the DOM
+    var isClosing = this.props.isModalOpen && newProps.isModalOpen === false;
+
+    this.setState({
+      isModalOpen:    newProps.isModalOpen,
+      isModalClosing: isClosing
+    });
   },
-  componentDidUpdate: function(){
-    if (this.state.isModalOpen) {
+  componentDidUpdate: function () {
+    if ( this.state.isModalOpen ) {
       this._disableBodyScroll();
-    }
-    else {
+    } else if ( this.state.isModalClosing ) {
       this._onClose();
     }
   },
