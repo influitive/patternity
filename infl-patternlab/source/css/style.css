@@ -1726,7 +1726,7 @@ textarea {
 
 .is-error input,
 .is-error textarea,
-.is-error select,
+.is-error select, .is-error.pt-checkbox .stylized-checkbox,
 .is-error .select-box {
   border-color: #c54040;
   color: #c54040;
@@ -2013,24 +2013,35 @@ textarea {
   clear: left;
 }
 .pt-form .pt-form-row.small-input .pt-label.inline .pt-input,
+.pt-form .pt-form-row.small-input .pt-label.inline .pt-textarea,
 .pt-form .pt-form-row.small-input .pt-label.inline .pt-select, .pt-form .pt-form-row.small-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.small-input .pt-label.stacked .pt-textarea,
 .pt-form .pt-form-row.small-input .pt-label.stacked .pt-select {
   width: calc(29% - 10px);
 }
 .pt-form .pt-form-row.medium-input .pt-label.inline .pt-input,
+.pt-form .pt-form-row.medium-input .pt-label.inline .pt-textarea,
 .pt-form .pt-form-row.medium-input .pt-label.inline .pt-select, .pt-form .pt-form-row.medium-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.medium-input .pt-label.stacked .pt-textarea,
 .pt-form .pt-form-row.medium-input .pt-label.stacked .pt-select {
   width: calc(51% - 10px);
 }
 .pt-form .pt-form-row.large-input .pt-label.inline .pt-input,
+.pt-form .pt-form-row.large-input .pt-label.inline .pt-textarea,
 .pt-form .pt-form-row.large-input .pt-label.inline .pt-select, .pt-form .pt-form-row.large-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.large-input .pt-label.stacked .pt-textarea,
 .pt-form .pt-form-row.large-input .pt-label.stacked .pt-select {
   width: calc(78.9% - 10px);
 }
-.pt-form .pt-form-row.full-input .pt-label.inline .pt-input,
-.pt-form .pt-form-row.full-input .pt-label.inline .pt-select, .pt-form .pt-form-row.full-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.full-input .pt-label.stacked .pt-input,
+.pt-form .pt-form-row.full-input .pt-label.stacked .pt-textarea,
 .pt-form .pt-form-row.full-input .pt-label.stacked .pt-select {
   width: 100%;
+}
+.pt-form .pt-form-row.full-input .pt-label.inline .pt-input,
+.pt-form .pt-form-row.full-input .pt-label.inline .pt-textarea,
+.pt-form .pt-form-row.full-input .pt-label.inline .pt-select {
+  width: calc(78.9% - 10px);
 }
 .pt-form .pt-form-row .pt-label {
   width: 100%;
@@ -2040,18 +2051,26 @@ textarea {
   text-align: right;
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input,
+.pt-form .pt-form-row .pt-label.inline .pt-textarea,
 .pt-form .pt-form-row .pt-label.inline .pt-select {
   width: calc(50% - 10px);
 }
 .pt-form .pt-form-row .pt-label.inline .pt-input input,
 .pt-form .pt-form-row .pt-label.inline .pt-input select,
+.pt-form .pt-form-row .pt-label.inline .pt-input textarea,
 .pt-form .pt-form-row .pt-label.inline .pt-input .select-box,
+.pt-form .pt-form-row .pt-label.inline .pt-textarea input,
+.pt-form .pt-form-row .pt-label.inline .pt-textarea select,
+.pt-form .pt-form-row .pt-label.inline .pt-textarea textarea,
+.pt-form .pt-form-row .pt-label.inline .pt-textarea .select-box,
 .pt-form .pt-form-row .pt-label.inline .pt-select input,
 .pt-form .pt-form-row .pt-label.inline .pt-select select,
+.pt-form .pt-form-row .pt-label.inline .pt-select textarea,
 .pt-form .pt-form-row .pt-label.inline .pt-select .select-box {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.inline.multi-input .pt-input,
+.pt-form .pt-form-row .pt-label.inline.multi-input .pt-textarea,
 .pt-form .pt-form-row .pt-label.inline.multi-input .pt-select {
   width: auto;
 }
@@ -2059,14 +2078,21 @@ textarea {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.stacked .pt-input,
+.pt-form .pt-form-row .pt-label.stacked .pt-textarea,
 .pt-form .pt-form-row .pt-label.stacked .pt-select {
   width: 100%;
 }
 .pt-form .pt-form-row .pt-label.stacked .pt-input input,
 .pt-form .pt-form-row .pt-label.stacked .pt-input select,
+.pt-form .pt-form-row .pt-label.stacked .pt-input textarea,
 .pt-form .pt-form-row .pt-label.stacked .pt-input .select-box,
+.pt-form .pt-form-row .pt-label.stacked .pt-textarea input,
+.pt-form .pt-form-row .pt-label.stacked .pt-textarea select,
+.pt-form .pt-form-row .pt-label.stacked .pt-textarea textarea,
+.pt-form .pt-form-row .pt-label.stacked .pt-textarea .select-box,
 .pt-form .pt-form-row .pt-label.stacked .pt-select input,
 .pt-form .pt-form-row .pt-label.stacked .pt-select select,
+.pt-form .pt-form-row .pt-label.stacked .pt-select textarea,
 .pt-form .pt-form-row .pt-label.stacked .pt-select .select-box {
   width: 100%;
 }
@@ -2102,6 +2128,12 @@ textarea {
   display: inline-block;
   margin-left: 10px;
   vertical-align: middle;
+}
+.pt-checkbox .pt-checkbox-label .required-icon {
+  position: relative;
+  top: 1px;
+  left: 3px;
+  color: #c54040;
 }
 .pt-checkbox.isChecked .stylized-checkbox:before {
   font-family: 'influicons';
@@ -2316,6 +2348,13 @@ textarea {
     display: none;
   }
 }
+.pt-textarea textarea {
+  height: 3em;
+}
+.pt-textarea textarea:focus {
+  height: 5em;
+}
+
 .pt-tooltip {
   position: relative;
   display: inline-block;

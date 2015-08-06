@@ -1064,14 +1064,18 @@ var Checkbox = React.createClass({displayName: "Checkbox",
       value : ""
     };
   },
-  propTypes : {
-    id: React.PropTypes.string,
-    enabled: React.PropTypes.bool,
-    isChecked: React.PropTypes.bool,
-    onChange : React.PropTypes.func,
-    checkboxName : React.PropTypes.string,
-    checkboxLabel : React.PropTypes.string,
-    value : React.PropTypes.string
+  propTypes: {
+    id:            React.PropTypes.string,
+    enabled:       React.PropTypes.bool,
+    isChecked:     React.PropTypes.bool,
+    required:      React.PropTypes.bool,
+    error:         React.PropTypes.bool,
+    onChange:      React.PropTypes.func,
+    checkboxName:  React.PropTypes.string,
+    checkboxLabel: React.PropTypes.string,
+    label:         React.PropTypes.string,
+    name:          React.PropTypes.string,
+    value:         React.PropTypes.string
   },
   componentWillReceiveProps: function (newProps) {
     this.setState({
@@ -1082,8 +1086,19 @@ var Checkbox = React.createClass({displayName: "Checkbox",
     return (
       React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses(), ref: "checkbox", onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
         React.createElement("span", {className: "stylized-checkbox", ref: "stylizedCheckbox"}), 
-        React.createElement("span", {className: "pt-checkbox-label", ref: "label"}, this.props.checkboxLabel), 
-        React.createElement("input", {disabled: !this.props.enabled, type: "checkbox", ref: "nativeCheckbox", className: "pt-native-checkbox", value: this.props.value, checked: this._isChecked(), name: this.props.checkboxName, onChange: this._handleChange, id: this.props.id})
+        React.createElement("label", {htmlFor: this.props.id, className: "pt-checkbox-label", ref: "label"}, 
+           this._label(), 
+           this._icon() 
+        ), 
+        React.createElement("input", {id: this.props.id, 
+          ref: "nativeCheckbox", 
+          name: this._name(), 
+          value: this.props.value, 
+          type: "checkbox", 
+          disabled: !this.props.enabled, 
+          className: "pt-native-checkbox", 
+          checked: this._isChecked(), 
+          onChange: this._handleChange})
       )
     );
   },
@@ -1093,6 +1108,8 @@ var Checkbox = React.createClass({displayName: "Checkbox",
   _checkboxCSSClasses : function(){
     return classNames({
       'pt-checkbox': true,
+      'is-error': this.props.error,
+      'is-required': this.props.required,
       'isChecked': this.state.isChecked,
       'disabled': !this.props.enabled
     });
@@ -1105,11 +1122,30 @@ var Checkbox = React.createClass({displayName: "Checkbox",
   _handleChange : function(event){
     this.setState({isChecked: !this.state.isChecked});
     this.props.onChange(event);
+  },
+  _label: function () {
+    // TODO remove checkboxLabel to conform to all other input interfaces
+    if (this.props.checkboxLabel) { console.warn("checkboxLabel has been deprecated, please use label instead"); }
+
+    return this.props.checkboxLabel || this.props.label;
+  },
+  _name: function () {
+    // TODO remove checkboxName to conform to all other input interfaces
+    if (this.props.checkboxName) { console.warn("checkboxName has been deprecated, please use name instead"); }
+
+    return this.props.checkboxName || this.props.name;
+  },
+  _icon: function () {
+    if (this.props.required) {
+      return (
+        React.createElement("span", {className: "required-icon ic ic-asterisk"})
+      );
+    }
   }
 });
 
 Checkbox.Group = React.createClass({displayName: "Group",
-    getDefaultProps: function() {
+  getDefaultProps: function() {
     return {
       id: "",
       layout : "inline"
@@ -2770,7 +2806,7 @@ var Popover = React.createClass({displayName: "Popover",
 Popover.Menu = React.createClass({displayName: "Menu",
   propTypes : {
     className: React.PropTypes.string,
-    children: React.PropTypes.object  // first child is the link, second child is PopOver.Menu
+    children: React.PropTypes.array  // first child is the link, second child is PopOver.Menu
   },
   render : function() {
     return (React.createElement("div", {className: "pt-popovermenu"}, 
@@ -4150,7 +4186,7 @@ var InitializeFilepicker = function(){
 
   function options(){
     return {
-      mimetype: 'image/*',
+      extensions: ['.png', '.jpg', '.jpeg', '.gif'],
       services: ['COMPUTER', 'IMAGE_SEARCH', 'URL', 'GOOGLE_DRIVE',
       'DROPBOX', 'BOX','EVERNOTE', 'GMAIL', 'FACEBOOK', 'INSTAGRAM', 'FLICKR']
     };
