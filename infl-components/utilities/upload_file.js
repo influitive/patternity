@@ -113,7 +113,7 @@ var InitializeFilepicker = function(){
 
   function options(){
     return {
-      mimetype: 'image/*',
+      extensions: ['.png', '.jpg', '.jpeg', '.gif'],
       services: ['COMPUTER', 'IMAGE_SEARCH', 'URL', 'GOOGLE_DRIVE',
       'DROPBOX', 'BOX','EVERNOTE', 'GMAIL', 'FACEBOOK', 'INSTAGRAM', 'FLICKR']
     };
