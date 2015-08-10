@@ -14,18 +14,20 @@ describe('SelectDropdown Component', function() {
   var subject;
 
   beforeEach(function() {
-    subject = ReactTestUtils.renderIntoDocument(<SelectDropdown key="key" name="select_name" value="value3" onChange={ textOnChange }>
-      <optgroup id="group1" label="label">
-        <option id="opt1" value="value1">option 1</option>
-        <option id="opt2" value="value2">option 2</option>
-        <option id="opt3" value="value3">option 3</option>
-      </optgroup>
-      <optgroup id="group2" label="label">
-        <option id="opt4" value="value4">option 4</option>
-        <option id="opt5" value="value5">option 5</option>
-        <option id="opt6" value="value6">option 6</option>
-      </optgroup>
-    </SelectDropdown>);
+    subject = ReactTestUtils.renderIntoDocument(
+      <SelectDropdown key="key" name="select_name" value="value3" onChange={ textOnChange }>
+        <optgroup id="group1" label="label">
+          <option id="opt1" value="value1">option 1</option>
+          <option id="opt2" value="value2">option 2</option>
+          <option id="opt3" value="value3">option 3</option>
+        </optgroup>
+        <optgroup id="group2" label="label">
+          <option id="opt4" value="value4">option 4</option>
+          <option id="opt5" value="value5">option 5</option>
+          <option id="opt6" value="value6">option 6</option>
+        </optgroup>
+      </SelectDropdown>
+    );
   });
 
   context('SelectDropdown', function() {
@@ -49,20 +51,22 @@ describe('SelectDropdown Component', function() {
       expect(selectNode.childNodes[0].childNodes[1].selected).to.eq(false);
       expect(selectNode.childNodes[0].childNodes[2].selected).to.eq(true);  // yeah, baby!
 
-      expect(subject.getValue()).to.eq('value3');
+      var titleNode = React.findDOMNode(subject.refs.title);
+
+      expect(titleNode.textContent).to.eq("option 3");
     });
 
     it('setting new props selects the corresponding option', function() {
-      expect(subject.getValue()).to.eq('value3');
-      subject.setProps({
-        value:'value6'
-      });
-      expect(subject.getValue()).to.eq('value6');
-
+      var titleNode  = React.findDOMNode(subject.refs.title);
       var selectNode = React.findDOMNode(subject.refs.select);
 
-      expect(selectNode.selectedIndex).to.eq(5);
-    });
+      expect(titleNode.textContent).to.eq("option 3");
 
+      subject.setProps({ value: 'value6' });
+
+      expect(selectNode.value).to.eq('value6');
+      expect(selectNode.selectedIndex).to.eq(5);
+      expect(titleNode.textContent).to.eq("option 6");
+    });
   });
 });
