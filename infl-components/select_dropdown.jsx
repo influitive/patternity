@@ -18,7 +18,10 @@ var SelectDropdown = React.createClass({
     disabled :  React.PropTypes.bool,
     children: React.PropTypes.array,
     onChange : React.PropTypes.func,
-    message: React.PropTypes.string,
+    message : React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.array
+    ]),
     id: React.PropTypes.string
   },
   getValue: function() {
