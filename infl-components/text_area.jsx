@@ -93,7 +93,14 @@ var TextArea = React.createClass({
     readOnly:    React.PropTypes.bool,
     disabled:    React.PropTypes.bool,
     autofocus:   React.PropTypes.bool,
+    autoexpand:  React.PropTypes.bool,
     onChange:    React.PropTypes.func.isRequired
+  },
+
+  getDefaultProps: function () {
+    return {
+      autoexpand: true
+    };
   },
 
   componentWillReceiveProps: function (newProps) {
@@ -118,7 +125,8 @@ var TextArea = React.createClass({
 
   _classNames: function () {
     return {
-      "pt-textarea": true
+      "pt-textarea": true,
+      "autoexpand": this.props.autoexpand
     };
   }
 });
