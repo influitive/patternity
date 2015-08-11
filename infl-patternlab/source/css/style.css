@@ -2349,9 +2349,12 @@ textarea {
   }
 }
 .pt-textarea textarea {
+  height: 5em;
+}
+.pt-textarea.autoexpand textarea {
   height: 3em;
 }
-.pt-textarea textarea:focus {
+.pt-textarea.autoexpand textarea:focus {
   height: 5em;
 }
 
