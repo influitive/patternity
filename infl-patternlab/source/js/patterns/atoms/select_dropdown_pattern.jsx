@@ -6,13 +6,19 @@ var Require   = require('../../patternlab-components/require.jsx');
 var SelectDropdown   = require("../../../../infl-components/select_dropdown.jsx");
 
 var SelectDropdownPattern = React.createClass({
+  getInitialState: function () {
+    return {
+      dropdownValue: "3"
+    };
+  },
   render : function(){
     return (
       <div className="select-dropdown-pattern">
         <Pattern title="select dropdown">
+          <p>Note that SelectDropdown is a "controlled" component. You MUST handle change and update with new props</p>
           <Pattern.Detail title="Select Dropdown">
             <Pattern.Show>
-              <SelectDropdown value="3">
+              <SelectDropdown value={this.state.dropdownValue} onChange={this._handleChange}>
                 <optgroup label="Option Group 1">
                     <option value="1">option 1</option>
                     <option value="2">option 2</option>
@@ -56,6 +62,9 @@ var SelectDropdownPattern = React.createClass({
         </Pattern>
       </div>
     );
+  },
+  _handleChange: function (e) {
+    this.setState({dropdownValue: e.target.value});
   },
   _buildSelectDropdownProps : function(){
     return {
