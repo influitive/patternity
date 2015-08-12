@@ -10,7 +10,6 @@ var AlertMixin = {
     };
   },
   componentWillReceiveProps : function(newProps){
-    console.log('testing');
     this.setState({
       showAlert: newProps.showAlert,
       closeable: newProps.closeable
