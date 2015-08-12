@@ -171,6 +171,9 @@ var Popover = React.createClass({
   },
 
   _onClick : function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+
     var isVisible = !this.state.isVisible;
 
     this.setState({
