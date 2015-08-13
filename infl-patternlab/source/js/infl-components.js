@@ -1626,34 +1626,40 @@ module.exports = Loading;
 
 },{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx":[function(require,module,exports){
 var React = require('react');
+var $ = require('jquery');
 
 var ModalDialog = React.createClass({displayName: "ModalDialog",
-  getDefaultProps : function(){
+  propTypes: {
+    id: React.PropTypes.string,
+    closeable: React.PropTypes.bool,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+    scrollingBody: React.PropTypes.bool,
+    lightbox: React.PropTypes.bool,
+    keyboard: React.PropTypes.bool
+  },
+
+  getDefaultProps: function() {
     return {
-      id : "",
-      closeable : true,
-      size : "medium",
-      onClose : function(){},
-      isModalOpen : false,
-      scrollingBody : false,
-      lightbox : true
+      id: '',
+      closeable: true,
+      size: 'medium',
+      onClose: function() {},
+      isModalOpen: false,
+      scrollingBody: false,
+      lightbox: true,
+      keyboard: true
     };
   },
-  propTypes :{
-    id : React.PropTypes.string,
-    closeable : React.PropTypes.bool,
-    size : React.PropTypes.oneOf(['small', 'medium', 'large']),
-    scrollingBody : React.PropTypes.bool,
-    lightbox : React.PropTypes.bool
-  },
-  getInitialState : function(){
+
+  getInitialState: function() {
     // TODO remove all open/closed state from modal and let calling container handle it
     return {
-      isModalOpen:    this.props.isModalOpen,
+      isModalOpen: this.props.isModalOpen,
       isModalClosing: false
     };
   },
-  componentWillReceiveProps : function(newProps){
+
+  componentWillReceiveProps: function(newProps) {
     // TODO this should go away once modal_dialog doesn't care about its state anymore
     // For now we're tracking whether or not a modal was *previously* open and is now closing
     // so as to trigger the onClose callbacks only once in that case (in case this component)
@@ -1661,82 +1667,107 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
     var isClosing = this.props.isModalOpen && newProps.isModalOpen === false;
 
     this.setState({
-      isModalOpen:    newProps.isModalOpen,
+      isModalOpen: newProps.isModalOpen,
       isModalClosing: isClosing
     });
   },
-  componentDidUpdate: function () {
-    if ( this.state.isModalOpen ) {
+
+  componentDidUpdate: function() {
+    if (this.state.isModalOpen) {
+      $(window).on('keydown.escapePressed', this._handleEscape);
       this._disableBodyScroll();
-    } else if ( this.state.isModalClosing ) {
+    } else if (this.state.isModalClosing) {
       this._onClose();
     }
   },
-  componentDidMount: function () {
+
+  componentDidMount: function() {
     if (this.props.isModalOpen) { this._disableBodyScroll(); }
   },
-  componentWillUnmount: function () {
+
+  componentWillUnmount: function() {
     this._onClose();
   },
-  render : function(){
+
+  render: function() {
     return (
-      React.createElement("div", {id: this.props.id, className: "pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody() + " " + this._lightbox(), onClick: this._closeDialog, ref: "modalDialog"}, 
-        React.createElement("section", {className: "pt-modal " + this.props.size, ref: "modal"}, 
-          React.createElement("span", {className: "close-dialog ic ic-times " + this._isModalCloseable(), onClick: this._closeDialog, ref: "close"}), 
+      React.createElement("div", {id: this.props.id, className: 'pt-modal-dialog  ' + this._showModal() + ' ' + this._scrollingModalBody() + ' ' + this._lightbox(), 
+        onClick: this._closeDialog, 
+        ref: "modalDialog"}, 
+        React.createElement("section", {className: 'pt-modal ' + this.props.size, ref: "modal"}, 
+          React.createElement("span", {className: 'close-dialog ic ic-times ' + this._isModalCloseable(), onClick: this._closeDialog, ref: "close"}), 
           this.props.children
         )
       )
     );
   },
-  _isModalCloseable : function(){
-    return this.props.closeable ? "" : "disable-close";
+
+  _isModalCloseable: function() {
+    return this.props.closeable ? '' : 'disable-close';
   },
-  _scrollingModalBody : function(){
-    return this.props.scrollingBody ? "scrolling-body" : "";
+
+  _scrollingModalBody: function() {
+    return this.props.scrollingBody ? 'scrolling-body' : '';
   },
-  _lightbox : function(){
-    return this.props.lightbox ? "lightbox" : "";
+
+  _lightbox: function() {
+    return this.props.lightbox ? 'lightbox' : '';
   },
-  _showModal : function(){
-    return this.state.isModalOpen ? "" : "close";
+
+  _showModal: function() {
+    return this.state.isModalOpen ? '' : 'close';
   },
-  _closeDialog : function(event){
-    if(this.props.closeable && this._isClosableElement(event.target)){
+
+  _closeDialog: function(event) {
+    if(this.props.closeable && this._isClosableElement(event.target)) {
       this._dismissDialog();
     }
   },
-  _isClosableElement : function(target){
-    return target.className.indexOf("close-dialog") > -1 || target.className.indexOf("pt-modal-dialog") > -1;
+
+  _isClosableElement: function(target) {
+    return target.className.indexOf('close-dialog') > -1 || target.className.indexOf('pt-modal-dialog') > -1;
   },
-  _dismissDialog : function(){
+
+  _dismissDialog: function() {
     this.setState({
-      isModalOpen : false
+      isModalOpen: false
     }, this._onClose);
   },
-  _onClose : function(){
+
+  _handleEscape: function() {
+    if(event.keyCode === 27 && this.props.closeable && this.props.keyboard) {
+      $(window).off('keydown.escapePressed');
+      this._dismissDialog();
+    }
+  },
+
+  _onClose: function() {
+    console.log('should close');
     this.props.onClose();
     this._enableBodyScroll();
   },
 
-  _disableBodyScroll : function () {
-    document.body.style.overflow = "hidden";
+  _disableBodyScroll: function() {
+    document.body.style.overflow = 'hidden';
   },
 
-  _enableBodyScroll : function(){
-    document.body.style.overflow = "auto";
+  _enableBodyScroll: function() {
+    document.body.style.overflow = 'auto';
   }
 });
 
 ModalDialog.Header = React.createClass({displayName: "Header",
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      title : ""
+      title: ''
     };
   },
-  propTypes :{
-    title : React.PropTypes.string
+
+  propTypes: {
+    title: React.PropTypes.string
   },
-  render : function(){
+
+  render: function() {
     return (
       React.createElement("div", {className: "pt-modal-header"}, 
         React.createElement("h3", null, this.props.title)
@@ -1746,7 +1777,7 @@ ModalDialog.Header = React.createClass({displayName: "Header",
 });
 
 ModalDialog.Body = React.createClass({displayName: "Body",
-  render : function(){
+  render: function() {
     return (
       React.createElement("div", {className: "pt-modal-body"}, 
         this.props.children
@@ -1756,7 +1787,7 @@ ModalDialog.Body = React.createClass({displayName: "Body",
 });
 
 ModalDialog.Footer = React.createClass({displayName: "Footer",
-  render : function(){
+  render: function() {
     return (
       React.createElement("div", {className: "pt-modal-footer"}, 
         this.props.children
@@ -1768,7 +1799,7 @@ ModalDialog.Footer = React.createClass({displayName: "Footer",
 module.exports = ModalDialog;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx":[function(require,module,exports){
+},{"jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Icon = require('../icon.jsx');
@@ -2208,72 +2239,72 @@ var TAB_KEY_CODE = 9;
 var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
 
 var MultiSelectKeyCodeMixin = {
-  _handleKeyDown : function(event){
-    if(acceptedKeyCodes.indexOf(event.keyCode) > -1){
+  _handleKeyDown: function(event) {
+    if(acceptedKeyCodes.indexOf(event.keyCode) > -1) {
       event.stopPropagation();
       this._preventDefaultForTab(event);
       this._determineKeyCodeAction(event.keyCode);
     }
   },
 
-  _preventDefaultForTab : function(event){
-    if(event.keyCode === TAB_KEY_CODE){
+  _preventDefaultForTab: function(event) {
+    if(event.keyCode === TAB_KEY_CODE) {
       event.preventDefault();
     }
   },
 
-  _determineKeyCodeAction : function(keyCode){
-    if(keyCode === ENTER_KEY_CODE){
+  _determineKeyCodeAction: function(keyCode) {
+    if(keyCode === ENTER_KEY_CODE) {
       this._handleEnter();
     } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
       this._handleBackspaceDelete();
-    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE){
+    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE) {
       this._handleDownArrowTab();
-    } else if(keyCode === UP_ARROW_KEY_CODE){
+    } else if(keyCode === UP_ARROW_KEY_CODE) {
       this._handleUpArrow();
-    } else if(keyCode === ESCAPE_KEY_CODE){
+    } else if(keyCode === ESCAPE_KEY_CODE) {
       this._hideOptions();
     }
   },
 
-  _handleEnter : function(){
-    if(this._anyOptionsToShow()){
+  _handleEnter: function() {
+    if(this._anyOptionsToShow()) {
       this._handleOptionSelect(this.state.focusedOption);
     }
   },
 
-  _handleBackspaceDelete : function(){
-    if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0){
+  _handleBackspaceDelete: function() {
+    if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0) {
       var optionToRemove = this.state.selectedOptions[this.state.selectedOptions.length - 1];
       this._handleSelectedOptionRemoved(optionToRemove);
     }
   },
 
-  _handleDownArrowTab : function(){
-    if(this._anyOptionsToShow()){
+  _handleDownArrowTab: function() {
+    if(this._anyOptionsToShow()) {
       this._nextFocusedOption();
     }
   },
 
-  _handleUpArrow : function(){
-    if(this._anyOptionsToShow()){
+  _handleUpArrow: function() {
+    if(this._anyOptionsToShow()) {
       this._previousFocusedOption();
     }
   },
 
-  _nextFocusedOption : function(){
+  _nextFocusedOption: function() {
     var currentFocusedOptionIndex = this._findFocusedOptionIndex();
 
     var nextFocusedOption = {};
-    for(var i = 0; i < this.state.options.length; i++){
+    for(var i = 0; i < this.state.options.length; i++) {
       if(i > currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
         nextFocusedOption = this.state.options[i]
         break;
       }
     }
 
-    if(_.isEmpty(nextFocusedOption)){
-      for(var i = 0; i < this.state.options.length; i++){
+    if(_.isEmpty(nextFocusedOption)) {
+      for(var i = 0; i < this.state.options.length; i++) {
         if(this._optionCanHaveFocus(this.state.options[i])) {
           nextFocusedOption = this.state.options[i]
           break;
@@ -2282,23 +2313,23 @@ var MultiSelectKeyCodeMixin = {
     }
 
     this.setState({
-      focusedOption : nextFocusedOption
+      focusedOption: nextFocusedOption
     });
   },
 
-  _previousFocusedOption : function(){
+  _previousFocusedOption: function() {
     var currentFocusedOptionIndex = this._findFocusedOptionIndex();
 
     var previousFocusedOption = {};
-    for(var i = this.state.options.length - 1; i >= 0 ; i--){
+    for(var i = this.state.options.length - 1; i >= 0 ; i--) {
       if(i < currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
         previousFocusedOption = this.state.options[i]
         break;
       }
     }
 
-    if(_.isEmpty(previousFocusedOption)){
-      for(var i = this.state.options.length - 1; i >= 0; i--){
+    if(_.isEmpty(previousFocusedOption)) {
+      for(var i = this.state.options.length - 1; i >= 0; i--) {
         if(this._optionCanHaveFocus(this.state.options[i])) {
           previousFocusedOption = this.state.options[i]
           break;
@@ -2307,14 +2338,14 @@ var MultiSelectKeyCodeMixin = {
     }
 
     this.setState({
-      focusedOption : previousFocusedOption
+      focusedOption: previousFocusedOption
     });
   },
 
-  _findFocusedOptionIndex : function(){
+  _findFocusedOptionIndex: function() {
     var currentFocusedOptionIndex = -1;
 
-    for(var i = 0; i < this.state.options.length; i++){
+    for(var i = 0; i < this.state.options.length; i++) {
       if(this._isFocusedOption(this.state.options[i])) {
         currentFocusedOptionIndex = i;
         break;
@@ -2324,7 +2355,7 @@ var MultiSelectKeyCodeMixin = {
     return currentFocusedOptionIndex;
   },
 
-  _isFocusedOption : function(option){
+  _isFocusedOption: function(option) {
     return option.name === this.state.focusedOption.name && option.value === this.state.focusedOption.value
   },
 };
