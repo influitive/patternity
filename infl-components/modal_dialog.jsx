@@ -1,32 +1,39 @@
 var React = require('react');
+var $ = require('jquery');
+var classNames = require('classnames');
 
 var ModalDialog = React.createClass({
-  getDefaultProps : function(){
+  propTypes: {
+    id: React.PropTypes.string,
+    closeable: React.PropTypes.bool,
+    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+    scrollingBody: React.PropTypes.bool,
+    lightbox: React.PropTypes.bool,
+    keyboard: React.PropTypes.bool
+  },
+
+  getDefaultProps: function() {
     return {
-      id : "",
-      closeable : true,
-      size : "medium",
-      onClose : function(){},
-      isModalOpen : false,
-      scrollingBody : false,
-      lightbox : true
+      id: '',
+      closeable: true,
+      size: 'medium',
+      onClose: function() {},
+      isModalOpen: false,
+      scrollingBody: false,
+      lightbox: true,
+      keyboard: true
     };
   },
-  propTypes :{
-    id : React.PropTypes.string,
-    closeable : React.PropTypes.bool,
-    size : React.PropTypes.oneOf(['small', 'medium', 'large']),
-    scrollingBody : React.PropTypes.bool,
-    lightbox : React.PropTypes.bool
-  },
-  getInitialState : function(){
+
+  getInitialState: function() {
     // TODO remove all open/closed state from modal and let calling container handle it
     return {
-      isModalOpen:    this.props.isModalOpen,
+      isModalOpen: this.props.isModalOpen,
       isModalClosing: false
     };
   },
-  componentWillReceiveProps : function(newProps){
+
+  componentWillReceiveProps: function(newProps) {
     // TODO this should go away once modal_dialog doesn't care about its state anymore
     // For now we're tracking whether or not a modal was *previously* open and is now closing
     // so as to trigger the onClose callbacks only once in that case (in case this component)
@@ -34,84 +41,109 @@ var ModalDialog = React.createClass({
     var isClosing = this.props.isModalOpen && newProps.isModalOpen === false;
 
     this.setState({
-      isModalOpen:    newProps.isModalOpen,
+      isModalOpen: newProps.isModalOpen,
       isModalClosing: isClosing
     });
   },
-  componentDidUpdate: function () {
-    if ( this.state.isModalOpen ) {
+
+  componentDidUpdate: function() {
+    if (this.state.isModalOpen) {
+      $(window).on('keydown.escapePressed', this._handleEscape);
       this._disableBodyScroll();
-    } else if ( this.state.isModalClosing ) {
+    } else if (this.state.isModalClosing) {
       this._onClose();
     }
   },
-  componentDidMount: function () {
+
+  componentDidMount: function() {
     if (this.props.isModalOpen) { this._disableBodyScroll(); }
   },
-  componentWillUnmount: function () {
+
+  componentWillUnmount: function() {
     this._onClose();
   },
-  render : function(){
+
+  render: function() {
     return (
-      <div id={this.props.id} className={"pt-modal-dialog  " + this._showModal() + " " + this._scrollingModalBody() + " " + this._lightbox()} onClick={this._closeDialog} ref="modalDialog">
-        <section className={"pt-modal " + this.props.size} ref="modal">
-          <span className={"close-dialog ic ic-times " + this._isModalCloseable()} onClick={this._closeDialog} ref="close"></span>
+      <div id={this.props.id} className={this._classNames().ptModalDialog}
+        onClick={this._closeDialog}
+        ref='modalDialog'>
+        <section className={'pt-modal ' + this.props.size} ref='modal'>
+          <span className={this._classNames().span} onClick={this._closeDialog} ref='close'></span>
           {this.props.children}
         </section>
       </div>
     );
   },
-  _isModalCloseable : function(){
-    return this.props.closeable ? "" : "disable-close";
+
+  _classNames: function() {
+    return {
+      ptModalDialog: classNames({
+        'pt-modal-dialog': true,
+        'close': !this.state.isModalOpen,
+        'scrolling-body': this.props.scrollingBody,
+        'lightbox': this.props.lightbox
+      }),
+      span: classNames({
+        'close-dialog': true,
+        'ic': true,
+        'ic-times': true,
+        'disable-close': !this.props.closeable
+      })
+    };
   },
-  _scrollingModalBody : function(){
-    return this.props.scrollingBody ? "scrolling-body" : "";
-  },
-  _lightbox : function(){
-    return this.props.lightbox ? "lightbox" : "";
-  },
-  _showModal : function(){
-    return this.state.isModalOpen ? "" : "close";
-  },
-  _closeDialog : function(event){
-    if(this.props.closeable && this._isClosableElement(event.target)){
+
+  _closeDialog: function(event) {
+    if(this.props.closeable && this._isClosableElement(event.target)) {
       this._dismissDialog();
     }
   },
-  _isClosableElement : function(target){
-    return target.className.indexOf("close-dialog") > -1 || target.className.indexOf("pt-modal-dialog") > -1;
+
+  _isClosableElement: function(target) {
+    return target.className.indexOf('close-dialog') > -1 || target.className.indexOf('pt-modal-dialog') > -1;
   },
-  _dismissDialog : function(){
+
+  _dismissDialog: function() {
     this.setState({
-      isModalOpen : false
+      isModalOpen: false
     }, this._onClose);
   },
-  _onClose : function(){
+
+  _handleEscape: function() {
+    if(event.keyCode === 27 && this.props.closeable && this.props.keyboard) {
+      $(window).off('keydown.escapePressed');
+      this._dismissDialog();
+    }
+  },
+
+  _onClose: function() {
     this.props.onClose();
     this._enableBodyScroll();
   },
 
-  _disableBodyScroll : function () {
-    document.body.style.overflow = "hidden";
+  _disableBodyScroll: function() {
+    document.body.style.overflow = 'hidden';
   },
 
-  _enableBodyScroll : function(){
-    document.body.style.overflow = "auto";
+  _enableBodyScroll: function() {
+    document.body.style.overflow = 'auto';
   }
 });
 
 ModalDialog.Header = React.createClass({
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      title : ""
+      title: ''
     };
   },
-  propTypes :{
-    title : React.PropTypes.string
+
+  propTypes: {
+    title: React.PropTypes.string
   },
-  render : function(){
+
+  render: function() {
     return (
-      <div className="pt-modal-header">
+      <div className='pt-modal-header'>
         <h3>{this.props.title}</h3>
       </div>
     );
@@ -119,9 +151,9 @@ ModalDialog.Header = React.createClass({
 });
 
 ModalDialog.Body = React.createClass({
-  render : function(){
+  render: function() {
     return (
-      <div className="pt-modal-body">
+      <div className='pt-modal-body'>
         {this.props.children}
       </div>
     );
@@ -129,9 +161,9 @@ ModalDialog.Body = React.createClass({
 });
 
 ModalDialog.Footer = React.createClass({
-  render : function(){
+  render: function() {
     return (
-      <div className="pt-modal-footer">
+      <div className='pt-modal-footer'>
         {this.props.children}
       </div>
     );
