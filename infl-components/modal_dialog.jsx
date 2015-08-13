@@ -28,7 +28,7 @@ var ModalDialog = React.createClass({
   getInitialState: function() {
     // TODO remove all open/closed state from modal and let calling container handle it
     return {
-      isModalOpen:    this.props.isModalOpen,
+      isModalOpen: this.props.isModalOpen,
       isModalClosing: false
     };
   },
@@ -41,7 +41,7 @@ var ModalDialog = React.createClass({
     var isClosing = this.props.isModalOpen && newProps.isModalOpen === false;
 
     this.setState({
-      isModalOpen:    newProps.isModalOpen,
+      isModalOpen: newProps.isModalOpen,
       isModalClosing: isClosing
     });
   },
