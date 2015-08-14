@@ -2,8 +2,8 @@ var _ = require("lodash");
 
 var UploadFile = function(initializeFilepicker, uploadOptions){
 
-  function init(){
-    initializeFilepicker();
+  function init(apiKey, version){
+    initializeFilepicker(apiKey, version);
   }
 
   function upload(onSuccess){
@@ -44,7 +44,7 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
 };
 
 var InitializeFilepicker = function(){
-  var filepickerApiKey = 'A0HwTllqOQMGhtATyx9euz';
+  var filepickerApiKey;
   var filepickerMethods = [
     "pick",
     "pickMultiple",
@@ -64,12 +64,13 @@ var InitializeFilepicker = function(){
   ];
   var filepickerVersion = "v2";
 
-  function init(_filepickerVersion){
+  function init(_filepickerApiKey, _filepickerVersion){
     if(window.filepicker){
       return;
     }
 
     filepickerVersion = _filepickerVersion || filepickerVersion;
+    filepickerApiKey = _filepickerApiKey || "";
 
     _addScriptTagToDOM();
     _buildFilepicker();
@@ -127,5 +128,4 @@ var InitializeFilepicker = function(){
 
 var Filepicker = new InitializeFilepicker();
 var uploadFile = new UploadFile(Filepicker.init, Filepicker.options);
-uploadFile.init();
 module.exports = uploadFile;

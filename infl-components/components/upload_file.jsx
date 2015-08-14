@@ -13,15 +13,22 @@ var UploadFile = React.createClass({
     compressFileOptions : React.PropTypes.oneOfType([
       React.PropTypes.bool,
       React.PropTypes.object
-    ])
+    ]),
+    apiKey : React.PropTypes.string.isRequired,
+    version : React.PropTypes.string
   },
 
   getDefaultProps : function(){
     return {
       withCrop : false,
       cropRatio : undefined,
-      compressFileOptions : false
+      compressFileOptions : false,
+      version : "v2"
     };
+  },
+
+  componentWillMount : function(){
+    uploadFile.init(this.props.apiKey, this.props.version);
   },
 
   render: function() {
