@@ -211,3 +211,21 @@ Reference:
 [setState]: http://facebook.github.io/react/docs/component-api.html#setstate
 [forceUpdate]: http://facebook.github.io/react/docs/component-api.html#forceupdate
 [componentWillReceiveProps]: http://facebook.github.io/react/docs/component-specs.html#updating-componentwillreceiveprops
+
+## Publish & Release
+
+#### Git convention
+
+Features: `feature/<feature-name>`
+
+Releases: `release/<release version no.>`
+
+hotfix: `hotfix/<hotfix name>`
+
+Publishing releases:
+
+- create release branch from `development` branch
+- use `npm version` to bump version number by semver
+- merge release into master
+- `npm publish` on master (npm will tag the commit with your version no.)
+- `git push origin --tags`
