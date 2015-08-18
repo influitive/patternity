@@ -224,7 +224,7 @@ hotfix: `hotfix/<hotfix name>`
 
 Publishing releases:
 
-- create release branch from develop branch
+- create release branch from `development` branch
 - use `npm version` to bump version number by semver
 - merge release into master
 - `npm publish` on master (npm will tag the commit with your version no.)
