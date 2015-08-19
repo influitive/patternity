@@ -5,6 +5,7 @@ var DetailedAlert = {};
 
 var Alert = React.createClass({
   mixins: [AlertMixin],
+
   getDefaultProps: function() {
     return {
       type:      '',
@@ -15,6 +16,7 @@ var Alert = React.createClass({
       hideIn:    0
     };
   },
+
   propTypes: {
     title:     React.PropTypes.string,
     type:      React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
@@ -23,6 +25,7 @@ var Alert = React.createClass({
     onClose:   React.PropTypes.func,
     hideIn:    React.PropTypes.number
   },
+
   render: function() {
     return <div className={'alert-msg ' + this.props.type + ' ' + this._hasIconClass() + ' ' + this._showAlert()} ref='alert'>
       {this._closeable()}
