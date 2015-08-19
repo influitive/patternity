@@ -64,16 +64,14 @@ var TextInput = React.createClass({
   },
 
   render: function() {
-    return (
-      <span className={this._determineInputStyling()}>
+    return <span className={this._determineInputStyling()}>
         {this._determineInputIcon()}
         <input readOnly={this.props.readOnly} required={this.props.required} type={this.props.type} value={this.state.value}
                placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
                pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange} ref="input"/>
         {this._isClearable()}
         {this._buildMessage()}
-      </span>
-    );
+      </span>;
   },
 
   _setInputFocus: function(autofocus) {
@@ -96,9 +94,9 @@ var TextInput = React.createClass({
 
   _determineInputIcon: function() {
     if (this.props.type === 'search') {
-      return (<span className="search-input ic ic-search"></span>);
+      return <span className="search-input ic ic-search"></span>;
     } else if (this.props.required) {
-      return (<span className="required-input ic ic-asterisk"></span>);
+      return <span className="required-input ic ic-asterisk"></span>;
     }
   },
 
@@ -108,13 +106,8 @@ var TextInput = React.createClass({
   },
 
   _isClearable: function() {
-    if(!this.props.clearable) {
-      return '';
-    }
-
-    return (
-      <span className="clear-input ic ic-close" onClick={this._clearInputValue}></span>
-    );
+    if(!this.props.clearable) return '';
+    return <span className="clear-input ic ic-close" onClick={this._clearInputValue}></span>;
   },
 
   _clearInputValue: function() {
@@ -125,11 +118,11 @@ var TextInput = React.createClass({
 
   _buildMessage: function() {
     if (typeof this.props.message === 'string') {
-      return (<span className='input-message'>{this.props.message}</span>);
+      return <span className='input-message'>{this.props.message}</span>;
     }
     else {
       return this.props.message.map(function(message, i) {
-        return (<span key={i} className='input-message'>{message}</span>);
+        return <span key={i} className='input-message'>{message}</span>;
       });
     }
   }
