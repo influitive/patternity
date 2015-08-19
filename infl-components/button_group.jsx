@@ -16,8 +16,8 @@ var ButtonGroup = React.createClass({
 
   render: function() {
     return <div className={'button-group ' + this.props.layout + ' ' + this.isGrouped()} ref='buttonGroup'>
-        {this.props.children}
-      </div>;
+      {this.props.children}
+    </div>;
   },
 
   isGrouped: function() {
