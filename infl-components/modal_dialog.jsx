@@ -4,31 +4,31 @@ var classNames = require('classnames');
 
 var ModalDialog = React.createClass({
   propTypes: {
-    id: React.PropTypes.string,
-    closeable: React.PropTypes.bool,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+    id:            React.PropTypes.string,
+    closeable:     React.PropTypes.bool,
+    size:          React.PropTypes.oneOf(['small', 'medium', 'large']),
     scrollingBody: React.PropTypes.bool,
-    lightbox: React.PropTypes.bool,
-    keyboard: React.PropTypes.bool
+    lightbox:      React.PropTypes.bool,
+    keyboard:      React.PropTypes.bool
   },
 
   getDefaultProps: function() {
     return {
-      id: '',
-      closeable: true,
-      size: 'medium',
-      onClose: function() {},
-      isModalOpen: false,
+      id:            '',
+      closeable:     true,
+      size:          'medium',
+      onClose:       function() {},
+      isModalOpen:   false,
       scrollingBody: false,
-      lightbox: true,
-      keyboard: true
+      lightbox:      true,
+      keyboard:      true
     };
   },
 
   getInitialState: function() {
     // TODO remove all open/closed state from modal and let calling container handle it
     return {
-      isModalOpen: this.props.isModalOpen,
+      isModalOpen:    this.props.isModalOpen,
       isModalClosing: false
     };
   },
@@ -41,7 +41,7 @@ var ModalDialog = React.createClass({
     var isClosing = this.props.isModalOpen && newProps.isModalOpen === false;
 
     this.setState({
-      isModalOpen: newProps.isModalOpen,
+      isModalOpen:    newProps.isModalOpen,
       isModalClosing: isClosing
     });
   },
@@ -80,21 +80,21 @@ var ModalDialog = React.createClass({
     return {
       ptModalDialog: classNames({
         'pt-modal-dialog': true,
-        'close': !this.state.isModalOpen,
-        'scrolling-body': this.props.scrollingBody,
-        'lightbox': this.props.lightbox
+        'close':           !this.state.isModalOpen,
+        'scrolling-body':  this.props.scrollingBody,
+        'lightbox':        this.props.lightbox
       }),
       span: classNames({
-        'close-dialog': true,
-        'ic': true,
-        'ic-times': true,
+        'close-dialog':  true,
+        'ic':            true,
+        'ic-times':      true,
         'disable-close': !this.props.closeable
       })
     };
   },
 
   _closeDialog: function(event) {
-    if(this.props.closeable && this._isClosableElement(event.target)) {
+    if (this.props.closeable && this._isClosableElement(event.target)) {
       this._dismissDialog();
     }
   },
@@ -110,7 +110,7 @@ var ModalDialog = React.createClass({
   },
 
   _handleEscape: function() {
-    if(event.keyCode === 27 && this.props.closeable && this.props.keyboard) {
+    if (event.keyCode === 27 && this.props.closeable && this.props.keyboard) {
       $(window).off('keydown.escapePressed');
       this._dismissDialog();
     }
