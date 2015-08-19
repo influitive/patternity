@@ -2,25 +2,26 @@ var React = require('react');
 var classNames = require('classnames');
 
 var ButtonGroup = React.createClass({
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      layout : "inline",
-      grouped : false
+      layout:  'inline',
+      grouped: false
     };
   },
-  propTypes : {
-    layout : React.PropTypes.oneOf(['inline', 'stacked']),
-    grouped : React.PropTypes.bool
+
+  propTypes: {
+    layout:  React.PropTypes.oneOf(['inline', 'stacked']),
+    grouped: React.PropTypes.bool
   },
-  render: function () {
-    return (
-      <div className={"button-group " + this.props.layout + " " + this.isGrouped()} ref="buttonGroup">
+
+  render: function() {
+    return <div className={'button-group ' + this.props.layout + ' ' + this.isGrouped()} ref='buttonGroup'>
         {this.props.children}
-      </div>
-    );
+      </div>;
   },
-  isGrouped : function(){
-    return this.props.grouped ? "grouped" : "";
+
+  isGrouped: function() {
+    return this.props.grouped ? 'grouped' : '';
   }
 });
 
