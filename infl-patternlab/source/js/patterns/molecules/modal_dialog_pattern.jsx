@@ -242,6 +242,12 @@ var ModalDialogPattern = React.createClass({
         defaultValue : "true",
         required : false,
         description : "Determines if background is greyed out or not.  defaults to true."
+      },
+      keyboard : {
+        type : "boolean",
+        defaultValue : "true",
+        required : false,
+        description : "Determines if 'escape' key will close modal."
       }
     };
   },
