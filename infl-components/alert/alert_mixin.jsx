@@ -11,6 +11,7 @@ var AlertMixin = {
   },
 
   componentWillReceiveProps: function(newProps) {
+    this._clearHideInTimeout();
     this.setState({
       showAlert: newProps.showAlert,
       closeable: newProps.closeable
