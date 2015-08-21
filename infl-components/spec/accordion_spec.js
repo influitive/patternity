@@ -120,5 +120,18 @@ describe('Accordion', function() {
 
       expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, 'open').length).to.equal(0);
     });
+
+    it('should change open section after receiving new props', function() {
+      var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} openSectionIndex={0} />);
+
+      subject.componentWillReceiveProps({ openSectionIndex: 0 });
+      expect(TestUtils.findRenderedDOMComponentWithClass(subject, 'open').getDOMNode())
+        .to.equal(React.findDOMNode(subject).firstChild.firstChild);
+
+      subject.componentWillReceiveProps({ openSectionIndex: 1 });
+      expect(TestUtils.findRenderedDOMComponentWithClass(subject, 'open').getDOMNode())
+        .to.equal(React.findDOMNode(subject).lastChild.firstChild);
+
+    });
   });
 });
