@@ -137,11 +137,9 @@ var Greeter = React.createClass({
   },
 
   render: function() {
-    return (
-      <div>
-        {this._greeting()}
-      </div>
-    );
+    return <div>
+      {this._greeting()}
+    </div>;
   },
 
   _greeting: function() {
@@ -222,15 +220,14 @@ Reference:
 
 Features: `feature/<feature-name>`
 
-Releases: `release/<release version no.>`
-
 hotfix: `hotfix/<hotfix name>`
 
-Publishing releases:
+Committing:
 
-- create release branch from `development` branch
-- use `npm version` to bump version number by semver
-- merge release into master
-- `npm publish` on master (npm will tag the commit with your version no.)
+- rebase your feature branch off master
+- bump version using npm version <major|minor|patch>
+- push and create pull request for review
+- merge feature into master
+- git checkout master && git pull master && npm publish
 - `git push origin --tags`
 - go to github tags view, and create release notes, referencing commits for feature changes/additions
