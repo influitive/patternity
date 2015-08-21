@@ -36,23 +36,22 @@ var Accordion = React.createClass({
 
   render: function() {
     return <ul className='accordion'>
-        {this._buildSections(this.props)}
-      </ul>;
-  },
-
-  _isOpenSectionIndexValid: function(openSectionIndex) {
-    return (openSectionIndex === parseInt(openSectionIndex, 10));
-  },
-
-  _buildSections: function(props) {
-    return props.sections.map(this._buildSection);
+      {this.props.sections.map(this._buildSection)}
+    </ul>;
   },
 
   _buildSection: function(section, index) {
-    return <AccordionSection  key={'accordion-section-' + index}>
-        <AccordionHeader {...section} index={index} open={this._isSectionOpen(index, section.isEnabled)} toggleOne={this._toggleOne} />
-        <AccordionBody body={section.body} />
-      </AccordionSection>;
+    return <AccordionSection key={'accordion-section-' + index}>
+      <AccordionHeader {...section} index={index}
+        open={this._isSectionOpen(index, section.isEnabled)}
+        toggleOne={this._toggleOne} />
+      <AccordionBody body={section.body} />
+    </AccordionSection>;
+  },
+
+  _isOpenSectionIndexValid: function(openSectionIndex) {
+    return ((openSectionIndex === parseInt(openSectionIndex, 10))
+      && openSectionIndex >= 0);
   },
 
   _isSectionOpen: function(index, isEnabled) {
@@ -81,11 +80,9 @@ var Accordion = React.createClass({
 
 var AccordionSection = React.createClass({
   render: function() {
-    return (
-      <li className="accordion-section">
-        {this.props.children}
-      </li>
-    );
+    return <li className='accordion-section'>
+      {this.props.children}
+    </li>;
   }
 });
 
@@ -111,18 +108,18 @@ var AccordionHeader = React.createClass({
 
   render: function() {
     return <h3 className={this._determineCSSClasses()} onClick={this._toggleContent}>
-          {this.props.header}
-      </h3>;
+      {this.props.header}
+    </h3>;
   }
 });
 
 var AccordionBody = React.createClass({
   render: function() {
-    return <div className="section-details">
-        <div className="section-details-inner">
-          {this.props.body}
-        </div>
-      </div>;
+    return <div className='section-details'>
+      <div className='section-details-inner'>
+        {this.props.body}
+      </div>
+    </div>;
   }
 });
 
