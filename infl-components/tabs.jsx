@@ -11,9 +11,10 @@ var Tabs = React.createClass({
     return {
       id : "",
       key : "tabs-" + Math.random(),
-      openTabIndex : null,
+      openTabIndex : 0,
       onChange : function(){},
-      showAllTabs : false
+      showAllTabs : false,
+      stateful: true // deprecate state eventually
     };
   },
   propTypes : {
@@ -23,7 +24,7 @@ var Tabs = React.createClass({
     onChange : React.PropTypes.func,
     showAllTabs : React.PropTypes.bool
   },
-  getInitialState : function(){
+  getInitialState : function () {
     return {
       openTabIndex : this._validTabIndex(this.props.openTabIndex) ? this.props.openTabIndex : 0
     };
@@ -38,12 +39,23 @@ var Tabs = React.createClass({
   render: function() {
     return (
       <nav className="pt-tabs" key={this.props.key}>
-        <TabsMenu ref="tabs" tabs={this.props.children} openTabIndex={this.state.openTabIndex} onChange={this._onTabChange} />
-        <TabsDropdown tabs={this.props.children} openTabIndex={this.state.openTabIndex} onChange={this._onTabChange} />
-        <TabSections tabs={this.props.children} openTabIndex={this.state.openTabIndex} />
+        <TabsMenu ref="tabs" tabs={this.props.children} openTabIndex={this._selectedIndex()} onChange={this._onTabChange} />
+        <TabsDropdown tabs={this.props.children} openTabIndex={this._selectedIndex()} onChange={this._onTabChange} />
+        <TabSections tabs={this.props.children} openTabIndex={this._selectedIndex()} />
       </nav>
     );
   },
+
+  _selectedIndex: function () {
+    return this.props.stateful ? this.state.openTabIndex : this.props.openTabIndex;
+  },
+
+  _onTabChange : function(index){
+    if (this.props.stateful) { this.setState({ openTabIndex: index }); }
+
+    this.props.onChange(index);
+  },
+
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
       return false;
@@ -54,12 +66,6 @@ var Tabs = React.createClass({
     }
 
     return true;
-  },
-  _onTabChange : function(index){
-    this.setState({
-      openTabIndex : index
-    });
-    this.props.onChange(index);
   }
 });
 
