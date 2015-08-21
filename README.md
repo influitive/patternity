@@ -10,8 +10,12 @@ Patternity is using the nodejs version of patternlab.io.  Additional documentati
 Install patternity as a node module.
 
 ```
-  npm install --save influitive/patternity
+  npm install --save patternity<@version:optional>
 ```
+
+Note: be sure to install releases from npm, as these are versioned.
+  if you install from influitive/patternity you will get the latest master, which may include
+  breaking changes
 
 # Compilation
 
@@ -229,3 +233,4 @@ Publishing releases:
 - merge release into master
 - `npm publish` on master (npm will tag the commit with your version no.)
 - `git push origin --tags`
+- go to github tags view, and create release notes, referencing commits for feature changes/additions
