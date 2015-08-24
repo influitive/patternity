@@ -2,20 +2,21 @@ var React = require('react');
 var classNames = require('classnames');
 
 var Checkbox = React.createClass({
-  getInitialState: function () {
+  getInitialState: function() {
     return {
       isChecked: this.props.isChecked
     };
   },
+
   getDefaultProps: function() {
     return {
-      id: "",
-      enabled: true,
-      isChecked : false,
-      onChange: function(){},
-      checkboxName : "",
-      checkboxLabel : "",
-      value : ""
+      id:            '',
+      enabled:       true,
+      isChecked:     false,
+      onChange:      function() {},
+      checkboxName:  '',
+      checkboxLabel: '',
+      value:         ''
     };
   },
   propTypes: {
@@ -31,68 +32,75 @@ var Checkbox = React.createClass({
     name:          React.PropTypes.string,
     value:         React.PropTypes.string
   },
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function(newProps) {
     this.setState({
       isChecked: newProps.isChecked
     });
   },
-  render : function(){
-    return (
-      <span id={this.props.id} className={this._checkboxCSSClasses()} ref="checkbox" onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
-        <span className="stylized-checkbox" ref="stylizedCheckbox"></span>
-        <label htmlFor={this.props.id} className="pt-checkbox-label" ref="label">
-          { this._label() }
-          { this._icon() }
-        </label>
-        <input id={this.props.id}
-          ref="nativeCheckbox"
-          name={this._name()}
-          value={this.props.value}
-          type="checkbox"
-          disabled={!this.props.enabled}
-          className="pt-native-checkbox"
-          checked={this._isChecked()}
-          onChange={this._handleChange} />
-      </span>
-    );
+
+  render: function() {
+    return <span id={this.props.id} className={this._checkboxCSSClasses()}
+        ref='checkbox' onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
+      <span className='stylized-checkbox' ref='stylizedCheckbox'></span>
+      <label htmlFor={this.props.id} className="pt-checkbox-label" ref="label">
+        { this._label() }
+        { this._icon() }
+      </label>
+      <input id={this.props.id}
+        ref='nativeCheckbox'
+        name={this._name()}
+        value={this.props.value}
+        type="checkbox"
+        disabled={!this.props.enabled}
+        className="pt-native-checkbox"
+        checked={this._isChecked()}
+        onChange={this._handleChange} />
+    </span> ;
   },
-  _isChecked : function(){
+
+  _isChecked: function() {
     return this.state.isChecked;
   },
-  _checkboxCSSClasses : function(){
+
+  _checkboxCSSClasses: function() {
     return classNames({
       'pt-checkbox': true,
-      'is-error': this.props.error,
+      'is-error':    this.props.error,
       'is-required': this.props.required,
-      'isChecked': this.state.isChecked,
-      'disabled': !this.props.enabled
+      'isChecked':   this.state.isChecked,
+      'disabled':    !this.props.enabled
     });
   },
-  _clickCheckBox : function(){
-    if(this.props.enabled){
+
+  _clickCheckBox: function() {
+    if (this.props.enabled) {
       React.findDOMNode(this.refs.nativeCheckbox).click();
     }
   },
-  _handleChange : function(event){
+
+  _handleChange: function(event) {
     this.setState({isChecked: !this.state.isChecked});
     this.props.onChange(event);
   },
-  _label: function () {
+
+  _label: function() {
     // TODO remove checkboxLabel to conform to all other input interfaces
-    if (this.props.checkboxLabel) { console.warn("checkboxLabel has been deprecated, please use label instead"); }
+    if (this.props.checkboxLabel) { console.warn('checkboxLabel has been deprecated, please use label instead'); }
 
     return this.props.checkboxLabel || this.props.label;
   },
-  _name: function () {
+
+  _name: function() {
     // TODO remove checkboxName to conform to all other input interfaces
-    if (this.props.checkboxName) { console.warn("checkboxName has been deprecated, please use name instead"); }
+    if (this.props.checkboxName) { console.warn('checkboxName has been deprecated, please use name instead'); }
 
     return this.props.checkboxName || this.props.name;
   },
-  _icon: function () {
+
+  _icon: function() {
     if (this.props.required) {
       return (
-        <span className="required-icon ic ic-asterisk"></span>
+        <span className='required-icon ic ic-asterisk'></span>
       );
     }
   }
@@ -101,20 +109,20 @@ var Checkbox = React.createClass({
 Checkbox.Group = React.createClass({
   getDefaultProps: function() {
     return {
-      id: "",
-      layout : "inline"
+      id:     '',
+      layout: 'inline'
     };
   },
-  propTypes : {
-    id: React.PropTypes.string,
-    layout : React.PropTypes.string
+
+  propTypes: {
+    id:     React.PropTypes.string,
+    layout: React.PropTypes.string
   },
-  render : function(){
-    return (
-      <span className={"pt-checkbox-group " + this.props.layout} id={this.props.id} ref="group">
+
+  render: function() {
+    return <span className={'pt-checkbox-group ' + this.props.layout} id={this.props.id} ref='group'>
         {this.props.children}
-      </span>
-    );
+      </span>;
   }
 });
 
