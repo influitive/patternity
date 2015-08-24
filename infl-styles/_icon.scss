@@ -715,12 +715,52 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-expiring:before {
   content: "\E048"
+}
+
+@mixin ic-expiring() {
+  font-family: 'influicons';
+  content: "\E048"
+}
+
+
+.ic.ic-inprogress:before {
+  content: "\E049"
+}
+
+@mixin ic-inprogress() {
+  font-family: 'influicons';
+  content: "\E049"
+}
+
+
+.ic.ic-disqus-circular:before {
+  content: "\E04A"
+}
+
+@mixin ic-disqus-circular() {
+  font-family: 'influicons';
+  content: "\E04A"
+}
+
+
+.ic.ic-disqus:before {
+  content: "\E04B"
+}
+
+@mixin ic-disqus() {
+  font-family: 'influicons';
+  content: "\E04B"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E04C"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E048"
+  content: "\E04C"
 }
 

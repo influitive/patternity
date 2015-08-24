@@ -93,4 +93,8 @@
 .ic.ic-globe-locked:before { content: "\E045" }
 .ic.ic-private-locked:before { content: "\E046" }
 .ic.ic-archive:before { content: "\E047" }
-.ic.ic-coins-old:before { content: "\E048" }
+.ic.ic-expiring:before { content: "\E048" }
+.ic.ic-inprogress:before { content: "\E049" }
+.ic.ic-disqus-circular:before { content: "\E04A" }
+.ic.ic-disqus:before { content: "\E04B" }
+.ic.ic-coins-old:before { content: "\E04C" }

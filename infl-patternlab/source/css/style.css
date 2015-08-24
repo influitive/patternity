@@ -1063,7 +1063,7 @@ h6 {
   transition: opacity 0.5s ease-in-out;
 }
 .accordion .accordion-section .section-heading.open + .section-details {
-  max-height: 2000px;
+  max-height: 5000px;
   -webkit-transition: max-height 0.5s ease-in;
   -moz-transition: max-height 0.5s ease-in;
   transition: max-height 0.5s ease-in;
@@ -2984,8 +2984,24 @@ textarea {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-expiring:before {
   content: "";
+}
+
+.ic.ic-inprogress:before {
+  content: "";
+}
+
+.ic.ic-disqus-circular:before {
+  content: "";
+}
+
+.ic.ic-disqus:before {
+  content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 .pt-tabs {

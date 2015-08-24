@@ -144,6 +144,14 @@ var icons = {
   
     "archive": "archive",
   
+    "expiring": "expiring",
+  
+    "inprogress": "inprogress",
+  
+    "disqus-circular": "disqus-circular",
+  
+    "disqus": "disqus",
+  
     "coins-old": "coins-old",
   
 
