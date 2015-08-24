@@ -10,8 +10,12 @@ Patternity is using the nodejs version of patternlab.io.  Additional documentati
 Install patternity as a node module.
 
 ```
-  npm install --save influitive/patternity
+  npm install --save patternity<@version:optional>
 ```
+
+Note: be sure to install releases from npm, as these are versioned.
+  if you install from influitive/patternity you will get the latest master, which may include
+  breaking changes
 
 # Compilation
 
@@ -133,11 +137,9 @@ var Greeter = React.createClass({
   },
 
   render: function() {
-    return (
-      <div>
-        {this._greeting()}
-      </div>
-    );
+    return <div>
+      {this._greeting()}
+    </div>;
   },
 
   _greeting: function() {
@@ -211,3 +213,21 @@ Reference:
 [setState]: http://facebook.github.io/react/docs/component-api.html#setstate
 [forceUpdate]: http://facebook.github.io/react/docs/component-api.html#forceupdate
 [componentWillReceiveProps]: http://facebook.github.io/react/docs/component-specs.html#updating-componentwillreceiveprops
+
+## Publish & Release
+
+#### Git convention
+
+Features: `feature/<feature-name>`
+
+hotfix: `hotfix/<hotfix name>`
+
+Committing:
+
+- rebase your feature branch off master
+- bump version using npm version <major|minor|patch>
+- push and create pull request for review
+- merge feature into master
+- git checkout master && git pull master && npm publish
+- `git push origin --tags`
+- go to github tags view, and create release notes, referencing commits for feature changes/additions

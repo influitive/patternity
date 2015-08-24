@@ -4,11 +4,10 @@ var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 
 function adustIconNames(codepoints) {
-  for(var i = 0; i < codepoints.length; i++){
-    var orderingCodeIndex = codepoints[i].name.indexOf("-") + 1;
-    codepoints[i].name = codepoints[i].name.substring(orderingCodeIndex);
-  }
-  return codepoints;
+  return codepoints.map(function(codepoint) {
+    codepoint.name = codepoint.name.split('-').slice(1).join('-');
+    return codepoint;
+  });
 }
 
 gulp.task('influicons', function(){
