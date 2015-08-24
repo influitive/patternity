@@ -67,69 +67,74 @@ var classNames = require('classnames');
 var Accordion = React.createClass({displayName: "Accordion",
   getDefaultProps: function() {
     return {
-      sections: [],
-      openSectionIndex : null,
-      uniqueIdentifier : ""
+      sections:         [],
+      openSectionIndex: null,
+      uniqueIdentifier: ''
     };
   },
-  propTypes : {
-    sections: React.PropTypes.array.isRequired,
-    openSectionIndex : React.PropTypes.number,
-    uniqueIdentifier : React.PropTypes.string
+
+  propTypes: {
+    sections:         React.PropTypes.array.isRequired,
+    openSectionIndex: React.PropTypes.number,
+    uniqueIdentifier: React.PropTypes.string
   },
-  getInitialState: function(){
-    if(this._isOpenSectionIndexValid(this.props.openSectionIndex)){
-      return { openSectionIndex: this.props.openSectionIndex };
-    } else {
-      return { openSectionIndex: null };
+
+  getInitialState: function() {
+    return {
+      openSectionIndex: this._isOpenSectionIndexValid(this.props.openSectionIndex)
+        ? this.props.openSectionIndex
+        : null
+    };
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    if (this._isOpenSectionIndexValid(nextProps.openSectionIndex)) {
+      this.setState({ openSectionIndex: nextProps.openSectionIndex });
     }
   },
-  componentWillReceiveProps : function(nextProps){
-    if(this._isOpenSectionIndexValid(nextProps.openSectionIndex)){
-      this.setState({
-        openSectionIndex : nextProps.openSectionIndex
-      });
-    }
-  },
-  componentWillMount : function(){
+
+  componentWillMount: function() {
     this._resetAccordionState();
   },
-  render: function () {
-    return (
-      React.createElement("ul", {className: "accordion"}, 
-        this._buildSections(this.props)
-      )
+
+  render: function() {
+    return React.createElement("ul", {className: "accordion"}, 
+      this.props.sections.map(this._buildSection)
     );
   },
-  _isOpenSectionIndexValid : function(openSectionIndex){
-    return (openSectionIndex === parseInt(openSectionIndex, 10));
-  },
-  _buildSections: function(props){
-    return props.sections.map(this._buildSection);
-  },
-  _buildSection: function (section, index) {
-    return (
-      React.createElement(AccordionSection, {key: "accordion-section-" + index}, 
-        React.createElement(AccordionHeader, React.__spread({},  section, {index: index, open: this._isSectionOpen(index, section.isEnabled), toggleOne: this._toggleOne})), 
-        React.createElement(AccordionBody, {body: section.body})
-      )
+
+  _buildSection: function(section, index) {
+    return React.createElement(AccordionSection, {key: 'accordion-section-' + index}, 
+      React.createElement(AccordionHeader, React.__spread({},  section, {index: index, 
+        open: this._isSectionOpen(index, section.isEnabled), 
+        toggleOne: this._toggleOne})), 
+      React.createElement(AccordionBody, {body: section.body})
     );
   },
-  _isSectionOpen: function(index, isEnabled){
+
+  _isOpenSectionIndexValid: function(openSectionIndex) {
+    return ((openSectionIndex === parseInt(openSectionIndex, 10))
+      && openSectionIndex >= 0);
+  },
+
+  _isSectionOpen: function(index, isEnabled) {
     return (index === this.state.openSectionIndex) && isEnabled;
   },
-  _toggleOne: function(id){
-    if(this.state.openSectionIndex === id){
+
+  _toggleOne: function(id) {
+    if (this.state.openSectionIndex === id) {
       this.setState({openSectionIndex: -1});
     } else {
       this.setState({openSectionIndex: id});
     }
   },
-  _uniqueIdentifier : null,
-  _resetAccordionState: function(){
-    if(this._uniqueIdentifier !== this.props.uniqueIdentifier){
+
+  _uniqueIdentifier: null,
+
+  _resetAccordionState: function() {
+    if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
       this.setState({
-        openSectionIndex : this.props.openSectionIndex
+        openSectionIndex: this.props.openSectionIndex
       });
     }
     this._uniqueIdentifier = this.props.uniqueIdentifier;
@@ -138,47 +143,44 @@ var Accordion = React.createClass({displayName: "Accordion",
 
 var AccordionSection = React.createClass({displayName: "AccordionSection",
   render: function() {
-    return (
-      React.createElement("li", {className: "accordion-section"}, 
-        this.props.children
-      )
+    return React.createElement("li", {className: "accordion-section"}, 
+      this.props.children
     );
   }
 });
 
 var AccordionHeader = React.createClass({displayName: "AccordionHeader",
-  propTypes : {
-    open: React.PropTypes.bool,
+  propTypes: {
+    open:      React.PropTypes.bool,
     isEnabled: React.PropTypes.bool
   },
-  _toggleContent: function(){
-    if(this.props.isEnabled){
+
+  _toggleContent: function() {
+    if (this.props.isEnabled) {
       this.props.toggleOne(this.props.index);
     }
   },
-  _determineCSSClasses: function(){
+
+  _determineCSSClasses: function() {
     return classNames({
       'section-heading': true,
-      'open': this.props.open,
-      'disabled': this.props.isEnabled === false
+      'open':            this.props.open,
+      'disabled':        this.props.isEnabled === false
     });
   },
+
   render: function() {
-    return (
-      React.createElement("h3", {className: this._determineCSSClasses(), onClick: this._toggleContent}, 
-          this.props.header
-      )
+    return React.createElement("h3", {className: this._determineCSSClasses(), onClick: this._toggleContent}, 
+      this.props.header
     );
   }
 });
 
 var AccordionBody = React.createClass({displayName: "AccordionBody",
   render: function() {
-    return (
-      React.createElement("div", {className: "section-details"}, 
-        React.createElement("div", {className: "section-details-inner"}, 
-          this.props.body
-        )
+    return React.createElement("div", {className: "section-details"}, 
+      React.createElement("div", {className: "section-details-inner"}, 
+        this.props.body
       )
     );
   }
@@ -195,35 +197,36 @@ var DetailedAlert = {};
 
 var Alert = React.createClass({displayName: "Alert",
   mixins: [AlertMixin],
+
   getDefaultProps: function() {
     return {
-      type: "",
-      showIcon: false,
-      closeable : false,
-      showAlert : true,
-      onClose : function(){},
-      hideIn  : 0
+      type:      '',
+      showIcon:  false,
+      closeable: false,
+      showAlert: true,
+      onClose:   function() {},
+      hideIn:    0
     };
   },
-  propTypes : {
-    title: React.PropTypes.string,
-    type: React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
-    closeable : React.PropTypes.bool,
-    showAlert : React.PropTypes.bool,
-    onClose: React.PropTypes.func,
-    hideIn: React.PropTypes.number
+
+  propTypes: {
+    title:     React.PropTypes.string,
+    type:      React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
+    closeable: React.PropTypes.bool,
+    showAlert: React.PropTypes.bool,
+    onClose:   React.PropTypes.func,
+    hideIn:    React.PropTypes.number
   },
-  render : function(){
-    return (
-      React.createElement("div", {className: "alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert(), ref: "alert"}, 
-        this._closeable(), 
-        React.createElement("h4", {className: "alert-title", ref: "title"}, 
-          this._icon(), 
-          React.createElement("span", null, this.props.title)
-        ), 
-        React.createElement("div", {className: "alert-body", ref: "body"}, 
-          this.props.children
-        )
+
+  render: function() {
+    return React.createElement("div", {className: 'alert-msg ' + this.props.type + ' ' + this._hasIconClass() + ' ' + this._showAlert(), ref: "alert"}, 
+      this._closeable(), 
+      React.createElement("h4", {className: "alert-title", ref: "title"}, 
+        this._icon(), 
+        React.createElement("span", null, this.props.title)
+      ), 
+      React.createElement("div", {className: "alert-body", ref: "body"}, 
+        this.props.children
       )
     );
   }
@@ -316,64 +319,69 @@ var AlertMixin = {
       closeable: this.props.closeable
     };
   },
-  componentWillReceiveProps : function(newProps){
+
+  componentWillReceiveProps: function(newProps) {
+    this._clearHideInTimeout();
     this.setState({
       showAlert: newProps.showAlert,
       closeable: newProps.closeable
     });
   },
-  componentDidMount : function(){
+
+  componentDidMount: function() {
     this._hideAlert(this.props.hideIn);
   },
-  componentWillUpdate : function(nextProps){
+
+  componentWillUpdate: function(nextProps) {
     this._clearHideInTimeout();
     this._hideAlert(nextProps.hideIn);
   },
-  _clearHideInTimeout : function(){
+
+  _clearHideInTimeout: function() {
     window.clearTimeout(hideInTimeout);
   },
-  _hideAlert : function(hideIn){
-    if(hideIn > 0) {
+
+  _hideAlert: function(hideIn) {
+    if (hideIn > 0) {
       hideInTimeout = setTimeout(this._close, this._hideInMilliseconds(hideIn));
     }
   },
-  _hideInMilliseconds : function(hideIn){
+
+  _hideInMilliseconds: function(hideIn) {
     return hideIn * 1000;
   },
-  _showAlert: function(){
-    return this.state.showAlert ? "" : "hide";
+
+  _showAlert: function() {
+    return this.state.showAlert ? '' : 'hide';
   },
-  _close: function(){
+
+  _close: function() {
     this.setState({showAlert: false});
     this.props.onClose();
   },
-  _icon: function(){
-    if(this.props.showIcon) {
-      return (React.createElement("span", {className: "alert-icon ic " + this._determineIconType()}));
-    } else {
-      return "";
-    }
+
+  _icon: function() {
+    return this.props.showIcon
+      ? React.createElement("span", {className: 'alert-icon ic ' + this._determineIconType()})
+      : '';
   },
-  _hasIconClass: function(){
-    return this.props.showIcon ? "hasIcon" : "";
+
+  _hasIconClass: function() {
+    return this.props.showIcon ? 'hasIcon' : '';
   },
-  _determineIconType: function(){
-    if(this.props.type === "success") {
-      return "ic-check-circle-o";
-    } else if(this.props.type === "error") {
-      return "ic-exclamation-circle-o";
-    } else if(this.props.type === "warning") {
-      return "ic-info-circle-o"
-    } else {
-      return "ic-question-circle-o";
-    }
+
+  _determineIconType: function() {
+    return {
+      success: 'ic-check-circle-o',
+      error:   'ic-exclamation-circle-o',
+      warning: 'ic-info-circle-o'
+    }[this.props.type] || 'ic-question-circle-o';
   },
-  _closeable: function(){
-    if(this.state.closeable) {
-      return (React.createElement("span", {className: "close ic ic-times", onClick: this._close, ref: "close"}));
-    } else {
-      return "";
-    }
+
+  _closeable: function() {
+    return this.state.closeable
+      ? React.createElement("span", {className: "close ic ic-times", onClick: this._close, ref: "close"})
+      : '';
   }
 };
 
@@ -456,31 +464,28 @@ var buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'te
 
 var Button = React.createClass({displayName: "Button",
 
-  propTypes : {
-    icon: React.PropTypes.string,
+  propTypes: {
+    icon:      React.PropTypes.string,
     className: React.PropTypes.string,
-    type: React.PropTypes.string,
-    onClick: React.PropTypes.func,
-    href: React.PropTypes.string,
-    disabled: React.PropTypes.bool,
-    inverse: React.PropTypes.bool
+    type:      React.PropTypes.string,
+    onClick:   React.PropTypes.func,
+    href:      React.PropTypes.string,
+    disabled:  React.PropTypes.bool,
+    inverse:   React.PropTypes.bool
   },
 
-  render : function() {
-    return (
-      React.createElement("button", {disabled:  this.props.disabled, className:  this._getClasses(), onClick:  this._onClick}, 
-         this.props.children
-      )
+  render: function() {
+    return React.createElement("button", {disabled:  this.props.disabled, className:  this._getClasses(), onClick:  this._onClick}, 
+       this.props.children
     );
   },
 
-  _getClasses : function() {
+  _getClasses: function() {
     var classes = 'button';
 
     if (this.props.disabled) {
       classes += ' disabled';
-    }
-    else if (this.props.type && buttonTypes.indexOf(this.props.type)>-1) {
+    } else if (this.props.type && buttonTypes.indexOf(this.props.type)>-1) {
       classes += ' ' + this.props.type;
 
       if ((this.props.type==='secondary' || this.props.type==='text') && this.props.inverse) {
@@ -496,14 +501,13 @@ var Button = React.createClass({displayName: "Button",
     return classes;
   },
 
-
-  _onClick : function(e) {
+  _onClick: function(e) {
     if (this.props.onClick) {
-        var ret = this.props.onClick(e);
-        if (ret === false) return;
+      var ret = this.props.onClick(e);
+      if (ret === false) return;
     }
     if (this.props.href) {
-        document.location.href = this.props.href;
+      document.location.href = this.props.href;
     }
   }
 
@@ -521,49 +525,64 @@ var ButtonDropdown = React.createClass({displayName: "ButtonDropdown",
       isDropdownOpen: false
     };
   },
+
   getDefaultProps: function() {
     return {
-      title: "",
-      type : "",
-      options : [],
-      children : [],
+      title:    '',
+      type:     '',
+      options:  [],
+      children: []
     };
   },
-  propTypes : {
+
+  propTypes: {
     title: React.PropTypes.string,
-    type: React.PropTypes.oneOf(['success', 'danger', 'primary', 'important', 'secondary', '']),
-    options : React.PropTypes.array,
-    children : React.PropTypes.array,
+    type:  React.PropTypes.oneOf([
+      'success', 'danger', 'primary', 'important', 'secondary', ''
+    ]),
+    options:  React.PropTypes.array,
+    children: React.PropTypes.array
   },
-  render : function(){
-    return (
-      React.createElement("div", {className: "button-dropdown " + this._isDropdownOpen(), ref: "buttonDropdown"}, 
-        React.createElement("button", {ref: "button", className: this.props.type, onClick: this._toggleDropdownOptions}, 
-          React.createElement("span", {ref: "title"}, this.props.title), 
-          React.createElement("span", {ref: "icon", className: "arrow ic ic-chevron-down"})
-        ), 
-        React.createElement("ul", {ref: "options", className: "options"}, 
-          this._buildDropdown()
-        )
+
+  render: function() {
+    return React.createElement("div", {className: 'button-dropdown ' + this._isDropdownOpen(), ref: "buttonDropdown"}, 
+      React.createElement("button", {className: this.props.type, onClick: this._toggleDropdownOptions, ref: "button"}, 
+        React.createElement("span", {ref: "title"}, this.props.title), 
+        React.createElement("span", {className: "arrow ic ic-chevron-down", ref: "icon"})
+      ), 
+      React.createElement("ul", {className: "options", ref: "options"}, 
+        this._buildDropdown()
       )
     );
   },
-  _toggleDropdownOptions: function(event){
-    this.setState({ isDropdownOpen : !this.state.isDropdownOpen });
+
+  _toggleDropdownOptions: function(event) {
+    this.setState({
+      isDropdownOpen: !this.state.isDropdownOpen
+    });
   },
-  _isDropdownOpen : function(){
-    return this.state.isDropdownOpen ? "show" : "";
+
+  _isDropdownOpen: function() {
+    return this.state.isDropdownOpen
+      ? 'show'
+      : '';
   },
-  _buildDropdown : function(){
+
+  _buildDropdown: function() {
     return this._populateOptions().map(this._buildOption);
   },
-  _populateOptions : function(){
-    return this.props.children.length > 0 ? this.props.children : this.props.options;
+
+  _populateOptions: function() {
+    return this.props.children.length > 0
+      ? this.props.children
+      : this.props.options;
   },
-  _buildOption : function(option, index){
-    return (React.createElement("li", {className: "option", onClick: this._handleChange, key: "option-" + index}, option));
+
+  _buildOption: function(option, index) {
+    return React.createElement("li", {className: "option", key: 'option-' + index, onClick: this._handleChange}, option);
   },
-  _handleChange : function(key){
+
+  _handleChange: function(key) {
     this.props.onChange(key);
   }
 });
@@ -576,25 +595,26 @@ var React = require('react');
 var classNames = require('classnames');
 
 var ButtonGroup = React.createClass({displayName: "ButtonGroup",
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      layout : "inline",
-      grouped : false
+      layout:  'inline',
+      grouped: false
     };
   },
-  propTypes : {
-    layout : React.PropTypes.oneOf(['inline', 'stacked']),
-    grouped : React.PropTypes.bool
+
+  propTypes: {
+    layout:  React.PropTypes.oneOf(['inline', 'stacked']),
+    grouped: React.PropTypes.bool
   },
-  render: function () {
-    return (
-      React.createElement("div", {className: "button-group " + this.props.layout + " " + this.isGrouped(), ref: "buttonGroup"}, 
-        this.props.children
-      )
+
+  render: function() {
+    return React.createElement("div", {className: 'button-group ' + this.props.layout + ' ' + this.isGrouped(), ref: "buttonGroup"}, 
+      this.props.children
     );
   },
-  isGrouped : function(){
-    return this.props.grouped ? "grouped" : "";
+
+  isGrouped: function() {
+    return this.props.grouped ? 'grouped' : '';
   }
 });
 
@@ -1048,20 +1068,21 @@ var React = require('react');
 var classNames = require('classnames');
 
 var Checkbox = React.createClass({displayName: "Checkbox",
-  getInitialState: function () {
+  getInitialState: function() {
     return {
       isChecked: this.props.isChecked
     };
   },
+
   getDefaultProps: function() {
     return {
-      id: "",
-      enabled: true,
-      isChecked : false,
-      onChange: function(){},
-      checkboxName : "",
-      checkboxLabel : "",
-      value : ""
+      id:            '',
+      enabled:       true,
+      isChecked:     false,
+      onChange:      function() {},
+      checkboxName:  '',
+      checkboxLabel: '',
+      value:         ''
     };
   },
   propTypes: {
@@ -1077,65 +1098,72 @@ var Checkbox = React.createClass({displayName: "Checkbox",
     name:          React.PropTypes.string,
     value:         React.PropTypes.string
   },
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function(newProps) {
     this.setState({
       isChecked: newProps.isChecked
     });
   },
-  render : function(){
-    return (
-      React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses(), ref: "checkbox", onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
-        React.createElement("span", {className: "stylized-checkbox", ref: "stylizedCheckbox"}), 
-        React.createElement("label", {htmlFor: this.props.id, className: "pt-checkbox-label", ref: "label"}, 
-           this._label(), 
-           this._icon() 
-        ), 
-        React.createElement("input", {id: this.props.id, 
-          ref: "nativeCheckbox", 
-          name: this._name(), 
-          value: this.props.value, 
-          type: "checkbox", 
-          disabled: !this.props.enabled, 
-          className: "pt-native-checkbox", 
-          checked: this._isChecked(), 
-          onChange: this._handleChange})
-      )
-    );
+
+  render: function() {
+    return React.createElement("span", {id: this.props.id, className: this._checkboxCSSClasses(), 
+        ref: "checkbox", onClick: this._clickCheckBox, onTouchStart: this._toggleCheck}, 
+      React.createElement("span", {className: "stylized-checkbox", ref: "stylizedCheckbox"}), 
+      React.createElement("label", {htmlFor: this.props.id, className: "pt-checkbox-label", ref: "label"}, 
+         this._label(), 
+         this._icon() 
+      ), 
+      React.createElement("input", {id: this.props.id, 
+        ref: "nativeCheckbox", 
+        name: this._name(), 
+        value: this.props.value, 
+        type: "checkbox", 
+        disabled: !this.props.enabled, 
+        className: "pt-native-checkbox", 
+        checked: this._isChecked(), 
+        onChange: this._handleChange})
+    ) ;
   },
-  _isChecked : function(){
+
+  _isChecked: function() {
     return this.state.isChecked;
   },
-  _checkboxCSSClasses : function(){
+
+  _checkboxCSSClasses: function() {
     return classNames({
       'pt-checkbox': true,
-      'is-error': this.props.error,
+      'is-error':    this.props.error,
       'is-required': this.props.required,
-      'isChecked': this.state.isChecked,
-      'disabled': !this.props.enabled
+      'isChecked':   this.state.isChecked,
+      'disabled':    !this.props.enabled
     });
   },
-  _clickCheckBox : function(){
-    if(this.props.enabled){
+
+  _clickCheckBox: function() {
+    if (this.props.enabled) {
       React.findDOMNode(this.refs.nativeCheckbox).click();
     }
   },
-  _handleChange : function(event){
+
+  _handleChange: function(event) {
     this.setState({isChecked: !this.state.isChecked});
     this.props.onChange(event);
   },
-  _label: function () {
+
+  _label: function() {
     // TODO remove checkboxLabel to conform to all other input interfaces
-    if (this.props.checkboxLabel) { console.warn("checkboxLabel has been deprecated, please use label instead"); }
+    if (this.props.checkboxLabel) { console.warn('checkboxLabel has been deprecated, please use label instead'); }
 
     return this.props.checkboxLabel || this.props.label;
   },
-  _name: function () {
+
+  _name: function() {
     // TODO remove checkboxName to conform to all other input interfaces
-    if (this.props.checkboxName) { console.warn("checkboxName has been deprecated, please use name instead"); }
+    if (this.props.checkboxName) { console.warn('checkboxName has been deprecated, please use name instead'); }
 
     return this.props.checkboxName || this.props.name;
   },
-  _icon: function () {
+
+  _icon: function() {
     if (this.props.required) {
       return (
         React.createElement("span", {className: "required-icon ic ic-asterisk"})
@@ -1147,20 +1175,20 @@ var Checkbox = React.createClass({displayName: "Checkbox",
 Checkbox.Group = React.createClass({displayName: "Group",
   getDefaultProps: function() {
     return {
-      id: "",
-      layout : "inline"
+      id:     '',
+      layout: 'inline'
     };
   },
-  propTypes : {
-    id: React.PropTypes.string,
-    layout : React.PropTypes.string
+
+  propTypes: {
+    id:     React.PropTypes.string,
+    layout: React.PropTypes.string
   },
-  render : function(){
-    return (
-      React.createElement("span", {className: "pt-checkbox-group " + this.props.layout, id: this.props.id, ref: "group"}, 
+
+  render: function() {
+    return React.createElement("span", {className: 'pt-checkbox-group ' + this.props.layout, id: this.props.id, ref: "group"}, 
         this.props.children
-      )
-    );
+      );
   }
 });
 
@@ -1183,15 +1211,22 @@ var UploadFile = React.createClass({displayName: "UploadFile",
     compressFileOptions : React.PropTypes.oneOfType([
       React.PropTypes.bool,
       React.PropTypes.object
-    ])
+    ]),
+    apiKey : React.PropTypes.string.isRequired,
+    version : React.PropTypes.string
   },
 
   getDefaultProps : function(){
     return {
       withCrop : false,
       cropRatio : undefined,
-      compressFileOptions : false
+      compressFileOptions : false,
+      version : "v2"
     };
+  },
+
+  componentWillMount : function(){
+    uploadFile.init(this.props.apiKey, this.props.version);
   },
 
   render: function() {
@@ -1222,32 +1257,34 @@ module.exports = UploadFile;
 var React = require('react');
 
 var Content = React.createClass({displayName: "Content",
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      hasInnerPanel : true,
-      hasBackgroundColour : true
+      hasInnerPanel:       true,
+      hasBackgroundColour: true
     };
   },
-  propTypes : {
-    hasInnerPanel: React.PropTypes.bool,
+
+  propTypes: {
+    hasInnerPanel:       React.PropTypes.bool,
     hasBackgroundColour: React.PropTypes.bool
   },
-  render: function () {
-    return (
-      React.createElement("div", {className: "panel-content " + this._doesContentHaveBackgroundColour(), ref: "contentPannel"}, 
-        this._contentHasInnerPanel()
-      )
+
+  render: function() {
+    return React.createElement("div", {className: 'panel-content ' + this._doesContentHaveBackgroundColour(), ref: "contentPannel"}, 
+      this._contentHasInnerPanel()
     );
   },
-  _doesContentHaveBackgroundColour : function(){
-    return this.props.hasBackgroundColour ? "" : "no-colour";
+
+  _doesContentHaveBackgroundColour: function() {
+    return this.props.hasBackgroundColour
+      ? ''
+      : 'no-colour';
   },
-  _contentHasInnerPanel : function(){
-    if(this.props.hasInnerPanel){
-      return (
-        React.createElement("div", {className: "panel-content-inner", ref: "contentInnerPannel"}, 
-          this.props.children
-        )
+
+  _contentHasInnerPanel: function() {
+    if (this.props.hasInnerPanel) {
+      return React.createElement("div", {className: "panel-content-inner", ref: "contentInnerPannel"}, 
+        this.props.children
       );
     } else {
       return (this.props.children);
@@ -1262,40 +1299,41 @@ module.exports = Content;
 var React = require('react');
 
 var Form = React.createClass({displayName: "Form",
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-       acceptCharset : "",
-       action : "",
-       autocomplete : "",
-       enctype : "",
-       method : "",
-       name : "",
-       novalidate : true,
-       target : ""
+      acceptCharset: '',
+      action:        '',
+      autocomplete:  '',
+      enctype:       '',
+      method:        '',
+      name:          '',
+      novalidate:    true,
+      target:        ''
     };
   },
-  propTypes : {
-    acceptCharset : React.PropTypes.string,
-    action : React.PropTypes.string,
-    autocomplete : React.PropTypes.oneOf([
+
+  propTypes: {
+    acceptCharset: React.PropTypes.string,
+    action:        React.PropTypes.string,
+    autocomplete:  React.PropTypes.oneOf([
       'on',
       'off',
       '']
     ),
-    enctype : React.PropTypes.oneOf([
+    enctype: React.PropTypes.oneOf([
       'application/x-www-form-urlencoded',
       'multipart/form-data',
       'text/plain',
       ''
     ]),
-    method : React.PropTypes.oneOf([
+    method: React.PropTypes.oneOf([
       'get',
       'post',
       ''
     ]),
-    name : React.PropTypes.string,
-    novalidate : React.PropTypes.bool,
-    target : React.PropTypes.oneOf([
+    name:       React.PropTypes.string,
+    novalidate: React.PropTypes.bool,
+    target:     React.PropTypes.oneOf([
       '_blank',
       '_self',
       '_parent',
@@ -1303,173 +1341,180 @@ var Form = React.createClass({displayName: "Form",
       ''
     ])
   },
-  componentDidMount : function(){
+
+  componentDidMount: function() {
     this._determineNumberOfColumns();
   },
-  render: function () {
-    return (
-      React.createElement("form", {className: "pt-form", ref: "form", 
-        noValidate: this.props.novalidate, 
-        acceptCharset: this.props.acceptCharset, 
-        action: this.props.action, 
-        autoComplete: this.props.autocomplete, 
-        encType: this.props.enctype, 
-        method: this.props.method, 
-        name: this.props.name, 
-        target: this.props.target}, 
-          this.props.children
-      )
+
+  render: function() {
+    return React.createElement("form", {className: "pt-form", ref: "form", 
+      noValidate: this.props.novalidate, 
+      acceptCharset: this.props.acceptCharset, 
+      action: this.props.action, 
+      autoComplete: this.props.autocomplete, 
+      encType: this.props.enctype, 
+      method: this.props.method, 
+      name: this.props.name, 
+      target: this.props.target}, 
+        this.props.children
     );
   },
-  _determineNumberOfColumns : function(){
+
+  _determineNumberOfColumns: function() {
     var columns = [];
-    for(var i = 0; i < React.findDOMNode(this.refs.form).children.length; i++) {
-      if(this._isFormColumn(React.findDOMNode(this.refs.form).children[i])){
-        columns.push(React.findDOMNode(this.refs.form).children[i]);
-      } else if(this._isFormRow(React.findDOMNode(this.refs.form).children[i]) || this._isFormAction(React.findDOMNode(this.refs.form).children[i])) {
+    var children = React.findDOMNode(this.refs.form).children;
+
+    //Partition the column children by FormRow and FormAction. Apply 'column-num ${length}' to each partition
+    for (var i = 0; i < children.length; i++) {
+      if (this._isFormColumn(children[i])) {
+        columns.push(children[i]);
+      } else if (this._isFormRow(children[i]) || this._isFormAction(children[i])) {
         this._styleColumns(columns);
         columns = [];
       }
     }
-    if(columns.length > 0 ){
+
+    if (columns.length > 0 ) {
       this._styleColumns(columns);
     }
   },
-  _isFormColumn : function(child){
+
+  _isFormColumn: function(child) {
     return child.className.indexOf('pt-form-column') > -1;
   },
-  _isFormRow : function(child){
+
+  _isFormRow: function(child) {
     return child.className.indexOf('pt-form-row') > -1;
   },
-  _isFormAction : function(child){
+
+  _isFormAction: function(child) {
     return child.className.indexOf('pt-form-actions') > -1;
   },
-  _styleColumns : function(columns){
-    columns.map(function(column){
-      column.className = column.className + " column-num-" + columns.length;
+
+  _styleColumns: function(columns) {
+    columns.map(function(column) {
+      column.className = column.className + ' column-num-' + columns.length;
     });
   }
 });
 
 Form.Column = React.createClass({displayName: "Column",
-  shouldComponentUpdate : function(){
+  shouldComponentUpdate: function() {
     return false;
   },
-  render: function () {
-    return (
-      React.createElement("div", {className: "pt-form-column", ref: "column"}, 
-        this.props.children
-      )
+  render: function() {
+    return React.createElement("div", {className: "pt-form-column", ref: "column"}, 
+      this.props.children
     );
   }
 });
 
 Form.Row = React.createClass({displayName: "Row",
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      inputSize : "large",
+      inputSize: 'large',
     };
   },
-  propTypes : {
-    inputSize : React.PropTypes.oneOf(['small', 'medium', 'large', 'full'])
+
+  propTypes: {
+    inputSize: React.PropTypes.oneOf(['small', 'medium', 'large', 'full'])
   },
-  render: function () {
-    return (
-      React.createElement("div", {className: "pt-form-row " + this.props.inputSize + "-input", ref: "row"}, 
-        this.props.children
-      )
+
+  render: function() {
+    return React.createElement("div", {className: 'pt-form-row ' + this.props.inputSize + '-input', ref: "row"}, 
+      this.props.children
     );
   }
 });
 
 Form.Actions = React.createClass({displayName: "Actions",
-  shouldComponentUpdate : function(){
+  shouldComponentUpdate: function() {
     return false;
   },
-  render: function () {
-    return (
-      React.createElement("div", {className: "pt-form-actions", ref: "actions"}, 
-        this.props.children
-      )
+
+  render: function() {
+    return React.createElement("div", {className: "pt-form-actions", ref: "actions"}, 
+      this.props.children
     );
   }
 });
 
 Form.Title = React.createClass({displayName: "Title",
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      title : "",
-      actions : null,
+      title:   '',
+      actions: null,
     };
   },
-  propTypes : {
-    title : React.PropTypes.string,
-    actions : React.PropTypes.element //wanted to use instanceOf(ButtonGroup) but i need to include button group in form
+
+  propTypes: {
+    title:   React.PropTypes.string,
+    actions: React.PropTypes.element //wanted to use instanceOf(ButtonGroup) but i need to include button group in form
   },
-  render: function () {
-    return (
-      React.createElement("div", {className: "pt-form-title", ref: "title"}, 
-        React.createElement("h2", null, this.props.title), 
-        React.createElement("div", {className: "pt-form-title-actions", ref: "actions"}, 
-          this.props.actions
-        ), 
-        React.createElement("div", {className: "pt-form-title-description", ref: "description"}, 
-          this.props.children
-        )
+
+  render: function() {
+    return React.createElement("div", {className: "pt-form-title", ref: "title"}, 
+      React.createElement("h2", null, this.props.title), 
+      React.createElement("div", {className: "pt-form-title-actions", ref: "actions"}, 
+        this.props.actions
+      ), 
+      React.createElement("div", {className: "pt-form-title-description", ref: "description"}, 
+        this.props.children
       )
     );
   }
 });
 
 Form.Section = React.createClass({displayName: "Section",
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      hideDivider : false,
+      hideDivider: false,
     };
   },
-  propTypes : {
-    hideDivider : React.PropTypes.bool
+
+  propTypes: {
+    hideDivider: React.PropTypes.bool
   },
-  render: function () {
-    return (
-      React.createElement("div", {className: "pt-form-section " + this._divider(), ref: "section"}, 
-        this.props.children
-      )
+
+  render: function() {
+    return React.createElement("div", {className: 'pt-form-section ' + this._divider(), ref: "section"}, 
+      this.props.children
     );
   },
-  _divider : function(){
-    return this.props.hideDivider ? "" : "pt-form-section-divider";
+
+  _divider: function() {
+    return this.props.hideDivider
+      ? ''
+      : 'pt-form-section-divider';
   }
 });
 
 Form.SectionTitle = React.createClass({displayName: "SectionTitle",
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      title : ""
+      title: ''
     };
   },
-  propTypes : {
-    title : React.PropTypes.string
+
+  propTypes: {
+    title: React.PropTypes.string
   },
-  render: function () {
-    return (
-      React.createElement("div", {className: "pt-form-section-title", ref: "title"}, 
-        React.createElement("h3", null, this.props.title), 
-        React.createElement("div", {className: "pt-form-section-title-description", ref: "description"}, 
-          this.props.children
-        )
+
+  render: function() {
+    return React.createElement("div", {className: "pt-form-section-title", ref: "title"}, 
+      React.createElement("h3", null, this.props.title), 
+      React.createElement("div", {className: "pt-form-section-title-description", ref: "description"}, 
+        this.props.children
       )
     );
   }
 });
 
 Form.Alert = React.createClass({displayName: "Alert",
-  render: function () {
-    return (
-      React.createElement("div", {className: "pt-form-alert", ref: "alert"}, 
+  render: function() {
+    return React.createElement("div", {className: "pt-form-alert", ref: "alert"}, 
         this.props.children
-      )
-    );
+      );
   }
 });
 
@@ -1627,27 +1672,28 @@ module.exports = Loading;
 },{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/modal_dialog.jsx":[function(require,module,exports){
 var React = require('react');
 var $ = require('jquery');
+var classNames = require('classnames');
 
 var ModalDialog = React.createClass({displayName: "ModalDialog",
   propTypes: {
-    id: React.PropTypes.string,
-    closeable: React.PropTypes.bool,
-    size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+    id:            React.PropTypes.string,
+    closeable:     React.PropTypes.bool,
+    size:          React.PropTypes.oneOf(['small', 'medium', 'large']),
     scrollingBody: React.PropTypes.bool,
-    lightbox: React.PropTypes.bool,
-    keyboard: React.PropTypes.bool
+    lightbox:      React.PropTypes.bool,
+    keyboard:      React.PropTypes.bool
   },
 
   getDefaultProps: function() {
     return {
-      id: '',
-      closeable: true,
-      size: 'medium',
-      onClose: function() {},
-      isModalOpen: false,
+      id:            '',
+      closeable:     true,
+      size:          'medium',
+      onClose:       function() {},
+      isModalOpen:   false,
       scrollingBody: false,
-      lightbox: true,
-      keyboard: true
+      lightbox:      true,
+      keyboard:      true
     };
   },
 
@@ -1691,35 +1737,36 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
 
   render: function() {
     return (
-      React.createElement("div", {id: this.props.id, className: 'pt-modal-dialog  ' + this._showModal() + ' ' + this._scrollingModalBody() + ' ' + this._lightbox(), 
+      React.createElement("div", {id: this.props.id, className: this._classNames().ptModalDialog, 
         onClick: this._closeDialog, 
         ref: "modalDialog"}, 
         React.createElement("section", {className: 'pt-modal ' + this.props.size, ref: "modal"}, 
-          React.createElement("span", {className: 'close-dialog ic ic-times ' + this._isModalCloseable(), onClick: this._closeDialog, ref: "close"}), 
+          React.createElement("span", {className: this._classNames().span, onClick: this._closeDialog, ref: "close"}), 
           this.props.children
         )
       )
     );
   },
 
-  _isModalCloseable: function() {
-    return this.props.closeable ? '' : 'disable-close';
-  },
-
-  _scrollingModalBody: function() {
-    return this.props.scrollingBody ? 'scrolling-body' : '';
-  },
-
-  _lightbox: function() {
-    return this.props.lightbox ? 'lightbox' : '';
-  },
-
-  _showModal: function() {
-    return this.state.isModalOpen ? '' : 'close';
+  _classNames: function() {
+    return {
+      ptModalDialog: classNames({
+        'pt-modal-dialog': true,
+        'close':           !this.state.isModalOpen,
+        'scrolling-body':  this.props.scrollingBody,
+        'lightbox':        this.props.lightbox
+      }),
+      span: classNames({
+        'close-dialog':  true,
+        'ic':            true,
+        'ic-times':      true,
+        'disable-close': !this.props.closeable
+      })
+    };
   },
 
   _closeDialog: function(event) {
-    if(this.props.closeable && this._isClosableElement(event.target)) {
+    if (this.props.closeable && this._isClosableElement(event.target)) {
       this._dismissDialog();
     }
   },
@@ -1735,14 +1782,14 @@ var ModalDialog = React.createClass({displayName: "ModalDialog",
   },
 
   _handleEscape: function() {
-    if(event.keyCode === 27 && this.props.closeable && this.props.keyboard) {
+    var ESCAPE_KEY_CODE = 27;
+    if (event.keyCode === ESCAPE_KEY_CODE && this.props.closeable && this.props.keyboard) {
       $(window).off('keydown.escapePressed');
       this._dismissDialog();
     }
   },
 
   _onClose: function() {
-    console.log('should close');
     this.props.onClose();
     this._enableBodyScroll();
   },
@@ -1799,7 +1846,7 @@ ModalDialog.Footer = React.createClass({displayName: "Footer",
 module.exports = ModalDialog;
 
 
-},{"jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx":[function(require,module,exports){
+},{"classnames":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/multi-select/clear_all.jsx":[function(require,module,exports){
 var React = require('react');
 
 var Icon = require('../icon.jsx');
@@ -2871,37 +2918,40 @@ var classNames = require('classnames');
 var RadioButton = React.createClass({displayName: "RadioButton",
   getDefaultProps: function() {
     return {
-      id: "",
-      enabled: true,
-      isChecked : false,
-      onChange: function(){},
-      radioName : "",
-      radioLabel : "",
-      value : ""
+      id:         '',
+      enabled:    true,
+      isChecked:  false,
+      onChange:   function() {},
+      radioName:  '',
+      radioLabel: '',
+      value:      ''
     };
   },
-  propTypes : {
-    id: React.PropTypes.string,
-    enabled: React.PropTypes.bool,
-    isChecked: React.PropTypes.bool,
-    onChange : React.PropTypes.func,
-    radioName : React.PropTypes.string,
-    radioLabel : React.PropTypes.string,
-    value : React.PropTypes.string
+
+  propTypes: {
+    id:         React.PropTypes.string,
+    enabled:    React.PropTypes.bool,
+    isChecked:  React.PropTypes.bool,
+    onChange:   React.PropTypes.func,
+    radioName:  React.PropTypes.string,
+    radioLabel: React.PropTypes.string,
+    value:      React.PropTypes.string
   },
-  getInitialState : function(){
+
+  getInitialState: function() {
     return {
       isChecked: this.props.isChecked
     };
   },
-  componentWillReceiveProps: function (newProps) {
+
+  componentWillReceiveProps: function(newProps) {
     this.setState({
       isChecked: newProps.isChecked
     });
   },
-  render : function(){
-    return (
-      React.createElement("span", {id: this.props.id, className: this._radioCSSClasses(), onClick: this._clickRadioButton, ref: "radioButton"}, 
+
+  render: function() {
+    return React.createElement("span", {id: this.props.id, className: this._radioCSSClasses(), onClick: this._clickRadioButton, ref: "radioButton"}, 
         React.createElement("input", {disabled: !this.props.enabled, 
             type: "radio", 
             ref: "nativeRadioButton", 
@@ -2912,42 +2962,44 @@ var RadioButton = React.createClass({displayName: "RadioButton",
             onChange: this._handleChange}), 
         React.createElement("span", {className: "stylized-radio-button", ref: "stylizedRadioButton"}), 
         React.createElement("span", {className: "pt-radio-label", ref: "label"}, this.props.radioLabel)
-      )
-    );
+      );
   },
-  _radioCSSClasses : function(){
+
+  _radioCSSClasses: function() {
     return classNames({
       'pt-radio-button': true,
-      'disabled': !this.props.enabled
+      'disabled':        !this.props.enabled
     });
   },
-  _clickRadioButton : function(){
-    if(this.props.enabled){
+
+  _clickRadioButton: function() {
+    if(this.props.enabled) {
       React.findDOMNode(this.refs.nativeRadioButton).click();
     }
   },
-  _handleChange : function(event){
+
+  _handleChange: function(event) {
     this.props.onChange(event);
   }
 });
 
 RadioButton.Group = React.createClass({displayName: "Group",
-    getDefaultProps: function() {
+  getDefaultProps: function() {
     return {
-      id: "",
-      layout : "inline"
+      id:     '',
+      layout: 'inline'
     };
   },
-  propTypes : {
-    id: React.PropTypes.string,
-    layout : React.PropTypes.string
+
+  propTypes: {
+    id:     React.PropTypes.string,
+    layout: React.PropTypes.string
   },
-  render : function(){
-    return (
-      React.createElement("span", {className: "pt-radio-button-group " + this.props.layout, id: this.props.id, ref: "radioButtonGroup"}, 
+
+  render: function() {
+    return React.createElement("span", {className: 'pt-radio-button-group ' + this.props.layout, id: this.props.id, ref: "radioButtonGroup"}, 
         this.props.children
-      )
-    );
+      );
   }
 });
 
@@ -3236,9 +3288,10 @@ var Tabs = React.createClass({displayName: "Tabs",
     return {
       id : "",
       key : "tabs-" + Math.random(),
-      openTabIndex : null,
+      openTabIndex : 0,
       onChange : function(){},
-      showAllTabs : false
+      showAllTabs : false,
+      stateful: true // deprecate state eventually
     };
   },
   propTypes : {
@@ -3248,7 +3301,7 @@ var Tabs = React.createClass({displayName: "Tabs",
     onChange : React.PropTypes.func,
     showAllTabs : React.PropTypes.bool
   },
-  getInitialState : function(){
+  getInitialState : function () {
     return {
       openTabIndex : this._validTabIndex(this.props.openTabIndex) ? this.props.openTabIndex : 0
     };
@@ -3263,12 +3316,23 @@ var Tabs = React.createClass({displayName: "Tabs",
   render: function() {
     return (
       React.createElement("nav", {className: "pt-tabs", key: this.props.key}, 
-        React.createElement(TabsMenu, {ref: "tabs", tabs: this.props.children, openTabIndex: this.state.openTabIndex, onChange: this._onTabChange}), 
-        React.createElement(TabsDropdown, {tabs: this.props.children, openTabIndex: this.state.openTabIndex, onChange: this._onTabChange}), 
-        React.createElement(TabSections, {tabs: this.props.children, openTabIndex: this.state.openTabIndex})
+        React.createElement(TabsMenu, {ref: "tabs", tabs: this.props.children, openTabIndex: this._selectedIndex(), onChange: this._onTabChange}), 
+        React.createElement(TabsDropdown, {tabs: this.props.children, openTabIndex: this._selectedIndex(), onChange: this._onTabChange}), 
+        React.createElement(TabSections, {tabs: this.props.children, openTabIndex: this._selectedIndex()})
       )
     );
   },
+
+  _selectedIndex: function () {
+    return this.props.stateful ? this.state.openTabIndex : this.props.openTabIndex;
+  },
+
+  _onTabChange : function(index){
+    if (this.props.stateful) { this.setState({ openTabIndex: index }); }
+
+    this.props.onChange(index);
+  },
+
   _validTabIndex : function(openTabIndex){
     if(isNaN(parseInt(openTabIndex))){
       return false;
@@ -3279,12 +3343,6 @@ var Tabs = React.createClass({displayName: "Tabs",
     }
 
     return true;
-  },
-  _onTabChange : function(index){
-    this.setState({
-      openTabIndex : index
-    });
-    this.props.onChange(index);
   }
 });
 
@@ -3732,122 +3790,125 @@ var classNames = require('classnames');
 var TextInput = React.createClass({displayName: "TextInput",
   getDefaultProps: function() {
     return {
-      type: "text",
-      placeholder : "",
-      name: "",
-      id : "",
-      pattern : "",
-      message : "",
-      value : "",
-      required : false,
-      error : false,
-      valid : false,
-      readOnly : false,
-      disabled : false,
-      onChange : function(){},
-      clearable : false,
-      onCleared : function(){},
-      autofocus : false,
-      key : ""
+      type:        'text',
+      placeholder: '',
+      name:        '',
+      id:          '',
+      pattern:     '',
+      message:     '',
+      value:       '',
+      required:    false,
+      error:       false,
+      valid:       false,
+      readOnly:    false,
+      disabled:    false,
+      onChange:    function() {},
+      clearable:   false,
+      onCleared:   function() {},
+      autofocus:   false,
+      key:         ''
     };
   },
-  propTypes : {
-    type: React.PropTypes.oneOf(['text', 'password', 'url', 'email', 'search', 'number', '']),
-    placeholder : React.PropTypes.string,
-    name: React.PropTypes.string,
-    id : React.PropTypes.string,
-    pattern : React.PropTypes.string,
-    message : React.PropTypes.oneOfType([
+
+  propTypes: {
+    type:        React.PropTypes.oneOf(['text', 'password', 'url', 'email', 'search', 'number', '']),
+    placeholder: React.PropTypes.string,
+    name:        React.PropTypes.string,
+    id:          React.PropTypes.string,
+    pattern:     React.PropTypes.string,
+    message:     React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.array
     ]),
-    value : React.PropTypes.oneOfType([
+    value: React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.number
     ]),
-    required : React.PropTypes.bool,
-    error : React.PropTypes.bool,
-    valid : React.PropTypes.bool,
-    readOnly : React.PropTypes.bool,
-    disabled : React.PropTypes.bool,
-    onChange : React.PropTypes.func,
-    clearInput : React.PropTypes.bool,
-    onInputCleared : React.PropTypes.func,
-    autofocus : React.PropTypes.bool,
-    key : React.PropTypes.string
+    required:       React.PropTypes.bool,
+    error:          React.PropTypes.bool,
+    valid:          React.PropTypes.bool,
+    readOnly:       React.PropTypes.bool,
+    disabled:       React.PropTypes.bool,
+    onChange:       React.PropTypes.func,
+    clearInput:     React.PropTypes.bool,
+    onInputCleared: React.PropTypes.func,
+    autofocus:      React.PropTypes.bool,
+    key:            React.PropTypes.string
   },
+
   getInitialState: function() {
     return {value: this.props.value};
   },
-  componentWillReceiveProps: function(newProps){
-    this.setState({
-      value : newProps.value
-    });
+
+  componentWillReceiveProps: function(newProps) {
+    this.setState({ value: newProps.value });
     this._setInputFocus(newProps.autofocus);
   },
-  componentDidMount: function(){
+
+  componentDidMount: function() {
     this._setInputFocus(this.props.autofocus);
   },
-  render : function(){
-    return (
-      React.createElement("span", {className: this._determineInputStyling()}, 
+
+  render: function() {
+    return React.createElement("span", {className: this._determineInputStyling()}, 
         this._determineInputIcon(), 
         React.createElement("input", {readOnly: this.props.readOnly, required: this.props.required, type: this.props.type, value: this.state.value, 
                placeholder: this.props.placeholder, name: this.props.name, id: this.props.id, 
                pattern: this.props.pattern, disabled: this.props.disabled, onChange: this._handleChange, ref: "input"}), 
         this._isClearable(), 
         this._buildMessage()
-      )
-    );
+      );
   },
-  _setInputFocus : function(autofocus){
-    if(autofocus){
+
+  _setInputFocus: function(autofocus) {
+    if (autofocus) {
       React.findDOMNode(this.refs.input).focus();
     }
   },
-  _determineInputStyling : function(){
+
+  _determineInputStyling: function() {
     return classNames({
-      'is-required': this.props.required,
-      'is-error': this.props.error,
-      'is-valid': this.props.valid,
+      'is-required':  this.props.required,
+      'is-error':     this.props.error,
+      'is-valid':     this.props.valid,
       'search-input': this.props.type === 'search',
-      'pt-input': true,
-      'is-disabled' : this.props.disabled,
-      'is-clearable' : this.props.clearable
+      'pt-input':     true,
+      'is-disabled':  this.props.disabled,
+      'is-clearable': this.props.clearable
     });
   },
-  _determineInputIcon : function(){
-    if(this.props.type === 'search'){
-      return (React.createElement("span", {className: "search-input ic ic-search"}));
-    } else if(this.props.required) {
-      return (React.createElement("span", {className: "required-input ic ic-asterisk"}));
+
+  _determineInputIcon: function() {
+    if (this.props.type === 'search') {
+      return React.createElement("span", {className: "search-input ic ic-search"});
+    } else if (this.props.required) {
+      return React.createElement("span", {className: "required-input ic ic-asterisk"});
     }
   },
-  _handleChange: function(event){
-    this.setState({value : event.target.value});
+
+  _handleChange: function(event) {
+    this.setState({value: event.target.value});
     this.props.onChange(event);
   },
-  _isClearable : function(){
-    if(!this.props.clearable){
-      return "";
-    }
 
-    return (
-      React.createElement("span", {className: "clear-input ic ic-close", onClick: this._clearInputValue})
-    );
+  _isClearable: function() {
+    if(!this.props.clearable) return '';
+    return React.createElement("span", {className: "clear-input ic ic-close", onClick: this._clearInputValue});
   },
-  _clearInputValue : function(){
+
+  _clearInputValue: function() {
     this.setState({
-      value : ""
+      value: ''
     }, this.props.onCleared());
   },
-  _buildMessage: function(){
-    if (typeof this.props.message === "string") {
-      return (React.createElement("span", {className: "input-message"}, this.props.message));
+
+  _buildMessage: function() {
+    if (typeof this.props.message === 'string') {
+      return React.createElement("span", {className: "input-message"}, this.props.message);
     }
     else {
-      return this.props.message.map(function(message, i){
-        return (React.createElement("span", {key: i, className: "input-message"}, message));
+      return this.props.message.map(function(message, i) {
+        return React.createElement("span", {key: i, className: "input-message"}, message);
       });
     }
   }
@@ -4118,8 +4179,8 @@ var _ = require("lodash");
 
 var UploadFile = function(initializeFilepicker, uploadOptions){
 
-  function init(){
-    initializeFilepicker();
+  function init(apiKey, version){
+    initializeFilepicker(apiKey, version);
   }
 
   function upload(onSuccess){
@@ -4160,7 +4221,7 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
 };
 
 var InitializeFilepicker = function(){
-  var filepickerApiKey = 'A0HwTllqOQMGhtATyx9euz';
+  var filepickerApiKey;
   var filepickerMethods = [
     "pick",
     "pickMultiple",
@@ -4180,12 +4241,13 @@ var InitializeFilepicker = function(){
   ];
   var filepickerVersion = "v2";
 
-  function init(_filepickerVersion){
+  function init(_filepickerApiKey, _filepickerVersion){
     if(window.filepicker){
       return;
     }
 
     filepickerVersion = _filepickerVersion || filepickerVersion;
+    filepickerApiKey = _filepickerApiKey || "";
 
     _addScriptTagToDOM();
     _buildFilepicker();
@@ -4243,7 +4305,6 @@ var InitializeFilepicker = function(){
 
 var Filepicker = new InitializeFilepicker();
 var uploadFile = new UploadFile(Filepicker.init, Filepicker.options);
-uploadFile.init();
 module.exports = uploadFile;
 
 
@@ -53841,6 +53902,14 @@ var icons = {
   
     "archive": "archive",
   
+    "expiring": "expiring",
+  
+    "inprogress": "inprogress",
+  
+    "disqus-circular": "disqus-circular",
+  
+    "disqus": "disqus",
+  
     "coins-old": "coins-old",
   
 
@@ -57763,6 +57832,12 @@ var ModalDialogPattern = React.createClass({displayName: "ModalDialogPattern",
         defaultValue : "true",
         required : false,
         description : "Determines if background is greyed out or not.  defaults to true."
+      },
+      keyboard : {
+        type : "boolean",
+        defaultValue : "true",
+        required : false,
+        description : "Determines if 'escape' key will close modal."
       }
     };
   },
