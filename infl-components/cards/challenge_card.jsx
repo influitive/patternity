@@ -95,6 +95,7 @@ ChallengeCard.Details = React.createClass({
     description : React.PropTypes.string,
     onFilterByType : React.PropTypes.func,
     participantCount : React.PropTypes.number,
+    points : React.PropTypes.number,
     onHeadlineClick : React.PropTypes.func
   },
 
@@ -105,6 +106,7 @@ ChallengeCard.Details = React.createClass({
       description : "",
       onFilterByType : function(){},
       participantCount : 0,
+      points : 0,
       onHeadlineClick : function(){}
     };
   },
@@ -120,8 +122,8 @@ ChallengeCard.Details = React.createClass({
   render : function(){
     return (
       <div className="pt-challenge-details">
+        <ChallengeMetaData type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} points={this.props.points} />
         <h4 className="headline" ref="headline" onClick={this.props.onHeadlineClick}>{this.props.headline}</h4>
-        <ChallengeTypeCount type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} />
         <div ref="description" className="description" dangerouslySetInnerHTML={{__html: this.props.description}}></div>
       </div>
     );
@@ -167,27 +169,30 @@ ChallengeCard.Details = React.createClass({
   }
 });
 
-var ChallengeTypeCount = React.createClass({
+var ChallengeMetaData = React.createClass({
   PropTypes : {
     type : React.PropTypes.string,
     onClick : React.PropTypes.func,
-    participantCount : React.PropTypes.number
+    participantCount : React.PropTypes.number,
+    points : React.PropTypes.number
   },
 
   getDefaultProps : function(){
     return {
       type : "",
       onClick : function(){},
-      participantCount : 0
+      participantCount : 0,
+      points : 0
     };
   },
 
   render : function(){
     return (
-      <div className="pt-challenge-type-count">
+      <div className="pt-challenge-metadata">
         <span className={"pt-challenge-type " + this._formatChallengeTypeClassName()} onClick={this.props.onClick}>
           {this.props.type.toLowerCase()}
         </span>
+        {this.pointsHTML()}
         <span className="pt-challenge-participant-count">
           <Icon icon="user" />
           <span className="count">{this.props.participantCount}</span>
@@ -203,7 +208,11 @@ var ChallengeTypeCount = React.createClass({
       typeClassName += typeArray[i].toLowerCase() + "-";
     }
     return typeClassName.substring(0, typeClassName.length - 1);
-  }
+  },
+
+  pointsHTML: function () {
+    return this.props.points === 0 ? null : <Points points={this.props.points} />;
+  },
 });
 
 ChallengeCard.Actions = Card.Actions;
@@ -234,7 +243,6 @@ ChallengeCard.Image = React.createClass({
 ChallengeCard.Notice = React.createClass({
     getDefaultProps : function(){
     return {
-      points : 0,
       createdAt : "",
       status : "",
       completedOn : "",
@@ -244,7 +252,6 @@ ChallengeCard.Notice = React.createClass({
     };
   },
   PropTypes : {
-    points : React.PropTypes.number,
     createdAt : React.PropTypes.string,
     status : React.PropTypes.string,
     completedOn : React.PropTypes.string,
@@ -262,13 +269,8 @@ ChallengeCard.Notice = React.createClass({
             completedOn={this.props.completedOn}
             startedOn={this.props.startedOn}
             unlocked={this.props.unlocked} />
-          {this.pointsHTML()}
       </div>
     );
-  },
-
-  pointsHTML: function () {
-    return this.props.points === 0 ? null : <Points points={this.props.points} />;
   },
 
   _multipuleCompletion : function(){
