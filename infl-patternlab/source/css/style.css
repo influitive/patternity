@@ -3519,6 +3519,9 @@ DIV.pt-popover.is-visible {
 .pt-challenge-template-card .pt-challenge-card {
   height: 275px;
 }
+.pt-challenge-template-card .pt-challenge-card .pt-challenge-details .pt-challenge-metadata .pt-challenge-label {
+  max-width: 100%;
+}
 
 .pt-challenge-card {
   position: relative;
