@@ -55,5 +55,6 @@ inflComp.StoragePattern           = require("./patterns/utilities/storage_patter
 inflComp.FormPagePattern          = require("./patterns/pages/form_page_pattern.jsx");
 inflComp.ChallengesPagePattern    = require("./patterns/pages/challenges_page_pattern.jsx");
 inflComp.ModalFullWidthInput      = require("./patterns/pages/modal_full_width_input.jsx");
+inflComp.ChallengeTemplatesPagePattern  = require("./patterns/pages/challenge_template_page_pattern.jsx");
 
 module.exports = inflComp;

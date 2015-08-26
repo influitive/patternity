@@ -11,6 +11,11 @@ var Tabs  = require("../../../../infl-components/tabs.jsx");
 var ButtonGroup  = require("../../../../infl-components/button_group.jsx");
 var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.jsx");
 var Card  = require("../../../../infl-components/cards/card.jsx");
+var CardMetaData  = require("../../../../infl-components/cards/components/card_meta_data.jsx");
+var CardDetails  = require("../../../../infl-components/cards/components/card_details.jsx");
+var Points  = require("../../../../infl-components/cards/components/points.jsx");
+var ParticipantCount  = require("../../../../infl-components/cards/components/participant_count.jsx");
+var ChallengeLabel  = require("../../../../infl-components/cards/components/challenge_label.jsx");
 
 var ChallengesPagePattern = React.createClass({
   getInitialState : function(){
@@ -279,7 +284,15 @@ var ChallengesPagePattern = React.createClass({
               unlocked={card.unlocked}
               multipleCompletion={card['multiple_completion']} />
           <ChallengeCard.Image image={card.image} />
-          <ChallengeCard.Details type={card.type} headline={card.headline} description={card.description} points={card.points} />
+          <CardDetails>
+            <CardMetaData>
+              <ChallengeLabel label={card.type} />
+              <Points points={card.points} />
+              <ParticipantCount participantCount={card.unique_participant_count} />
+            </CardMetaData>
+            <CardDetails.Headline headline={card.headline} />
+            <CardDetails.Description description={card.description} />
+          </CardDetails>
           <ChallengeCard.Actions>
             {that._cardButtons(card.id, card.status)}
           </ChallengeCard.Actions>
