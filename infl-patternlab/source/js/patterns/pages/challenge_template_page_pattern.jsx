@@ -2,14 +2,11 @@ var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 
 var Content           = require("../../../../infl-components/content.jsx");
-var ChallengeTemplateCard  = require("../../../../infl-components/cards/challenge_template_card.jsx");
 var Card  = require("../../../../infl-components/cards/card.jsx");
+var ChallengeTemplateCard  = require("../../../../infl-components/cards/challenge_template_card.jsx");
 var CardImage = require('../../../../infl-components/cards/components/card_image.jsx');
 var CardDetails = require('../../../../infl-components/cards/components/card_details.jsx');
-
 var CardMetaData  = require("../../../../infl-components/cards/components/card_meta_data.jsx");
-var Points  = require("../../../../infl-components/cards/components/points.jsx");
-var ParticipantCount  = require("../../../../infl-components/cards/components/participant_count.jsx");
 var ChallengeLabel  = require("../../../../infl-components/cards/components/challenge_label.jsx");
 
 var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
