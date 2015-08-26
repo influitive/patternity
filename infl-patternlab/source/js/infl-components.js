@@ -953,7 +953,6 @@ var CardDetails = React.createClass({displayName: "CardDetails",
 });
 
 CardDetails.MetaData = CardMetaData;
-//<CardMetaData type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} points={this.props.points} />
 
 CardDetails.Headline = React.createClass({displayName: "Headline",
     PropTypes : {
@@ -998,6 +997,7 @@ CardDetails.Headline = React.createClass({displayName: "Headline",
 
   _ellipsisHeadlineText : function(headline, headlineMaxHeight){
     this._convertWordsToElements(headline);
+    this._removeLastVisibleWord();
     var lastVisibleWordElement = this._findLastVisibleWord(headline, headlineMaxHeight);
     $(lastVisibleWordElement).addClass("last-visible-word");
   },
@@ -1010,6 +1010,10 @@ CardDetails.Headline = React.createClass({displayName: "Headline",
 
   _wordsHaveNotAlreadyBeenConverted : function(headline){
     return headline.children.length === 0;
+  },
+
+  _removeLastVisibleWord : function(){
+    $(".last-visible-word").removeClass("last-visible-word");
   },
 
   _findLastVisibleWord : function(headline, headlineMaxHeight){
