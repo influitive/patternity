@@ -62,19 +62,6 @@
         font-size: 15px;
       }
     }
-
-    .pt-card-points {
-      float: right;
-      font-size: 15px;
-      display: block;
-      margin-top: 1px;
-
-      .ic {
-        position: relative;
-        top: 2px;
-        margin-right: 5px;
-      }
-    }
   }
 
   .pt-challenge-image {
@@ -107,6 +94,7 @@
 
     .headline {
       line-height: 20px;
+      margin-top: 0px;
       max-height: 60px;
       overflow: hidden;
       position: relative;
@@ -180,17 +168,18 @@
     $tagOlive:        #ADA639;
     $tagTangerine:    #f28500;
 
-    .pt-challenge-type-count {
+    .pt-challenge-metadata {
         overflow: hidden;
+        margin: 10px 0px;
 
       .pt-challenge-type {
-        margin: 0px 0px 1.3em;
+        margin: 0px;
         padding: 2px 10px;
         font-variant: small-caps;
         color: #fff;
         display: block;
         float: left;
-        max-width: 125px;
+        max-width: 75px;
         cursor : pointer;
         font-size: 13px;
         background-color: $dark-grey;
@@ -292,6 +281,19 @@
           position: relative;
           top: 2px;
           left: -2px;
+        }
+      }
+
+      .pt-card-points {
+        float: right;
+        font-size: 15px;
+        display: block;
+        margin-left: 10px;
+
+        .ic {
+          position: relative;
+          top: 2px;
+          margin-right: 5px;
         }
       }
     }

@@ -21,7 +21,7 @@ var ChallengesPagePattern = React.createClass({
           {
             points : 5,
             featured : false,
-            description : "Look to generate new referrals?  Try creating a new referral challenge and featuring it!",
+            description : "",
             createdAt : "2015-03-02T14:46:34.913-05:00",
             headline : "How to use LinkedIn suggestions in the referral challenge. How to use LinkedIn suggestions in the referral challenge.",
             id : 1,
@@ -272,7 +272,6 @@ var ChallengesPagePattern = React.createClass({
       return (
         <ChallengeCard key={card.id} id={"card-" + card.id} animateEntrance={true}>
           <ChallengeCard.Notice
-              points={card.points}
               status={card.status}
               createdAt={card.createdAt}
               completedOn={card.completedOn}
@@ -280,7 +279,7 @@ var ChallengesPagePattern = React.createClass({
               unlocked={card.unlocked}
               multipleCompletion={card['multiple_completion']} />
           <ChallengeCard.Image image={card.image} />
-          <ChallengeCard.Details type={card.type} headline={card.headline} description={card.description} />
+          <ChallengeCard.Details type={card.type} headline={card.headline} description={card.description} points={card.points} />
           <ChallengeCard.Actions>
             {that._cardButtons(card.id, card.status)}
           </ChallengeCard.Actions>
