@@ -56,11 +56,12 @@ inflComp.StoragePattern           = require("./patterns/utilities/storage_patter
 inflComp.FormPagePattern          = require("./patterns/pages/form_page_pattern.jsx");
 inflComp.ChallengesPagePattern    = require("./patterns/pages/challenges_page_pattern.jsx");
 inflComp.ModalFullWidthInput      = require("./patterns/pages/modal_full_width_input.jsx");
+inflComp.ChallengeTemplatesPagePattern  = require("./patterns/pages/challenge_template_page_pattern.jsx");
 
 module.exports = inflComp;
 
 
-},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/multi_select_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/multi_select_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/cards/card_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx","./patterns/molecules/components/upload_file_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/components/upload_file_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/pages/modal_full_width_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/modal_full_width_input.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
+},{"./patterns/atoms/button_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_dropdown_pattern.jsx","./patterns/atoms/button_group_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_group_pattern.jsx","./patterns/atoms/button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/button_pattern.jsx","./patterns/atoms/checkbox_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/checkbox_pattern.jsx","./patterns/atoms/colours_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/colours_pattern.jsx","./patterns/atoms/fonts_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/fonts_pattern.jsx","./patterns/atoms/headings_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/headings_pattern.jsx","./patterns/atoms/icons_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/icons_pattern.jsx","./patterns/atoms/input_label_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/input_label_pattern.jsx","./patterns/atoms/multi_select_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/multi_select_pattern.jsx","./patterns/atoms/paragraph_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/paragraph_pattern.jsx","./patterns/atoms/radio_button_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/radio_button_pattern.jsx","./patterns/atoms/select_dropdown_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/select_dropdown_pattern.jsx","./patterns/atoms/text_input_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/text_input_pattern.jsx","./patterns/atoms/textarea_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/textarea_pattern.jsx","./patterns/atoms/toggle_switch_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/atoms/toggle_switch_pattern.jsx","./patterns/molecules/accordion_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/accordion_pattern.jsx","./patterns/molecules/action_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/action_alert_pattern.jsx","./patterns/molecules/alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/alert_pattern.jsx","./patterns/molecules/cards/card_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/cards/card_pattern.jsx","./patterns/molecules/components/upload_file_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/components/upload_file_pattern.jsx","./patterns/molecules/content_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/content_pattern.jsx","./patterns/molecules/detailed_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/detailed_alert_pattern.jsx","./patterns/molecules/form_actions_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_actions_pattern.jsx","./patterns/molecules/form_alert_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_alert_pattern.jsx","./patterns/molecules/form_column_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_column_pattern.jsx","./patterns/molecules/form_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_pattern.jsx","./patterns/molecules/form_row_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_row_pattern.jsx","./patterns/molecules/form_section_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_section_pattern.jsx","./patterns/molecules/form_title_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/form_title_pattern.jsx","./patterns/molecules/help_tooltip_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/help_tooltip_pattern.jsx","./patterns/molecules/loading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/loading_pattern.jsx","./patterns/molecules/modal_dialog_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/modal_dialog_pattern.jsx","./patterns/molecules/panel_left_sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/panel_left_sidebar_pattern.jsx","./patterns/molecules/popover_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/popover_pattern.jsx","./patterns/molecules/sidebar_heading_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_heading_pattern.jsx","./patterns/molecules/sidebar_nav_list_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_nav_list_pattern.jsx","./patterns/molecules/sidebar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/sidebar_pattern.jsx","./patterns/molecules/stats_bar_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/stats_bar_pattern.jsx","./patterns/molecules/tabs_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/molecules/tabs_pattern.jsx","./patterns/pages/challenge_template_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenge_template_page_pattern.jsx","./patterns/pages/challenges_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx","./patterns/pages/form_page_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx","./patterns/pages/modal_full_width_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/modal_full_width_input.jsx","./patterns/utilities/storage_pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/utilities/storage_pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/accordion.jsx":[function(require,module,exports){
 var React = require('react/addons');
 var classNames = require('classnames');
 
@@ -669,6 +670,8 @@ var $             = require('jquery');
 var Icon          = require('../icon.jsx');
 var Card          = require('./card.jsx');
 var animate       = require("../utilities/animate.js");
+var CardDetails   = require('./components/card_details.jsx');
+var CardImage     = require('./components/card_image.jsx');
 
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
   PropTypes : {
@@ -741,168 +744,23 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
 
   _adjustDescriptionHeight : function(){
     var card = React.findDOMNode(this.refs.card);
-    var cardHeight = card.offsetHeight;
-    var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
-    var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
-    var titleHeight = $(card).find(".headline").outerHeight(true);
-    var typeHeight = $(card).find(".pt-challenge-type").outerHeight(true);
     var description = card.querySelector(".description");
 
-    description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
+    if(description) {
+      var cardHeight = card.offsetHeight;
+      var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
+      var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
+      var titleHeight = $(card).find(".headline").outerHeight(true);
+      var typeHeight = $(card).find(".pt-challenge-type").outerHeight(true);
+
+      description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
+    }
   }
 });
 
-ChallengeCard.Details = React.createClass({displayName: "Details",
-  PropTypes : {
-    type : React.PropTypes.string,
-    headline : React.PropTypes.string,
-    description : React.PropTypes.string,
-    onFilterByType : React.PropTypes.func,
-    participantCount : React.PropTypes.number,
-    points : React.PropTypes.number,
-    onHeadlineClick : React.PropTypes.func
-  },
-
-  getDefaultProps : function(){
-    return {
-      type : "",
-      headline : "",
-      description : "",
-      onFilterByType : function(){},
-      participantCount : 0,
-      points : 0,
-      onHeadlineClick : function(){}
-    };
-  },
-
-  componentDidMount : function(){
-    this._adjustHeadline();
-  },
-
-  componentDidUpdate : function(){
-    this._adjustHeadline();
-  },
-
-  render : function(){
-    return (
-      React.createElement("div", {className: "pt-challenge-details"}, 
-        React.createElement(ChallengeMetaData, {type: this.props.type, onClick: this.props.onFilterByType, participantCount: this.props.participantCount, points: this.props.points}), 
-        React.createElement("h4", {className: "headline", ref: "headline", onClick: this.props.onHeadlineClick}, this.props.headline), 
-        React.createElement("div", {ref: "description", className: "description", dangerouslySetInnerHTML: {__html: this.props.description}})
-      )
-    );
-  },
-
-  _adjustHeadline : function(){
-    var headline = React.findDOMNode(this.refs.headline);
-    var headlineMaxHeight = parseInt($(headline).css("max-height"));
-
-    if(headline.clientHeight === headlineMaxHeight){
-      this._ellipsisHeadlineText(headline, headlineMaxHeight);
-    }
-  },
-
-  _ellipsisHeadlineText : function(headline, headlineMaxHeight){
-    this._convertWordsToElements(headline);
-    var lastVisibleWordElement = this._findLastVisibleWord(headline, headlineMaxHeight);
-    $(lastVisibleWordElement).addClass("last-visible-word");
-  },
-
-  _convertWordsToElements : function(headline) {
-    if(this._wordsHaveNotAlreadyBeenConverted(headline)){
-      $(headline).html('<span>' + $(headline).html().replace(/ /g,'</span> <span>') + '</span>');
-    }
-  },
-
-  _wordsHaveNotAlreadyBeenConverted : function(headline){
-    return headline.children.length === 0;
-  },
-
-  _findLastVisibleWord : function(headline, headlineMaxHeight){
-    var words = $(headline).find("span");
-    var lastVisibleWordElement = null;
-
-    for(var i = 0; i < words.length; i++){
-      if($(words[i]).position().top >= headlineMaxHeight){
-        lastVisibleWordElement = words[i-1];
-        break;
-      }
-    }
-
-    return lastVisibleWordElement;
-  }
-});
-
-var ChallengeMetaData = React.createClass({displayName: "ChallengeMetaData",
-  PropTypes : {
-    type : React.PropTypes.string,
-    onClick : React.PropTypes.func,
-    participantCount : React.PropTypes.number,
-    points : React.PropTypes.number
-  },
-
-  getDefaultProps : function(){
-    return {
-      type : "",
-      onClick : function(){},
-      participantCount : 0,
-      points : 0
-    };
-  },
-
-  render : function(){
-    return (
-      React.createElement("div", {className: "pt-challenge-metadata"}, 
-        React.createElement("span", {className: "pt-challenge-type " + this._formatChallengeTypeClassName(), onClick: this.props.onClick}, 
-          this.props.type.toLowerCase()
-        ), 
-        this.pointsHTML(), 
-        React.createElement("span", {className: "pt-challenge-participant-count"}, 
-          React.createElement(Icon, {icon: "user"}), 
-          React.createElement("span", {className: "count"}, this.props.participantCount)
-        )
-      )
-    );
-  },
-
-  _formatChallengeTypeClassName : function(){
-    var typeArray = this.props.type.split(' ');
-    var typeClassName = "";
-    for( var i = 0; i < typeArray.length; i++){
-      typeClassName += typeArray[i].toLowerCase() + "-";
-    }
-    return typeClassName.substring(0, typeClassName.length - 1);
-  },
-
-  pointsHTML: function () {
-    return this.props.points === 0 ? null : React.createElement(Points, {points: this.props.points});
-  },
-});
-
+ChallengeCard.Details = CardDetails;
 ChallengeCard.Actions = Card.Actions;
-
-ChallengeCard.Image = React.createClass({displayName: "Image",
-  getDefaultProps : function(){
-    return {
-      image : null,
-      onImageClick : function(){}
-    };
-  },
-  PropTypes : {
-    image : React.PropTypes.string,
-    onImageClick : React.PropTypes.func
-  },
-  render : function(){
-    return (
-      React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage()}, 
-        React.createElement("img", {src: this.props.image, alt: "Challenge Image", onClick: this.props.onImageClick})
-      )
-    );
-  },
-  _doesChallengeHaveAnImage : function(){
-    return this.props.image ? "" : "no-image";
-  }
-});
+ChallengeCard.Image = CardImage;
 
 ChallengeCard.Notice = React.createClass({displayName: "Notice",
     getDefaultProps : function(){
@@ -945,25 +803,6 @@ ChallengeCard.Notice = React.createClass({displayName: "Notice",
     return (
       React.createElement("span", {className: "pt-challenge-card-multiple-stage"}, 
         React.createElement(Icon, {icon: "multi"})
-      )
-    );
-  }
-});
-
-var Points = React.createClass({displayName: "Points",
-  getDefaultProps : function(){
-    return {
-      points : 0,
-    };
-  },
-  PropTypes : {
-    points : React.PropTypes.number,
-  },
-  render : function(){
-    return (
-      React.createElement("span", {className: "pt-card-points"}, 
-        React.createElement(Icon, {icon: "coins-old"}), 
-        this.props.points
       )
     );
   }
@@ -1065,7 +904,286 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
+},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","./components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","./components/card_image.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_template_card.jsx":[function(require,module,exports){
+var React         = require('react');
+
+var ChallengeCard = require("./challenge_card.jsx");
+
+var ChallengeTemplateCard = React.createClass({displayName: "ChallengeTemplateCard",
+    PropTypes : {
+    id : React.PropTypes.string,
+    animateEntrance : React.PropTypes.bool
+  },
+
+  getDefaultProps : function(){
+    return {
+      id : "",
+      animateEntrance : false
+    };
+  },
+
+  render: function () {
+    return (
+      React.createElement("div", {ref: "challengeTempalteCard", className: "pt-challenge-template-card"}, 
+        React.createElement(ChallengeCard, {id: this.props.id, animateEntrance: this.props.animateEntrance}, 
+          this.props.children
+        )
+      )
+    );
+  }
+});
+
+module.exports = ChallengeTemplateCard;
+
+
+},{"./challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx":[function(require,module,exports){
+var React = require("react");
+var $ = require('jquery');
+
+var CardMetaData = require('./card_meta_data.jsx');
+
+var CardDetails = React.createClass({displayName: "CardDetails",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-challenge-details"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+CardDetails.MetaData = CardMetaData;
+//<CardMetaData type={this.props.type} onClick={this.props.onFilterByType} participantCount={this.props.participantCount} points={this.props.points} />
+
+CardDetails.Headline = React.createClass({displayName: "Headline",
+    PropTypes : {
+    headline : React.PropTypes.string,
+    onHeadlineClick : React.PropTypes.func
+  },
+
+  getDefaultProps : function(){
+    return {
+      headline : "",
+      onHeadlineClick : function(){}
+    };
+  },
+
+  componentDidMount : function(){
+    this._adjustHeadline();
+    this._addWindowResizeEvent();
+  },
+
+  componentDidUpdate : function(){
+    this._adjustHeadline();
+  },
+
+  render : function(){
+    return (
+      React.createElement("h4", {className: "headline", ref: "headline", onClick: this.props.onHeadlineClick}, this.props.headline)
+    );
+  },
+
+  _adjustHeadline : function(){
+    var headline = React.findDOMNode(this.refs.headline);
+    var headlineMaxHeight = parseInt($(headline).css("max-height"));
+
+    if(headline.clientHeight === headlineMaxHeight){
+      this._ellipsisHeadlineText(headline, headlineMaxHeight);
+    }
+  },
+
+  _addWindowResizeEvent : function(){
+    $(window).resize(this._adjustHeadline);
+  },
+
+  _ellipsisHeadlineText : function(headline, headlineMaxHeight){
+    this._convertWordsToElements(headline);
+    var lastVisibleWordElement = this._findLastVisibleWord(headline, headlineMaxHeight);
+    $(lastVisibleWordElement).addClass("last-visible-word");
+  },
+
+  _convertWordsToElements : function(headline) {
+    if(this._wordsHaveNotAlreadyBeenConverted(headline)){
+      $(headline).html('<span>' + $(headline).html().replace(/ /g,'</span> <span>') + '</span>');
+    }
+  },
+
+  _wordsHaveNotAlreadyBeenConverted : function(headline){
+    return headline.children.length === 0;
+  },
+
+  _findLastVisibleWord : function(headline, headlineMaxHeight){
+    var words = $(headline).find("span");
+    var lastVisibleWordElement = null;
+
+    for(var i = 0; i < words.length; i++){
+      if($(words[i]).position().top >= headlineMaxHeight){
+        lastVisibleWordElement = words[i-1];
+        break;
+      }
+    }
+
+    return lastVisibleWordElement;
+  }
+});
+
+CardDetails.Description = React.createClass({displayName: "Description",
+    PropTypes : {
+    description : React.PropTypes.string
+  },
+
+  getDefaultProps : function(){
+    return {
+      description : ""
+    };
+  },
+
+  render: function(){
+    return (
+      React.createElement("div", {ref: "description", className: "description", dangerouslySetInnerHTML: {__html: this.props.description}})
+    );
+  }
+});
+
+module.exports = CardDetails;
+
+
+},{"./card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx":[function(require,module,exports){
+var React = require('react');
+
+var CardImage = React.createClass({displayName: "CardImage",
+  getDefaultProps : function(){
+    return {
+      image : null,
+      onImageClick : function(){}
+    };
+  },
+  PropTypes : {
+    image : React.PropTypes.string,
+    onImageClick : React.PropTypes.func
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage()}, 
+        React.createElement("img", {src: this.props.image, alt: "Challenge Image", onClick: this.props.onImageClick})
+      )
+    );
+  },
+  _doesChallengeHaveAnImage : function(){
+    return this.props.image ? "" : "no-image";
+  }
+});
+
+module.exports = CardImage;
+
+
+},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx":[function(require,module,exports){
+var React = require('react');
+var Points = require('./points.jsx');
+var Icon = require('../../icon.jsx');
+
+var CardMetaData = React.createClass({displayName: "CardMetaData",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-challenge-metadata"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+module.exports = CardMetaData;
+
+
+},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","./points.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/points.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/challenge_label.jsx":[function(require,module,exports){
+var React = require('react');
+var Icon = require('../../icon.jsx');
+
+var ChallengeLabel = React.createClass({displayName: "ChallengeLabel",
+  getDefaultProps : function(){
+    return {
+      label : "",
+      onClick : function(){}
+    };
+  },
+  PropTypes : {
+    label : React.PropTypes.string,
+    onClick : React.PropTypes.func
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-challenge-label " + this._formatChallengeTypeClassName(), onClick: this.props.onClick}, 
+        this.props.label.toLowerCase()
+      )
+    );
+  },
+
+  _formatChallengeTypeClassName : function(){
+    var labelArray = this.props.label.split(' ');
+    var labelClassName = "";
+    for( var i = 0; i < labelArray.length; i++){
+      labelClassName += labelArray[i].toLowerCase() + "-";
+    }
+    return labelClassName.substring(0, labelClassName.length - 1);
+  }
+});
+
+module.exports = ChallengeLabel;
+
+
+},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx":[function(require,module,exports){
+var React = require('react');
+var Icon = require('../../icon.jsx');
+
+var ParticipantCount = React.createClass({displayName: "ParticipantCount",
+  getDefaultProps : function(){
+    return {
+      participantCount : 0,
+    };
+  },
+  PropTypes : {
+    participantCount : React.PropTypes.number,
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-challenge-participant-count"}, 
+        React.createElement(Icon, {icon: "user"}), 
+        React.createElement("span", {className: "count"}, this.props.participantCount)
+      )
+    );
+  }
+});
+
+module.exports = ParticipantCount;
+
+
+},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/points.jsx":[function(require,module,exports){
+var React = require('react');
+var Icon = require('../../icon.jsx');
+
+var Points = React.createClass({displayName: "Points",
+  getDefaultProps : function(){
+    return {
+      points : 0,
+    };
+  },
+  PropTypes : {
+    points : React.PropTypes.number,
+  },
+  render : function(){
+    return (
+      React.createElement("span", {className: "pt-card-points"}, 
+        React.createElement(Icon, {icon: "coins-old"}), 
+        this.props.points
+      )
+    );
+  }
+});
+
+module.exports = Points;
+
+
+},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/checkbox.jsx":[function(require,module,exports){
 var React = require('react');
 var classNames = require('classnames');
 
@@ -58772,7 +58890,193 @@ var TabsControls = React.createClass({displayName: "TabsControls",
 module.exports = TabsPattern;
 
 
-},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/form.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/form.jsx","../../../../infl-components/input_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/input_label.jsx","../../../../infl-components/radio_button.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/radio_button.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../../../infl-components/text_input.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/text_input.jsx","../../patternlab-components/code.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/code.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","../../patternlab-components/require.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/require.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenge_template_page_pattern.jsx":[function(require,module,exports){
+var React     = require('react');
+var Pattern   = require('../../patternlab-components/pattern.jsx');
+
+var Content           = require("../../../../infl-components/content.jsx");
+var ChallengeTemplateCard  = require("../../../../infl-components/cards/challenge_template_card.jsx");
+var Card  = require("../../../../infl-components/cards/card.jsx");
+var CardImage = require('../../../../infl-components/cards/components/card_image.jsx');
+var CardDetails = require('../../../../infl-components/cards/components/card_details.jsx');
+
+var CardMetaData  = require("../../../../infl-components/cards/components/card_meta_data.jsx");
+var Points  = require("../../../../infl-components/cards/components/points.jsx");
+var ParticipantCount  = require("../../../../infl-components/cards/components/participant_count.jsx");
+var ChallengeLabel  = require("../../../../infl-components/cards/components/challenge_label.jsx");
+
+var PanelLeftSidebar  = require("../../../../infl-components/pages/panel_left_sidebar.jsx");
+var Sidebar           = require("../../../../infl-components/sidebar.jsx");
+
+var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePattern",
+  getInitialState : function(){
+    return {
+      challenge_templates :[
+        {
+          points : 5,
+          featured : false,
+          description : "Loremd&#39;s ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "How to use LinkedIn suggestions in the referral challenge. How to use LinkedIn suggestions in the referral challenge.",
+          id : 1,
+          image : "http://manofdepravity.com/wp-content/uploads/2010/02/Shaking-Hands3.jpg",
+          name : "LinkedIn referral help",
+          stage_count : 5,
+          stage_types : [],
+          type : "Social Sharing",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "available",
+          startedOn : "",
+          unlocked : true,
+          multiple_completion : true
+        },
+        {
+          points : 1000,
+          featured : false,
+          description : "Loremd&#39;s ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "Your community manifesto.  Pass it on.",
+          id : 2,
+          image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+          name : "LinkedIn referral help",
+          stage_count : 0,
+          stage_types : [],
+          type : "Fun",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "available",
+          startedOn : "",
+          unlocked : false
+        },
+        {
+          points : 200,
+          featured : false,
+          description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "This is another awesome challenge for you.",
+          id : 5,
+          image : null,
+          name : "Some Challenge",
+          stage_count : 0,
+          stage_types : [],
+          type : "Educational",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "available",
+          startedOn : "",
+          unlocked : false
+        },
+        {
+          points : 200,
+          featured : false,
+          description : "",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "This is another awesome challenge for you.",
+          id : 6,
+          image : null,
+          name : "Some Challenge",
+          stage_count : 0,
+          stage_types : [],
+          type : "Referral",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "available",
+          startedOn : "",
+          unlocked : false
+        },
+        {
+          points : 1000,
+          featured : false,
+          description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          createdAt : "2015-03-02T14:46:34.913-05:00",
+          headline : "Your community manifesto.  Pass it on.",
+          id : 7,
+          image : "http://cdn2.business2community.com/wp-content/uploads/2013/08/Social-Selling-Manifesto.jpg",
+          name : "LinkedIn referral help",
+          stage_count : 0,
+          stage_types : [],
+          type : "Survey",
+          participantCount : 5,
+          timeoutMessage : "",
+          completedOn : "",
+
+          //Not part of the data we get back yet
+          status : "available",
+          startedOn : "",
+          unlocked : false
+        }
+      ]
+    };
+  },
+  render : function(){
+    return (
+      React.createElement("div", {className: "challenges-page-pattern page-pattern"}, 
+        React.createElement(Pattern, {title: "challenges page demo"}, 
+
+              React.createElement(Card.Container, null, 
+                this._buildChallengeTemplateCards()
+              )
+
+        )
+      )
+    );
+  },
+
+  _listItems : function(){
+    return [
+      {
+        name : "Challenge Template Cards",
+        listItemComponent : "a",
+        listItemComponentProps : {
+          className : "active",
+          href : "javascript:void(0);",
+          onClick : function(){}
+        },
+        key : "challenge-template-cards"
+      }
+    ];
+  },
+
+  _buildChallengeTemplateCards : function(){
+    var that = this;
+    return this.state.challenge_templates.map(function(card){
+      return (
+        React.createElement(ChallengeTemplateCard, {id: card.id}, 
+          React.createElement(CardImage, {image: that._determineCardImage(card.image)}), 
+          React.createElement(CardDetails, null, 
+            React.createElement(CardMetaData, null, 
+              React.createElement(ChallengeLabel, {label: card.type})
+            ), 
+            React.createElement(CardDetails.Headline, {headline: card.headline})
+          )
+        )
+      );
+    });
+  },
+
+  _determineCardImage: function(cardImage){
+    var defaultImage = "https://s3.amazonaws.com/influitive-static/challenges/generic_challenge.jpg";
+    return cardImage || defaultImage;
+  }
+});
+
+module.exports = ChallengesPagePattern;
+
+
+},{"../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_template_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_template_card.jsx","../../../../infl-components/cards/components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","../../../../infl-components/cards/components/card_image.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx","../../../../infl-components/cards/components/card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","../../../../infl-components/cards/components/challenge_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/challenge_label.jsx","../../../../infl-components/cards/components/participant_count.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx","../../../../infl-components/cards/components/points.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/points.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/challenges_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 
@@ -58786,6 +59090,11 @@ var Tabs  = require("../../../../infl-components/tabs.jsx");
 var ButtonGroup  = require("../../../../infl-components/button_group.jsx");
 var ChallengeCard  = require("../../../../infl-components/cards/challenge_card.jsx");
 var Card  = require("../../../../infl-components/cards/card.jsx");
+var CardMetaData  = require("../../../../infl-components/cards/components/card_meta_data.jsx");
+var CardDetails  = require("../../../../infl-components/cards/components/card_details.jsx");
+var Points  = require("../../../../infl-components/cards/components/points.jsx");
+var ParticipantCount  = require("../../../../infl-components/cards/components/participant_count.jsx");
+var ChallengeLabel  = require("../../../../infl-components/cards/components/challenge_label.jsx");
 
 var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePattern",
   getInitialState : function(){
@@ -59054,7 +59363,15 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
               unlocked: card.unlocked, 
               multipleCompletion: card['multiple_completion']}), 
           React.createElement(ChallengeCard.Image, {image: card.image}), 
-          React.createElement(ChallengeCard.Details, {type: card.type, headline: card.headline, description: card.description, points: card.points}), 
+          React.createElement(CardDetails, null, 
+            React.createElement(CardMetaData, null, 
+              React.createElement(ChallengeLabel, {label: card.type}), 
+              React.createElement(Points, {points: card.points}), 
+              React.createElement(ParticipantCount, {participantCount: card.unique_participant_count})
+            ), 
+            React.createElement(CardDetails.Headline, {headline: card.headline}), 
+            React.createElement(CardDetails.Description, {description: card.description})
+          ), 
           React.createElement(ChallengeCard.Actions, null, 
             that._cardButtons(card.id, card.status)
           )
@@ -59202,7 +59519,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
 module.exports = ChallengesPagePattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/cards/components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","../../../../infl-components/cards/components/card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","../../../../infl-components/cards/components/challenge_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/challenge_label.jsx","../../../../infl-components/cards/components/participant_count.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx","../../../../infl-components/cards/components/points.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/points.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 
