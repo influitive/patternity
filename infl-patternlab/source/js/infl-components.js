@@ -664,10 +664,8 @@ module.exports = Card;
 
 },{"../button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx":[function(require,module,exports){
 var React         = require('react');
-var classNames    = require('classnames');
 var $             = require('jquery');
 
-var Icon          = require('../icon.jsx');
 var Card          = require('./card.jsx');
 var animate       = require("../utilities/animate.js");
 var CardDetails   = require('./components/card_details.jsx');
@@ -743,124 +741,6 @@ ChallengeCard.Details = CardDetails;
 ChallengeCard.Actions = Card.Actions;
 ChallengeCard.Image = CardImage;
 
-ChallengeCard.Notice = React.createClass({displayName: "Notice",
-    getDefaultProps : function(){
-    return {
-      createdAt : "",
-      status : "",
-      completedOn : "",
-      startedOn : "",
-      unlocked : false,
-      multipleCompletion : false
-    };
-  },
-  PropTypes : {
-    createdAt : React.PropTypes.string,
-    status : React.PropTypes.string,
-    completedOn : React.PropTypes.string,
-    startedOn : React.PropTypes.string,
-    unlocked : React.PropTypes.bool,
-    multipleCompletion : React.PropTypes.bool
-  },
-  render : function(){
-    return (
-      React.createElement("div", {className: "pt-card-notice"}, 
-        this._multipuleCompletion(), 
-        React.createElement(ChallengeStatus, {
-            createdAt: this.props.createdAt, 
-            status: this.props.status, 
-            completedOn: this.props.completedOn, 
-            startedOn: this.props.startedOn, 
-            unlocked: this.props.unlocked})
-      )
-    );
-  },
-
-  _multipuleCompletion : function(){
-    if(!this.props.multipleCompletion){
-      return "";
-    }
-
-    return (
-      React.createElement("span", {className: "pt-challenge-card-multiple-stage"}, 
-        React.createElement(Icon, {icon: "multi"})
-      )
-    );
-  }
-});
-
-var ChallengeStatus = React.createClass({displayName: "ChallengeStatus",
-  getDefaultProps : function(){
-    return {
-      createdAt : "",
-      status : "",
-      completedOn : "",
-      startedOn : "",
-      unlocked : false
-    };
-  },
-  PropTypes : {
-    createdAt : React.PropTypes.string,
-    status : React.PropTypes.string,
-    completedOn : React.PropTypes.string,
-    startedOn : React.PropTypes.string,
-    unlocked : React.PropTypes.bool
-  },
-  render : function(){
-    return (
-      React.createElement("span", {className: "pt-challenge-status"}, 
-        this._determineStatusDetails()
-      )
-    );
-  },
-  _determineStatusDetails : function(){
-    // TODO if date was always stored in the same place, this could be refactored
-
-    if (this.props.status === "completed") {
-      return this._showStatus("Completed", this.props.completedOn);
-    } else if(this.props.status === "started") {
-      return this._showStatus('Started', this.props.startedOn);
-    } else if(this.props.status === "expiring") {
-      return this._showStatus('Expiring Soon');
-    } else if(this.props.status === "limited_expiring") {
-      return this._showStatus('Expiring & Limited');
-    } else if(this.props.status === "limited") {
-      return this._showStatus('Limited');
-    } else if(this.props.unlocked) {
-      return this._showUnlockedStatus();
-    }
-  },
-
-  _showStatus: function (title, date) {
-    var formattedDate = this._dateString(date);
-
-    return (
-      React.createElement("span", {className: "completed"}, title, " ", formattedDate)
-    );
-  },
-
-  _showUnlockedStatus : function(){
-    return (
-      React.createElement("span", {className: "unlocked status-icon"}, 
-        React.createElement(Icon, {icon: "unlock"}), 
-        React.createElement("span", null, "Challenge unlocked!")
-      )
-    );
-  },
-
-  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-  _dateString: function (date) {
-    var formattedDateStr = "";
-
-    if (date) {
-      var parsedDate = new Date(date);
-      formattedDateStr = this._monthNames[parsedDate.getUTCMonth()] + " " + parsedDate.getUTCDate();
-    }
-
-    return formattedDateStr
-  }
-});
-
 module.exports = ChallengeCard;
 
 // created_at: "2015-03-02T14:46:34.913-05:00"
@@ -885,7 +765,7 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","./components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","./components/card_image.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_template_card.jsx":[function(require,module,exports){
+},{"../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","./components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","./components/card_image.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_template_card.jsx":[function(require,module,exports){
 var React         = require('react');
 
 var ChallengeCard = require("./challenge_card.jsx");
@@ -1179,7 +1059,86 @@ var ChallengeLabel = React.createClass({displayName: "ChallengeLabel",
 module.exports = ChallengeLabel;
 
 
-},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx":[function(require,module,exports){
+},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/challenge_tile.jsx":[function(require,module,exports){
+var React = require('react');
+var Icon = require('../../icon.jsx');
+var Tooltip = require('../../tooltip.jsx');
+var classNames = require('classnames');
+
+var acceptedStatusType = ['started', 'expiring', 'limited', 'limited_expiring', 'multi'];
+
+var ChallengeTile = React.createClass({displayName: "ChallengeTile",
+  PropTypes : {
+    type : React.PropTypes.oneOf(acceptedStatusType).isRequired,
+  },
+
+  componentDidMount : function(){
+    this._checkForLimitedExpiring();
+  },
+
+  render : function(){
+    return this._addTile();
+  },
+
+  _addTile : function(){
+    if(this._isAcceptedStatusType()){
+      return (
+        React.createElement("div", {className: "pt-challenge-tile " + this.props.type}, 
+          React.createElement(Tooltip, {element: React.createElement(Icon, {icon: this._determineTileIcon()}), position: "bottom", isClickable: false}, 
+            this._determineTooltipText()
+          )
+        )
+      );
+    } else {
+      return null;
+    }
+  },
+
+  _isAcceptedStatusType : function(){
+    return acceptedStatusType.indexOf(this.props.type) !== -1 && this.props.type !== 'limited_expiring';
+  },
+
+  _checkForLimitedExpiring : function(){
+    if (this.props.type === 'limited_expiring') { console.warn('limited_expiring should be split into limited and expiring'); }
+  },
+
+  _determineTileIcon : function(){
+    var tileIcons = {
+      'started' : 'inprogress',
+      'expiring' : 'expiring',
+      'limited' : 'limited', //not official
+      'multi' : 'multi'
+    }
+
+    return tileIcons[this.props.type];
+  },
+
+  _determineTooltipText : function(){
+    var tileToolTips = {
+      'started' : 'In Progress',
+      'expiring' : 'Expires Soon',
+      'limited' : 'Limited', //not official
+      'multi' : 'Multi-Complete',
+    }
+
+    return tileToolTips[this.props.type];
+  }
+});
+
+ChallengeTile.Container = React.createClass({displayName: "Container",
+  render : function(){
+    return (
+      React.createElement("div", {className: "pt-challenge-tile-container"}, 
+        this.props.children
+      )
+    );
+  }
+});
+
+module.exports = ChallengeTile;
+
+
+},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tooltip.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx":[function(require,module,exports){
 var React = require('react');
 var Icon = require('../../icon.jsx');
 
@@ -4162,14 +4121,17 @@ var React = require('react');
 
 var Tooltip = React.createClass({displayName: "Tooltip",
   propTypes : {
-    title: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string,
     element: React.PropTypes.node.isRequired,
-    position : React.PropTypes.oneOf(['top', 'bottom'])
+    position : React.PropTypes.oneOf(['top', 'bottom']),
+    isClickable : React.PropTypes.bool
   },
 
   getDefaultProps : function(){
     return {
-      position : 'top'
+      title : "",
+      position : 'top',
+      isClickable : true
     };
   },
 
@@ -4194,7 +4156,6 @@ var Tooltip = React.createClass({displayName: "Tooltip",
           ref: "tip"}), 
         React.createElement("span", {className: "tool-tip-element", 
             onClick: this._clickTooltip, 
-            onTouchStart: this._clickShowTooltip, 
             onMouseEnter: this._hoverShowTooltip, 
             onMouseLeave: this._hoverHideTooltip, 
             ref: "element"}, 
@@ -4219,7 +4180,12 @@ var Tooltip = React.createClass({displayName: "Tooltip",
       });
     }
   },
-  _clickTooltip : function() {
+  _clickTooltip : function(event) {
+    if(this.props.isClickable) {
+      this._handleClick(event);
+    }
+  },
+  _handleClick : function(){
     if (this.state.showTooltip && this.state.wasClicked) {
       this._clickCloseTooltip();
     } else {
@@ -4247,16 +4213,17 @@ var Tooltip = React.createClass({displayName: "Tooltip",
 
 Tooltip.Content = React.createClass({displayName: "Content",
   propTypes : {
-    title : React.PropTypes.string.isRequired,
+    title : React.PropTypes.string,
     content : React.PropTypes.any.isRequired,
     showTooltip : React.PropTypes.bool.isRequired,
     showClose : React.PropTypes.bool.isRequired,
     closeToolTip : React.PropTypes.func.isRequired,
-    position : React.PropTypes.oneOf(['top', 'bottom'])
+    position : React.PropTypes.oneOf(['top', 'bottom']),
   },
 
   getDefaultProps : function(){
     return {
+      title : "",
       position : "top"
     };
   },
@@ -4265,7 +4232,7 @@ Tooltip.Content = React.createClass({displayName: "Content",
     return (
       React.createElement("div", {className: "tooltip-content " + this._showTooltip() + " " + this.props.position, ref: "tip"}, 
         React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this.props.closeToolTip, ref: "close"}), 
-        React.createElement("h3", {ref: "title"}, this.props.title), 
+        this._showTitle(), 
         React.createElement("div", {className: "tooltip-details", ref: "details"}, 
           this.props.content
         )
@@ -4280,6 +4247,10 @@ Tooltip.Content = React.createClass({displayName: "Content",
   _showClose: function(){
     return this.props.showClose ? "" : "hide";
   },
+
+  _showTitle : function(){
+    return this.props.title.length > 0 ? (React.createElement("h3", {ref: "title"}, this.props.title)) : null;
+  }
 });
 
 module.exports = Tooltip;
@@ -59138,6 +59109,7 @@ var Card  = require("../../../../infl-components/cards/card.jsx");
 var CardMetaData  = require("../../../../infl-components/cards/components/card_meta_data.jsx");
 var CardDetails  = require("../../../../infl-components/cards/components/card_details.jsx");
 var Points  = require("../../../../infl-components/cards/components/points.jsx");
+var ChallengeTile  = require("../../../../infl-components/cards/components/challenge_tile.jsx");
 var ParticipantCount  = require("../../../../infl-components/cards/components/participant_count.jsx");
 var ChallengeLabel  = require("../../../../infl-components/cards/components/challenge_label.jsx");
 
@@ -59186,7 +59158,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : "started",
             startedOn : "",
             unlocked : false
           },
@@ -59207,7 +59179,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : "expiring",
             startedOn : "",
             unlocked : false
           },
@@ -59400,13 +59372,9 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     return cards.map(function(card){
       return (
         React.createElement(ChallengeCard, {key: card.id, id: "card-" + card.id, animateEntrance: true}, 
-          React.createElement(ChallengeCard.Notice, {
-              status: card.status, 
-              createdAt: card.createdAt, 
-              completedOn: card.completedOn, 
-              startedOn: card.startedOn, 
-              unlocked: card.unlocked, 
-              multipleCompletion: card['multiple_completion']}), 
+          React.createElement(ChallengeTile.Container, null, 
+            that._challengeTiles(card['multiple_completion'], card.status)
+          ), 
           React.createElement(ChallengeCard.Image, {image: card.image}), 
           React.createElement(CardDetails, null, 
             React.createElement(CardMetaData, null, 
@@ -59424,6 +59392,22 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
       );
     });
   },
+
+  _challengeTiles : function(multiComplete, status){
+    if(multiComplete){
+      return (React.createElement(ChallengeTile, {key: "multi", type: "multi"}));
+    } else if (status === 'limited_expiring') {
+      return (
+        React.createElement("span", null, 
+          React.createElement(ChallengeTile, {key: "limited", type: "limited"}), 
+          React.createElement(ChallengeTile, {key: "expiring", type: "expiring"})
+        )
+      );
+    } else {
+      return (React.createElement(ChallengeTile, {key: status, type: status}));
+    }
+  },
+
   _cardButtons : function(cardId, status){
     if(status === "available"){
       return this._availableButtons(cardId);
@@ -59564,7 +59548,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
 module.exports = ChallengesPagePattern;
 
 
-},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/cards/components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","../../../../infl-components/cards/components/card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","../../../../infl-components/cards/components/challenge_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/challenge_label.jsx","../../../../infl-components/cards/components/participant_count.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx","../../../../infl-components/cards/components/points.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/points.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
+},{"../../../../infl-components/button_group.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/button_group.jsx","../../../../infl-components/cards/card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","../../../../infl-components/cards/challenge_card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_card.jsx","../../../../infl-components/cards/components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","../../../../infl-components/cards/components/card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","../../../../infl-components/cards/components/challenge_label.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/challenge_label.jsx","../../../../infl-components/cards/components/challenge_tile.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/challenge_tile.jsx","../../../../infl-components/cards/components/participant_count.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx","../../../../infl-components/cards/components/points.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/points.jsx","../../../../infl-components/content.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/content.jsx","../../../../infl-components/pages/panel_left_sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/pages/panel_left_sidebar.jsx","../../../../infl-components/sidebar.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/sidebar.jsx","../../../../infl-components/tabs.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tabs.jsx","../../patternlab-components/pattern.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patternlab-components/pattern.jsx","lodash":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/lodash/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/source/js/patterns/pages/form_page_pattern.jsx":[function(require,module,exports){
 var React     = require('react');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
 

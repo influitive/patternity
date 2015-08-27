@@ -3535,50 +3535,52 @@ DIV.pt-popover.is-visible {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.pt-challenge-card .pt-card-notice {
+.pt-challenge-card .pt-challenge-tile-container {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
-  padding: 2px 10px;
-  background-color: #444444;
-  background-color: rgba(68, 68, 68, 0.7);
+  z-index: 1;
+}
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile {
+  float: right;
+  height: 30px;
+  width: 30px;
   color: #fff;
-  z-index: 2;
-  height: 24px;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px 0px;
 }
-.pt-challenge-card .pt-card-notice .pt-challenge-card-multiple-stage {
-  display: block;
-  float: left;
-  margin-right: 10px;
-  padding-right: 5px;
-  border-right: 1px solid #fff;
-  margin-top: 1px;
-  font-size: 16px;
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile.multi {
+  background-color: #08a5c5;
 }
-.pt-challenge-card .pt-card-notice .pt-challenge-card-multiple-stage .ic-multi {
-  position: relative;
-  top: 1px;
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile.started {
+  background-color: #ffcc00;
 }
-.pt-challenge-card .pt-card-notice .pt-challenge-status {
-  float: left;
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile.expiring {
+  background-color: #c54040;
+}
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tool-tip-element {
+  padding: 0px;
+  color: #fff;
+  font-size: 18px;
+  cursor: default;
+}
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-content {
+  width: 100px;
+  padding: 2px 5px;
   font-size: 12px;
-  line-height: 24px;
-  display: block;
-  height: 24px;
+  left: calc(-50px + 10px);
 }
-.pt-challenge-card .pt-card-notice .pt-challenge-status span {
-  vertical-align: middle;
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-content:after {
+  left: calc((100px / 2) - 8px);
+  top: -8px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #444444;
 }
-.pt-challenge-card .pt-card-notice .pt-challenge-status .status-icon {
-  padding-left: 12px;
-  position: relative;
-}
-.pt-challenge-card .pt-card-notice .pt-challenge-status .ic {
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  font-size: 15px;
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-content.bottom {
+  top: 34px;
 }
 .pt-challenge-card .pt-challenge-image {
   overflow: hidden;
