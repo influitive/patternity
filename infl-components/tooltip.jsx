@@ -2,14 +2,17 @@ var React = require('react');
 
 var Tooltip = React.createClass({
   propTypes : {
-    title: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string,
     element: React.PropTypes.node.isRequired,
-    position : React.PropTypes.oneOf(['top', 'bottom'])
+    position : React.PropTypes.oneOf(['top', 'bottom']),
+    isClickable : React.PropTypes.bool
   },
 
   getDefaultProps : function(){
     return {
-      position : 'top'
+      title : "",
+      position : 'top',
+      isClickable : true
     };
   },
 
@@ -34,7 +37,6 @@ var Tooltip = React.createClass({
           ref="tip" />
         <span className="tool-tip-element"
             onClick={this._clickTooltip}
-            onTouchStart={this._clickShowTooltip}
             onMouseEnter={this._hoverShowTooltip}
             onMouseLeave={this._hoverHideTooltip}
             ref="element">
@@ -59,7 +61,12 @@ var Tooltip = React.createClass({
       });
     }
   },
-  _clickTooltip : function() {
+  _clickTooltip : function(event) {
+    if(this.props.isClickable) {
+      this._handleClick(event);
+    }
+  },
+  _handleClick : function(){
     if (this.state.showTooltip && this.state.wasClicked) {
       this._clickCloseTooltip();
     } else {
@@ -87,16 +94,17 @@ var Tooltip = React.createClass({
 
 Tooltip.Content = React.createClass({
   propTypes : {
-    title : React.PropTypes.string.isRequired,
+    title : React.PropTypes.string,
     content : React.PropTypes.any.isRequired,
     showTooltip : React.PropTypes.bool.isRequired,
     showClose : React.PropTypes.bool.isRequired,
     closeToolTip : React.PropTypes.func.isRequired,
-    position : React.PropTypes.oneOf(['top', 'bottom'])
+    position : React.PropTypes.oneOf(['top', 'bottom']),
   },
 
   getDefaultProps : function(){
     return {
+      title : "",
       position : "top"
     };
   },
@@ -105,7 +113,7 @@ Tooltip.Content = React.createClass({
     return (
       <div className={"tooltip-content " + this._showTooltip() + " " + this.props.position} ref="tip">
         <span className={"close ic ic-times " + this._showClose()} onClick={this.props.closeToolTip} ref="close"></span>
-        <h3 ref="title">{this.props.title}</h3>
+        {this._showTitle()}
         <div className="tooltip-details" ref="details">
           {this.props.content}
         </div>
@@ -120,6 +128,10 @@ Tooltip.Content = React.createClass({
   _showClose: function(){
     return this.props.showClose ? "" : "hide";
   },
+
+  _showTitle : function(){
+    return this.props.title.length > 0 ? (<h3 ref="title">{this.props.title}</h3>) : null;
+  }
 });
 
 module.exports = Tooltip;

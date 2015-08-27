@@ -14,6 +14,7 @@ var Card  = require("../../../../infl-components/cards/card.jsx");
 var CardMetaData  = require("../../../../infl-components/cards/components/card_meta_data.jsx");
 var CardDetails  = require("../../../../infl-components/cards/components/card_details.jsx");
 var Points  = require("../../../../infl-components/cards/components/points.jsx");
+var ChallengeTile  = require("../../../../infl-components/cards/components/challenge_tile.jsx");
 var ParticipantCount  = require("../../../../infl-components/cards/components/participant_count.jsx");
 var ChallengeLabel  = require("../../../../infl-components/cards/components/challenge_label.jsx");
 
@@ -62,7 +63,7 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : "started",
             startedOn : "",
             unlocked : false
           },
@@ -83,7 +84,7 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : "expiring",
             startedOn : "",
             unlocked : false
           },
@@ -276,13 +277,9 @@ var ChallengesPagePattern = React.createClass({
     return cards.map(function(card){
       return (
         <ChallengeCard key={card.id} id={"card-" + card.id} animateEntrance={true}>
-          <ChallengeCard.Notice
-              status={card.status}
-              createdAt={card.createdAt}
-              completedOn={card.completedOn}
-              startedOn={card.startedOn}
-              unlocked={card.unlocked}
-              multipleCompletion={card['multiple_completion']} />
+          <ChallengeTile.Container>
+            {that._challengeTiles(card['multiple_completion'], card.status)}
+          </ChallengeTile.Container>
           <ChallengeCard.Image image={card.image} />
           <CardDetails>
             <CardMetaData>
@@ -300,6 +297,22 @@ var ChallengesPagePattern = React.createClass({
       );
     });
   },
+
+  _challengeTiles : function(multiComplete, status){
+    if(multiComplete){
+      return (<ChallengeTile key="multi" type="multi" />);
+    } else if (status === 'limited_expiring') {
+      return (
+        <span>
+          <ChallengeTile key="limited" type="limited" />
+          <ChallengeTile key="expiring" type="expiring" />
+        </span>
+      );
+    } else {
+      return (<ChallengeTile key={status} type={status} />);
+    }
+  },
+
   _cardButtons : function(cardId, status){
     if(status === "available"){
       return this._availableButtons(cardId);

@@ -1,8 +1,6 @@
 var React         = require('react');
-var classNames    = require('classnames');
 var $             = require('jquery');
 
-var Icon          = require('../icon.jsx');
 var Card          = require('./card.jsx');
 var animate       = require("../utilities/animate.js");
 var CardDetails   = require('./components/card_details.jsx');
@@ -77,124 +75,6 @@ var ChallengeCard = React.createClass({
 ChallengeCard.Details = CardDetails;
 ChallengeCard.Actions = Card.Actions;
 ChallengeCard.Image = CardImage;
-
-ChallengeCard.Notice = React.createClass({
-    getDefaultProps : function(){
-    return {
-      createdAt : "",
-      status : "",
-      completedOn : "",
-      startedOn : "",
-      unlocked : false,
-      multipleCompletion : false
-    };
-  },
-  PropTypes : {
-    createdAt : React.PropTypes.string,
-    status : React.PropTypes.string,
-    completedOn : React.PropTypes.string,
-    startedOn : React.PropTypes.string,
-    unlocked : React.PropTypes.bool,
-    multipleCompletion : React.PropTypes.bool
-  },
-  render : function(){
-    return (
-      <div className="pt-card-notice">
-        {this._multipuleCompletion()}
-        <ChallengeStatus
-            createdAt={this.props.createdAt}
-            status={this.props.status}
-            completedOn={this.props.completedOn}
-            startedOn={this.props.startedOn}
-            unlocked={this.props.unlocked} />
-      </div>
-    );
-  },
-
-  _multipuleCompletion : function(){
-    if(!this.props.multipleCompletion){
-      return "";
-    }
-
-    return (
-      <span className="pt-challenge-card-multiple-stage">
-        <Icon icon="multi" />
-      </span>
-    );
-  }
-});
-
-var ChallengeStatus = React.createClass({
-  getDefaultProps : function(){
-    return {
-      createdAt : "",
-      status : "",
-      completedOn : "",
-      startedOn : "",
-      unlocked : false
-    };
-  },
-  PropTypes : {
-    createdAt : React.PropTypes.string,
-    status : React.PropTypes.string,
-    completedOn : React.PropTypes.string,
-    startedOn : React.PropTypes.string,
-    unlocked : React.PropTypes.bool
-  },
-  render : function(){
-    return (
-      <span className="pt-challenge-status">
-        {this._determineStatusDetails()}
-      </span>
-    );
-  },
-  _determineStatusDetails : function(){
-    // TODO if date was always stored in the same place, this could be refactored
-
-    if (this.props.status === "completed") {
-      return this._showStatus("Completed", this.props.completedOn);
-    } else if(this.props.status === "started") {
-      return this._showStatus('Started', this.props.startedOn);
-    } else if(this.props.status === "expiring") {
-      return this._showStatus('Expiring Soon');
-    } else if(this.props.status === "limited_expiring") {
-      return this._showStatus('Expiring & Limited');
-    } else if(this.props.status === "limited") {
-      return this._showStatus('Limited');
-    } else if(this.props.unlocked) {
-      return this._showUnlockedStatus();
-    }
-  },
-
-  _showStatus: function (title, date) {
-    var formattedDate = this._dateString(date);
-
-    return (
-      <span className="completed">{title} {formattedDate}</span>
-    );
-  },
-
-  _showUnlockedStatus : function(){
-    return (
-      <span className="unlocked status-icon">
-        <Icon icon="unlock" />
-        <span>Challenge unlocked!</span>
-      </span>
-    );
-  },
-
-  _monthNames : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-  _dateString: function (date) {
-    var formattedDateStr = "";
-
-    if (date) {
-      var parsedDate = new Date(date);
-      formattedDateStr = this._monthNames[parsedDate.getUTCMonth()] + " " + parsedDate.getUTCDate();
-    }
-
-    return formattedDateStr
-  }
-});
 
 module.exports = ChallengeCard;
 
