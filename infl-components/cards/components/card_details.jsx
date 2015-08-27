@@ -15,17 +15,17 @@ var CardDetails = React.createClass({
 
 var EllipsisText = function(){
 
-  function run(element, height){
-    if(element.clientHeight === height){
-      ellipsisElementText(element, height);
+  function run(element, maxHeight){
+    if(element.scrollHeight >= maxHeight){
+      ellipsisElementText(element, maxHeight);
     }
   }
 
-  function ellipsisElementText(element, height){
+  function ellipsisElementText(element, maxHeight){
     convertWordsToElements(element);
     removeLastVisibleWord(element);
     showHiddenWords(element);
-    var lastVisibleWordElement = findLastVisibleWord(element, height);
+    var lastVisibleWordElement = findLastVisibleWord(element, maxHeight);
     addEllipsis(lastVisibleWordElement)
   }
 
@@ -47,13 +47,13 @@ var EllipsisText = function(){
     $(element).find(".hide-overflow-word").removeClass("hide-overflow-word");
   }
 
-  function findLastVisibleWord(element, height){
+  function findLastVisibleWord(element, maxHeight){
     var words = $(element).find("span");
     var lastVisibleWordElement = null;
 
     for(var i = 0; i < words.length; i++){
       if(lastVisibleWordElement == null){
-        if(($(words[i]).position().top + $(words[i]).height()) >= height){
+        if(($(words[i]).position().top + $(words[i]).height()) >= maxHeight){
           lastVisibleWordElement = words[i-1];
           hideOverflowWord(words[i]);
         }
@@ -63,10 +63,6 @@ var EllipsisText = function(){
     }
 
     return lastVisibleWordElement;
-  }
-
-  function isLastVisibleWord(wordElement){
-
   }
 
   function hideOverflowWord(overflowWordElement){
