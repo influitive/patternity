@@ -13,7 +13,76 @@ var CardDetails = React.createClass({
   }
 });
 
-CardDetails.MetaData = CardMetaData;
+var EllipsisText = function(){
+
+  function run(element, height){
+    if(element.clientHeight === height){
+      ellipsisElementText(element, height);
+    }
+  }
+
+  function ellipsisElementText(element, height){
+    convertWordsToElements(element);
+    removeLastVisibleWord(element);
+    showHiddenWords(element);
+    var lastVisibleWordElement = findLastVisibleWord(element, height);
+    addEllipsis(lastVisibleWordElement)
+  }
+
+  function convertWordsToElements(element) {
+    if(wordsHaveNotAlreadyBeenConverted(element)){
+      $(element).html('<span>' + $(element).html().replace(/ /g,'</span> <span>') + '</span>');
+    }
+  }
+
+  function wordsHaveNotAlreadyBeenConverted(element){
+    return element.children.length === 0;
+  }
+
+  function removeLastVisibleWord(element){
+    $(element).find(".last-visible-word").removeClass("last-visible-word");
+  }
+
+  function showHiddenWords(element){
+    $(element).find(".hide-overflow-word").removeClass("hide-overflow-word");
+  }
+
+  function findLastVisibleWord(element, height){
+    var words = $(element).find("span");
+    var lastVisibleWordElement = null;
+
+    for(var i = 0; i < words.length; i++){
+      if(lastVisibleWordElement == null){
+        if(($(words[i]).position().top + $(words[i]).height()) >= height){
+          lastVisibleWordElement = words[i-1];
+          hideOverflowWord(words[i]);
+        }
+      } else {
+        hideOverflowWord(words[i]);
+      }
+    }
+
+    return lastVisibleWordElement;
+  }
+
+  function isLastVisibleWord(wordElement){
+
+  }
+
+  function hideOverflowWord(overflowWordElement){
+    $(overflowWordElement).addClass("hide-overflow-word");
+  }
+
+  function addEllipsis(lastVisibleWordElement){
+    $(lastVisibleWordElement).addClass("last-visible-word");
+  }
+
+  return {
+    run : run
+  }
+};
+
+var ellipsisText = new EllipsisText();
 
 CardDetails.Headline = React.createClass({
     PropTypes : {
@@ -29,12 +98,12 @@ CardDetails.Headline = React.createClass({
   },
 
   componentDidMount : function(){
-    this._adjustHeadline();
+    this._ellipsisHeadline();
     this._addWindowResizeEvent();
   },
 
   componentDidUpdate : function(){
-    this._adjustHeadline();
+    this._ellipsisHeadline();
   },
 
   render : function(){
@@ -43,52 +112,14 @@ CardDetails.Headline = React.createClass({
     );
   },
 
-  _adjustHeadline : function(){
+  _addWindowResizeEvent : function(){
+    $(window).resize(this._ellipsisHeadline);
+  },
+
+  _ellipsisHeadline : function(){
     var headline = React.findDOMNode(this.refs.headline);
     var headlineMaxHeight = parseInt($(headline).css("max-height"));
-
-    if(headline.clientHeight === headlineMaxHeight){
-      this._ellipsisHeadlineText(headline, headlineMaxHeight);
-    }
-  },
-
-  _addWindowResizeEvent : function(){
-    $(window).resize(this._adjustHeadline);
-  },
-
-  _ellipsisHeadlineText : function(headline, headlineMaxHeight){
-    this._convertWordsToElements(headline);
-    this._removeLastVisibleWord();
-    var lastVisibleWordElement = this._findLastVisibleWord(headline, headlineMaxHeight);
-    $(lastVisibleWordElement).addClass("last-visible-word");
-  },
-
-  _convertWordsToElements : function(headline) {
-    if(this._wordsHaveNotAlreadyBeenConverted(headline)){
-      $(headline).html('<span>' + $(headline).html().replace(/ /g,'</span> <span>') + '</span>');
-    }
-  },
-
-  _wordsHaveNotAlreadyBeenConverted : function(headline){
-    return headline.children.length === 0;
-  },
-
-  _removeLastVisibleWord : function(){
-    $(".last-visible-word").removeClass("last-visible-word");
-  },
-
-  _findLastVisibleWord : function(headline, headlineMaxHeight){
-    var words = $(headline).find("span");
-    var lastVisibleWordElement = null;
-
-    for(var i = 0; i < words.length; i++){
-      if($(words[i]).position().top >= headlineMaxHeight){
-        lastVisibleWordElement = words[i-1];
-        break;
-      }
-    }
-
-    return lastVisibleWordElement;
+    ellipsisText.run(headline, headlineMaxHeight);
   }
 });
 
@@ -103,10 +134,46 @@ CardDetails.Description = React.createClass({
     };
   },
 
+  componentDidMount : function(){
+    this._addWindowResizeEvent();
+    this._adjustDescriptionHeight();
+  },
+
+  componentDidUpdate : function(){
+    this._adjustDescriptionHeight();
+  },
+
   render: function(){
     return (
       <div ref="description" className="description" dangerouslySetInnerHTML={{__html: this.props.description}}></div>
     );
+  },
+
+  _adjustDescriptionHeight : function(){
+    var description = React.findDOMNode(this.refs.description);
+    var card = $(description).parents(".pt-card");
+
+    if(description) {
+      var cardHeight = $(card).outerHeight(true);
+      var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
+      var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
+      var titleHeight = $(card).find(".headline").outerHeight(true);
+      var typeHeight = $(card).find(".pt-challenge-metadata").outerHeight(true);
+
+      description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
+
+      this._ellipsisDescription();
+    }
+  },
+
+  _addWindowResizeEvent : function(){
+    $(window).resize(this._adjustDescriptionHeight);
+  },
+
+  _ellipsisDescription : function(){
+    var description = React.findDOMNode(this.refs.description);
+    var descriptionMaxHeight = parseInt(description.style.height);
+    ellipsisText.run(description, descriptionMaxHeight);
   }
 });
 

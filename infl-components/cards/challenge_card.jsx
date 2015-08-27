@@ -25,10 +25,6 @@ var ChallengeCard = React.createClass({
     this._animateCardEntrance();
   },
 
-  componentDidUpdate : function(){
-    this._adjustDescriptionHeight();
-  },
-
   render: function () {
     return (
       <div ref="challengeCard" className="pt-challenge-card hide" id={this.props.id}>
@@ -46,13 +42,13 @@ var ChallengeCard = React.createClass({
       this._runAnimation(challengeCard);
     } else {
       $(challengeCard).removeClass("hide");
-      this._adjustDescriptionHeight();
+      // this._adjustDescriptionHeight();
     }
   },
 
   _runAnimation : function(challengeCard){
     $(challengeCard).removeClass("hide");
-    this._adjustDescriptionHeight();
+    // this._adjustDescriptionHeight();
     this._addAnimationDelay();
     animate.run(challengeCard, "fade-in-up", undefined, this._removeAnimationDelay);
   },
@@ -75,21 +71,6 @@ var ChallengeCard = React.createClass({
     challengeCard.style['-moz-animation-delay'] = "";
     challengeCard.style['-o-animation-delay'] = "";
     challengeCard.style['animation-delay'] = "";
-  },
-
-  _adjustDescriptionHeight : function(){
-    var card = React.findDOMNode(this.refs.card);
-    var description = card.querySelector(".description");
-
-    if(description) {
-      var cardHeight = card.offsetHeight;
-      var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
-      var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
-      var titleHeight = $(card).find(".headline").outerHeight(true);
-      var typeHeight = $(card).find(".pt-challenge-type").outerHeight(true);
-
-      description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
-    }
   }
 });
 
