@@ -1,0 +1,62 @@
+/* COPIED FROM '../src' DO NOT EDIT */
+$spacing-default: 1em;
+$spacing-small: .5em;
+$dimension-spacing-small: .5em;
+
+.user-profile {
+  margin-top: $dimension-spacing-small;
+  box-sizing: border-box;
+
+  .user-image {
+    display: inline-block;
+    text-align: center;
+    float: left;
+    margin-right: $spacing-default;
+    margin-bottom: $spacing-default;
+
+    img {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .user-name {
+    color: $theme-color-primary;
+    font-size: 1.6em;
+    line-height: 1.6em;
+    display: block;
+  }
+
+  .user-position {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    display: block;
+  }
+
+  .user-detail {
+    float: left;
+    margin-top: 0.2em;
+    margin-bottom: $spacing-default;
+  }
+
+}
+
+.popover-user-profile {
+  padding: $spacing-small $spacing-default $spacing-default;
+  color: #666;
+  box-sizing: border-box;
+
+  hr {
+    clear: both;
+  }
+}
+
+
+@media screen and (max-device-width: 640px) {
+  .user-profile {
+    max-width: 100%;
+    font-size: 0.9em;
+    box-sizing: border-box;
+  }
+}
