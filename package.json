@@ -52,6 +52,7 @@
     "gulp-batch": "^1.0.5",
     "gulp-consolidate": "^0.1.2",
     "gulp-flatten": "^0.2.0",
+    "gulp-header": "^1.7.1",
     "gulp-iconfont": "^1.0.0",
     "gulp-iconfont-css": "^0.0.9",
     "gulp-notify": "^2.2.0",
