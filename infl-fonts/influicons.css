@@ -97,4 +97,6 @@
 .ic.ic-inprogress:before { content: "\E049" }
 .ic.ic-disqus-circular:before { content: "\E04A" }
 .ic.ic-disqus:before { content: "\E04B" }
-.ic.ic-coins-old:before { content: "\E04C" }
+.ic.ic-circle-empty:before { content: "\E04C" }
+.ic.ic-cursor-click:before { content: "\E04D" }
+.ic.ic-coins-old:before { content: "\E04E" }

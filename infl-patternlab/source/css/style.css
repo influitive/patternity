@@ -1024,8 +1024,16 @@ h6 {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-circle-empty:before {
   content: "";
+}
+
+.ic.ic-cursor-click:before {
+  content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 @font-face {
@@ -3016,8 +3024,16 @@ textarea {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-circle-empty:before {
   content: "";
+}
+
+.ic.ic-cursor-click:before {
+  content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 .pt-tabs {

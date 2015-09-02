@@ -13,6 +13,14 @@ var ChallengeLabel = React.createClass({
     onClick : React.PropTypes.func
   },
   render : function(){
+    return this._showLabel();
+  },
+
+  _showLabel: function(){
+    if(typeof this.props.label !== "string") {
+      return null;
+    }
+
     return (
       <span className={"pt-challenge-label " + this._formatChallengeTypeClassName()} onClick={this.props.onClick}>
         {this._lowerCaseLabel()}
@@ -21,10 +29,6 @@ var ChallengeLabel = React.createClass({
   },
 
   _formatChallengeTypeClassName : function(){
-    if(typeof this.props.label !== "string") {
-      return "";
-    }
-
     var labelArray = this.props.label.split(' ');
     var labelClassName = "";
     for( var i = 0; i < labelArray.length; i++){
@@ -34,10 +38,6 @@ var ChallengeLabel = React.createClass({
   },
 
   _lowerCaseLabel: function(label){
-    if(typeof this.props.label !== "string") {
-      return "";
-    }
-
     return this.props.label.toLowerCase();
   }
 });

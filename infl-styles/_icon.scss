@@ -755,12 +755,32 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-circle-empty:before {
   content: "\E04C"
+}
+
+@mixin ic-circle-empty() {
+  font-family: 'influicons';
+  content: "\E04C"
+}
+
+
+.ic.ic-cursor-click:before {
+  content: "\E04D"
+}
+
+@mixin ic-cursor-click() {
+  font-family: 'influicons';
+  content: "\E04D"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E04E"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E04C"
+  content: "\E04E"
 }
 

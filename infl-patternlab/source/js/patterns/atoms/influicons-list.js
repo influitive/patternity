@@ -152,6 +152,10 @@ var icons = {
   
     "disqus": "disqus",
   
+    "circle-empty": "circle-empty",
+  
+    "cursor-click": "cursor-click",
+  
     "coins-old": "coins-old",
   
 
