@@ -19,17 +19,17 @@ var ChallengeTile = React.createClass({
   },
 
   _addTile : function(){
-    if(this._isAcceptedStatusType()){
-      return (
-        <div className={"pt-challenge-tile " + this.props.type}>
-          <Tooltip element={<Icon icon={this._determineTileIcon()} />} position="bottom" isClickable={false}>
-            {this._determineTooltipText()}
-          </Tooltip>
-        </div>
-      );
-    } else {
+    if(!this._isAcceptedStatusType()){
       return null;
     }
+
+    return (
+      <div className={"pt-challenge-tile " + this.props.type}>
+        <Tooltip element={<Icon icon={this._determineTileIcon()} />} position="bottom" isClickable={false}>
+          {this._determineTooltipText()}
+        </Tooltip>
+      </div>
+    );
   },
 
   _isAcceptedStatusType : function(){

@@ -1041,18 +1041,30 @@ var ChallengeLabel = React.createClass({displayName: "ChallengeLabel",
   render : function(){
     return (
       React.createElement("span", {className: "pt-challenge-label " + this._formatChallengeTypeClassName(), onClick: this.props.onClick}, 
-        this.props.label.toLowerCase()
+        this._lowerCaseLabel()
       )
     );
   },
 
   _formatChallengeTypeClassName : function(){
+    if(typeof this.props.label !== "string") {
+      return "";
+    }
+
     var labelArray = this.props.label.split(' ');
     var labelClassName = "";
     for( var i = 0; i < labelArray.length; i++){
       labelClassName += labelArray[i].toLowerCase() + "-";
     }
     return labelClassName.substring(0, labelClassName.length - 1);
+  },
+
+  _lowerCaseLabel: function(label){
+    if(typeof this.props.label !== "string") {
+      return "";
+    }
+
+    return this.props.label.toLowerCase();
   }
 });
 
@@ -1081,17 +1093,17 @@ var ChallengeTile = React.createClass({displayName: "ChallengeTile",
   },
 
   _addTile : function(){
-    if(this._isAcceptedStatusType()){
-      return (
-        React.createElement("div", {className: "pt-challenge-tile " + this.props.type}, 
-          React.createElement(Tooltip, {element: React.createElement(Icon, {icon: this._determineTileIcon()}), position: "bottom", isClickable: false}, 
-            this._determineTooltipText()
-          )
-        )
-      );
-    } else {
+    if(!this._isAcceptedStatusType()){
       return null;
     }
+
+    return (
+      React.createElement("div", {className: "pt-challenge-tile " + this.props.type}, 
+        React.createElement(Tooltip, {element: React.createElement(Icon, {icon: this._determineTileIcon()}), position: "bottom", isClickable: false}, 
+          this._determineTooltipText()
+        )
+      )
+    );
   },
 
   _isAcceptedStatusType : function(){
@@ -59130,7 +59142,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "LinkedIn referral help",
             stage_count : 5,
             stage_types : [],
-            type : "Social Sharing",
+            type : null,
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "",
@@ -59152,7 +59164,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             name : "LinkedIn referral help",
             stage_count : 0,
             stage_types : [],
-            type : "Fun",
+            type : 2342,
             participantCount : 5,
             timeoutMessage : "",
             completedOn : "",
