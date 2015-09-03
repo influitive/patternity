@@ -217,6 +217,11 @@ Reference:
 ## Publish & Release
 
 #### Git convention
+Branches:
+
+Master: Tagged branches pushed to npm registry, release branched merged from development, hotfix branches merged from hotfix/<hotfix-name>
+
+Development: Development branch to merge new features/non-critical fixes into
 
 Features: `feature/<feature-name>`
 
@@ -224,10 +229,14 @@ hotfix: `hotfix/<hotfix name>`
 
 Committing:
 
-- rebase your feature branch off master
-- bump version using npm version <major|minor|patch>
+- rebase your feature branch off master(hotfix) or development(feature)
 - push and create pull request for review
-- merge feature into master
-- git checkout master && git pull master && npm publish
-- `git push origin --tags`
-- go to github tags view, and create release notes, referencing commits for feature changes/additions
+- merge feature into development, hotfix into master
+
+Publishing:
+
+After merging into master:
+- git checkout master && git pull master
+- npm version <patch(hotfix)|minor(feature-additiont)|major(breaking api changes and major releases)>
+- npm publish
+- git push --tags 
