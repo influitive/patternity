@@ -30,6 +30,17 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
     window.filepicker.pick(optionsWithCompression, onSuccess, onError);
   }
 
+  function crop(onSuccess, ratio, image){
+    var optionsWithCrop = uploadOptions();
+    if(ratio){
+      optionsWithCrop.cropRatio = ratio;
+    }
+    optionsWithCrop.services.push('CONVERT');
+    optionsWithCrop.conversions = ['crop'];
+
+    window.filepicker.processImage(image, optionsWithCrop, onSuccess);
+  }
+
   function onError(FPError){
     console.log(FPError);
   }
@@ -39,7 +50,8 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
     upload : upload,
     uploadWithCrop : uploadWithCrop,
     covertToImage : covertToImage,
-    uploadAndCompress : uploadAndCompress
+    uploadAndCompress : uploadAndCompress,
+    crop : crop
   };
 };
 
