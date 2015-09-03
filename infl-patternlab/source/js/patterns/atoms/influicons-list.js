@@ -156,6 +156,8 @@ var icons = {
   
     "cursor-click": "cursor-click",
   
+    "crop": "crop",
+  
     "coins-old": "coins-old",
   
 

@@ -1032,8 +1032,12 @@ h6 {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-crop:before {
   content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 @font-face {
@@ -3032,8 +3036,12 @@ textarea {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-crop:before {
   content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 .pt-tabs {

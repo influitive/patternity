@@ -775,12 +775,22 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-crop:before {
   content: "\E04E"
+}
+
+@mixin ic-crop() {
+  font-family: 'influicons';
+  content: "\E04E"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E04F"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E04E"
+  content: "\E04F"
 }
 
