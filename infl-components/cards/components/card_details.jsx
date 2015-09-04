@@ -102,6 +102,10 @@ CardDetails.Headline = React.createClass({
     this._ellipsisHeadline();
   },
 
+  componentWillUnmount: function(){
+    this._removeWindowResizeEvent();
+  },
+
   render : function(){
     return (
       <h4 className="headline" ref="headline" onClick={this.props.onHeadlineClick}>{this.props.headline}</h4>
@@ -115,7 +119,12 @@ CardDetails.Headline = React.createClass({
   _ellipsisHeadline : function(){
     var headline = React.findDOMNode(this.refs.headline);
     var headlineMaxHeight = parseInt($(headline).css("max-height"));
+
     ellipsisText.run(headline, headlineMaxHeight);
+  },
+
+  _removeWindowResizeEvent: function(){
+    $(window).off("resize", this._ellipsisHeadline);
   }
 });
 
@@ -137,6 +146,10 @@ CardDetails.Description = React.createClass({
 
   componentDidUpdate : function(){
     this._adjustDescriptionHeight();
+  },
+
+  componentWillUnmount: function(){
+    this._removeWindowResizeEvent();
   },
 
   render: function(){
@@ -170,6 +183,10 @@ CardDetails.Description = React.createClass({
     var description = React.findDOMNode(this.refs.description);
     var descriptionMaxHeight = parseInt(description.style.height);
     ellipsisText.run(description, descriptionMaxHeight);
+  },
+
+  _removeWindowResizeEvent: function(){
+    $(window).off("resize", this._adjustDescriptionHeight);
   }
 });
 
