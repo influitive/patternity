@@ -5,6 +5,7 @@ var Card          = require('./card.jsx');
 var animate       = require("../utilities/animate.js");
 var CardDetails   = require('./components/card_details.jsx');
 var CardImage     = require('./components/card_image.jsx');
+var ellipsisText  = require('./components/ellipsis_text.js');
 
 var ChallengeCard = React.createClass({
   PropTypes : {
@@ -20,7 +21,16 @@ var ChallengeCard = React.createClass({
   },
 
   componentDidMount : function(){
+    this._addWindowResizeEvent();
     this._animateCardEntrance();
+  },
+
+  componentDidUpdate : function(){
+    this._adjustDescriptionHeight();
+  },
+
+  componentWillUnmount: function(){
+    this._removeWindowResizeEvent();
   },
 
   render: function () {
@@ -40,13 +50,13 @@ var ChallengeCard = React.createClass({
       this._runAnimation(challengeCard);
     } else {
       $(challengeCard).removeClass("hide");
-      // this._adjustDescriptionHeight();
+      this._adjustDescriptionHeight();
     }
   },
 
   _runAnimation : function(challengeCard){
     $(challengeCard).removeClass("hide");
-    // this._adjustDescriptionHeight();
+    this._adjustDescriptionHeight();
     this._addAnimationDelay();
     animate.run(challengeCard, "fade-in-up", undefined, this._removeAnimationDelay);
   },
@@ -69,6 +79,36 @@ var ChallengeCard = React.createClass({
     challengeCard.style['-moz-animation-delay'] = "";
     challengeCard.style['-o-animation-delay'] = "";
     challengeCard.style['animation-delay'] = "";
+  },
+
+  _adjustDescriptionHeight : function(){
+    var card = React.findDOMNode(this.refs.card);
+    var description = $(card).find(".description")[0];
+
+    if(description) {
+      var cardHeight = $(card).outerHeight(true);
+      var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
+      var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
+      var titleHeight = $(card).find(".headline").outerHeight(true);
+      var typeHeight = $(card).find(".pt-challenge-metadata").outerHeight(true);
+
+      description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
+
+      this._ellipsisDescription(description);
+    }
+  },
+
+  _addWindowResizeEvent : function(){
+    $(window).resize(this._adjustDescriptionHeight);
+  },
+
+  _ellipsisDescription : function(description){
+    var descriptionMaxHeight = parseInt(description.style.height);
+    ellipsisText.run(description, descriptionMaxHeight);
+  },
+
+  _removeWindowResizeEvent: function(){
+    $(window).off("resize", this._adjustDescriptionHeight);
   }
 });
 

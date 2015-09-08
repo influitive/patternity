@@ -670,6 +670,7 @@ var Card          = require('./card.jsx');
 var animate       = require("../utilities/animate.js");
 var CardDetails   = require('./components/card_details.jsx');
 var CardImage     = require('./components/card_image.jsx');
+var ellipsisText  = require('./components/ellipsis_text.js');
 
 var ChallengeCard = React.createClass({displayName: "ChallengeCard",
   PropTypes : {
@@ -685,7 +686,16 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
   },
 
   componentDidMount : function(){
+    this._addWindowResizeEvent();
     this._animateCardEntrance();
+  },
+
+  componentDidUpdate : function(){
+    this._adjustDescriptionHeight();
+  },
+
+  componentWillUnmount: function(){
+    this._removeWindowResizeEvent();
   },
 
   render: function () {
@@ -705,13 +715,13 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
       this._runAnimation(challengeCard);
     } else {
       $(challengeCard).removeClass("hide");
-      // this._adjustDescriptionHeight();
+      this._adjustDescriptionHeight();
     }
   },
 
   _runAnimation : function(challengeCard){
     $(challengeCard).removeClass("hide");
-    // this._adjustDescriptionHeight();
+    this._adjustDescriptionHeight();
     this._addAnimationDelay();
     animate.run(challengeCard, "fade-in-up", undefined, this._removeAnimationDelay);
   },
@@ -734,6 +744,36 @@ var ChallengeCard = React.createClass({displayName: "ChallengeCard",
     challengeCard.style['-moz-animation-delay'] = "";
     challengeCard.style['-o-animation-delay'] = "";
     challengeCard.style['animation-delay'] = "";
+  },
+
+  _adjustDescriptionHeight : function(){
+    var card = React.findDOMNode(this.refs.card);
+    var description = $(card).find(".description")[0];
+
+    if(description) {
+      var cardHeight = $(card).outerHeight(true);
+      var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
+      var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
+      var titleHeight = $(card).find(".headline").outerHeight(true);
+      var typeHeight = $(card).find(".pt-challenge-metadata").outerHeight(true);
+
+      description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
+
+      this._ellipsisDescription(description);
+    }
+  },
+
+  _addWindowResizeEvent : function(){
+    $(window).resize(this._adjustDescriptionHeight);
+  },
+
+  _ellipsisDescription : function(description){
+    var descriptionMaxHeight = parseInt(description.style.height);
+    ellipsisText.run(description, descriptionMaxHeight);
+  },
+
+  _removeWindowResizeEvent: function(){
+    $(window).off("resize", this._adjustDescriptionHeight);
   }
 });
 
@@ -765,7 +805,7 @@ module.exports = ChallengeCard;
 // unique_participant_count: 0
 
 
-},{"../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","./components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","./components/card_image.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_template_card.jsx":[function(require,module,exports){
+},{"../utilities/animate.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js","./card.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/card.jsx","./components/card_details.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_details.jsx","./components/card_image.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx","./components/ellipsis_text.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/ellipsis_text.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/challenge_template_card.jsx":[function(require,module,exports){
 var React         = require('react');
 
 var ChallengeCard = require("./challenge_card.jsx");
@@ -802,6 +842,7 @@ var React = require("react");
 var $ = require('jquery');
 
 var CardMetaData = require('./card_meta_data.jsx');
+var ellipsisText = require('./ellipsis_text.js');
 
 var CardDetails = React.createClass({displayName: "CardDetails",
   render : function(){
@@ -812,73 +853,6 @@ var CardDetails = React.createClass({displayName: "CardDetails",
     );
   }
 });
-
-var EllipsisText = function(){
-
-  function run(element, maxHeight){
-    if(element.scrollHeight >= maxHeight){
-      ellipsisElementText(element, maxHeight);
-    }
-  }
-
-  function ellipsisElementText(element, maxHeight){
-    convertWordsToElements(element);
-    removeLastVisibleWord(element);
-    showHiddenWords(element);
-    var lastVisibleWordElement = findLastVisibleWord(element, maxHeight);
-    addEllipsis(lastVisibleWordElement)
-  }
-
-  function convertWordsToElements(element) {
-    if(wordsHaveNotAlreadyBeenConverted(element)){
-      $(element).html('<span>' + $(element).html().replace(/ /g,'</span> <span>') + '</span>');
-    }
-  }
-
-  function wordsHaveNotAlreadyBeenConverted(element){
-    return element.children.length === 0;
-  }
-
-  function removeLastVisibleWord(element){
-    $(element).find(".last-visible-word").removeClass("last-visible-word");
-  }
-
-  function showHiddenWords(element){
-    $(element).find(".hide-overflow-word").removeClass("hide-overflow-word");
-  }
-
-  function findLastVisibleWord(element, maxHeight){
-    var words = $(element).find("span");
-    var lastVisibleWordElement = null;
-
-    for(var i = 0; i < words.length; i++){
-      if(lastVisibleWordElement == null){
-        if(($(words[i]).position().top + $(words[i]).height()) >= maxHeight){
-          lastVisibleWordElement = words[i-1];
-          hideOverflowWord(words[i]);
-        }
-      } else {
-        hideOverflowWord(words[i]);
-      }
-    }
-
-    return lastVisibleWordElement;
-  }
-
-  function hideOverflowWord(overflowWordElement){
-    $(overflowWordElement).addClass("hide-overflow-word");
-  }
-
-  function addEllipsis(lastVisibleWordElement){
-    $(lastVisibleWordElement).addClass("last-visible-word");
-  }
-
-  return {
-    run : run
-  }
-};
-
-var ellipsisText = new EllipsisText();
 
 CardDetails.Headline = React.createClass({displayName: "Headline",
     PropTypes : {
@@ -902,6 +876,10 @@ CardDetails.Headline = React.createClass({displayName: "Headline",
     this._ellipsisHeadline();
   },
 
+  componentWillUnmount: function(){
+    this._removeWindowResizeEvent();
+  },
+
   render : function(){
     return (
       React.createElement("h4", {className: "headline", ref: "headline", onClick: this.props.onHeadlineClick}, this.props.headline)
@@ -915,7 +893,12 @@ CardDetails.Headline = React.createClass({displayName: "Headline",
   _ellipsisHeadline : function(){
     var headline = React.findDOMNode(this.refs.headline);
     var headlineMaxHeight = parseInt($(headline).css("max-height"));
+
     ellipsisText.run(headline, headlineMaxHeight);
+  },
+
+  _removeWindowResizeEvent: function(){
+    $(window).off("resize", this._ellipsisHeadline);
   }
 });
 
@@ -930,53 +913,17 @@ CardDetails.Description = React.createClass({displayName: "Description",
     };
   },
 
-  componentDidMount : function(){
-    this._addWindowResizeEvent();
-    this._adjustDescriptionHeight();
-  },
-
-  componentDidUpdate : function(){
-    this._adjustDescriptionHeight();
-  },
-
   render: function(){
     return (
       React.createElement("div", {ref: "description", className: "description", dangerouslySetInnerHTML: {__html: this.props.description}})
     );
-  },
-
-  _adjustDescriptionHeight : function(){
-    var description = React.findDOMNode(this.refs.description);
-    var card = $(description).parents(".pt-card");
-
-    if(description) {
-      var cardHeight = $(card).outerHeight(true);
-      var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
-      var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
-      var titleHeight = $(card).find(".headline").outerHeight(true);
-      var typeHeight = $(card).find(".pt-challenge-metadata").outerHeight(true);
-
-      description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
-
-      this._ellipsisDescription();
-    }
-  },
-
-  _addWindowResizeEvent : function(){
-    $(window).resize(this._adjustDescriptionHeight);
-  },
-
-  _ellipsisDescription : function(){
-    var description = React.findDOMNode(this.refs.description);
-    var descriptionMaxHeight = parseInt(description.style.height);
-    ellipsisText.run(description, descriptionMaxHeight);
   }
 });
 
 module.exports = CardDetails;
 
 
-},{"./card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx":[function(require,module,exports){
+},{"./card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","./ellipsis_text.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/ellipsis_text.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx":[function(require,module,exports){
 var React = require('react');
 
 var CardImage = React.createClass({displayName: "CardImage",
@@ -1150,7 +1097,80 @@ ChallengeTile.Container = React.createClass({displayName: "Container",
 module.exports = ChallengeTile;
 
 
-},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tooltip.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx":[function(require,module,exports){
+},{"../../icon.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/icon.jsx","../../tooltip.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tooltip.jsx","classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/ellipsis_text.js":[function(require,module,exports){
+var $ = require('jquery');
+
+var EllipsisText = function(){
+
+  function run(element, maxHeight){
+    if(element.scrollHeight >= maxHeight){
+      ellipsisElementText(element, maxHeight);
+    }
+  }
+
+  function ellipsisElementText(element, maxHeight){
+    convertWordsToElements(element);
+    removeLastVisibleWord(element);
+    showHiddenWords(element);
+    var lastVisibleWordElement = findLastVisibleWord(element, maxHeight);
+    addEllipsis(lastVisibleWordElement)
+  }
+
+  function convertWordsToElements(element) {
+    if(wordsHaveNotAlreadyBeenConverted(element)){
+      $(element).html('<span>' + $(element).html().replace(/ /g,'</span> <span>') + '</span>');
+    }
+  }
+
+  function wordsHaveNotAlreadyBeenConverted(element){
+    return element.children.length === 0;
+  }
+
+  function removeLastVisibleWord(element){
+    $(element).find(".last-visible-word").removeClass("last-visible-word");
+  }
+
+  function showHiddenWords(element){
+    $(element).find(".hide-overflow-word").removeClass("hide-overflow-word");
+  }
+
+  function findLastVisibleWord(element, maxHeight){
+    var words = $(element).find("span");
+    var lastVisibleWordElement = null;
+
+    for(var i = 0; i < words.length; i++){
+      if(lastVisibleWordElement == null){
+        if(($(words[i]).position().top + $(words[i]).height()) >= maxHeight){
+          lastVisibleWordElement = words[i-1];
+          hideOverflowWord(words[i]);
+        }
+      } else {
+        hideOverflowWord(words[i]);
+      }
+    }
+
+    return lastVisibleWordElement;
+  }
+
+  function hideOverflowWord(overflowWordElement){
+    $(overflowWordElement).addClass("hide-overflow-word");
+  }
+
+  function addEllipsis(lastVisibleWordElement){
+    $(lastVisibleWordElement).addClass("last-visible-word");
+  }
+
+  return {
+    run : run
+  }
+};
+
+var ellipsisText = new EllipsisText();
+
+module.exports = ellipsisText;
+
+
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/participant_count.jsx":[function(require,module,exports){
 var React = require('react');
 var Icon = require('../../icon.jsx');
 

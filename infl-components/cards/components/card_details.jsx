@@ -2,6 +2,7 @@ var React = require("react");
 var $ = require('jquery');
 
 var CardMetaData = require('./card_meta_data.jsx');
+var ellipsisText = require('./ellipsis_text.js');
 
 var CardDetails = React.createClass({
   render : function(){
@@ -12,73 +13,6 @@ var CardDetails = React.createClass({
     );
   }
 });
-
-var EllipsisText = function(){
-
-  function run(element, maxHeight){
-    if(element.scrollHeight >= maxHeight){
-      ellipsisElementText(element, maxHeight);
-    }
-  }
-
-  function ellipsisElementText(element, maxHeight){
-    convertWordsToElements(element);
-    removeLastVisibleWord(element);
-    showHiddenWords(element);
-    var lastVisibleWordElement = findLastVisibleWord(element, maxHeight);
-    addEllipsis(lastVisibleWordElement)
-  }
-
-  function convertWordsToElements(element) {
-    if(wordsHaveNotAlreadyBeenConverted(element)){
-      $(element).html('<span>' + $(element).html().replace(/ /g,'</span> <span>') + '</span>');
-    }
-  }
-
-  function wordsHaveNotAlreadyBeenConverted(element){
-    return element.children.length === 0;
-  }
-
-  function removeLastVisibleWord(element){
-    $(element).find(".last-visible-word").removeClass("last-visible-word");
-  }
-
-  function showHiddenWords(element){
-    $(element).find(".hide-overflow-word").removeClass("hide-overflow-word");
-  }
-
-  function findLastVisibleWord(element, maxHeight){
-    var words = $(element).find("span");
-    var lastVisibleWordElement = null;
-
-    for(var i = 0; i < words.length; i++){
-      if(lastVisibleWordElement == null){
-        if(($(words[i]).position().top + $(words[i]).height()) >= maxHeight){
-          lastVisibleWordElement = words[i-1];
-          hideOverflowWord(words[i]);
-        }
-      } else {
-        hideOverflowWord(words[i]);
-      }
-    }
-
-    return lastVisibleWordElement;
-  }
-
-  function hideOverflowWord(overflowWordElement){
-    $(overflowWordElement).addClass("hide-overflow-word");
-  }
-
-  function addEllipsis(lastVisibleWordElement){
-    $(lastVisibleWordElement).addClass("last-visible-word");
-  }
-
-  return {
-    run : run
-  }
-};
-
-var ellipsisText = new EllipsisText();
 
 CardDetails.Headline = React.createClass({
     PropTypes : {
@@ -139,54 +73,10 @@ CardDetails.Description = React.createClass({
     };
   },
 
-  componentDidMount : function(){
-    this._addWindowResizeEvent();
-    this._adjustDescriptionHeight();
-  },
-
-  componentDidUpdate : function(){
-    this._adjustDescriptionHeight();
-  },
-
-  componentWillUnmount: function(){
-    this._removeWindowResizeEvent();
-  },
-
   render: function(){
     return (
       <div ref="description" className="description" dangerouslySetInnerHTML={{__html: this.props.description}}></div>
     );
-  },
-
-  _adjustDescriptionHeight : function(){
-    var description = React.findDOMNode(this.refs.description);
-    var card = $(description).parents(".pt-card");
-
-    if(description) {
-      var cardHeight = $(card).outerHeight(true);
-      var imageHeight = $(card).find(".pt-challenge-image ").outerHeight(true);
-      var actionsHeight = $(card).find(".pt-card-actions").outerHeight(true);
-      var titleHeight = $(card).find(".headline").outerHeight(true);
-      var typeHeight = $(card).find(".pt-challenge-metadata").outerHeight(true);
-
-      description.style.height = (cardHeight - actionsHeight - titleHeight - typeHeight - imageHeight) + "px";
-
-      this._ellipsisDescription();
-    }
-  },
-
-  _addWindowResizeEvent : function(){
-    $(window).resize(this._adjustDescriptionHeight);
-  },
-
-  _ellipsisDescription : function(){
-    var description = React.findDOMNode(this.refs.description);
-    var descriptionMaxHeight = parseInt(description.style.height);
-    ellipsisText.run(description, descriptionMaxHeight);
-  },
-
-  _removeWindowResizeEvent: function(){
-    $(window).off("resize", this._adjustDescriptionHeight);
   }
 });
 

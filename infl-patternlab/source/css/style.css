@@ -3656,6 +3656,7 @@ DIV.pt-popover.is-visible {
 .pt-challenge-card .pt-challenge-details .description {
   overflow: hidden;
   position: relative;
+  line-height: normal;
 }
 .pt-challenge-card .pt-challenge-details .description ol {
   padding-left: 1.4em;
