@@ -37,7 +37,7 @@ var ChallengeTile = React.createClass({
   },
 
   _checkForLimitedExpiring : function(){
-    if (this.props.type === 'limited_expiring') { console.warn('limited_expiring should be split into limited and expiring'); }
+    //if (this.props.type === 'limited_expiring') { console.warn('limited_expiring should be split into limited and expiring'); }
   },
 
   _determineTileIcon : function(){
