@@ -2,6 +2,9 @@ var gulp = require('gulp');
 var gulpReplace = require('gulp-replace');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
+var header = require('gulp-header');
+var flatten = require('gulp-flatten');
+var watch = require('gulp-watch');
 
 function adustIconNames(codepoints) {
   return codepoints.map(function(codepoint) {
@@ -70,6 +73,19 @@ gulp.task('influicons', function(){
 
     })
     .pipe(gulp.dest('infl-fonts/'));
+});
+
+gulp.task('copy-lib-styles', function() {
+  return gulp.src('src/**/*.scss')
+    .pipe(header('/* COPIED FROM \'../src\' DO NOT EDIT */\n'))
+    .pipe(flatten())
+    .pipe(gulp.dest('infl-styles'));
+});
+
+gulp.task('watch-scss', function() {
+  return watch('src/**/*.scss', function() {
+    gulp.start('copy-lib-styles');
+  });
 });
 
 gulp.task('default', ['influicons']);
