@@ -96,7 +96,8 @@ var ProfilePopoverContent = (function (_Component) {
     value: {
       user: _react.PropTypes.object.isRequired,
       underAvatar: _react.PropTypes.node,
-      loading: _react.PropTypes.bool
+      loading: _react.PropTypes.bool,
+      defaultImage: _react.PropTypes.string
     },
     enumerable: true
   }]);

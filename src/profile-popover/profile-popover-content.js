@@ -9,9 +9,10 @@ class ProfilePopoverContent extends Component {
   displayName = 'ProfilePopup'
 
   static propTypes = {
-    user:        PropTypes.object.isRequired,
-    underAvatar: PropTypes.node,
-    loading:     PropTypes.bool
+    user:         PropTypes.object.isRequired,
+    underAvatar:  PropTypes.node,
+    loading:      PropTypes.bool,
+    defaultImage: PropTypes.string
   }
 
   render() {

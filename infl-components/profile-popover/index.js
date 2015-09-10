@@ -39,13 +39,12 @@ var ProfilePopover = (function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var children = _props.children;
+      var onOpen = _props.onOpen;
+      var trigger = _props.trigger;
       var user = _props.user;
       var defaultImage = _props.defaultImage;
-      var children = _props.children;
       var underAvatar = _props.underAvatar;
-      var onOpen = _props.onOpen;
-      var loading = _props.loading;
-      var trigger = _props.trigger;
 
       var triggerLink = function triggerLink() {
         return trigger || _react2['default'].createElement(
@@ -61,11 +60,22 @@ var ProfilePopover = (function (_Component) {
         triggerLink(),
         _react2['default'].createElement(
           _profilePopoverContent2['default'],
-          { user: user, underAvatar: underAvatar, loading: loading },
+          { user: user, defaultImage: defaultImage, underAvatar: underAvatar },
           children
         )
       );
     }
+  }], [{
+    key: 'PropTypes',
+    value: {
+      user: _react.PropTypes.object.isRequired,
+      defaultImage: _react.PropTypes.string,
+      underAvatar: _react.PropTypes.node,
+      onOpen: _react.PropTypes.func,
+      loading: _react.PropTypes.bool,
+      trigger: _react.PropTypes.node
+    },
+    enumerable: true
   }]);
 
   return ProfilePopover;
