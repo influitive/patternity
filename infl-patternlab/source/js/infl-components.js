@@ -4163,7 +4163,7 @@ var Tooltip = React.createClass({displayName: "Tooltip",
   getDefaultProps : function(){
     return {
       title : "",
-      position : 'bottom',
+      position : 'top',
       isClickable : true
     };
   },
