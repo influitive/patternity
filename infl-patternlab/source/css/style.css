@@ -2398,6 +2398,30 @@ textarea {
   cursor: pointer;
   padding: 10px;
 }
+.pt-tooltip .tooltip-arrow {
+  position: absolute;
+  left: calc((40px / 2) - 10px);
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  opacity: 0.9;
+}
+.pt-tooltip .tooltip-arrow.top {
+  top: -16px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #444444;
+}
+.pt-tooltip .tooltip-arrow.bottom {
+  bottom: -16px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #444444;
+}
+.pt-tooltip .tooltip-arrow.hide {
+  display: none;
+}
 
 .tooltip-content {
   padding: 13px;
@@ -2411,31 +2435,11 @@ textarea {
   opacity: 0.9;
   display: block;
 }
-.tooltip-content:after {
-  position: absolute;
-  left: calc((300px / 2) - 10px);
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-}
 .tooltip-content.top {
   bottom: 42px;
 }
-.tooltip-content.top:after {
-  bottom: -10px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #444444;
-}
 .tooltip-content.bottom {
   top: 42px;
-}
-.tooltip-content.bottom:after {
-  top: -10px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #444444;
 }
 .tooltip-content h3 {
   margin-top: 0px;
@@ -3590,18 +3594,20 @@ DIV.pt-popover.is-visible {
   font-size: 18px;
   cursor: default;
 }
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-arrow {
+  left: calc((18px / 2) - 9px);
+}
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-arrow.bottom {
+  bottom: -10px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #444444;
+}
 .pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-content {
   width: 100px;
   padding: 2px 5px;
   font-size: 12px;
   left: calc(-50px + 10px);
-}
-.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-content:after {
-  left: calc((100px / 2) - 8px);
-  top: -8px;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid #444444;
 }
 .pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-content.bottom {
   top: 34px;

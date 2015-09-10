@@ -10,6 +10,34 @@
     cursor: pointer;
     padding: 10px;
   }
+
+  .tooltip-arrow {
+    position: absolute;
+    left: calc((40px / 2) - 10px);
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    opacity: 0.9;
+
+    &.top {
+      top: -16px;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid $darker-grey;
+    }
+
+    &.bottom {
+      bottom: -16px;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $darker-grey;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
 }
 
 .tooltip-content {
@@ -26,35 +54,12 @@
   opacity: 0.9;
   display: block;
 
-  &:after {
-    position: absolute;
-    left: calc((300px / 2) - 10px);
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-  }
-
   &.top {
     bottom: 42px;
-
-    &:after {
-      bottom: -10px;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid $darker-grey;
-    }
   }
 
   &.bottom {
     top: 42px;
-
-    &:after {
-      top: -10px;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 10px solid $darker-grey;
-    }
   }
 
   h3 {

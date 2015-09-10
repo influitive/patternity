@@ -67,19 +67,22 @@
           cursor: default;
         }
 
+        .tooltip-arrow {
+          left: calc((18px / 2) - 9px);
+
+          &.bottom {
+            bottom: -10px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #444444;
+          }
+        }
+
         .tooltip-content {
           width: 100px;
           padding: 2px 5px;
           font-size: 12px;
           left: calc(-50px + 10px);
-
-          &:after {
-            left: calc((100px / 2) - 8px);
-            top: -8px;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid #444444;
-          }
 
           &.bottom {
             top: 34px;

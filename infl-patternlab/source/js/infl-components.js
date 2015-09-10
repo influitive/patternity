@@ -1058,7 +1058,7 @@ var ChallengeTile = React.createClass({displayName: "ChallengeTile",
   },
 
   _checkForLimitedExpiring : function(){
-    if (this.props.type === 'limited_expiring') { console.warn('limited_expiring should be split into limited and expiring'); }
+    //if (this.props.type === 'limited_expiring') { console.warn('limited_expiring should be split into limited and expiring'); }
   },
 
   _determineTileIcon : function(){
@@ -4150,6 +4150,7 @@ module.exports = ToggleSwitch;
 
 },{"classnames":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/classnames/index.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/tooltip.jsx":[function(require,module,exports){
 var React = require('react');
+var $ = require('jquery');
 
 var Tooltip = React.createClass({displayName: "Tooltip",
   propTypes : {
@@ -4162,7 +4163,7 @@ var Tooltip = React.createClass({displayName: "Tooltip",
   getDefaultProps : function(){
     return {
       title : "",
-      position : 'top',
+      position : 'bottom',
       isClickable : true
     };
   },
@@ -4173,6 +4174,10 @@ var Tooltip = React.createClass({displayName: "Tooltip",
       showClose: false,
       wasClicked: false
     };
+  },
+
+  componentDidUpdate: function(){
+    this._positionTooltipContent();
   },
 
   render : function(){
@@ -4186,10 +4191,13 @@ var Tooltip = React.createClass({displayName: "Tooltip",
           closeToolTip: this._clickCloseTooltip, 
           position: this.props.position, 
           ref: "tip"}), 
+        React.createElement(TooltipArrow, {
+          position: this.props.position, 
+          showArrow: this.state.showTooltip}), 
         React.createElement("span", {className: "tool-tip-element", 
             onClick: this._clickTooltip, 
-            onMouseEnter: this._hoverShowTooltip, 
-            onMouseLeave: this._hoverHideTooltip, 
+            onMouseOver: this._hoverShowTooltip, 
+            onMouseOut: this._hoverHideTooltip, 
             ref: "element"}, 
           this.props.element
         )
@@ -4197,10 +4205,53 @@ var Tooltip = React.createClass({displayName: "Tooltip",
     );
   },
 
-  _hoverShowTooltip: function() {
+  _positionTooltipContent: function(){
+    var tooltipContent = React.findDOMNode(this.refs.tip);
+    if(this._isContentOffScreen(tooltipContent)){
+      this._resetContentPosition(tooltipContent);
+      this._adjustContentPosition(tooltipContent);
+    }
+  },
+
+  _isContentOffScreen: function(tooltipContent){
+    var directionToCheck = this._whichDirection(tooltipContent);
+    if(directionToCheck === "left"){
+      return $(tooltipContent).offset().left < 0;
+    } else {
+      return ($(tooltipContent).offset().left + tooltipContent.offsetWidth) > window.innerWidth;
+    }
+  },
+
+  _whichDirection: function(tooltipContent){
+    return $(tooltipContent).offset().left > window.innerWidth / 2 ? "right" : "left";
+  },
+
+  _resetContentPosition: function(tooltipContent){
+    tooltipContent.style.left = "";
+  },
+
+  _adjustContentPosition: function(tooltipContent){
+    var directionToAdjust = this._whichDirection(tooltipContent);
+    var element = React.findDOMNode(this.refs.element);
+    if(directionToAdjust === "left"){
+      tooltipContent.style.left = ($(tooltipContent).offset().left + element.offsetWidth / 2) + "px";
+    } else {
+      tooltipContent.style.left = (($(tooltipContent).offset().left - window.innerWidth) + element.offsetWidth / 2) + "px";
+    }
+  },
+
+  _tooltipContentIsOffScreen: function(tooltipContent){
+    if($(tooltipContent).offset().left > window.innerWidth / 2){
+      this._isContentOffScreen(true);
+    } else {
+
+    }
+  },
+
+  _hoverShowTooltip: function(event) {
     this._hoverToggleTooltip(true);
   },
-  _hoverHideTooltip: function() {
+  _hoverHideTooltip: function(event) {
     this._hoverToggleTooltip(false);
   },
   _hoverToggleTooltip : function(shouldShow){
@@ -4243,6 +4294,29 @@ var Tooltip = React.createClass({displayName: "Tooltip",
   }
 });
 
+var TooltipArrow = React.createClass({displayName: "TooltipArrow",
+  propTypes : {
+    showArrow : React.PropTypes.bool.isRequired,
+    position : React.PropTypes.oneOf(['top', 'bottom']),
+  },
+
+  getDefaultProps : function(){
+    return {
+      position : "top"
+    };
+  },
+
+  render : function(){
+    return (
+      React.createElement("span", {className: "tooltip-arrow " + this._showArrow() + " " + this.props.position, ref: "arrow"})
+    );
+  },
+
+  _showArrow : function(){
+    return this.props.showArrow ? "" : "hide";
+  },
+});
+
 Tooltip.Content = React.createClass({displayName: "Content",
   propTypes : {
     title : React.PropTypes.string,
@@ -4281,6 +4355,10 @@ Tooltip.Content = React.createClass({displayName: "Content",
   },
 
   _showTitle : function(){
+    if(typeof this.props.title !== "string") {
+      return null;
+    }
+
     return this.props.title.length > 0 ? (React.createElement("h3", {ref: "title"}, this.props.title)) : null;
   }
 });
@@ -4288,7 +4366,7 @@ Tooltip.Content = React.createClass({displayName: "Content",
 module.exports = Tooltip;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js":[function(require,module,exports){
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/utilities/animate.js":[function(require,module,exports){
 var $ = require('jquery');
 
 var Animate = function(){

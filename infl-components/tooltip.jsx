@@ -1,4 +1,5 @@
 var React = require('react');
+var $ = require('jquery');
 
 var Tooltip = React.createClass({
   propTypes : {
@@ -24,6 +25,10 @@ var Tooltip = React.createClass({
     };
   },
 
+  componentDidUpdate: function(){
+    this._positionTooltipContent();
+  },
+
   render : function(){
     return (
       <span className="pt-tooltip" ref="tooltip">
@@ -35,10 +40,13 @@ var Tooltip = React.createClass({
           closeToolTip={this._clickCloseTooltip}
           position={this.props.position}
           ref="tip" />
+        <TooltipArrow
+          position={this.props.position}
+          showArrow={this.state.showTooltip} />
         <span className="tool-tip-element"
             onClick={this._clickTooltip}
-            onMouseEnter={this._hoverShowTooltip}
-            onMouseLeave={this._hoverHideTooltip}
+            onMouseOver={this._hoverShowTooltip}
+            onMouseOut={this._hoverHideTooltip}
             ref="element">
           {this.props.element}
         </span>
@@ -46,10 +54,53 @@ var Tooltip = React.createClass({
     );
   },
 
-  _hoverShowTooltip: function() {
+  _positionTooltipContent: function(){
+    var tooltipContent = React.findDOMNode(this.refs.tip);
+    if(this._isContentOffScreen(tooltipContent)){
+      this._resetContentPosition(tooltipContent);
+      this._adjustContentPosition(tooltipContent);
+    }
+  },
+
+  _isContentOffScreen: function(tooltipContent){
+    var directionToCheck = this._whichDirection(tooltipContent);
+    if(directionToCheck === "left"){
+      return $(tooltipContent).offset().left < 0;
+    } else {
+      return ($(tooltipContent).offset().left + tooltipContent.offsetWidth) > window.innerWidth;
+    }
+  },
+
+  _whichDirection: function(tooltipContent){
+    return $(tooltipContent).offset().left > window.innerWidth / 2 ? "right" : "left";
+  },
+
+  _resetContentPosition: function(tooltipContent){
+    tooltipContent.style.left = "";
+  },
+
+  _adjustContentPosition: function(tooltipContent){
+    var directionToAdjust = this._whichDirection(tooltipContent);
+    var element = React.findDOMNode(this.refs.element);
+    if(directionToAdjust === "left"){
+      tooltipContent.style.left = ($(tooltipContent).offset().left + element.offsetWidth / 2) + "px";
+    } else {
+      tooltipContent.style.left = (($(tooltipContent).offset().left - window.innerWidth) + element.offsetWidth / 2) + "px";
+    }
+  },
+
+  _tooltipContentIsOffScreen: function(tooltipContent){
+    if($(tooltipContent).offset().left > window.innerWidth / 2){
+      this._isContentOffScreen(true);
+    } else {
+
+    }
+  },
+
+  _hoverShowTooltip: function(event) {
     this._hoverToggleTooltip(true);
   },
-  _hoverHideTooltip: function() {
+  _hoverHideTooltip: function(event) {
     this._hoverToggleTooltip(false);
   },
   _hoverToggleTooltip : function(shouldShow){
@@ -92,6 +143,29 @@ var Tooltip = React.createClass({
   }
 });
 
+var TooltipArrow = React.createClass({
+  propTypes : {
+    showArrow : React.PropTypes.bool.isRequired,
+    position : React.PropTypes.oneOf(['top', 'bottom']),
+  },
+
+  getDefaultProps : function(){
+    return {
+      position : "top"
+    };
+  },
+
+  render : function(){
+    return (
+      <span className={"tooltip-arrow " + this._showArrow() + " " + this.props.position} ref="arrow"></span>
+    );
+  },
+
+  _showArrow : function(){
+    return this.props.showArrow ? "" : "hide";
+  },
+});
+
 Tooltip.Content = React.createClass({
   propTypes : {
     title : React.PropTypes.string,
@@ -130,6 +204,10 @@ Tooltip.Content = React.createClass({
   },
 
   _showTitle : function(){
+    if(typeof this.props.title !== "string") {
+      return null;
+    }
+
     return this.props.title.length > 0 ? (<h3 ref="title">{this.props.title}</h3>) : null;
   }
 });
