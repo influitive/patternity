@@ -4207,8 +4207,8 @@ var Tooltip = React.createClass({displayName: "Tooltip",
 
   _positionTooltipContent: function(){
     var tooltipContent = React.findDOMNode(this.refs.tip);
+    this._resetContentPosition(tooltipContent);
     if(this._isContentOffScreen(tooltipContent)){
-      this._resetContentPosition(tooltipContent);
       this._adjustContentPosition(tooltipContent);
     }
   },
