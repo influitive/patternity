@@ -1024,15 +1024,12 @@ var Icon = require('../../icon.jsx');
 var Tooltip = require('../../tooltip.jsx');
 var classNames = require('classnames');
 
-var acceptedStatusType = ['started', 'expiring', 'limited', 'limited_expiring', 'multi'];
+var acceptedStatusType = ['started', 'expiring', 'limited', 'multi'];
 
 var ChallengeTile = React.createClass({displayName: "ChallengeTile",
   PropTypes : {
     type : React.PropTypes.oneOf(acceptedStatusType).isRequired,
-  },
-
-  componentDidMount : function(){
-    this._checkForLimitedExpiring();
+    description : React.PropTypes.string.isRequired
   },
 
   render : function(){
@@ -1047,18 +1044,14 @@ var ChallengeTile = React.createClass({displayName: "ChallengeTile",
     return (
       React.createElement("div", {className: "pt-challenge-tile " + this.props.type}, 
         React.createElement(Tooltip, {element: React.createElement(Icon, {icon: this._determineTileIcon()}), position: "bottom", isClickable: false}, 
-          this._determineTooltipText()
+          this.props.description
         )
       )
     );
   },
 
   _isAcceptedStatusType : function(){
-    return acceptedStatusType.indexOf(this.props.type) !== -1 && this.props.type !== 'limited_expiring';
-  },
-
-  _checkForLimitedExpiring : function(){
-    //if (this.props.type === 'limited_expiring') { console.warn('limited_expiring should be split into limited and expiring'); }
+    return acceptedStatusType.indexOf(this.props.type) !== -1;
   },
 
   _determineTileIcon : function(){
@@ -1070,17 +1063,6 @@ var ChallengeTile = React.createClass({displayName: "ChallengeTile",
     }
 
     return tileIcons[this.props.type];
-  },
-
-  _determineTooltipText : function(){
-    var tileToolTips = {
-      'started' : 'In Progress',
-      'expiring' : 'Expires Soon',
-      'limited' : 'Limited', //not official
-      'multi' : 'Multi-Complete',
-    }
-
-    return tileToolTips[this.props.type];
   }
 });
 
@@ -59264,7 +59246,10 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : true,
             multiple_completion : true
@@ -59286,7 +59271,10 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "started",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           },
@@ -59307,7 +59295,10 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "expiring",
+            status : [{
+              title : "expiring",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           },
@@ -59328,7 +59319,10 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           },
@@ -59349,7 +59343,10 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           }
@@ -59375,7 +59372,10 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "started",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "2015-03-10T14:46:34.913-05:00",
             unlocked : false
           }
@@ -59405,7 +59405,10 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
             completedOn : "2015-03-02T14:46:34.913-05:00",
 
             //Not part of the data we get back yet
-            status : "completed",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           }
@@ -59501,7 +59504,7 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
       return (
         React.createElement(ChallengeCard, {key: card.id, id: "card-" + card.id, animateEntrance: true}, 
           React.createElement(ChallengeTile.Container, null, 
-            that._challengeTiles(card['multiple_completion'], card.status)
+            that._challengeTiles(card.status)
           ), 
           React.createElement(ChallengeCard.Image, {image: card.image}), 
           React.createElement(CardDetails, null, 
@@ -59521,7 +59524,16 @@ var ChallengesPagePattern = React.createClass({displayName: "ChallengesPagePatte
     });
   },
 
-  _challengeTiles : function(multiComplete, status){
+  _challengeTiles : function(status){
+    return _.map(status, function(aStatus, index){
+      return (
+        React.createElement(ChallengeTile, {
+            key: "challenge-tile-" + aStatus, 
+            type: aStatus.title, 
+            description: aStatus.description})
+      );
+    });
+
     if(multiComplete){
       return (React.createElement(ChallengeTile, {key: "multi", type: "multi"}));
     } else if (status === 'limited_expiring') {

@@ -41,7 +41,10 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : true,
             multiple_completion : true
@@ -63,7 +66,10 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "started",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           },
@@ -84,7 +90,10 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "expiring",
+            status : [{
+              title : "expiring",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           },
@@ -105,7 +114,10 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           },
@@ -126,7 +138,10 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "available",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           }
@@ -152,7 +167,10 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "",
 
             //Not part of the data we get back yet
-            status : "started",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "2015-03-10T14:46:34.913-05:00",
             unlocked : false
           }
@@ -182,7 +200,10 @@ var ChallengesPagePattern = React.createClass({
             completedOn : "2015-03-02T14:46:34.913-05:00",
 
             //Not part of the data we get back yet
-            status : "completed",
+            status : [{
+              title : "started",
+              description : "yeah yeah yeah"
+            }],
             startedOn : "",
             unlocked : false
           }
@@ -278,7 +299,7 @@ var ChallengesPagePattern = React.createClass({
       return (
         <ChallengeCard key={card.id} id={"card-" + card.id} animateEntrance={true}>
           <ChallengeTile.Container>
-            {that._challengeTiles(card['multiple_completion'], card.status)}
+            {that._challengeTiles(card.status)}
           </ChallengeTile.Container>
           <ChallengeCard.Image image={card.image} />
           <CardDetails>
@@ -298,7 +319,16 @@ var ChallengesPagePattern = React.createClass({
     });
   },
 
-  _challengeTiles : function(multiComplete, status){
+  _challengeTiles : function(status){
+    return _.map(status, function(aStatus, index){
+      return (
+        <ChallengeTile
+            key={"challenge-tile-" + aStatus}
+            type={aStatus.title}
+            description={aStatus.description} />
+      );
+    });
+
     if(multiComplete){
       return (<ChallengeTile key="multi" type="multi" />);
     } else if (status === 'limited_expiring') {
