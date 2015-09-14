@@ -8,12 +8,11 @@
     color: $darker-grey;
     vertical-align: middle;
     cursor: pointer;
-    padding: 10px;
+    display: inline-block;
   }
 
   .tooltip-arrow {
     position: absolute;
-    left: calc((40px / 2) - 10px);
     content: "";
     display: inline-block;
     width: 0;
@@ -21,17 +20,17 @@
     opacity: 0.9;
 
     &.top {
-      top: -16px;
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       border-top: 10px solid $darker-grey;
+      border-bottom: 0px;
     }
 
     &.bottom {
-      bottom: -16px;
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       border-bottom: 10px solid $darker-grey;
+      border-top: 0px;
     }
 
     &.hide {
@@ -49,18 +48,9 @@
   background-color: $darker-grey;
   color: #fff;
   width: 300px;
-  left: calc(-150px + 20px);
   font-size: $tooltip-font-size;
   opacity: 0.9;
   display: block;
-
-  &.top {
-    bottom: 42px;
-  }
-
-  &.bottom {
-    top: 42px;
-  }
 
   h3 {
     margin-top: 0px;

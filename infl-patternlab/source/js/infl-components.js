@@ -4145,7 +4145,7 @@ var Tooltip = React.createClass({displayName: "Tooltip",
   getDefaultProps : function(){
     return {
       title : "",
-      position : 'top',
+      position : 'bottom',
       isClickable : true
     };
   },
@@ -4166,16 +4166,17 @@ var Tooltip = React.createClass({displayName: "Tooltip",
     return (
       React.createElement("span", {className: "pt-tooltip", ref: "tooltip"}, 
         React.createElement(Tooltip.Content, {
-          title: this.props.title, 
-          content: this.props.children, 
-          showTooltip: this.state.showTooltip, 
-          showClose: this.state.showClose, 
-          closeToolTip: this._clickCloseTooltip, 
-          position: this.props.position, 
-          ref: "tip"}), 
+            title: this.props.title, 
+            content: this.props.children, 
+            showTooltip: this.state.showTooltip, 
+            showClose: this.state.showClose, 
+            closeToolTip: this._clickCloseTooltip, 
+            position: this.props.position, 
+            ref: "tip"}), 
         React.createElement(TooltipArrow, {
-          position: this.props.position, 
-          showArrow: this.state.showTooltip}), 
+            position: this.props.position, 
+            showArrow: this.state.showTooltip, 
+            ref: "arrow"}), 
         React.createElement("span", {className: "tool-tip-element", 
             onClick: this._clickTooltip, 
             onMouseOver: this._hoverShowTooltip, 
@@ -4188,16 +4189,43 @@ var Tooltip = React.createClass({displayName: "Tooltip",
   },
 
   _positionTooltipContent: function(){
-    var tooltipContent = React.findDOMNode(this.refs.tip);
-    this._resetContentPosition(tooltipContent);
-    if(this._isContentOffScreen(tooltipContent)){
-      this._adjustContentPosition(tooltipContent);
+    this._positionArrow();
+    this._positionContent();
+
+    if(this._isContentOffScreen()){
+      this._adjustContentPosition();
     }
   },
 
-  _isContentOffScreen: function(tooltipContent){
-    var directionToCheck = this._whichDirection(tooltipContent);
-    if(directionToCheck === "left"){
+  _positionArrow : function (){
+    var arrow = React.findDOMNode(this.refs.arrow);
+    var element = React.findDOMNode(this.refs.element);
+
+    arrow.style.left = ((element.offsetWidth / 2) - (arrow.offsetWidth /  2)) + "px";
+
+    if(this.props.position === "top"){
+      arrow.style.top = -1 * arrow.offsetHeight + "px";
+    } else {
+      arrow.style.bottom = -1 * arrow.offsetHeight + "px";
+    }
+  },
+
+  _positionContent : function () {
+    var tooltipContent = React.findDOMNode(this.refs.tip);
+    var element = React.findDOMNode(this.refs.element);
+    var arrow = React.findDOMNode(this.refs.arrow);
+
+    tooltipContent.style.left = ((element.offsetWidth / 2) - (tooltipContent.offsetWidth /  2)) + "px";
+    if(this.props.position === "top") {
+      tooltipContent.style.top = -1 * (tooltipContent.offsetHeight + arrow.offsetHeight) +  "px";
+    } else {
+      tooltipContent.style.bottom = -1 * (tooltipContent.offsetHeight + arrow.offsetHeight) +  "px";
+    }
+  },
+
+  _isContentOffScreen: function(){
+    var tooltipContent = React.findDOMNode(this.refs.tip);
+    if(this._whichDirection(tooltipContent) === "left"){
       return $(tooltipContent).offset().left < 0;
     } else {
       return ($(tooltipContent).offset().left + tooltipContent.offsetWidth) > window.innerWidth;
@@ -4208,14 +4236,10 @@ var Tooltip = React.createClass({displayName: "Tooltip",
     return $(tooltipContent).offset().left > window.innerWidth / 2 ? "right" : "left";
   },
 
-  _resetContentPosition: function(tooltipContent){
-    tooltipContent.style.left = "";
-  },
-
-  _adjustContentPosition: function(tooltipContent){
-    var directionToAdjust = this._whichDirection(tooltipContent);
+  _adjustContentPosition: function(){
+    var tooltipContent = React.findDOMNode(this.refs.tip);
     var element = React.findDOMNode(this.refs.element);
-    if(directionToAdjust === "left"){
+    if(this._whichDirection(tooltipContent) === "left"){
       tooltipContent.style.left = ($(tooltipContent).offset().left + element.offsetWidth / 2) + "px";
     } else {
       tooltipContent.style.left = (($(tooltipContent).offset().left - window.innerWidth) + element.offsetWidth / 2) + "px";
@@ -4233,9 +4257,11 @@ var Tooltip = React.createClass({displayName: "Tooltip",
   _hoverShowTooltip: function(event) {
     this._hoverToggleTooltip(true);
   },
+
   _hoverHideTooltip: function(event) {
     this._hoverToggleTooltip(false);
   },
+
   _hoverToggleTooltip : function(shouldShow){
     if(!this.state.wasClicked){
       this._updateState({
@@ -4245,11 +4271,13 @@ var Tooltip = React.createClass({displayName: "Tooltip",
       });
     }
   },
+
   _clickTooltip : function(event) {
     if(this.props.isClickable) {
       this._handleClick(event);
     }
   },
+
   _handleClick : function(){
     if (this.state.showTooltip && this.state.wasClicked) {
       this._clickCloseTooltip();
@@ -4257,6 +4285,7 @@ var Tooltip = React.createClass({displayName: "Tooltip",
       this._clickShowTooltip();
     }
   },
+
   _clickShowTooltip : function() {
     this._updateState({
       showTooltip: true,
@@ -4264,6 +4293,7 @@ var Tooltip = React.createClass({displayName: "Tooltip",
       wasClicked: true
     });
   },
+
   _clickCloseTooltip : function(){
     this._updateState({
       showTooltip: false,
@@ -4271,6 +4301,7 @@ var Tooltip = React.createClass({displayName: "Tooltip",
       wasClicked: false
     });
   },
+
   _updateState : function(newState){
     this.setState(newState);
   }
@@ -4279,7 +4310,7 @@ var Tooltip = React.createClass({displayName: "Tooltip",
 var TooltipArrow = React.createClass({displayName: "TooltipArrow",
   propTypes : {
     showArrow : React.PropTypes.bool.isRequired,
-    position : React.PropTypes.oneOf(['top', 'bottom']),
+    position : React.PropTypes.oneOf(['top', 'bottom'])
   },
 
   getDefaultProps : function(){
@@ -4296,7 +4327,7 @@ var TooltipArrow = React.createClass({displayName: "TooltipArrow",
 
   _showArrow : function(){
     return this.props.showArrow ? "" : "hide";
-  },
+  }
 });
 
 Tooltip.Content = React.createClass({displayName: "Content",
