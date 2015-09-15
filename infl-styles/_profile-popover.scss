@@ -7,19 +7,6 @@ $dimension-spacing-small: .5em;
   margin-top: $dimension-spacing-small;
   box-sizing: border-box;
 
-  .user-image {
-    display: inline-block;
-    text-align: center;
-    float: left;
-    margin-right: $spacing-default;
-    margin-bottom: $spacing-default;
-
-    img {
-      width: 64px;
-      height: 64px;
-    }
-  }
-
   .user-name {
     color: $theme-color-primary;
     font-size: 1.6em;
@@ -39,7 +26,20 @@ $dimension-spacing-small: .5em;
     margin-top: 0.2em;
     margin-bottom: $spacing-default;
   }
+}
 
+.user-image {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  margin-right: $spacing-default;
+  margin-bottom: $spacing-default;
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+  }
 }
 
 .popover-user-profile {
