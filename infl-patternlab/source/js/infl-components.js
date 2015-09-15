@@ -4139,14 +4139,16 @@ var Tooltip = React.createClass({displayName: "Tooltip",
     title: React.PropTypes.string,
     element: React.PropTypes.node.isRequired,
     position : React.PropTypes.oneOf(['top', 'bottom']),
-    isClickable : React.PropTypes.bool
+    isClickable : React.PropTypes.bool,
+    container : React.PropTypes.string
   },
 
   getDefaultProps : function(){
     return {
       title : "",
-      position : 'bottom',
-      isClickable : true
+      position : 'top',
+      isClickable : true,
+      containerSelector : 'body'
     };
   },
 
@@ -4159,7 +4161,9 @@ var Tooltip = React.createClass({displayName: "Tooltip",
   },
 
   componentDidUpdate: function(){
-    this._positionTooltipContent();
+    if(this.state.showTooltip) {
+      this._positionTooltipContent();
+    }
   },
 
   render : function(){
@@ -4189,68 +4193,49 @@ var Tooltip = React.createClass({displayName: "Tooltip",
   },
 
   _positionTooltipContent: function(){
-    this._positionArrow();
-    this._positionContent();
+    var DOMNodes = this._getDOMNodes();
+    this._positionArrow(DOMNodes);
+    this._positionContent(DOMNodes);
 
-    if(this._isContentOffScreen()){
-      this._adjustContentPosition();
+    if(this._isContentOutOfContainer(DOMNodes)){
+      this._adjustContentPosition(DOMNodes);
     }
   },
 
-  _positionArrow : function (){
-    var arrow = React.findDOMNode(this.refs.arrow);
-    var element = React.findDOMNode(this.refs.element);
-
-    arrow.style.left = ((element.offsetWidth / 2) - (arrow.offsetWidth /  2)) + "px";
-
-    if(this.props.position === "top"){
-      arrow.style.top = -1 * arrow.offsetHeight + "px";
-    } else {
-      arrow.style.bottom = -1 * arrow.offsetHeight + "px";
-    }
+  _getDOMNodes : function () {
+    return {
+      arrow : React.findDOMNode(this.refs.arrow),
+      element : React.findDOMNode(this.refs.element),
+      tooltip : React.findDOMNode(this.refs.tip),
+      container : $(this.props.containerSelector).get( 0 )
+    };
   },
 
-  _positionContent : function () {
-    var tooltipContent = React.findDOMNode(this.refs.tip);
-    var element = React.findDOMNode(this.refs.element);
-    var arrow = React.findDOMNode(this.refs.arrow);
-
-    tooltipContent.style.left = ((element.offsetWidth / 2) - (tooltipContent.offsetWidth /  2)) + "px";
-    if(this.props.position === "top") {
-      tooltipContent.style.top = -1 * (tooltipContent.offsetHeight + arrow.offsetHeight) +  "px";
-    } else {
-      tooltipContent.style.bottom = -1 * (tooltipContent.offsetHeight + arrow.offsetHeight) +  "px";
-    }
+  _positionArrow : function (DOMNodes){
+    DOMNodes.arrow.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.arrow.offsetWidth /  2)) + "px";
+    DOMNodes.arrow.style[this.props.position] = -1 * DOMNodes.arrow.offsetHeight + "px";
   },
 
-  _isContentOffScreen: function(){
-    var tooltipContent = React.findDOMNode(this.refs.tip);
-    if(this._whichDirection(tooltipContent) === "left"){
-      return $(tooltipContent).offset().left < 0;
-    } else {
-      return ($(tooltipContent).offset().left + tooltipContent.offsetWidth) > window.innerWidth;
-    }
+  _positionContent : function (DOMNodes) {
+    DOMNodes.tooltip.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.tooltip.offsetWidth /  2)) + "px";
+    DOMNodes.tooltip.style[this.props.position] = -1 * (DOMNodes.tooltip.offsetHeight + DOMNodes.arrow.offsetHeight) +  "px";
   },
 
-  _whichDirection: function(tooltipContent){
-    return $(tooltipContent).offset().left > window.innerWidth / 2 ? "right" : "left";
+  _isContentOutOfContainer: function(DOMNodes){
+    var tooltipPos = DOMNodes.tooltip.getBoundingClientRect();
+    var containerPos = DOMNodes.container.getBoundingClientRect();
+
+    return containerPos.left > tooltipPos.left || tooltipPos.right > containerPos.right;
   },
 
-  _adjustContentPosition: function(){
-    var tooltipContent = React.findDOMNode(this.refs.tip);
-    var element = React.findDOMNode(this.refs.element);
-    if(this._whichDirection(tooltipContent) === "left"){
-      tooltipContent.style.left = ($(tooltipContent).offset().left + element.offsetWidth / 2) + "px";
-    } else {
-      tooltipContent.style.left = (($(tooltipContent).offset().left - window.innerWidth) + element.offsetWidth / 2) + "px";
-    }
-  },
+  _adjustContentPosition: function(DOMNodes){
+    var tooltipPos = DOMNodes.tooltip.getBoundingClientRect();
+    var containerPos = DOMNodes.container.getBoundingClientRect();
 
-  _tooltipContentIsOffScreen: function(tooltipContent){
-    if($(tooltipContent).offset().left > window.innerWidth / 2){
-      this._isContentOffScreen(true);
-    } else {
-
+    if(containerPos.left > tooltipPos.left){
+      DOMNodes.tooltip.style.left = (-1 * ($(DOMNodes.element).offset().left - $(DOMNodes.container).offset().left)) + "px";
+    } else if(tooltipPos.right > containerPos.right) {
+      DOMNodes.tooltip.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.tooltip.offsetWidth /  2) - (tooltipPos.right - containerPos.right)) + "px";
     }
   },
 
