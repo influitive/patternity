@@ -45,6 +45,7 @@ var ProfilePopover = (function (_Component) {
       var user = _props.user;
       var defaultImage = _props.defaultImage;
       var underAvatar = _props.underAvatar;
+      var loading = _props.loading;
 
       var triggerLink = function triggerLink() {
         return trigger || _react2['default'].createElement(
@@ -60,7 +61,7 @@ var ProfilePopover = (function (_Component) {
         triggerLink(),
         _react2['default'].createElement(
           _profilePopoverContent2['default'],
-          { user: user, defaultImage: defaultImage, underAvatar: underAvatar },
+          { user: user, defaultImage: defaultImage, underAvatar: underAvatar, loading: loading },
           children
         )
       );

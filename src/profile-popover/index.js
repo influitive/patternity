@@ -14,12 +14,12 @@ class ProfilePopover extends Component {
   }
 
   render() {
-    const { children, onOpen, trigger, user, defaultImage, underAvatar } = this.props;
+    const { children, onOpen, trigger, user, defaultImage, underAvatar, loading } = this.props;
     const triggerLink = () => trigger || <a href="javascript://">{user.name}</a>;
 
     return <Popover ref="profilePopover" className="profile-popover" autoclose={true} onOpen={onOpen}>
       {triggerLink()}
-      <ProfilePopoverContent user={user} defaultImage={defaultImage} underAvatar={underAvatar}>
+      <ProfilePopoverContent user={user} defaultImage={defaultImage} underAvatar={underAvatar} loading={loading}>
         {children}
       </ProfilePopoverContent>
     </Popover>;
