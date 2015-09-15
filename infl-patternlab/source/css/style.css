@@ -1072,8 +1072,8 @@ h6 {
   display: block;
   margin: auto auto 0.5em;
   border-radius: 100%;
-  border: 1px solid rgba(180, 180, 180, 0.5);
   max-width: 100%;
+  border: 1px solid rgba(180, 180, 180, 0.5);
 }
 .avatar-image.inline {
   float: none;

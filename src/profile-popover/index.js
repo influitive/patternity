@@ -15,7 +15,7 @@ class ProfilePopover extends Component {
 
   render() {
     const { children, onOpen, trigger, user, defaultImage, underAvatar, loading } = this.props;
-    const triggerLink = () => trigger || <a href="javascript://">{user.name}</a>;
+    const triggerLink = () => trigger || <a className="profile-popover-link" href="javascript://">{user.name}</a>;
 
     return <Popover ref="profilePopover" className="profile-popover" autoclose={true} onOpen={onOpen}>
       {triggerLink()}

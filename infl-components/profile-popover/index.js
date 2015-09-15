@@ -50,7 +50,7 @@ var ProfilePopover = (function (_Component) {
       var triggerLink = function triggerLink() {
         return trigger || _react2['default'].createElement(
           'a',
-          { href: 'javascript://' },
+          { className: 'profile-popover-link', href: 'javascript://' },
           user.name
         );
       };

@@ -51,6 +51,11 @@ $dimension-spacing-small: .5em;
   }
 }
 
+.profile-popover-link {
+  font-size: 12px;
+  line-height: 22px;
+}
+
 
 @media screen and (max-device-width: 640px) {
   .user-profile {
