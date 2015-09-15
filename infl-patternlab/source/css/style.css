@@ -3586,11 +3586,7 @@ DIV.pt-popover.is-visible {
   font-size: 18px;
   cursor: default;
 }
-.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-arrow {
-  left: calc((18px / 2) - 9px);
-}
 .pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-arrow.bottom {
-  bottom: -10px;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #444444;
@@ -3599,10 +3595,6 @@ DIV.pt-popover.is-visible {
   width: 100px;
   padding: 2px 5px;
   font-size: 12px;
-  left: calc(-50px + 10px);
-}
-.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-content.bottom {
-  top: 34px;
 }
 .pt-challenge-card .pt-challenge-image {
   overflow: hidden;
