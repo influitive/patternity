@@ -4465,6 +4465,10 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
     window.filepicker.processImage(image, optionsWithCrop, onSuccess);
   }
 
+  function store(blob, options, onSuccess) {
+    window.filepicker.store(blob, options, onSuccess);
+  }
+
   function onError(FPError){
     console.log(FPError);
   }
@@ -4475,7 +4479,8 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
     uploadWithCrop : uploadWithCrop,
     covertToImage : covertToImage,
     uploadAndCompress : uploadAndCompress,
-    crop : crop
+    crop : crop,
+    store : store
   };
 };
 
