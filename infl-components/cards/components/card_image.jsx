@@ -2,6 +2,8 @@ var React = require('react');
 var $ = require('jquery');
 var Loading = require('../../loading.jsx');
 
+var widthAspectRatio = 9 / 16;
+
 var CardImage = React.createClass({
   PropTypes : {
     image : React.PropTypes.string,
@@ -73,9 +75,9 @@ var CardImage = React.createClass({
     var image = event.target;
 
     if(image.naturalWidth > image.naturalHeight){
-      this._updateImageStyling(image, '100%', 'initial');
+      this._updateImageStyling(image, '100%', 'initial', 'middle');
     } else {
-      this._updateImageStyling(image, 'initial', '100%');
+      this._updateImageStyling(image, 'initial', '100%', 'initial');
     }
 
     this._adjustImageContainerHeight();
@@ -87,14 +89,30 @@ var CardImage = React.createClass({
     });
   },
 
-  _updateImageStyling : function (image, width, height) {
+  _updateImageStyling : function (image, width, height, verticalAlign) {
     image.style.height = height;
     image.style.width = width;
+    this._updateVerticalAlign(image, verticalAlign);
     $(image).addClass('loaded');
   },
 
+  _updateVerticalAlign : function (image, verticalAlign) {
+    if(this._imageIsNotAspectRatio(image)) {
+      image.style.verticalAlign = verticalAlign;
+    } else {
+      image.style.verticalAlign = 'initial';
+    }
+  },
+
+  _imageIsNotAspectRatio : function (image) {
+    return this._roundToTwoDecimals(image.naturalHeight / image.naturalWidth) !== this._roundToTwoDecimals(widthAspectRatio);
+  },
+
+  _roundToTwoDecimals : function (num) {
+    return Math.round(num * 100) / 100
+  },
+
   _adjustImageContainerHeight : function () {
-    var widthAspectRatio = 9 / 16;
     var imageContainer = React.findDOMNode(this.refs.imageContainer);
 
     imageContainer.style.height =  widthAspectRatio * imageContainer.offsetWidth + "px";
