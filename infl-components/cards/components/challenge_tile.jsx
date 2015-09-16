@@ -8,7 +8,14 @@ var acceptedStatusType = ['started', 'expiring', 'limited', 'multi'];
 var ChallengeTile = React.createClass({
   PropTypes : {
     type : React.PropTypes.oneOf(acceptedStatusType).isRequired,
-    description : React.PropTypes.string.isRequired
+    description : React.PropTypes.string.isRequired,
+    onShowDescription : React.PropTypes.func
+  },
+
+  getDefaultProps : function(){
+    return {
+      onShowDescription : function(){}
+    };
   },
 
   render : function(){
@@ -37,7 +44,7 @@ var ChallengeTile = React.createClass({
     var tileIcons = {
       'started' : 'inprogress',
       'expiring' : 'expiring',
-      'limited' : 'limited', //not official
+      'limited' : 'cursor-click',
       'multi' : 'multi'
     }
 

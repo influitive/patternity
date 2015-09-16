@@ -925,6 +925,7 @@ module.exports = CardDetails;
 
 },{"./card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","./ellipsis_text.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/ellipsis_text.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx":[function(require,module,exports){
 var React = require('react');
+var $ = require('jquery');
 
 var CardImage = React.createClass({displayName: "CardImage",
   getDefaultProps : function(){
@@ -933,26 +934,71 @@ var CardImage = React.createClass({displayName: "CardImage",
       onImageClick : function(){}
     };
   },
+
   PropTypes : {
     image : React.PropTypes.string,
     onImageClick : React.PropTypes.func
   },
+
+  componentDidMount : function () {
+    this._optimizeImageVisibility();
+    this._adjustImageContainerHeight();
+    this._addWindowResizeEvent();
+  },
+
+  componentDidUpdate : function(){
+    this._adjustImageContainerHeight();
+  },
+
+  componentWillUnmount: function(){
+    this._removeWindowResizeEvent();
+  },
+
   render : function(){
     return (
-      React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage()}, 
-        React.createElement("img", {src: this.props.image, alt: "Challenge Image", onClick: this.props.onImageClick})
+      React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage(), ref: "imageContainer"}, 
+        React.createElement("img", {ref: "image", src: this.props.image, alt: "Challenge Image", onClick: this.props.onImageClick})
       )
     );
   },
+
   _doesChallengeHaveAnImage : function(){
     return this.props.image ? "" : "no-image";
+  },
+
+  _optimizeImageVisibility : function () {
+    var image = React.findDOMNode(this.refs.image);
+
+    if(image.naturalWidth > image.naturalHeight){
+      image.style.height = 'initial';
+      image.style.width = '100%';
+    } else {
+      image.style.height = '100%';
+      image.style.width = 'initial';
+    }
+  },
+
+  _adjustImageContainerHeight : function () {
+    var widthAspectRatio = 9 / 16;
+    var imageContainer = React.findDOMNode(this.refs.imageContainer);
+
+    imageContainer.style.height =  widthAspectRatio * imageContainer.offsetWidth + "px";
+  },
+
+  _addWindowResizeEvent : function(){
+    $(window).resize(this._adjustImageContainerHeight);
+  },
+
+  _removeWindowResizeEvent: function(){
+    $(window).off("resize", this._adjustImageContainerHeight);
   }
+
 });
 
 module.exports = CardImage;
 
 
-},{"react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx":[function(require,module,exports){
+},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx":[function(require,module,exports){
 var React = require('react');
 var Points = require('./points.jsx');
 var Icon = require('../../icon.jsx');
@@ -1029,7 +1075,14 @@ var acceptedStatusType = ['started', 'expiring', 'limited', 'multi'];
 var ChallengeTile = React.createClass({displayName: "ChallengeTile",
   PropTypes : {
     type : React.PropTypes.oneOf(acceptedStatusType).isRequired,
-    description : React.PropTypes.string.isRequired
+    description : React.PropTypes.string.isRequired,
+    onShowDescription : React.PropTypes.func
+  },
+
+  getDefaultProps : function(){
+    return {
+      onShowDescription : function(){}
+    };
   },
 
   render : function(){
@@ -1058,7 +1111,7 @@ var ChallengeTile = React.createClass({displayName: "ChallengeTile",
     var tileIcons = {
       'started' : 'inprogress',
       'expiring' : 'expiring',
-      'limited' : 'limited', //not official
+      'limited' : 'cursor-click',
       'multi' : 'multi'
     }
 

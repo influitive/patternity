@@ -3598,7 +3598,6 @@ DIV.pt-popover.is-visible {
 }
 .pt-challenge-card .pt-challenge-image {
   overflow: hidden;
-  height: 145px;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;

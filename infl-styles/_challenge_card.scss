@@ -55,7 +55,7 @@
       }
 
       &.limited {
-
+        background-color: $success-color;
       }
 
       //tooltip overrides
@@ -86,16 +86,34 @@
 
   .pt-challenge-image {
     overflow: hidden;
-    height: 145px;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
     border-bottom: 1px solid $light-grey;
     text-align: center;
+    width: 100%;
+    height: 131px;
+    line-height: 131px;
+    position: relative;
+
+    .loading-spinner {
+      position: absolute;
+      display: block;
+      left: calc(50% - 1em);
+      top: calc(50% - 1em);
+      margin-top: 0px;
+    }
 
     img {
       height: 100%;
       cursor : pointer;
+      vertical-align: middle;
+      opacity: 0;
+      @include transition(opacity 0.5 linear);
+
+      &.loaded {
+        opacity: 1;
+      }
     }
 
     &.no-image {
