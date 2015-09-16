@@ -3580,6 +3580,9 @@ DIV.pt-popover.is-visible {
 .pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile.expiring {
   background-color: #c54040;
 }
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile.limited {
+  background-color: #8BC540;
+}
 .pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tool-tip-element {
   padding: 0px;
   color: #fff;
@@ -3603,10 +3606,29 @@ DIV.pt-popover.is-visible {
   transform-style: preserve-3d;
   border-bottom: 1px solid #d0d2d3;
   text-align: center;
+  width: 100%;
+  height: 131px;
+  line-height: 131px;
+  position: relative;
+}
+.pt-challenge-card .pt-challenge-image .loading-spinner {
+  position: absolute;
+  display: block;
+  left: calc(50% - 1em);
+  top: calc(50% - 1em);
+  margin-top: 0px;
 }
 .pt-challenge-card .pt-challenge-image img {
   height: 100%;
   cursor: pointer;
+  vertical-align: middle;
+  opacity: 0;
+  -webkit-transition: opacity 0.5 linear;
+  -moz-transition: opacity 0.5 linear;
+  transition: opacity 0.5 linear;
+}
+.pt-challenge-card .pt-challenge-image img.loaded {
+  opacity: 1;
 }
 .pt-challenge-card .pt-challenge-image.no-image {
   height: 24px;

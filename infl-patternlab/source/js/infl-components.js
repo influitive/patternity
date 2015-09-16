@@ -926,8 +926,14 @@ module.exports = CardDetails;
 },{"./card_meta_data.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","./ellipsis_text.js":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/ellipsis_text.js","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx":[function(require,module,exports){
 var React = require('react');
 var $ = require('jquery');
+var Loading = require('../../loading.jsx');
 
 var CardImage = React.createClass({displayName: "CardImage",
+  PropTypes : {
+    image : React.PropTypes.string,
+    onImageClick : React.PropTypes.func
+  },
+
   getDefaultProps : function(){
     return {
       image : null,
@@ -935,14 +941,22 @@ var CardImage = React.createClass({displayName: "CardImage",
     };
   },
 
-  PropTypes : {
-    image : React.PropTypes.string,
-    onImageClick : React.PropTypes.func
+  getInitialState : function () {
+    return {
+      image : this.props.image,
+      isLoading : true
+    };
+  },
+
+  componentWillReceiveProps : function (nextProps) {
+    this.setState({
+      image : nextProps.image,
+      isLoading : nextProps.image !== this.props.image || this.state.isLoading
+    });
   },
 
   componentDidMount : function () {
-    this._optimizeImageVisibility();
-    this._adjustImageContainerHeight();
+    this._addImageLoadEvent();
     this._addWindowResizeEvent();
   },
 
@@ -957,7 +971,8 @@ var CardImage = React.createClass({displayName: "CardImage",
   render : function(){
     return (
       React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage(), ref: "imageContainer"}, 
-        React.createElement("img", {ref: "image", src: this.props.image, alt: "Challenge Image", onClick: this.props.onImageClick})
+        this._showLoading(), 
+        React.createElement("img", {ref: "image", src: this.state.image, alt: "Challenge Image", onClick: this.props.onImageClick})
       )
     );
   },
@@ -966,16 +981,42 @@ var CardImage = React.createClass({displayName: "CardImage",
     return this.props.image ? "" : "no-image";
   },
 
-  _optimizeImageVisibility : function () {
+  _showLoading : function(){
+    if(!this.state.isLoading) {
+      return null;
+    }
+
+    return React.createElement(Loading, null)
+  },
+
+  _addImageLoadEvent : function(){
     var image = React.findDOMNode(this.refs.image);
+    image.onload = this._optimizeImageVisibility;
+  },
+
+  _optimizeImageVisibility : function (event) {
+    this._hideLoading();
+    var image = event.target;
 
     if(image.naturalWidth > image.naturalHeight){
-      image.style.height = 'initial';
-      image.style.width = '100%';
+      this._updateImageStyling(image, '100%', 'initial');
     } else {
-      image.style.height = '100%';
-      image.style.width = 'initial';
+      this._updateImageStyling(image, 'initial', '100%');
     }
+
+    this._adjustImageContainerHeight();
+  },
+
+  _hideLoading : function () {
+    this.setState({
+      isLoading :  false
+    });
+  },
+
+  _updateImageStyling : function (image, width, height) {
+    image.style.height = height;
+    image.style.width = width;
+    $(image).addClass('loaded');
   },
 
   _adjustImageContainerHeight : function () {
@@ -983,6 +1024,7 @@ var CardImage = React.createClass({displayName: "CardImage",
     var imageContainer = React.findDOMNode(this.refs.imageContainer);
 
     imageContainer.style.height =  widthAspectRatio * imageContainer.offsetWidth + "px";
+    imageContainer.style.lineHeight =  widthAspectRatio * imageContainer.offsetWidth + "px";
   },
 
   _addWindowResizeEvent : function(){
@@ -998,7 +1040,7 @@ var CardImage = React.createClass({displayName: "CardImage",
 module.exports = CardImage;
 
 
-},{"jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx":[function(require,module,exports){
+},{"../../loading.jsx":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","jquery":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/node_modules/react/react.js"}],"/Users/nickfaulkner/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx":[function(require,module,exports){
 var React = require('react');
 var Points = require('./points.jsx');
 var Icon = require('../../icon.jsx');
