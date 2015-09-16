@@ -25,7 +25,7 @@ var CardImage = React.createClass({
   componentWillReceiveProps : function (nextProps) {
     this.setState({
       image : nextProps.image,
-      isLoading : true
+      isLoading : nextProps.image !== this.props.image || this.state.isLoading
     });
   },
 

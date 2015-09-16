@@ -992,34 +992,122 @@ module.exports = CardDetails;
 
 },{"./card_meta_data.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx","./ellipsis_text.js":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/components/ellipsis_text.js","jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_image.jsx":[function(require,module,exports){
 var React = require('react');
+var $ = require('jquery');
+var Loading = require('../../loading.jsx');
 
 var CardImage = React.createClass({displayName: "CardImage",
+  PropTypes : {
+    image : React.PropTypes.string,
+    onImageClick : React.PropTypes.func
+  },
+
   getDefaultProps : function(){
     return {
       image : null,
       onImageClick : function(){}
     };
   },
-  PropTypes : {
-    image : React.PropTypes.string,
-    onImageClick : React.PropTypes.func
+
+  getInitialState : function () {
+    return {
+      image : this.props.image,
+      isLoading : true
+    };
   },
+
+  componentWillReceiveProps : function (nextProps) {
+    this.setState({
+      image : nextProps.image,
+      isLoading : nextProps.image !== this.props.image || this.state.isLoading
+    });
+  },
+
+  componentDidMount : function () {
+    this._addImageLoadEvent();
+    this._addWindowResizeEvent();
+  },
+
+  componentDidUpdate : function(){
+    this._adjustImageContainerHeight();
+  },
+
+  componentWillUnmount: function(){
+    this._removeWindowResizeEvent();
+  },
+
   render : function(){
     return (
-      React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage()}, 
-        React.createElement("img", {src: this.props.image, alt: "Challenge Image", onClick: this.props.onImageClick})
+      React.createElement("div", {className: "pt-challenge-image " + this._doesChallengeHaveAnImage(), ref: "imageContainer"}, 
+        this._showLoading(), 
+        React.createElement("img", {ref: "image", src: this.state.image, alt: "Challenge Image", onClick: this.props.onImageClick})
       )
     );
   },
+
   _doesChallengeHaveAnImage : function(){
     return this.props.image ? "" : "no-image";
+  },
+
+  _showLoading : function(){
+    if(!this.state.isLoading) {
+      return null;
+    }
+
+    return React.createElement(Loading, null)
+  },
+
+  _addImageLoadEvent : function(){
+    var image = React.findDOMNode(this.refs.image);
+    image.onload = this._optimizeImageVisibility;
+  },
+
+  _optimizeImageVisibility : function (event) {
+    this._hideLoading();
+    var image = event.target;
+
+    if(image.naturalWidth > image.naturalHeight){
+      this._updateImageStyling(image, '100%', 'initial');
+    } else {
+      this._updateImageStyling(image, 'initial', '100%');
+    }
+
+    this._adjustImageContainerHeight();
+  },
+
+  _hideLoading : function () {
+    this.setState({
+      isLoading :  false
+    });
+  },
+
+  _updateImageStyling : function (image, width, height) {
+    image.style.height = height;
+    image.style.width = width;
+    $(image).addClass('loaded');
+  },
+
+  _adjustImageContainerHeight : function () {
+    var widthAspectRatio = 9 / 16;
+    var imageContainer = React.findDOMNode(this.refs.imageContainer);
+
+    imageContainer.style.height =  widthAspectRatio * imageContainer.offsetWidth + "px";
+    imageContainer.style.lineHeight =  widthAspectRatio * imageContainer.offsetWidth + "px";
+  },
+
+  _addWindowResizeEvent : function(){
+    $(window).resize(this._adjustImageContainerHeight);
+  },
+
+  _removeWindowResizeEvent: function(){
+    $(window).off("resize", this._adjustImageContainerHeight);
   }
+
 });
 
 module.exports = CardImage;
 
 
-},{"react":"/Users/dev/Code/infl/patternity/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx":[function(require,module,exports){
+},{"../../loading.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/loading.jsx","jquery":"/Users/dev/Code/infl/patternity/infl-patternlab/node_modules/jquery/dist/jquery.js","react":"/Users/dev/Code/infl/patternity/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/cards/components/card_meta_data.jsx":[function(require,module,exports){
 var React = require('react');
 var Points = require('./points.jsx');
 var Icon = require('../../icon.jsx');
@@ -1096,7 +1184,14 @@ var acceptedStatusType = ['started', 'expiring', 'limited', 'multi'];
 var ChallengeTile = React.createClass({displayName: "ChallengeTile",
   PropTypes : {
     type : React.PropTypes.oneOf(acceptedStatusType).isRequired,
-    description : React.PropTypes.string.isRequired
+    description : React.PropTypes.string.isRequired,
+    onShowDescription : React.PropTypes.func
+  },
+
+  getDefaultProps : function(){
+    return {
+      onShowDescription : function(){}
+    };
   },
 
   render : function(){
@@ -1125,7 +1220,7 @@ var ChallengeTile = React.createClass({displayName: "ChallengeTile",
     var tileIcons = {
       'started' : 'inprogress',
       'expiring' : 'expiring',
-      'limited' : 'limited', //not official
+      'limited' : 'cursor-click',
       'multi' : 'multi'
     }
 
@@ -2921,30 +3016,30 @@ function cancelEvent(e) {
 
 var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
-  propTypes : {
-    children: React.PropTypes.object,
+  propTypes: {
+    children:      React.PropTypes.object,
     targetElement: React.PropTypes.object,
-    onClick: React.PropTypes.func,
-    onHide: React.PropTypes.func,
-    autoclose: React.PropTypes.bool
+    onClick:       React.PropTypes.func,
+    onHide:        React.PropTypes.func,
+    autoclose:     React.PropTypes.bool
   },
 
   getInitialState: function() {
     return {
-      edgeRestricted : false
+      edgeRestricted: false
     };
   },
 
-  componentDidUpdate : function() {
+  componentDidUpdate: function() {
     this.resetPosition();
   },
 
-  componentDidMount : function() {
+  componentDidMount: function() {
     this.resetPosition();
     this._bindWindowEvents();
   },
 
-  componentWillUnmount : function() {
+  componentWillUnmount: function() {
     this._unbindWindowEvents();
   },
 
@@ -2990,7 +3085,7 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
     var tH = targetElement.height();
     var tp = targetElement.position();
     var tOT = tp.top;
-    var tOL = tp.left;
+    var tOL = tp.left; //targetElement.offset().left;
     var pW = popover.width();
     //var pH = popover.height();
 
@@ -2998,7 +3093,10 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
     var top = tOT + tH + 10;
     if (top<0) top = 0;
     var left = tOL + (tW - pW)/2;
-
+    console.log('left: ' + left);
+    console.log(tOL);
+    console.log(tW);
+    console.log(pW);
     // restrict right edge to the width of the screen
     if (left + pW + 10 > window.innerWidth) {
       left = window.innerWidth - pW - 10;
@@ -3006,10 +3104,10 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
       // todo: in this scenario the arrow pointing to the target element would need to be manually positioned instead of being in the middle
     }
 
-    // if the parent element is absolutely positioned need to account for that
-    var isAbsolute = popoverNode.parentNode.className.indexOf('is-absolute')>-1;
+    //if the parent element is absolutely positioned need to account for that
+    // var isAbsolute = popoverNode.parentNode.className.indexOf('is-absolute')>-1;
 
-    if (!isAbsolute && left < 0) {
+    if ((targetElement.offset().left + (tW - pW)/2) < 0) {
       left = 5;
       $(popoverNode).addClass('edge-restricted');
     }
@@ -3019,13 +3117,13 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 
     var offset = popover.offset();
 
-    if (isAbsolute && offset.left + pW + 10 > window.innerWidth) {
-      var pO = $(popoverNode.parentNode).offset();
-      var absLeft = window.innerWidth - pW - 10;
-      var relLeft = absLeft - pO.left;
-      popoverNode.style.left = relLeft+'px';
-      $(popoverNode).addClass('edge-restricted');
-    }
+    // if (isAbsolute && offset.left + pW + 10 > window.innerWidth) {
+    //   var pO = $(popoverNode.parentNode).offset();
+    //   var absLeft = window.innerWidth - pW - 10;
+    //   var relLeft = absLeft - pO.left;
+    //   popoverNode.style.left = relLeft+'px';
+    //   $(popoverNode).addClass('edge-restricted');
+    // }
 
   }
 
@@ -3034,8 +3132,8 @@ var PopoverFloater = React.createClass({displayName: "PopoverFloater",
 var Popover = React.createClass({displayName: "Popover",
   propTypes: {
     autoclose: React.PropTypes.bool,
-    onOpen: React.PropTypes.func,
-    onClose: React.PropTypes.func
+    onOpen:    React.PropTypes.func,
+    onClose:   React.PropTypes.func
   },
 
   getInitialState: function() {
@@ -3044,7 +3142,7 @@ var Popover = React.createClass({displayName: "Popover",
     };
   },
 
-  render : function() {
+  render: function() {
     var link = this.props.children[0];
     var classes = 'pt-popoverwrapper '+this.props.className;
     return (
@@ -3078,7 +3176,7 @@ var Popover = React.createClass({displayName: "Popover",
     if (this.props.onClose) { this.props.onClose(this); }
   },
 
-  _onClick : function(e) {
+  _onClick: function(e) {
     e.stopPropagation();
     e.preventDefault();
 
@@ -3105,14 +3203,14 @@ var Popover = React.createClass({displayName: "Popover",
 });
 
 Popover.Menu = React.createClass({displayName: "Menu",
-  propTypes : {
+  propTypes: {
     className: React.PropTypes.string,
-    children: React.PropTypes.array  // first child is the link, second child is PopOver.Menu
+    children:  React.PropTypes.array  // first child is the link, second child is PopOver.Menu
   },
-  render : function() {
-    return (React.createElement("div", {className: "pt-popovermenu"}, 
+  render: function() {
+    return React.createElement("div", {className: "pt-popovermenu"}, 
        this.props.children
-    ));
+    );
   }
 });
 
@@ -3144,9 +3242,9 @@ var _profilePopoverContent = require('./profile-popover-content');
 
 var _profilePopoverContent2 = _interopRequireDefault(_profilePopoverContent);
 
-var _popoverJsx = require('../popover.jsx');
+var _tooltipJsx = require('../tooltip.jsx');
 
-var _popoverJsx2 = _interopRequireDefault(_popoverJsx);
+var _tooltipJsx2 = _interopRequireDefault(_tooltipJsx);
 
 var ProfilePopover = (function (_Component) {
   _inherits(ProfilePopover, _Component);
@@ -3172,19 +3270,22 @@ var ProfilePopover = (function (_Component) {
       var triggerLink = function triggerLink() {
         return trigger || _react2['default'].createElement(
           'a',
-          { href: 'javascript://' },
+          { className: 'profile-popover-link', href: 'javascript://' },
           user.name
         );
       };
 
       return _react2['default'].createElement(
-        _popoverJsx2['default'],
-        { ref: 'profilePopover', className: 'profile-popover', autoclose: true, onOpen: onOpen },
-        triggerLink(),
+        'div',
+        { className: 'profile-popover-wrapper' + (loading ? ' loader' : '') },
         _react2['default'].createElement(
-          _profilePopoverContent2['default'],
-          { user: user, defaultImage: defaultImage, underAvatar: underAvatar, loading: loading },
-          children
+          _tooltipJsx2['default'],
+          { element: triggerLink(), onOpen: onOpen, position: 'bottom', dontHover: true },
+          _react2['default'].createElement(
+            _profilePopoverContent2['default'],
+            { user: user, defaultImage: defaultImage, underAvatar: underAvatar, loading: loading },
+            children
+          )
         )
       );
     }
@@ -3207,7 +3308,7 @@ var ProfilePopover = (function (_Component) {
 exports['default'] = ProfilePopover;
 module.exports = exports['default'];
 
-},{"../popover.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/popover.jsx","./profile-popover-content":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/profile-popover/profile-popover-content.js","react":"/Users/dev/Code/infl/patternity/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/profile-popover/profile-popover-content.js":[function(require,module,exports){
+},{"../tooltip.jsx":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/tooltip.jsx","./profile-popover-content":"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/profile-popover/profile-popover-content.js","react":"/Users/dev/Code/infl/patternity/node_modules/react/react.js"}],"/Users/dev/Code/infl/patternity/infl-patternlab/infl-components/profile-popover/profile-popover-content.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4401,38 +4502,51 @@ var React = require('react');
 var $ = require('jquery');
 
 var Tooltip = React.createClass({displayName: "Tooltip",
-  propTypes : {
-    title: React.PropTypes.string,
-    element: React.PropTypes.node.isRequired,
-    position : React.PropTypes.oneOf(['top', 'bottom']),
-    isClickable : React.PropTypes.bool,
-    container : React.PropTypes.string
+  propTypes: {
+    dontHover:   React.PropTypes.bool,
+    title:       React.PropTypes.string,
+    element:     React.PropTypes.node.isRequired,
+    position:    React.PropTypes.oneOf(['top', 'bottom']),
+    isClickable: React.PropTypes.bool,
+    container:   React.PropTypes.string,
+    onOpen:      React.PropTypes.func
   },
 
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      title : "",
-      position : 'top',
-      isClickable : true,
-      containerSelector : 'body'
+      dontHover:         false,
+      title:             '',
+      position:          'top',
+      isClickable:       true,
+      containerSelector: 'body',
+      onOpen:            function() {}
     };
   },
 
   getInitialState: function() {
     return {
       showTooltip: false,
-      showClose: false,
-      wasClicked: false
+      showClose:   false,
+      wasClicked:  false
     };
   },
 
-  componentDidUpdate: function(){
-    if(this.state.showTooltip) {
+  componentDidMount: function() {
+    $('body').click(this._clickCloseTooltip);
+  },
+
+  componentWillUnmount: function() {
+    $('body').off('click', this._clickCloseTooltip);
+  },
+
+  componentDidUpdate: function() {
+    if (this.state.showTooltip) {
       this._positionTooltipContent();
+      this.props.onOpen();
     }
   },
 
-  render : function(){
+  render: function() {
     return (
       React.createElement("span", {className: "pt-tooltip", ref: "tooltip"}, 
         React.createElement(Tooltip.Content, {
@@ -4458,78 +4572,78 @@ var Tooltip = React.createClass({displayName: "Tooltip",
     );
   },
 
-  _positionTooltipContent: function(){
+  _positionTooltipContent: function() {
     var DOMNodes = this._getDOMNodes();
     this._positionArrow(DOMNodes);
     this._positionContent(DOMNodes);
 
-    if(this._isContentOutOfContainer(DOMNodes)){
+    if (this._isContentOutOfContainer(DOMNodes)) {
       this._adjustContentPosition(DOMNodes);
     }
   },
 
-  _getDOMNodes : function () {
+  _getDOMNodes: function() {
     return {
-      arrow : React.findDOMNode(this.refs.arrow),
-      element : React.findDOMNode(this.refs.element),
-      tooltip : React.findDOMNode(this.refs.tip),
-      container : $(this.props.containerSelector).get( 0 )
+      arrow:     React.findDOMNode(this.refs.arrow),
+      element:   React.findDOMNode(this.refs.element),
+      tooltip:   React.findDOMNode(this.refs.tip),
+      container: $(this.props.containerSelector).get(0)
     };
   },
 
-  _positionArrow : function (DOMNodes){
-    DOMNodes.arrow.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.arrow.offsetWidth /  2)) + "px";
-    DOMNodes.arrow.style[this.props.position] = -1 * DOMNodes.arrow.offsetHeight + "px";
+  _positionArrow: function(DOMNodes) {
+    DOMNodes.arrow.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.arrow.offsetWidth /  2)) + 'px';
+    DOMNodes.arrow.style[this.props.position] = -1 * DOMNodes.arrow.offsetHeight + 'px';
   },
 
-  _positionContent : function (DOMNodes) {
-    DOMNodes.tooltip.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.tooltip.offsetWidth /  2)) + "px";
-    DOMNodes.tooltip.style[this.props.position] = -1 * (DOMNodes.tooltip.offsetHeight + DOMNodes.arrow.offsetHeight) +  "px";
+  _positionContent: function(DOMNodes) {
+    DOMNodes.tooltip.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.tooltip.offsetWidth /  2)) + 'px';
+    DOMNodes.tooltip.style[this.props.position] = -1 * (DOMNodes.tooltip.offsetHeight + DOMNodes.arrow.offsetHeight) +  'px';
   },
 
-  _isContentOutOfContainer: function(DOMNodes){
+  _isContentOutOfContainer: function(DOMNodes) {
     var tooltipPos = DOMNodes.tooltip.getBoundingClientRect();
     var containerPos = DOMNodes.container.getBoundingClientRect();
 
     return containerPos.left > tooltipPos.left || tooltipPos.right > containerPos.right;
   },
 
-  _adjustContentPosition: function(DOMNodes){
+  _adjustContentPosition: function(DOMNodes) {
     var tooltipPos = DOMNodes.tooltip.getBoundingClientRect();
     var containerPos = DOMNodes.container.getBoundingClientRect();
 
-    if(containerPos.left > tooltipPos.left){
-      DOMNodes.tooltip.style.left = (-1 * ($(DOMNodes.element).offset().left - $(DOMNodes.container).offset().left)) + "px";
-    } else if(tooltipPos.right > containerPos.right) {
-      DOMNodes.tooltip.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.tooltip.offsetWidth /  2) - (tooltipPos.right - containerPos.right)) + "px";
+    if (containerPos.left > tooltipPos.left) {
+      DOMNodes.tooltip.style.left = (-1 * ($(DOMNodes.element).offset().left - $(DOMNodes.container).offset().left)) + 'px';
+    } else if (tooltipPos.right > containerPos.right) {
+      DOMNodes.tooltip.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.tooltip.offsetWidth /  2) - (tooltipPos.right - containerPos.right)) + 'px';
     }
   },
 
   _hoverShowTooltip: function(event) {
-    this._hoverToggleTooltip(true);
+    if (!this.props.dontHover) this._hoverToggleTooltip(true);
   },
 
   _hoverHideTooltip: function(event) {
-    this._hoverToggleTooltip(false);
+    if (!this.props.dontHover) this._hoverToggleTooltip(false);
   },
 
-  _hoverToggleTooltip : function(shouldShow){
-    if(!this.state.wasClicked){
+  _hoverToggleTooltip: function(shouldShow) {
+    if (!this.state.wasClicked) {
       this._updateState({
         showTooltip: shouldShow,
-        showClose: false,
-        wasClicked: false
+        showClose:   false,
+        wasClicked:  false
       });
     }
   },
 
-  _clickTooltip : function(event) {
-    if(this.props.isClickable) {
+  _clickTooltip: function(event) {
+    if (this.props.isClickable) {
       this._handleClick(event);
     }
   },
 
-  _handleClick : function(){
+  _handleClick: function() {
     if (this.state.showTooltip && this.state.wasClicked) {
       this._clickCloseTooltip();
     } else {
@@ -4537,71 +4651,71 @@ var Tooltip = React.createClass({displayName: "Tooltip",
     }
   },
 
-  _clickShowTooltip : function() {
+  _clickShowTooltip: function() {
     this._updateState({
       showTooltip: true,
-      showClose: true,
-      wasClicked: true
+      showClose:   true,
+      wasClicked:  true
     });
   },
 
-  _clickCloseTooltip : function(){
+  _clickCloseTooltip: function() {
     this._updateState({
       showTooltip: false,
-      showClose: true,
-      wasClicked: false
+      showClose:   true,
+      wasClicked:  false
     });
   },
 
-  _updateState : function(newState){
+  _updateState: function(newState) {
     this.setState(newState);
   }
 });
 
 var TooltipArrow = React.createClass({displayName: "TooltipArrow",
-  propTypes : {
-    showArrow : React.PropTypes.bool.isRequired,
-    position : React.PropTypes.oneOf(['top', 'bottom'])
+  propTypes: {
+    showArrow: React.PropTypes.bool.isRequired,
+    position:  React.PropTypes.oneOf(['top', 'bottom'])
   },
 
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      position : "top"
+      position: 'top'
     };
   },
 
-  render : function(){
+  render: function() {
     return (
-      React.createElement("span", {className: "tooltip-arrow " + this._showArrow() + " " + this.props.position, ref: "arrow"})
+      React.createElement("span", {className: 'tooltip-arrow ' + this._showArrow() + ' ' + this.props.position, ref: "arrow"})
     );
   },
 
-  _showArrow : function(){
-    return this.props.showArrow ? "" : "hide";
+  _showArrow: function() {
+    return this.props.showArrow ? '' : 'hide';
   }
 });
 
 Tooltip.Content = React.createClass({displayName: "Content",
-  propTypes : {
-    title : React.PropTypes.string,
-    content : React.PropTypes.any.isRequired,
-    showTooltip : React.PropTypes.bool.isRequired,
-    showClose : React.PropTypes.bool.isRequired,
-    closeToolTip : React.PropTypes.func.isRequired,
-    position : React.PropTypes.oneOf(['top', 'bottom']),
+  propTypes: {
+    title:        React.PropTypes.string,
+    content:      React.PropTypes.any.isRequired,
+    showTooltip:  React.PropTypes.bool.isRequired,
+    showClose:    React.PropTypes.bool.isRequired,
+    closeToolTip: React.PropTypes.func.isRequired,
+    position:     React.PropTypes.oneOf(['top', 'bottom']),
   },
 
-  getDefaultProps : function(){
+  getDefaultProps: function() {
     return {
-      title : "",
-      position : "top"
+      title:    '',
+      position: 'top'
     };
   },
 
-  render : function(){
+  render: function() {
     return (
-      React.createElement("div", {className: "tooltip-content " + this._showTooltip() + " " + this.props.position, ref: "tip"}, 
-        React.createElement("span", {className: "close ic ic-times " + this._showClose(), onClick: this.props.closeToolTip, ref: "close"}), 
+      React.createElement("div", {className: 'tooltip-content ' + this._showTooltip() + ' ' + this.props.position, ref: "tip"}, 
+        React.createElement("span", {className: 'close ic ic-times ' + this._showClose(), onClick: this.props.closeToolTip, ref: "close"}), 
         this._showTitle(), 
         React.createElement("div", {className: "tooltip-details", ref: "details"}, 
           this.props.content
@@ -4610,16 +4724,16 @@ Tooltip.Content = React.createClass({displayName: "Content",
     );
   },
 
-  _showTooltip : function(){
-    return this.props.showTooltip ? "" : "hide";
+  _showTooltip: function() {
+    return this.props.showTooltip ? '' : 'hide';
   },
 
-  _showClose: function(){
-    return this.props.showClose ? "" : "hide";
+  _showClose: function() {
+    return this.props.showClose ? '' : 'hide';
   },
 
-  _showTitle : function(){
-    if(typeof this.props.title !== "string") {
+  _showTitle: function() {
+    if (typeof this.props.title !== 'string') {
       return null;
     }
 
