@@ -1067,6 +1067,20 @@ h6 {
   font-weight: normal;
   font-style: normal;
 }
+/* COPIED FROM '../src' DO NOT EDIT */
+.avatar-image {
+  display: block;
+  margin: auto auto 0.5em;
+  border-radius: 100%;
+  max-width: 100%;
+  border: 1px solid rgba(180, 180, 180, 0.5);
+}
+.avatar-image.inline {
+  float: none;
+  display: inline-block;
+  text-align: left;
+}
+
 .accordion {
   padding: 0px;
 }
@@ -4000,6 +4014,58 @@ DIV.pt-popover.is-visible {
   animation-name: fade-in-up;
 }
 
+/* COPIED FROM '../src' DO NOT EDIT */
+.user-profile {
+  margin-top: 0.5em;
+  box-sizing: border-box;
+}
+.user-profile .user-name {
+  color: #08a5c5;
+  font-size: 1.6em;
+  line-height: 1.6em;
+  display: block;
+}
+.user-profile .user-position {
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  display: block;
+}
+.user-profile .user-detail {
+  float: left;
+  margin-top: 0.2em;
+  margin-bottom: 1em;
+}
+
+.user-image {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+.user-image img {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+}
+
+.popover-user-profile {
+  padding: 0.5em 1em 1em;
+  color: #666;
+  box-sizing: border-box;
+}
+.popover-user-profile hr {
+  clear: both;
+}
+
+@media screen and (max-device-width: 640px) {
+  .user-profile {
+    max-width: 100%;
+    font-size: 0.9em;
+    box-sizing: border-box;
+  }
+}
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;

@@ -3,3 +3,5 @@ node_modules/**
 script/ruby/**
 ruby/**
 .DS_Store
+infl-patternlab/source/js/infl-components.js
+infl-patternlab/source/css/style.css

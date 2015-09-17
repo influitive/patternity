@@ -1,0 +1,106 @@
+$spacing-default: 12px;
+$spacing-small: 6px;
+$dimension-spacing-small: .5em;
+
+.profile-popover-wrapper {
+  .tooltip-content{
+    background-color: #fff;
+    box-sizing: inherit;
+    border: 1px solid #d2d2d2;
+    z-index: 5;
+    opacity: 1;
+    padding: 0px;
+    // min-height: 44px;
+
+    .close {
+      display: none;
+    }
+  }
+  .pt-tooltip .tooltip-arrow.bottom {
+    opacity: 1;
+    border-bottom-color : #d2d2d2;
+    z-index: 5;
+    box-sizing: inherit;
+
+    &:after {
+      content : "";
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #fff;
+      border-top: 0px;
+      left: -10px;
+      top: 1px;
+    }
+  }
+}
+.loader {
+  .tooltip-content {
+      width: 50px;
+  }
+}
+.user-profile {
+  margin-top: $dimension-spacing-small;
+
+  .user-name {
+    color: $theme-color-primary;
+    font-size: 1.6em;
+    // line-height: 1.6em;
+    display: block;
+  }
+
+  .user-position {
+    font-weight: bold;
+    font-size: 1.2em;
+    // line-height: 1.2em;
+    display: block;
+  }
+
+  .user-detail {
+    float: left;
+    margin-top: 0.2em;
+    margin-bottom: $spacing-default;
+  }
+}
+
+.user-image {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  margin-right: $spacing-default;
+  margin-bottom: $spacing-default;
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+  }
+}
+
+.popover-user-profile {
+  padding: $spacing-small $spacing-default $spacing-default;
+  // padding: 6px 12px 12px;
+  color: #666;
+  // box-sizing: border-box;
+
+  hr {
+    clear: both;
+  }
+}
+
+.profile-popover-link {
+  font-size: 12px;
+  // line-height: 22px;
+}
+
+
+@media screen and (max-device-width: 640px) {
+  .user-profile {
+    max-width: 100%;
+    font-size: 0.9em;
+    box-sizing: border-box;
+  }
+}
