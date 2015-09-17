@@ -22,9 +22,9 @@ var _profilePopoverContent = require('./profile-popover-content');
 
 var _profilePopoverContent2 = _interopRequireDefault(_profilePopoverContent);
 
-var _popoverJsx = require('../popover.jsx');
+var _tooltipJsx = require('../tooltip.jsx');
 
-var _popoverJsx2 = _interopRequireDefault(_popoverJsx);
+var _tooltipJsx2 = _interopRequireDefault(_tooltipJsx);
 
 var ProfilePopover = (function (_Component) {
   _inherits(ProfilePopover, _Component);
@@ -56,13 +56,16 @@ var ProfilePopover = (function (_Component) {
       };
 
       return _react2['default'].createElement(
-        _popoverJsx2['default'],
-        { ref: 'profilePopover', className: 'profile-popover', autoclose: true, onOpen: onOpen },
-        triggerLink(),
+        'div',
+        { className: 'profile-popover-wrapper' + (loading ? ' loader' : '') },
         _react2['default'].createElement(
-          _profilePopoverContent2['default'],
-          { user: user, defaultImage: defaultImage, underAvatar: underAvatar, loading: loading },
-          children
+          _tooltipJsx2['default'],
+          { element: triggerLink(), onOpen: onOpen, position: 'bottom', dontHover: true },
+          _react2['default'].createElement(
+            _profilePopoverContent2['default'],
+            { user: user, defaultImage: defaultImage, underAvatar: underAvatar, loading: loading },
+            children
+          )
         )
       );
     }

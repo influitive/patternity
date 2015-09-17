@@ -3,19 +3,23 @@ var $ = require('jquery');
 
 var Tooltip = React.createClass({
   propTypes: {
+    dontHover:   React.PropTypes.bool,
     title:       React.PropTypes.string,
     element:     React.PropTypes.node.isRequired,
     position:    React.PropTypes.oneOf(['top', 'bottom']),
     isClickable: React.PropTypes.bool,
-    container:   React.PropTypes.string
+    container:   React.PropTypes.string,
+    onOpen:      React.PropTypes.func
   },
 
   getDefaultProps: function() {
     return {
+      dontHover:         false,
       title:             '',
       position:          'top',
       isClickable:       true,
-      containerSelector: 'body'
+      containerSelector: 'body',
+      onOpen:            function() {}
     };
   },
 
@@ -27,9 +31,18 @@ var Tooltip = React.createClass({
     };
   },
 
+  componentDidMount: function() {
+    $('body').click(this._clickCloseTooltip);
+  },
+
+  componentWillUnmount: function() {
+    $('body').off('click', this._clickCloseTooltip);
+  },
+
   componentDidUpdate: function() {
     if (this.state.showTooltip) {
       this._positionTooltipContent();
+      this.props.onOpen();
     }
   },
 
@@ -107,11 +120,11 @@ var Tooltip = React.createClass({
   },
 
   _hoverShowTooltip: function(event) {
-    this._hoverToggleTooltip(true);
+    if (!this.props.dontHover) this._hoverToggleTooltip(true);
   },
 
   _hoverHideTooltip: function(event) {
-    this._hoverToggleTooltip(false);
+    if (!this.props.dontHover) this._hoverToggleTooltip(false);
   },
 
   _hoverToggleTooltip: function(shouldShow) {

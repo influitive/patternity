@@ -13,30 +13,30 @@ function cancelEvent(e) {
 
 var PopoverFloater = React.createClass({
 
-  propTypes : {
-    children: React.PropTypes.object,
+  propTypes: {
+    children:      React.PropTypes.object,
     targetElement: React.PropTypes.object,
-    onClick: React.PropTypes.func,
-    onHide: React.PropTypes.func,
-    autoclose: React.PropTypes.bool
+    onClick:       React.PropTypes.func,
+    onHide:        React.PropTypes.func,
+    autoclose:     React.PropTypes.bool
   },
 
   getInitialState: function() {
     return {
-      edgeRestricted : false
+      edgeRestricted: false
     };
   },
 
-  componentDidUpdate : function() {
+  componentDidUpdate: function() {
     this.resetPosition();
   },
 
-  componentDidMount : function() {
+  componentDidMount: function() {
     this.resetPosition();
     this._bindWindowEvents();
   },
 
-  componentWillUnmount : function() {
+  componentWillUnmount: function() {
     this._unbindWindowEvents();
   },
 
@@ -82,7 +82,7 @@ var PopoverFloater = React.createClass({
     var tH = targetElement.height();
     var tp = targetElement.position();
     var tOT = tp.top;
-    var tOL = tp.left;
+    var tOL = tp.left; //targetElement.offset().left;
     var pW = popover.width();
     //var pH = popover.height();
 
@@ -90,7 +90,10 @@ var PopoverFloater = React.createClass({
     var top = tOT + tH + 10;
     if (top<0) top = 0;
     var left = tOL + (tW - pW)/2;
-
+    console.log('left: ' + left);
+    console.log(tOL);
+    console.log(tW);
+    console.log(pW);
     // restrict right edge to the width of the screen
     if (left + pW + 10 > window.innerWidth) {
       left = window.innerWidth - pW - 10;
@@ -98,10 +101,10 @@ var PopoverFloater = React.createClass({
       // todo: in this scenario the arrow pointing to the target element would need to be manually positioned instead of being in the middle
     }
 
-    // if the parent element is absolutely positioned need to account for that
-    var isAbsolute = popoverNode.parentNode.className.indexOf('is-absolute')>-1;
+    //if the parent element is absolutely positioned need to account for that
+    // var isAbsolute = popoverNode.parentNode.className.indexOf('is-absolute')>-1;
 
-    if (!isAbsolute && left < 0) {
+    if ((targetElement.offset().left + (tW - pW)/2) < 0) {
       left = 5;
       $(popoverNode).addClass('edge-restricted');
     }
@@ -111,13 +114,13 @@ var PopoverFloater = React.createClass({
 
     var offset = popover.offset();
 
-    if (isAbsolute && offset.left + pW + 10 > window.innerWidth) {
-      var pO = $(popoverNode.parentNode).offset();
-      var absLeft = window.innerWidth - pW - 10;
-      var relLeft = absLeft - pO.left;
-      popoverNode.style.left = relLeft+'px';
-      $(popoverNode).addClass('edge-restricted');
-    }
+    // if (isAbsolute && offset.left + pW + 10 > window.innerWidth) {
+    //   var pO = $(popoverNode.parentNode).offset();
+    //   var absLeft = window.innerWidth - pW - 10;
+    //   var relLeft = absLeft - pO.left;
+    //   popoverNode.style.left = relLeft+'px';
+    //   $(popoverNode).addClass('edge-restricted');
+    // }
 
   }
 
@@ -126,8 +129,8 @@ var PopoverFloater = React.createClass({
 var Popover = React.createClass({
   propTypes: {
     autoclose: React.PropTypes.bool,
-    onOpen: React.PropTypes.func,
-    onClose: React.PropTypes.func
+    onOpen:    React.PropTypes.func,
+    onClose:   React.PropTypes.func
   },
 
   getInitialState: function() {
@@ -136,7 +139,7 @@ var Popover = React.createClass({
     };
   },
 
-  render : function() {
+  render: function() {
     var link = this.props.children[0];
     var classes = 'pt-popoverwrapper '+this.props.className;
     return (
@@ -170,7 +173,7 @@ var Popover = React.createClass({
     if (this.props.onClose) { this.props.onClose(this); }
   },
 
-  _onClick : function(e) {
+  _onClick: function(e) {
     e.stopPropagation();
     e.preventDefault();
 
@@ -197,14 +200,14 @@ var Popover = React.createClass({
 });
 
 Popover.Menu = React.createClass({
-  propTypes : {
+  propTypes: {
     className: React.PropTypes.string,
-    children: React.PropTypes.array  // first child is the link, second child is PopOver.Menu
+    children:  React.PropTypes.array  // first child is the link, second child is PopOver.Menu
   },
-  render : function() {
-    return (<div className="pt-popovermenu">
+  render: function() {
+    return <div className="pt-popovermenu">
       { this.props.children }
-    </div>);
+    </div>;
   }
 });
 

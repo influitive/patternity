@@ -1,22 +1,61 @@
-$spacing-default: 1em;
-$spacing-small: .5em;
+$spacing-default: 12px;
+$spacing-small: 6px;
 $dimension-spacing-small: .5em;
 
+.profile-popover-wrapper {
+  .tooltip-content{
+    background-color: #fff;
+    box-sizing: inherit;
+    border: 1px solid #d2d2d2;
+    z-index: 5;
+    opacity: 1;
+    padding: 0px;
+    // min-height: 44px;
+
+    .close {
+      display: none;
+    }
+  }
+  .pt-tooltip .tooltip-arrow.bottom {
+    opacity: 1;
+    border-bottom-color : #d2d2d2;
+    z-index: 5;
+    box-sizing: inherit;
+
+    &:after {
+      content : "";
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #fff;
+      border-top: 0px;
+      left: -10px;
+      top: 1px;
+    }
+  }
+}
+.loader {
+  .tooltip-content {
+      width: 50px;
+  }
+}
 .user-profile {
   margin-top: $dimension-spacing-small;
-  box-sizing: border-box;
 
   .user-name {
     color: $theme-color-primary;
     font-size: 1.6em;
-    line-height: 1.6em;
+    // line-height: 1.6em;
     display: block;
   }
 
   .user-position {
     font-weight: bold;
     font-size: 1.2em;
-    line-height: 1.2em;
+    // line-height: 1.2em;
     display: block;
   }
 
@@ -43,8 +82,9 @@ $dimension-spacing-small: .5em;
 
 .popover-user-profile {
   padding: $spacing-small $spacing-default $spacing-default;
+  // padding: 6px 12px 12px;
   color: #666;
-  box-sizing: border-box;
+  // box-sizing: border-box;
 
   hr {
     clear: both;
@@ -53,7 +93,7 @@ $dimension-spacing-small: .5em;
 
 .profile-popover-link {
   font-size: 12px;
-  line-height: 22px;
+  // line-height: 22px;
 }
 
 
