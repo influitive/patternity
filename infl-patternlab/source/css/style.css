@@ -3645,10 +3645,6 @@ DIV.pt-popover.is-visible {
   opacity: 1;
 }
 .pt-challenge-card .pt-challenge-image.no-image {
-  height: 24px;
-  border-bottom: 0px;
-}
-.pt-challenge-card .pt-challenge-image.no-image img {
   display: none;
 }
 .pt-challenge-card .pt-challenge-details {
@@ -4015,34 +4011,66 @@ DIV.pt-popover.is-visible {
 }
 
 /* COPIED FROM '../src' DO NOT EDIT */
+.profile-popover-wrapper .tooltip-content {
+  background-color: #fff;
+  box-sizing: inherit;
+  border: 1px solid #d2d2d2;
+  z-index: 5;
+  opacity: 1;
+  padding: 0px;
+}
+.profile-popover-wrapper .tooltip-content .close {
+  display: none;
+}
+.profile-popover-wrapper .pt-tooltip .tooltip-arrow.bottom {
+  opacity: 1;
+  border-bottom-color: #d2d2d2;
+  z-index: 5;
+  box-sizing: inherit;
+}
+.profile-popover-wrapper .pt-tooltip .tooltip-arrow.bottom:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-top: 0px;
+  left: -10px;
+  top: 1px;
+}
+
+.loader .tooltip-content {
+  width: 50px;
+}
+
 .user-profile {
   margin-top: 0.5em;
-  box-sizing: border-box;
 }
 .user-profile .user-name {
   color: #08a5c5;
   font-size: 1.6em;
-  line-height: 1.6em;
   display: block;
 }
 .user-profile .user-position {
   font-weight: bold;
   font-size: 1.2em;
-  line-height: 1.2em;
   display: block;
 }
 .user-profile .user-detail {
   float: left;
   margin-top: 0.2em;
-  margin-bottom: 1em;
+  margin-bottom: 12px;
 }
 
 .user-image {
   display: inline-block;
   text-align: center;
   float: left;
-  margin-right: 1em;
-  margin-bottom: 1em;
+  margin-right: 12px;
+  margin-bottom: 12px;
 }
 .user-image img {
   width: 64px;
@@ -4051,12 +4079,15 @@ DIV.pt-popover.is-visible {
 }
 
 .popover-user-profile {
-  padding: 0.5em 1em 1em;
+  padding: 6px 12px 12px;
   color: #666;
-  box-sizing: border-box;
 }
 .popover-user-profile hr {
   clear: both;
+}
+
+.profile-popover-link {
+  font-size: 12px;
 }
 
 @media screen and (max-device-width: 640px) {

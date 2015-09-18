@@ -75,18 +75,37 @@ var CardImage = React.createClass({
     var image = event.target;
 
     if(image.naturalWidth > image.naturalHeight){
-      this._updateImageStyling(image, '100%', 'initial', 'middle');
+      this._optomizeForWidth(image);
     } else {
-      this._updateImageStyling(image, 'initial', '100%', 'initial');
+      this._optimizeForHeight(image);
+    }
+
+    if(this._isImageHeightOutOfContainer(image)){
+      this._optimizeForHeight(image);
     }
 
     this._adjustImageContainerHeight();
+  },
+
+  _isImageHeightOutOfContainer: function(image){
+    var imagePos = image.getBoundingClientRect();
+    var imageContainerPos = React.findDOMNode(this.refs.imageContainer).getBoundingClientRect();
+
+    return imagePos.bottom > imageContainerPos.bottom;
   },
 
   _hideLoading : function () {
     this.setState({
       isLoading :  false
     });
+  },
+
+  _optomizeForWidth: function(image){
+    this._updateImageStyling(image, '100%', 'initial', 'middle');
+  },
+
+  _optimizeForHeight: function(image){
+    this._updateImageStyling(image, 'initial', '100%', 'initial');
   },
 
   _updateImageStyling : function (image, width, height, verticalAlign) {
