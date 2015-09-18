@@ -128,14 +128,14 @@ var CardImage = React.createClass({
   },
 
   _roundToTwoDecimals : function (num) {
-    return Math.round(num * 100) / 100
+    return Math.round(num * 100) / 100;
   },
 
   _adjustImageContainerHeight : function () {
     var imageContainer = React.findDOMNode(this.refs.imageContainer);
 
-    imageContainer.style.height =  widthAspectRatio * imageContainer.offsetWidth + "px";
-    imageContainer.style.lineHeight =  widthAspectRatio * imageContainer.offsetWidth + "px";
+    imageContainer.style.height =  Math.round(widthAspectRatio * imageContainer.offsetWidth) + "px";
+    imageContainer.style.lineHeight =  Math.round(widthAspectRatio * imageContainer.offsetWidth) + "px";
   },
 
   _addWindowResizeEvent : function(){
