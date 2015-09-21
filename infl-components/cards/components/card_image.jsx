@@ -67,12 +67,15 @@ var CardImage = React.createClass({
 
   _addImageLoadEvent : function(){
     var image = React.findDOMNode(this.refs.image);
-    image.onload = this._optimizeImageVisibility;
+    var self = this;
+    image.onload = function(event) {
+      var image = event ? event.target : this; //IE8 doesn't get the proper event target
+      self._optimizeImageVisibility(image);
+    };
   },
 
-  _optimizeImageVisibility : function (event) {
+  _optimizeImageVisibility : function (image) {
     this._hideLoading();
-    var image = event.target;
 
     if(image.naturalWidth > image.naturalHeight){
       this._optomizeForWidth(image);
@@ -101,25 +104,25 @@ var CardImage = React.createClass({
   },
 
   _optomizeForWidth: function(image){
-    this._updateImageStyling(image, '100%', 'initial', 'middle');
+    this._updateImageStyling(image, '100%', 'auto', 'middle');
   },
 
   _optimizeForHeight: function(image){
-    this._updateImageStyling(image, 'initial', '100%', 'initial');
+    this._updateImageStyling(image, 'auto', '100%', 'top');
   },
 
   _updateImageStyling : function (image, width, height, verticalAlign) {
     image.style.height = height;
-    image.style.width = width;
-    this._updateVerticalAlign(image, verticalAlign);
+    image.style.verticalAlign = verticalAlign;
+    this._updateWidth(image, width);
     $(image).addClass('loaded');
   },
 
-  _updateVerticalAlign : function (image, verticalAlign) {
+  _updateWidth : function (image, width) {
     if(this._imageIsNotAspectRatio(image)) {
-      image.style.verticalAlign = verticalAlign;
+      image.style.width = width;
     } else {
-      image.style.verticalAlign = 'initial';
+      image.style.width = '100%';
     }
   },
 
