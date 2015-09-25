@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import _, { includes } from 'lodash';
 import $ from 'jquery';
 
 import { default as pos } from './position-popover';

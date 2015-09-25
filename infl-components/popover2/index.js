@@ -30,10 +30,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lodash = require('lodash');
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
