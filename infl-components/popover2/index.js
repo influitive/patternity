@@ -42,9 +42,7 @@ var _positionPopover = require('./position-popover');
 
 var _positionPopover2 = _interopRequireDefault(_positionPopover);
 
-var _popover2Scss = require('./_popover2.scss');
-
-var _popover2Scss2 = _interopRequireDefault(_popover2Scss);
+// import style from './_popover2.scss';
 
 var _components = {
   _$Popover: {
