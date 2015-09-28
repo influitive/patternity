@@ -38,7 +38,9 @@ var _positionPopover = require('./position-popover');
 
 var _positionPopover2 = _interopRequireDefault(_positionPopover);
 
-// import style from './_popover2.scss';
+var _popover2Scss = require('./_popover2.scss');
+
+var _popover2Scss2 = _interopRequireDefault(_popover2Scss);
 
 var _components = {
   _$Popover: {
@@ -140,7 +142,7 @@ var Popover = (function (_Component) {
       var borderPos = position === 'bottom' ? 'Bottom' : 'Top';
       return _react2['default'].createElement(
         'div',
-        { className: 'arrow-container ' + position },
+        { className: 'arrow-container ' + position, ref: 'arrow' },
         _react2['default'].createElement(
           'span',
           { className: 'arrow', style: _defineProperty({}, 'border' + borderPos + 'Color', borderColor) },
@@ -153,6 +155,7 @@ var Popover = (function (_Component) {
     key: 'getPopoverElements',
     value: function getPopoverElements() {
       return {
+        arrow: _react2['default'].findDOMNode(this.refs.arrow),
         element: _react2['default'].findDOMNode(this.refs.element),
         content: _react2['default'].findDOMNode(this.refs.content),
         container: (0, _jquery2['default'])(this.props.containerSelector).get(0)
@@ -161,7 +164,7 @@ var Popover = (function (_Component) {
   }], [{
     key: 'propTypes',
     value: {
-      isOpen: _react.PropTypes.bool,
+      isOpen: _react.PropTypes.bool.isRequired,
       position: _react.PropTypes.oneOf(['top', 'bottom']),
       containerSelector: _react.PropTypes.string,
       element: _react.PropTypes.any.isRequired,
