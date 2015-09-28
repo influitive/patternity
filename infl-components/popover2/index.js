@@ -34,6 +34,10 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _utilsWindowSize = require('../utils/window-size');
+
+var _utilsWindowSize2 = _interopRequireDefault(_utilsWindowSize);
+
 var _positionPopover = require('./position-popover');
 
 var _positionPopover2 = _interopRequireDefault(_positionPopover);
@@ -83,6 +87,7 @@ var Popover = (function (_Component) {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       if (this.props.isOpen) {
+        this.resizePopoverWidth();
         (0, _positionPopover2['default'])(this.getPopoverElements(), this.props.position);
         this.props.onOpen();
       }
@@ -108,16 +113,27 @@ var Popover = (function (_Component) {
           this.createArrow(),
           _react2['default'].createElement(
             'div',
-            { className: 'content', ref: 'content', style: _extends({}, style, { borderColor: contentBorder }) },
+            { className: 'popover-content', ref: 'content', style: _extends({}, style, { borderColor: contentBorder }) },
             children
           )
         ),
         _react2['default'].createElement(
           'div',
-          { className: 'element', ref: 'element' },
+          { className: 'popover-element', ref: 'element' },
           element
         )
       );
+    }
+  }, {
+    key: 'resizePopoverWidth',
+    value: function resizePopoverWidth() {
+      var content = _react2['default'].findDOMNode(this.refs.content);
+      var windowWidth = (0, _utilsWindowSize2['default'])().width;
+
+      if (content.offsetWidth > windowWidth) {
+        console.log(content.offsetWidth, windowWidth);
+        content.style.width = windowWidth + 'px';
+      }
     }
   }, {
     key: 'shouldHaveBorder',
@@ -142,11 +158,11 @@ var Popover = (function (_Component) {
       var borderPos = position === 'bottom' ? 'Bottom' : 'Top';
       return _react2['default'].createElement(
         'div',
-        { className: 'arrow-container ' + position, ref: 'arrow' },
+        { className: 'popover-arrow-container ' + position, ref: 'arrow' },
         _react2['default'].createElement(
           'span',
-          { className: 'arrow', style: _defineProperty({}, 'border' + borderPos + 'Color', borderColor) },
-          _react2['default'].createElement('span', { className: 'arrow inner ' + (this.shouldHaveBorder() ? '' : 'no-border'),
+          { className: 'popover-arrow', style: _defineProperty({}, 'border' + borderPos + 'Color', borderColor) },
+          _react2['default'].createElement('span', { className: 'popover-arrow inner ' + (this.shouldHaveBorder() ? '' : 'no-border'),
             style: _defineProperty({}, 'border' + borderPos + 'Color', background) })
         )
       );
