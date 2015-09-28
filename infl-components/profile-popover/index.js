@@ -22,9 +22,9 @@ var _profilePopoverContent = require('./profile-popover-content');
 
 var _profilePopoverContent2 = _interopRequireDefault(_profilePopoverContent);
 
-var _popover2 = require('../popover2');
+var _popover = require('../popover');
 
-var _popover22 = _interopRequireDefault(_popover2);
+var _popover2 = _interopRequireDefault(_popover);
 
 var ProfilePopover = (function (_Component) {
   _inherits(ProfilePopover, _Component);
@@ -71,7 +71,7 @@ var ProfilePopover = (function (_Component) {
         'div',
         { className: 'profile-popover-wrapper' + (loading ? ' loader' : '') },
         _react2['default'].createElement(
-          _popover22['default'],
+          _popover2['default'],
           {
             element: _react2['default'].createElement(
               'span',

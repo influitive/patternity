@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import ProfilePopoverContent from './profile-popover-content';
-import Popover from '../popover2';
+import Popover from '../popover';
 
 class ProfilePopover extends Component {
   static PropTypes = {

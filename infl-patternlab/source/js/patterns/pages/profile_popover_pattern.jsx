@@ -1,5 +1,5 @@
 var React = require('react');
-var Popover = require('../../../../infl-components/popover.jsx');
+var Popover = require('../../../../infl-components/popover');
 var ProfilePopover = require('../../../../infl-components/profile-popover');
 var ProfilePopoverContent = require('../../../../infl-components/profile-popover/profile-popover-content');
 

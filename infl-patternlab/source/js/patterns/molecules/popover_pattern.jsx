@@ -22,7 +22,7 @@ var PopoverPattern = React.createClass({
 
           <Require>
             <Require.JS>
-            var Popover = require("patternity/infl-components/popover.jsx");
+            var Popover = require("patternity/infl-components/popover");
             </Require.JS>
             <Require.CSS>
             @import "patternity/infl-styles/popover";
@@ -57,5 +57,3 @@ var PopoverPattern = React.createClass({
 });
 
 module.exports = PopoverPattern;
-
-
