@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import Popover from '../src/popover2';
 
-const styles = {
-  background: 'white',
-  borderColor: '#ccc'
+const style = {
+  background:  'blue',
+  borderColor: 'red'
 }
 
 class App extends Component {
@@ -21,9 +21,9 @@ class App extends Component {
       <br/>
       <br/>
       <br/>
-      <Popover position="top" isOpen={this.state.isOpen}
+      <Popover position="bottom" isOpen={this.state.isOpen}
         element={<span onClick={() => this.setState({isOpen: !this.state.isOpen})}>HOWDY JOE</span>}
-        styles={styles}>
+        style={style}>
         <div style={{padding: '15px', width: 300}}>
           <span>
             Hello Shaneciw! There are a lot of things going on here.

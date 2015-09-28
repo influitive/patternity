@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import $ from 'jquery';
 
-import { default as pos } from './position-popover';
+import positionPopover from './position-popover';
 
-// import style from './_popover2.scss';
+import style from './_popover2.scss';
 
 class Popover extends Component {
   static propTypes = {
-    isOpen:            PropTypes.bool,
+    isOpen:            PropTypes.bool.isRequired,
     position:          PropTypes.oneOf(['top', 'bottom']),
     containerSelector: PropTypes.string,
     element:           PropTypes.any.isRequired,
@@ -38,7 +38,7 @@ class Popover extends Component {
 
   componentDidUpdate() {
     if (this.props.isOpen) {
-      pos(this.getPopoverElements(), this.props.position);
+      positionPopover(this.getPopoverElements(), this.props.position);
       this.props.onOpen();
     }
   }
@@ -62,6 +62,7 @@ class Popover extends Component {
 
   shouldHaveBorder() {
     const { borderColor, background } = this.props.style;
+
     return borderColor && !background.includes('rgba');
   }
 
@@ -72,7 +73,7 @@ class Popover extends Component {
     if (!this.shouldHaveBorder()) borderColor = 'transparent';
 
     const borderPos = position === 'bottom' ? 'Bottom' : 'Top';
-    return <div className={`arrow-container ${position}`}>
+    return <div className={`arrow-container ${position}`} ref="arrow">
       <span className="arrow" style={{[`border${borderPos}Color`]: borderColor}}>
         <span className={`arrow inner ${this.shouldHaveBorder() ? '' : 'no-border'}`}
           style={{[`border${borderPos}Color`]: background }}></span>
@@ -82,6 +83,7 @@ class Popover extends Component {
 
   getPopoverElements() {
     return {
+      arrow:     React.findDOMNode(this.refs.arrow),
       element:   React.findDOMNode(this.refs.element),
       content:   React.findDOMNode(this.refs.content),
       container: $(this.props.containerSelector).get(0)

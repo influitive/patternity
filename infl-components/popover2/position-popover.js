@@ -11,7 +11,7 @@ var _jquery = require('jquery');
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function positionPopover(popoverElements, position) {
-  // positionArrow(popoverElements, position);
+  positionArrow(popoverElements, position);
   positionContent(popoverElements, position);
 
   if (isContentOutOfContainer(popoverElements)) {
@@ -21,12 +21,12 @@ function positionPopover(popoverElements, position) {
 
 function positionArrow(popoverElements, position) {
   popoverElements.arrow.style.left = popoverElements.element.offsetWidth / 2 - popoverElements.arrow.offsetWidth / 2 + 'px';
-  popoverElements.arrow.style[position] = -1 * popoverElements.arrow.offsetHeight + 'px';
+  popoverElements.arrow.style[position] = -1 * (popoverElements.arrow.offsetHeight + 4) + 'px';
 }
 
 function positionContent(popoverElements, position) {
   popoverElements.content.style.left = popoverElements.element.offsetWidth / 2 - popoverElements.content.offsetWidth / 2 + 'px';
-  popoverElements.content.style[position] = -1 * (popoverElements.content.offsetHeight + 10) + 'px';
+  popoverElements.content.style[position] = -1 * (popoverElements.content.offsetHeight + popoverElements.arrow.offsetHeight) + 'px';
 }
 
 function isContentOutOfContainer(popoverElements) {

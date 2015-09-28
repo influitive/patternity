@@ -7,12 +7,11 @@
     cursor:  pointer;
     display: inline-block;
   }
-
   .content {
-    position:         absolute;
-    color:            #000;
-    font-size:        13px;
-    display:          block;
+    position:     absolute;
+    color:        #000;
+    font-size:    13px;
+    display:      block;
     border-style: solid;
     border-width: 1px;
     border-color: transparent;
@@ -21,11 +20,6 @@
     width:      100%;
     text-align: center;
     position:   absolute;
-    top:        -15px;
-    &.bottom {
-      top:    auto;
-      bottom: -15px;
-    }
   }
   .arrow {
     position:      relative;
@@ -41,24 +35,23 @@
       border-top: 10px solid white;
       position:   absolute;
       z-index:    100;
-      right: -10px;
-      bottom: 1px;
+      right:      -10px;
+      bottom:     1px;
       &.no-border {
-        bottom: -1px;
+        bottom: 0px;
       }
     }
   }
-
   .bottom .arrow {
     border-bottom: 10px solid #ccc;
     border-top:    0px;
 
     &.inner {
       border-bottom: 10px solid white;
-      bottom: auto;
-      top: 1px;
+      bottom:        auto;
+      top:           1px;
       &.no-border {
-        top: -1px;
+        top: 0px;
       }
     }
   }
