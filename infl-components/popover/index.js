@@ -63,7 +63,7 @@ var Popover = (function (_Component) {
 
       return _react2['default'].createElement(
         'div',
-        { className: 'pt-popover2', ref: 'popover' },
+        { className: 'pt-popover', ref: 'popover' },
         !isOpen ? null : _react2['default'].createElement(
           'div',
           null,

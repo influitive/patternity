@@ -47,7 +47,7 @@ class Popover extends Component {
     const { element, style, isOpen, position, children } = this.props;
     const contentBorder = this.shouldHaveBorder() ? style.borderColor : 'transparent';
 
-    return <div className="pt-popover2" ref="popover">
+    return <div className="pt-popover" ref="popover">
       {!isOpen ? null : <div>
         {this.createArrow()}
         <div className="popover-content" ref="content" style={{...style, borderColor: contentBorder}}>

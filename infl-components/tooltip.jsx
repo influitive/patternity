@@ -2,11 +2,10 @@ var React = require('react');
 var $ = require('jquery');
 
 var Icon = require('icon.jsx');
-var Popover = require('popover2');
+var Popover = require('popover');
 
 var Tooltip = React.createClass({
   propTypes: {
-    dontHover:         React.PropTypes.bool,
     title:             React.PropTypes.string,
     element:           React.PropTypes.node.isRequired,
     position:          React.PropTypes.oneOf(['top', 'bottom']),
@@ -17,7 +16,6 @@ var Tooltip = React.createClass({
 
   getDefaultProps: function() {
     return {
-      dontHover:         false,
       title:             '',
       position:          'top',
       isClickable:       true,
@@ -77,7 +75,7 @@ var Tooltip = React.createClass({
   },
 
   _hoverToggleTooltip: function(shouldShow) {
-    if (!this.state.wasClicked && !this.props.dontHover) {
+    if (!this.state.wasClicked) {
       this._updateState({
         showTooltip: !this.state.showTooltip,
         showClose:   false,
