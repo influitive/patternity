@@ -39,7 +39,6 @@ class Popover extends Component {
   componentDidUpdate() {
     if (this.props.isOpen) {
       positionPopover(this.getPopoverElements(), this.props.position, );
-      this.resizePopoverWidth();
       this.props.onOpen();
     }
   }

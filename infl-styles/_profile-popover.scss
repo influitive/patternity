@@ -4,44 +4,8 @@ $spacing-small: 6px;
 $dimension-spacing-small: .5em;
 
 .profile-popover-wrapper {
-  .tooltip-content{
-    background-color: #fff;
-    box-sizing: inherit;
-    border: 1px solid #d2d2d2;
-    z-index: 5;
-    opacity: 1;
-    padding: 0px;
-    // min-height: 44px;
-
-    .close {
-      display: none;
-    }
-  }
-  .pt-tooltip .tooltip-arrow.bottom {
-    opacity: 1;
-    border-bottom-color : #d2d2d2;
-    z-index: 5;
-    box-sizing: inherit;
-
-    &:after {
-      content : "";
-      position: absolute;
-      display: block;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 10px solid #fff;
-      border-top: 0px;
-      left: -10px;
-      top: 1px;
-    }
-  }
 }
 .loader {
-  .tooltip-content {
-      width: 50px;
-  }
 }
 .user-profile {
   margin-top: $dimension-spacing-small;
@@ -85,6 +49,7 @@ $dimension-spacing-small: .5em;
   padding: $spacing-small $spacing-default $spacing-default;
   // padding: 6px 12px 12px;
   color: #666;
+  width: 300px;
   // box-sizing: border-box;
 
   hr {

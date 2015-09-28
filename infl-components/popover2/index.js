@@ -46,7 +46,6 @@ var Popover = (function (_Component) {
     value: function componentDidUpdate() {
       if (this.props.isOpen) {
         _positionPopover2['default'](this.getPopoverElements(), this.props.position);
-        this.resizePopoverWidth();
         this.props.onOpen();
       }
     }
