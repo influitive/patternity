@@ -1,8 +1,6 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
+exports.__esModule = true;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -10,12 +8,17 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _utilsWindowSize = require('../utils/window-size');
+
+var _utilsWindowSize2 = _interopRequireDefault(_utilsWindowSize);
+
 function positionPopover(popoverElements, position) {
   positionArrow(popoverElements, position);
   positionContent(popoverElements, position);
 
   if (isContentOutOfContainer(popoverElements)) {
     adjustContentPosition(popoverElements);
+    resizePopoverWidth();
   }
 }
 
@@ -41,9 +44,18 @@ function adjustContentPosition(popoverElements) {
   var containerPos = popoverElements.container.getBoundingClientRect();
 
   if (containerPos.left > tooltipPos.left) {
-    popoverElements.content.style.left = -1 * ((0, _jquery2['default'])(popoverElements.element).offset().left - (0, _jquery2['default'])(popoverElements.container).offset().left) + 'px';
+    popoverElements.content.style.left = -1 * (_jquery2['default'](popoverElements.element).offset().left - _jquery2['default'](popoverElements.container).offset().left) + 'px';
   } else if (tooltipPos.right > containerPos.right) {
     popoverElements.content.style.left = popoverElements.element.offsetWidth / 2 - popoverElements.content.offsetWidth / 2 - (tooltipPos.right - containerPos.right) + 'px';
+  }
+}
+
+function resizePopoverWidth() {
+  var content = React.findDOMNode(this.refs.content);
+  var windowWidth = _utilsWindowSize2['default']().width;
+
+  if (content.offsetWidth > windowWidth) {
+    content.style.width = windowWidth + 'px';
   }
 }
 

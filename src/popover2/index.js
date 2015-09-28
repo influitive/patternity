@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import $ from 'jquery';
 
-import windowSize from '../utils/window-size';
 import positionPopover from './position-popover';
 
-import style from './_popover2.scss';
+// import style from './_popover2.scss';
 
 class Popover extends Component {
   static propTypes = {
@@ -39,8 +38,8 @@ class Popover extends Component {
 
   componentDidUpdate() {
     if (this.props.isOpen) {
+      positionPopover(this.getPopoverElements(), this.props.position, );
       this.resizePopoverWidth();
-      positionPopover(this.getPopoverElements(), this.props.position);
       this.props.onOpen();
     }
   }
@@ -60,16 +59,6 @@ class Popover extends Component {
         {element}
       </div>
     </div>;
-  }
-
-  resizePopoverWidth() {
-    let content = React.findDOMNode(this.refs.content);
-    const windowWidth = windowSize().width;
-
-    if (content.offsetWidth > windowWidth) {
-      console.log(content.offsetWidth, windowWidth);
-      content.style.width = windowWidth + 'px';
-    }
   }
 
   shouldHaveBorder() {

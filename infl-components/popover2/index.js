@@ -1,20 +1,6 @@
 'use strict';
 
-var _reactTransformHmr2 = require('react-transform-hmr');
-
-var _reactTransformHmr3 = _interopRequireDefault(_reactTransformHmr2);
-
-var _react = require('react');
-
-var _reactTransformCatchErrors2 = require('react-transform-catch-errors');
-
-var _reactTransformCatchErrors3 = _interopRequireDefault(_reactTransformCatchErrors2);
-
-var _redboxReact = require('redbox-react');
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
+exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -22,11 +8,17 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -34,61 +26,27 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _utilsWindowSize = require('../utils/window-size');
-
-var _utilsWindowSize2 = _interopRequireDefault(_utilsWindowSize);
-
 var _positionPopover = require('./position-popover');
 
 var _positionPopover2 = _interopRequireDefault(_positionPopover);
 
-var _popover2Scss = require('./_popover2.scss');
-
-var _popover2Scss2 = _interopRequireDefault(_popover2Scss);
-
-var _components = {
-  _$Popover: {
-    displayName: 'Popover'
-  }
-};
-
-var _reactComponentWrapper = (0, _reactTransformHmr3['default'])({
-  filename: 'src/popover2/index.js',
-  components: _components,
-  locals: [module],
-  imports: [_react]
-});
-
-var _reactComponentWrapper2 = (0, _reactTransformCatchErrors3['default'])({
-  filename: 'src/popover2/index.js',
-  components: _components,
-  locals: [],
-  imports: [_react, _redboxReact]
-});
-
-function _wrapComponent(uniqueId) {
-  return function (ReactClass) {
-    return _reactComponentWrapper2(_reactComponentWrapper(ReactClass, uniqueId), uniqueId);
-  };
-}
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+// import style from './_popover2.scss';
 
 var Popover = (function (_Component) {
   _inherits(Popover, _Component);
 
   function Popover() {
-    _classCallCheck(this, _Popover);
+    _classCallCheck(this, Popover);
 
-    _get(Object.getPrototypeOf(_Popover.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Popover.prototype), 'constructor', this).apply(this, arguments);
   }
 
   _createClass(Popover, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       if (this.props.isOpen) {
+        _positionPopover2['default'](this.getPopoverElements(), this.props.position);
         this.resizePopoverWidth();
-        (0, _positionPopover2['default'])(this.getPopoverElements(), this.props.position);
         this.props.onOpen();
       }
     }
@@ -123,17 +81,6 @@ var Popover = (function (_Component) {
           element
         )
       );
-    }
-  }, {
-    key: 'resizePopoverWidth',
-    value: function resizePopoverWidth() {
-      var content = _react2['default'].findDOMNode(this.refs.content);
-      var windowWidth = (0, _utilsWindowSize2['default'])().width;
-
-      if (content.offsetWidth > windowWidth) {
-        console.log(content.offsetWidth, windowWidth);
-        content.style.width = windowWidth + 'px';
-      }
     }
   }, {
     key: 'shouldHaveBorder',
@@ -174,7 +121,7 @@ var Popover = (function (_Component) {
         arrow: _react2['default'].findDOMNode(this.refs.arrow),
         element: _react2['default'].findDOMNode(this.refs.element),
         content: _react2['default'].findDOMNode(this.refs.content),
-        container: (0, _jquery2['default'])(this.props.containerSelector).get(0)
+        container: _jquery2['default'](this.props.containerSelector).get(0)
       };
     }
   }], [{
@@ -215,8 +162,6 @@ var Popover = (function (_Component) {
     enumerable: true
   }]);
 
-  var _Popover = Popover;
-  Popover = _wrapComponent('_$Popover')(Popover) || Popover;
   return Popover;
 })(_react.Component);
 
