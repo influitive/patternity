@@ -1,8 +1,6 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
 
 exports["default"] = function () {
   var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;

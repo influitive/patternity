@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import windowSize from '../utils/window-size';
 
 function positionPopover(popoverElements, position) {
   positionArrow(popoverElements, position);
@@ -6,6 +7,7 @@ function positionPopover(popoverElements, position) {
 
   if (isContentOutOfContainer(popoverElements)) {
     adjustContentPosition(popoverElements);
+    resizePopoverWidth();
   }
 }
 
@@ -34,6 +36,15 @@ function adjustContentPosition(popoverElements) {
     popoverElements.content.style.left = (-1 * ($(popoverElements.element).offset().left - $(popoverElements.container).offset().left)) + 'px';
   } else if (tooltipPos.right > containerPos.right) {
     popoverElements.content.style.left = ((popoverElements.element.offsetWidth / 2) - (popoverElements.content.offsetWidth /  2) - (tooltipPos.right - containerPos.right)) + 'px';
+  }
+}
+
+function resizePopoverWidth() {
+  let content = React.findDOMNode(this.refs.content);
+  const windowWidth = windowSize().width;
+
+  if (content.offsetWidth > windowWidth) {
+    content.style.width = windowWidth + 'px';
   }
 }
 

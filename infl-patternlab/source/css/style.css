@@ -4097,6 +4097,67 @@ DIV.pt-popover.is-visible {
     box-sizing: border-box;
   }
 }
+/* COPIED FROM '../src' DO NOT EDIT */
+.pt-popover2 {
+  position: relative;
+  display: inline-block;
+}
+.pt-popover2 .popover-element {
+  cursor: pointer;
+  display: inline-block;
+}
+.pt-popover2 .popover-content {
+  position: absolute;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 13px;
+  display: block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+.pt-popover2 .popover-content > * {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.pt-popover2 .popover-arrow-container {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+.pt-popover2 .popover-arrow {
+  position: relative;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ccc;
+  border-bottom: 0px;
+}
+.pt-popover2 .popover-arrow.inner {
+  border-top: 10px solid white;
+  position: absolute;
+  z-index: 100;
+  right: -10px;
+  bottom: 1px;
+}
+.pt-popover2 .popover-arrow.inner.no-border {
+  bottom: 0px;
+}
+.pt-popover2 .bottom .popover-arrow {
+  border-bottom: 10px solid #ccc;
+  border-top: 0px;
+}
+.pt-popover2 .bottom .popover-arrow.inner {
+  border-bottom: 10px solid white;
+  bottom: auto;
+  top: 1px;
+}
+.pt-popover2 .bottom .popover-arrow.inner.no-border {
+  top: 0px;
+}
+
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;

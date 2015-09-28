@@ -1,0 +1,36 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'testbed' ]
+2 info using npm@2.14.2
+3 info using node@v0.12.7
+4 verbose node symlink /usr/local/bin/node
+5 verbose run-script [ 'pretestbed', 'testbed', 'posttestbed' ]
+6 info pretestbed patternity@1.0.34
+7 info testbed patternity@1.0.34
+8 verbose unsafe-perm in lifecycle true
+9 info patternity@1.0.34 Failed to exec testbed script
+10 verbose stack Error: patternity@1.0.34 testbed: `node ./webpacktestbed/devServer.js`
+10 verbose stack Exit status 1
+10 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+10 verbose stack     at EventEmitter.emit (events.js:110:17)
+10 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+10 verbose stack     at ChildProcess.emit (events.js:110:17)
+10 verbose stack     at maybeClose (child_process.js:1015:16)
+10 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+11 verbose pkgid patternity@1.0.34
+12 verbose cwd /Users/dev/Code/infl/patternity
+13 error Darwin 14.4.0
+14 error argv "node" "/usr/local/bin/npm" "run" "testbed"
+15 error node v0.12.7
+16 error npm  v2.14.2
+17 error code ELIFECYCLE
+18 error patternity@1.0.34 testbed: `node ./webpacktestbed/devServer.js`
+18 error Exit status 1
+19 error Failed at the patternity@1.0.34 testbed script 'node ./webpacktestbed/devServer.js'.
+19 error This is most likely a problem with the patternity package,
+19 error not with npm itself.
+19 error Tell the author that this fails on your system:
+19 error     node ./webpacktestbed/devServer.js
+19 error You can get their info via:
+19 error     npm owner ls patternity
+19 error There is likely additional logging output above.
+20 verbose exit [ 1, true ]
