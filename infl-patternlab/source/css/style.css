@@ -4011,41 +4011,6 @@ DIV.pt-popover.is-visible {
 }
 
 /* COPIED FROM '../src' DO NOT EDIT */
-.profile-popover-wrapper .tooltip-content {
-  background-color: #fff;
-  box-sizing: inherit;
-  border: 1px solid #d2d2d2;
-  z-index: 5;
-  opacity: 1;
-  padding: 0px;
-}
-.profile-popover-wrapper .tooltip-content .close {
-  display: none;
-}
-.profile-popover-wrapper .pt-tooltip .tooltip-arrow.bottom {
-  opacity: 1;
-  border-bottom-color: #d2d2d2;
-  z-index: 5;
-  box-sizing: inherit;
-}
-.profile-popover-wrapper .pt-tooltip .tooltip-arrow.bottom:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #fff;
-  border-top: 0px;
-  left: -10px;
-  top: 1px;
-}
-
-.loader .tooltip-content {
-  width: 50px;
-}
-
 .user-profile {
   margin-top: 0.5em;
 }
@@ -4081,6 +4046,7 @@ DIV.pt-popover.is-visible {
 .popover-user-profile {
   padding: 6px 12px 12px;
   color: #666;
+  width: 300px;
 }
 .popover-user-profile hr {
   clear: both;

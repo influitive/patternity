@@ -22,17 +22,37 @@ var _profilePopoverContent = require('./profile-popover-content');
 
 var _profilePopoverContent2 = _interopRequireDefault(_profilePopoverContent);
 
-var _tooltipJsx = require('../tooltip.jsx');
+var _popover2 = require('../popover2');
 
-var _tooltipJsx2 = _interopRequireDefault(_tooltipJsx);
+var _popover22 = _interopRequireDefault(_popover2);
 
 var ProfilePopover = (function (_Component) {
   _inherits(ProfilePopover, _Component);
 
   function ProfilePopover() {
+    var _this = this;
+
     _classCallCheck(this, ProfilePopover);
 
     _get(Object.getPrototypeOf(ProfilePopover.prototype), 'constructor', this).apply(this, arguments);
+
+    this.state = {
+      isOpen: false
+    };
+
+    this.triggerLink = function () {
+      return _this.props.trigger || _react2['default'].createElement(
+        'a',
+        { className: 'profile-popover-link', href: 'javascript://' },
+        _this.props.user.name
+      );
+    };
+
+    this.togglePopover = function () {
+      _this.setState({
+        isOpen: !_this.state.isOpen
+      });
+    };
   }
 
   _createClass(ProfilePopover, [{
@@ -47,20 +67,20 @@ var ProfilePopover = (function (_Component) {
       var underAvatar = _props.underAvatar;
       var loading = _props.loading;
 
-      var triggerLink = function triggerLink() {
-        return trigger || _react2['default'].createElement(
-          'a',
-          { className: 'profile-popover-link', href: 'javascript://' },
-          user.name
-        );
-      };
-
       return _react2['default'].createElement(
         'div',
         { className: 'profile-popover-wrapper' + (loading ? ' loader' : '') },
         _react2['default'].createElement(
-          _tooltipJsx2['default'],
-          { element: triggerLink(), onOpen: onOpen, position: 'bottom', dontHover: true },
+          _popover22['default'],
+          {
+            element: _react2['default'].createElement(
+              'span',
+              { onClick: this.togglePopover },
+              this.triggerLink()
+            ),
+            onOpen: onOpen,
+            position: 'bottom',
+            isOpen: this.state.isOpen },
           _react2['default'].createElement(
             _profilePopoverContent2['default'],
             { user: user, defaultImage: defaultImage, underAvatar: underAvatar, loading: loading },
