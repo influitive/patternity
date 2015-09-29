@@ -21,12 +21,11 @@ describe('Popover Component', function() {
 
   function render() {
     var jsx = (<Popover>
-      <a className="popoverlink" href="javascript://">x</a>
-      <Popover.Menu>
+      <Popover element={<a className="popoverlink" href="javascript://">x</a>}>
         <div/>
         <div/>
         <div/>
-      </Popover.Menu>
+      </Popover>
     </Popover>);
     subject = ReactTestUtils.renderIntoDocument(jsx);
   }

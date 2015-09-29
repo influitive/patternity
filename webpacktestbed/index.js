@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Popover from '../src/popover2';
+import Popover from '../src/popover';
 import styles from './test.scss';
 
 const style = {
@@ -22,6 +22,9 @@ class App extends Component {
       <br/>
       <br/>
       <br/>
+      <div style={{position: 'absolute', top: 10, left: 50, width: 25, bottom: 0, background: 'lightblue',
+        zIndex: 100}}>
+      </div>
       <Popover position="bottom" isOpen={this.state.isOpen}
         element={<span onClick={() => this.setState({isOpen: !this.state.isOpen})}>HOWDY JOE</span>}
         style={style}>
