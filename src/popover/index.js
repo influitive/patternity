@@ -38,7 +38,7 @@ class Popover extends Component {
 
   componentDidUpdate() {
     if (this.props.isOpen) {
-      positionPopover(this.getPopoverElements(), this.props.position, );
+      positionPopover(this.getPopoverElements(), this.props.position);
       this.props.onOpen();
     }
   }
