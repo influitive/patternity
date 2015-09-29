@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 import positionPopover from './position-popover';
 
-import style from './_popover.scss';
+// import style from './_popover.scss';
 
 class Popover extends Component {
   static propTypes = {
