@@ -50,10 +50,11 @@ var Tooltip = React.createClass({
             container={this.props.containerSelector}
             onOpen={this.props.onOpen}
             style={this.styles.popover.popover2}>
-          <div className="pt-toolttip-content" style={this.styles.popover.content}>
+          <div ref="tip" className="pt-tooltip-content" style={this.styles.popover.content}>
             <CloseTooltip
                 onClick={this._closeTooltip}
-                showClose={this.state.showClose} />
+                showClose={this.state.showClose}
+                ref="close" />
             {this.props.children}
           </div>
         </Popover>
