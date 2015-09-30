@@ -3981,6 +3981,7 @@ textarea {
 .pt-popover {
   position: relative;
   display: inline-block;
+  z-index: 9999;
 }
 .pt-popover .popover-element {
   cursor: pointer;

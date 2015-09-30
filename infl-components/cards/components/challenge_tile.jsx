@@ -29,11 +29,19 @@ var ChallengeTile = React.createClass({
 
     return (
       <div className={"pt-challenge-tile " + this.props.type}>
-        <Tooltip element={<Icon icon={this._determineTileIcon()} />} position="bottom" isClickable={false}>
+        <Tooltip
+            element={<Icon icon={this._determineTileIcon()} />}
+            position="bottom"
+            isClickable={false}
+            onOpen={this._handleOnOpen}>
           {this.props.description}
         </Tooltip>
       </div>
     );
+  },
+
+  _handleOnOpen: function() {
+    this.props.onShowDescription(this.props.type);
   },
 
   _isAcceptedStatusType : function(){
