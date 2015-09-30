@@ -1,0 +1,25 @@
+.pt-savebutton {
+  transition: all .25s ease;
+  &.saved {
+    @extend .success;
+    animation: savedPulse .2s 1;
+  }
+  &.error {
+    @extend .danger;
+  }
+  &.saving {
+    @extend .success;
+  }
+  &.unsaved {
+    @extend .primary;
+  }
+}
+
+@keyframes savedPulse {
+  0% {
+    background-color: red;
+  }
+  100% {
+    background-color: green;
+  }
+}

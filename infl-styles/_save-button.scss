@@ -1,0 +1,24 @@
+/* COPIED FROM '../src' DO NOT EDIT */
+.pt-savebutton {
+  width: 120px;
+  transition: all .25s linear;
+  &.saved {
+    @extend .success;
+    animation: savedPulse .4s 1;
+  }
+  &.error {
+    @extend .danger;
+  }
+  &.saving {
+    @extend .success;
+  }
+  &.unsaved {
+    @extend .primary;
+  }
+}
+
+@keyframes savedPulse {
+  50% {
+    background-color: lighten($success-color, 25%);
+  }
+}

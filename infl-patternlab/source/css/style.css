@@ -1207,21 +1207,21 @@ h6 {
   border-color: #b38f00;
   color: #b38f00 !important;
 }
-.alert-msg.success {
+.alert-msg.success, .alert-msg.pt-savebutton.saved, .alert-msg.pt-savebutton.saving {
   background-color: #eaf5dc;
   color: #638e2b;
 }
-.alert-msg.success .close {
+.alert-msg.success .close, .alert-msg.pt-savebutton.saved .close, .alert-msg.pt-savebutton.saving .close {
   color: #638e2b;
 }
-.alert-msg.success .close:hover {
+.alert-msg.success .close:hover, .alert-msg.pt-savebutton.saved .close:hover, .alert-msg.pt-savebutton.saving .close:hover {
   color: #70a131;
 }
-.alert-msg.success .pt-alert-action button {
+.alert-msg.success .pt-alert-action button, .alert-msg.pt-savebutton.saved .pt-alert-action button, .alert-msg.pt-savebutton.saving .pt-alert-action button {
   border-color: #638e2b;
   color: #638e2b !important;
 }
-.alert-msg.success .pt-alert-action button:hover {
+.alert-msg.success .pt-alert-action button:hover, .alert-msg.pt-savebutton.saved .pt-alert-action button:hover, .alert-msg.pt-savebutton.saving .pt-alert-action button:hover {
   border-color: #70a131;
   color: #70a131 !important;
 }
@@ -1366,42 +1366,50 @@ button.important:hover {
   background-color: #f5c400;
   box-shadow: 0px 2px #e6b800;
 }
-.button.primary,
-button.primary {
+.button.primary, .button.pt-savebutton.unsaved,
+button.primary,
+button.pt-savebutton.unsaved {
   text-decoration: none;
   border-style: none;
   color: white !important;
   box-shadow: 0px 2px #067c94;
   background-color: #08a5c5;
 }
-.button.primary:hover,
-button.primary:hover {
+.button.primary:hover, .button.pt-savebutton.unsaved:hover,
+button.primary:hover,
+button.pt-savebutton.unsaved:hover {
   background-color: #09bade;
   color: white !important;
   box-shadow: 0px 2px #08a5c5;
 }
-.button.success,
-button.success {
+.button.success, .button.pt-savebutton.saved, .button.pt-savebutton.saving,
+button.success,
+button.pt-savebutton.saved,
+button.pt-savebutton.saving {
   background-color: #8BC540;
   border-style: none;
   box-shadow: 0px 2px #70a131;
   color: white !important;
 }
-.button.success:hover,
-button.success:hover {
+.button.success:hover, .button.pt-savebutton.saved:hover, .button.pt-savebutton.saving:hover,
+button.success:hover,
+button.pt-savebutton.saved:hover,
+button.pt-savebutton.saving:hover {
   color: white !important;
   background-color: #a3d167;
   box-shadow: 0px 2px #8BC540;
 }
-.button.danger,
-button.danger {
+.button.danger, .button.pt-savebutton.error,
+button.danger,
+button.pt-savebutton.error {
   background-color: #c54040;
   border-style: none;
   box-shadow: 0px 2px #a13131;
   color: white !important;
 }
-.button.danger:hover,
-button.danger:hover {
+.button.danger:hover, .button.pt-savebutton.error:hover,
+button.danger:hover,
+button.pt-savebutton.error:hover {
   color: white !important;
   background-color: #d16767;
   box-shadow: 0px 2px #c54040;
@@ -1487,15 +1495,15 @@ button.ic:before {
   background-color: #f5c400;
   box-shadow: 0px 2px #e6b800;
 }
-.button-dropdown.show button.primary {
+.button-dropdown.show button.primary, .button-dropdown.show button.pt-savebutton.unsaved {
   background-color: #09bade;
   box-shadow: 0px 2px #08a5c5;
 }
-.button-dropdown.show button.danger {
+.button-dropdown.show button.danger, .button-dropdown.show button.pt-savebutton.error {
   background-color: #d16767;
   box-shadow: 0px 2px #c54040;
 }
-.button-dropdown.show button.success {
+.button-dropdown.show button.success, .button-dropdown.show button.pt-savebutton.saved, .button-dropdown.show button.pt-savebutton.saving {
   background-color: #a3d167;
   box-shadow: 0px 2px #8BC540;
 }
@@ -1529,31 +1537,31 @@ button.ic:before {
 .button-dropdown button.important + .options .option:hover {
   background-color: #f5c400;
 }
-.button-dropdown button.primary + .options {
+.button-dropdown button.primary + .options, .button-dropdown button.pt-savebutton.unsaved + .options {
   background-color: #08a5c5;
 }
-.button-dropdown button.primary + .options .option a {
+.button-dropdown button.primary + .options .option a, .button-dropdown button.pt-savebutton.unsaved + .options .option a {
   color: #fff;
 }
-.button-dropdown button.primary + .options .option:hover {
+.button-dropdown button.primary + .options .option:hover, .button-dropdown button.pt-savebutton.unsaved + .options .option:hover {
   background-color: #09bade;
 }
-.button-dropdown button.danger + .options {
+.button-dropdown button.danger + .options, .button-dropdown button.pt-savebutton.error + .options {
   background-color: #c54040;
 }
-.button-dropdown button.danger + .options .option a {
+.button-dropdown button.danger + .options .option a, .button-dropdown button.pt-savebutton.error + .options .option a {
   color: #fff;
 }
-.button-dropdown button.danger + .options .option:hover {
+.button-dropdown button.danger + .options .option:hover, .button-dropdown button.pt-savebutton.error + .options .option:hover {
   background-color: #d16767;
 }
-.button-dropdown button.success + .options {
+.button-dropdown button.success + .options, .button-dropdown button.pt-savebutton.saved + .options, .button-dropdown button.pt-savebutton.saving + .options {
   background-color: #8BC540;
 }
-.button-dropdown button.success + .options .option a {
+.button-dropdown button.success + .options .option a, .button-dropdown button.pt-savebutton.saved + .options .option a, .button-dropdown button.pt-savebutton.saving + .options .option a {
   color: #fff;
 }
-.button-dropdown button.success + .options .option:hover {
+.button-dropdown button.success + .options .option:hover, .button-dropdown button.pt-savebutton.saved + .options .option:hover, .button-dropdown button.pt-savebutton.saving + .options .option:hover {
   background-color: #a3d167;
 }
 .button-dropdown button.secondary + .options {
@@ -1677,16 +1685,20 @@ button.ic:before {
 .button-group.inline.grouped .button.important:after {
   border-color: #c29b00;
 }
-.button-group.inline.grouped button.primary:after,
-.button-group.inline.grouped .button.primary:after {
+.button-group.inline.grouped button.primary:after, .button-group.inline.grouped button.pt-savebutton.unsaved:after,
+.button-group.inline.grouped .button.primary:after,
+.button-group.inline.grouped .button.pt-savebutton.unsaved:after {
   border-color: #067c94;
 }
-.button-group.inline.grouped button.success:after,
-.button-group.inline.grouped .button.success:after {
+.button-group.inline.grouped button.success:after, .button-group.inline.grouped button.pt-savebutton.saved:after, .button-group.inline.grouped button.pt-savebutton.saving:after,
+.button-group.inline.grouped .button.success:after,
+.button-group.inline.grouped .button.pt-savebutton.saved:after,
+.button-group.inline.grouped .button.pt-savebutton.saving:after {
   border-color: #70a131;
 }
-.button-group.inline.grouped button.danger:after,
-.button-group.inline.grouped .button.danger:after {
+.button-group.inline.grouped button.danger:after, .button-group.inline.grouped button.pt-savebutton.error:after,
+.button-group.inline.grouped .button.danger:after,
+.button-group.inline.grouped .button.pt-savebutton.error:after {
   border-color: #a13131;
 }
 .button-group.inline.grouped button.secondary,
@@ -4039,6 +4051,20 @@ textarea {
   top: 0px;
 }
 
+/* COPIED FROM '../src' DO NOT EDIT */
+.pt-savebutton {
+  width: 120px;
+  transition: all .25s linear;
+}
+.pt-savebutton.saved {
+  animation: savedPulse .4s 1;
+}
+
+@keyframes savedPulse {
+  50% {
+    background-color: #c6e3a2;
+  }
+}
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;
