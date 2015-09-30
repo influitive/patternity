@@ -1,20 +1,21 @@
 var React = require('react');
 var $ = require('jquery');
 
+var Icon = require('icon.jsx');
+var Popover = require('popover');
+
 var Tooltip = React.createClass({
   propTypes: {
-    dontHover:   React.PropTypes.bool,
-    title:       React.PropTypes.string,
-    element:     React.PropTypes.node.isRequired,
-    position:    React.PropTypes.oneOf(['top', 'bottom']),
-    isClickable: React.PropTypes.bool,
-    container:   React.PropTypes.string,
-    onOpen:      React.PropTypes.func
+    title:             React.PropTypes.string,
+    element:           React.PropTypes.node.isRequired,
+    position:          React.PropTypes.oneOf(['top', 'bottom']),
+    isClickable:       React.PropTypes.bool,
+    containerSelector: React.PropTypes.string,
+    onOpen:            React.PropTypes.func
   },
 
   getDefaultProps: function() {
     return {
-      dontHover:         false,
       title:             '',
       position:          'top',
       isClickable:       true,
@@ -32,105 +33,52 @@ var Tooltip = React.createClass({
   },
 
   componentDidMount: function() {
-    $('body').click(this._clickCloseTooltip);
+    $('body').click(this._closeTooltip);
   },
 
   componentWillUnmount: function() {
-    $('body').off('click', this._clickCloseTooltip);
-  },
-
-  componentDidUpdate: function() {
-    if (this.state.showTooltip) {
-      this._positionTooltipContent();
-      this.props.onOpen();
-    }
+    $('body').off('click', this._closeTooltip);
   },
 
   render: function() {
     return (
       <span className="pt-tooltip" ref="tooltip">
-        <Tooltip.Content
-            title={this.props.title}
-            content={this.props.children}
-            showTooltip={this.state.showTooltip}
-            showClose={this.state.showClose}
-            closeToolTip={this._clickCloseTooltip}
+        <Popover
+            element={this._tooltipElement()}
+            isOpen={this.state.showTooltip}
             position={this.props.position}
-            ref="tip" />
-        <TooltipArrow
-            position={this.props.position}
-            showArrow={this.state.showTooltip}
-            ref="arrow" />
-        <span className="tool-tip-element"
-            onClick={this._clickTooltip}
-            onMouseOver={this._hoverShowTooltip}
-            onMouseOut={this._hoverHideTooltip}
-            ref="element">
-          {this.props.element}
-        </span>
+            container={this.props.containerSelector}
+            onOpen={this.props.onOpen}
+            style={this.styles.popover.popover2}>
+          <div ref="tip" className="pt-tooltip-content" style={this.styles.popover.content}>
+            <CloseTooltip
+                onClick={this._closeTooltip}
+                showClose={this.state.showClose}
+                ref="close" />
+            {this.props.children}
+          </div>
+        </Popover>
       </span>
     );
   },
 
-  _positionTooltipContent: function() {
-    var DOMNodes = this._getDOMNodes();
-    this._positionArrow(DOMNodes);
-    this._positionContent(DOMNodes);
-
-    if (this._isContentOutOfContainer(DOMNodes)) {
-      this._adjustContentPosition(DOMNodes);
-    }
-  },
-
-  _getDOMNodes: function() {
-    return {
-      arrow:     React.findDOMNode(this.refs.arrow),
-      element:   React.findDOMNode(this.refs.element),
-      tooltip:   React.findDOMNode(this.refs.tip),
-      container: $(this.props.containerSelector).get(0)
-    };
-  },
-
-  _positionArrow: function(DOMNodes) {
-    DOMNodes.arrow.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.arrow.offsetWidth /  2)) + 'px';
-    DOMNodes.arrow.style[this.props.position] = -1 * DOMNodes.arrow.offsetHeight + 'px';
-  },
-
-  _positionContent: function(DOMNodes) {
-    DOMNodes.tooltip.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.tooltip.offsetWidth /  2)) + 'px';
-    DOMNodes.tooltip.style[this.props.position] = -1 * (DOMNodes.tooltip.offsetHeight + DOMNodes.arrow.offsetHeight) +  'px';
-  },
-
-  _isContentOutOfContainer: function(DOMNodes) {
-    var tooltipPos = DOMNodes.tooltip.getBoundingClientRect();
-    var containerPos = DOMNodes.container.getBoundingClientRect();
-
-    return containerPos.left > tooltipPos.left || tooltipPos.right > containerPos.right;
-  },
-
-  _adjustContentPosition: function(DOMNodes) {
-    var tooltipPos = DOMNodes.tooltip.getBoundingClientRect();
-    var containerPos = DOMNodes.container.getBoundingClientRect();
-
-    if (containerPos.left > tooltipPos.left) {
-      DOMNodes.tooltip.style.left = (-1 * ($(DOMNodes.element).offset().left - $(DOMNodes.container).offset().left)) + 'px';
-    } else if (tooltipPos.right > containerPos.right) {
-      DOMNodes.tooltip.style.left = ((DOMNodes.element.offsetWidth / 2) - (DOMNodes.tooltip.offsetWidth /  2) - (tooltipPos.right - containerPos.right)) + 'px';
-    }
-  },
-
-  _hoverShowTooltip: function(event) {
-    if (!this.props.dontHover) this._hoverToggleTooltip(true);
-  },
-
-  _hoverHideTooltip: function(event) {
-    if (!this.props.dontHover) this._hoverToggleTooltip(false);
+  _tooltipElement: function(){
+    return (
+      <span className="tool-tip-element"
+          onClick={this._clickTooltip}
+          onMouseOver={this._hoverToggleTooltip}
+          onMouseOut={this._hoverToggleTooltip}
+          ref="element"
+          style={this.styles.element}>
+        {this.props.element}
+      </span>
+    );
   },
 
   _hoverToggleTooltip: function(shouldShow) {
     if (!this.state.wasClicked) {
       this._updateState({
-        showTooltip: shouldShow,
+        showTooltip: !this.state.showTooltip,
         showClose:   false,
         wasClicked:  false
       });
@@ -139,19 +87,14 @@ var Tooltip = React.createClass({
 
   _clickTooltip: function(event) {
     if (this.props.isClickable) {
-      this._handleClick(event);
+      this._showTooltip(event);
     }
   },
 
-  _handleClick: function() {
-    if (this.state.showTooltip && this.state.wasClicked) {
-      this._clickCloseTooltip();
-    } else {
-      this._clickShowTooltip();
-    }
-  },
+  _showTooltip: function(event) {
+    event.preventDefault();
+    event.stopPropagation();
 
-  _clickShowTooltip: function() {
     this._updateState({
       showTooltip: true,
       showClose:   true,
@@ -159,85 +102,98 @@ var Tooltip = React.createClass({
     });
   },
 
-  _clickCloseTooltip: function() {
+  _closeTooltip: function(event) {
     this._updateState({
       showTooltip: false,
-      showClose:   true,
+      showClose:   false,
       wasClicked:  false
     });
   },
 
   _updateState: function(newState) {
     this.setState(newState);
+  },
+
+  styles : {
+    popover : {
+      popover2: {
+        background: 'rgba(68, 68, 68, 0.9)',
+        borderColor: null,
+      },
+      content : {
+        color: '#fff',
+        width: '100%',
+        minWidth: '300px',
+        fontSize: '13px',
+        padding: '13px 13px 26px 13px',
+        position: 'relative'
+      },
+      arrow : {
+        borderTopWidth: '10px',
+        borderTopColor: '#444444',
+        opacity: '0.9'
+      },
+      element : {
+        fontSize: '20px',
+        color: '#444444', //$darker-grey
+        verticalAlign: 'middle',
+        cursor: 'pointer',
+        display: 'inline-block'
+      }
+    }
   }
 });
 
-var TooltipArrow = React.createClass({
-  propTypes: {
-    showArrow: React.PropTypes.bool.isRequired,
-    position:  React.PropTypes.oneOf(['top', 'bottom'])
+var CloseTooltip = React.createClass({
+  PropTypes : {
+    onClick : React.PropTypes.func.isRequired,
+    showClose : React.PropTypes.bool
   },
 
-  getDefaultProps: function() {
+  getDefaultProps: function(){
     return {
-      position: 'top'
+      showClose : false
     };
   },
 
-  render: function() {
-    return (
-      <span className={'tooltip-arrow ' + this._showArrow() + ' ' + this.props.position} ref="arrow"></span>
-    );
+  render: function(){
+    return this._showClose();
   },
 
-  _showArrow: function() {
-    return this.props.showArrow ? '' : 'hide';
-  }
-});
-
-Tooltip.Content = React.createClass({
-  propTypes: {
-    title:        React.PropTypes.string,
-    content:      React.PropTypes.any.isRequired,
-    showTooltip:  React.PropTypes.bool.isRequired,
-    showClose:    React.PropTypes.bool.isRequired,
-    closeToolTip: React.PropTypes.func.isRequired,
-    position:     React.PropTypes.oneOf(['top', 'bottom']),
-  },
-
-  getDefaultProps: function() {
-    return {
-      title:    '',
-      position: 'top'
-    };
-  },
-
-  render: function() {
-    return (
-      <div className={'tooltip-content ' + this._showTooltip() + ' ' + this.props.position} ref="tip">
-        <span className={'close ic ic-times ' + this._showClose()} onClick={this.props.closeToolTip} ref="close"></span>
-        {this._showTitle()}
-        <div className="tooltip-details" ref="details">
-          {this.props.content}
-        </div>
-      </div>
-    );
-  },
-
-  _showTooltip: function() {
-    return this.props.showTooltip ? '' : 'hide';
-  },
-
-  _showClose: function() {
-    return this.props.showClose ? '' : 'hide';
-  },
-
-  _showTitle: function() {
-    if (typeof this.props.title !== 'string') {
+  _showClose: function(){
+    if(!this.props.showClose){
       return null;
     }
 
-    return this.props.title.length > 0 ? (<h3 ref="title">{this.props.title}</h3>) : null;
+    return this._closeButton();
+  },
+
+  _closeButton: function(){
+    return (
+      <span
+          className='close'
+          onClick={this.props.onClick}
+          ref="close"
+          style={this.styles.close}>
+        <Icon icon='times' />
+      </span>
+    );
+  },
+
+  styles : {
+    close : {
+      // float: 'right',
+      position: 'absolute',
+      top: '10px',
+      right: '10px',
+      fontSize: '20px',
+      color: '#fff',
+      opacity: '1',
+      cursor: 'pointer',
+      display: 'block',
+      textShadow: 'none',
+      fontWeight: 'normal'
+    }
   }
 });
 
