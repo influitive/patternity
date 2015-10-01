@@ -55,12 +55,16 @@ var SaveButton = (function (_Component) {
 
       var status = this.buttonStatus();
       return _react2['default'].createElement(
-        _button22['default'],
-        { className: 'pt-save-button',
-          onClick: onClick,
-          type: status.type,
-          icon: status.icon },
-        status.text
+        'div',
+        { className: 'pt-save-button' },
+        _react2['default'].createElement(
+          _button22['default'],
+          {
+            onClick: onClick,
+            type: status.type,
+            icon: status.icon },
+          status.text
+        )
       );
     }
   }], [{

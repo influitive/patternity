@@ -12,12 +12,14 @@ class SaveButton extends Component {
   render() {
     const { saveStatus, onClick } = this.props;
     const status = this.buttonStatus();
-    return <Button2 className="pt-save-button"
-      onClick={onClick}
-      type={status.type}
-      icon={status.icon}>
-      {status.text}
-    </Button2>;
+    return <div className="pt-save-button">
+      <Button2
+        onClick={onClick}
+        type={status.type}
+        icon={status.icon}>
+        {status.text}
+      </Button2>
+    </div>
   }
 
   buttonStatus = () => {
