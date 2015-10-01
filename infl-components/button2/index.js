@@ -10,6 +10,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
@@ -18,62 +20,77 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-// import styles from './_save-button.scss';
+var _classNames = require('classNames');
 
-var _button2 = require('../button2');
+var _classNames2 = _interopRequireDefault(_classNames);
 
-var _button22 = _interopRequireDefault(_button2);
+var Button = (function (_Component) {
+  _inherits(Button, _Component);
 
-var SaveButton = (function (_Component) {
-  _inherits(SaveButton, _Component);
-
-  function SaveButton() {
+  function Button() {
     var _this = this;
 
-    _classCallCheck(this, SaveButton);
+    _classCallCheck(this, Button);
 
-    _get(Object.getPrototypeOf(SaveButton.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
 
-    this.buttonStatus = function () {
-      var saveStatus = _this.props.saveStatus;
+    this.getClasses = function () {
+      var _ref;
 
-      return ({
-        'error': { text: 'Error', type: 'danger', icon: 'exclamation-circle-o' },
-        'saved': { text: 'Saved', type: 'success', icon: 'check-circle-o' },
-        'unsaved': { text: 'Save', type: 'primary' },
-        'saving': { text: 'Saving', type: 'primary', icon: 'circle-empty' }
-      })[saveStatus];
+      var buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'text'];
+      var _props = _this.props;
+      var disabled = _props.disabled;
+      var inverse = _props.inverse;
+      var type = _props.type;
+      var children = _props.children;
+      var className = _props.className;
+      var icon = _props.icon;
+
+      return _classNames2['default']({
+        button: true,
+        disabled: disabled,
+        iconButton: children && children.length === 0
+      }, className, icon && 'ic ic-' + icon, !disabled && (_ref = {}, _defineProperty(_ref, type, true), _defineProperty(_ref, 'inverse', (type === 'secondary' || type === 'text') && inverse), _ref));
     };
   }
 
-  _createClass(SaveButton, [{
+  _createClass(Button, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var saveStatus = _props.saveStatus;
-      var onClick = _props.onClick;
+      var _props2 = this.props;
+      var disabled = _props2.disabled;
+      var onClick = _props2.onClick;
+      var children = _props2.children;
 
-      var status = this.buttonStatus();
       return _react2['default'].createElement(
-        _button22['default'],
-        { className: 'pt-save-button',
-          onClick: onClick,
-          type: status.type,
-          icon: status.icon },
-        status.text
+        'button',
+        { disabled: disabled, className: this.getClasses(), onClick: onClick },
+        children
       );
     }
   }], [{
     key: 'propTypes',
     value: {
-      saveStatus: _react.PropTypes.oneOf(['unsaved', 'saved', 'saving', 'error']).isRequired,
-      onClick: _react.PropTypes.func
+      icon: _react.PropTypes.string,
+      className: _react.PropTypes.string,
+      type: _react.PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
+      onClick: _react.PropTypes.func.isRequired,
+      disabled: _react.PropTypes.bool,
+      inverse: _react.PropTypes.bool
+    },
+    enumerable: true
+  }, {
+    key: 'defaultProps',
+    value: {
+      type: 'primary',
+      disable: false,
+      inverse: false
     },
     enumerable: true
   }]);
 
-  return SaveButton;
+  return Button;
 })(_react.Component);
 
-exports['default'] = SaveButton;
+exports['default'] = Button;
 module.exports = exports['default'];

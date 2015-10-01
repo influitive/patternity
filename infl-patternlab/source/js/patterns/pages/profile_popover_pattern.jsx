@@ -16,7 +16,7 @@ var ProfilePopoverPattern = React.createClass({
   saveStatus() {
     if (this.state.saveStatus === 'unsaved') this.setState({saveStatus: 'saving'});
     setTimeout(function() {
-      this.setState({saveStatus: 'saved'});
+      this.setState({saveStatus: 'error'});
     }.bind(this), 1000);
   }
 });
