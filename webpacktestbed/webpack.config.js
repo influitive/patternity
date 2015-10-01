@@ -1,6 +1,9 @@
 var webpack = require('webpack');
 
-console.log(__dirname);
+var sassPaths = require('node-neat').includePaths.map(function(sassPath) {
+  return 'includePaths[]=' + sassPath;
+}).join('&');
+
 module.exports = {
   context: __dirname,
 
@@ -26,7 +29,7 @@ module.exports = {
     loaders: [
       {
         test:   /\.scss$/,
-        loader: 'style!css!sass?outputStyle=expanded'
+        loader: 'style!css!sass?outputStyle=expanded&' + sassPaths,
       },
       {
         test:    /\.jsx?$/,

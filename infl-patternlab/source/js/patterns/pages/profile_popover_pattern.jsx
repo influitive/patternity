@@ -1,40 +1,23 @@
 var React = require('react');
 var Popover = require('../../../../infl-components/popover');
-var ProfilePopover = require('../../../../infl-components/profile-popover');
-var ProfilePopoverContent = require('../../../../infl-components/profile-popover/profile-popover-content');
+var SaveButton = require('../../../../infl-components/save-button');
 
 var ProfilePopoverPattern = React.createClass({
+  getInitialState: function() {
+    return {
+      saveStatus: 'unsaved'
+    }
+  },
   render: function() {
-    var user = {
-      name:    'Person McPersonson',
-      title:   'Dastardly Devil',
-      company: 'Infuitive'
-    };
     return <div style={{textAlign: 'center'}}>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <ProfilePopover user={user}></ProfilePopover>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <ProfilePopover user={user}></ProfilePopover>
+      <SaveButton onClick={this.saveStatus} saveStatus={this.state.saveStatus}/>
     </div>;
+  },
+  saveStatus() {
+    if (this.state.saveStatus === 'unsaved') this.setState({saveStatus: 'saving'});
+    setTimeout(function() {
+      this.setState({saveStatus: 'error'});
+    }.bind(this), 1000);
   }
 });
 

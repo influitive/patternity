@@ -4039,6 +4039,15 @@ textarea {
   top: 0px;
 }
 
+/* COPIED FROM '../src' DO NOT EDIT */
+@keyframes savedPulse {
+  0% {
+    background-color: red;
+  }
+  100% {
+    background-color: green;
+  }
+}
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;
