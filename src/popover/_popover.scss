@@ -3,11 +3,11 @@
   display:  inline-block;
   z-index: 9999;
 
-  .popover-element {
+  .pt-popover-element {
     cursor:  pointer;
     display: inline-block;
   }
-  .popover-content {
+  .pt-popover-content {
     position:     absolute;
     box-sizing: border-box;
     color:        #000;
@@ -21,12 +21,12 @@
       max-width: 100%;
     }
   }
-  .popover-arrow-container {
+  .pt-popover-arrow-container {
     width:      100%;
     text-align: center;
     position:   absolute;
   }
-  .popover-arrow {
+  .pt-popover-arrow {
     position:      relative;
     display:       inline-block;
     width:         0px;
@@ -47,7 +47,7 @@
       }
     }
   }
-  .bottom .popover-arrow {
+  .bottom .pt-popover-arrow {
     border-bottom: 10px solid #ccc;
     border-top:    0px;
 
