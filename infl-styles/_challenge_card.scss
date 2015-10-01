@@ -67,18 +67,14 @@
           cursor: default;
         }
 
-        .tooltip-arrow {
-          &.bottom {
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid #444444;
+        .pt-popover {
+          .bottom {
+            .pt-popover-arrow {
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-bottom: 8px solid #444444;
+            }
           }
-        }
-
-        .tooltip-content {
-          width: 100px;
-          padding: 2px 5px;
-          font-size: 12px;
         }
       }
     }

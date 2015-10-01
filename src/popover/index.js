@@ -50,11 +50,11 @@ class Popover extends Component {
     return <div className="pt-popover" ref="popover">
       {!isOpen ? null : <div>
         {this.createArrow()}
-        <div className="popover-content" ref="content" style={{...style, borderColor: contentBorder}}>
+        <div className="pt-popover-content" ref="content" style={{...style, borderColor: contentBorder}}>
           {children}
         </div>
       </div>}
-      <div className="popover-element" ref="element">
+      <div className="pt-popover-element" ref="element">
         {element}
       </div>
     </div>;
@@ -72,9 +72,9 @@ class Popover extends Component {
     if (!this.shouldHaveBorder()) borderColor = 'transparent';
 
     const borderPos = position === 'bottom' ? 'Bottom' : 'Top';
-    return <div className={`popover-arrow-container ${position}`} ref="arrow">
-      <span className="popover-arrow" style={{[`border${borderPos}Color`]: borderColor}}>
-        <span className={`popover-arrow inner ${this.shouldHaveBorder() ? '' : 'no-border'}`}
+    return <div className={`pt-popover-arrow-container ${position}`} ref="arrow">
+      <span className="pt-popover-arrow" style={{[`border${borderPos}Color`]: borderColor}}>
+        <span className={`pt-popover-arrow inner ${this.shouldHaveBorder() ? '' : 'no-border'}`}
           style={{[`border${borderPos}Color`]: background }}></span>
         </span>
     </div>;

@@ -70,13 +70,13 @@ var Popover = (function (_Component) {
           this.createArrow(),
           _react2['default'].createElement(
             'div',
-            { className: 'popover-content', ref: 'content', style: _extends({}, style, { borderColor: contentBorder }) },
+            { className: 'pt-popover-content', ref: 'content', style: _extends({}, style, { borderColor: contentBorder }) },
             children
           )
         ),
         _react2['default'].createElement(
           'div',
-          { className: 'popover-element', ref: 'element' },
+          { className: 'pt-popover-element', ref: 'element' },
           element
         )
       );
@@ -104,11 +104,11 @@ var Popover = (function (_Component) {
       var borderPos = position === 'bottom' ? 'Bottom' : 'Top';
       return _react2['default'].createElement(
         'div',
-        { className: 'popover-arrow-container ' + position, ref: 'arrow' },
+        { className: 'pt-popover-arrow-container ' + position, ref: 'arrow' },
         _react2['default'].createElement(
           'span',
-          { className: 'popover-arrow', style: _defineProperty({}, 'border' + borderPos + 'Color', borderColor) },
-          _react2['default'].createElement('span', { className: 'popover-arrow inner ' + (this.shouldHaveBorder() ? '' : 'no-border'),
+          { className: 'pt-popover-arrow', style: _defineProperty({}, 'border' + borderPos + 'Color', borderColor) },
+          _react2['default'].createElement('span', { className: 'pt-popover-arrow inner ' + (this.shouldHaveBorder() ? '' : 'no-border'),
             style: _defineProperty({}, 'border' + borderPos + 'Color', background) })
         )
       );

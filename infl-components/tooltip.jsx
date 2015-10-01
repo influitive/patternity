@@ -41,7 +41,7 @@ var Tooltip = React.createClass({
 
   getInitialState: function() {
     return {
-      showTooltip: true,
+      showTooltip: false,
       showClose:   false,
       wasClicked:  false
     };
@@ -198,10 +198,7 @@ var CloseTooltip = React.createClass({
 
   styles : {
     close : {
-      // float: 'right',
-      position: 'absolute',
-      top: '10px',
-      right: '10px',
+      float: 'right',
       fontSize: '20px',
       color: '#fff',
       opacity: '1',
