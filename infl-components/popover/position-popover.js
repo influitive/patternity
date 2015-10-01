@@ -18,7 +18,7 @@ function positionPopover(popoverElements, position) {
 
   if (isContentOutOfContainer(popoverElements)) {
     adjustContentPosition(popoverElements);
-    resizePopoverWidth();
+    resizePopoverWidth(popoverElements.content);
   }
 }
 
@@ -50,8 +50,7 @@ function adjustContentPosition(popoverElements) {
   }
 }
 
-function resizePopoverWidth() {
-  var content = React.findDOMNode(this.refs.content);
+function resizePopoverWidth(content) {
   var windowWidth = _utilsWindowSize2['default']().width;
 
   if (content.offsetWidth > windowWidth) {

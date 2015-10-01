@@ -1,4 +1,5 @@
 var React = require('react');
+var _ = require('lodash');
 var $ = require('jquery');
 
 var Icon = require('./icon.jsx');
@@ -11,7 +12,14 @@ var Tooltip = React.createClass({
     position:          React.PropTypes.oneOf(['top', 'bottom']),
     isClickable:       React.PropTypes.bool,
     containerSelector: React.PropTypes.string,
-    onOpen:            React.PropTypes.func
+    onOpen:            React.PropTypes.func,
+    style: React.PropTypes.shape({
+      content : {
+        minWidth:  React.PropTypes.string.isRequired,
+        padding:  React.PropTypes.string.isRequired,
+        fontSize: React.PropTypes.string.isRequired
+      }
+    })
   },
 
   getDefaultProps: function() {
@@ -20,13 +28,20 @@ var Tooltip = React.createClass({
       position:          'top',
       isClickable:       true,
       containerSelector: 'body',
-      onOpen:            function() {}
+      onOpen:            function() {},
+      style:             {
+        content : {
+          minWidth: '300px',
+          padding: '13px 13px 26px 13px',
+          fontSize: '13px'
+        }
+      }
     };
   },
 
   getInitialState: function() {
     return {
-      showTooltip: false,
+      showTooltip: true,
       showClose:   false,
       wasClicked:  false
     };
@@ -50,7 +65,7 @@ var Tooltip = React.createClass({
             container={this.props.containerSelector}
             onOpen={this.props.onOpen}
             style={this.styles.popover.popover2}>
-          <div ref="tip" className="pt-tooltip-content" style={this.styles.popover.content}>
+          <div ref="tip" className="pt-tooltip-content" style={this._determineContentStyle()}>
             <CloseTooltip
                 onClick={this._closeTooltip}
                 showClose={this.state.showClose}
@@ -60,6 +75,10 @@ var Tooltip = React.createClass({
         </Popover>
       </span>
     );
+  },
+
+  _determineContentStyle: function() {
+    return _.merge(this.styles.popover.content, this.props.style.content);
   },
 
   _tooltipElement: function(){
@@ -123,9 +142,6 @@ var Tooltip = React.createClass({
       content : {
         color: '#fff',
         width: '100%',
-        minWidth: '300px',
-        fontSize: '13px',
-        padding: '13px 13px 26px 13px',
         position: 'relative'
       },
       arrow : {

@@ -33,7 +33,14 @@ var ChallengeTile = React.createClass({
             element={<Icon icon={this._determineTileIcon()} />}
             position="bottom"
             isClickable={false}
-            onOpen={this._handleOnOpen}>
+            onOpen={this._handleOnOpen}
+            style={{
+              content: {
+                minWidth: '100px',
+                padding: '2px 5px',
+                fontSize: '12px'
+              }
+            }}>
           {this.props.description}
         </Tooltip>
       </div>
