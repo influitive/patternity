@@ -41,7 +41,7 @@ var Tooltip = React.createClass({
 
   getInitialState: function() {
     return {
-      showTooltip: true,
+      showTooltip: false,
       showClose:   false,
       wasClicked:  false
     };
