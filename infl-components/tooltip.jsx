@@ -1,8 +1,8 @@
 var React = require('react');
 var $ = require('jquery');
 
-var Icon = require('icon.jsx');
-var Popover = require('popover');
+var Icon = require('./icon.jsx');
+var Popover = require('./popover');
 
 var Tooltip = React.createClass({
   propTypes: {
