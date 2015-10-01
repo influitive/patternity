@@ -12,9 +12,9 @@ class Button extends Component {
   }
 
   static defaultProps = {
-    type:    'primary',
-    disable: false,
-    inverse: false,
+    type:     'primary',
+    disabled: false,
+    inverse:  false,
   }
 
 

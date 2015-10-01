@@ -83,7 +83,7 @@ var Button = (function (_Component) {
     key: 'defaultProps',
     value: {
       type: 'primary',
-      disable: false,
+      disabled: false,
       inverse: false
     },
     enumerable: true
