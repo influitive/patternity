@@ -62,7 +62,7 @@ var Tooltip = React.createClass({
             element={this._tooltipElement()}
             isOpen={this.state.showTooltip}
             position={this.props.position}
-            container={this.props.containerSelector}
+            containerSelector={this.props.containerSelector}
             onOpen={this.props.onOpen}
             style={this.styles.popover.popover2}>
           <div ref="tip" className="pt-tooltip-content" style={this._determineContentStyle()}>
