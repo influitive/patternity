@@ -50,7 +50,7 @@ var Button = (function (_Component) {
         button: true,
         disabled: disabled,
         iconButton: children && children.length === 0
-      }, className, icon && 'ic ic-' + icon, !disabled && (_ref = {}, _defineProperty(_ref, type, true), _defineProperty(_ref, 'inverse', (type === 'secondary' || type === 'text') && inverse), _ref));
+      }, icon && 'ic ic-' + icon, !disabled && (_ref = {}, _defineProperty(_ref, type, true), _defineProperty(_ref, 'inverse', (type === 'secondary' || type === 'text') && inverse), _ref));
     };
   }
 
@@ -72,7 +72,6 @@ var Button = (function (_Component) {
     key: 'propTypes',
     value: {
       icon: _react.PropTypes.string,
-      className: _react.PropTypes.string,
       type: _react.PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
       onClick: _react.PropTypes.func.isRequired,
       disabled: _react.PropTypes.bool,

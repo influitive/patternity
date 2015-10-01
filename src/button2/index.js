@@ -3,12 +3,11 @@ import classNames from 'classNames';
 
 class Button extends Component {
   static propTypes = {
-    icon:      PropTypes.string,
-    className: PropTypes.string,
-    type:      PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
-    onClick:   PropTypes.func.isRequired,
-    disabled:  PropTypes.bool,
-    inverse:   PropTypes.bool
+    icon:     PropTypes.string,
+    type:     PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
+    onClick:  PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
+    inverse:  PropTypes.bool
   }
 
   static defaultProps = {
@@ -35,7 +34,6 @@ class Button extends Component {
         disabled:   disabled,
         iconButton: children && children.length === 0
       },
-      className,
       icon && 'ic ic-' + icon,
       !disabled && {
         [type]:  true,
