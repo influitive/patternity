@@ -3517,15 +3517,10 @@ textarea {
   font-size: 18px;
   cursor: default;
 }
-.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-arrow.bottom {
+.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .pt-popover .bottom .pt-popover-arrow {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #444444;
-}
-.pt-challenge-card .pt-challenge-tile-container .pt-challenge-tile .pt-tooltip .tooltip-content {
-  width: 100px;
-  padding: 2px 5px;
-  font-size: 12px;
 }
 .pt-challenge-card .pt-challenge-image {
   overflow: hidden;
@@ -3983,11 +3978,11 @@ textarea {
   display: inline-block;
   z-index: 9999;
 }
-.pt-popover .popover-element {
+.pt-popover .pt-popover-element {
   cursor: pointer;
   display: inline-block;
 }
-.pt-popover .popover-content {
+.pt-popover .pt-popover-content {
   position: absolute;
   box-sizing: border-box;
   color: #000;
@@ -3997,16 +3992,18 @@ textarea {
   border-width: 1px;
   border-color: transparent;
 }
-.pt-popover .popover-content > * {
+.pt-popover .pt-popover-content > * {
   box-sizing: border-box;
   max-width: 100%;
 }
-.pt-popover .popover-arrow-container {
+.pt-popover .pt-popover-arrow-container {
   width: 100%;
   text-align: center;
   position: absolute;
+  font-size: 0px;
+  line-height: normal;
 }
-.pt-popover .popover-arrow {
+.pt-popover .pt-popover-arrow {
   position: relative;
   display: inline-block;
   width: 0px;
@@ -4016,38 +4013,29 @@ textarea {
   border-top: 10px solid #ccc;
   border-bottom: 0px;
 }
-.pt-popover .popover-arrow.inner {
+.pt-popover .pt-popover-arrow.inner {
   border-top: 10px solid white;
   position: absolute;
   z-index: 100;
   right: -10px;
   bottom: 1px;
 }
-.pt-popover .popover-arrow.inner.no-border {
+.pt-popover .pt-popover-arrow.inner.no-border {
   bottom: 0px;
 }
-.pt-popover .bottom .popover-arrow {
+.pt-popover .bottom .pt-popover-arrow {
   border-bottom: 10px solid #ccc;
   border-top: 0px;
 }
-.pt-popover .bottom .popover-arrow.inner {
+.pt-popover .bottom .pt-popover-arrow.inner {
   border-bottom: 10px solid white;
   bottom: auto;
   top: 1px;
 }
-.pt-popover .bottom .popover-arrow.inner.no-border {
+.pt-popover .bottom .pt-popover-arrow.inner.no-border {
   top: 0px;
 }
 
-/* COPIED FROM '../src' DO NOT EDIT */
-@keyframes savedPulse {
-  0% {
-    background-color: red;
-  }
-  100% {
-    background-color: green;
-  }
-}
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;

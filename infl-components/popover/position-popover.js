@@ -24,7 +24,7 @@ function positionPopover(popoverElements, position) {
 
 function positionArrow(popoverElements, position) {
   popoverElements.arrow.style.left = popoverElements.element.offsetWidth / 2 - popoverElements.arrow.offsetWidth / 2 + 'px';
-  popoverElements.arrow.style[position] = -1 * (popoverElements.arrow.offsetHeight + 4) + 'px';
+  popoverElements.arrow.style[position] = -1 * popoverElements.arrow.offsetHeight + 'px';
 }
 
 function positionContent(popoverElements, position) {
