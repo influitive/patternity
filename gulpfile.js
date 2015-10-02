@@ -5,6 +5,9 @@ var consolidate = require('gulp-consolidate');
 var header = require('gulp-header');
 var flatten = require('gulp-flatten');
 var watch = require('gulp-watch');
+var postScss = require('postcss-scss');
+var postcss = require('gulp-postcss');
+var rucksack = require('rucksack-css');
 
 function adustIconNames(codepoints) {
   return codepoints.map(function(codepoint) {
@@ -77,6 +80,7 @@ gulp.task('influicons', function(){
 
 gulp.task('copy-lib-styles', function() {
   return gulp.src('src/**/*.scss')
+    .pipe(postcss([rucksack({autoprefixer: true})], {syntax: postScss}))
     .pipe(header('/* COPIED FROM \'../src\' DO NOT EDIT */\n'))
     .pipe(flatten())
     .pipe(gulp.dest('infl-styles'));
