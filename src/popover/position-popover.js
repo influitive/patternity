@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import windowSize from '../utils/window-size';
 
 function positionPopover(popoverElements, position) {
   positionArrow(popoverElements, position);
@@ -7,7 +6,7 @@ function positionPopover(popoverElements, position) {
 
   if (isContentOutOfContainer(popoverElements)) {
     adjustContentPosition(popoverElements);
-    resizePopoverWidth(popoverElements.content);
+    resizePopoverWidth(popoverElements);
   }
 }
 
@@ -39,11 +38,11 @@ function adjustContentPosition(popoverElements) {
   }
 }
 
-function resizePopoverWidth(content) {
-  const windowWidth = windowSize().width;
+function resizePopoverWidth(popoverElements) {
+  var containerWidth = popoverElements.container.offsetWidth;
 
-  if (content.offsetWidth > windowWidth) {
-    content.style.width = windowWidth + 'px';
+  if (popoverElements.content.offsetWidth > containerWidth) {
+    popoverElements.content.style.width = containerWidth + 'px';
   }
 }
 

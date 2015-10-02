@@ -8,17 +8,13 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _utilsWindowSize = require('../utils/window-size');
-
-var _utilsWindowSize2 = _interopRequireDefault(_utilsWindowSize);
-
 function positionPopover(popoverElements, position) {
   positionArrow(popoverElements, position);
   positionContent(popoverElements, position);
 
   if (isContentOutOfContainer(popoverElements)) {
     adjustContentPosition(popoverElements);
-    resizePopoverWidth(popoverElements.content);
+    resizePopoverWidth(popoverElements);
   }
 }
 
@@ -50,11 +46,11 @@ function adjustContentPosition(popoverElements) {
   }
 }
 
-function resizePopoverWidth(content) {
-  var windowWidth = _utilsWindowSize2['default']().width;
+function resizePopoverWidth(popoverElements) {
+  var containerWidth = popoverElements.container.offsetWidth;
 
-  if (content.offsetWidth > windowWidth) {
-    content.style.width = windowWidth + 'px';
+  if (popoverElements.content.offsetWidth > containerWidth) {
+    popoverElements.content.style.width = containerWidth + 'px';
   }
 }
 
