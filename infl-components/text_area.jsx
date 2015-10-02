@@ -1,9 +1,16 @@
 var React = require('react');
 var classNames = require('classnames');
+var Icon = require('./icon.jsx');
 
-var Message = React.createClass({
+var InputMessage = React.createClass({
+  PropTypes: {
+    message : React.PropTypes.string.isRequired
+  },
+
   render: function () {
-    if ( ! this.props.message || ! this.props.message.length) { return <span />; }
+    if ( ! this.props.message || ! this.props.message.length) {
+      return <span />;
+    }
 
     return (
       <span>{ this._message() }</span>
@@ -25,15 +32,19 @@ var Message = React.createClass({
   }
 });
 
-var Icon = React.createClass({
+var TextAreaIcon = React.createClass({
   render: function () {
     if (this.props.type === 'search') {
       return (
-        <span className="search-input ic ic-search"></span>
+        <span className="search-input">
+          <Icon icon='search' />
+        </span>
       );
     } else if(this.props.required) {
       return (
-        <span className="required-input ic ic-asterisk"></span>
+        <span className="required-input">
+          <Icon icon='asterisk' />
+        </span>
       );
     } else {
       return <span />;
@@ -41,7 +52,7 @@ var Icon = React.createClass({
   }
 });
 
-var Container = React.createClass({
+var TextAreaContainer = React.createClass({
   getDefaultProps: function () {
     return {
       id:       "",
@@ -64,11 +75,11 @@ var Container = React.createClass({
   render: function () {
     return (
       <span className={ this._classNames() }>
-        <Icon {...this.props} />
+        <TextAreaIcon {...this.props} />
 
         { this.props.children }
 
-        <Message message={this.props.message} />
+        <InputMessage message={this.props.message} />
       </span>
     );
   },
@@ -113,9 +124,9 @@ var TextArea = React.createClass({
 
   render: function () {
     return (
-      <Container {...this.props} classNames={this._classNames()}>
+      <TextAreaContainer {...this.props} classNames={this._classNames()}>
         <textarea {...this.props} ref="input" />
-      </Container>
+      </TextAreaContainer>
     );
   },
 
