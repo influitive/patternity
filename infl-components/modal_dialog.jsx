@@ -109,7 +109,7 @@ var ModalDialog = React.createClass({
     }, this._onClose);
   },
 
-  _handleEscape: function() {
+  _handleEscape: function(event) {
     var ESCAPE_KEY_CODE = 27;
     if (event.keyCode === ESCAPE_KEY_CODE && this.props.closeable && this.props.keyboard) {
       $(window).off('keydown.escapePressed');
