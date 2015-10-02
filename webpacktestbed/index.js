@@ -8,13 +8,18 @@ class App extends Component {
   }
 
   render() {
+    var text = {
+      unsaved: 'customUnsaved',
+      saved:   'CustomSaved',
+      saving:  'CustomSaving'
+    };
     const { saveStatus } = this.state;
-    return <SaveButton saveStatus={saveStatus} onClick={this.saveHandler}/>
+    return <SaveButton customText={text} saveStatus={saveStatus} onClick={this.saveHandler}/>
   }
 
   saveHandler = () => {
     if (this.state.saveStatus === 'unsaved') this.setState({saveStatus: 'saving'});
-    setTimeout(() => { this.setState({saveStatus: 'saved'}); }, 1000);
+    setTimeout(() => { this.setState({saveStatus: 'error'}); }, 1000);
   }
 }
 

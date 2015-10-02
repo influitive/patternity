@@ -9,14 +9,20 @@ var ProfilePopoverPattern = React.createClass({
     }
   },
   render: function() {
+    var text = {
+      unsaved: 'fuck',
+      saved:   'a',
+      saving:  'duck',
+      error:   'dicker'
+    };
     return <div style={{textAlign: 'center'}}>
-      <SaveButton onClick={this.saveStatus} saveStatus={this.state.saveStatus}/>
+      <SaveButton onClick={this.saveStatus} saveStatus={this.state.saveStatus} text={text}/>
     </div>;
   },
   saveStatus() {
     if (this.state.saveStatus === 'unsaved') this.setState({saveStatus: 'saving'});
     setTimeout(function() {
-      this.setState({saveStatus: 'error'});
+      this.setState({saveStatus: 'saved'});
     }.bind(this), 1000);
   }
 });
