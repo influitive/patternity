@@ -18,6 +18,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _lodash = require('lodash');
+
 // import styles from './_save-button.scss';
 
 var _button2 = require('../button2');
@@ -35,27 +37,35 @@ var SaveButton = (function (_Component) {
     _get(Object.getPrototypeOf(SaveButton.prototype), 'constructor', this).apply(this, arguments);
 
     this.buttonStatus = function () {
-      var saveStatus = _this.props.saveStatus;
+      var _props = _this.props;
+      var saveStatus = _props.saveStatus;
+      var customText = _props.customText;
 
-      return ({
+      var defaultButtonState = {
         'error': { text: 'Error', type: 'danger', icon: 'exclamation-circle-o' },
         'saved': { text: 'Saved', type: 'success', icon: 'check-circle-o' },
         'unsaved': { text: 'Save', type: 'primary' },
         'saving': { text: 'Saving', type: 'primary', icon: 'circle-empty' }
-      })[saveStatus];
+      };
+
+      _lodash.forIn(customText, function (value, key) {
+        defaultButtonState[key].text = value;
+      });
+
+      return defaultButtonState[saveStatus];
     };
   }
 
   _createClass(SaveButton, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var saveStatus = _props.saveStatus;
-      var onClick = _props.onClick;
+      var _props2 = this.props;
+      var saveStatus = _props2.saveStatus;
+      var onClick = _props2.onClick;
 
       var status = this.buttonStatus();
       return _react2['default'].createElement(
-        'div',
+        'span',
         { className: 'pt-save-button' },
         _react2['default'].createElement(
           _button22['default'],
@@ -71,7 +81,14 @@ var SaveButton = (function (_Component) {
     key: 'propTypes',
     value: {
       saveStatus: _react.PropTypes.oneOf(['unsaved', 'saved', 'saving', 'error']).isRequired,
-      onClick: _react.PropTypes.func
+      onClick: _react.PropTypes.func,
+
+      customText: _react.PropTypes.shape({
+        unsaved: _react.PropTypes.string,
+        saved: _react.PropTypes.string,
+        saving: _react.PropTypes.string,
+        error: _react.PropTypes.string
+      })
     },
     enumerable: true
   }]);
