@@ -1,0 +1,9 @@
+.pt-save-button {
+  .ic-circle-empty:before {
+    animation: ptSaveButtonPulse 1s infinite;
+  }
+}
+
+@keyframes ptSaveButtonPulse {
+  50% { opacity: 0 }
+}
