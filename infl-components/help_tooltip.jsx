@@ -4,7 +4,7 @@ var Icon = require('./icon.jsx');
 var Tooltip = require('./tooltip.jsx');
 
 var HelpTooltip = React.createClass({
-  propTypes : {
+  PropTypes : {
     title: React.PropTypes.string
   },
 
