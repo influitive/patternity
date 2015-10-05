@@ -102,7 +102,7 @@ var AccordionHeader = React.createClass({
     return classNames({
       'section-heading': true,
       'open':            this.props.open,
-      'disabled':        this.props.isEnabled === false
+      'disabled':        !this.props.isEnabled
     });
   },
 

@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
 
 import SaveButton from '../src/save-button';
+import Accordion from '../src/accordion2';
 
 class App extends Component {
   state = {
-    saveStatus: 'unsaved'
+    saveStatus: 'unsaved',
+    sections: [{
+      "header" : "Section Header One",
+      "body" : "Section Body One",
+      "key" : "test-2",
+      "isEnabled" : true
+    },{
+      "header" : "Section Header Two",
+      "body" : "Section Body Two",
+      "key" : "test-3",
+      "isEnabled" : false
+    },{
+      "header" : "Section Header Three",
+      "body" : "Section Body Three",
+      "key" : "test-1",
+      "isEnabled" : true
+    }]
   }
 
   render() {
@@ -13,8 +30,8 @@ class App extends Component {
       saved:   'CustomSaved',
       saving:  'CustomSaving'
     };
-    const { saveStatus } = this.state;
-    return <SaveButton customText={text} saveStatus={saveStatus} onClick={this.saveHandler}/>
+    const { sections } = this.state;
+    return <Accordion sections={sections}/>
   }
 
   saveHandler = () => {
