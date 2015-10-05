@@ -46,15 +46,14 @@ class App extends Component {
       sections[0].body += 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\n';
       this.setState({sections: sections});
     }, 1000);
-
   }
-
   render() {
     var text = {
       unsaved: 'customUnsaved',
       saved:   'CustomSaved',
       saving:  'CustomSaving'
     };
+    
     const { sections, ind } = this.state;
 
     return <div>
