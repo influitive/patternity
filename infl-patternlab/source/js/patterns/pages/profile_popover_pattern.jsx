@@ -10,10 +10,10 @@ var ProfilePopoverPattern = React.createClass({
   },
   render: function() {
     var text = {
-      unsaved: 'fuck',
-      saved:   'a',
-      saving:  'duck',
-      error:   'dicker'
+      unsaved: 'SaveMe',
+      saved:   'It is done.',
+      saving:  'Tra la la',
+      error:   'Damnit'
     };
     return <div style={{textAlign: 'center'}}>
       <SaveButton onClick={this.saveStatus} saveStatus={this.state.saveStatus} text={text}/>
