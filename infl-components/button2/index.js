@@ -20,9 +20,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classNames = require('classNames');
+var _classnames = require('classnames');
 
-var _classNames2 = _interopRequireDefault(_classNames);
+var _classnames2 = _interopRequireDefault(_classnames);
 
 var Button = (function (_Component) {
   _inherits(Button, _Component);
@@ -46,7 +46,7 @@ var Button = (function (_Component) {
       var className = _props.className;
       var icon = _props.icon;
 
-      return _classNames2['default']({
+      return _classnames2['default']({
         button: true,
         disabled: disabled,
         iconButton: children && children.length === 0
