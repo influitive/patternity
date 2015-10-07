@@ -1,2 +1,2 @@
-var Accordion = require('./accordion/index.js');
+var Accordion = require('./accordion');
 module.exports = Accordion;

@@ -28,7 +28,11 @@ var _accordionHeader = require('./accordion-header');
 
 var _accordionHeader2 = _interopRequireDefault(_accordionHeader);
 
-// import style from './_accordion.scss';
+var _accordionScss = require('./_accordion.scss');
+
+var _accordionScss2 = _interopRequireDefault(_accordionScss);
+
+require('../utils/raf-polyfill');
 
 var Accordion = (function (_Component) {
   _inherits(Accordion, _Component);
@@ -60,28 +64,25 @@ var Accordion = (function (_Component) {
         _this.setState({ openSectionIndex: -1 });
       } else {
         _this.setState({ openSectionIndex: id });
-        _this.props.onOpenSection(id);
       }
     };
 
     this._uniqueIdentifier = null;
+
+    this._resetAccordionState = function () {
+      if (_this._uniqueIdentifier !== _this.props.uniqueIdentifier) {
+        _this.setState({
+          openSectionIndex: _this.props.openSectionIndex
+        });
+      }
+      _this._uniqueIdentifier = _this.props.uniqueIdentifier;
+    };
   }
 
   _createClass(Accordion, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      this.setState({ openSectionIndex: nextProps.openSectionIndex });
-    }
-  }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
-      if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
-        this.setState({
-          openSectionIndex: this.props.openSectionIndex
-        });
-        if (this.props.openSectionIndex != null) this.props.onOpenSection(this.props.openSectionIndex);
-      }
-      this._uniqueIdentifier = this.props.uniqueIdentifier;
+      this._resetAccordionState();
     }
   }, {
     key: 'render',
@@ -104,16 +105,13 @@ var Accordion = (function (_Component) {
         if (typeof n !== 'number' || n !== parseInt(n, 10) || n < 0) {
           return new Error('Invalid `openSectionIndex` supplied to `Accordion`' + ', expected a positive integer');
         }
-      },
-      onOpenSection: _react.PropTypes.func
+      }
     },
     enumerable: true
   }, {
     key: 'defaultProps',
     value: {
-      openSectionIndex: null,
-      sections: [],
-      onOpenSection: function onOpenSection() {}
+      openSectionIndex: null
     },
     enumerable: true
   }]);

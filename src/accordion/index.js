@@ -3,7 +3,9 @@ import React, { Component, PropTypes } from 'react';
 import AccordionBody from './accordion-body';
 import AccordionHeader from './accordion-header';
 
-// import style from './_accordion.scss';
+require('../utils/raf-polyfill');
+
+import style from './_accordion.scss';
 
 class Accordion extends Component {
   static propTypes = {
@@ -17,29 +19,15 @@ class Accordion extends Component {
         return new Error('Invalid `openSectionIndex` supplied to `Accordion`' +
           ', expected a positive integer');
       }
-    },
-    onOpenSection: PropTypes.func
+    }
   }
 
   static defaultProps = {
-    openSectionIndex: null,
-    sections:         [],
-    onOpenSection:    function() {}
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({openSectionIndex: nextProps.openSectionIndex});
+    openSectionIndex: null
   }
 
   componentWillMount() {
-    if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
-      this.setState({
-        openSectionIndex: this.props.openSectionIndex
-      });
-      if (this.props.openSectionIndex != null)
-        this.props.onOpenSection(this.props.openSectionIndex);
-    }
-    this._uniqueIdentifier = this.props.uniqueIdentifier;
+    this._resetAccordionState();
   }
 
   render() {
@@ -66,11 +54,19 @@ class Accordion extends Component {
       this.setState({openSectionIndex: -1});
     } else {
       this.setState({openSectionIndex: id});
-      this.props.onOpenSection(id);
     }
   }
 
   _uniqueIdentifier = null
+
+  _resetAccordionState = () => {
+    if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
+      this.setState({
+        openSectionIndex: this.props.openSectionIndex
+      });
+    }
+    this._uniqueIdentifier = this.props.uniqueIdentifier;
+  }
 }
 
 export default Accordion;
