@@ -28,11 +28,7 @@ var _accordionHeader = require('./accordion-header');
 
 var _accordionHeader2 = _interopRequireDefault(_accordionHeader);
 
-var _accordionScss = require('./_accordion.scss');
-
-var _accordionScss2 = _interopRequireDefault(_accordionScss);
-
-require('../utils/raf-polyfill');
+// import style from './_accordion.scss';
 
 var Accordion = (function (_Component) {
   _inherits(Accordion, _Component);
@@ -111,7 +107,8 @@ var Accordion = (function (_Component) {
   }, {
     key: 'defaultProps',
     value: {
-      openSectionIndex: null
+      openSectionIndex: null,
+      sections: []
     },
     enumerable: true
   }]);

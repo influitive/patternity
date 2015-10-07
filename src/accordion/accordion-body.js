@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react';
 class AccordionBody extends Component {
   componentDidMount() {
     const details = this.refs.details.getDOMNode();
-    console.log(details.offsetHeight);
     this.setState({maxHeight: details.offsetHeight});
   }
 
