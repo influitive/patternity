@@ -3,9 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import AccordionBody from './accordion-body';
 import AccordionHeader from './accordion-header';
 
-require('../utils/raf-polyfill');
-
-import style from './_accordion.scss';
+// import style from './_accordion.scss';
 
 class Accordion extends Component {
   static propTypes = {
@@ -23,7 +21,8 @@ class Accordion extends Component {
   }
 
   static defaultProps = {
-    openSectionIndex: null
+    openSectionIndex: null,
+    sections:         []
   }
 
   componentWillMount() {

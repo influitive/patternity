@@ -1,11 +1,12 @@
 var es5Shim   = require('es5-shim');
-var React     = require('react');
+// require('core-js/es5');
+var React     = require('react/addons');
 var expect    = require('chai').expect;
-var TestUtils = require('react/addons').addons.TestUtils;
+var TestUtils = React.addons.TestUtils;
 var _         = require('lodash');
 var simulate  = TestUtils.Simulate;
 
-var Accordion = require('accordion');
+var Accordion = require('../accordion.jsx');
 
 describe('Accordion', function() {
   function buildSectionData(index) {
@@ -125,6 +126,8 @@ describe('Accordion', function() {
       var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} openSectionIndex={0} />);
 
       subject.componentWillReceiveProps({ openSectionIndex: 0 });
+      console.log(TestUtils.findRenderedDOMComponentWithClass(subject, 'open').getDOMNode());
+      console.log(React.findDOMNode(subject).firstChild.firstChild);
       expect(TestUtils.findRenderedDOMComponentWithClass(subject, 'open').getDOMNode())
         .to.equal(React.findDOMNode(subject).firstChild.firstChild);
 

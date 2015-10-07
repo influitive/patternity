@@ -35,7 +35,6 @@ var AccordionBody = (function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var details = this.refs.details.getDOMNode();
-      console.log(details.offsetHeight);
       this.setState({ maxHeight: details.offsetHeight });
     }
   }, {
