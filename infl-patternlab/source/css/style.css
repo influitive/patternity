@@ -1081,65 +1081,74 @@ h6 {
   text-align: left;
 }
 
+/* COPIED FROM '../src' DO NOT EDIT */
 .accordion {
-  padding: 0px;
+  padding: 0;
 }
 .accordion .accordion-section {
   margin-bottom: 1px;
   list-style-type: none;
 }
-.accordion .accordion-section .section-heading {
-  background-color: #cccccc;
+.accordion .section-heading {
+  background-color: #ccc;
   font-size: 1.1em;
   overflow: hidden;
-  margin: 0px;
+  margin: 0;
   font-weight: normal;
   padding: 10px;
-  color: #333333;
+  color: #333;
   cursor: pointer;
 }
-.accordion .accordion-section .section-heading.open .edit-section {
+.accordion .section-heading.open .edit-section {
   opacity: 0;
   -webkit-transition: opacity 0.5s ease-in-out;
-  -moz-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
-.accordion .accordion-section .section-heading.open + .section-details {
-  max-height: 5000px;
-  -webkit-transition: max-height 0.5s ease-in;
-  -moz-transition: max-height 0.5s ease-in;
-  transition: max-height 0.5s ease-in;
+.accordion .section-heading.open + .section-details .section-details-inner {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-.accordion .accordion-section .section-heading.disabled {
-  color: #999999;
+.accordion .section-heading.disabled {
+  color: #999;
   cursor: auto;
   opacity: 1;
 }
-.accordion .accordion-section .section-heading.disabled:hover {
-  background-color: #cccccc;
+.accordion .section-heading.disabled:hover {
+  background-color: #ccc;
 }
-.accordion .accordion-section .section-heading.disabled:hover + .section-details {
-  border-color: #cccccc;
+.accordion .section-heading.disabled:hover + .section-details {
+  border-color: #ccc;
 }
-.accordion .accordion-section .section-heading:hover {
+.accordion .section-heading:hover {
   background-color: #e2e2e2;
   -webkit-transition: background-color 0.5s ease-in-out;
-  -moz-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
 }
-.accordion .accordion-section .section-heading:hover + .section-details {
+.accordion .section-heading:hover + .section-details {
   border-color: #e2e2e2;
 }
-.accordion .accordion-section .section-details {
-  border: 1px solid #cccccc;
+.accordion .section-details {
+  border: 1px solid #ccc;
   max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.5s ease-out;
-  -moz-transition: max-height 0.5s ease-out;
   transition: max-height 0.5s ease-out;
 }
-.accordion .accordion-section .section-details .section-details-inner {
+.open .accordion .section-details {
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+}
+.accordion .section-details .section-details-inner {
   padding: 1.5em;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.open .accordion .section-details .section-details-inner {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .alert-msg {
@@ -1304,7 +1313,7 @@ button {
   text-decoration: none;
   white-space: nowrap;
   border: none;
-  padding: 0.5em 1.5em;
+  padding: 8px 24px;
   text-align: center;
   box-shadow: 0px 2px #d4d4d4;
   display: inline-block;
