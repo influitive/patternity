@@ -65,7 +65,7 @@ var AlertMixin = {
       success: 'ic-check-circle-o',
       error:   'ic-exclamation-circle-o',
       warning: 'ic-info-circle-o'
-    }[this.props.type] || 'ic-question-circle-o';
+    }[this.props.type] || 'ic-alert-caution';
   },
 
   _closeable: function() {
