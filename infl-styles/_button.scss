@@ -4,13 +4,13 @@ $text-button-color-hover : lighten($text-button-color, 10%);
 .button,
 button {
   margin:0;
-  border-radius: $theme-border-radius;
+  border-radius: 2px;
   background-color: $lighter-grey;
   color: $dark-grey;
   text-decoration: none;
   white-space: nowrap;
   border: none;
-  padding: $spacing-small $spacing-large;
+  padding: 8px 24px;
   text-align: center;
   box-shadow: 0px 2px darken($lighter-grey, 10%);
   display: inline-block;
@@ -365,13 +365,13 @@ button {
         border-radius: 0px;
 
         &:first-child {
-          border-top-left-radius: $theme-border-radius;
-          border-top-right-radius: $theme-border-radius;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
         }
 
         &:last-child {
-          border-bottom-left-radius: $theme-border-radius;
-          border-bottom-right-radius: $theme-border-radius;
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px;
         }
 
         &.secondary {
@@ -476,13 +476,13 @@ button {
         }
 
         &:first-child {
-          border-top-left-radius: $theme-border-radius;
-          border-bottom-left-radius: $theme-border-radius;
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
         }
 
         &:last-child {
-          border-top-right-radius: $theme-border-radius;
-          border-bottom-right-radius: $theme-border-radius;
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
 
           &:after {
             border-left-width: 0px;
@@ -492,4 +492,3 @@ button {
     }
   }
 }
-
