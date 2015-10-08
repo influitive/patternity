@@ -44,7 +44,7 @@ describe('Alert', function() {
       var successIconClass, errorIconClass, defaultIconClass, warningIconClass;
 
       beforeEach(function(){
-        defaultIconClass = "ic-question-circle-o";
+        defaultIconClass = "ic-alert-caution";
         successIconClass = "ic-check-circle-o";
         errorIconClass = "ic-exclamation-circle-o";
         warningIconClass = "ic-info-circle-o";
@@ -98,5 +98,3 @@ describe('Alert', function() {
     });
   });
 });
-
-
