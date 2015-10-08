@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import SaveButton from '../src/save-button';
-import Accordion from '../infl-components/accordion.jsx';
+import Accordion from '../src/accordion';
 
 class App extends Component {
   state = {
@@ -53,7 +53,6 @@ class App extends Component {
       saved:   'CustomSaved',
       saving:  'CustomSaving'
     };
-
     const { sections, ind } = this.state;
 
     return <div>
