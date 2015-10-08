@@ -10,7 +10,7 @@ module.exports = {
       return (
         <Pattern.Show>
           <Popover>
-            <a href="javascript://">Open Popover Demo</a>
+            <a href="javascript:void(0)">Open Popover Demo</a>
             <Popover.Menu>
               <a className="ic ic-pencil"href="javascript://">Edit</a>
               <a className="ic ic-lock"href="javascript://">Lock</a>

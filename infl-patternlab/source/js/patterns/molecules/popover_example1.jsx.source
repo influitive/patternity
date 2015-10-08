@@ -1,5 +1,5 @@
 <Popover>
-  <a href="javascript://">Open Popover</a>
+  <a href="javascript:void(0)">Open Popover</a>
   <Popover.Menu>
     <a className="ic ic-pencil"href="javascript://">Edit</a>
     <a className="ic ic-lock"href="javascript://">Lock</a>
