@@ -25,8 +25,17 @@ class Accordion extends Component {
     sections:         []
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({openSectionIndex: nextProps.openSectionIndex});
+  }
+
   componentWillMount() {
-    this._resetAccordionState();
+    if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
+      this.setState({
+        openSectionIndex: this.props.openSectionIndex
+      });
+    }
+    this._uniqueIdentifier = this.props.uniqueIdentifier;
   }
 
   render() {
@@ -57,15 +66,6 @@ class Accordion extends Component {
   }
 
   _uniqueIdentifier = null
-
-  _resetAccordionState = () => {
-    if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
-      this.setState({
-        openSectionIndex: this.props.openSectionIndex
-      });
-    }
-    this._uniqueIdentifier = this.props.uniqueIdentifier;
-  }
 }
 
 export default Accordion;

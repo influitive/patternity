@@ -64,21 +64,22 @@ var Accordion = (function (_Component) {
     };
 
     this._uniqueIdentifier = null;
-
-    this._resetAccordionState = function () {
-      if (_this._uniqueIdentifier !== _this.props.uniqueIdentifier) {
-        _this.setState({
-          openSectionIndex: _this.props.openSectionIndex
-        });
-      }
-      _this._uniqueIdentifier = _this.props.uniqueIdentifier;
-    };
   }
 
   _createClass(Accordion, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState({ openSectionIndex: nextProps.openSectionIndex });
+    }
+  }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
-      this._resetAccordionState();
+      if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
+        this.setState({
+          openSectionIndex: this.props.openSectionIndex
+        });
+      }
+      this._uniqueIdentifier = this.props.uniqueIdentifier;
     }
   }, {
     key: 'render',

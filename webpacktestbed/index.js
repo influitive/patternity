@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 import SaveButton from '../src/save-button';
-import Accordion from '../infl-components/accordion.jsx';
+import Accordion from '../src/accordion';
 
 class App extends Component {
   state = {
+    ind: 0,
     saveStatus: 'unsaved',
     sections: [{
       "header" : "Section Header One",
@@ -30,8 +31,12 @@ class App extends Component {
       saved:   'CustomSaved',
       saving:  'CustomSaving'
     };
-    const { sections } = this.state;
-    return <Accordion />
+    const { sections, ind } = this.state;
+
+    return <div>
+      <button onClick={() => this.setState({ind: ind ? 0 : 2})}/>
+      <Accordion sections={sections} openSectionIndex={ind}/>
+    </div>
   }
 
   saveHandler = () => {
