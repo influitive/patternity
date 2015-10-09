@@ -14,6 +14,7 @@ var SelectDropdown  = require("../../../../infl-components/select_dropdown.jsx")
 var Alert           = require("../../../../infl-components/alert.jsx");
 var ButtonGroup     = require("../../../../infl-components/button_group.jsx");
 var ToggleSwitch    = require("../../../../infl-components/toggle_switch.jsx");
+var TextArea       = require("../../../../infl-components/text_area.jsx");
 
 var FormPagePattern = React.createClass({
   getInitialState : function(){
@@ -115,7 +116,7 @@ var OneColumnLayout = React.createClass({
         </Form.Alert>
         <Form.Row inputSize="small">
           <InputLabel label="Small Text Input">
-            <TextInput type="text" help="Help me" />
+            <TextInput type="text" help="Help me" clearable={true} message="Message here"/>
           </InputLabel>
         </Form.Row>
         <Form.Row inputSize="medium">
@@ -166,6 +167,11 @@ var OneColumnLayout = React.createClass({
         <Form.Row>
           <InputLabel label="Toggle Switch">
             <ToggleSwitch />
+          </InputLabel>
+        </Form.Row>
+        <Form.Row inputSize="large">
+          <InputLabel label="Text Area">
+            <TextArea name="TextArea" onChange={this._handleChange} type="search" message="Text goes here"/>
           </InputLabel>
         </Form.Row>
         <Form.Actions>

@@ -1,5 +1,8 @@
 var React = require('react');
 var classNames = require('classnames');
+var InputIcon = require('./text/input_icon.jsx')
+var HelpTooltip = require('./help_tooltip.jsx');
+var InputMessage = require('./text/input_message.jsx');
 
 var TextInput = React.createClass({
   getDefaultProps: function() {
@@ -20,7 +23,8 @@ var TextInput = React.createClass({
       clearable:   false,
       onCleared:   function() {},
       autofocus:   false,
-      key:         ''
+      key:         '',
+      help:        null
     };
   },
 
@@ -47,7 +51,8 @@ var TextInput = React.createClass({
     clearInput:     React.PropTypes.bool,
     onInputCleared: React.PropTypes.func,
     autofocus:      React.PropTypes.bool,
-    key:            React.PropTypes.string
+    key:            React.PropTypes.string,
+    help:           React.PropTypes.any
   },
 
   getInitialState: function() {
@@ -65,13 +70,22 @@ var TextInput = React.createClass({
 
   render: function() {
     return <span className={this._determineInputStyling()}>
-        {this._determineInputIcon()}
+        <InputIcon type={this.props.type} required={this.props.required}/>
         <input readOnly={this.props.readOnly} required={this.props.required} type={this.props.type} value={this.state.value}
                placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
                pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange} ref="input"/>
         {this._isClearable()}
-        {this._buildMessage()}
+        {this._helpTooltip()}
+        <InputMessage message={this.props.message}/>
       </span>;
+  },
+
+  _helpTooltip: function() {
+    if (this.props.help === null) {
+      return null;
+    }
+
+    return <HelpTooltip>{this.props.help}</HelpTooltip>
   },
 
   _setInputFocus: function(autofocus) {
@@ -88,16 +102,9 @@ var TextInput = React.createClass({
       'search-input': this.props.type === 'search',
       'pt-input':     true,
       'is-disabled':  this.props.disabled,
-      'is-clearable': this.props.clearable
+      'is-clearable': this.props.clearable,
+      'has-help':     this.props.help !== null
     });
-  },
-
-  _determineInputIcon: function() {
-    if (this.props.type === 'search') {
-      return <span className="search-input ic ic-search"></span>;
-    } else if (this.props.required) {
-      return <span className="required-input ic ic-asterisk"></span>;
-    }
   },
 
   _handleChange: function(event) {
@@ -106,7 +113,9 @@ var TextInput = React.createClass({
   },
 
   _isClearable: function() {
-    if(!this.props.clearable) return '';
+    if (!this.props.clearable || this.props.help !== null) {
+      return null;
+    }
     return <span className="clear-input ic ic-close" onClick={this._clearInputValue}></span>;
   },
 
@@ -114,17 +123,6 @@ var TextInput = React.createClass({
     this.setState({
       value: ''
     }, this.props.onCleared());
-  },
-
-  _buildMessage: function() {
-    if (typeof this.props.message === 'string') {
-      return <span className='input-message'>{this.props.message}</span>;
-    }
-    else {
-      return this.props.message.map(function(message, i) {
-        return <span key={i} className='input-message'>{message}</span>;
-      });
-    }
   }
 });
 

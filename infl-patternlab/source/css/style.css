@@ -1841,8 +1841,8 @@ textarea {
 }
 .has-help .pt-tooltip {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 7px;
+  top: 12px;
 }
 
 .is-disabled input,

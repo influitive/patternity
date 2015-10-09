@@ -1,56 +1,8 @@
 var React = require('react');
 var classNames = require('classnames');
 var Icon = require('./icon.jsx');
-
-var InputMessage = React.createClass({
-  PropTypes: {
-    message : React.PropTypes.string.isRequired
-  },
-
-  render: function () {
-    if ( ! this.props.message || ! this.props.message.length) {
-      return <span />;
-    }
-
-    return (
-      <span>{ this._message() }</span>
-    );
-  },
-
-  _message: function () {
-    if (typeof this.props.message === "string") {
-      return (
-        <span className="input-message">{this.props.message}</span>
-      );
-    } else {
-      return this.props.message.map(function (message, i) {
-        return (
-          <span key={i} className="input-message">{message}</span>
-        );
-      });
-    }
-  }
-});
-
-var TextAreaIcon = React.createClass({
-  render: function () {
-    if (this.props.type === 'search') {
-      return (
-        <span className="search-input">
-          <Icon icon='search' />
-        </span>
-      );
-    } else if(this.props.required) {
-      return (
-        <span className="required-input">
-          <Icon icon='asterisk' />
-        </span>
-      );
-    } else {
-      return <span />;
-    }
-  }
-});
+var InputIcon = require('./text/input_icon.jsx');
+var InputMessage = require('./text/input_message.jsx');
 
 var TextAreaContainer = React.createClass({
   getDefaultProps: function () {
@@ -75,7 +27,7 @@ var TextAreaContainer = React.createClass({
   render: function () {
     return (
       <span className={ this._classNames() }>
-        <TextAreaIcon {...this.props} />
+        <InputIcon type={this.props.type} required={this.props.required} />
 
         { this.props.children }
 
