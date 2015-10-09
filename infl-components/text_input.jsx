@@ -1,8 +1,8 @@
 var React = require('react');
 var classNames = require('classnames');
-var InputIcon = require('./text/input_icon.jsx')
-var HelpTooltip = require('./help_tooltip.jsx');
+var InputIcon = require('./text/input_icon.jsx');
 var InputMessage = require('./text/input_message.jsx');
+var InputAction = require('./text/input_action.jsx');
 
 var TextInput = React.createClass({
   getDefaultProps: function() {
@@ -74,18 +74,9 @@ var TextInput = React.createClass({
         <input readOnly={this.props.readOnly} required={this.props.required} type={this.props.type} value={this.state.value}
                placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
                pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange} ref="input"/>
-        {this._isClearable()}
-        {this._helpTooltip()}
+        <InputAction clearable={this.props.clearable} help={this.props.help} onCleared={this._clearInputValue}/>
         <InputMessage message={this.props.message}/>
       </span>;
-  },
-
-  _helpTooltip: function() {
-    if (this.props.help === null) {
-      return null;
-    }
-
-    return <HelpTooltip>{this.props.help}</HelpTooltip>
   },
 
   _setInputFocus: function(autofocus) {
@@ -110,13 +101,6 @@ var TextInput = React.createClass({
   _handleChange: function(event) {
     this.setState({value: event.target.value});
     this.props.onChange(event);
-  },
-
-  _isClearable: function() {
-    if (!this.props.clearable || this.props.help !== null) {
-      return null;
-    }
-    return <span className="clear-input ic ic-close" onClick={this._clearInputValue}></span>;
   },
 
   _clearInputValue: function() {
