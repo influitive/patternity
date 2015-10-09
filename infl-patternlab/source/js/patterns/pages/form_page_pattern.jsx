@@ -115,7 +115,7 @@ var OneColumnLayout = React.createClass({
         </Form.Alert>
         <Form.Row inputSize="small">
           <InputLabel label="Small Text Input">
-            <TextInput type="text" />
+            <TextInput type="text" help="Help me" />
           </InputLabel>
         </Form.Row>
         <Form.Row inputSize="medium">
