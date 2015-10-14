@@ -101,9 +101,6 @@ var Form = React.createClass({
 });
 
 Form.Column = React.createClass({
-  shouldComponentUpdate: function() {
-    return false;
-  },
   render: function() {
     return <div className="pt-form-column" ref="column">
       {this.props.children}
@@ -130,10 +127,6 @@ Form.Row = React.createClass({
 });
 
 Form.Actions = React.createClass({
-  shouldComponentUpdate: function() {
-    return false;
-  },
-
   render: function() {
     return <div className="pt-form-actions" ref="actions">
       {this.props.children}
