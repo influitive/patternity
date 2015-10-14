@@ -5,8 +5,8 @@ class AccordionBody extends Component {
     this.applyRealMaxHeight();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.maxHeight !== prevState.maxHeight) this.applyRealMaxHeight();
+  componentDidUpdate() {
+    this.applyRealMaxHeight();
   }
 
   state = {
@@ -24,7 +24,7 @@ class AccordionBody extends Component {
 
   applyRealMaxHeight = () => {
     const detailsHeight = this.refs.details.getDOMNode().offsetHeight;
-    this.setState({maxHeight: detailsHeight});
+    if (detailsHeight !== this.state.maxHeight) this.setState({maxHeight: detailsHeight});
   }
 
 }

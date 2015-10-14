@@ -34,7 +34,7 @@ var AccordionBody = (function (_Component) {
 
     this.applyRealMaxHeight = function () {
       var detailsHeight = _this.refs.details.getDOMNode().offsetHeight;
-      _this.setState({ maxHeight: detailsHeight });
+      if (detailsHeight !== _this.state.maxHeight) _this.setState({ maxHeight: detailsHeight });
     };
   }
 
@@ -45,8 +45,8 @@ var AccordionBody = (function (_Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      if (this.state.maxHeight !== prevState.maxHeight) this.applyRealMaxHeight();
+    value: function componentDidUpdate() {
+      this.applyRealMaxHeight();
     }
   }, {
     key: "render",
