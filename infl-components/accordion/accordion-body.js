@@ -22,20 +22,31 @@ var AccordionBody = (function (_Component) {
   _inherits(AccordionBody, _Component);
 
   function AccordionBody() {
+    var _this = this;
+
     _classCallCheck(this, AccordionBody);
 
     _get(Object.getPrototypeOf(AccordionBody.prototype), "constructor", this).apply(this, arguments);
 
     this.state = {
-      maxheight: 0
+      maxHeight: 0
+    };
+
+    this.applyRealMaxHeight = function () {
+      var details = _this.refs.details.getDOMNode();
+      _this.setState({ maxHeight: details.offsetHeight });
     };
   }
 
   _createClass(AccordionBody, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var details = this.refs.details.getDOMNode();
-      this.setState({ maxHeight: details.offsetHeight });
+      this.applyRealMaxHeight();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.applyRealMaxHeight();
     }
   }, {
     key: "render",

@@ -2,12 +2,15 @@ import React, { Component, PropTypes } from 'react';
 
 class AccordionBody extends Component {
   componentDidMount() {
-    const details = this.refs.details.getDOMNode();
-    this.setState({maxHeight: details.offsetHeight});
+    this.applyRealMaxHeight();
+  }
+
+  componentDidUpdate() {
+    this.applyRealMaxHeight();
   }
 
   state = {
-    maxheight: 0
+    maxHeight: 0
   }
 
   render() {
@@ -17,6 +20,11 @@ class AccordionBody extends Component {
         {this.props.body}
       </div>
     </div>;
+  }
+
+  applyRealMaxHeight = () => {
+    const details = this.refs.details.getDOMNode();
+    this.setState({maxHeight: details.offsetHeight});
   }
 
 }
