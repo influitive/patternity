@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import SaveButton from '../src/save-button';
 import Accordion from '../src/accordion';
+import '../src/accordion/_accordion.scss';
 
 class App extends Component {
   state = {
