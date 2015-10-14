@@ -14,6 +14,7 @@ var SelectDropdown  = require("../../../../infl-components/select_dropdown.jsx")
 var Alert           = require("../../../../infl-components/alert.jsx");
 var ButtonGroup     = require("../../../../infl-components/button_group.jsx");
 var ToggleSwitch    = require("../../../../infl-components/toggle_switch.jsx");
+var TextArea       = require("../../../../infl-components/text_area.jsx");
 
 var FormPagePattern = React.createClass({
   getInitialState : function(){
@@ -115,7 +116,8 @@ var OneColumnLayout = React.createClass({
         </Form.Alert>
         <Form.Row inputSize="small">
           <InputLabel label="Small Text Input">
-            <TextInput type="text" />
+            <TextInput type="text" help="Help me" clearable={true} message={<div>Hello</div>}/>
+            <TextInput type="text" help="Help me" clearable={true} message={[<div>Hello</div>,'dave']}/>
           </InputLabel>
         </Form.Row>
         <Form.Row inputSize="medium">
@@ -168,6 +170,11 @@ var OneColumnLayout = React.createClass({
             <ToggleSwitch />
           </InputLabel>
         </Form.Row>
+        <Form.Row inputSize="large">
+          <InputLabel label="Text Area">
+            <TextArea name="TextArea" onChange={this._handleChange} type="search" message="Text goes here" style={this.styles.textArea}/>
+          </InputLabel>
+        </Form.Row>
         <Form.Actions>
           <ButtonGroup>
             <button className="secondary">Cancel</button>
@@ -179,6 +186,11 @@ var OneColumnLayout = React.createClass({
   },
   _handleChange : function(event){
     this.props.onChange(event.target.name, event.target.value);
+  },
+  styles: {
+    textArea: {
+      height: '200px'
+    }
   }
 });
 

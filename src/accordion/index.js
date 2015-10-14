@@ -17,12 +17,14 @@ class Accordion extends Component {
         return new Error('Invalid `openSectionIndex` supplied to `Accordion`' +
           ', expected a positive integer');
       }
-    }
+    },
+    onOpenSection: PropTypes.func
   }
 
   static defaultProps = {
     openSectionIndex: null,
-    sections:         []
+    sections:         [],
+    onOpenSection:    function() {}
   }
 
   componentWillReceiveProps(nextProps) {
@@ -34,6 +36,8 @@ class Accordion extends Component {
       this.setState({
         openSectionIndex: this.props.openSectionIndex
       });
+      if (this.props.openSectionIndex != null)
+        this.props.onOpenSection(this.props.openSectionIndex);
     }
     this._uniqueIdentifier = this.props.uniqueIdentifier;
   }
@@ -62,6 +66,7 @@ class Accordion extends Component {
       this.setState({openSectionIndex: -1});
     } else {
       this.setState({openSectionIndex: id});
+      this.props.onOpenSection(id);
     }
   }
 

@@ -24,7 +24,9 @@ var AccordionPattern = React.createClass({
 
           <Pattern.Detail title="Accordion">
             <Pattern.Show>
-              <Accordion sections={this.state.sections} uniqueIdentifier="accordion-1" />
+              <Accordion sections={this.state.sections} uniqueIdentifier="accordion-1" onOpenSection={function(id){
+                  alert("Opened section "+id);
+                }} />
             </Pattern.Show>
 
             <Pattern.Demo title="Accordion Demo">

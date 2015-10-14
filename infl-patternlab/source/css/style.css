@@ -1199,7 +1199,7 @@ h6 {
   margin-left: -26px;
 }
 .alert-msg.warning {
-  background-color: #fffae5;
+  background-color: #fffae6;
   color: #cca300;
 }
 .alert-msg.warning .close {
@@ -1315,7 +1315,7 @@ button {
   border: none;
   padding: 8px 24px;
   text-align: center;
-  box-shadow: 0px 2px #d4d4d4;
+  box-shadow: 0px 2px #d5d5d5;
   display: inline-block;
   -webkit-transition: background-color 0.15s ease-in-out;
   -moz-transition: background-color 0.15s ease-in-out;
@@ -1675,7 +1675,7 @@ button.ic:before {
 }
 .button-group.inline.grouped button:after,
 .button-group.inline.grouped .button:after {
-  border-left: 1px solid #d4d4d4;
+  border-left: 1px solid #d5d5d5;
   content: "";
   position: absolute;
   top: 0px;
@@ -1830,6 +1830,19 @@ textarea {
 }
 .is-clearable .clear-input:hover {
   color: #444444;
+}
+
+.has-help {
+  position: relative;
+  display: inline-block;
+}
+.has-help input {
+  padding-right: 30px;
+}
+.has-help .pt-tooltip {
+  position: absolute;
+  right: 7px;
+  top: 12px;
 }
 
 .is-disabled input,
@@ -4047,9 +4060,15 @@ textarea {
 
 /* COPIED FROM '../src' DO NOT EDIT */
 .pt-save-button .ic-circle-empty:before {
+  -webkit-animation: ptSaveButtonPulse 1s infinite;
   animation: ptSaveButtonPulse 1s infinite;
 }
 
+@-webkit-keyframes ptSaveButtonPulse {
+  50% {
+    opacity: 0;
+  }
+}
 @keyframes ptSaveButtonPulse {
   50% {
     opacity: 0;

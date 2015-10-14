@@ -103,6 +103,22 @@ textarea {
   }
 }
 
+.has-help {
+  position: relative;
+  display: inline-block;
+
+  input {
+    padding-right: 30px;
+  }
+
+  .pt-tooltip {
+    position: absolute;
+    right: 7px;
+    top: 12px;
+  }
+}
+
+
 .is-disabled {
   input,
   .select-box {

@@ -1,69 +1,21 @@
 var React = require('react');
 var classNames = require('classnames');
 var Icon = require('./icon.jsx');
-
-var InputMessage = React.createClass({
-  PropTypes: {
-    message : React.PropTypes.string.isRequired
-  },
-
-  render: function () {
-    if ( ! this.props.message || ! this.props.message.length) {
-      return <span />;
-    }
-
-    return (
-      <span>{ this._message() }</span>
-    );
-  },
-
-  _message: function () {
-    if (typeof this.props.message === "string") {
-      return (
-        <span className="input-message">{this.props.message}</span>
-      );
-    } else {
-      return this.props.message.map(function (message, i) {
-        return (
-          <span key={i} className="input-message">{message}</span>
-        );
-      });
-    }
-  }
-});
-
-var TextAreaIcon = React.createClass({
-  render: function () {
-    if (this.props.type === 'search') {
-      return (
-        <span className="search-input">
-          <Icon icon='search' />
-        </span>
-      );
-    } else if(this.props.required) {
-      return (
-        <span className="required-input">
-          <Icon icon='asterisk' />
-        </span>
-      );
-    } else {
-      return <span />;
-    }
-  }
-});
+var InputIcon = require('./text/input_icon.jsx');
+var InputMessage = require('./text/input_message.jsx');
 
 var TextAreaContainer = React.createClass({
-  getDefaultProps: function () {
+  getDefaultProps: function() {
     return {
-      id:       "",
-      message:  "",
+      id:       '',
+      message:  '',
       required: false,
       error:    false,
       valid:    false,
       disabled: false
     };
   },
-  propTypes : {
+  propTypes: {
     id:       React.PropTypes.string,
     message:  React.PropTypes.oneOfType([ React.PropTypes.string, React.PropTypes.array ]),
     required: React.PropTypes.bool,
@@ -72,10 +24,10 @@ var TextAreaContainer = React.createClass({
     disabled: React.PropTypes.bool
   },
 
-  render: function () {
+  render: function() {
     return (
       <span className={ this._classNames() }>
-        <TextAreaIcon {...this.props} />
+        <InputIcon type={this.props.type} required={this.props.required} />
 
         { this.props.children }
 
@@ -84,7 +36,7 @@ var TextAreaContainer = React.createClass({
     );
   },
 
-  _classNames: function () {
+  _classNames: function() {
     return classNames({
       'is-required':  this.props.required,
       'is-error':     this.props.error,
@@ -105,24 +57,30 @@ var TextArea = React.createClass({
     disabled:    React.PropTypes.bool,
     autofocus:   React.PropTypes.bool,
     autoexpand:  React.PropTypes.bool,
-    onChange:    React.PropTypes.func.isRequired
+    onChange:    React.PropTypes.func.isRequired,
+    style:       React.PropTypes.shape({
+      height: React.PropTypes.string
+    })
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function() {
     return {
-      autoexpand: true
+      autoexpand: true,
+      style: {
+        height: 'inherit'
+      }
     };
   },
 
-  componentWillReceiveProps: function (newProps) {
+  componentWillReceiveProps: function(newProps) {
     this._setInputFocus( newProps.autofocus );
   },
 
-  componentDidMount: function () {
+  componentDidMount: function() {
     this._setInputFocus( this.props.autofocus );
   },
 
-  render: function () {
+  render: function() {
     return (
       <TextAreaContainer {...this.props} classNames={this._classNames()}>
         <textarea {...this.props} ref="input" />
@@ -130,14 +88,14 @@ var TextArea = React.createClass({
     );
   },
 
-  _setInputFocus: function (autofocus) {
+  _setInputFocus: function(autofocus) {
     if ( autofocus ) { React.findDOMNode(this.refs.input).focus(); }
   },
 
-  _classNames: function () {
+  _classNames: function() {
     return {
-      "pt-textarea": true,
-      "autoexpand": this.props.autoexpand
+      'pt-textarea': true,
+      'autoexpand':  this.props.autoexpand
     };
   }
 });

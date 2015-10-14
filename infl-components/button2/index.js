@@ -34,6 +34,10 @@ var Button = (function (_Component) {
 
     _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
 
+    this._buttonType = function () {
+      if (_this.isSubmit) return 'submit';else return 'button';
+    };
+
     this.getClasses = function () {
       var _ref;
 
@@ -64,7 +68,7 @@ var Button = (function (_Component) {
 
       return _react2['default'].createElement(
         'button',
-        { disabled: disabled, className: this.getClasses(), onClick: onClick },
+        { type: this._buttonType(), disabled: disabled, className: this.getClasses(), onClick: onClick },
         children
       );
     }
@@ -75,7 +79,8 @@ var Button = (function (_Component) {
       type: _react.PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
       onClick: _react.PropTypes.func.isRequired,
       disabled: _react.PropTypes.bool,
-      inverse: _react.PropTypes.bool
+      inverse: _react.PropTypes.bool,
+      isSubmit: _react.PropTypes.bool
     },
     enumerable: true
   }, {
@@ -83,7 +88,8 @@ var Button = (function (_Component) {
     value: {
       type: 'primary',
       disabled: false,
-      inverse: false
+      inverse: false,
+      isSubmit: false
     },
     enumerable: true
   }]);
