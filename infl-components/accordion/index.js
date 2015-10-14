@@ -60,6 +60,7 @@ var Accordion = (function (_Component) {
         _this.setState({ openSectionIndex: -1 });
       } else {
         _this.setState({ openSectionIndex: id });
+        _this.props.onOpenSection(id);
       }
     };
 
@@ -78,6 +79,7 @@ var Accordion = (function (_Component) {
         this.setState({
           openSectionIndex: this.props.openSectionIndex
         });
+        if (this.props.openSectionIndex != null) this.props.onOpenSection(this.props.openSectionIndex);
       }
       this._uniqueIdentifier = this.props.uniqueIdentifier;
     }
@@ -102,14 +104,16 @@ var Accordion = (function (_Component) {
         if (typeof n !== 'number' || n !== parseInt(n, 10) || n < 0) {
           return new Error('Invalid `openSectionIndex` supplied to `Accordion`' + ', expected a positive integer');
         }
-      }
+      },
+      onOpenSection: _react.PropTypes.func
     },
     enumerable: true
   }, {
     key: 'defaultProps',
     value: {
       openSectionIndex: null,
-      sections: []
+      sections: [],
+      onOpenSection: function onOpenSection() {}
     },
     enumerable: true
   }]);
