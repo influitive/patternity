@@ -7,21 +7,30 @@ class Button extends Component {
     type:     PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
     onClick:  PropTypes.func.isRequired,
     disabled: PropTypes.bool,
-    inverse:  PropTypes.bool
+    inverse:  PropTypes.bool,
+    isSubmit: PropTypes.bool
   }
 
   static defaultProps = {
     type:     'primary',
     disabled: false,
     inverse:  false,
+    isSubmit: false
   }
 
 
   render() {
     const { disabled, onClick, children } = this.props;
-    return <button disabled={disabled} className={this.getClasses()} onClick={onClick}>
+    return <button type={this._buttonType()} disabled={disabled} className={this.getClasses()} onClick={onClick}>
       {children}
     </button>;
+  }
+
+  _buttonType = () =>{
+    if(this.isSubmit)
+      return 'submit';
+    else
+      return 'button';
   }
 
   getClasses = () => {

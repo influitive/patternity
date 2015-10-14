@@ -1,31 +1,43 @@
 var React = require('react');
 
+var _ = require('lodash');
+
 var InputMessage = React.createClass({
-  PropTypes: {
-    message : React.PropTypes.string.isRequired
+  propTypes: {
+    message : React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.node,
+      React.PropTypes.array
+    ])
+  },
+
+  getDefaultProps: function(){
+    return {
+      message: null
+    };
   },
 
   render: function () {
-    if ( ! this.props.message || ! this.props.message.length) {
+    if ( this.props.message === null) {
       return null;
     }
 
     return (
-      <span>{ this._message() }</span>
+      <div>{ this._message() }</div>
     );
   },
 
   _message: function () {
-    if (typeof this.props.message === "string") {
-      return (
-        <span className="input-message">{this.props.message}</span>
-      );
-    } else {
+    if (_.isArray(this.props.message)) {
       return this.props.message.map(function (message, i) {
         return (
-          <span key={i} className="input-message">{message}</span>
+          <div key={i} className="input-message">{message}</div>
         );
       });
+    } else {
+      return (
+        <div className="input-message">{this.props.message}</div>
+      );
     }
   }
 });

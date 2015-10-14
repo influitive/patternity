@@ -36,6 +36,7 @@ var TextInput = React.createClass({
     pattern:     React.PropTypes.string,
     message:     React.PropTypes.oneOfType([
       React.PropTypes.string,
+      React.PropTypes.node,
       React.PropTypes.array
     ]),
     value: React.PropTypes.oneOfType([

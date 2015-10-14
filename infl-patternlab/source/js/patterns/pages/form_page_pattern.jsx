@@ -116,7 +116,8 @@ var OneColumnLayout = React.createClass({
         </Form.Alert>
         <Form.Row inputSize="small">
           <InputLabel label="Small Text Input">
-            <TextInput type="text" help="Help me" clearable={true} message="Message here"/>
+            <TextInput type="text" help="Help me" clearable={true} message={<div>Hello</div>}/>
+            <TextInput type="text" help="Help me" clearable={true} message={[<div>Hello</div>,'dave']}/>
           </InputLabel>
         </Form.Row>
         <Form.Row inputSize="medium">
@@ -171,7 +172,7 @@ var OneColumnLayout = React.createClass({
         </Form.Row>
         <Form.Row inputSize="large">
           <InputLabel label="Text Area">
-            <TextArea name="TextArea" onChange={this._handleChange} type="search" message="Text goes here"/>
+            <TextArea name="TextArea" onChange={this._handleChange} type="search" message="Text goes here" style={this.styles.textArea}/>
           </InputLabel>
         </Form.Row>
         <Form.Actions>
@@ -185,6 +186,11 @@ var OneColumnLayout = React.createClass({
   },
   _handleChange : function(event){
     this.props.onChange(event.target.name, event.target.value);
+  },
+  styles: {
+    textArea: {
+      height: '200px'
+    }
   }
 });
 
