@@ -17,7 +17,11 @@ var TextAreaContainer = React.createClass({
   },
   propTypes: {
     id:       React.PropTypes.string,
-    message:  React.PropTypes.oneOfType([ React.PropTypes.string, React.PropTypes.array ]),
+    message:  React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.node,
+      React.PropTypes.array
+    ]),
     required: React.PropTypes.bool,
     error:    React.PropTypes.bool,
     valid:    React.PropTypes.bool,
