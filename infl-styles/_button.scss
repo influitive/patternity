@@ -176,7 +176,7 @@ button {
 
 .button-dropdown {
   position: relative;
-
+  display: inline-block;
   &.show {
 
     .options {

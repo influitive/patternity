@@ -1484,6 +1484,7 @@ button.ic:before {
 
 .button-dropdown {
   position: relative;
+  display: inline-block;
 }
 .button-dropdown.show .options {
   max-height: 400px;
@@ -4065,9 +4066,15 @@ textarea {
 
 /* COPIED FROM '../src' DO NOT EDIT */
 .pt-save-button .ic-circle-empty:before {
+  -webkit-animation: ptSaveButtonPulse 1s infinite;
   animation: ptSaveButtonPulse 1s infinite;
 }
 
+@-webkit-keyframes ptSaveButtonPulse {
+  50% {
+    opacity: 0;
+  }
+}
 @keyframes ptSaveButtonPulse {
   50% {
     opacity: 0;
