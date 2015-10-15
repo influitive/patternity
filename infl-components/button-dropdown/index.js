@@ -10,8 +10,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
@@ -20,85 +18,105 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-// Will need to break this style up between dropdown button a
 // import styles from './_button.scss';
 
-var Button = (function (_Component) {
-  _inherits(Button, _Component);
+var ButtonDropdown = (function (_Component) {
+  _inherits(ButtonDropdown, _Component);
 
-  function Button() {
+  function ButtonDropdown() {
     var _this = this;
 
-    _classCallCheck(this, Button);
+    _classCallCheck(this, ButtonDropdown);
 
-    _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(ButtonDropdown.prototype), 'constructor', this).call(this);
 
-    this._buttonType = function () {
-      if (_this.isSubmit) return 'submit';else return 'button';
+    this._toggleDropdownOptions = function (event) {
+      _this.setState({
+        isDropdownOpen: !_this.state.isDropdownOpen
+      });
     };
 
-    this.getClasses = function () {
-      var _ref;
+    this._isDropdownOpen = function () {
+      return _this.state.isDropdownOpen ? 'show' : '';
+    };
 
-      var buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'text'];
-      var _props = _this.props;
-      var disabled = _props.disabled;
-      var inverse = _props.inverse;
-      var type = _props.type;
-      var children = _props.children;
-      var className = _props.className;
-      var icon = _props.icon;
+    this._buildDropdown = function () {
+      return _this._populateOptions().map(_this._buildOption);
+    };
 
-      return _classnames2['default']({
-        button: true,
-        disabled: disabled,
-        iconButton: children && children.length === 0
-      }, icon && 'ic ic-' + icon, !disabled && (_ref = {}, _defineProperty(_ref, type, true), _defineProperty(_ref, 'inverse', (type === 'secondary' || type === 'text') && inverse), _ref));
+    this._populateOptions = function () {
+      return _this.props.children.length > 0 ? _this.props.children : _this.props.options;
+    };
+
+    this._buildOption = function (option, index) {
+      return _react2['default'].createElement(
+        'li',
+        { className: 'option', key: 'option-' + index, onClick: _this._handleChange },
+        option
+      );
+    };
+
+    this._handleChange = function (key) {
+      _this.props.onChange(key);
+    };
+
+    this._getOptionsClasses = function () {
+      var classes = 'options options-aligned-' + _this.props.alignDropdown;
+      return classes;
+    };
+
+    this.state = {
+      isDropdownOpen: false
     };
   }
 
-  _createClass(Button, [{
+  _createClass(ButtonDropdown, [{
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var disabled = _props2.disabled;
-      var onClick = _props2.onClick;
-      var children = _props2.children;
-
       return _react2['default'].createElement(
-        'button',
-        { type: this._buttonType(), disabled: disabled, className: this.getClasses(), onClick: onClick },
-        children
+        'div',
+        { className: 'button-dropdown ' + this._isDropdownOpen(), ref: 'buttonDropdown' },
+        _react2['default'].createElement(
+          'button',
+          { className: this.props.type, onClick: this._toggleDropdownOptions, ref: 'button' },
+          _react2['default'].createElement(
+            'span',
+            { ref: 'title' },
+            this.props.title
+          ),
+          _react2['default'].createElement('span', { className: 'arrow ic ic-chevron-down', ref: 'icon' })
+        ),
+        _react2['default'].createElement(
+          'ul',
+          { className: this._getOptionsClasses(), ref: 'options' },
+          this._buildDropdown()
+        )
       );
     }
   }], [{
-    key: 'propTypes',
+    key: 'defaultProps',
     value: {
-      icon: _react.PropTypes.string,
-      type: _react.PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
-      onClick: _react.PropTypes.func.isRequired,
-      disabled: _react.PropTypes.bool,
-      inverse: _react.PropTypes.bool,
-      isSubmit: _react.PropTypes.bool
+      title: '',
+      type: '',
+      options: [],
+      children: [],
+      alignDropdown: 'left'
     },
     enumerable: true
   }, {
-    key: 'defaultProps',
+    key: 'propTypes',
     value: {
-      type: 'primary',
-      disabled: false,
-      inverse: false,
-      isSubmit: false
+      title: _react.PropTypes.string,
+      type: _react.PropTypes.oneOf(['success', 'danger', 'primary', 'important', 'secondary', '']),
+      options: _react.PropTypes.array,
+      children: _react.PropTypes.array,
+      alignDropdown: _react.PropTypes.oneOf(['left', 'right'])
     },
     enumerable: true
   }]);
 
-  return Button;
+  return ButtonDropdown;
 })(_react.Component);
 
-exports['default'] = Button;
+exports['default'] = ButtonDropdown;
 module.exports = exports['default'];

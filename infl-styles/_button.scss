@@ -313,13 +313,20 @@ button {
     overflow: hidden;
     position: absolute;
     top: 112%;
-    left: 2px;
     margin: 0px;
     padding: 0px;
     border-radius: 2px;
     min-width: 150px;
     background-color: $lighter-grey;
     border: 1px solid inherit;
+
+    &.options-aligned-left {
+      left: 2px;
+    }
+
+    &.options-aligned-right {
+      right: 2px;
+    }
 
     @include transition(all 0.3s ease-in-out);
 
