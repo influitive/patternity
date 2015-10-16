@@ -71,7 +71,7 @@ var Button = (function (_Component) {
 
       return _react2['default'].createElement(
         'button',
-        { type: this._buttonType(), disabled: disabled, className: this.getClasses(), onClick: onClick },
+        { style: this.props.style, type: this._buttonType(), disabled: disabled, className: this.getClasses(), onClick: onClick },
         children
       );
     }
@@ -83,7 +83,16 @@ var Button = (function (_Component) {
       onClick: _react.PropTypes.func.isRequired,
       disabled: _react.PropTypes.bool,
       inverse: _react.PropTypes.bool,
-      isSubmit: _react.PropTypes.bool
+      isSubmit: _react.PropTypes.bool,
+      style: _react.PropTypes.shape({
+        borderColor: function borderColor(props, propName) {
+          var type = props.type;
+
+          if (type != 'secondary') {
+            return new Error('Cannot use border with non-secondary type.');
+          }
+        }
+      })
     },
     enumerable: true
   }, {

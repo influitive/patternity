@@ -11,7 +11,15 @@ class Button extends Component {
     onClick:  PropTypes.func.isRequired,
     disabled: PropTypes.bool,
     inverse:  PropTypes.bool,
-    isSubmit: PropTypes.bool
+    isSubmit: PropTypes.bool,
+    style:    PropTypes.shape({
+      borderColor: function(props, propName) {
+        const { type } = props;
+        if (type != 'secondary') {
+          return new Error('Cannot use border with non-secondary type.');
+        }
+      }
+    })
   }
 
   static defaultProps = {
@@ -24,10 +32,11 @@ class Button extends Component {
 
   render() {
     const { disabled, onClick, children } = this.props;
-    return <button type={this._buttonType()} disabled={disabled} className={this.getClasses()} onClick={onClick}>
+    return <button style={this.props.style} type={this._buttonType()} disabled={disabled} className={this.getClasses()} onClick={onClick}>
       {children}
     </button>;
   }
+
 
   _buttonType = () =>{
     if(this.isSubmit)

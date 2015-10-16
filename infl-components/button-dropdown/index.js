@@ -58,6 +58,9 @@ var ButtonDropdown = (function (_Component) {
 
     this._handleChange = function (key) {
       _this.props.onChange(key);
+      _this.setState({
+        isDropdownOpen: false
+      });
     };
 
     this._getOptionsClasses = function () {
@@ -100,7 +103,8 @@ var ButtonDropdown = (function (_Component) {
       type: '',
       options: [],
       children: [],
-      alignDropdown: 'left'
+      alignDropdown: 'left',
+      onChange: function onChange() {}
     },
     enumerable: true
   }, {
@@ -110,7 +114,8 @@ var ButtonDropdown = (function (_Component) {
       type: _react.PropTypes.oneOf(['success', 'danger', 'primary', 'important', 'secondary', '']),
       options: _react.PropTypes.array,
       children: _react.PropTypes.array,
-      alignDropdown: _react.PropTypes.oneOf(['left', 'right'])
+      alignDropdown: _react.PropTypes.oneOf(['left', 'right']),
+      onChange: _react.PropTypes.func
     },
     enumerable: true
   }]);

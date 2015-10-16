@@ -16,7 +16,8 @@ class ButtonDropdown extends Component {
     type:          '',
     options:       [],
     children:      [],
-    alignDropdown: 'left'
+    alignDropdown: 'left',
+    onChange:      () => {}
   }
 
   static propTypes = {
@@ -28,7 +29,8 @@ class ButtonDropdown extends Component {
     children:      PropTypes.array,
     alignDropdown: PropTypes.oneOf([
       'left', 'right'
-    ])
+    ]),
+    onChange: PropTypes.func
   }
 
   render() {
@@ -71,6 +73,9 @@ class ButtonDropdown extends Component {
 
   _handleChange = (key) => {
     this.props.onChange(key);
+    this.setState({
+      isDropdownOpen: false
+    });
   }
 
   _getOptionsClasses = () => {
