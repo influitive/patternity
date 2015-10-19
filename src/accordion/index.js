@@ -26,7 +26,7 @@ class Accordion extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({openSectionIndex: nextProps.openSectionIndex});
+    // this.setState({openSectionIndex: nextProps.openSectionIndex});
   }
 
   componentWillMount() {

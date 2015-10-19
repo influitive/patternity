@@ -58,7 +58,7 @@ class App extends Component {
 
     return <div>
       <button onClick={() => this.setState({ind: ind ? 0 : 2})}/>
-      <Accordion sections={sections} openSectionIndex={ind}/>
+      <Accordion sections={sections} initialSectionIndex={ind}/>
     </div>
   }
 
