@@ -8,7 +8,7 @@
     "babel": "babel src --out-dir infl-components && gulp copy-lib-styles",
     "babel-watch": "babel src -w --out-dir infl-components & gulp watch-scss",
     "testbed": "node ./webpacktestbed/devServer.js",
-    "prepublish": "npm run babel && npm run fonts",
+    "prepublish": "npm run babel",
     "fonts": "gulp influicons"
   },
   "repository": {
