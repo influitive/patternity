@@ -5,34 +5,46 @@ import AccordionHeader from './accordion-header';
 
 // import style from './_accordion.scss';
 
+const validateIndex = (props, propName) => {
+  if (props.initialSectionIndex != null && props.openSectionIndex != null) {
+    return new Error('Do not use initialSectionIndex and openSectionIndex together');
+  }
+
+  const n = props[propName];
+
+  if (n == null) return;
+  if (typeof n !== 'number' || n !== parseInt(n, 10) || n < 0) {
+    return new Error('Invalid `initialSectionIndex` supplied to `Accordion`' +
+      ', expected a positive integer');
+  }
+}
+
 class Accordion extends Component {
   static propTypes = {
-    sections:         PropTypes.array.isRequired,
-    uniqueIdentifier: PropTypes.string,
-    openSectionIndex: function(props) {
-      const n = props.openSectionIndex;
-
-      if (n == null) return;
-      if (typeof n !== 'number' || n !== parseInt(n, 10) || n < 0) {
-        return new Error('Invalid `openSectionIndex` supplied to `Accordion`' +
-          ', expected a positive integer');
-      }
-    }
+    sections:            PropTypes.array.isRequired,
+    uniqueIdentifier:    PropTypes.string,
+    initialSectionIndex: validateIndex,
+    openSectionIndex:    validateIndex
   }
 
   static defaultProps = {
-    openSectionIndex: null,
-    sections:         []
+    initialSectionIndex: null,
+    sections:            []
   }
 
   componentWillReceiveProps(nextProps) {
-    // this.setState({openSectionIndex: nextProps.openSectionIndex});
+    if (nextProps.openSectionIndex != null) this.setState({openSectionIndex: nextProps.openSectionIndex});
   }
 
   componentWillMount() {
+    const { openSectionIndex, initialSectionIndex } = this.props;
+    if (openSectionIndex != null) {
+      this.setState({openSectionIndex: openSectionIndex});
+      return;
+    }
     if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
       this.setState({
-        openSectionIndex: this.props.openSectionIndex
+        openSectionIndex: initialSectionIndex
       });
     }
     this._uniqueIdentifier = this.props.uniqueIdentifier;
@@ -58,8 +70,9 @@ class Accordion extends Component {
   }
 
   _toggleOne = (id) => {
+    if (this.props.openSectionIndex != null) return;
     if (this.state.openSectionIndex === id) {
-      this.setState({openSectionIndex: -1});
+      this.setState({openSectionIndex: null});
     } else {
       this.setState({openSectionIndex: id});
     }
