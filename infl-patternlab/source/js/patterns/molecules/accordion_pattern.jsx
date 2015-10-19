@@ -100,7 +100,7 @@ var AccordionPattern = React.createClass({
             '\t\t\tisEnabled:' + this.state.sections[2].isEnabled + ',\n' +
           '\t\t}\n' +
         '\t],\n' +
-        '\topenSectionIndex : -1,\n' +
+        '\tinitialSectionIndex : -1,\n' +
         '\tuniqueIdentifier : "accordion-2"\n' +
       '}'
     );
@@ -135,7 +135,7 @@ var AccordionPattern = React.createClass({
   },
   _buildAccordionProps : function(){
     return {
-      openSectionIndex : {
+      initialSectionIndex : {
         type : "integer",
         defaultValue : "-1",
         required : false,

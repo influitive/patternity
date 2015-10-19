@@ -37,7 +37,7 @@ var ButtonDropdownPattern = React.createClass({
                 <div className="demo-pattern">
                   <h4>Button Dropdown</h4>
                   <div className="demo-pattern-example">
-                    <ButtonDropdown title="Button Title" type={this.state.type}>
+                    <ButtonDropdown title="Button Title" type={this.state.type} alignDropdown='right'>
                       <a href="#">Option 1</a>
                       <a href="#">Option 2</a>
                       <a href="#">Option 3</a>

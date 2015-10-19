@@ -1,6 +1,6 @@
 {
   "name": "patternity",
-  "version": "1.0.53",
+  "version": "1.0.55",
   "description": "Patternity is the pattern library and style guide for all Influitive apps",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "babel": "babel src --out-dir infl-components && gulp copy-lib-styles",
     "babel-watch": "babel src -w --out-dir infl-components & gulp watch-scss",
     "testbed": "node ./webpacktestbed/devServer.js",
-    "prepublish": "npm run babel"
+    "prepublish": "npm run babel && npm run fonts",
+    "fonts": "gulp influicons"
   },
   "repository": {
     "type": "git",
@@ -74,6 +75,7 @@
     "mocha": "^2.1.0",
     "node-sass": "^3.2.0",
     "postcss-scss": "^0.1.2",
+    "react": "^0.13.3",
     "react-hot-loader": "^1.2.9",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.0",

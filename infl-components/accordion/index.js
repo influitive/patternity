@@ -30,6 +30,19 @@ var _accordionHeader2 = _interopRequireDefault(_accordionHeader);
 
 // import style from './_accordion.scss';
 
+var validateIndex = function validateIndex(props, propName) {
+  if (props.initialSectionIndex != null && props.openSectionIndex != null) {
+    return new Error('Do not use initialSectionIndex and openSectionIndex together');
+  }
+
+  var n = props[propName];
+
+  if (n == null) return;
+  if (typeof n !== 'number' || n !== parseInt(n, 10) || n < 0) {
+    return new Error('Invalid `initialSectionIndex` supplied to `Accordion`' + ', expected a positive integer');
+  }
+};
+
 var Accordion = (function (_Component) {
   _inherits(Accordion, _Component);
 
@@ -56,11 +69,11 @@ var Accordion = (function (_Component) {
     };
 
     this._toggleOne = function (id) {
+      if (_this.props.openSectionIndex != null) return;
       if (_this.state.openSectionIndex === id) {
-        _this.setState({ openSectionIndex: -1 });
+        _this.setState({ openSectionIndex: null });
       } else {
         _this.setState({ openSectionIndex: id });
-        _this.props.onOpenSection(id);
       }
     };
 
@@ -70,16 +83,23 @@ var Accordion = (function (_Component) {
   _createClass(Accordion, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      this.setState({ openSectionIndex: nextProps.openSectionIndex });
+      if (nextProps.openSectionIndex != null) this.setState({ openSectionIndex: nextProps.openSectionIndex });
     }
   }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var _props = this.props;
+      var openSectionIndex = _props.openSectionIndex;
+      var initialSectionIndex = _props.initialSectionIndex;
+
+      if (openSectionIndex != null) {
+        this.setState({ openSectionIndex: openSectionIndex });
+        return;
+      }
       if (this._uniqueIdentifier !== this.props.uniqueIdentifier) {
         this.setState({
-          openSectionIndex: this.props.openSectionIndex
+          openSectionIndex: initialSectionIndex
         });
-        if (this.props.openSectionIndex != null) this.props.onOpenSection(this.props.openSectionIndex);
       }
       this._uniqueIdentifier = this.props.uniqueIdentifier;
     }
@@ -97,23 +117,15 @@ var Accordion = (function (_Component) {
     value: {
       sections: _react.PropTypes.array.isRequired,
       uniqueIdentifier: _react.PropTypes.string,
-      openSectionIndex: function openSectionIndex(props) {
-        var n = props.openSectionIndex;
-
-        if (n == null) return;
-        if (typeof n !== 'number' || n !== parseInt(n, 10) || n < 0) {
-          return new Error('Invalid `openSectionIndex` supplied to `Accordion`' + ', expected a positive integer');
-        }
-      },
-      onOpenSection: _react.PropTypes.func
+      initialSectionIndex: validateIndex,
+      openSectionIndex: validateIndex
     },
     enumerable: true
   }, {
     key: 'defaultProps',
     value: {
-      openSectionIndex: null,
-      sections: [],
-      onOpenSection: function onOpenSection() {}
+      initialSectionIndex: null,
+      sections: []
     },
     enumerable: true
   }]);

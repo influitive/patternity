@@ -105,8 +105,35 @@ describe('Accordion', function() {
     });
   });
 
-  describe('OpenSectionIndex', function() {
-    it('it will render with the OpenSectionIndex open', function() {
+  describe('initialSectionIndex', function() {
+    it('it will render with the initialSectionIndex open', function() {
+      var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} initialSectionIndex={0} />);
+
+      expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, 'open').length).to.equal(1);
+    });
+
+    it('it will render with the no open sections if initialSectionIndex is invalid', function() {
+      var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} initialSectionIndex={-12} />);
+
+      expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, 'open').length).to.equal(0);
+
+      var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} initialSectionIndex={'h'} />);
+
+      expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, 'open').length).to.equal(0);
+    });
+
+    it('should not change open section after receiving new props', function() {
+      var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} initialSectionIndex={0} />);
+
+      subject.componentWillReceiveProps({ initialSectionIndex: 1 });
+      expect(TestUtils.findRenderedDOMComponentWithClass(subject, 'open').getDOMNode())
+        .to.equal(React.findDOMNode(subject).firstChild.firstChild);
+
+    });
+  });
+
+  describe('openSectionIndex', function() {
+    it('it will render with the openSectionIndex open', function() {
       var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} openSectionIndex={0} />);
 
       expect(TestUtils.scryRenderedDOMComponentsWithClass(subject, 'open').length).to.equal(1);
@@ -126,8 +153,6 @@ describe('Accordion', function() {
       var subject = TestUtils.renderIntoDocument(<Accordion sections={buildSections(2)} openSectionIndex={0} />);
 
       subject.componentWillReceiveProps({ openSectionIndex: 0 });
-      console.log(TestUtils.findRenderedDOMComponentWithClass(subject, 'open').getDOMNode());
-      console.log(React.findDOMNode(subject).firstChild.firstChild);
       expect(TestUtils.findRenderedDOMComponentWithClass(subject, 'open').getDOMNode())
         .to.equal(React.findDOMNode(subject).firstChild.firstChild);
 
