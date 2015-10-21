@@ -223,7 +223,10 @@ button {
 
   button {
     position: relative;
-    padding-right: 3em;
+
+    &.button-with-text {
+      padding-right: 3em;
+    }
     outline: none;
 
     .arrow {
