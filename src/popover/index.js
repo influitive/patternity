@@ -1,10 +1,13 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import 'babel/polyfill';
 import $ from 'jquery';
 
-import positionPopover from './position-popover';
+import { Overlay } from 'react-overlays';
 
-// import style from './_popover.scss';
+import PopoverContent from './popover-content';
+
+import style from './_popover.scss';
 
 class Popover extends Component {
   static propTypes = {
@@ -16,12 +19,7 @@ class Popover extends Component {
 
     style: PropTypes.shape({
       background:  PropTypes.string.isRequired,
-      borderColor: function(props, propName) {
-        const { background, borderColor } = props;
-        if (borderColor && background.includes('rgba')) {
-          return new Error('Cannot use border with transparent background');
-        }
-      }
+      borderColor: this._determineBorderColour()
     })
   }
 
@@ -39,55 +37,44 @@ class Popover extends Component {
 
   componentDidUpdate() {
     if (this.props.isOpen) {
-      positionPopover(this.getPopoverElements(), this.props.position);
       this.props.onOpen();
     }
   }
 
   render() {
-    const { element, style, isOpen, position, children } = this.props;
-    const contentBorder = this.shouldHaveBorder() ? style.borderColor : 'transparent';
-
-    return <div className="pt-popover" ref="popover">
-      {!isOpen ? null : <div>
-        {this.createArrow()}
-        <div className="pt-popover-content" ref="content" style={{...style, borderColor: contentBorder}}>
-          {children}
+    return (
+      <div className="pt-popover" ref="popover">
+        <Overlay
+          show={this.props.isOpen}
+          placement={this.props.position}
+          container={document.body}
+          target={props => ReactDOM.findDOMNode(this.refs.element)}
+        >
+          <PopoverContent
+            position={this.props.position}
+            shouldHaveBorder={this._shouldHaveBorder()}
+            style={this.props.style}
+          >
+            {this.props.children}
+          </PopoverContent>
+        </Overlay>
+        <div className="pt-popover-element" ref="element">
+          {this.props.element}
         </div>
-      </div>}
-      <div className="pt-popover-element" ref="element">
-        {element}
       </div>
-    </div>;
+    );
   }
 
-  shouldHaveBorder() {
+  _determineBorderColour: function(props, propName) {
+    const { background, borderColor } = props;
+    if (borderColor && background.includes('rgba')) {
+      return new Error('Cannot use border with transparent background');
+    }
+  }
+
+  _shouldHaveBorder() {
     const { borderColor, background } = this.props.style;
     return borderColor && !background.includes('rgba');
-  }
-
-  createArrow() {
-    const { position, style } = this.props;
-    let { borderColor, background } = style;
-
-    if (!this.shouldHaveBorder()) borderColor = 'transparent';
-
-    const borderPos = position === 'bottom' ? 'Bottom' : 'Top';
-    return <div className={`pt-popover-arrow-container ${position}`} ref="arrow">
-      <span className="pt-popover-arrow" style={{[`border${borderPos}Color`]: borderColor}}>
-        <span className={`pt-popover-arrow inner ${this.shouldHaveBorder() ? '' : 'no-border'}`}
-          style={{[`border${borderPos}Color`]: background }}></span>
-        </span>
-    </div>;
-  }
-
-  getPopoverElements() {
-    return {
-      arrow:     React.findDOMNode(this.refs.arrow),
-      element:   React.findDOMNode(this.refs.element),
-      content:   React.findDOMNode(this.refs.content),
-      container: $(this.props.containerSelector).get(0)
-    };
   }
 }
 

@@ -2,6 +2,8 @@
 
 exports.__esModule = true;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -18,116 +20,58 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 require('babel/polyfill');
-
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
 
 var _reactOverlays = require('react-overlays');
 
-var _popoverContent = require('./popover-content');
+var _popoverArrow = require('./popover-arrow');
 
-var _popoverContent2 = _interopRequireDefault(_popoverContent);
+var _popoverArrow2 = _interopRequireDefault(_popoverArrow);
 
-var _popoverScss = require('./_popover.scss');
+var PopoverContent = (function (_Component) {
+  _inherits(PopoverContent, _Component);
 
-var _popoverScss2 = _interopRequireDefault(_popoverScss);
+  function PopoverContent() {
+    _classCallCheck(this, PopoverContent);
 
-var Popover = (function (_Component) {
-  _inherits(Popover, _Component);
-
-  function Popover() {
-    _classCallCheck(this, Popover);
-
-    _get(Object.getPrototypeOf(Popover.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(PopoverContent.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(Popover, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      if (this.props.isOpen) {
-        this.props.onOpen();
-      }
-    }
-  }, {
+  _createClass(PopoverContent, [{
     key: 'render',
     value: function render() {
-      var _this = this;
+      var borderColor = this.props.shouldHaveBorder ? this.props.style.borderColor : 'transparent';
 
       return _react2['default'].createElement(
         'div',
-        { className: 'pt-popover', ref: 'popover' },
-        _react2['default'].createElement(
-          _reactOverlays.Overlay,
-          {
-            show: this.props.isOpen,
-            placement: this.props.position,
-            container: document.body,
-            target: function (props) {
-              return _reactDom2['default'].findDOMNode(_this.refs.element);
-            }
-          },
-          _react2['default'].createElement(
-            _popoverContent2['default'],
-            {
-              position: this.props.position,
-              shouldHaveBorder: this.shouldHaveBorder(),
-              style: this.props.style
-            },
-            this.props.children
-          )
-        ),
+        null,
+        _react2['default'].createElement(_popoverArrow2['default'], {
+          position: this.props.position,
+          shouldHaveBorder: this.props.shouldHaveBorder,
+          style: this.props.style,
+          ref: 'arrow' }),
         _react2['default'].createElement(
           'div',
-          { className: 'pt-popover-element', ref: 'element' },
-          this.props.element
+          { className: 'pt-popover-content', ref: 'content', style: _extends({}, this.props.style, { borderColor: borderColor }) },
+          this.props.children
         )
       );
-    }
-  }, {
-    key: 'shouldHaveBorder',
-    value: function shouldHaveBorder() {
-      var _props$style = this.props.style;
-      var borderColor = _props$style.borderColor;
-      var background = _props$style.background;
-
-      return borderColor && !background.includes('rgba');
     }
   }], [{
     key: 'propTypes',
     value: {
-      isOpen: _react.PropTypes.bool.isRequired,
       position: _react.PropTypes.oneOf(['top', 'bottom']),
-      containerSelector: _react.PropTypes.string,
-      element: _react.PropTypes.any.isRequired,
-      onOpen: _react.PropTypes.func,
-
+      shouldHaveBorder: _react.PropTypes.bool.isRequired,
       style: _react.PropTypes.shape({
         background: _react.PropTypes.string.isRequired,
-        borderColor: function borderColor(props, propName) {
-          var background = props.background;
-          var borderColor = props.borderColor;
-
-          if (borderColor && background.includes('rgba')) {
-            return new Error('Cannot use border with transparent background');
-          }
-        }
+        borderColor: _react.PropTypes.string.isRequired
       })
     },
     enumerable: true
   }, {
     key: 'defaultProps',
     value: {
-      isOpen: false,
       position: 'top',
-      containerSelector: 'body',
-      onOpen: function onOpen() {},
-
       style: {
         borderColor: '#ccc',
         background: 'white'
@@ -136,8 +80,8 @@ var Popover = (function (_Component) {
     enumerable: true
   }]);
 
-  return Popover;
+  return PopoverContent;
 })(_react.Component);
 
-exports['default'] = Popover;
+exports['default'] = PopoverContent;
 module.exports = exports['default'];
