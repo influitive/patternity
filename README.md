@@ -265,3 +265,6 @@ Release git workflow:
   this will merge release/<version-number> into master
   as well as back merge the release into development (the version numbers will then match)
 
+#### Publishing
+
+Once you have master at your desired release state, you can run `npm publish` to publish to the npm registry
