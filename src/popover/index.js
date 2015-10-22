@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import 'babel/polyfill';
 import $ from 'jquery';
 
 import positionPopover from './position-popover';
