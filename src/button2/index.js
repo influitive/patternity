@@ -12,14 +12,7 @@ class Button extends Component {
     disabled: PropTypes.bool,
     inverse:  PropTypes.bool,
     isSubmit: PropTypes.bool,
-    style:    PropTypes.shape({
-      borderColor: function(props, propName) {
-        const { type } = props;
-        if (type != 'secondary') {
-          return new Error('Cannot use border with non-secondary type.');
-        }
-      }
-    })
+    style:    PropTypes.object
   }
 
   static defaultProps = {
