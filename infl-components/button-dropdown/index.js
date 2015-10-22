@@ -79,7 +79,7 @@ var ButtonDropdown = (function (_Component) {
     value: function render() {
       return _react2['default'].createElement(
         'div',
-        { style: this.props.style, className: 'button-dropdown ' + this._isDropdownOpen(), disabled: disabled, ref: 'buttonDropdown' },
+        { style: this.props.style, className: 'button-dropdown ' + this._isDropdownOpen(), disabled: this.props.disabled, ref: 'buttonDropdown' },
         _react2['default'].createElement(
           'button',
           { className: this.props.type, onClick: this._toggleDropdownOptions, ref: 'button' },

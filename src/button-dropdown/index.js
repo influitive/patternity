@@ -45,7 +45,7 @@ class ButtonDropdown extends Component {
   }
 
   render() {
-    return <div style={this.props.style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={disabled} ref='buttonDropdown'>
+    return <div style={this.props.style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={this.props.disabled} ref='buttonDropdown'>
       <button className={this.props.type} onClick={this._toggleDropdownOptions} ref='button'>
         <span ref='title'>{this.props.title}</span>
         <span className='arrow ic ic-chevron-down' ref='icon'></span>
