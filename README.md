@@ -217,26 +217,43 @@ Reference:
 ## Publish & Release
 
 #### Git convention
-Branches:
+##Use git flow
+if you don't have it installed you can `brew install git-flow`
+you can also do git-flow style manually, just remember to merge master back into dev after a release
+git flow setup:
+`git flow init`
+accept the default for the first option (master)
+enter development for the second option (branch name for next release)
+set version tag prefix to 'v'
+accept defaults for all other options
 
-Master: Tagged branches pushed to npm registry, release branched merged from development, hotfix branches merged from hotfix/<hotfix-name>
+Feature git workflow:
+`git flow feature start <feature-name>`
+this will create a new branch named feature/<feature-name>
+develop you feature here and when it's done do:
+`git flow feature finish <feature-name>`
+this merges your feature into development
 
-Development: Development branch to merge new features/non-critical fixes into
+Hotfix worflow
+`git flow hotfix start <version-number>`
+this will create a new branch named hotfix/<version-number>
+develop your hotfix here and when it's done do:
+`git flow hotfix finish <version-number>`
+this merges your hotfix into master
+and tags the commit with 'v<version-number>'
+master is then back-merged into development
 
-Features: `feature/<feature-name>`
+Release git workflow:
+`git flow release start <version-number>`
+this will create a new branch named release/<version-number>
+example `git flow release start 1.0.62`
+run `npm version (major|minor|patch) --no-git-tag-version`
+Note: --no-git-tag-version is passed because git flow will be tagging the release
 
-hotfix: `hotfix/<hotfix name>`
+`git flow release finish <version-number>`
+you will be prompted to write a message for the tag, "Release version <version-number>" should suffice, you will be writing more detail in github releases feature.
+this is tag master with 'v<version-number>'
 
-Committing:
+this will merge release/<version-number> into master
+as well as back merge the release into development (the version numbers will then match)
 
-- rebase your feature branch off master(hotfix) or development(feature)
-- push and create pull request for review
-- merge feature into development, hotfix into master
-
-Publishing:
-
-After merging into master:
-- git checkout master && git pull master
-- npm version <patch(hotfix)|minor(feature-additiont)|major(breaking api changes and major releases)>
-- npm publish
-- git push --tags 
