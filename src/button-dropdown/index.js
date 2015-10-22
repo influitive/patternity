@@ -17,7 +17,9 @@ class ButtonDropdown extends Component {
     options:       [],
     children:      [],
     alignDropdown: 'left',
-    onChange:      () => {}
+    onChange:      () => {},
+    style:         {},
+    disabled:      false
   }
 
   static propTypes = {
@@ -30,11 +32,20 @@ class ButtonDropdown extends Component {
     alignDropdown: PropTypes.oneOf([
       'left', 'right'
     ]),
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    style:    PropTypes.shape({
+      borderColor: function(props, propName) {
+        const { type } = props;
+        if (type != 'secondary') {
+          return new Error('Cannot use border with non-secondary type.');
+        }
+      }
+    }),
+    disabled: PropTypes.bool
   }
 
   render() {
-    return <div className={'button-dropdown ' + this._isDropdownOpen()} ref='buttonDropdown'>
+    return <div style={this.props.style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={disabled} ref='buttonDropdown'>
       <button className={this.props.type} onClick={this._toggleDropdownOptions} ref='button'>
         <span ref='title'>{this.props.title}</span>
         <span className='arrow ic ic-chevron-down' ref='icon'></span>
@@ -46,6 +57,8 @@ class ButtonDropdown extends Component {
   }
 
   _toggleDropdownOptions = (event)  => {
+    if (this.props.disabled)
+      return;
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
