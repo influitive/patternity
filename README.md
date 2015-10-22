@@ -260,7 +260,7 @@ Release git workflow:
 
 1. `git flow release finish <version-number>`
   you will be prompted to write a message for the tag, "Release version <version-number>" should suffice, you will be writing more detail in github releases feature.
-  this will tag master with 'v<version-number>'
+  this will tag master with `v<version-number>`
 
   this will merge release/<version-number> into master
   as well as back merge the release into development (the version numbers will then match)
