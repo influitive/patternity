@@ -18,107 +18,62 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-// import styles from './_button.scss';
+var _button2 = require('../button2');
 
-var ButtonDropdown = (function (_Component) {
-  _inherits(ButtonDropdown, _Component);
+var _button22 = _interopRequireDefault(_button2);
 
-  function ButtonDropdown() {
-    var _this = this;
+var _buttonDropdown = require('../button-dropdown');
 
-    _classCallCheck(this, ButtonDropdown);
+var _buttonDropdown2 = _interopRequireDefault(_buttonDropdown);
 
-    _get(Object.getPrototypeOf(ButtonDropdown.prototype), 'constructor', this).call(this);
+var _buttonGroup = require('../button-group');
 
-    this._toggleDropdownOptions = function (event) {
-      if (_this.props.disabled) return;
-      _this.setState({
-        isDropdownOpen: !_this.state.isDropdownOpen
-      });
-    };
+var _buttonGroup2 = _interopRequireDefault(_buttonGroup);
 
-    this._isDropdownOpen = function () {
-      return _this.state.isDropdownOpen ? 'show' : '';
-    };
+var SplitButtonDropdown = (function (_Component) {
+  _inherits(SplitButtonDropdown, _Component);
 
-    this._buildDropdown = function () {
-      return _this._populateOptions().map(_this._buildOption);
-    };
+  function SplitButtonDropdown() {
+    _classCallCheck(this, SplitButtonDropdown);
 
-    this._populateOptions = function () {
-      return _this.props.children.length > 0 ? _this.props.children : _this.props.options;
-    };
-
-    this._buildOption = function (option, index) {
-      return _react2['default'].createElement(
-        'li',
-        { className: 'option', key: 'option-' + index, onClick: _this._handleChange },
-        option
-      );
-    };
-
-    this._handleChange = function (key) {
-      _this.props.onChange(key);
-      _this.setState({
-        isDropdownOpen: false
-      });
-    };
-
-    this._getOptionsClasses = function () {
-      var classes = 'options options-aligned-' + _this.props.alignDropdown;
-      return classes;
-    };
-
-    this.state = {
-      isDropdownOpen: false
-    };
+    _get(Object.getPrototypeOf(SplitButtonDropdown.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(ButtonDropdown, [{
+  _createClass(SplitButtonDropdown, [{
     key: 'render',
     value: function render() {
       return _react2['default'].createElement(
-        'div',
-        { style: this.props.style, className: 'button-dropdown ' + this._isDropdownOpen(), disabled: disabled, ref: 'buttonDropdown' },
-        _react2['default'].createElement(
-          'button',
-          { className: this.props.type, onClick: this._toggleDropdownOptions, ref: 'button' },
-          _react2['default'].createElement(
-            'span',
-            { ref: 'title' },
-            this.props.title
-          ),
-          _react2['default'].createElement('span', { className: 'arrow ic ic-chevron-down', ref: 'icon' })
-        ),
-        _react2['default'].createElement(
-          'ul',
-          { className: this._getOptionsClasses(), ref: 'options' },
-          this._buildDropdown()
-        )
+        _buttonGroup2['default'],
+        { grouped: true },
+        _react2['default'].createElement(_button22['default'], { icon: this.getIcon(),
+          type: this.props.type,
+          onClick: this.props.onPrimaryClick,
+          disabled: this.props.disabled }),
+        _react2['default'].createElement(_buttonDropdown2['default'], { type: this.props.type,
+          options: this.props.options,
+          alignDropdown: 'right',
+          onChange: this.props.onDropdownItemSelect,
+          disabled: this.props.disabled })
       );
     }
   }], [{
     key: 'defaultProps',
     value: {
-      title: '',
-      type: '',
-      options: [],
-      children: [],
-      alignDropdown: 'left',
-      onChange: function onChange() {},
+      icon: '',
+      type: 'primary',
+      disabled: false,
       style: {},
-      disabled: false
+      options: [],
+      onDropdownItemSelect: function onDropdownItemSelect() {}
     },
     enumerable: true
   }, {
     key: 'propTypes',
     value: {
-      title: _react.PropTypes.string,
-      type: _react.PropTypes.oneOf(['success', 'danger', 'primary', 'important', 'secondary', '']),
-      options: _react.PropTypes.array,
-      children: _react.PropTypes.array,
-      alignDropdown: _react.PropTypes.oneOf(['left', 'right']),
-      onChange: _react.PropTypes.func,
+      icon: _react.PropTypes.string,
+      type: _react.PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
+      onPrimaryClick: _react.PropTypes.func.isRequired,
+      disabled: _react.PropTypes.bool,
       style: _react.PropTypes.shape({
         borderColor: function borderColor(props, propName) {
           var type = props.type;
@@ -128,13 +83,14 @@ var ButtonDropdown = (function (_Component) {
           }
         }
       }),
-      disabled: _react.PropTypes.bool
+      options: _react.PropTypes.array,
+      onDropdownItemSelect: _react.PropTypes.func
     },
     enumerable: true
   }]);
 
-  return ButtonDropdown;
+  return SplitButtonDropdown;
 })(_react.Component);
 
-exports['default'] = ButtonDropdown;
+exports['default'] = SplitButtonDropdown;
 module.exports = exports['default'];
