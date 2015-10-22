@@ -216,6 +216,14 @@ Reference:
 
 ## Publish & Release
 
+Strict semantic versioning:
+
+1. Any change that breaks an existing api should bump the Major version
+2. Any added functionality should change the minor version
+3. Patch versions are reserved for changes transparent to the end user
+
+**Do not break this convention.**
+
 #### Git convention
 ##Use git flow
 1. if you don't have it installed you can `brew install git-flow`
