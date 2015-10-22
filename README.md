@@ -218,42 +218,42 @@ Reference:
 
 #### Git convention
 ##Use git flow
-if you don't have it installed you can `brew install git-flow`
-you can also do git-flow style manually, just remember to merge master back into dev after a release
-git flow setup:
-`git flow init`
-accept the default for the first option (master)
-enter development for the second option (branch name for next release)
-set version tag prefix to 'v'
-accept defaults for all other options
+1. if you don't have it installed you can `brew install git-flow`
+2. you can also do git-flow style manually, just remember to merge master back into dev after a release
+3. git flow setup:
+4. `git flow init`
+5. accept the default for the first option (master)
+6. enter development for the second option (branch name for next release)
+7. set version tag prefix to 'v'
+8. accept defaults for all other options
 
 Feature git workflow:
-`git flow feature start <feature-name>`
-this will create a new branch named feature/<feature-name>
+1. `git flow feature start <feature-name>`
+  this will create a new branch named feature/<feature-name>
 develop you feature here and when it's done do:
-`git flow feature finish <feature-name>`
-this merges your feature into development
+2. `git flow feature finish <feature-name>`
+  this merges your feature into development
 
 Hotfix worflow
-`git flow hotfix start <version-number>`
-this will create a new branch named hotfix/<version-number>
-develop your hotfix here and when it's done do:
-`git flow hotfix finish <version-number>`
-this merges your hotfix into master
-and tags the commit with 'v<version-number>'
-master is then back-merged into development
+1. `git flow hotfix start <version-number>`
+  this will create a new branch named hotfix/<version-number>
+  develop your hotfix here and when it's done do:
+2. `git flow hotfix finish <version-number>`
+  this merges your hotfix into master
+  and tags the commit with 'v<version-number>'
+  master is then back-merged into development
 
 Release git workflow:
-`git flow release start <version-number>`
-this will create a new branch named release/<version-number>
-example `git flow release start 1.0.62`
-run `npm version (major|minor|patch) --no-git-tag-version`
-Note: --no-git-tag-version is passed because git flow will be tagging the release
+1. `git flow release start <version-number>`
+  this will create a new branch named release/<version-number>
+  example `git flow release start 1.0.62`
+2. run `npm version (major|minor|patch) --no-git-tag-version`
+  Note: --no-git-tag-version is passed because git flow will be tagging the release
 
 `git flow release finish <version-number>`
-you will be prompted to write a message for the tag, "Release version <version-number>" should suffice, you will be writing more detail in github releases feature.
-this is tag master with 'v<version-number>'
+1. you will be prompted to write a message for the tag, "Release version <version-number>" should suffice, you will be writing more detail in github releases feature.
+  this will tag master with 'v<version-number>'
 
-this will merge release/<version-number> into master
-as well as back merge the release into development (the version numbers will then match)
+  this will merge release/<version-number> into master
+  as well as back merge the release into development (the version numbers will then match)
 
