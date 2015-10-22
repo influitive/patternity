@@ -55,7 +55,9 @@ var ToggleSwitch = React.createClass({
       'disabled': !this.props.enabled
     });
   },
-  _clickCheckBox : function(){
+  _clickCheckBox : function(event){
+    event.preventDefault();
+    event.stopPropagation();
     if(this.props.enabled){
       React.findDOMNode(this.refs.checkbox).click();
     }
