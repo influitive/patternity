@@ -43,10 +43,14 @@ var PopoverArrow = (function (_Component) {
 
       if (!shouldHaveBorder) borderColor = 'transparent';
 
-      var borderPos = position === 'bottom' ? 'Bottom' : 'Top';
+      var borderPos = position.charAt(0).toUpperCase() + position.substr(1);
+
       return _react2['default'].createElement(
         'div',
-        { className: 'pt-popover-arrow-container ' + position },
+        { className: 'pt-popover-arrow-container ' + position, style: {
+            left: "calc(" + this.props.arrowOffsetLeft + " - 10px)",
+            top: "calc(" + this.props.arrowOffsetTop + " - 10px)"
+          } },
         _react2['default'].createElement(
           'span',
           { className: 'pt-popover-arrow', style: _defineProperty({}, 'border' + borderPos + 'Color', borderColor) },
@@ -58,12 +62,14 @@ var PopoverArrow = (function (_Component) {
   }], [{
     key: 'propTypes',
     value: {
-      position: _react.PropTypes.oneOf(['top', 'bottom']),
+      position: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
       shouldHaveBorder: _react.PropTypes.bool.isRequired,
       style: _react.PropTypes.shape({
         background: _react.PropTypes.string.isRequired,
         borderColor: _react.PropTypes.string.isRequired
-      })
+      }),
+      arrowOffsetLeft: _react.PropTypes.string,
+      arrowOffsetTop: _react.PropTypes.string
     },
     enumerable: true
   }, {
@@ -73,7 +79,9 @@ var PopoverArrow = (function (_Component) {
       style: {
         borderColor: '#ccc',
         background: 'white'
-      }
+      },
+      arrowOffsetLeft: undefined,
+      arrowOffsetTop: undefined
     },
     enumerable: true
   }]);

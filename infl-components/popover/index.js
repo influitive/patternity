@@ -61,7 +61,7 @@ var Popover = (function (_Component) {
 
       return _react2['default'].createElement(
         'div',
-        { className: 'pt-popover', ref: 'popover' },
+        null,
         _react2['default'].createElement(
           _reactOverlays.Overlay,
           {
@@ -69,14 +69,14 @@ var Popover = (function (_Component) {
             placement: this.props.position,
             container: document.body,
             target: function (props) {
-              return _reactDom2['default'].findDOMNode(_this.refs.element);
+              return _this.refs.element;
             }
           },
           _react2['default'].createElement(
             _popoverContent2['default'],
             {
               position: this.props.position,
-              shouldHaveBorder: this.shouldHaveBorder(),
+              shouldHaveBorder: this._shouldHaveBorder(),
               style: this.props.style
             },
             this.props.children
@@ -84,14 +84,14 @@ var Popover = (function (_Component) {
         ),
         _react2['default'].createElement(
           'div',
-          { className: 'pt-popover-element', ref: 'element' },
+          { ref: 'element', style: { display: 'inline-block' } },
           this.props.element
         )
       );
     }
   }, {
-    key: 'shouldHaveBorder',
-    value: function shouldHaveBorder() {
+    key: '_shouldHaveBorder',
+    value: function _shouldHaveBorder() {
       var _props$style = this.props.style;
       var borderColor = _props$style.borderColor;
       var background = _props$style.background;
@@ -102,7 +102,7 @@ var Popover = (function (_Component) {
     key: 'propTypes',
     value: {
       isOpen: _react.PropTypes.bool.isRequired,
-      position: _react.PropTypes.oneOf(['top', 'bottom']),
+      position: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
       containerSelector: _react.PropTypes.string,
       element: _react.PropTypes.any.isRequired,
       onOpen: _react.PropTypes.func,

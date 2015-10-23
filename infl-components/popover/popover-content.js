@@ -2,8 +2,6 @@
 
 exports.__esModule = true;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -19,10 +17,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-require('babel/polyfill');
-
-var _reactOverlays = require('react-overlays');
 
 var _popoverArrow = require('./popover-arrow');
 
@@ -40,32 +34,53 @@ var PopoverContent = (function (_Component) {
   _createClass(PopoverContent, [{
     key: 'render',
     value: function render() {
-      var borderColor = this.props.shouldHaveBorder ? this.props.style.borderColor : 'transparent';
-
       return _react2['default'].createElement(
         'div',
-        null,
+        { className: 'pt-popover ' + this.props.position, ref: 'popover', style: this._popoverPositioningStyle() },
         _react2['default'].createElement(_popoverArrow2['default'], {
           position: this.props.position,
           shouldHaveBorder: this.props.shouldHaveBorder,
           style: this.props.style,
-          ref: 'arrow' }),
+          ref: 'arrow',
+          arrowOffsetLeft: this.props.arrowOffsetLeft,
+          arrowOffsetTop: this.props.arrowOffsetTop }),
         _react2['default'].createElement(
           'div',
-          { className: 'pt-popover-content', ref: 'content', style: _extends({}, this.props.style, { borderColor: borderColor }) },
+          { className: 'pt-popover-content', ref: 'content', style: this._contentStyle() },
           this.props.children
         )
       );
     }
+  }, {
+    key: '_popoverPositioningStyle',
+    value: function _popoverPositioningStyle() {
+      return {
+        left: this.props.style.left,
+        top: this.props.style.top
+      };
+    }
+  }, {
+    key: '_contentStyle',
+    value: function _contentStyle() {
+      var borderColor = this.props.shouldHaveBorder ? this.props.style.borderColor : 'transparent';
+
+      return {
+        borderColor: borderColor,
+        background: this.props.style.background
+      };
+    }
   }], [{
     key: 'propTypes',
     value: {
-      position: _react.PropTypes.oneOf(['top', 'bottom']),
+      position: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
       shouldHaveBorder: _react.PropTypes.bool.isRequired,
+
       style: _react.PropTypes.shape({
         background: _react.PropTypes.string.isRequired,
         borderColor: _react.PropTypes.string.isRequired
-      })
+      }),
+      arrowOffsetLeft: _react.PropTypes.string,
+      arrowOffsetTop: _react.PropTypes.string
     },
     enumerable: true
   }, {
@@ -74,8 +89,12 @@ var PopoverContent = (function (_Component) {
       position: 'top',
       style: {
         borderColor: '#ccc',
-        background: 'white'
-      }
+        background: 'white',
+        top: null,
+        left: null
+      },
+      arrowOffsetLeft: undefined,
+      arrowOffsetTop: undefined
     },
     enumerable: true
   }]);

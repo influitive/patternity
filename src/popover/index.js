@@ -12,14 +12,19 @@ import style from './_popover.scss';
 class Popover extends Component {
   static propTypes = {
     isOpen:            PropTypes.bool.isRequired,
-    position:          PropTypes.oneOf(['top', 'bottom']),
+    position:          PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     containerSelector: PropTypes.string,
     element:           PropTypes.any.isRequired,
     onOpen:            PropTypes.func,
 
     style: PropTypes.shape({
       background:  PropTypes.string.isRequired,
-      borderColor: this._determineBorderColour()
+      borderColor: function(props, propName) {
+        const { background, borderColor } = props;
+        if (borderColor && background.includes('rgba')) {
+          return new Error('Cannot use border with transparent background');
+        }
+      }
     })
   }
 
@@ -43,12 +48,12 @@ class Popover extends Component {
 
   render() {
     return (
-      <div className="pt-popover" ref="popover">
+      <div>
         <Overlay
           show={this.props.isOpen}
           placement={this.props.position}
           container={document.body}
-          target={props => ReactDOM.findDOMNode(this.refs.element)}
+          target={props => this.refs.element}
         >
           <PopoverContent
             position={this.props.position}
@@ -58,18 +63,11 @@ class Popover extends Component {
             {this.props.children}
           </PopoverContent>
         </Overlay>
-        <div className="pt-popover-element" ref="element">
+        <div ref="element" style={{display: 'inline-block'}}>
           {this.props.element}
         </div>
       </div>
     );
-  }
-
-  _determineBorderColour: function(props, propName) {
-    const { background, borderColor } = props;
-    if (borderColor && background.includes('rgba')) {
-      return new Error('Cannot use border with transparent background');
-    }
   }
 
   _shouldHaveBorder() {

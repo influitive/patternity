@@ -71,15 +71,32 @@ import Popover from '../src/popover';
 // }
 
 class App extends Component {
+  render() {
+    return (
+      <div style={{margin: '200px'}}>
+        <PopoverTest position="top" />
+        <PopoverTest position="bottom" />
+        <PopoverTest position="left" />
+        <PopoverTest position="right" />
+      </div>
+    );
+  }
+}
+
+class PopoverTest extends Component {
+  static propTypes = {
+    position: React.PropTypes.string.isRequired
+  }
+
   state = {
     isOpen: false
   }
 
   render() {
     return (
-      <div style={{margin: '200px'}}>
-        <Popover element={this._popoverElement()} isOpen={this.state.isOpen}>
-          <p>awesome popover yeah!</p>
+      <div style={{margin: '50px', display: 'inline-block'}}>
+        <Popover element={this._popoverElement()} isOpen={this.state.isOpen} position={this.props.position}>
+          <p style={{padding: '10px'}}>awesome popover yeah!</p>
         </Popover>
       </div>
     );
@@ -87,7 +104,7 @@ class App extends Component {
 
   _popoverElement() {
     return (
-      <span onClick={this._showPopover}>show popover</span>
+      <span onClick={this._showPopover}>{this.props.position}</span>
     );
   }
 
