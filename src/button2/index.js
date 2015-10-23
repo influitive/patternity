@@ -25,17 +25,13 @@ class Button extends Component {
 
   render() {
     const { disabled, onClick, children } = this.props;
-    return <button style={this.props.style} type={this._buttonType()} disabled={disabled} className={this.getClasses()} onClick={onClick}>
+    return <button style={this.props.style} 
+      type={this.isSubmit ? 'submit' : 'button'} 
+      disabled={disabled} 
+      className={this.getClasses()}
+      onClick={onClick}>
       {children}
     </button>;
-  }
-
-
-  _buttonType = () =>{
-    if(this.isSubmit)
-      return 'submit';
-    else
-      return 'button';
   }
 
   getClasses = () => {
