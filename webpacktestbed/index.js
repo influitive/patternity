@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
-import SaveButton from '../src/save-button';
-import Accordion from '../src/accordion';
-import Popover from '../src/popover';
+import SaveButton from '../infl-components/save-button';
+import Accordion from '../infl-components/accordion.jsx';
+import Popover from '../infl-components/popover';
+import Alert from '../infl-components/alert.jsx';
+import ButtonDropdown from '../infl-components/button_dropdown.jsx';
+import ButtonGroup from '../infl-components/button_group.jsx';
+
+
+
 import '../src/accordion/_accordion.scss';
 
 class App extends Component {

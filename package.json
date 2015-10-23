@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "babel": "babel src --out-dir infl-components && gulp copy-lib-styles",
+    "babel": "babel src --out-dir lib && gulp copy-lib-styles",
     "babel-watch": "babel src -w --out-dir infl-components & gulp watch-scss",
     "testbed": "node ./webpacktestbed/devServer.js",
     "prepublish": "npm run babel",
@@ -93,15 +93,13 @@
     "webpack-hot-middleware": "^2.2.0"
   },
   "dependencies": {
-    "babel": "^5.8.23",
     "classnames": "^1.1.4",
     "es5-shim": "^4.1.0",
     "gulp-replace": "^0.5.3",
     "jquery": "^1.9.1",
     "lodash": "^3.7.0",
     "node-bourbon": "~1.2.3",
-    "node-neat": "^1.7.2",
-    "react": "^0.13.1"
+    "node-neat": "^1.7.2"
   },
   "peerDependencies": {
     "react": "^0.13.1"

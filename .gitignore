@@ -1,4 +1,5 @@
 node_modules/**
+lib
 .bundle/**
 script/ruby/**
 ruby/**
