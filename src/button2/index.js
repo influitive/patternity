@@ -12,17 +12,11 @@ class Button extends Component {
     disabled: PropTypes.bool,
     inverse:  PropTypes.bool,
     isSubmit: PropTypes.bool,
-    style:    PropTypes.shape({
-      borderColor: function(props, propName) {
-        const { type } = props;
-        if (type != 'secondary') {
-          return new Error('Cannot use border with non-secondary type.');
-        }
-      }
-    })
+    style:    PropTypes.object
   }
 
   static defaultProps = {
+    type:     'primary',
     disabled: false,
     inverse:  false,
     isSubmit: false
@@ -31,9 +25,9 @@ class Button extends Component {
 
   render() {
     const { disabled, onClick, children } = this.props;
-    return <button style={this.props.style}
-      type={this.isSubmit ? 'submit' : 'button'}
-      disabled={this.props.disabled}
+    return <button style={this.props.style} 
+      type={this.isSubmit ? 'submit' : 'button'} 
+      disabled={disabled} 
       className={this.getClasses()}
       onClick={onClick}>
       {children}
@@ -41,17 +35,18 @@ class Button extends Component {
   }
 
   getClasses = () => {
+    const buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'text'];
     const { disabled, inverse, type, children, className, icon } = this.props;
 
     return classNames(
-      'button',
-      type,
-      icon && 'ic ic-' + icon,
       {
+        button:     true,
         disabled:   disabled,
         iconButton: children && children.length === 0
       },
+      icon && 'ic ic-' + icon,
       !disabled && {
+        [type]:  true,
         inverse: (type === 'secondary' || type === 'text') && inverse
       }
     );
