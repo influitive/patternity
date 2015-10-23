@@ -93,16 +93,17 @@
     "webpack-hot-middleware": "^2.2.0"
   },
   "dependencies": {
+    "babel": "^5.8.23",
     "classnames": "^1.1.4",
     "es5-shim": "^4.1.0",
     "gulp-replace": "^0.5.3",
     "jquery": "^1.9.1",
     "lodash": "^3.7.0",
     "node-bourbon": "~1.2.3",
-    "node-neat": "^1.7.2"
+    "node-neat": "^1.7.2",
+    "react": "^0.13.1"
   },
   "peerDependencies": {
-    "babel": "^5.8.23",
     "react": "^0.13.1"
   }
 }
