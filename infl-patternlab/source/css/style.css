@@ -3999,13 +3999,9 @@ textarea {
   position: relative;
   display: inline-block;
   z-index: 9999;
-}
-.pt-popover .pt-popover-element {
-  cursor: pointer;
-  display: inline-block;
+  position: absolute;
 }
 .pt-popover .pt-popover-content {
-  position: absolute;
   box-sizing: border-box;
   color: #000;
   font-size: 13px;
@@ -4013,14 +4009,13 @@ textarea {
   border-style: solid;
   border-width: 1px;
   border-color: transparent;
+  position: relative;
 }
 .pt-popover .pt-popover-content > * {
   box-sizing: border-box;
   max-width: 100%;
 }
 .pt-popover .pt-popover-arrow-container {
-  width: 100%;
-  text-align: center;
   position: absolute;
   font-size: 0px;
   line-height: normal;
@@ -4030,39 +4025,108 @@ textarea {
   display: inline-block;
   width: 0px;
   height: 0px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #ccc;
-  border-bottom: 0px;
 }
 .pt-popover .pt-popover-arrow.inner {
-  border-top: 10px solid white;
   position: absolute;
   z-index: 100;
-  right: -10px;
-  bottom: 1px;
 }
-.pt-popover .pt-popover-arrow.inner.no-border {
+.pt-popover.top .pt-popover-content {
+  bottom: 10px;
+}
+.pt-popover.top .pt-popover-arrow-container {
   bottom: 0px;
 }
-.pt-popover .bottom .pt-popover-arrow {
+.pt-popover.top .pt-popover-arrow {
+  border-top: 10px solid #ccc;
+  border-bottom: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.pt-popover.top .pt-popover-arrow.inner {
+  border-top: 10px solid white;
+  bottom: 1px;
+  right: -10px;
+}
+.pt-popover.top .pt-popover-arrow.inner.no-border {
+  bottom: 0px;
+}
+.pt-popover.bottom .pt-popover-content {
+  top: 10px;
+}
+.pt-popover.bottom .pt-popover-arrow-container {
+  top: 0px;
+}
+.pt-popover.bottom .pt-popover-arrow {
   border-bottom: 10px solid #ccc;
   border-top: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
 }
-.pt-popover .bottom .pt-popover-arrow.inner {
+.pt-popover.bottom .pt-popover-arrow.inner {
   border-bottom: 10px solid white;
   bottom: auto;
   top: 1px;
+  right: -10px;
 }
-.pt-popover .bottom .pt-popover-arrow.inner.no-border {
+.pt-popover.bottom .pt-popover-arrow.inner.no-border {
   top: 0px;
+}
+.pt-popover.left .pt-popover-content {
+  right: 10px;
+}
+.pt-popover.left .pt-popover-arrow-container {
+  right: 10px;
+}
+.pt-popover.left .pt-popover-arrow {
+  border-left: 10px solid #ccc;
+  border-right: 0px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+}
+.pt-popover.left .pt-popover-arrow.inner {
+  border-left: 10px solid white;
+  left: auto;
+  right: 1px;
+  top: -10px;
+}
+.pt-popover.left .pt-popover-arrow.inner.no-border {
+  right: 0px;
+}
+.pt-popover.right .pt-popover-content {
+  left: 10px;
+}
+.pt-popover.right .pt-popover-arrow-container {
+  left: 0px;
+}
+.pt-popover.right .pt-popover-arrow {
+  border-right: 10px solid #ccc;
+  border-left: 0px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+}
+.pt-popover.right .pt-popover-arrow.inner {
+  border-right: 10px solid white;
+  right: auto;
+  left: 1px;
+  top: -10px;
+}
+.pt-popover.right .pt-popover-arrow.inner.no-border {
+  left: 0px;
 }
 
 /* COPIED FROM '../src' DO NOT EDIT */
 .pt-save-button .ic-circle-empty:before {
+  -webkit-animation: ptSaveButtonPulse 1s infinite;
   animation: ptSaveButtonPulse 1s infinite;
 }
 
+@-webkit-keyframes ptSaveButtonPulse {
+  50% {
+    opacity: 0;
+  }
+}
 @keyframes ptSaveButtonPulse {
   50% {
     opacity: 0;
