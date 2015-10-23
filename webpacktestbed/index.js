@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import SaveButton from '../src/save-button';
 import Accordion from '../src/accordion';
+import Popover from '../src/popover';
 import '../src/accordion/_accordion.scss';
 
 class App extends Component {
@@ -32,8 +33,14 @@ class App extends Component {
       saving:  'CustomSaving'
     };
     const { sections, ind } = this.state;
-
+    const style = {
+      background: 'rgba(0, 0, 0, 0)',
+      borderColor: 'blue'
+    };
     return <div>
+      <Popover style={style} element={<span>hi!</span>}>
+        hello
+      </Popover>
       <button onClick={() => this.setState({ind: (ind + 1 ) % 3})}/>
       <Accordion sections={sections} initialSectionIndex={ind} />
     </div>

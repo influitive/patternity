@@ -37,10 +37,6 @@ var Button = (function (_Component) {
 
     _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
 
-    this._buttonType = function () {
-      if (_this.isSubmit) return 'submit';else return 'button';
-    };
-
     this.getClasses = function () {
       var _ref;
 
@@ -71,7 +67,11 @@ var Button = (function (_Component) {
 
       return _react2['default'].createElement(
         'button',
-        { style: this.props.style, type: this._buttonType(), disabled: disabled, className: this.getClasses(), onClick: onClick },
+        { style: this.props.style,
+          type: this.isSubmit ? 'submit' : 'button',
+          disabled: disabled,
+          className: this.getClasses(),
+          onClick: onClick },
         children
       );
     }

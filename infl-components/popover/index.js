@@ -22,8 +22,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-require('babel/polyfill');
-
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
