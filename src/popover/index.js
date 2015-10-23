@@ -7,7 +7,7 @@ import { Overlay } from 'react-overlays';
 
 import PopoverContent from './popover-content';
 
-import style from './_popover.scss';
+// import style from './_popover.scss';
 
 class Popover extends Component {
   static propTypes = {

@@ -34,9 +34,7 @@ var _popoverContent = require('./popover-content');
 
 var _popoverContent2 = _interopRequireDefault(_popoverContent);
 
-var _popoverScss = require('./_popover.scss');
-
-var _popoverScss2 = _interopRequireDefault(_popoverScss);
+// import style from './_popover.scss';
 
 var Popover = (function (_Component) {
   _inherits(Popover, _Component);
