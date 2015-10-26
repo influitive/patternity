@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+
 import Button from '../button2';
 import ButtonDropdown from '../button-dropdown';
 import ButtonGroup from '../button-group';
@@ -14,20 +15,21 @@ class SplitButtonDropdown extends Component {
   }
 
   static propTypes = {
-    icon:           PropTypes.string,
-    type:           PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
-    onPrimaryClick: PropTypes.func.isRequired,
-    disabled:       PropTypes.bool,
-    style:          PropTypes.shape({
+    icon:                 PropTypes.string,
+    type:                 PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
+    onPrimaryClick:       PropTypes.func.isRequired,
+    disabled:             PropTypes.bool,
+    options:              PropTypes.array,
+    onDropdownItemSelect: PropTypes.func,
+
+    style: PropTypes.shape({
       borderColor: function(props, propName) {
         const { type } = props;
-        if (type != 'secondary') {
+        if (type !== 'secondary') {
           return new Error('Cannot use border with non-secondary type.');
         }
       }
-    }),
-    options:              PropTypes.array,
-    onDropdownItemSelect: PropTypes.func
+    })
   }
 
   render() {
