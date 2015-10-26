@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { compact } from 'lodash';
+import compact from 'lodash/array/compact';
 
 import Avatar from '../avatar';
 

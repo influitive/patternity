@@ -1,5 +1,5 @@
 var React = require('react');
-var _ = require('lodash');
+var merge = require('lodash/object/merge');
 var $ = require('jquery');
 
 var Icon = require('./icon.jsx');
@@ -13,9 +13,10 @@ var Tooltip = React.createClass({
     isClickable:       React.PropTypes.bool,
     containerSelector: React.PropTypes.string,
     onOpen:            React.PropTypes.func,
+
     style: React.PropTypes.shape({
-      content : {
-        minWidth:  React.PropTypes.string.isRequired,
+      content: {
+        minWidth: React.PropTypes.string.isRequired,
         padding:  React.PropTypes.string.isRequired,
         fontSize: React.PropTypes.string.isRequired
       }
@@ -29,10 +30,11 @@ var Tooltip = React.createClass({
       isClickable:       true,
       containerSelector: 'body',
       onOpen:            function() {},
-      style:             {
-        content : {
+
+      style: {
+        content: {
           minWidth: '300px',
-          padding: '13px 13px 26px 13px',
+          padding:  '13px 13px 26px 13px',
           fontSize: '13px'
         }
       }
@@ -78,10 +80,10 @@ var Tooltip = React.createClass({
   },
 
   _determineContentStyle: function() {
-    return _.merge(this.styles.popover.content, this.props.style.content);
+    return merge(this.styles.popover.content, this.props.style.content);
   },
 
-  _tooltipElement: function(){
+  _tooltipElement: function() {
     return (
       <span className="tool-tip-element"
           onClick={this._clickTooltip}
@@ -133,58 +135,58 @@ var Tooltip = React.createClass({
     this.setState(newState);
   },
 
-  styles : {
-    popover : {
+  styles: {
+    popover: {
       popover2: {
-        background: 'rgba(68, 68, 68, 0.9)',
+        background:  'rgba(68, 68, 68, 0.9)',
         borderColor: null,
       },
-      content : {
-        color: '#fff',
-        width: '100%',
+      content: {
+        color:    '#fff',
+        width:    '100%',
         position: 'relative'
       },
-      arrow : {
+      arrow: {
         borderTopWidth: '10px',
         borderTopColor: '#444444',
-        opacity: '0.9'
+        opacity:        '0.9'
       },
-      element : {
-        fontSize: '20px',
-        color: '#444444', //$darker-grey
+      element: {
+        fontSize:      '20px',
+        color:         '#444444', //$darker-grey
         verticalAlign: 'middle',
-        cursor: 'pointer',
-        display: 'inline-block'
+        cursor:        'pointer',
+        display:       'inline-block'
       }
     }
   }
 });
 
-var CloseTooltip = React.createClass({
-  PropTypes : {
-    onClick : React.PropTypes.func.isRequired,
-    showClose : React.PropTypes.bool
+var CloseTooltip = React.createClass({ // eslint-disable-line react/no-multi-comp
+  PropTypes: {
+    onClick:   React.PropTypes.func.isRequired,
+    showClose: React.PropTypes.bool
   },
 
-  getDefaultProps: function(){
+  getDefaultProps: function() {
     return {
-      showClose : false
+      showClose: false
     };
   },
 
-  render: function(){
+  render: function() {
     return this._showClose();
   },
 
-  _showClose: function(){
-    if(!this.props.showClose){
+  _showClose: function() {
+    if (!this.props.showClose) {
       return null;
     }
 
     return this._closeButton();
   },
 
-  _closeButton: function(){
+  _closeButton: function() {
     return (
       <span
           className='close'
@@ -196,14 +198,14 @@ var CloseTooltip = React.createClass({
     );
   },
 
-  styles : {
-    close : {
-      float: 'right',
-      fontSize: '20px',
-      color: '#fff',
-      opacity: '1',
-      cursor: 'pointer',
-      display: 'block',
+  styles: {
+    close: {
+      float:      'right',
+      fontSize:   '20px',
+      color:      '#fff',
+      opacity:    '1',
+      cursor:     'pointer',
+      display:    'block',
       textShadow: 'none',
       fontWeight: 'normal'
     }
