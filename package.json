@@ -10,8 +10,8 @@
     "testbed": "node ./webpacktestbed/devServer.js",
     "prepublish": "npm run babel",
     "fonts": "gulp influicons",
-    "styleguide-server": "./styleguide/bin/styleguide server --config styleguide/styleguide.config.js",
-    "styleguide-build": "./styleguide/bin/styleguide build --config styleguide/styleguide.config.js"
+    "styleguide-server": "(cd styleguide && npm install && npm run start)",
+    "styleguide-build": "(cd styleguide && npm install && npm run build)"
   },
   "repository": {
     "type": "git",
