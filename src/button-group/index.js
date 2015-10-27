@@ -2,6 +2,7 @@ var React = require('react');
 var classNames = require('classnames');
 
 var ButtonGroup = React.createClass({
+  displayName: 'ButtonGroup',
   getDefaultProps: function() {
     return {
       layout:  'inline',

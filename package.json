@@ -9,7 +9,9 @@
     "babel-watch": "babel src -w --out-dir infl-components & gulp watch-scss",
     "testbed": "node ./webpacktestbed/devServer.js",
     "prepublish": "npm run babel",
-    "fonts": "gulp influicons"
+    "fonts": "gulp influicons",
+    "styleguide-server": "./styleguide/bin/styleguide server --config styleguide/styleguide.config.js",
+    "styleguide-build": "./styleguide/bin/styleguide build --config styleguide/styleguide.config.js"
   },
   "repository": {
     "type": "git",

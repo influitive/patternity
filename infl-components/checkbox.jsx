@@ -2,6 +2,7 @@ var React = require('react');
 var classNames = require('classnames');
 
 var Checkbox = React.createClass({
+  displayName: 'Checkbox',
   getInitialState: function() {
     return {
       isChecked: this.props.isChecked

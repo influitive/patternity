@@ -5,9 +5,10 @@ var DetailedAlert = {};
 
 var Alert = React.createClass({
   mixins: [AlertMixin],
-
+  displayName: 'Alert',
   getDefaultProps: function() {
     return {
+      title:     '',
       type:      '',
       showIcon:  false,
       closeable: false,
@@ -20,6 +21,7 @@ var Alert = React.createClass({
   propTypes: {
     title:     React.PropTypes.string,
     type:      React.PropTypes.oneOf(['success', 'error', 'info', 'warning', '']),
+    showIcon:  React.PropTypes.bool,
     closeable: React.PropTypes.bool,
     showAlert: React.PropTypes.bool,
     onClose:   React.PropTypes.func,

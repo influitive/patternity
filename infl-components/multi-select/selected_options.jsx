@@ -1,7 +1,7 @@
 var React = require('react');
 
 var SelectedOptions = React.createClass({
-  PropTypes : {
+  propTypes : {
     options : React.PropTypes.array.isRequired,
     removeSelectedOption : React.PropTypes.func.isRequired,
     showPlaceholder : React.PropTypes.bool.isRequired,

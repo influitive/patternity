@@ -1,15 +1,8 @@
-// Note these urls are in a webpack specific format (unfortunately)
-// Webpack will look to node_modules with any url prepended with ~
-// I couldn't (yet) get webpack to understand a relative url from patternity's perspective
-
-// Note these urls are in a webpack specific format (unfortunately)
-// Webpack will look to node_modules with any url prepended with ~
-// I couldn't (yet) get webpack to understand a relative url from patternity's perspective
 @font-face {
   font-family: "influicons";
-  src: url('~patternity/infl-fonts/influicons.eot');
-  src: url('~patternity/infl-fonts/influicons.eot?#iefix') format('eot'),
-    url('~patternity/infl-fonts/influicons.woff') format('woff');
+  src: url('../infl-fonts/influicons.eot');
+  src: url('../infl-fonts/influicons.eot?#iefix') format('eot'),
+    url('../infl-fonts/influicons.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

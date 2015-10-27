@@ -8,7 +8,7 @@ var StatsBar = React.createClass({
       children : []
     }
   },
-  PropTypes : {
+  propTypes : {
     statType : React.PropTypes.oneOf([
       'points',
       'activity'

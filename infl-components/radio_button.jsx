@@ -2,6 +2,7 @@ var React = require('react');
 var classNames = require('classnames');
 
 var RadioButton = React.createClass({
+  displayName: 'RadioButton',
   getDefaultProps: function() {
     return {
       id:         '',

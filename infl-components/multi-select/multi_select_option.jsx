@@ -1,7 +1,8 @@
 var React = require('react');
 
 var MultiSelectOption = React.createClass({
-  PropTypes : {
+  displayName: 'MultiSelectOption',
+  propTypes : {
     name : React.PropTypes.string.isRequired,
     onClick : React.PropTypes.func.isRequired,
     value : React.PropTypes.oneOfType([

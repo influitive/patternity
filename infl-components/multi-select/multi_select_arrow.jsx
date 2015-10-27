@@ -3,7 +3,8 @@ var React = require('react');
 var Icon = require('../icon.jsx');
 
 var MultiSelectArrow = React.createClass({
-  PropTypes : {
+  displayName: 'MultiSelectArrow',
+  propTypes : {
     hideOptions : React.PropTypes.func.isRequired,
     showOptions : React.PropTypes.func.isRequired,
     areOptionsOpen : React.PropTypes.bool.isRequired

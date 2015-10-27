@@ -4,7 +4,8 @@ var SimplePopover = require('./simple_popover.jsx');
 var MultiSelectOption = require('./multi_select_option.jsx');
 
 var MultiSelectOptionsList = React.createClass({
-  PropTypes : {
+  displayName: 'MultiSelectOptionsList',
+  propTypes : {
     options : React.PropTypes.array.isRequired,
     handleOptionSelect : React.PropTypes.func.isRequired,
     showOptions : React.PropTypes.bool.isRequired,

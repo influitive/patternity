@@ -4,7 +4,8 @@ var $ = require('jquery');
 var Loading = require("../loading");
 
 var InfiniteScroll = React.createClass({
-  PropTypes : {
+  displayName: 'InfiniteScroll',
+  propTypes : {
     loadMore : React.PropTypes.func.isRequired,
     hasMore : React.PropTypes.bool,
     threshold : React.PropTypes.number,

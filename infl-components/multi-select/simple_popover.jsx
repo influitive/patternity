@@ -1,6 +1,7 @@
 var React = require('react');
 
 var SimplePopover = React.createClass({
+  displayName: 'SimplePopover',
   propTypes: {
     isOpen: React.PropTypes.bool
   },

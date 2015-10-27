@@ -3,7 +3,7 @@ var React = require('react');
 var buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'text'];
 
 var Button = React.createClass({
-
+  displayName: 'Button',
   propTypes: {
     icon:      React.PropTypes.string,
     className: React.PropTypes.string,
