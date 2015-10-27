@@ -253,7 +253,7 @@ Hotfix worflow
   this merges your hotfix into master
 
   and tags the commit with 'v<version-number>'
-  
+
   master is then back-merged into development
 
 Release git workflow:
@@ -262,7 +262,7 @@ Release git workflow:
   this will create a new branch named release/<version-number>
 
   example `git flow release start 1.0.62`
-  
+
 2. run `npm version (major|minor|patch) --no-git-tag-version`
   Note: --no-git-tag-version is passed because git flow will be tagging the release
 
@@ -276,3 +276,7 @@ Release git workflow:
 #### Publishing
 
 Once you have master at your desired release state, you can run `npm publish` to publish to the npm registry
+
+#### Generate styleguide
+
+To manually generate the styleguide, you can run `npm run styleguide-build`, which will deposit the results into styleguide/public. Alternatively, you can run `npm run styleguide-server` which will host a local hot-reloading server on localhost:3000 (can be configured in styleguide/styleguide.config.js) Any changes to components or styleguide will be immediately reflected on the server.
