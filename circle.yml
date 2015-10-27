@@ -11,7 +11,7 @@ dependencies:
   override:
     - npm install --no-spin
     - npm install --prefix infl-patternlab --no-spin
-    - npm run styleguide-build
+    - npm run styleguide-build --no-spin
 test:
   override:
     - karma start --single-run
