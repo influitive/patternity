@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start",
     "babel": "babel src --out-dir lib  && gulp copy-lib-styles",
-    "babel-watch": "babel src -w --out-dir infl-components & gulp watch-scss",
+    "babel-watch": "babel src -w --out-dir lib & gulp watch-scss",
     "testbed": "node ./webpacktestbed/devServer.js",
     "prepublish": "npm run babel",
     "fonts": "gulp influicons",
