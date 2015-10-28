@@ -3,7 +3,8 @@ var React         = require('react');
 var ChallengeCard = require("./challenge_card.jsx");
 
 var ChallengeTemplateCard = React.createClass({
-    PropTypes : {
+  displayName: 'ChallengeTemplateCard',
+  propTypes : {
     id : React.PropTypes.string,
     animateEntrance : React.PropTypes.bool
   },

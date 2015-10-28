@@ -18,6 +18,7 @@ var Tabs = React.createClass({
     };
   },
   propTypes : {
+    id : React.PropTypes.string,
     title : React.PropTypes.string,
     key : React.PropTypes.string,
     openTabIndex : React.PropTypes.number,

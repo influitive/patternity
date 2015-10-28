@@ -2,6 +2,7 @@ var React = require('react');
 var uploadFile = require('../utilities/upload_file.js');
 
 var UploadFile = React.createClass({
+  displayName: 'UploadFile',
   propTypes: {
     children: React.PropTypes.oneOfType([
       React.PropTypes.object,

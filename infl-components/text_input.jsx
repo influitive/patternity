@@ -5,6 +5,7 @@ var InputMessage = require('./text/input_message.jsx');
 var InputAction = require('./text/input_action.jsx');
 
 var TextInput = React.createClass({
+  displayName: 'TextInput',
   getDefaultProps: function() {
     return {
       type:        'text',
@@ -49,8 +50,8 @@ var TextInput = React.createClass({
     readOnly:       React.PropTypes.bool,
     disabled:       React.PropTypes.bool,
     onChange:       React.PropTypes.func,
-    clearInput:     React.PropTypes.bool,
-    onInputCleared: React.PropTypes.func,
+    clearable:      React.PropTypes.bool,
+    onCleared:      React.PropTypes.func,
     autofocus:      React.PropTypes.bool,
     key:            React.PropTypes.string,
     help:           React.PropTypes.any

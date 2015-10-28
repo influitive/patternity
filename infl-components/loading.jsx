@@ -2,6 +2,7 @@ var React   = require('react');
 var classNames = require('classnames');
 
 var Loading = React.createClass({
+  displayName: 'Loading',
   getDefaultProps : function(){
     return {
       size : "medium",
@@ -14,7 +15,7 @@ var Loading = React.createClass({
     size : React.PropTypes.oneOf(["small", "medium", "large"]),
     type : React.PropTypes.oneOf(["dark", "light"]),
     isModal : React.PropTypes.bool,
-    inline : React.PropTypes.bool
+    isBlock : React.PropTypes.bool
   },
   render: function () {
     return (

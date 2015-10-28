@@ -1,6 +1,7 @@
 var React = require('react');
 
 var Form = React.createClass({
+  displayName: 'Form',
   getDefaultProps: function() {
     return {
       acceptCharset: '',

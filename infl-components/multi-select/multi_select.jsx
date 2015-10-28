@@ -13,6 +13,7 @@ var MultiSelect = React.createClass({
   mixins: [
     MultiSelectKeyCodeMixin,
   ],
+  displayName: 'MultiSelect',
 
   propTypes: {
     options: React.PropTypes.array,
