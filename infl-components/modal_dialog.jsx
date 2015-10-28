@@ -94,6 +94,8 @@ var ModalDialog = React.createClass({
   },
 
   _closeDialog: function(event) {
+    event.preventDefault();
+    event.stopPropagation();
     if (this.props.closeable && this._isClosableElement(event.target)) {
       this._dismissDialog();
     }
