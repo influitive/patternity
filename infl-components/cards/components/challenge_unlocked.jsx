@@ -2,7 +2,7 @@ var React = require('react');
 var Icon   = require("../../icon.jsx");
 
 var ChallengeUnlocked = React.createClass({
-  PropTypes : {
+  propTypes : {
     hideIn : React.PropTypes.number
   },
 

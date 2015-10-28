@@ -7,7 +7,7 @@ var ParticipantCount = React.createClass({
       participantCount : 0,
     };
   },
-  PropTypes : {
+  propTypes : {
     participantCount : React.PropTypes.number,
   },
   render : function(){

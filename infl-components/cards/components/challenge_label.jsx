@@ -8,7 +8,7 @@ var ChallengeLabel = React.createClass({
       onClick : function(){}
     };
   },
-  PropTypes : {
+  propTypes : {
     label : React.PropTypes.string,
     onClick : React.PropTypes.func
   },

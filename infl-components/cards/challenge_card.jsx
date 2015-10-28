@@ -8,7 +8,7 @@ var CardImage     = require('./components/card_image.jsx');
 var ellipsisText  = require('./components/ellipsis_text.js');
 
 var ChallengeCard = React.createClass({
-  PropTypes : {
+  propTypes : {
     id : React.PropTypes.string,
     animateEntrance : React.PropTypes.bool
   },

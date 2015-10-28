@@ -6,7 +6,7 @@ var classNames = require('classnames');
 var acceptedStatusType = ['started', 'expiring', 'limited', 'multi'];
 
 var ChallengeTile = React.createClass({
-  PropTypes : {
+  propTypes : {
     type : React.PropTypes.oneOf(acceptedStatusType).isRequired,
     description : React.PropTypes.string.isRequired,
     onShowDescription : React.PropTypes.func

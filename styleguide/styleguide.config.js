@@ -12,22 +12,27 @@ module.exports = {
 
     var comps1 = glob.sync(newCompsRoute + '/**/index.js');
 
-    // Some exceptions that either don't have components or
+    // Some exceptions regexps for files that either don't have components or
     // have more than one.
-    var exceptions = [oldCompsRoute + '/accordion.jsx',
-      oldCompsRoute + '/alert.jsx',
-      oldCompsRoute + '/button.jsx',
-      oldCompsRoute + '/button_dropdown.jsx',
-      oldCompsRoute + '/button_group.jsx',
-      oldCompsRoute + '/sidebar.jsx',
-      oldCompsRoute + '/stats_bar.jsx',
-      oldCompsRoute + '/tabs.jsx',
-      oldCompsRoute + '/text_area.jsx'];
+    var exceptions = [oldCompsRoute + '/accordion\.jsx',
+      oldCompsRoute + '/alert\.jsx',
+      oldCompsRoute + '/button\.jsx',
+      oldCompsRoute + '/button_dropdown\.jsx',
+      oldCompsRoute + '/button_group\.jsx',
+      oldCompsRoute + '/sidebar\.jsx',
+      oldCompsRoute + '/stats_bar\.jsx',
+      oldCompsRoute + '/tabs\.jsx',
+      oldCompsRoute + '/text_area\.jsx',
+      oldCompsRoute + '/tabs/.*',
+      oldCompsRoute + '/cards/.*'];
 
-    return comps1.concat(glob.sync(oldCompsRoute + '/**/*.jsx')
+    return comps1.concat(glob.sync(oldCompsRoute + '/*.jsx').concat(glob.sync(oldCompsRoute + '/*/*.jsx'))
       .filter(function(path) {
-        if (exceptions.indexOf(path) != -1)
-          return false;
+        for(i in exceptions){
+          if( new RegExp(exceptions[i]).test(path) ){
+            return false;
+          }
+        }
         return true;
       }));
   },
