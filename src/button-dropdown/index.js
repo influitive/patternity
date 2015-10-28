@@ -23,44 +23,31 @@ class ButtonDropdown extends Component {
   }
 
   static propTypes = {
-    title:         PropTypes.string,
-    type:          PropTypes.oneOf([ 'success', 'danger', 'primary', 'important', 'secondary', '' ]),
+    title: PropTypes.string,
+    type:  PropTypes.oneOf([
+      'success', 'danger', 'primary', 'important', 'secondary', ''
+    ]),
     options:       PropTypes.array,
     children:      PropTypes.array,
-    alignDropdown: PropTypes.oneOf([ 'left', 'right' ]),
-    onChange:      PropTypes.func,
-    disabled:      PropTypes.bool,
-
-    style: PropTypes.shape({
+    alignDropdown: PropTypes.oneOf([
+      'left', 'right'
+    ]),
+    onChange: PropTypes.func,
+    style:    PropTypes.shape({
       borderColor: function(props, propName) {
         const { type } = props;
         if (type != 'secondary') {
           return new Error('Cannot use border with non-secondary type.');
         }
       }
-    })
-  }
-
-  _getButtonClasses() {
-    var classes = this.props.type;
-    if (this.props.title.trim().length > 0)
-      classes += ' button-with-text';
-    return classes;
-  }
-
-  _renderTitle() {
-    if (this.props.title.trim().length > 0)
-      return <span ref='title'>{this.props.title}</span>
-    else {
-      return <span ref='title'>&nbsp;</span>
-    }
+    }),
+    disabled: PropTypes.bool
   }
 
   render() {
-    const { style, disabled, } = this.props;
-    return <div style={style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={disabled} ref='buttonDropdown'>
-      <button className={this._getButtonClasses()} onClick={this._toggleDropdownOptions} ref='button'>
-        {this._renderTitle()}
+    return <div style={this.props.style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={this.props.disabled} ref='buttonDropdown'>
+      <button className={this.props.type} onClick={this._toggleDropdownOptions} ref='button'>
+        <span ref='title'>{this.props.title}</span>
         <span className='arrow ic ic-chevron-down' ref='icon'></span>
       </button>
       <ul className={this._getOptionsClasses()} ref='options'>
@@ -105,7 +92,7 @@ class ButtonDropdown extends Component {
   }
 
   _getOptionsClasses = () => {
-    var classes = 'options options-aligned-' + this.props.alignDropdown;
+    var classes = 'options options-aligned-'+this.props.alignDropdown;
     return classes;
   }
 }
