@@ -21,6 +21,14 @@ export default class StyleGuide extends Component {
         return false;
       }
       return true;
+    }).sort((componentA, componentB) => {
+      if (componentA.name < componentB.name) {
+        return -1;
+      }
+      if (componentA.name > componentB.name) {
+        return 1;
+      }
+      return 0;
     });
     return (
       <div className={s.root}>

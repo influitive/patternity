@@ -17,8 +17,12 @@ test:
     - karma start --single-run
 
 deployment:
-  aws:
+  internal:
     branch: master
     commands:
       - grunt --gruntfile infl-patternlab/Gruntfile.js
-      - /bin/bash publish.sh
+      - /bin/bash publish.internal.sh
+  experimental:
+    branch: development
+    commands:
+      - /bin/bash publish.experimental.sh

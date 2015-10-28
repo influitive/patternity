@@ -1,6 +1,8 @@
 import { Component, PropTypes } from 'react';
 import ReactComponent from 'components/ReactComponent';
 
+import s from './Components.css';
+
 export default class Components extends Component {
   static propTypes = {
     highlightTheme: PropTypes.string.isRequired,
@@ -19,7 +21,7 @@ export default class Components extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{paddingLeft: '1em', paddingRight: '1em'}}>
         {this.renderComponents()}
       </div>
     );

@@ -1,0 +1,24 @@
+
+@import "dependencies_webpack";
+
+.PreviewArea {
+  @import "avatar";
+  @import "accordion";
+  @import "alert";
+  @import "button";
+  @import "form";
+  @import "tooltip";
+  @import "toggle_switch";
+  @import "loading";
+  @import "modal_dialog";
+  @import "tabs";
+  @import "sidebar";
+  @import "list_picker";
+  @import "stats_bar";
+  @import "card";
+  @import "challenge_card";
+  @import "animations";
+  @import "profile-popover";
+  @import "popover";
+  @import "save-button";
+}

@@ -77,7 +77,7 @@ export default class Preview extends Component {
 
   render() {
     return (
-      <div>
+      <div className='PreviewArea'>
         <div ref="mount"></div>
         {this.renderError()}
       </div>

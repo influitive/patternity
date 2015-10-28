@@ -2,7 +2,7 @@ import React from 'react';
 import StyleGuide  from 'components/StyleGuide';
 import './styles.css';
 
-import '../../infl-styles/_all_webpack.scss';
+import '../../infl-styles/_all_styleguide.scss';
 
 global.React = React;
 
