@@ -23,25 +23,22 @@ class ButtonDropdown extends Component {
   }
 
   static propTypes = {
-    title: PropTypes.string,
-    type:  PropTypes.oneOf([
-      'success', 'danger', 'primary', 'important', 'secondary', ''
-    ]),
+    title:         PropTypes.string,
+    type:          PropTypes.oneOf([ 'success', 'danger', 'primary', 'important', 'secondary', '' ]),
     options:       PropTypes.array,
     children:      PropTypes.array,
-    alignDropdown: PropTypes.oneOf([
-      'left', 'right'
-    ]),
-    onChange: PropTypes.func,
-    style:    PropTypes.shape({
+    alignDropdown: PropTypes.oneOf([ 'left', 'right' ]),
+    onChange:      PropTypes.func,
+    disabled:      PropTypes.bool,
+
+    style: PropTypes.shape({
       borderColor: function(props, propName) {
         const { type } = props;
         if (type != 'secondary') {
           return new Error('Cannot use border with non-secondary type.');
         }
       }
-    }),
-    disabled: PropTypes.bool
+    })
   }
 
   _getButtonClasses() {
@@ -60,7 +57,8 @@ class ButtonDropdown extends Component {
   }
 
   render() {
-    return <div style={this.props.style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={this.props.disabled} ref='buttonDropdown'>
+    const { style, disabled, } = this.props;
+    return <div style={style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={disabled} ref='buttonDropdown'>
       <button className={this._getButtonClasses()} onClick={this._toggleDropdownOptions} ref='button'>
         {this._renderTitle()}
         <span className='arrow ic ic-chevron-down' ref='icon'></span>
@@ -107,7 +105,7 @@ class ButtonDropdown extends Component {
   }
 
   _getOptionsClasses = () => {
-    var classes = 'options options-aligned-'+this.props.alignDropdown;
+    var classes = 'options options-aligned-' + this.props.alignDropdown;
     return classes;
   }
 }
