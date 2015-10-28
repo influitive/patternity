@@ -5,7 +5,7 @@ var Loading = require('../../loading.jsx');
 var widthAspectRatio = 9 / 16;
 
 var CardImage = React.createClass({
-  PropTypes : {
+  propTypes : {
     image : React.PropTypes.string,
     onImageClick : React.PropTypes.func
   },

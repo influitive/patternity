@@ -279,4 +279,4 @@ Once you have master at your desired release state, you can run `npm publish` to
 
 #### Generate styleguide
 
-To manually generate the styleguide, you can run `npm run styleguide-build`, which will deposit the results into styleguide/public. Alternatively, you can run `npm run styleguide-server` which will host a local hot-reloading server on localhost:3000 (can be configured in styleguide/styleguide.config.js) Any changes to components or styleguide will be immediately reflected on the server.
+To manually generate the styleguide, you can run `npm run styleguide-build`, which will install the styleguide and deposit the results into styleguide/public. Alternatively, you can run `npm run styleguide-server` which will host a local hot-reloading server on localhost:3000 (can be configured in styleguide/styleguide.config.js) Any changes to components or styleguide will be immediately reflected on the server. However this will install it again. To skip the install again, just `(cd styleguide && npm run start)`

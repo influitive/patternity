@@ -164,7 +164,7 @@ var Tooltip = React.createClass({
 });
 
 var CloseTooltip = React.createClass({ // eslint-disable-line react/no-multi-comp
-  PropTypes: {
+  propTypes: {
     onClick:   React.PropTypes.func.isRequired,
     showClose: React.PropTypes.bool
   },
