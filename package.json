@@ -95,7 +95,6 @@
     "webpack-hot-middleware": "^2.2.0"
   },
   "dependencies": {
-    "babel": "^5.8.23",
     "classnames": "^1.1.4",
     "es5-shim": "^4.1.0",
     "gulp-replace": "^0.5.3",
