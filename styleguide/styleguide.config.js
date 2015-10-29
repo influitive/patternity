@@ -36,6 +36,18 @@ module.exports = {
         return true;
       }));
   },
+  getExampleFilename: function(componentpath) {
+    var newpath;
+    var oldCompsRegex = /\/infl-components\//;
+    var oldComps = oldCompsRegex.test(componentpath);
+    if (oldComps) {
+      newpath = componentpath.replace(oldCompsRegex, '/infl-components-examples/').replace(/\.jsx?$/, '.readme.md');
+    }
+    else {
+      newpath = componentpath.replace(/\/index.js$/, '\/Readme.md');
+    }
+    return newpath;
+  },
   updateWebpackConfig: function(webpackConfig, env) {
     webpackConfig.module.loaders = webpackConfig.module.loaders.concat({
       test:   /\.scss$/,
@@ -48,6 +60,7 @@ module.exports = {
 
     return webpackConfig;
   },
-  serverPort:    3003,
+
+  serverPort:    3000,
   styleguideDir: 'public'
 };
