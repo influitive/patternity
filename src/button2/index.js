@@ -16,7 +16,6 @@ class Button extends Component {
   }
 
   static defaultProps = {
-    type:     'primary',
     disabled: false,
     inverse:  false,
     isSubmit: false
@@ -24,10 +23,11 @@ class Button extends Component {
 
 
   render() {
-    const { disabled, onClick, children } = this.props;
-    return <button style={this.props.style} 
-      type={this.isSubmit ? 'submit' : 'button'} 
-      disabled={disabled} 
+    const { style, disabled, onClick, children, isSubmit } = this.props;
+
+    return <button style={style}
+      type={isSubmit ? 'submit' : 'button'}
+      disabled={disabled}
       className={this.getClasses()}
       onClick={onClick}>
       {children}
@@ -35,18 +35,17 @@ class Button extends Component {
   }
 
   getClasses = () => {
-    const buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'text'];
     const { disabled, inverse, type, children, className, icon } = this.props;
 
     return classNames(
+      'button',
+      !disabled && type,
       {
-        button:     true,
         disabled:   disabled,
         iconButton: children && children.length === 0
       },
       icon && 'ic ic-' + icon,
       !disabled && {
-        [type]:  true,
         inverse: (type === 'secondary' || type === 'text') && inverse
       }
     );
