@@ -3,12 +3,16 @@
 	margin-bottom: 1.5rem;
 	border: 1px solid #e8e8e8;
 	border-radius: .25rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .editor {
+	z-index: 0;
 }
 
 .preview {
 	margin-bottom: .2rem;
 	padding: 1rem;
+	z-index: 1;
 }
