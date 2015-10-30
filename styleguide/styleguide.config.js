@@ -62,5 +62,6 @@ module.exports = {
   },
 
   serverPort:    3000,
-  styleguideDir: 'public'
+  styleguideDir: 'public',
+  hideErrors: true
 };

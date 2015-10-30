@@ -2,84 +2,47 @@
 
 import React, { Component, PropTypes } from 'react';
 import reactTools from 'react-tools';
+import merge from 'merge';
 
 export default class Preview extends Component {
   static propTypes = {
     code: PropTypes.string.isRequired
   }
 
-  constructor() {
-    super();
-    this.state = {
-      error: null
-    };
-  }
+  state = {}
 
-  componentDidMount() {
-    this.executeCode();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.code !== prevProps.code) {
-      this.executeCode();
-    }
-  }
-
-  compileCode() {
-    // TODO: Babel
+  compileCode = () => {
     return reactTools.transform(
-      // '(function() {' +
         this.props.code,
-      // '\n})();'
       {
         harmony: true
       }
     );
   }
 
-  executeCode() {
-    var mountNode = this.refs.mount.getDOMNode();
-
-    try {
-      React.unmountComponentAtNode(mountNode);
-    }
-    finally {
-      /* */
-    }
-
-    this.setState({
-      error: null
-    });
-
-    try {
-      var compiledCode = this.compileCode();
-      React.render(eval(compiledCode), mountNode);  /* eslint no-eval:0 */
-    }
-    catch (err) {
-      React.unmountComponentAtNode(mountNode);
-      this.setState({
-        error: err.toString()
-      });
-    }
-  }
-
-  renderError() {
-    let { error } = this.state;
-    if (error) {
-      return (
-        <div className="playgroundError">{error}</div>
-      );
-    }
-    else {
-      return null;
+  executeCode = () => {
+    // This is hacky but unfortunately react swallows invalid props provided to eval
+    // so we need to catch any errors output to console and show them here.
+    // let errorHandler = console.error;
+    // let error = null;
+    // console.error = (errorObject) => {
+    //   error = errorObject;
+    // };
+    console.log('hey');
+    var compiledCode = this.compileCode();
+    try{
+      let val = eval(compiledCode);
+      console.log(val);
+      return val;
+    } catch(e){
+      return <div className="playgroundError">{e.toString()}</div>
     }
   }
 
   render() {
     return (
       <div className='PreviewArea'>
-        <div ref="mount"></div>
-        {this.renderError()}
+        {this.executeCode()}
       </div>
     );
   }
