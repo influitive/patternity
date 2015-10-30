@@ -1,0 +1,7 @@
+{
+  "name": "babel-plugin-import-stripper",
+  "version": "1.0.1",
+  "dependencies": {
+    "babel-core": "^5.0.0"
+  }
+}

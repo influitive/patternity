@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react';
 // import styles from './_avatar.scss';
 
 class Avatar extends Component {
-  displayName = 'Avatar'
 
   static propTypes = {
     defaultImage: PropTypes.string,

@@ -3,10 +3,13 @@ var $ = require('jquery');
 var classNames = require('classnames');
 
 var ModalDialog = React.createClass({
+  displayName: 'ModalDialog',
   propTypes: {
     id:            React.PropTypes.string,
     closeable:     React.PropTypes.bool,
     size:          React.PropTypes.oneOf(['small', 'medium', 'large']),
+    onClose:       React.PropTypes.func,
+    isModalOpen:   React.PropTypes.bool,
     scrollingBody: React.PropTypes.bool,
     lightbox:      React.PropTypes.bool,
     keyboard:      React.PropTypes.bool

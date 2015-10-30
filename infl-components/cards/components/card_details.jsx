@@ -15,7 +15,7 @@ var CardDetails = React.createClass({
 });
 
 CardDetails.Headline = React.createClass({
-    PropTypes : {
+    propTypes : {
     headline : React.PropTypes.string,
     onHeadlineClick : React.PropTypes.func
   },

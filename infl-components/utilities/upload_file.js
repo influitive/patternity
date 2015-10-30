@@ -1,18 +1,18 @@
-var _ = require("lodash");
+var extend = require('lodash/object/extend');
 
-var UploadFile = function(initializeFilepicker, uploadOptions){
+var UploadFile = function(initializeFilepicker, uploadOptions) {
 
-  function init(apiKey, version){
+  function init(apiKey, version) {
     initializeFilepicker(apiKey, version);
   }
 
-  function upload(onSuccess){
+  function upload(onSuccess) {
     window.filepicker.pick(uploadOptions(), onSuccess, onError);
   }
 
-  function uploadWithCrop(onSuccess, ratio){
+  function uploadWithCrop(onSuccess, ratio) {
     var optionsWithCrop = uploadOptions();
-    if(ratio){
+    if (ratio) {
       optionsWithCrop.cropRatio = ratio;
     }
     optionsWithCrop.services.push('CONVERT');
@@ -20,19 +20,19 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
     window.filepicker.pick(optionsWithCrop, onSuccess, onError);
   }
 
-  function covertToImage(onSuccess, blob, convertOptions, storageOptions){
+  function covertToImage(onSuccess, blob, convertOptions, storageOptions) {
     storageOptions = storageOptions || {};
     window.filepicker.convert(blob, convertOptions, storageOptions, onSuccess, onError);
   }
 
-  function uploadAndCompress(onSuccess, compressionOptions){
-    var optionsWithCompression = _.extend(uploadOptions(), compressionOptions);
+  function uploadAndCompress(onSuccess, compressionOptions) {
+    var optionsWithCompression = extend(uploadOptions(), compressionOptions);
     window.filepicker.pick(optionsWithCompression, onSuccess, onError);
   }
 
-  function crop(onSuccess, ratio, image){
+  function crop(onSuccess, ratio, image) {
     var optionsWithCrop = uploadOptions();
-    if(ratio){
+    if (ratio) {
       optionsWithCrop.cropRatio = ratio;
     }
     optionsWithCrop.services.push('CONVERT');
@@ -45,49 +45,49 @@ var UploadFile = function(initializeFilepicker, uploadOptions){
     window.filepicker.store(blob, options, onSuccess);
   }
 
-  function onError(FPError){
+  function onError(FPError) {
     console.log(FPError);
   }
 
   return {
-    init : init,
-    upload : upload,
-    uploadWithCrop : uploadWithCrop,
-    covertToImage : covertToImage,
-    uploadAndCompress : uploadAndCompress,
-    crop : crop,
-    store : store
+    init:              init,
+    upload:            upload,
+    uploadWithCrop:    uploadWithCrop,
+    covertToImage:     covertToImage,
+    uploadAndCompress: uploadAndCompress,
+    crop:              crop,
+    store:             store
   };
 };
 
-var InitializeFilepicker = function(){
+var InitializeFilepicker = function() {
   var filepickerApiKey;
   var filepickerMethods = [
-    "pick",
-    "pickMultiple",
-    "pickAndStore",
-    "read",
-    "write",
-    "writeUrl",
-    "export",
-    "convert",
-    "store",
-    "storeUrl",
-    "remove",
-    "stat",
-    "setKey",
-    "constructWidget",
-    "makeDropPane"
+    'pick',
+    'pickMultiple',
+    'pickAndStore',
+    'read',
+    'write',
+    'writeUrl',
+    'export',
+    'convert',
+    'store',
+    'storeUrl',
+    'remove',
+    'stat',
+    'setKey',
+    'constructWidget',
+    'makeDropPane'
   ];
-  var filepickerVersion = "v2";
+  var filepickerVersion = 'v2';
 
-  function init(_filepickerApiKey, _filepickerVersion){
-    if(window.filepicker){
+  function init(_filepickerApiKey, _filepickerVersion) {
+    if (window.filepicker) {
       return;
     }
 
     filepickerVersion = _filepickerVersion || filepickerVersion;
-    filepickerApiKey = _filepickerApiKey || "";
+    filepickerApiKey = _filepickerApiKey || '';
 
     _addScriptTagToDOM();
     _buildFilepicker();
@@ -95,51 +95,50 @@ var InitializeFilepicker = function(){
     _setFilepickerApiKey();
   }
 
-  function _addScriptTagToDOM(){
-    var firstScriptTag = document.getElementsByTagName("script")[0];
+  function _addScriptTagToDOM() {
+    var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(_createScriptTag(),firstScriptTag);
   }
 
-  function _createScriptTag(){
-    var filepickerScriptTag = document.createElement("script");
-    filepickerScriptTag.type="text/javascript";
+  function _createScriptTag() {
+    var filepickerScriptTag = document.createElement('script');
+    filepickerScriptTag.type='text/javascript';
     filepickerScriptTag.async=!0;
-    filepickerScriptTag.src=("https:"===document.location.protocol?"https:":"http:")+"//api.filepicker.io/" + filepickerVersion + "/filepicker.js";
+    filepickerScriptTag.src=('https:'===document.location.protocol?'https:':'http:')+'//api.filepicker.io/' + filepickerVersion + '/filepicker.js';
     return filepickerScriptTag;
   }
 
-  function _buildFilepicker(){
+  function _buildFilepicker() {
     var filepicker={};
     filepicker._queue=[];
 
-    for(var i = 0 ;i < filepickerMethods.length; i++){
+    for (var i = 0 ;i < filepickerMethods.length; i++) {
       filepicker[filepickerMethods[i]] = _buildFilepickerFunction(filepickerMethods[i],filepicker._queue);
     }
 
     window.filepicker = filepicker;
   }
 
-  function _buildFilepickerFunction(method,filepickerQueue){
-    return function(){
+  function _buildFilepickerFunction(method,filepickerQueue) {
+    return function() {
       filepickerQueue.push([method,arguments]);
     };
   }
 
-  function _setFilepickerApiKey(){
+  function _setFilepickerApiKey() {
     window.filepicker.setKey(filepickerApiKey);
   }
 
-  function options(){
+  function options() {
     return {
       extensions: ['.png', '.jpg', '.jpeg', '.gif'],
-      services: ['COMPUTER', 'IMAGE_SEARCH', 'URL', 'GOOGLE_DRIVE',
-      'DROPBOX', 'BOX','EVERNOTE', 'GMAIL', 'FACEBOOK', 'INSTAGRAM', 'FLICKR']
+      services:   ['COMPUTER', 'IMAGE_SEARCH', 'URL', 'GOOGLE_DRIVE', 'DROPBOX', 'BOX','EVERNOTE', 'GMAIL', 'FACEBOOK', 'INSTAGRAM', 'FLICKR']
     };
   }
 
   return {
-    init : init,
-    options : options
+    init:    init,
+    options: options
   };
 };
 

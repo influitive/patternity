@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { forIn } from 'lodash';
+import forIn from 'lodash/object/forIn';
 
 // import styles from './_save-button.scss';
 import Button2 from '../button2';

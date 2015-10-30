@@ -84,15 +84,7 @@ var Button = (function (_Component) {
       disabled: _react.PropTypes.bool,
       inverse: _react.PropTypes.bool,
       isSubmit: _react.PropTypes.bool,
-      style: _react.PropTypes.shape({
-        borderColor: function borderColor(props, propName) {
-          var type = props.type;
-
-          if (type != 'secondary') {
-            return new Error('Cannot use border with non-secondary type.');
-          }
-        }
-      })
+      style: _react.PropTypes.object
     },
     enumerable: true
   }, {

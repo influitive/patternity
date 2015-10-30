@@ -1,5 +1,5 @@
 var React = require('react');
-var _ = require('lodash');
+var isEmpty = require('lodash/lang/isEmpty');
 
 var DOWN_ARROW_KEY_CODE = 40;
 var UP_ARROW_KEY_CODE = 38;
@@ -13,7 +13,7 @@ var acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, 
 
 var MultiSelectKeyCodeMixin = {
   _handleKeyDown: function(event) {
-    if(acceptedKeyCodes.indexOf(event.keyCode) > -1) {
+    if (acceptedKeyCodes.indexOf(event.keyCode) > -1) {
       event.stopPropagation();
       this._preventDefaultForTab(event);
       this._determineKeyCodeAction(event.keyCode);
@@ -21,46 +21,46 @@ var MultiSelectKeyCodeMixin = {
   },
 
   _preventDefaultForTab: function(event) {
-    if(event.keyCode === TAB_KEY_CODE) {
+    if (event.keyCode === TAB_KEY_CODE) {
       event.preventDefault();
     }
   },
 
   _determineKeyCodeAction: function(keyCode) {
-    if(keyCode === ENTER_KEY_CODE) {
+    if (keyCode === ENTER_KEY_CODE) {
       this._handleEnter();
-    } else if(keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
+    } else if (keyCode === BACK_SPACE_KEY_CODE || keyCode === DELETE_KEY_CODE) {
       this._handleBackspaceDelete();
-    } else if(keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE) {
+    } else if (keyCode === DOWN_ARROW_KEY_CODE || keyCode === TAB_KEY_CODE) {
       this._handleDownArrowTab();
-    } else if(keyCode === UP_ARROW_KEY_CODE) {
+    } else if (keyCode === UP_ARROW_KEY_CODE) {
       this._handleUpArrow();
-    } else if(keyCode === ESCAPE_KEY_CODE) {
+    } else if (keyCode === ESCAPE_KEY_CODE) {
       this._hideOptions();
     }
   },
 
   _handleEnter: function() {
-    if(this._anyOptionsToShow()) {
+    if (this._anyOptionsToShow()) {
       this._handleOptionSelect(this.state.focusedOption);
     }
   },
 
   _handleBackspaceDelete: function() {
-    if(this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0) {
+    if (this.state.selectedOptions.length > 0 && this.state.typeAhead.length === 0) {
       var optionToRemove = this.state.selectedOptions[this.state.selectedOptions.length - 1];
       this._handleSelectedOptionRemoved(optionToRemove);
     }
   },
 
   _handleDownArrowTab: function() {
-    if(this._anyOptionsToShow()) {
+    if (this._anyOptionsToShow()) {
       this._nextFocusedOption();
     }
   },
 
   _handleUpArrow: function() {
-    if(this._anyOptionsToShow()) {
+    if (this._anyOptionsToShow()) {
       this._previousFocusedOption();
     }
   },
@@ -69,16 +69,16 @@ var MultiSelectKeyCodeMixin = {
     var currentFocusedOptionIndex = this._findFocusedOptionIndex();
 
     var nextFocusedOption = {};
-    for(var i = 0; i < this.state.options.length; i++) {
-      if(i > currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
+    for (var i = 0; i < this.state.options.length; i++) {
+      if (i > currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
         nextFocusedOption = this.state.options[i]
         break;
       }
     }
 
-    if(_.isEmpty(nextFocusedOption)) {
-      for(var i = 0; i < this.state.options.length; i++) {
-        if(this._optionCanHaveFocus(this.state.options[i])) {
+    if (_.isEmpty(nextFocusedOption)) {
+      for (var i = 0; i < this.state.options.length; i++) {
+        if (this._optionCanHaveFocus(this.state.options[i])) {
           nextFocusedOption = this.state.options[i]
           break;
         }
@@ -94,16 +94,16 @@ var MultiSelectKeyCodeMixin = {
     var currentFocusedOptionIndex = this._findFocusedOptionIndex();
 
     var previousFocusedOption = {};
-    for(var i = this.state.options.length - 1; i >= 0 ; i--) {
-      if(i < currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
+    for (var i = this.state.options.length - 1; i >= 0 ; i--) {
+      if (i < currentFocusedOptionIndex && this._optionCanHaveFocus(this.state.options[i])) {
         previousFocusedOption = this.state.options[i]
         break;
       }
     }
 
-    if(_.isEmpty(previousFocusedOption)) {
-      for(var i = this.state.options.length - 1; i >= 0; i--) {
-        if(this._optionCanHaveFocus(this.state.options[i])) {
+    if (isEmpty(previousFocusedOption)) {
+      for (var i = this.state.options.length - 1; i >= 0; i--) {
+        if (this._optionCanHaveFocus(this.state.options[i])) {
           previousFocusedOption = this.state.options[i]
           break;
         }
@@ -118,8 +118,8 @@ var MultiSelectKeyCodeMixin = {
   _findFocusedOptionIndex: function() {
     var currentFocusedOptionIndex = -1;
 
-    for(var i = 0; i < this.state.options.length; i++) {
-      if(this._isFocusedOption(this.state.options[i])) {
+    for (var i = 0; i < this.state.options.length; i++) {
+      if (this._isFocusedOption(this.state.options[i])) {
         currentFocusedOptionIndex = i;
         break;
       }

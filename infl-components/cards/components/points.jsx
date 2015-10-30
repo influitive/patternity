@@ -7,7 +7,7 @@ var Points = React.createClass({
       points : 0,
     };
   },
-  PropTypes : {
+  propTypes : {
     points : React.PropTypes.number,
   },
   render : function(){

@@ -4,7 +4,7 @@ import ProfilePopoverContent from './profile-popover-content';
 import Popover from '../popover';
 
 class ProfilePopover extends Component {
-  static PropTypes = {
+  static propTypes = {
     user:         PropTypes.object.isRequired,
     defaultImage: PropTypes.string,
     underAvatar:  PropTypes.node,

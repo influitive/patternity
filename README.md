@@ -216,27 +216,67 @@ Reference:
 
 ## Publish & Release
 
+Strict semantic versioning:
+
+1. Any change that breaks an existing api should bump the Major version
+2. Any added functionality should change the minor version
+3. Patch versions are reserved for changes transparent to the end user
+
+**Do not break this convention.**
+
 #### Git convention
-Branches:
+##Use git flow
+1. if you don't have it installed you can `brew install git-flow`
+2. you can also do git-flow style manually, just remember to merge master back into dev after a release
+3. git flow setup:
+4. `git flow init`
+5. accept the default for the first option (master)
+6. enter development for the second option (branch name for next release)
+7. set version tag prefix to 'v'
+8. accept defaults for all other options
 
-Master: Tagged branches pushed to npm registry, release branched merged from development, hotfix branches merged from hotfix/<hotfix-name>
+Feature git workflow:
+1. `git flow feature start <feature-name>`
+  this will create a new branch named feature/<feature-name>
 
-Development: Development branch to merge new features/non-critical fixes into
+develop you feature here and when it's done do:
 
-Features: `feature/<feature-name>`
+2. `git flow feature finish <feature-name>`
+  this merges your feature into development
 
-hotfix: `hotfix/<hotfix name>`
+Hotfix worflow
 
-Committing:
+1. `git flow hotfix start <version-number>`
+  this will create a new branch named hotfix/<version-number>
+  develop your hotfix here and when it's done do:
+2. `git flow hotfix finish <version-number>`
+  this merges your hotfix into master
 
-- rebase your feature branch off master(hotfix) or development(feature)
-- push and create pull request for review
-- merge feature into development, hotfix into master
+  and tags the commit with 'v<version-number>'
 
-Publishing:
+  master is then back-merged into development
 
-After merging into master:
-- git checkout master && git pull master
-- npm version <patch(hotfix)|minor(feature-additiont)|major(breaking api changes and major releases)>
-- npm publish
-- git push --tags 
+Release git workflow:
+
+1. `git flow release start <version-number>`
+  this will create a new branch named release/<version-number>
+
+  example `git flow release start 1.0.62`
+
+2. run `npm version (major|minor|patch) --no-git-tag-version`
+  Note: --no-git-tag-version is passed because git flow will be tagging the release
+
+1. `git flow release finish <version-number>`
+  you will be prompted to write a message for the tag, "Release version <version-number>" should suffice, you will be writing more detail in github releases feature.
+  this will tag master with `v<version-number>`
+
+  this will merge release/<version-number> into master
+  as well as back merge the release into development (the version numbers will then match)
+
+#### Publishing
+
+Once you have master at your desired release state, you can run `npm publish` to publish to the npm registry
+
+#### Generate styleguide
+
+To manually generate the styleguide, you can run `npm run styleguide-build`, which will install the styleguide and deposit the results into styleguide/public. Alternatively, you can run `npm run styleguide-server` which will host a local hot-reloading server on localhost:3000 (can be configured in styleguide/styleguide.config.js) Any changes to components or styleguide will be immediately reflected on the server. However this will install it again. To skip the install again, just `(cd styleguide && npm run start)`

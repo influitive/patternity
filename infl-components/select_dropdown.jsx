@@ -1,6 +1,7 @@
 var React = require('react');
 
 var SelectDropdown = React.createClass({
+  displayName: 'SelectDropdown',
   getDefaultProps: function() {
     return {
       name : "",

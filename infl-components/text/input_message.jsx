@@ -1,35 +1,33 @@
 var React = require('react');
 
-var _ = require('lodash');
+var isArray = require('lodash/lang/isArray');
 
 var InputMessage = React.createClass({
   propTypes: {
-    message : React.PropTypes.oneOfType([
+    message: React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.node,
       React.PropTypes.array
     ])
   },
 
-  getDefaultProps: function(){
+  getDefaultProps: function() {
     return {
       message: null
     };
   },
 
-  render: function () {
-    if ( this.props.message === null) {
-      return null;
-    }
+  render: function() {
+    if (this.props.message === null) return null;
 
     return (
       <div>{ this._message() }</div>
     );
   },
 
-  _message: function () {
-    if (_.isArray(this.props.message)) {
-      return this.props.message.map(function (message, i) {
+  _message: function() {
+    if (isArray(this.props.message)) {
+      return this.props.message.map(function(message, i) {
         return (
           <div key={i} className="input-message">{message}</div>
         );

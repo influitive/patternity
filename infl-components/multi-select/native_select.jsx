@@ -1,7 +1,8 @@
 var React = require('react');
 
 var NativeSelect = React.createClass({
-  PropTypes : {
+  displayName: 'NativeSelect',
+  propTypes : {
     selectedOptions : React.PropTypes.array.isRequired,
     name : React.PropTypes.string.isRequired
   },

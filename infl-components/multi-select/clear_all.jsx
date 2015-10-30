@@ -3,7 +3,8 @@ var React = require('react');
 var Icon = require('../icon.jsx');
 
 var ClearAll = React.createClass({
-  PropTypes : {
+  displayName: 'ClearAll',
+  propTypes : {
     hasSelectedOptions : React.PropTypes.bool.isRequired,
     onClearAll : React.PropTypes.func.isRequired
   },

@@ -2,6 +2,7 @@ var React = require('react');
 var classNames = require('classnames');
 
 var ToggleSwitch = React.createClass({
+  displayName: 'ToggleSwitch',
   getInitialState: function () {
     return {
       isOn: this.props.isOn

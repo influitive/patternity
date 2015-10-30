@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import 'babel/polyfill';
 import $ from 'jquery';
 
 import positionPopover from './position-popover';
@@ -18,7 +17,7 @@ class Popover extends Component {
       background:  PropTypes.string.isRequired,
       borderColor: function(props, propName) {
         const { background, borderColor } = props;
-        if (borderColor && background.includes('rgba')) {
+        if (borderColor && /rgba/.test(background)) {
           return new Error('Cannot use border with transparent background');
         }
       }

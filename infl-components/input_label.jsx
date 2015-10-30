@@ -1,6 +1,7 @@
 var React = require('react');
 
 var InputLabel = React.createClass({
+  displayName: 'InputLabel',
   getDefaultProps: function() {
     return {
       layout: "inline",

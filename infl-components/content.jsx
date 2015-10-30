@@ -1,6 +1,7 @@
 var React = require('react');
 
 var Content = React.createClass({
+  displayName: 'Content',
   getDefaultProps: function() {
     return {
       hasInnerPanel:       true,
