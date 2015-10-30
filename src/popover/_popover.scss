@@ -1,13 +1,13 @@
 .pt-popover { //replace namespacing with css modules
   position: relative;
   display:  inline-block;
-  z-index: 9999;
 
   .pt-popover-element {
     cursor:  pointer;
     display: inline-block;
   }
   .pt-popover-content {
+    z-index: 9999;
     position:     absolute;
     box-sizing: border-box;
     color:        #000;
@@ -22,6 +22,7 @@
     }
   }
   .pt-popover-arrow-container {
+    z-index: 9999;
     width:      100%;
     text-align: center;
     position:   absolute;
