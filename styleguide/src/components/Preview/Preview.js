@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import reactTools from 'react-tools';
-import merge from 'merge';
+//import merge from 'merge';
 
 export default class Preview extends Component {
   static propTypes = {

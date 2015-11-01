@@ -1,7 +1,7 @@
 var sassPaths = require('node-neat').includePaths.map(function(sassPath) {
   return 'includePaths[]=' + sassPath;
 }).join('&');
-
+var dir = __dirname;
 module.exports = {
   title:               'Patternlab',
   componentsToDocDir:  ['../src', '../infl-components'],
@@ -63,5 +63,6 @@ module.exports = {
 
   serverPort:    3000,
   styleguideDir: 'public',
-  hideErrors: true
+  hideErrors: true,
+  errorComponent: dir + '/src/components/PreviewError'
 };

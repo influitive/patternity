@@ -80,3 +80,10 @@
 :global #app {
   height: 100%;
 }
+
+:global .PreviewError {
+	margin: -1rem -1rem -1.2rem;
+	padding: 1rem;
+	color: #fff;
+	background: #c00;
+}
