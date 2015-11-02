@@ -37,11 +37,26 @@ class ButtonDropdown extends Component {
     isDropdownOpen: false
   }
 
+  _getButtonClasses() {
+    var classes = this.props.type;
+    if (this.props.title.trim().length > 0)
+      classes += ' button-with-text';
+    return classes;
+  }
+
+  _renderTitle() {
+    if (this.props.title.trim().length > 0)
+      return <span ref='title'>{this.props.title}</span>
+    else {
+      return <span ref='title'>&nbsp;</span>
+    }
+  }
+
   render() {
     const { style, disabled, type, title } = this.props;
     return <div style={style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={disabled} ref='buttonDropdown'>
-      <button className={type} onClick={this._toggleDropdownOptions} ref='button'>
-        <span ref='title'>{title}</span>
+      <button className={this._getButtonClasses()} onClick={this._toggleDropdownOptions} ref='button'>
+        {this._renderTitle()}
         <span className='arrow ic ic-chevron-down' ref='icon'></span>
       </button>
       <ul className={this._getOptionsClasses()} ref='options'>

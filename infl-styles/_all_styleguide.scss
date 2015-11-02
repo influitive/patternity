@@ -1,5 +1,13 @@
+@import "dependencies_base";
 
-@import "dependencies_webpack";
+@font-face {
+  font-family: "influicons";
+  src: url('../infl-fonts/influicons.eot');
+  src: url('../infl-fonts/influicons.eot?#iefix') format('eot'),
+    url('../infl-fonts/influicons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .PreviewArea {
   @import "avatar";

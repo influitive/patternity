@@ -2,11 +2,8 @@ import { Component, PropTypes } from 'react';
 import SearchFilter from '../SearchFilter';
 
 export default class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentFilter: ''
-    };
+  state = {
+    currentFilter: ''
   }
 
   static propTypes = {
@@ -29,9 +26,9 @@ export default class NavBar extends Component {
       else {
         return true;
       }
-    }).map((component) => {
+    }).map((component, index) => {
       return (
-        <div>
+        <div key={'component-'+index} >
           <a href={this._buildLink(component)} data-component={component.props}>{component.name}</a>
         </div>
       );
