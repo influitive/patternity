@@ -17,6 +17,7 @@
     "express": "4.13.3",
     "file-loader": "^0.8.4",
     "minimist": "1.2.0",
+    "react-codemirror": "^0.2.0",
     "react-styleguidist": "git://github.com/psachs21/react-styleguidist.git",
     "react-tools": "0.13.3",
     "sanitize.css": "^3.0.0",
