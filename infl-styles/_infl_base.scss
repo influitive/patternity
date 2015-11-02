@@ -51,6 +51,7 @@ h4.list-title {
 
   .panel-content-inner {
     padding: $spacing-large;
+    min-width: 330px;
   }
 
   @include media($mobile) {
