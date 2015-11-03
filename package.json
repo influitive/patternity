@@ -9,9 +9,7 @@
     "babel-watch": "babel src -w --out-dir lib & gulp watch-scss",
     "testbed": "node ./webpacktestbed/devServer.js",
     "prepublish": "npm run babel",
-    "fonts": "gulp influicons",
-    "styleguide-server": "(cd styleguide && npm install && npm run start)",
-    "styleguide-build": "(cd styleguide && npm install && npm run build)"
+    "fonts": "gulp influicons"
   },
   "repository": {
     "type": "git",
