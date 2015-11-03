@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 
 class AccordionBody extends Component {
   componentDidMount() {
-    this.applyRealMaxHeight();
+    this.poll = setInterval(this.applyRealMaxHeight, 200);
   }
 
-  componentDidUpdate() {
-    this.applyRealMaxHeight();
+  componentDidUnmount() {
+    clearInterval(this.poll);
   }
 
   state = {

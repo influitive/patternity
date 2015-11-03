@@ -15,13 +15,13 @@ class ButtonDropdown extends Component {
   }
 
   static propTypes = {
-    title:          PropTypes.string,
-    type:           PropTypes.oneOf([ 'success', 'danger', 'primary', 'important', 'secondary', '' ]),
-    options:        PropTypes.array,
-    children:       PropTypes.array,
-    alignDropdown:  PropTypes.oneOf([ 'left', 'right' ]),
-    onChange:       PropTypes.func,
-    disabled:       PropTypes.bool,
+    title:         PropTypes.string,
+    type:          PropTypes.oneOf([ 'success', 'danger', 'primary', 'important', 'secondary', '' ]),
+    options:       PropTypes.array,
+    children:      PropTypes.array,
+    alignDropdown: PropTypes.oneOf([ 'left', 'right' ]),
+    onChange:      PropTypes.func,
+    disabled:      PropTypes.bool,
 
     style: PropTypes.shape({
       borderColor: function(props, propName) {
