@@ -11,7 +11,6 @@ dependencies:
   override:
     - npm install --no-spin
     - npm install --prefix infl-patternlab --no-spin
-    - npm run styleguide-build --no-spin
 test:
   override:
     - karma start --single-run
@@ -22,3 +21,7 @@ deployment:
     commands:
       - grunt --gruntfile infl-patternlab/Gruntfile.js
       - /bin/bash publish.internal.sh
+  patternlab-experimental:
+    branch: development
+      commands:
+        - curl -v -X POST https://circleci.com/api/v1/project/influitive/patternlab/tree/master?circle-token=$CIRCLE_API_TOKEN

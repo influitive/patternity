@@ -280,3 +280,9 @@ Release git workflow:
 #### Publishing
 
 Once you have master at your desired release state, you can run `npm publish` to publish to the npm registry
+
+#### Patternlab
+
+Patternlab resides [here](https://github.com/influitive/patternlab).
+
+The pattern lab is built automatically by circleci. Results for old pattern lab are available at http://patternity.internal.influitive.com. The new pattern lab can be found at http://patternity.experimental.influitive.com.
