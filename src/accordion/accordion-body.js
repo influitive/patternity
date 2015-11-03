@@ -5,7 +5,7 @@ class AccordionBody extends Component {
     this.poll = setInterval(this.applyRealMaxHeight, 200);
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     clearInterval(this.poll);
   }
 
@@ -23,6 +23,7 @@ class AccordionBody extends Component {
   }
 
   applyRealMaxHeight = () => {
+    if (!this.props.open) return;
     const detailsHeight = this.refs.details.getDOMNode().offsetHeight;
     if (detailsHeight !== this.state.maxHeight) this.setState({maxHeight: detailsHeight});
   }
