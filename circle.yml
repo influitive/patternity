@@ -23,5 +23,5 @@ deployment:
       - /bin/bash publish.internal.sh
   patternlab-experimental:
     branch: development
-      commands:
-        - curl -v -X POST https://circleci.com/api/v1/project/influitive/patternlab/tree/master?circle-token=$CIRCLE_API_TOKEN
+    commands:
+      - curl -v -X POST https://circleci.com/api/v1/project/influitive/patternlab/tree/master?circle-token=$CIRCLE_API_TOKEN
