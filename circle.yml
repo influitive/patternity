@@ -24,4 +24,4 @@ deployment:
   patternlab-experimental:
     branch: development
     commands:
-      - curl -v -X POST https://circleci.com/api/v1/project/influitive/patternlab/tree/master?circle-token=$CIRCLE_API_TOKEN
+      - curl -v -X POST https://circleci.com/api/v1/project/influitive/patternlab/tree/master?circle-token=$PATTERNLAB_CIRCLE_API_TOKEN
