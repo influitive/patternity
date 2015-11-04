@@ -214,6 +214,10 @@ Reference:
 [forceUpdate]: http://facebook.github.io/react/docs/component-api.html#forceupdate
 [componentWillReceiveProps]: http://facebook.github.io/react/docs/component-specs.html#updating-componentwillreceiveprops
 
+#### Component Readmes
+
+Each component can have it's own Readme.md file. New components located in ```src``` will have their Readme.md in their component directory. Older components have their readmes located in ```infl-components-examples``` and the directory looks exactly like infl-components except the files end in ```.readme.md``` instead.
+
 ## Publish & Release
 
 Strict semantic versioning:
@@ -277,6 +281,8 @@ Release git workflow:
 
 Once you have master at your desired release state, you can run `npm publish` to publish to the npm registry
 
-#### Generate styleguide
+#### Patternlab
 
-To manually generate the styleguide, you can run `npm run styleguide-build`, which will install the styleguide and deposit the results into styleguide/public. Alternatively, you can run `npm run styleguide-server` which will host a local hot-reloading server on localhost:3000 (can be configured in styleguide/styleguide.config.js) Any changes to components or styleguide will be immediately reflected on the server. However this will install it again. To skip the install again, just `(cd styleguide && npm run start)`
+Patternlab resides [here](https://github.com/influitive/patternlab).
+
+The pattern lab is built automatically by circleci. Results for old pattern lab are available at http://patternity.internal.influitive.com. The new pattern lab can be found at http://patternity.experimental.influitive.com.
