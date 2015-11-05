@@ -3,7 +3,7 @@ var merge = require('lodash/object/merge');
 var $ = require('jquery');
 
 var Icon = require('./icon.jsx');
-var Popover = require('./popover');
+var Popover = require('../lib/popover');
 
 var Tooltip = React.createClass({
   displayName: 'Tooltip',
