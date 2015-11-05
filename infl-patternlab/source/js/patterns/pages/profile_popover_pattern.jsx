@@ -1,7 +1,7 @@
 var React = require('react');
-var Popover = require('../../../../infl-components/popover');
-var SaveButton = require('../../../../infl-components/save-button');
-var Accordion = require('../../../../infl-components/accordion');
+var Popover = require('../../../../lib/popover');
+var SaveButton = require('../../../../lib/save-button');
+var Accordion = require('../../../../lib/accordion');
 
 var ProfilePopoverPattern = React.createClass({
   getInitialState: function() {

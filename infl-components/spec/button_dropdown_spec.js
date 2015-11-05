@@ -3,7 +3,7 @@ var React  = require("react/addons");
 var ReactTestUtils = React.addons.TestUtils;
 var simulate  = ReactTestUtils.Simulate;
 
-var ButtonDropdown = require("button_dropdown");
+var ButtonDropdown = require("../../lib/button-dropdown");
 
 var chai = require("chai");
 var expect = chai.expect;

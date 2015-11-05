@@ -23,7 +23,7 @@ Patternity JSX components can be included in a normal module bundler fashion by 
 like so
 
 ```javascript
-var Alert = require('patternity/infl-components/alert');
+var Alert = require('patternity/lib/alert');
 ```
 
 Styles require a bit more work (until our whole build pipeline is on Webpack, at which point there's
@@ -91,7 +91,7 @@ Most component are implemented using Facebook's [React][react] architecture.
 Components are just required and mounted into you're own react code.
 
 ```js
-var Alert = require('infl-components/alert.jsx');
+var Alert = require('lib/alert.jsx');
 
 ...
 

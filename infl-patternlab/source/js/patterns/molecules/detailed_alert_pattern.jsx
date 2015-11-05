@@ -8,7 +8,7 @@ var InputLabel      = require("../../../../infl-components/input_label.jsx");
 var RadioButton     = require("../../../../infl-components/radio_button.jsx");
 var TextInput       = require("../../../../infl-components/text_input.jsx");
 
-var DetailedAlert   = require("../../../../infl-components/alert/detailed_alert.jsx");
+var DetailedAlert   = require("../../../../lib/alert/detailed_alert");
 
 var DetailedAlertPattern = React.createClass({
   getInitialState : function(){
@@ -103,7 +103,7 @@ var DetailedAlertPattern = React.createClass({
 
           <Require>
             <Require.JS>
-              var DetailedAlert = require("patternity/infl-components/alert/detailed_alert.jsx");
+              var DetailedAlert = require("patternity/lib/alert/detailed_alert");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/alert";

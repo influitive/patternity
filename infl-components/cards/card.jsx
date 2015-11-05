@@ -1,6 +1,6 @@
 var React   = require('react');
 
-var ButtonGroup = require('../button_group.jsx');
+var ButtonGroup = require('../../lib/button-group');
 
 var Card = React.createClass({
   render : function(){

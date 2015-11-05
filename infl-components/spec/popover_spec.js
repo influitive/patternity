@@ -2,7 +2,7 @@
 var React  = require("react/addons");
 var ReactTestUtils = React.addons.TestUtils;
 
-var Popover = require("popover");
+var Popover = require("../../lib/popover");
 
 var chai = require("chai");
 var expect = chai.expect;
