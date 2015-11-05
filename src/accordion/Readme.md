@@ -1,3 +1,6 @@
+---
+included: true
+---
 ```
 let _accordionSections=function(){
   return [{
