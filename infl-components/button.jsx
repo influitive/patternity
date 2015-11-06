@@ -2,9 +2,10 @@ var React = require('react');
 
 var buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'text'];
 
-var Button = React.createClass({
-  displayName: 'Button',
-  propTypes: {
+class Button extends React.Component {
+  static displayName = 'Button';
+
+  static propTypes = {
     icon:      React.PropTypes.string,
     className: React.PropTypes.string,
     type:      React.PropTypes.string,
@@ -12,15 +13,15 @@ var Button = React.createClass({
     href:      React.PropTypes.string,
     disabled:  React.PropTypes.bool,
     inverse:   React.PropTypes.bool
-  },
+  }
 
-  render: function() {
+  render() {
     return <button disabled={ this.props.disabled } className={ this._getClasses() } onClick={ this._onClick }>
       { this.props.children }
     </button>;
-  },
+  }
 
-  _getClasses: function() {
+  _getClasses() {
     var classes = 'button';
 
     if (this.props.disabled) {
@@ -39,9 +40,9 @@ var Button = React.createClass({
     if (!this.props.children || this.props.children.length===0) classes += ' iconButton';
 
     return classes;
-  },
+  }
 
-  _onClick: function(e) {
+  _onClick = (e) => {
     if (this.props.onClick) {
       var ret = this.props.onClick(e);
       if (ret === false) return;
@@ -50,7 +51,6 @@ var Button = React.createClass({
       document.location.href = this.props.href;
     }
   }
-
-});
+}
 
 module.exports = Button;

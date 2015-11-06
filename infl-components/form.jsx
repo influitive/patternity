@@ -1,60 +1,14 @@
 /*eslint react/no-multi-comp:0 */
 // TODO: Fixup multiple components per file
 
-var React = require('react');
+const React = require('react');
 
-var Form = React.createClass({
-  displayName: 'Form',
-  getDefaultProps: function() {
-    return {
-      acceptCharset: '',
-      action:        '',
-      autocomplete:  '',
-      enctype:       '',
-      method:        '',
-      name:          '',
-      novalidate:    true,
-      target:        '',
-      onSubmit:      function() {}
-    };
-  },
-
-  propTypes: {
-    acceptCharset: React.PropTypes.string,
-    action:        React.PropTypes.string,
-    autocomplete:  React.PropTypes.oneOf([
-      'on',
-      'off',
-      '']
-    ),
-    enctype: React.PropTypes.oneOf([
-      'application/x-www-form-urlencoded',
-      'multipart/form-data',
-      'text/plain',
-      ''
-    ]),
-    method: React.PropTypes.oneOf([
-      'get',
-      'post',
-      ''
-    ]),
-    name:       React.PropTypes.string,
-    novalidate: React.PropTypes.bool,
-    target:     React.PropTypes.oneOf([
-      '_blank',
-      '_self',
-      '_parent',
-      '_top',
-      ''
-    ]),
-    onSubmit: React.PropTypes.func
-  },
-
-  componentDidMount: function() {
+class Form extends React.Component {
+  componentDidMount() {
     this._determineNumberOfColumns();
-  },
+  }
 
-  render: function() {
+  render() {
     return <form className='pt-form' ref='form'
       noValidate={this.props.novalidate}
       acceptCharset={this.props.acceptCharset}
@@ -67,9 +21,9 @@ var Form = React.createClass({
       onSubmit={this.props.onSubmit}>
         {this.props.children}
     </form>;
-  },
+  }
 
-  _determineNumberOfColumns: function() {
+  _determineNumberOfColumns() {
     var columns = [];
     var children = React.findDOMNode(this.refs.form).children;
 
@@ -86,26 +40,71 @@ var Form = React.createClass({
     if (columns.length > 0 ) {
       this._styleColumns(columns);
     }
-  },
+  }
 
-  _isFormColumn: function(child) {
+  _isFormColumn(child) {
     return child.className.indexOf('pt-form-column') > -1;
-  },
+  }
 
-  _isFormRow: function(child) {
+  _isFormRow(child) {
     return child.className.indexOf('pt-form-row') > -1;
-  },
+  }
 
-  _isFormAction: function(child) {
+  _isFormAction(child) {
     return child.className.indexOf('pt-form-actions') > -1;
-  },
+  }
 
-  _styleColumns: function(columns) {
+  _styleColumns(columns) {
     columns.map(function(column) {
       column.className = column.className + ' column-num-' + columns.length;
     });
   }
-});
+}
+
+Form.defaultProps = {
+  acceptCharset: '',
+  action:        '',
+  autocomplete:  '',
+  enctype:       '',
+  method:        '',
+  name:          '',
+  novalidate:    true,
+  target:        '',
+  onSubmit:      function() {}
+};
+
+Form.displayName = 'Form';
+
+Form.propTypes = {
+  acceptCharset: React.PropTypes.string,
+  action:        React.PropTypes.string,
+  autocomplete:  React.PropTypes.oneOf([
+    'on',
+    'off',
+    '']
+  ),
+  enctype: React.PropTypes.oneOf([
+    'application/x-www-form-urlencoded',
+    'multipart/form-data',
+    'text/plain',
+    ''
+  ]),
+  method: React.PropTypes.oneOf([
+    'get',
+    'post',
+    ''
+  ]),
+  name:       React.PropTypes.string,
+  novalidate: React.PropTypes.bool,
+  target:     React.PropTypes.oneOf([
+    '_blank',
+    '_self',
+    '_parent',
+    '_top',
+    ''
+  ]),
+  onSubmit: React.PropTypes.func
+};
 
 Form.Column = React.createClass({
   render: function() {

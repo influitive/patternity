@@ -1,7 +1,7 @@
 var React = require('react');
 
-var Sidebar = React.createClass({
-  render: function () {
+class Sidebar extends React.Component {
+  render() {
     return (
       <div className="panel-sidebar">
         <div className="panel-sidebar-inner" ref="sidebar">
@@ -10,7 +10,7 @@ var Sidebar = React.createClass({
       </div>
     );
   }
-});
+}
 
 Sidebar.Heading = React.createClass({
   getDefaultProps : function(){
@@ -85,16 +85,8 @@ Sidebar.NavList = React.createClass({
   }
 });
 
-var ListItem = React.createClass({
-  getDefaultProps: function() {
-    return {
-      item: {}
-    };
-  },
-  propTypes : {
-    item: React.PropTypes.object
-  },
-  render: function () {
+class ListItem extends React.Component {
+  render() {
     var Component = this.props.item.listItemComponent;
     return (
       <li>
@@ -105,6 +97,14 @@ var ListItem = React.createClass({
       </li>
     );
   }
-});
+}
+
+ListItem.defaultProps = {
+  item: {}
+};
+
+ListItem.propTypes = {
+  item: React.PropTypes.object
+};
 
 module.exports = Sidebar;

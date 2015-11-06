@@ -1,45 +1,27 @@
 var React = require('react');
 var classNames = require('classnames');
 
-var Checkbox = React.createClass({
-  displayName: 'Checkbox',
-  getInitialState: function() {
-    return {
-      isChecked: this.props.isChecked
-    };
-  },
+class Checkbox extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this._clickCheckBox = this._clickCheckBox.bind(this);
+    this._handleChange = this._handleChange.bind(this);
 
-  getDefaultProps: function() {
-    return {
-      id:            '',
-      enabled:       true,
-      isChecked:     false,
-      onChange:      function() {},
-      checkboxName:  '',
-      checkboxLabel: '',
-      value:         ''
+    this.state = {
     };
-  },
-  propTypes: {
-    id:            React.PropTypes.string,
-    enabled:       React.PropTypes.bool,
-    isChecked:     React.PropTypes.bool,
-    required:      React.PropTypes.bool,
-    error:         React.PropTypes.bool,
-    onChange:      React.PropTypes.func,
-    checkboxName:  React.PropTypes.string,
-    checkboxLabel: React.PropTypes.string,
-    label:         React.PropTypes.string,
-    name:          React.PropTypes.string,
-    value:         React.PropTypes.string
-  },
-  componentWillReceiveProps: function(newProps) {
+  }
+
+  state = {
+    isChecked: props.isChecked
+  };
+
+  componentWillReceiveProps(newProps) {
     this.setState({
       isChecked: newProps.isChecked
     });
-  },
+  }
 
-  render: function() {
+  render() {
     return <span id={this.props.id} className={this._checkboxCSSClasses()}
         ref='checkbox' onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
       <span className='stylized-checkbox' ref='stylizedCheckbox'></span>
@@ -57,22 +39,21 @@ var Checkbox = React.createClass({
         checked={this._isChecked()}
         onChange={this._handleChange} />
     </span> ;
-  },
+  }
 
-  _getStyle: function() {
+  _getStyle() {
     if (!this.props.label && !this.props.checkboxLabel && !this.props.required){
       return {display: 'none'};
     }
     else {
       return {};
     }
-  },
-
-  _isChecked: function() {
+  }
+  _isChecked() {
     return this.state.isChecked;
-  },
+  }
 
-  _checkboxCSSClasses: function() {
+  _checkboxCSSClasses() {
     return classNames({
       'pt-checkbox': true,
       'is-error':    this.props.error,
@@ -80,41 +61,67 @@ var Checkbox = React.createClass({
       'isChecked':   this.state.isChecked,
       'disabled':    !this.props.enabled
     });
-  },
+  }
 
-  _clickCheckBox: function() {
+  _clickCheckBox = () => {
     if (this.props.enabled) {
       React.findDOMNode(this.refs.nativeCheckbox).click();
     }
-  },
+  }
 
-  _handleChange: function(event) {
+  _handleChange = (event) => {
     this.setState({isChecked: !this.state.isChecked});
     this.props.onChange(event);
-  },
+  }
 
-  _label: function() {
+  _label() {
     // TODO remove checkboxLabel to conform to all other input interfaces
     if (this.props.checkboxLabel) { console.warn('checkboxLabel has been deprecated, please use label instead'); }
 
     return this.props.checkboxLabel || this.props.label;
-  },
+  }
 
-  _name: function() {
+  _name() {
     // TODO remove checkboxName to conform to all other input interfaces
     if (this.props.checkboxName) { console.warn('checkboxName has been deprecated, please use name instead'); }
 
     return this.props.checkboxName || this.props.name;
-  },
+  }
 
-  _icon: function() {
+  _icon() {
     if (this.props.required) {
       return (
         <span className='required-icon ic ic-asterisk'></span>
       );
     }
   }
-});
+}
+
+Checkbox.defaultProps = {
+  id:            '',
+  enabled:       true,
+  isChecked:     false,
+  onChange:      function() {},
+  checkboxName:  '',
+  checkboxLabel: '',
+  value:         ''
+};
+
+Checkbox.displayName = 'Checkbox';
+
+Checkbox.propTypes = {
+  id:            React.PropTypes.string,
+  enabled:       React.PropTypes.bool,
+  isChecked:     React.PropTypes.bool,
+  required:      React.PropTypes.bool,
+  error:         React.PropTypes.bool,
+  onChange:      React.PropTypes.func,
+  checkboxName:  React.PropTypes.string,
+  checkboxLabel: React.PropTypes.string,
+  label:         React.PropTypes.string,
+  name:          React.PropTypes.string,
+  value:         React.PropTypes.string
+};
 
 Checkbox.Group = React.createClass({
   getDefaultProps: function() {

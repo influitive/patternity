@@ -1,18 +1,21 @@
 var React = require('react');
 var classNames = require('classnames');
 
-var Icon = React.createClass({
-  displayName: 'Icon',
-  propTypes: {
+class Icon extends React.Component {
+  static displayName = 'Icon'
+
+  static propTypes = {
     icon: React.PropTypes.string.isRequired,
     className: React.PropTypes.string
-  },
-  render: function() {
+  }
+
+  render() {
     return (
       <span ref="icon" className={this._getClassNames()} />
     );
-  },
-  _getClassNames: function() {
+  }
+
+  _getClassNames() {
     var influitiveIconName = 'ic-' + this.props.icon;
     var classes = classNames('ic', influitiveIconName);
     if (this.props.className) {
@@ -21,6 +24,6 @@ var Icon = React.createClass({
 
     return classes;
   }
-});
+}
 
-module.exports = Icon;
+export default Icon;

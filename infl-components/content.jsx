@@ -1,32 +1,31 @@
 var React = require('react');
 
-var Content = React.createClass({
-  displayName: 'Content',
-  getDefaultProps: function() {
-    return {
-      hasInnerPanel:       true,
-      hasBackgroundColour: true
-    };
-  },
+class Content extends React.Component {
+  static displayName = 'Content'
 
-  propTypes: {
+  static propTypes = {
     hasInnerPanel:       React.PropTypes.bool,
     hasBackgroundColour: React.PropTypes.bool
-  },
+  }
 
-  render: function() {
+  static defaultProps = {
+    hasInnerPanel:       true,
+    hasBackgroundColour: true
+  }
+
+  render() {
     return <div className={'panel-content ' + this._doesContentHaveBackgroundColour()} ref='contentPannel'>
       {this._contentHasInnerPanel()}
     </div>;
-  },
+  }
 
-  _doesContentHaveBackgroundColour: function() {
+  _doesContentHaveBackgroundColour() {
     return this.props.hasBackgroundColour
       ? ''
       : 'no-colour';
-  },
+  }
 
-  _contentHasInnerPanel: function() {
+  _contentHasInnerPanel() {
     if (this.props.hasInnerPanel) {
       return <div className="panel-content-inner" ref="contentInnerPannel">
         {this.props.children}
@@ -35,6 +34,6 @@ var Content = React.createClass({
       return (this.props.children);
     }
   }
-});
+}
 
-module.exports = Content;
+export default Content;

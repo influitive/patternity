@@ -1,28 +1,28 @@
 var React = require('react');
 var classNames = require('classnames');
 
-var StatsBar = React.createClass({
-  getDefaultProps : function(){
-    return {
-      statType : "points",
-      children : []
-    }
-  },
-  propTypes : {
-    statType : React.PropTypes.oneOf([
-      'points',
-      'activity'
-    ]),
-    children : React.PropTypes.array
-  },
-  render: function() {
+class StatsBar extends React.Component {
+  render() {
     return (
       <div ref="statsBar" className={"pt-stats-bar " + this.props.statType}>
         {this.props.children}
       </div>
     );
   }
-});
+}
+
+StatsBar.defaultProps = {
+  statType : "points",
+  children : []
+};
+
+StatsBar.propTypes = {
+  statType : React.PropTypes.oneOf([
+    'points',
+    'activity'
+  ]),
+  children : React.PropTypes.array
+};
 
 StatsBar.Stat = React.createClass({
   getDefaultProps : function(){
