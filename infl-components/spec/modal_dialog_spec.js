@@ -6,7 +6,7 @@ var simulateNative = ReactTestUtils.SimulateNative;
 var _ = require('lodash');
 
 var ModalDialog = require("modal_dialog");
-var ButtonGroup = require("button_group");
+var ButtonGroup = require("../../lib/button-group");
 
 var chai = require("chai");
 var sinon = require("sinon");

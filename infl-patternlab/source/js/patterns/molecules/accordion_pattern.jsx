@@ -8,7 +8,7 @@ var InputLabel      = require("../../../../infl-components/input_label.jsx");
 var RadioButton     = require("../../../../infl-components/radio_button.jsx");
 var TextInput       = require("../../../../infl-components/text_input.jsx");
 
-var Accordion   = require("../../../../infl-components/accordion.jsx");
+var Accordion   = require("../../../../lib/accordion");
 
 var AccordionPattern = React.createClass({
   getInitialState : function(){
@@ -67,7 +67,7 @@ var AccordionPattern = React.createClass({
 
           <Require>
             <Require.JS>
-              var Accordion = require("patternity/infl-components/accordion.jsx");
+              var Accordion = require("patternity/lib/accordion");
             </Require.JS>
             <Require.CSS>
               @import "patternity/infl-styles/accordion";

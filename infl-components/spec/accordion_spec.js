@@ -6,7 +6,7 @@ var TestUtils = React.addons.TestUtils;
 var _         = require('lodash');
 var simulate  = TestUtils.Simulate;
 
-var Accordion = require('../accordion.jsx');
+var Accordion = require('../../lib/accordion');
 
 describe('Accordion', function() {
   function buildSectionData(index) {
