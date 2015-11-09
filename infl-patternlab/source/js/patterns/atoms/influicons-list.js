@@ -158,6 +158,14 @@ var icons = {
   
     "crop": "crop",
   
+    "medal": "medal",
+  
+    "grow": "grow",
+  
+    "handshake": "handshake",
+  
+    "graduation-cap": "graduation-cap",
+  
     "coins-old": "coins-old",
   
 
