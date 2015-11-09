@@ -661,6 +661,7 @@ h4.list-title {
 }
 .panel-content .panel-content-inner {
   padding: 1.5em;
+  min-width: 330px;
 }
 @media screen and (max-width: 640px) {
   .panel-content {
@@ -1036,8 +1037,24 @@ h6 {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-medal:before {
   content: "";
+}
+
+.ic.ic-grow:before {
+  content: "";
+}
+
+.ic.ic-handshake:before {
+  content: "";
+}
+
+.ic.ic-graduation-cap:before {
+  content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 @font-face {
@@ -1199,7 +1216,7 @@ h6 {
   margin-left: -26px;
 }
 .alert-msg.warning {
-  background-color: #fffae6;
+  background-color: #fffae5;
   color: #cca300;
 }
 .alert-msg.warning .close {
@@ -1315,7 +1332,7 @@ button {
   border: none;
   padding: 8px 24px;
   text-align: center;
-  box-shadow: 0px 2px #d5d5d5;
+  box-shadow: 0px 2px #d4d4d4;
   display: inline-block;
   -webkit-transition: background-color 0.15s ease-in-out;
   -moz-transition: background-color 0.15s ease-in-out;
@@ -1521,8 +1538,10 @@ button.ic:before {
 }
 .button-dropdown button {
   position: relative;
-  padding-right: 3em;
   outline: none;
+}
+.button-dropdown button.button-with-text {
+  padding-right: 3em;
 }
 .button-dropdown button .arrow {
   font-size: 22px;
@@ -1681,7 +1700,7 @@ button.ic:before {
 }
 .button-group.inline.grouped button:after,
 .button-group.inline.grouped .button:after {
-  border-left: 1px solid #d5d5d5;
+  border-left: 1px solid #d4d4d4;
   content: "";
   position: absolute;
   top: 0px;
@@ -2722,7 +2741,7 @@ textarea {
 }
 .pt-modal-dialog .pt-modal.small .pt-modal-footer .button-group button,
 .pt-modal-dialog .pt-modal.small .pt-modal-footer .button-group .button {
-  width: calc(100% / 2 - 9px);
+  width: calc(100% / 2 - 14px);
 }
 .pt-modal-dialog .pt-modal .pt-modal-header {
   margin-bottom: 18px;
@@ -3078,8 +3097,24 @@ textarea {
   content: "";
 }
 
-.ic.ic-coins-old:before {
+.ic.ic-medal:before {
   content: "";
+}
+
+.ic.ic-grow:before {
+  content: "";
+}
+
+.ic.ic-handshake:before {
+  content: "";
+}
+
+.ic.ic-graduation-cap:before {
+  content: "";
+}
+
+.ic.ic-coins-old:before {
+  content: "";
 }
 
 .pt-tabs {
@@ -4080,6 +4115,23 @@ textarea {
     opacity: 0;
   }
 }
+/* COPIED FROM '../src' DO NOT EDIT */
+.pt-tag {
+  margin: 0px;
+  padding: 2px 10px;
+  font-variant: small-caps;
+  color: #fff;
+  display: block;
+  float: left;
+  max-width: 75px;
+  cursor: pointer;
+  font-size: 13px;
+  background-color: #666666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 body {
   font-family: 'Proxima Nova Light', 'Helvetica Neue', Helvetica, arial, sans-serif !important;
   font-size: 15px !important;
