@@ -1,4 +1,4 @@
-import { Component, PropTypes} from 'react';
+import React, { Component, PropTypes} from 'react';
 import TextInput from '../../infl-components/text_input';
 import classNames from 'ClassNames';
 
