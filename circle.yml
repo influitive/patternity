@@ -10,18 +10,8 @@ dependencies:
     - bundle install
   override:
     - npm install --no-spin
-    - npm install --prefix infl-patternlab --no-spin
-test:
-  override:
-    - karma start --single-run --log-level error
-
 deployment:
-  internal:
-    branch: master
-    commands:
-      - grunt --gruntfile infl-patternlab/Gruntfile.js
-      - /bin/bash publish.internal.sh
-  patternlab-experimental:
+  experimental:
     branch: development
     commands:
       - curl -v -X POST https://circleci.com/api/v1/project/influitive/patternlab/tree/master?circle-token=$PATTERNLAB_CIRCLE_API_TOKEN

@@ -1,14 +1,14 @@
 {
   "name": "patternity",
-  "version": "1.2.1",
+  "version": "2.0.0-beta.37",
   "description": "Patternity is the pattern library and style guide for all Influitive apps",
   "main": "index.js",
   "scripts": {
     "test": "babel-tape-runner \"src/**/*/*.test.js\" | faucet",
     "tape-watch": "watch 'clear && babel-tape-runner \"src/**/*/*.test.js\" | faucet && exit 0' src -d -u",
     "coverage": "babel-node node_modules/.bin/isparta cover src/**/*.test.js | tap-spec",
-    "babel": "babel src --out-dir lib  && gulp copy-lib-styles",
-    "babel-watch": "babel src -w --out-dir lib & gulp watch-scss",
+    "babel": "babel {src,infl-components-src} --out-dir lib  && gulp copy-lib-styles",
+    "babel-watch": "babel {src,infl-components-src} -w --out-dir lib & gulp watch-scss",
     "testbed": "node ./webpacktestbed/devServer.js",
     "prepublish": "npm run babel",
     "fonts": "gulp influicons",
@@ -65,6 +65,7 @@
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
     "gulp-consolidate": "^0.1.2",
+    "gulp-debug": "^2.1.2",
     "gulp-flatten": "^0.2.0",
     "gulp-header": "^1.7.1",
     "gulp-iconfont": "^1.0.0",
@@ -89,7 +90,7 @@
     "mocha": "^2.1.0",
     "node-sass": "^3.2.0",
     "postcss-scss": "^0.1.2",
-    "react": "^0.13.3",
+    "react": "^0.14.2",
     "react-hot-loader": "^1.2.9",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.0",
@@ -131,6 +132,6 @@
     "react-quill": "^0.3.0"
   },
   "peerDependencies": {
-    "react": "^0.13.1"
+    "react": "^0.14.2"
   }
 }
