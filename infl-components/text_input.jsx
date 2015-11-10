@@ -12,7 +12,7 @@ var TextInput = React.createClass({
       placeholder: '',
       name:        '',
       id:          '',
-      pattern:     '',
+      pattern:     null,
       message:     '',
       value:       '',
       required:    false,
