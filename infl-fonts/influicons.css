@@ -103,5 +103,6 @@
 .ic.ic-medal:before { content: "\E04F" }
 .ic.ic-grow:before { content: "\E050" }
 .ic.ic-handshake:before { content: "\E051" }
-.ic.ic-graduation-cap:before { content: "\E052" }
-.ic.ic-coins-old:before { content: "\E053" }
+.ic.ic-conversation:before { content: "\E052" }
+.ic.ic-graduation-cap:before { content: "\E053" }
+.ic.ic-coins-old:before { content: "\E054" }

@@ -815,22 +815,32 @@
 }
 
 
-.ic.ic-graduation-cap:before {
+.ic.ic-conversation:before {
   content: "\E052"
+}
+
+@mixin ic-conversation() {
+  font-family: 'influicons';
+  content: "\E052"
+}
+
+
+.ic.ic-graduation-cap:before {
+  content: "\E053"
 }
 
 @mixin ic-graduation-cap() {
   font-family: 'influicons';
-  content: "\E052"
+  content: "\E053"
 }
 
 
 .ic.ic-coins-old:before {
-  content: "\E053"
+  content: "\E054"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E053"
+  content: "\E054"
 }
 
