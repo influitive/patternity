@@ -12,11 +12,12 @@ export default class RecommendedLengthInput extends Component {
     onChange: PropTypes.func.isRequired
   }
 
+  componentWillMount(){
+    this._setRemainingLength(this.props);
+  }
+
   componentWillReceiveProps(nextProps) {
-    var value = nextProps.value || "";
-    this.setState({
-      remainingLength: nextProps.recommendedLength - value.length
-    });
+    this._setRemainingLength(nextProps);
   }
 
   render(){
@@ -48,5 +49,12 @@ export default class RecommendedLengthInput extends Component {
         'negative': this.state.remainingLength < 0
       }
     );
+  }
+
+  _setRemainingLength(props){
+    var value = props.value || "";
+    this.setState({
+      remainingLength: props.recommendedLength - value.length
+    });
   }
 }
