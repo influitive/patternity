@@ -164,6 +164,8 @@ var icons = {
   
     "handshake": "handshake",
   
+    "conversation": "conversation",
+  
     "graduation-cap": "graduation-cap",
   
     "coins-old": "coins-old",
