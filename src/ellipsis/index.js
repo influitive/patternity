@@ -14,7 +14,7 @@ export default class Ellipsis extends Component {
     text: this.props.text
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(nextProps) {
     this._determineMaxHeight();
     this._applyEllipsisToText();
   }
@@ -32,24 +32,23 @@ export default class Ellipsis extends Component {
 
   render() {
     return (
-      <p ref="ellipsis">
-        <span ref="text">{this.state.text}</span>
-      </p>
+      <div ref="ellipsis">
+        <div ref="text">{this.state.text}</div>
+      </div>
     );
   }
 
   _determineMaxHeight = () => {
     var ellipsisElement = React.findDOMNode(this.refs.ellipsis);
     var lineHeight = this._getLineHeight(ellipsisElement);
-
-    ellipsisElement.style.maxHeight = (lineHeight * this.props.maxLines) + 'px';
+    var maxLines = this.props.maxLines < 1 ? 1 : this.props.maxLines;
+    ellipsisElement.style.maxHeight = (lineHeight * maxLines) + 'px';
   }
 
   _applyEllipsisToText = () => {
     var textElement = React.findDOMNode(this.refs.text);
     var ellipsisElement = React.findDOMNode(this.refs.ellipsis);
-
-    if( textElement.getBoundingClientRect().height > ellipsisElement.getBoundingClientRect().height){
+    if( textElement.getBoundingClientRect().height > ellipsisElement.getBoundingClientRect().height + 2){
       this._shrinkText();
     }
   }
@@ -57,7 +56,7 @@ export default class Ellipsis extends Component {
   _shrinkText = () => {
     this.setState({
       text: this._removeLastWord()
-    }, this._applyEllipsisToText);
+    });
   }
 
   _removeLastWord = () => {
