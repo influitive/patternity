@@ -1,3 +1,7 @@
+---
+included: true
+group: Components
+---
 ```
 <div>
   <RadioButton radioName="selectedValue1" radioLabel="My Radio Button One" isChecked={false} value="radio-button-1"/>

@@ -1,1 +1,7 @@
-	<Alert type='success'>Success Alert!</Alert>
+---
+included: true
+group: Components
+---
+```
+<Alert type='success'>Success Alert!</Alert>
+```

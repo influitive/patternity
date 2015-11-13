@@ -1,3 +1,7 @@
+---
+included: true
+group: Components
+---
 ```
 <div>
 	<div style={{position: 'absolute'}}>

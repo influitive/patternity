@@ -1,5 +1,7 @@
-Example:
-
+---
+included: true
+group: Components
+---
 ```
   var open = () => {
     this.setState({isOpen:true});

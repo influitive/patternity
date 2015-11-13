@@ -1,3 +1,7 @@
+---
+included: true
+group: Components
+---
 ```
 <div>
 <TextInput type='text'
