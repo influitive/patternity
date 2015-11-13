@@ -100,6 +100,16 @@ var Alert = require('lib/alert.jsx');
 </Alert>
 ```
 
+# Creating New Components
+
+The following command will create a basic component with the name TestComponent:
+
+```
+npm run create TestComponent
+```
+
+It will create a basic stylesheet, index file, readme, and test file under 'src/test-component' to help get you started.
+
 # Contributing
 
 Please make sure you follow the style guide below if submitting a pattern to this repo.

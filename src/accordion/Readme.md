@@ -1,7 +1,9 @@
 ---
 included: true
-groups:
-    - Components
+group: Components
+tags:
+ - Something
+ - Something else
 ---
 ```
 let _accordionSections=function(){
