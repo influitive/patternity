@@ -33,7 +33,7 @@ export default class Ellipsis extends Component {
   render() {
     return (
       <div ref="ellipsis">
-        <div ref="text">{this.state.text}</div>
+        <div ref="text" dangerouslySetInnerHTML={this.state.text}></div>
       </div>
     );
   }
