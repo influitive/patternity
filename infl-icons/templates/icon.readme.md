@@ -43,24 +43,12 @@ let onMouseLeave = (e) => {
   })
 };
 
-let getIconStyle = (icon) => {
-  let style = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    fontSize: '60px',
-    padding: '15px 10px 15px 10px',
-    lineHeight: 1
-  };
-  return style;
-};
-
 <div style={mainStyle}>
   <%
   _.each(glyphs, function(glyph) {
     if (glyph.name != '500donotdeletethis') {
     %>
-  <div style={getIconStyle("<%= glyph.name %>")} className='IconDescription' id="<%= glyph.name %>">
+  <div style={iconGroupStyle} className='IconDescription' id="<%= glyph.name %>">
     <Icon icon="<%= glyph.name %>" />
     <div style={titleStyle}><%= glyph.name %></div>
   </div>
