@@ -10,7 +10,9 @@
     "testbed": "node ./webpacktestbed/devServer.js",
     "prepublish": "npm run babel",
     "fonts": "gulp influicons",
-    "create": "gulp create-component"
+    "create": "gulp create-component",
+    "lint": "eslint .; exit 0",
+    "githooks": "cd .git/hooks && ln -s ../../.githooks/commit-msg ./commit-msg && cd -"
   },
   "repository": {
     "type": "git",
