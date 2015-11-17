@@ -1,3 +1,7 @@
+---
+included: true
+group: Components
+---
 ```
 var func = (e) => {
   this.setState({value: e.target.value});

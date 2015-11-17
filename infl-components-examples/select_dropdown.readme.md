@@ -1,3 +1,7 @@
+---
+included: true
+group: Components
+---
 ```
 <SelectDropdown>
   <ul label="Option Group 1">

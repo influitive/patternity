@@ -68,6 +68,13 @@ gulp.task('influicons', function() {
           className: 'ic'
         }))
         .pipe(gulp.dest('infl-patternlab/source/js/patterns/atoms/'));
+
+      // generate the patternity readme file for icon
+      gulp.src('infl-icons/templates/icon.readme.md')
+        .pipe(consolidate('lodash', {
+          glyphs:    codepoints
+        }))
+        .pipe(gulp.dest('infl-components-examples/'));
     })
     .pipe(gulp.dest('infl-fonts/'));
 });
