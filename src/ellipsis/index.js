@@ -15,13 +15,11 @@ export default class Ellipsis extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    this._determineMaxHeight();
-    this._applyEllipsisToText();
+    this._applyEllipsis();
   }
 
   componentDidMount() {
-    this._determineMaxHeight();
-    this._applyEllipsisToText();
+    this._applyEllipsis();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -38,16 +36,22 @@ export default class Ellipsis extends Component {
     );
   }
 
-  _determineMaxHeight = () => {
-    var ellipsisElement = React.findDOMNode(this.refs.ellipsis);
-    var lineHeight = this._getLineHeight(ellipsisElement);
-    var maxLines = this.props.maxLines < 1 ? 1 : this.props.maxLines;
-    ellipsisElement.style.maxHeight = (lineHeight * maxLines) + 'px';
+  _applyEllipsis = () => {
+    let ellipsisElement = React.findDOMNode(this.refs.ellipsis);
+
+    if(this.props.maxLines < 1){
+      ellipsisElement.style.display = 'none';
+    }
+    else{
+      let lineHeight = this._getLineHeight(ellipsisElement);
+      ellipsisElement.style.maxHeight = (lineHeight * this.props.maxLines) + 'px';
+      this._applyEllipsisToText();
+    }
   }
 
   _applyEllipsisToText = () => {
-    var textElement = React.findDOMNode(this.refs.text);
-    var ellipsisElement = React.findDOMNode(this.refs.ellipsis);
+    let textElement = React.findDOMNode(this.refs.text);
+    let ellipsisElement = React.findDOMNode(this.refs.ellipsis);
     if( textElement.getBoundingClientRect().height > ellipsisElement.getBoundingClientRect().height + 2){
       this._shrinkText();
     }
@@ -60,7 +64,7 @@ export default class Ellipsis extends Component {
   }
 
   _removeLastWord = () => {
-    var lastIndex = this.state.text.lastIndexOf(" ");
+    let lastIndex = this.state.text.lastIndexOf(" ");
     return this.state.text.substring(0, lastIndex) + "...";
   }
 
