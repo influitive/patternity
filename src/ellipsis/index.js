@@ -30,19 +30,24 @@ export default class Ellipsis extends Component {
 
   render() {
     return (
-      <div ref="ellipsis">
-        <div ref="text">{this.state.text}</div>
+      <div ref="ellipsis" style={this._getTextStyle()}>
+        <div ref="text" >{this.state.text}</div>
       </div>
     );
   }
 
-  _applyEllipsis = () => {
-    let ellipsisElement = React.findDOMNode(this.refs.ellipsis);
-
+  _getTextStyle = () => {
+    let style = {};
     if(this.props.maxLines < 1){
-      ellipsisElement.style.display = 'none';
+      style.display = 'none';
     }
-    else{
+    return style;
+  }
+
+  _applyEllipsis = () => {
+    if(this.props.maxLines > 0){
+      let ellipsisElement = React.findDOMNode(this.refs.ellipsis);
+
       let lineHeight = this._getLineHeight(ellipsisElement);
       ellipsisElement.style.maxHeight = (lineHeight * this.props.maxLines) + 'px';
       this._applyEllipsisToText();
