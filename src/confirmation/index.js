@@ -41,12 +41,12 @@ export default class Confirmation extends Component {
 
   render() {
     return (
-      <Modal>
+      <Modal size='small'>
         <ModalHeader title={this.props.title} />
 
         <ModalBody>
           {this.props.body}
-        </ModalBody>
+        </ModalBody> 
 
         <ModalFooter>
           <ButtonGroup>
