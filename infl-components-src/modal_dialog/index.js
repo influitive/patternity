@@ -28,7 +28,7 @@ class ModalDialog extends React.Component {
   }
 
   state = {
-    isModalOpen:    props.isModalOpen,
+    isModalOpen:    this.props.isModalOpen,
     isModalClosing: false
   }
 

@@ -1,14 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import $ from 'jquery';
+import TetherElement from 'react-tether'
+import PopoverContent from './popover-content';
 
-import positionPopover from './position-popover';
-
-// import style from './_popover.scss';
+//import style from './_popover.scss';
 
 class Popover extends Component {
   static propTypes = {
     isOpen:            PropTypes.bool.isRequired,
-    position:          PropTypes.oneOf(['top', 'bottom']),
+    position:          PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     containerSelector: PropTypes.string,
     element:           PropTypes.any.isRequired,
     onOpen:            PropTypes.func,
@@ -33,60 +32,73 @@ class Popover extends Component {
     style: {
       borderColor: '#ccc',
       background:  'white'
-    }
+    },
+    className:          ''
   }
 
   componentDidUpdate() {
     if (this.props.isOpen) {
-      positionPopover(this.getPopoverElements(), this.props.position);
       this.props.onOpen();
     }
   }
 
   render() {
-    const { element, style, isOpen, position, children } = this.props;
-    const contentBorder = this.shouldHaveBorder() ? style.borderColor : 'transparent';
-
-    return <div className="pt-popover" ref="popover">
-      {!isOpen ? null : <div>
-        {this.createArrow()}
-        <div className="pt-popover-content" ref="content" style={{...style, borderColor: contentBorder}}>
-          {children}
-        </div>
-      </div>}
-      <div className="pt-popover-element" ref="element">
-        {element}
-      </div>
-    </div>;
+    let attachment, targetAttachment, offset;
+    switch(this.props.position){
+      case 'top':
+        attachment = 'bottom middle';
+        targetAttachment = 'top middle';
+        break;
+      case 'bottom':
+        attachment = 'top middle';
+        targetAttachment = 'bottom middle';
+        break;
+      case 'left':
+        attachment = 'middle right';
+        targetAttachment = 'middle left';
+        break;
+      case 'right':
+        attachment = 'middle left';
+        targetAttachment = 'middle right';
+        break;
+    }
+    return (
+      <span>
+        {this._getElement()}
+        {
+          this.props.isOpen &&
+          <TetherElement
+            target={this.refs.element}
+            options={{
+              attachment: `${attachment}`,
+              targetAttachment: `${targetAttachment}`,
+              constraints: [
+                {
+                  to: 'scrollParent',
+                  pin: true
+                }
+              ]
+            }}
+          >
+            <PopoverContent
+              position={this.props.position}
+              shouldHaveBorder={this._shouldHaveBorder()}
+              style={this.props.style}>
+              {this.props.children}
+            </PopoverContent>
+          </TetherElement>
+        }
+      </span>
+    );
   }
 
-  shouldHaveBorder() {
+  _getElement(){
+    return React.cloneElement(this.props.element, { ref: 'element' });
+  }
+
+  _shouldHaveBorder() {
     const { borderColor, background } = this.props.style;
     return borderColor && !background.includes('rgba');
-  }
-
-  createArrow() {
-    const { position, style } = this.props;
-    let { borderColor, background } = style;
-
-    if (!this.shouldHaveBorder()) borderColor = 'transparent';
-
-    const borderPos = position === 'bottom' ? 'Bottom' : 'Top';
-    return <div className={`pt-popover-arrow-container ${position}`} ref="arrow">
-      <span className="pt-popover-arrow" style={{[`border${borderPos}Color`]: borderColor}}>
-        <span className={`pt-popover-arrow inner ${this.shouldHaveBorder() ? '' : 'no-border'}`}
-          style={{[`border${borderPos}Color`]: background }}></span>
-        </span>
-    </div>;
-  }
-
-  getPopoverElements() {
-    return {
-      arrow:     React.findDOMNode(this.refs.arrow),
-      element:   React.findDOMNode(this.refs.element),
-      content:   React.findDOMNode(this.refs.content),
-      container: $(this.props.containerSelector).get(0)
-    };
   }
 }
 

@@ -1,12 +1,14 @@
-const React = require('react');
-const classNames = require('classnames');
+import React, {Component, PropTypes} from 'react';
+import classNames from 'classnames';
 
-class Icon extends React.Component {
-  static displayName = 'Icon'
-
+class Icon extends Component {
   static propTypes = {
-    icon:      React.PropTypes.string.isRequired,
-    className: React.PropTypes.string
+    icon:      PropTypes.string.isRequired,
+    className: PropTypes.string
+  }
+
+  static defaultProps = {
+    className: ''
   }
 
   render() {

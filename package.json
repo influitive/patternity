@@ -129,7 +129,8 @@
     "node-neat": "^1.7.2",
     "quill": "^0.20.1",
     "react-jss": "^2.0.1",
-    "react-quill": "^0.3.0"
+    "react-quill": "^0.3.0",
+    "react-tether": "^0.1.2"
   },
   "peerDependencies": {
     "react": "^0.14.2"

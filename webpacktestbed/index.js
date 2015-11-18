@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import { createTheme, ThemeComponent } from '../src/utils/themeable';
 
@@ -22,4 +23,4 @@ class App extends Component {
   }
 }
 
-React.render(React.createElement(Theme(App)), document.getElementById('root'));
+React.render(React.createElement(Theme(App)), document.getElementById('root'))
