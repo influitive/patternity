@@ -1,9 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-// Will need to break this style up between dropdown button a
-import styles from './_button.scss';
-
 class Button extends Component {
   static propTypes = {
     icon:     PropTypes.string,

@@ -1,46 +1,24 @@
 import React, { Component } from 'react';
 
-import Accordion from '../src/accordion';
-
-import '../src/accordion/_accordion.scss';
-
-class Add extends Component {
-  state = {
-    list: []
-  }
-  render() {
-    return <div>
-      {this.state.list.map((item, key) => <div key={key}>{item}</div>)}
-      <button onClick={this.click}>CLICK ME</button>
-    </div>;
-  }
-  click = () => {
-    this.setState({list: this.state.list.concat('HELLO THERE GOOD BUDDY')});
-  }
-}
+// Confirmation
+import Confirmation from '../src/confirmation';
 
 class App extends Component {
-  state = {
-    sections: [{
-      "header" : "Section Header One",
-      "body" : <Add/>,
-      "key" : "test-2",
-      "isEnabled" : true
-    },{
-      "header" : "Section Header Two",
-      "body" : "Section Body Two",
-      "key" : "test-3",
-      "isEnabled" : false
-    },{
-      "header" : "Section Header Three",
-      "body" : "Section Body Three",
-      "key" : "test-1",
-      "isEnabled" : true
-    }]
-  }
   render() {
-    return <Accordion initialSectionIndex={0} sections={this.state.sections}/>
+
+    return (
+      <Confirmation title='Testing this stuff 'no='Test' onNo={testNo} onYes={testYes} /> );
   }
 }
 
 React.render(<App/>, document.getElementById('root'));
+
+function testYes(e) {
+  e.preventDefault();
+  console.log('Yes pressed');
+}
+
+function testNo(e) {
+  e.preventDefault();
+  console.log('No pressed');
+}

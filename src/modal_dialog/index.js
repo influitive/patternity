@@ -4,14 +4,6 @@ import _ from 'lodash';
 // React Utils
 import classNames from 'classnames';
 
-// Component Depencies
-import Header from './header';
-import Body from './body';
-import Footer from './footer';
-
-// Styles
-import styles from './_modal_dialogue.scss';
-
 // Main Container Class
 export default class Modal extends Component {
 
@@ -107,6 +99,7 @@ export default class Modal extends Component {
     if (!this._isEscapable) return;
     // TODO: Fix following to not use jQuery
     // $(window).off('keydown.escapePressed')
+    window.removeEventListener('keydown.escapePressed');
     this._dismissDialog();
   }
 
