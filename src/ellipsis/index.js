@@ -12,9 +12,9 @@ export default class Ellipsis extends Component {
 
   text = ''
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     this.text = this.props.text;
-    this._applyEllipsis(true);
+    this._applyEllipsis(this.props.text !== prevProps.text);
   }
 
   componentDidMount() {
