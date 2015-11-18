@@ -23,10 +23,13 @@ input[type='tel'],
 input[type='password'],
 input[type='url'],
 input[type='search'],
-input[type='number'],
+input[type='number'] {
+  line-height: normal;
+}
+
 .select-box,
 select {
-  line-height: normal;
+  line-height: 2.5em;
 }
 
 textarea {
