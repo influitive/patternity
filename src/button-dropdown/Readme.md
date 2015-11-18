@@ -1,5 +1,7 @@
-Dropdown
-
+---
+included: true
+group: Components
+---
 ```
   <ButtonDropdown title="Button Title">
     <a href="#">Option 1</a>
