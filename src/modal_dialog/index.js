@@ -33,7 +33,7 @@ export default class Modal extends Component {
     super(props);
 
     this.state = {
-      isModalOpen: this.props.isModalOpen,
+      isModalOpen:    this.props.isModalOpen,
       isModalClosing: false
     }
   }

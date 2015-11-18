@@ -13,23 +13,23 @@ import ModalFooter from '../modal_dialog/footer';
 
 export default class Confirmation extends Component {
   static propTypes = {
-    body:   PropTypes.string,
-    title:  PropTypes.string,
-    no:     PropTypes.string,
-    yes:    PropTypes.string,
-    onYes:  PropTypes.func,
-    onNo:   PropTypes.func,
+    body:     PropTypes.string,
+    title:    PropTypes.string,
+    no:       PropTypes.string,
+    yes:      PropTypes.string,
+    onYes:    PropTypes.func,
+    onNo:     PropTypes.func,
     onCancel: PropTypes.func
-  }
+  };
 
   static defaultProps = {
-    title: 'Are you sure?',
-    yes: 'OK',
-    no: 'Cancel',
-    onCancel: null,
-    onNo: function() {},
-    saveStatus: 'unsaved',
-  }
+    title:      'Are you sure?',
+    yes:        'OK',
+    no:         'Cancel',
+    onCancel:   null,
+    onNo:       function() {},
+    saveStatus: 'unsaved'
+  };
 
   componentWillReceiveProps(nextProps) {
 
@@ -46,7 +46,7 @@ export default class Confirmation extends Component {
 
         <ModalBody>
           {this.props.body}
-        </ModalBody> 
+        </ModalBody>
 
         <ModalFooter>
           <ButtonGroup>
