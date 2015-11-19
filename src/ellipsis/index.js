@@ -10,22 +10,18 @@ export default class Ellipsis extends Component {
     maxLines: 3
   }
 
-  text = ''
-
   componentDidUpdate(prevProps) {
-    this.text = this.props.text;
     this._applyEllipsis(this.props.text !== prevProps.text);
   }
 
   componentDidMount() {
-    this.text = this.props.text;
     this._applyEllipsis(false);
   }
 
   render() {
     return (
       <div ref="ellipsis" style={this._getTextStyle()}>
-        <div ref="text" >{this.text}</div>
+        <div ref="text" >{this.props.text}</div>
       </div>
     );
   }
@@ -62,14 +58,19 @@ export default class Ellipsis extends Component {
 
   _shrinkText = () => {
     let textElement = React.findDOMNode(this.refs.text);
-    this.text = this._removeLastWord();
-    textElement.innerHTML = this.text;
+    let text = this._removeLastWord(textElement);
+    textElement.innerHTML = text;
     this._applyEllipsisToText(false);
   }
 
-  _removeLastWord = () => {
-    let lastIndex = this.text.lastIndexOf(' ');
-    return this.text.substring(0, lastIndex) + '...';
+  _removeLastWord = (textElement) => {
+    if(textElement.childNodes.length === 0) {
+        return '';
+    }
+
+    let text = textElement.childNodes[0].nodeValue;
+    let lastIndex = text.lastIndexOf(' ');
+    return text.substring(0, lastIndex) + '...';
   }
 
   _getLineHeight = (elem) => {
