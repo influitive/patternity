@@ -1,6 +1,7 @@
 .pt-popover { //replace namespacing with css modules
   position: relative;
   display:  inline-block;
+  z-index: 0 !important; // TODO(SHANE KEULEN): remove this when all apps are running at least 1.0.89 of patternity
 
   .pt-popover-element {
     cursor:  pointer;
