@@ -5,8 +5,7 @@ import Button2 from '../lib/button2';
 import Confirmation from '../src/confirmation';
 
 // Styles
-import '../src/modal_dialog/_modal_dialog.scss';
-import '../src/button2/_button.scss';
+// import '../infl-styles/_all.scss';
 
 class App extends Component {
   state = {

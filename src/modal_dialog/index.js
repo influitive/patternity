@@ -32,18 +32,11 @@ export default class Modal extends Component {
   constructor(props) {
     super(props);
 
+    this._closeDialog = this._closeDialog.bind(this);
     this.state = {
       isModalOpen:    this.props.isModalOpen,
       isModalClosing: false
     }
-  }
-
-  componentWillReceiveProps(newProps) {
-
-  }
-
-  componentWillMount() {
-
   }
 
   render() {
