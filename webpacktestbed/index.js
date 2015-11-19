@@ -16,16 +16,17 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this._toggleConfirmation = this._toggleConfirmation.bind(this);
   }
 
   render() {
     const ConfirmationComponent = this.state.confirmation
-      ? <Confirmation title='ALERT! 'no='Test' onNo={testNo} onYes={this._toggleConfirmation.bind(this)} />
+      ? <Confirmation title='ALERT! 'no='Test' onNo={testNo} onYes={this._toggleConfirmation} />
       : null;
 
     return (
       <div>
-        <Button2 onClick={this._toggleConfirmation.bind(this)}>Show Confirmation!</Button2>
+        <Button2 onClick={this._toggleConfirmation}>Show Confirmation!</Button2>
         { ConfirmationComponent }
       </div>
     );

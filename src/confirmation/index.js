@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import ButtonGroup from '../button-group';
 import Button      from '../button2';
+import SaveButton  from '../save-button';
 
 import Form        from '../../infl-components/form.jsx';
 import Tabs        from '../../infl-components/tabs.jsx';
@@ -31,14 +32,6 @@ export default class Confirmation extends Component {
     saveStatus: 'unsaved'
   };
 
-  componentWillReceiveProps(nextProps) {
-
-  }
-
-  componentWillMount() {
-
-  }
-
   render() {
     return (
       <Modal size='small'>
@@ -51,7 +44,7 @@ export default class Confirmation extends Component {
         <ModalFooter>
           <ButtonGroup>
             <Button type='secondary' className='discard' onClick={this.props.onNo} >{ this.props.no }</Button>
-            <Button type='primary' className='discard' onClick={this.props.onYes} >{ this.props.yes }</Button>
+            <SaveButton onClick={this.props.onYes} saveStatus={this.props.saveStatus} customText={{unsaved: this.props.yes}}></SaveButton>
           </ButtonGroup>
         </ModalFooter>
       </Modal>
