@@ -64,7 +64,11 @@ export default class Ellipsis extends Component {
   }
 
   _removeLastWord = (textElement) => {
-    let text = textElement.childNodes.length === 0 ? '' : textElement.childNodes[0].nodeValue;
+    if(textElement.childNodes.length === 0) {
+        return '';
+    }
+
+    let text = textElement.childNodes[0].nodeValue;
     let lastIndex = text.lastIndexOf(' ');
     return text.substring(0, lastIndex) + '...';
   }
