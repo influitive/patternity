@@ -6,6 +6,7 @@ var InputAction = require('./text/input_action.jsx');
 
 var TextInput = React.createClass({
   displayName: 'TextInput',
+  
   getDefaultProps: function() {
     return {
       type:        'text',
