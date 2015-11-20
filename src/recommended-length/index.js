@@ -31,8 +31,8 @@ export default class RecommendedLength extends Component {
     let that = this;
     let child = React.Children.only(this.props.children);
 
-    if (!this._isValidChildType(child)) {
-      console.warn('Recommended length requires a TextInput of TextArea component');
+    if (!this._hasValidProps(child)) {
+      console.warn('Recommended length requires a value and onChange props.');
       return null;
     }
 
@@ -42,8 +42,8 @@ export default class RecommendedLength extends Component {
     }});
   }
 
-  _isValidChildType(child) {
-    return child && (child.type.displayName === 'TextInput' || child.type.displayName === 'TextArea');
+  _hasValidProps(child) {
+    return child && child.props.value && child.props.onChange;
   }
 
   _handleChange = (e) => {
