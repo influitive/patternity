@@ -72,9 +72,9 @@ export default class Ellipsis extends Component {
     this._applyEllipsisToText();
   }
 
-  _removeLastWord = (textElement) => {
-    if(textElement.childNodes.length === 0) {
-        return '';
+  _removeLastWord(textElement) {
+    if (textElement.childNodes.length === 0) {
+      return '';
     }
 
     let text = textElement.childNodes[0].nodeValue;
