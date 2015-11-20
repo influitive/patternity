@@ -32,7 +32,7 @@ export default class RecommendedLength extends Component {
     let child = React.Children.only(this.props.children);
 
     if (!this._hasValidProps(child)) {
-      console.warn('Recommended length requires a value and onChange props.');
+      console.warn('Recommended length requires a child with value and onChange props.');
       return null;
     }
 
@@ -43,7 +43,7 @@ export default class RecommendedLength extends Component {
   }
 
   _hasValidProps(child) {
-    return child && child.props.value && child.props.onChange;
+    return child && typeof child.props.value === 'string' && typeof child.props.onChange === 'function';
   }
 
   _handleChange = (e) => {
