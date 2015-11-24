@@ -101,6 +101,7 @@
     "sinon-chai": "~2.6.0",
     "strictify": "^0.2.0",
     "skin-deep": "^0.13.0",
+    "strictify": "^0.2.0",
     "style-loader": "^0.12.4",
     "tap-bail": "0.0.0",
     "tap-pessimist": "^1.0.1",
