@@ -52,6 +52,8 @@ var TextAreaContainer = React.createClass({
 });
 
 var TextArea = React.createClass({
+  displayName: 'TextArea',
+  
   propTypes: {
     id:          React.PropTypes.string,
     name:        React.PropTypes.string.isRequired,
