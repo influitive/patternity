@@ -20,17 +20,21 @@ const js = `import React, { Component, PropTypes } from 'react';
 
 // Component File Template
 export default class ${classname} extends Component {
+  state = {
+
+  };
+
   static propTypes = {
 
-  }
+  };
 
   static defaultProps = {
 
-  }
+  };
 
   render() {
 
-  }
+  };
 }`;
 
 // Readme Template
