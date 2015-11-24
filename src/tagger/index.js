@@ -5,15 +5,15 @@ import Tag from './tag.js';
 export default class Tagger extends Component {
 
   static propTypes = {
-    tags: PropTypes.arrayOf(PropTypes.string),
-    onTagged: PropTypes.func.isRequired,
-    onUnTagged: PropTypes.func.isRequired,
+    tags:        PropTypes.arrayOf(PropTypes.string),
+    onTagged:    PropTypes.func.isRequired,
+    onUnTagged:  PropTypes.func.isRequired,
     placeholder: PropTypes.string,
   };
 
   static defaultProps = {
-    tags: [],
-    breakOn: /(\s|,)/g,
+    tags:        [],
+    breakOn:     /(\s|,)/g,
     placeholder: 'Please enter an email...',
   };
 
