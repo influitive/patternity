@@ -33,18 +33,19 @@ export default class Confirmation extends Component {
   };
 
   render() {
+    const { title, body, onNo, no, onYes, yes, saveStatus } = this.props;
     return (
       <Modal size='small'>
-        <ModalHeader title={this.props.title} />
+        <ModalHeader title={ title } />
 
         <ModalBody>
-          {this.props.body}
+          { body }
         </ModalBody>
 
         <ModalFooter>
           <ButtonGroup>
-            <Button type='secondary' className='discard' onClick={this.props.onNo} >{ this.props.no }</Button>
-            <SaveButton onClick={this.props.onYes} saveStatus={this.props.saveStatus} customText={{unsaved: this.props.yes}}></SaveButton>
+            <Button type='secondary' className='discard' onClick={ onNo } >{  no  }</Button>
+            <SaveButton onClick={ onYes } saveStatus={ saveStatus } customText={ {unsaved:  yes} }></SaveButton>
           </ButtonGroup>
         </ModalFooter>
       </Modal>

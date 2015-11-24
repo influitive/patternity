@@ -32,7 +32,6 @@ export default class Modal extends Component {
   constructor(props) {
     super(props);
 
-    this._closeDialog = this._closeDialog.bind(this);
     this.state = {
       isModalOpen:    this.props.isModalOpen,
       isModalClosing: false
@@ -40,21 +39,23 @@ export default class Modal extends Component {
   }
 
   render() {
+    const { id, size, children } = this.props;
 
     return (
-      <div id={ this.props.id } className={ this._classNames().ptModalDialog } ref='modalDialog'onClick={ this._closeDialog }>
+      <div id={ id } className={ this._classNames().ptModalDialog } ref='modalDialog'onClick={ this._closeDialog }>
 
-        <section className = {'pt-modal ' + this.props.size} ref = 'modal'>
+        <section className = {'pt-modal ' + size} ref = 'modal'>
           <span className={this._classNames().span} onClick={this._closeDialog} ref='close'></span>
 
-          { this.props.children }
+          { children }
         </section>
 
       </div>
     );
   }
 
-  _classNames() {
+
+  _classNames = () => {
     return {
       ptModalDialog: classNames({
         'pt-modal-dialog': true,
@@ -69,50 +70,47 @@ export default class Modal extends Component {
         'disable-close': !this.props.closeable
       })
     }
-  }
+  };
 
-  _closeDialog(ev) {
+  _closeDialog = (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
 
-    if (_.get(this.props.closeable)) {
-      this._dismissDialog();
-    }
-  }
+    if (_.get(this.props.closeable)) this._dismissDialog();
+  };
 
-  _dismissDialog() {
+  _dismissDialog = () => {
     this.state = {
       isModalOpen: false,
     }
 
     this._onClose();
-  }
+  };
 
-  _handleEscape() {
+  _handleEscape = () => {
     if (!this._isEscapable) return;
-    // TODO: Fix following to not use jQuery
-    // $(window).off('keydown.escapePressed')
+
     window.removeEventListener('keydown.escapePressed');
     this._dismissDialog();
-  }
+  };
 
-  _isEscapable(ev) {
+  _isEscapable = (ev) => {
     const ESCAPE_KEY_CODE = 27;
 
     return event.keyCode === ESCAPE_KEY_CODE && this.props.closeable && this.props.keyboard;
-  }
+  };
 
-  _onClose() {
+  _onClose = () => {
     this.props.onClose();
     this._enableBodyScroll();
-  }
+  };
 
-  _disableBodyScroll() {
+  _disableBodyScroll = () => {
     document.body.style.overflow = 'hidden';
-  }
+  };
 
-  _enableBodyScroll() {
+  _enableBodyScroll = () => {
     document.body.style.overflow = 'auto';
-  }
+  };
 
 }
