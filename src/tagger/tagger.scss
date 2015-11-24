@@ -1,1 +1,38 @@
 // Will need to add this to infl-styles/all.scss and all.styleguide.scss
+.pt-tagger {
+  input {
+    padding: 5px;
+    width: 100%;
+  }
+}
+
+.pt-tagger-taglist {
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+
+  li {
+    float: left;
+    padding: 5px 20px 5px 5px;
+    margin: 0 2px 2px 0;
+    background: #ddd;
+    border: 1px solid #ccc;
+    position: relative;
+  }
+
+  span.icon {
+    position: absolute;
+    right: 2px;
+    top: 0;
+    color: #999;
+
+    &:hover {
+      color: #555;
+      cursor: pointer;
+    }
+  }
+
+  .ic-times:hover {
+    cursor: pointer;
+  }
+}
