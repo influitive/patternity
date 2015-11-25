@@ -1,18 +1,16 @@
 import React, { Component, PropTypes} from 'react';
-import TextInput from '../../infl-components/text_input';
 import classNames from 'classnames';
 
-export default class RecommendedLengthInput extends Component {
+export default class RecommendedLength extends Component {
   state = {
     remainingLength: this.props.recommendedLength
   }
 
   static propTypes = {
-    recommendedLength: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
+    recommendedLength: PropTypes.number.isRequired
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this._setRemainingLength(this.props);
   }
 
@@ -20,20 +18,38 @@ export default class RecommendedLengthInput extends Component {
     this._setRemainingLength(nextProps);
   }
 
-  render(){
+  render() {
     return (
-      <div className='pt-recommended-length-input'>
-        <TextInput {...this.props} onChange={this._handleChange}/>
+      <div className='pt-recommended-length'>
+        {this._processChildInput()}
         {this._getRemainingLength()}
       </div>
     );
   }
 
+  _processChildInput = () => {
+    let that = this;
+    let child = React.Children.only(this.props.children);
+
+    if (!this._hasValidProps(child)) {
+      console.warn('Recommended length requires a child with value and onChange props.');
+      return null;
+    }
+
+    return React.cloneElement(child, {onChange: function(e) {
+      child.props.onChange(e);
+      that._handleChange(e);
+    }});
+  }
+
+  _hasValidProps(child) {
+    return child && typeof child.props.value === 'string' && typeof child.props.onChange === 'function';
+  }
+
   _handleChange = (e) => {
     this.setState({
       remainingLength: this.props.recommendedLength - e.target.value.length
-    })
-    this.props.onChange(e);
+    });
   }
 
   _getRemainingLength = () => {
@@ -51,8 +67,9 @@ export default class RecommendedLengthInput extends Component {
     );
   }
 
-  _setRemainingLength(props){
-    var value = props.value || "";
+  _setRemainingLength(props) {
+    let child = React.Children.only(props.children);
+    let value = child.props.value || '';
     this.setState({
       remainingLength: props.recommendedLength - value.length
     });
