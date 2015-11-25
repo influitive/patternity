@@ -5,16 +5,18 @@ import Tag from './tag.js';
 export default class Tagger extends Component {
 
   static propTypes = {
-    tags:        PropTypes.arrayOf(PropTypes.string),
-    onTagged:    PropTypes.func.isRequired,
-    onUnTagged:  PropTypes.func.isRequired,
-    placeholder: PropTypes.string,
+    tags:           PropTypes.arrayOf(PropTypes.string),
+    onTagged:       PropTypes.func.isRequired,
+    onUnTagged:     PropTypes.func.isRequired,
+    placeholder:    PropTypes.string,
+    validationType: PropTypes.string,
   };
 
   static defaultProps = {
-    tags:        [],
-    breakOn:     /(\s|,)/g,
-    placeholder: 'Please enter an email...',
+    tags:           [],
+    breakOn:        /(\s|,)/g,
+    placeholder:    'Please enter an email...',
+    validationType: null
   };
 
   state = {
@@ -33,7 +35,19 @@ export default class Tagger extends Component {
         <input value = { currentTag } placeholder = { placeholder } onChange={ this._handleChange } onKeyDown={ this._handleKeyDown } />
       </div>
     );
-  }
+  };
+
+  _returnValidationType = (arg) => {
+
+    // This object is for adding in different types of input
+    // validation as necessary.
+    const validationMap = {
+      email: this._isValidEmail
+    }
+
+    // If validationMap[arg] doesn't exist, it returns false
+    return validationMap[arg] || false;
+  };
 
   _isValidEmail = (str) => {
     const re = /\S+@\S+\.\S+/;
@@ -47,11 +61,11 @@ export default class Tagger extends Component {
   };
 
   _handleChange = (e, skipCheck) => {
-    const { breakOn, onTagged } = this.props;
+    const { breakOn, onTagged, validationType } = this.props;
     const { value } = e.target;
 
     if ( value.match(breakOn) || skipCheck) {
-      if (!this._isValidEmail(value)) return;
+      if (validationType && !this._returnValidationType(validationType)(value)) return;
 
       onTagged(this._returnTag(breakOn, value));
       this.setState({currentTag: ''});
