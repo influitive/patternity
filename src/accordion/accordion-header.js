@@ -4,7 +4,8 @@ import classNames from 'classnames';
 class AccordionHeader extends Component {
   static propTypes = {
     open:      PropTypes.bool,
-    isEnabled: PropTypes.bool
+    isEnabled: PropTypes.bool,
+    cb:        PropTypes.func
   }
 
   render() {
@@ -17,7 +18,7 @@ class AccordionHeader extends Component {
   }
 
 
-  _onClick = () => {
+  _onClick = (e) => {
     if (this.props.isEnabled) {
       this.props.toggleOne(this.props.index);
 
