@@ -11,15 +11,19 @@ class AccordionHeader extends Component {
     const { open, isEnabled, header } = this.props;
     const classes = () => classNames('section-heading', {open: open, disabled: !isEnabled});
 
-    return <h3 className={classes()} onClick={this._toggleContent}>
+    return <h3 className={classes()} onClick={this._onClick}>
       {header}
     </h3>
   }
 
-  _toggleContent = () => {
+
+  _onClick = () => {
     if (this.props.isEnabled) {
       this.props.toggleOne(this.props.index);
     }
+
+    // Invoke any callbacks on the toggle
+    this.props.cb(e, this.props);
   }
 
 }
