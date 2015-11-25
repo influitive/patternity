@@ -20,12 +20,16 @@ class App extends Component {
 
     return (
       <div className="container" style={containerStyles}>
+      <form>
         <Tagger
           tags = {this.state.tagTest}
           placeholder = 'Hello world'
           onTagged = {this._onTagged}
           onUnTagged = {this._onUnTagged}
         />
+
+        <button>SUBMIT</button>
+      </form>
       </div>
     );
   };
