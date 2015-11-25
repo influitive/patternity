@@ -77,8 +77,7 @@ export default class Wysiwyg extends Component {
       { type: 'bullet', label: 'Bullet' },
       { type: 'separator' },
       { type: 'list', label: 'List' }
-    ]}
-  ];
+    ]}];
 
     const { value } = this.props;
 
