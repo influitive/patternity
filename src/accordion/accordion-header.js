@@ -20,10 +20,11 @@ class AccordionHeader extends Component {
   _onClick = () => {
     if (this.props.isEnabled) {
       this.props.toggleOne(this.props.index);
+
+      // Invoke any callbacks on the toggle
+      if (this.props.cb) this.props.cb(e, this.props);
     }
 
-    // Invoke any callbacks on the toggle
-    this.props.cb(e, this.props);
   }
 
 }
