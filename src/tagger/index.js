@@ -39,6 +39,7 @@ export default class Tagger extends Component {
 
   _handleKeyDown = (e) => {
     if (e.keyCode === 13) {
+      e.preventDefault();
       this._handleChange(e, true);
     }
   };
