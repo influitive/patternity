@@ -8,7 +8,8 @@ let _accordionSections=function(){
     "header" : "Section Header One",
     "body" : "Section Body One",
     "key" : "test-2",
-    "isEnabled" : true
+    "isEnabled" : true,
+    "callback" : (e, props) => {}
   },{
     "header" : "Section Header Two",
     "body" : "Section Body Two",
