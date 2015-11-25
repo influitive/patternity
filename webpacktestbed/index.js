@@ -47,4 +47,3 @@ function testNo(e) {
   e.preventDefault();
   console.log('No pressed');
 }
-
