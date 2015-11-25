@@ -1,60 +1,47 @@
 import test from 'tape-catch';
 import React from 'react';
-import sd from 'skin-deep'
+import shallow from '../../testUtils/shallow';
 
 import Tagger from './index.js';
 import Tag from './tag.js';
 
+global.document = {};
+
 test('<Tagger /> methods', t => {
+  t.plan(2);
 
-  const stateValues = ['test1@gmail.com', 'test2@influitive.com'];
-  const onTagged = (e) => {
-    t.pass('calls onTagged');
+  const onTagged = (arr) => {
+    t.equal(arr.length, 3, 'should find 3 tags');
   };
 
-  const onUnTagged = (e) => {
-    t.pass('calls onUnTagged');
-  };
-
-  const tree
-    = sd.shallowRender(<Tagger
-      tags = { stateValues }
-      onTagged = { onTagged }
-      onUnTagged = { onUnTagged }
-    />);
+  let { instance, result } = shallow(
+    <Tagger
+      onTagged={onTagged}
+      onUnTagged={() => {}} />
+  );
 
   // Test the component
-  const vdom = tree.getRenderOutput();
-  t.equal(vdom.type, 'div', 'should be a div');
-
-  // Test props
-  t.equal(instance.props.tags, stateValues, 'should match passed in state Array');
+  t.equal(result.type, 'div', 'should be a div');
 
   // Invoke methods that are passed in
-  const instance = tree.getMountedInstance();
-  instance.props.onTagged();
-  instance.props.onUnTagged();
+  const e = { target: { value: 'string,hello, bob'}};
+  instance._handleChange(e);
 
-  // Test methods that exist
-  t.ok(instance._isValidEmail('rohan@influitive.com'), 'passes valid email');
-  t.notOk(instance._isValidEmail('rohan@influitive'), 'fails invalid email');
-
-  t.end();
 });
 
 test('<Tag /> methods', t => {
+  t.plan(3);
   const tag = 'TestTag';
   const onUnTagged = (arg) => {
     t.equal(arg, tag, 'Pass in TestTag');
     t.pass('calls onUnTagged');
   };
 
-  const tree = sd.shallowRender(<Tag tag={tag} unTag={onUnTagged} />);
-  const vdom = tree.getRenderOutput();
-  t.equal(vdom.type, 'li', 'should be a list element');
+  let { instance, result } = shallow(
+    <Tag tag={tag} unTag={onUnTagged} />
+  );
 
-  const instance = tree.getMountedInstance();
+  t.equal(result.type, 'li', 'should be a list element');
+
   instance._unTag();
-
-  t.end();
 });
