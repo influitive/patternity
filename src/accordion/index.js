@@ -61,7 +61,8 @@ class Accordion extends Component {
     return <li className="accordion-section" key={'accordion-section-' + index}>
       <AccordionHeader {...section} index={index}
         open={this._isSectionOpen(index, section.isEnabled)}
-        toggleOne={this._toggleOne} cb={this.props.callback}/>
+        toggleOne={this._toggleOne}
+        cb={section.props.callback}/>
       <AccordionBody open={this._isSectionOpen(index, section.isEnabled)} body={section.body} />
     </li>;
   }
