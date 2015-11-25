@@ -17,7 +17,6 @@ export default class Tagger extends Component {
     breakOn:        /(\s|,)/g,
     placeholder:    'Please enter an email...',
     validationFn:   () => { return true }
-
   };
 
   state = {
