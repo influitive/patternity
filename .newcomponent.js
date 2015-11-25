@@ -70,7 +70,7 @@ if (isDir.sync(dest)) {
 
 fs.mkdirSync(dest);
 fs.writeFileSync(path.join(dest, 'index.js'), js);
-fs.writeFileSync(path.join(dest, `${fsName}_test.js`), tests);
+fs.writeFileSync(path.join(dest, `${fsName}.test.js`), tests);
 fs.writeFileSync(path.join(dest, `${fsName}.scss`), '// Will need to add this to infl-styles/all.scss and all.styleguide.scss');
 fs.writeFileSync(path.join(dest, 'Readme.md'), readme);
 console.log(chalk.green('Component Created'));
