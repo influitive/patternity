@@ -1,13 +1,55 @@
 import React, { Component } from 'react';
 
-import Wysiwyg from '../src/wysiwyg';
-import styles from '../node_modules/quill/dist/quill.snow.css';
-import s from '../src/wysiwyg/wysiwyg.scss';
+import { merge, uniq } from 'lodash';
+import Tagger from '../src/tagger';
+import styles from '../src/tagger/tagger.scss';
+
+const containerStyles = {
+  boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
+  padding: '40px',
+  width: '80%',
+  margin: '0 auto'
+}
 
 class App extends Component {
-  render() {
-    return <Wysiwyg />
+  state = {
+    tagTest: ['abcd@gmail.com', 'xyz1@gmail.com'],
   }
+
+  render() {
+
+    return (
+      <div className="container" style={containerStyles}>
+      <form>
+        <Tagger
+          tags = {this.state.tagTest}
+          placeholder = 'Hello world'
+          onTagged = {this._onTagged}
+          onUnTagged = {this._onUnTagged}
+        />
+
+        <button>SUBMIT</button>
+      </form>
+      </div>
+    );
+  };
+
+  _onTagged = (tags) => {
+    const emails = this.state.tagTest.concat(tags).sort();
+    this.setState({
+      tagTest: uniq(emails)
+    })
+  };
+
+  _onUnTagged = (tag) => {
+    const index = this.state.tagTest.indexOf(tag);
+    let emails = [].concat(...this.state.tagTest);
+    emails.splice(index, 1);
+
+    this.setState({
+      tagTest: emails
+    })
+  };
 }
 
 React.render(<App/>, document.getElementById('root'));
