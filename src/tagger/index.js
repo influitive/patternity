@@ -9,14 +9,14 @@ export default class Tagger extends Component {
     onTagged:       PropTypes.func.isRequired,
     onUnTagged:     PropTypes.func.isRequired,
     placeholder:    PropTypes.string,
-    validationFn: PropTypes.func,
+    validationFn:   PropTypes.func,
   };
 
   static defaultProps = {
     tags:           [],
     breakOn:        /(\s|,)/g,
     placeholder:    'Please enter an email...',
-    validationFn: () => { return true }
+    validationFn:   () => { return true }
   };
 
   state = {
