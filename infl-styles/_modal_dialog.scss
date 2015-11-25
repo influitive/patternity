@@ -1,3 +1,5 @@
+@import 'theme';
+
 .pt-modal-dialog {
   position: fixed;
   top: 0px;
@@ -27,7 +29,7 @@
       padding-top: 78px;
       padding-bottom: 64px;
 
-      .pt-modal-header {
+      .pt-header {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -37,12 +39,12 @@
         box-sizing: border-box;
       }
 
-      .pt-modal-body {
+      .pt-body {
         overflow: scroll;
         height: 100%;
       }
 
-      .pt-modal-footer {
+      .pt-footer {
         position: absolute;
         bottom: 0px;
         left: 0px;
@@ -90,7 +92,7 @@
       width: 25%;
       min-width: 250px;
 
-      .pt-modal-footer {
+      .pt-footer {
         .button-group {
           text-align: center;
 
@@ -102,7 +104,7 @@
       }
     }
 
-    .pt-modal-header {
+    .pt-header {
       margin-bottom: 18px;
       padding-left: 24px;
       margin-right: 50px;
@@ -112,11 +114,11 @@
       }
     }
 
-    .pt-modal-body {
+    .pt-body {
       padding: 0px 24px 24px;
     }
 
-    .pt-modal-footer {
+    .pt-footer {
       border-top: 1px solid $lighter-grey;
       text-align: right;
       padding: 12px 24px;

@@ -4,7 +4,7 @@ export default class ModalFooter extends Component {
 
   render() {
     return (
-      <div className='pt-modal-footer'>
+      <div className='pt-footer'>
         {this.props.children}
       </div>
     );

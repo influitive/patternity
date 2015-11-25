@@ -4,7 +4,7 @@ export default class Body extends Component {
 
   render() {
     const classes = this.props.children
-      ? 'pt-modal-body'
+      ? 'pt-body'
       : null;
 
     return (

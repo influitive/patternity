@@ -4,13 +4,10 @@ import ButtonGroup from '../button-group';
 import Button      from '../button2';
 import SaveButton  from '../save-button';
 
-import Form        from '../../infl-components/form.jsx';
-import Tabs        from '../../infl-components/tabs.jsx';
-
 import Modal       from '../modal_dialog';
-import ModalHeader from '../modal_dialog/header';
-import ModalBody   from '../modal_dialog/body';
-import ModalFooter from '../modal_dialog/footer';
+import ModalHeader from '../COMMON/header';
+import ModalBody   from '../COMMON/body';
+import ModalFooter from '../COMMON/footer';
 
 export default class Confirmation extends Component {
   static propTypes = {

@@ -11,7 +11,7 @@ export default class ModalHeader extends Component {
 
   render() {
     return (
-      <div className='pt-modal-header'>
+      <div className='pt-header'>
         <h3>{this.props.title}</h3>
       </div>
     );
