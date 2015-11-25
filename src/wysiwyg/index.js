@@ -51,33 +51,31 @@ export default class Wysiwyg extends Component {
       { value: '#ffffff'}
     ];
 
-    const TOOLBAR_ITEMS = [{
-      label: 'Formats',
-      type:  'group',
-      items: [
+    const TOOLBAR_ITEMS = [
+      { label: 'Formats', type:  'group', items: [
         { label: 'Size', type:  'size', items: [
           { label: 'Normal', value: '13px' },
           { label: 'Small', value: '10px' },
           { label: 'Large', value: '18px' },
           { label: 'Huge', value: '32px' }
-        ]
-      }]
-    },
-    { label: 'Text', type:  'group', items: [
-        { type: 'bold', label: 'Bold' },
-        { type: 'italic', label: 'Italic' },
-        { type: 'strike', label: 'Strike' },
-        { type: 'underline', label: 'Underline' },
+        ]}
+      ]},
+      { label: 'Text', type:  'group', items: [
+          { type: 'bold', label: 'Bold' },
+          { type: 'italic', label: 'Italic' },
+          { type: 'strike', label: 'Strike' },
+          { type: 'underline', label: 'Underline' },
+          { type: 'separator' },
+          { type: 'color', label: 'Color', items: colours },
+          { type: 'separator' },
+          { type: 'link', label: 'Link' }
+      ]},
+      { label: 'Blocks', type:  'group', items: [
+        { type: 'bullet', label: 'Bullet' },
         { type: 'separator' },
-        { type: 'color', label: 'Color', items: colours },
-        { type: 'separator' },
-        { type: 'link', label: 'Link' }
-    ]},
-    { label: 'Blocks', type:  'group', items: [
-      { type: 'bullet', label: 'Bullet' },
-      { type: 'separator' },
-      { type: 'list', label: 'List' }
-    ]}];
+        { type: 'list', label: 'List' }
+      ]}
+    ];
 
     const { value } = this.props;
 
