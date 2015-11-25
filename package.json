@@ -121,7 +121,9 @@
     "jquery": "^1.9.1",
     "lodash": "^3.7.0",
     "node-bourbon": "~1.2.3",
-    "node-neat": "^1.7.2"
+    "node-neat": "^1.7.2",
+    "quill": "^0.20.1",
+    "react-quill": "^0.3.0"
   },
   "peerDependencies": {
     "react": "^0.13.1"
