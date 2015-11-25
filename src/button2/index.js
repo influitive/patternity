@@ -21,7 +21,6 @@ class Button extends Component {
     isSubmit: false
   }
 
-
   render() {
     const { style, disabled, onClick, children, isSubmit } = this.props;
 
