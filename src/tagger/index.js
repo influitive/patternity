@@ -66,6 +66,6 @@ export default class Tagger extends Component {
   _renderTags = () => {
     const { tags, onUnTagged } = this.props;
 
-    return tags.map((tag) => <Tag key={ tag } unTag={ onUnTagged } tag={ tag } />);
+    return tags.map(tag => <Tag key={tag} unTag={onUnTagged} tag={tag} />);
   }
 }
