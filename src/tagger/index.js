@@ -9,14 +9,14 @@ export default class Tagger extends Component {
     onTagged:       PropTypes.func.isRequired,
     onUnTagged:     PropTypes.func.isRequired,
     placeholder:    PropTypes.string,
-    validationType: PropTypes.string,
+    validationFn: PropTypes.func,
   };
 
   static defaultProps = {
     tags:           [],
     breakOn:        /(\s|,)/g,
     placeholder:    'Please enter an email...',
-    validationType: null
+    validationFn: () => { return true }
   };
 
   state = {
@@ -37,23 +37,6 @@ export default class Tagger extends Component {
     );
   };
 
-  _returnValidationType = (arg) => {
-
-    // This object is for adding in different types of input
-    // validation as necessary.
-    const validationMap = {
-      email: this._isValidEmail
-    }
-
-    // If validationMap[arg] doesn't exist, it returns false
-    return validationMap[arg] || false;
-  };
-
-  _isValidEmail = (str) => {
-    const re = /\S+@\S+\.\S+/;
-    return re.test(str);
-  };
-
   _handleKeyDown = (e) => {
     if (e.keyCode === 13) {
       this._handleChange(e, true);
@@ -61,11 +44,11 @@ export default class Tagger extends Component {
   };
 
   _handleChange = (e, skipCheck) => {
-    const { breakOn, onTagged, validationType } = this.props;
+    const { breakOn, onTagged, validationFn } = this.props;
     const { value } = e.target;
 
     if ( value.match(breakOn) || skipCheck) {
-      if (validationType && !this._returnValidationType(validationType)(value)) return;
+      if (validationFn && !validationFn(value)) return;
 
       onTagged(this._returnTag(breakOn, value));
       this.setState({currentTag: ''});
