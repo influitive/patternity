@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactQuill, { Toolbar } from 'react-quill';
+import flowRight from 'lodash/function/flowright';
 
 export default class Wysiwyg extends Component {
   static propTypes = {
@@ -35,70 +36,78 @@ export default class Wysiwyg extends Component {
     },
   };
 
-  render() {
-    const colours = [
-      { value: '#000000'},
-      { value: '#444444'},
-      { value: '#666666'},
-      { value: '#969696'},
-      { value: '#d0d2d3'},
-      { value: '#eeeeee'},
-      { value: '#08a5c5'},
-      { value: '#046f99'},
-      { value: '#8BC540'},
-      { value: '#c54040'},
-      { value: '#ffcc00'},
-      { value: '#ffffff'}
-    ];
+  static colours = [
+    { value: '#000000'},
+    { value: '#444444'},
+    { value: '#666666'},
+    { value: '#969696'},
+    { value: '#d0d2d3'},
+    { value: '#eeeeee'},
+    { value: '#08a5c5'},
+    { value: '#046f99'},
+    { value: '#8BC540'},
+    { value: '#c54040'},
+    { value: '#ffcc00'},
+    { value: '#ffffff'}
+  ];
 
-    const TOOLBAR_ITEMS = [
-      { label: 'Formats', type:  'group', items: [
-        { label:'Font', type:'font', items: [
-          { label:'Sans Serif', value:'sans-serif' },
-          { label:'Serif', value:'serif' },
-          { label:'Monospace', value:'monospace' }
-        ]},
-        { type:'separator' },
-        { label: 'Size', type:  'size', items: [
-          { label: 'Normal', value: '13px' },
-          { label: 'Small', value: '10px' },
-          { label: 'Large', value: '18px' },
-          { label: 'Huge', value: '32px' }
-        ]}
+  static TOOLBAR_ITEMS = [
+    { label: 'Formats', type:  'group', items: [
+      { label:'Font', type:'font', items: [
+        { label:'Sans Serif', value:'sans-serif' },
+        { label:'Serif', value:'serif' },
+        { label:'Monospace', value:'monospace' }
       ]},
+      { type:'separator' },
+      { label: 'Size', type:  'size', items: [
+        { label: 'Normal', value: '13px' },
+        { label: 'Small', value: '10px' },
+        { label: 'Large', value: '18px' },
+        { label: 'Huge', value: '32px' }
+      ]}
+    ]},
+    { type: 'separator' },
+    { label: 'Alignment', type: 'align', items: [
+      { label: '', value: 'center' },
+      { label: '', value: 'left' },
+      { label: '', value: 'right' },
+      { label: '', value: 'justify' }
+    ]},
+    { type: 'space' },
+    { label: 'Text', type:  'group', items: [
+      { type: 'bold', label: 'Bold' },
+      { type: 'italic', label: 'Italic' },
+      { type: 'strike', label: 'Strike' },
+      { type: 'underline', label: 'Underline' },
       { type: 'separator' },
-      { label: 'Alignment', type: 'align', items: [
-        { label: '', value: 'center' },
-        { label: '', value: 'left' },
-        { label: '', value: 'right' },
-        { label: '', value: 'justify' }
-      ]},
-      { type: 'space' },
-      { label: 'Text', type:  'group', items: [
-        { type: 'bold', label: 'Bold' },
-        { type: 'italic', label: 'Italic' },
-        { type: 'strike', label: 'Strike' },
-        { type: 'underline', label: 'Underline' },
-        { type: 'separator' },
-        { type: 'color', label: 'Color', items: colours },
-        { type: 'background', label: 'Background Color', items: colours },
-        { type: 'separator' },
-        { type: 'link', label: 'Link' }
-      ]},
-      { label: 'Blocks', type:  'group', items: [
-        { type: 'bullet', label: 'Bullet' },
-        { type: 'separator' },
-        { type: 'list', label: 'List' }
-      ]},
-    ];
+      { type: 'color', label: 'Color', items: colours },
+      { type: 'background', label: 'Background Color', items: colours },
+      { type: 'separator' },
+      { type: 'link', label: 'Link' }
+    ]},
+    { label: 'Blocks', type:  'group', items: [
+      { type: 'bullet', label: 'Bullet' },
+      { type: 'separator' },
+      { type: 'list', label: 'List' }
+    ]},
+  ];
 
+
+  render() {
     const { value } = this.props;
+    const onChange = this.props.onChange
+      ? flowRight(this.props.onChange, this._replaceItalics)
+      : () => {};
+
+    const props = {...this.props, onChange};
 
     return (
-      <ReactQuill {...this.props} theme="snow">
+      <ReactQuill {...props} theme="snow">
         <Toolbar key="toolbar" ref="toolbar" items={TOOLBAR_ITEMS} />
         <div key="editor" ref="editor" className="quill-contents"dangerouslySetInnerHTML={{__html: this.props.value}} />
       </ReactQuill>
     );
   };
+
+  _replaceItalics = str => str.split('i>').join('em>');
 }
