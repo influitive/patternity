@@ -31,7 +31,7 @@ export default class Wysiwyg extends Component {
       '.ql-editor': {
         'min-height': '200px',
         'height':     '100%'
-      }
+      },
     },
   };
 
@@ -53,6 +53,12 @@ export default class Wysiwyg extends Component {
 
     const TOOLBAR_ITEMS = [
       { label: 'Formats', type:  'group', items: [
+        { label:'Font', type:'font', items: [
+          { label:'Sans Serif', value:'sans-serif' },
+          { label:'Serif', value:'serif' },
+          { label:'Monospace', value:'monospace' }
+        ]},
+        { type:'separator' },
         { label: 'Size', type:  'size', items: [
           { label: 'Normal', value: '13px' },
           { label: 'Small', value: '10px' },
@@ -60,21 +66,30 @@ export default class Wysiwyg extends Component {
           { label: 'Huge', value: '32px' }
         ]}
       ]},
+      { type: 'separator' },
+      { label: 'Alignment', type: 'align', items: [
+        { label: '', value: 'center' },
+        { label: '', value: 'left' },
+        { label: '', value: 'right' },
+        { label: '', value: 'justify' }
+      ]},
+      { type: 'space' },
       { label: 'Text', type:  'group', items: [
-          { type: 'bold', label: 'Bold' },
-          { type: 'italic', label: 'Italic' },
-          { type: 'strike', label: 'Strike' },
-          { type: 'underline', label: 'Underline' },
-          { type: 'separator' },
-          { type: 'color', label: 'Color', items: colours },
-          { type: 'separator' },
-          { type: 'link', label: 'Link' }
+        { type: 'bold', label: 'Bold' },
+        { type: 'italic', label: 'Italic' },
+        { type: 'strike', label: 'Strike' },
+        { type: 'underline', label: 'Underline' },
+        { type: 'separator' },
+        { type: 'color', label: 'Color', items: colours },
+        { type: 'background', label: 'Background Color', items: colours },
+        { type: 'separator' },
+        { type: 'link', label: 'Link' }
       ]},
       { label: 'Blocks', type:  'group', items: [
         { type: 'bullet', label: 'Bullet' },
         { type: 'separator' },
         { type: 'list', label: 'List' }
-      ]}
+      ]},
     ];
 
     const { value } = this.props;
