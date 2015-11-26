@@ -80,8 +80,8 @@ export default class Wysiwyg extends Component {
       { type: 'strike', label: 'Strike' },
       { type: 'underline', label: 'Underline' },
       { type: 'separator' },
-      { type: 'color', label: 'Color', items: colours },
-      { type: 'background', label: 'Background Color', items: colours },
+      { type: 'color', label: 'Color', items: this.colours },
+      { type: 'background', label: 'Background Color', items: this.colours },
       { type: 'separator' },
       { type: 'link', label: 'Link' }
     ]},
@@ -103,7 +103,7 @@ export default class Wysiwyg extends Component {
 
     return (
       <ReactQuill {...props} theme="snow">
-        <Toolbar key="toolbar" ref="toolbar" items={TOOLBAR_ITEMS} />
+        <Toolbar key="toolbar" ref="toolbar" items={this.TOOLBAR_ITEMS} />
         <div key="editor" ref="editor" className="quill-contents"dangerouslySetInnerHTML={{__html: this.props.value}} />
       </ReactQuill>
     );
