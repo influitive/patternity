@@ -6,7 +6,7 @@ import s from '../src/wysiwyg/_wysiwyg.scss';
 
 class App extends Component {
   render() {
-    return <Wysiwyg />
+    return <Wysiwyg onChange={() => {} }/>
   }
 }
 
