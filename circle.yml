@@ -15,7 +15,7 @@ dependencies:
     - npm install --prefix infl-patternlab --no-spin
 test:
   override:
-    - karma start --single-run
+    - karma start --single-run --log-level error
 
 deployment:
   internal:

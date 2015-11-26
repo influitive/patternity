@@ -24,7 +24,7 @@ class Accordion extends Component {
     sections:            PropTypes.array.isRequired,
     uniqueIdentifier:    PropTypes.string,
     initialSectionIndex: validateIndex,
-    openSectionIndex:    validateIndex
+    openSectionIndex:    validateIndex,
   }
 
   static defaultProps = {
@@ -57,12 +57,16 @@ class Accordion extends Component {
   }
 
   _buildSection = (section, index) => {
-    return <li className="accordion-section" key={'accordion-section-' + index}>
-      <AccordionHeader {...section} index={index}
-        open={this._isSectionOpen(index, section.isEnabled)}
-        toggleOne={this._toggleOne} />
-      <AccordionBody open={this._isSectionOpen(index, section.isEnabled)} body={section.body} />
-    </li>;
+
+    return (
+      <li className="accordion-section" key={'accordion-section-' + index}>
+        <AccordionHeader {...section} index={index}
+          open={this._isSectionOpen(index, section.isEnabled)}
+          toggleOne={this._toggleOne}
+          cb={section.callback || null}/>
+        <AccordionBody open={this._isSectionOpen(index, section.isEnabled)} body={section.body} />
+      </li>
+    );
   }
 
   _isSectionOpen = (index, isEnabled) => {
