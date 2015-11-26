@@ -109,5 +109,6 @@ export default class Wysiwyg extends Component {
     );
   };
 
+  //TODO (Rohan): Remove this hack when react-quill supports addFormat
   _replaceItalics = str => str.split('i>').join('em>');
 }
