@@ -1,55 +1,47 @@
 import React, { Component } from 'react';
 
-import { merge, uniq } from 'lodash';
-import Tagger from '../src/tagger';
-import styles from '../src/tagger/tagger.scss';
+import Accordion from '../src/accordion';
 
-const containerStyles = {
-  boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
-  padding: '40px',
-  width: '80%',
-  margin: '0 auto'
+import '../src/accordion/_accordion.scss';
+
+class Add extends Component {
+  state = {
+    list: []
+  }
+  render() {
+    return <div>
+      {this.state.list.map((item, key) => <div key={key}>{item}</div>)}
+      <button onClick={this.click}>CLICK ME</button>
+    </div>;
+  }
+  click = () => {
+    this.setState({list: this.state.list.concat('HELLO THERE GOOD BUDDY')});
+  }
 }
 
 class App extends Component {
   state = {
-    tagTest: ['abcd@gmail.com', 'xyz1@gmail.com'],
+    sections: [{
+      "header" : "Section Header One",
+      "body" : <Add/>,
+      "key" : "test-2",
+      "isEnabled" : true,
+      "callback" : function(e) {console.log('yay')}
+    },{
+      "header" : "Section Header Two",
+      "body" : "Section Body Two",
+      "key" : "test-3",
+      "isEnabled" : false
+    },{
+      "header" : "Section Header Three",
+      "body" : "Section Body Three",
+      "key" : "test-1",
+      "isEnabled" : true
+    }]
   }
-
   render() {
-
-    return (
-      <div className="container" style={containerStyles}>
-      <form>
-        <Tagger
-          tags = {this.state.tagTest}
-          placeholder = 'Hello world'
-          onTagged = {this._onTagged}
-          onUnTagged = {this._onUnTagged}
-        />
-
-        <button>SUBMIT</button>
-      </form>
-      </div>
-    );
-  };
-
-  _onTagged = (tags) => {
-    const emails = this.state.tagTest.concat(tags).sort();
-    this.setState({
-      tagTest: uniq(emails)
-    })
-  };
-
-  _onUnTagged = (tag) => {
-    const index = this.state.tagTest.indexOf(tag);
-    let emails = [].concat(...this.state.tagTest);
-    emails.splice(index, 1);
-
-    this.setState({
-      tagTest: emails
-    })
-  };
+    return <Accordion initialSectionIndex={0} sections={this.state.sections}/>
+  }
 }
 
 React.render(<App/>, document.getElementById('root'));
