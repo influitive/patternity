@@ -63,7 +63,7 @@ class Accordion extends Component {
         <AccordionHeader {...section} index={index}
           open={this._isSectionOpen(index, section.isEnabled)}
           toggleOne={this._toggleOne}
-          cb={section.callback || null}/>
+          onToggle={section.callback || null}/>
         <AccordionBody open={this._isSectionOpen(index, section.isEnabled)} body={section.body} />
       </li>
     );
