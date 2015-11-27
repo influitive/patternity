@@ -36,7 +36,7 @@ export default class Wysiwyg extends Component {
     },
   };
 
-  static colours = [
+  colours = [
     { value: '#000000'},
     { value: '#444444'},
     { value: '#666666'},
@@ -51,7 +51,7 @@ export default class Wysiwyg extends Component {
     { value: '#ffffff'}
   ];
 
-  static TOOLBAR_ITEMS = [
+  TOOLBAR_ITEMS = [
     { label: 'Formats', type:  'group', items: [
       { label:'Font', type:'font', items: [
         { label:'Sans Serif', value:'sans-serif' },
