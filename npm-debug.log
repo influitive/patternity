@@ -1,0 +1,31 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/dev/.nvm/versions/node/v0.12.7/bin/node',
+1 verbose cli   '/Users/dev/.nvm/versions/node/v0.12.7/bin/npm',
+1 verbose cli   'version',
+1 verbose cli   'patch' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 info preversion patternity@1.0.104
+5 info git [ 'status', '--porcelain' ]
+6 verbose stack Error: Error: Git working directory not clean.
+6 verbose stack D  infl-styles/tagger.scss
+6 verbose stack D  infl-styles/wysiwyg.scss
+6 verbose stack     at /Users/dev/.nvm/versions/node/v0.12.7/lib/node_modules/npm/lib/version.js:71:23
+6 verbose stack     at /Users/dev/.nvm/versions/node/v0.12.7/lib/node_modules/npm/lib/version.js:151:34
+6 verbose stack     at ChildProcess.exithandler (child_process.js:742:7)
+6 verbose stack     at ChildProcess.emit (events.js:110:17)
+6 verbose stack     at maybeClose (child_process.js:1015:16)
+6 verbose stack     at Socket.<anonymous> (child_process.js:1183:11)
+6 verbose stack     at Socket.emit (events.js:107:17)
+6 verbose stack     at Pipe.close (net.js:485:12)
+7 verbose cwd /Users/dev/Code/infl/patternity
+8 error Darwin 15.0.0
+9 error argv "/Users/dev/.nvm/versions/node/v0.12.7/bin/node" "/Users/dev/.nvm/versions/node/v0.12.7/bin/npm" "version" "patch"
+10 error node v0.12.7
+11 error npm  v2.11.3
+12 error Error: Git working directory not clean.
+12 error D  infl-styles/tagger.scss
+12 error D  infl-styles/wysiwyg.scss
+13 error If you need help, you may report this error at:
+13 error     <https://github.com/npm/npm/issues>
+14 verbose exit [ 1, true ]
