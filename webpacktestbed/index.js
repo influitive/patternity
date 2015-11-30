@@ -13,12 +13,6 @@ class App extends Component {
     confirmation: false
   }
 
-  constructor(props) {
-    super(props);
-
-    this._toggleConfirmation = this._toggleConfirmation.bind(this);
-  }
-
   render() {
     const ConfirmationComponent = this.state.confirmation
       ? <Confirmation title='ALERT! 'no='Test' onNo={testNo} onYes={this._toggleConfirmation} />
@@ -32,7 +26,7 @@ class App extends Component {
     );
   }
 
-  _toggleConfirmation() {
+  _toggleConfirmation = () => {
     this.setState({confirmation: !this.state.confirmation});
   }
 }
