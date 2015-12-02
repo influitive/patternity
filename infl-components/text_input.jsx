@@ -6,7 +6,7 @@ var InputAction = require('./text/input_action.jsx');
 
 var TextInput = React.createClass({
   displayName: 'TextInput',
-  
+
   getDefaultProps: function() {
     return {
       type:        'text',
@@ -77,7 +77,7 @@ var TextInput = React.createClass({
         <input readOnly={this.props.readOnly} required={this.props.required} type={this.props.type} value={this.state.value}
                placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
                pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange} ref="input"/>
-        <InputAction clearable={this.props.clearable} help={this.props.help} onCleared={this._clearInputValue}/>
+             <InputAction value={this.props.value} clearable={this.props.clearable} help={this.props.help} onCleared={this._clearInputValue}/>
         <InputMessage message={this.props.message}/>
       </span>;
   },
