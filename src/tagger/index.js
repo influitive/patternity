@@ -14,7 +14,7 @@ export default class Tagger extends Component {
   static defaultProps = {
     tags:         [],
     breakOn:      /(\s|,)/g,
-    placeholder:  'Please enter an email...',
+    placeholder:  'Please enter a value...',
     validationFn: () => true
   }
 
