@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import Button from '../button2';
-import ButtonDropdown from '../button-dropdown';
 import ButtonGroup from '../button-group';
+import Dropdown from '../dropdown';
 
 class SplitButtonDropdown extends Component {
   static defaultProps = {
-    buttonText:          ' ',
+    title:               '',
     icon:                '',
     type:                'primary',
     disabled:            false,
@@ -15,12 +15,14 @@ class SplitButtonDropdown extends Component {
   }
 
   static propTypes = {
-    buttonText:    PropTypes.string,
-    icon:          PropTypes.string,
-    type:          PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
-    onButtonClick: PropTypes.func.isRequired,
-    disabled:      PropTypes.bool,
-    style:         PropTypes.shape({
+    title:               PropTypes.string,
+    icon:                PropTypes.string,
+    type:                PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger']),
+    onButtonClick:       PropTypes.func.isRequired,
+    disabled:            PropTypes.bool,
+    options:             PropTypes.array,
+    onDropdownItemClick: PropTypes.func,
+    style:               PropTypes.shape({
       borderColor: function(props, propName) {
         const { type } = props;
         if (type != 'secondary') {
@@ -28,29 +30,62 @@ class SplitButtonDropdown extends Component {
         }
       }
     }),
-    options:             PropTypes.array,
-    onDropdownItemClick: PropTypes.func
   }
 
+  state = {
+    isDropdownOpen: false,
+  };
+
   render() {
+    const { icon, type, onButtonClick, disabled, onDropdownItemClick, title, children } = this.props;
+
     return (
-      <ButtonGroup grouped={true}>
-        <Button icon={this.props.icon}
-          type={this.props.type}
-          onClick={this.props.onButtonClick}
-          disabled={this.props.disabled}>
-          {this.props.buttonText}
+      <ButtonGroup grouped={true} classList='button-split button-dropdown'>
+        <Button icon={icon}
+          type={type}
+          onClick={onButtonClick}
+          classList='main'
+          disabled={disabled}>
+          {title}
         </Button>
-        <ButtonDropdown type={this.props.type}
-          options={this.props.options}
-          alignDropdown='right'
-          onChange={this.props.onDropdownItemClick}
-          disabled={this.props.disabled}>
-          {this.props.children}
-        </ButtonDropdown>
+
+        <Button type={type}
+          classList='dropdown'
+          onClick={this._toggleDropdownOpen}
+          disabled={disabled}>
+          <i className="ic ic-chevron-down"></i>
+        </Button>
+
+        { this._getDropdown() }
       </ButtonGroup>
     );
-  }
+  };
+
+  _getDropdown = () => {
+    if (this.props.disabled || !this.state.isDropdownOpen) return null;
+
+    return (
+      <Dropdown
+        type={this.props.type}
+        onChange={this.props.onChange}>
+        {this._populateOptions(this.props.children)}
+      </Dropdown>
+    );
+  };
+
+  _toggleDropdownOpen = (event) => {
+    event.preventDefault();
+    if (this.props.disabled) return;
+    this.setState({
+      isDropdownOpen: !this.state.isDropdownOpen
+    });
+  }.bind(this);
+
+  _populateOptions = (options) => {
+    return [...options].map( (opt, i) => {
+      return <li ref={opt} className="option" onClick={this.props.onDropdownItemClick}>{opt}</li>
+    })
+  };
 }
 
 export default SplitButtonDropdown;

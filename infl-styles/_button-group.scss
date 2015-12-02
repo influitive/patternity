@@ -1,0 +1,50 @@
+@import '_theme';
+
+.button-group {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+
+  &.inline,
+  &.inline-grouped {
+    max-width: 100%;
+  }
+
+  &.inline {
+    button,
+    .button {
+      margin: 0 5px 5px 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.inline-grouped {
+    button,
+    .button {
+      margin: 0 0 5px 0;
+
+      &:first-child, &.main {
+        border-radius: 0;
+        border-top-left-radius: $theme-border-radius;
+        border-bottom-left-radius: $theme-border-radius;
+      }
+
+      &:last-child, &.dropdown {
+       border-radius: 0;
+       border-top-right-radius: $theme-border-radius;
+       border-bottom-right-radius: $theme-border-radius;
+      }
+    }
+  }
+
+  &.stacked {
+
+  }
+
+  &.stacked-grouped {
+
+  }
+}

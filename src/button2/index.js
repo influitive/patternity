@@ -1,24 +1,23 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-// Will need to break this style up between dropdown button a
-// import styles from './_button.scss';
-
 class Button extends Component {
   static propTypes = {
-    icon:     PropTypes.string,
-    type:     PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
-    onClick:  PropTypes.func.isRequired,
-    disabled: PropTypes.bool,
-    inverse:  PropTypes.bool,
-    isSubmit: PropTypes.bool,
-    style:    PropTypes.object
+    icon:      PropTypes.string,
+    type:      PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
+    onClick:   PropTypes.func.isRequired,
+    disabled:  PropTypes.bool,
+    inverse:   PropTypes.bool,
+    isSubmit:  PropTypes.bool,
+    style:     PropTypes.object,
+    classList: PropTypes.classList,
   }
 
   static defaultProps = {
-    disabled: false,
-    inverse:  false,
-    isSubmit: false
+    disabled:  false,
+    inverse:   false,
+    isSubmit:  false,
+    classList: null
   }
 
   render() {
@@ -34,7 +33,7 @@ class Button extends Component {
   }
 
   getClasses = () => {
-    const { disabled, inverse, type, children, className, icon } = this.props;
+    const { disabled, inverse, type, children, classList, icon } = this.props;
 
     return classNames(
       'button',
@@ -46,7 +45,8 @@ class Button extends Component {
       icon && 'ic ic-' + icon,
       !disabled && {
         inverse: (type === 'secondary' || type === 'text') && inverse
-      }
+      },
+      classList
     );
   }
 }

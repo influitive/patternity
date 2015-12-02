@@ -1,29 +1,33 @@
-var React = require('react');
-var classNames = require('classnames');
+import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
-var ButtonGroup = React.createClass({
-  displayName: 'ButtonGroup',
-  getDefaultProps: function() {
-    return {
-      layout:  'inline',
-      grouped: false
-    };
-  },
+export default class ButtonGroup extends Component {
 
-  propTypes: {
-    layout:  React.PropTypes.oneOf(['inline', 'stacked']),
-    grouped: React.PropTypes.bool
-  },
+  static defaultProps = {
+    layout:    'inline',
+    grouped:   false,
+    classList: ''
+  };
 
-  render: function() {
-    return <div className={'button-group ' + this.props.layout + ' ' + this.isGrouped()} ref='buttonGroup'>
-      {this.props.children}
-    </div>;
-  },
+  static propTypes = {
+    layout:    PropTypes.oneOf(['inline', 'stacked']),
+    grouped:   PropTypes.bool,
+    classList: PropTypes.string,
+  };
 
-  isGrouped: function() {
-    return this.props.grouped ? 'grouped' : '';
-  }
-});
+  render() {
+    return(
+      <div className={this._returnClasses()} ref='buttonGroup'>
+        {this.props.children}
+      </div>
+    );
+  };
 
-module.exports = ButtonGroup;
+  _returnClasses = () => {
+    const { layout, grouped, classList } = this.props;
+    const layoutGroup = grouped ? layout + '-grouped' : layout;
+
+    return classNames('button-group ', layoutGroup, classList);
+  };
+
+};
