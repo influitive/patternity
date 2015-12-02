@@ -1,4 +1,5 @@
 # Patternity
+[![CircleCI branch](https://img.shields.io/circleci/project/thoughtbot/bourbon/master.svg)](https://circleci.com/gh/influitive/patternity/tree/master)
 
 This repository will contain the Influitive Pattern Lab as well as base css, and reusable js components.
 
