@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import Button from '../button2';
+import ButtonGroup from '../button-group';
+import Dropdown from '../dropdown';
 
-// import styles from './_button.scss';
-
-class ButtonDropdown extends Component {
+export default class ButtonDropdown extends Component {
   static defaultProps = {
     title:         '',
     type:          '',
@@ -34,76 +35,70 @@ class ButtonDropdown extends Component {
   }
 
   state = {
-    isDropdownOpen: false
-  }
-
-  _getButtonClasses() {
-    var classes = this.props.type;
-    if (this.props.title.trim().length > 0)
-      classes += ' button-with-text';
-    return classes;
-  }
-
-  _renderTitle() {
-    if (this.props.title.trim().length > 0)
-      return <span ref='title'>{this.props.title}</span>
-    else {
-      return <span ref='title'>&nbsp;</span>
-    }
+    isDropdownOpen: false,
   }
 
   render() {
-    const { style, disabled, type, title } = this.props;
-    return <div style={style} className={'button-dropdown ' + this._isDropdownOpen()} disabled={disabled} ref='buttonDropdown'>
-      <button className={this._getButtonClasses()} onClick={this._toggleDropdownOptions} ref='button'>
-        {this._renderTitle()}
-        <span className='arrow ic ic-chevron-down' ref='icon'></span>
-      </button>
-      <ul className={this._getOptionsClasses()} ref='options'>
-        {this._buildDropdown()}
-      </ul>
-    </div>;
-  }
+    const { style, disabled, type, title, children } = this.props;
+
+    const buttonDropClasses = this.state.isDropdownOpen
+      ? 'button-dropdown show'
+      : 'button-dropdown';
+
+    return (
+      <ButtonGroup classList={buttonDropClasses}>
+        <Button
+          classList={this._getButtonClasses(type)}
+          onClick={this._toggleDropdownOptions}
+          ref='button'
+          disabled={disabled}>
+          {title}
+          <i className='arrow ic ic-chevron-down' ref='icon'></i>
+        </Button>
+
+        { this._getDropdown() }
+      </ButtonGroup>
+    );
+  };
+
+  _getDropdown = () => {
+    if (this.props.disabled || !this.state.isDropdownOpen) return null;
+
+    return (
+      <Dropdown
+        type={this.props.type}
+        onChange={this.props.onChange}>
+        {this._populateOptions()}
+      </Dropdown>
+    );
+  };
+
+  _getButtonClasses = (classList) => {
+    if (this.props.title.trim().length > 0) {
+      classList += ' button-with-text single';
+    }
+    return classList;
+  };
 
   _toggleDropdownOptions = (event)  => {
-    if (this.props.disabled)
-      return;
+    event.preventDefault();
+    if (this.props.disabled) return;
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
-  }
-
-  _isDropdownOpen = () => {
-    return this.state.isDropdownOpen
-      ? 'show'
-      : '';
-  }
-
-  _buildDropdown = () => {
-    return this._populateOptions().map(this._buildOption);
-  }
+  };
 
   _populateOptions = () => {
     return this.props.children.length > 0
-      ? this.props.children
-      : this.props.options;
-  }
-
-  _buildOption = (option, index) => {
-    return <li className='option' key={'option-' + index} onClick={this._handleChange}>{option}</li>;
-  }
+      ? [...this.props.children]
+      : [...this.props.options];
+  };
 
   _handleChange = (key) => {
     this.props.onChange(key);
     this.setState({
       isDropdownOpen: false
     });
-  }
+  };
 
-  _getOptionsClasses = () => {
-    var classes = 'options options-aligned-' + this.props.alignDropdown;
-    return classes;
-  }
 }
-
-export default ButtonDropdown;
