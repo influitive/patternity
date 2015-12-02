@@ -1,10 +1,15 @@
+---
+included: true
+group: Components
+---
 ```
 let _accordionSections=function(){
   return [{
     "header" : "Section Header One",
     "body" : "Section Body One",
     "key" : "test-2",
-    "isEnabled" : true
+    "isEnabled" : true,
+    "callback" : (e, props) => {}
   },{
     "header" : "Section Header Two",
     "body" : "Section Body Two",

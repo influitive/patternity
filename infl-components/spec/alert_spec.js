@@ -4,7 +4,7 @@ var es5Shim   = require('es5-shim'),
     TestUtils = require('react/addons').addons.TestUtils,
     Simulate  = TestUtils.Simulate;
 
-var Alert = require('alert');
+var Alert = require('../../lib/alert');
 
 describe('Alert', function() {
   var title, body, alertIconClass;

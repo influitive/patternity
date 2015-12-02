@@ -23,7 +23,7 @@ Patternity JSX components can be included in a normal module bundler fashion by 
 like so
 
 ```javascript
-var Alert = require('patternity/infl-components/alert');
+var Alert = require('patternity/lib/alert');
 ```
 
 Styles require a bit more work (until our whole build pipeline is on Webpack, at which point there's
@@ -91,7 +91,7 @@ Most component are implemented using Facebook's [React][react] architecture.
 Components are just required and mounted into you're own react code.
 
 ```js
-var Alert = require('infl-components/alert.jsx');
+var Alert = require('lib/alert.jsx');
 
 ...
 
@@ -99,6 +99,9 @@ var Alert = require('infl-components/alert.jsx');
   <p>Short and stout</p>
 </Alert>
 ```
+
+It will create a basic stylesheet, index file, readme, and test file under 'src/test-component' to help get you started.
+
 
 # Contributing
 
@@ -109,6 +112,8 @@ Please make sure you follow the style guide below if submitting a pattern to thi
 ### JavaScript conventions
 
  * Use `camelCased` variable names instead of `snake_cased` where possible
+ * Install the eslint for your editor
+ * do `npm run githooks` to set up commit linting when cloning a new patternity repo
 
 ### React Components
 
@@ -120,34 +125,41 @@ When creating a React component:
  * Class name must match file name, but camel cased: e.g. `AlertBox`
 
 
+# Creating New Components
+
+The following command will create a basic component with the name TestComponent:
+
+```
+npm run create TestComponent
+```
+
 #### General Structure:
 
 ```js
-var React = require('react');
+import React, { Component, PropTypes } from ''
 
-var Greeter = React.createClass({
-  propTypes: {
-    name: React.PropTypes.string
-  },
+class Greeter extends Component {
+  propTypes = {
+    name: PropTypes.string
+  }
 
-  getDefaultProps: function() {
-    return {
-      name: 'Skye'
-    };
-  },
+  defaultProps = {
+    name: 'Skye'
+  }
 
-  render: function() {
+  render() {
     return <div>
       {this._greeting()}
     </div>;
-  },
-
-  _greeting: function() {
-    return 'Hello, ' + this.props.name;
   }
-});
 
-module.exports = Greeter;
+  _greeting() {
+    const { name } = this.props;
+    return `Hello, ${name}.`;
+  }
+}
+
+export default Greeter;
 ```
 
 #### Naming
@@ -155,11 +167,11 @@ module.exports = Greeter;
 Always assign the created object to a local variable with same name as the class
 
 ```js
-var Greeter = React.createClass({
+class Greeter extends Component {
   ...
-});
+}
 
-module.exports = Greeter;
+export default Greeter;
 ```
 
 Also, make sure the component is exported so it's available to `require`ing components.

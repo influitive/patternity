@@ -1,0 +1,148 @@
+@import '_theme';
+
+$text-button-color : $medium-grey;
+$text-button-color-hover : lighten($text-button-color, 10%);
+
+.button-dropdown {
+  position: relative;
+  display: inline-block;
+
+  .button,
+  button {
+    &.button-with-text {
+      padding-right: 3em;
+    }
+
+    .arrow {
+      font-size: 22px;
+      position: absolute;
+      top: 6px;
+      right: 9px;
+    }
+
+    &.important + .options {
+      background-color: darken($warning-color, 5%);
+
+      .option {
+        a {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: darken($warning-color, 2%);
+        }
+      }
+    }
+
+    &.primary + .options {
+      background-color: $theme-color-primary;
+
+      .option {
+        a {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: lighten($theme-color-primary, 5%);
+        }
+      }
+    }
+
+    &.danger + .options {
+      background-color: $error-color;
+
+      .option {
+        a {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: lighten($error-color, 10%);
+        }
+      }
+    }
+
+    &.success + .options {
+      background-color: $success-color;
+
+      .option {
+        a {
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: lighten($success-color, 10%);
+        }
+      }
+    }
+
+    &.secondary + .options {
+      background-color: #fff;
+      border: 1px solid $text-button-color;
+
+      .option {
+        a {
+          color: $text-button-color-hover !important;
+        }
+
+        &:hover {
+          background-color: #fff;
+
+          a {
+            color: darken($text-button-color, 20%) !important;
+          }
+        }
+      }
+    }
+  }
+
+  .options {
+    background-color: $lighter-grey;
+    border: 1px solid inherit;
+    border-radius: $theme-border-radius;
+    box-shadow: 0 1px 3px rgba(black, 0.12);
+    min-width: 150px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    transition: all 0.3s ease-in-out;
+    z-index: 3;
+
+    &.options-aligned-left {
+      left: 0;
+    }
+
+    &.options-aligned-right {
+      right: 0;
+    }
+
+    .ic {
+      &::before {
+        font-smoothing: antialiased;
+      }
+
+      margin: 0 5px 0 0;
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  .option {
+    list-style-type: none;
+
+    &:hover {
+      background-color: lighten($lighter-grey, 2%);
+    }
+
+    a {
+      color: $dark-grey;
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+      text-align: left;
+    }
+  }
+}
+

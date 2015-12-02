@@ -100,4 +100,9 @@
 .ic.ic-circle-empty:before { content: "\E04C" }
 .ic.ic-cursor-click:before { content: "\E04D" }
 .ic.ic-crop:before { content: "\E04E" }
-.ic.ic-coins-old:before { content: "\E04F" }
+.ic.ic-medal:before { content: "\E04F" }
+.ic.ic-grow:before { content: "\E050" }
+.ic.ic-handshake:before { content: "\E051" }
+.ic.ic-conversation:before { content: "\E052" }
+.ic.ic-graduation-cap:before { content: "\E053" }
+.ic.ic-coins-old:before { content: "\E054" }

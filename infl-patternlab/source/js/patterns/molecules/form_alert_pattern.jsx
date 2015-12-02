@@ -4,7 +4,7 @@ var Code      = require('../../patternlab-components/code.jsx');
 var Require   = require('../../patternlab-components/require.jsx');
 
 var Form        = require("../../../../infl-components/form.jsx");
-var Alert        = require("../../../../infl-components/alert.jsx");
+var Alert        = require("../../../../lib/alert");
 
 var FormAlertPattern = React.createClass({
   render : function(){

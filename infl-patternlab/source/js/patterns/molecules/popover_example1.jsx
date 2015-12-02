@@ -1,7 +1,7 @@
 var React = require('react');
 var Code = require('../../patternlab-components/code.jsx');
 var Pattern   = require('../../patternlab-components/pattern.jsx');
-var Popover       = require("../../../../infl-components/popover");
+var Popover       = require("../../../../lib/popover");
 
 module.exports = {
 

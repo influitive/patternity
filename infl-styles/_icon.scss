@@ -785,12 +785,62 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-medal:before {
   content: "\E04F"
+}
+
+@mixin ic-medal() {
+  font-family: 'influicons';
+  content: "\E04F"
+}
+
+
+.ic.ic-grow:before {
+  content: "\E050"
+}
+
+@mixin ic-grow() {
+  font-family: 'influicons';
+  content: "\E050"
+}
+
+
+.ic.ic-handshake:before {
+  content: "\E051"
+}
+
+@mixin ic-handshake() {
+  font-family: 'influicons';
+  content: "\E051"
+}
+
+
+.ic.ic-conversation:before {
+  content: "\E052"
+}
+
+@mixin ic-conversation() {
+  font-family: 'influicons';
+  content: "\E052"
+}
+
+
+.ic.ic-graduation-cap:before {
+  content: "\E053"
+}
+
+@mixin ic-graduation-cap() {
+  font-family: 'influicons';
+  content: "\E053"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E054"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E04F"
+  content: "\E054"
 }
 

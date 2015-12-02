@@ -2,7 +2,7 @@
 var React  = require("react/addons");
 var ReactTestUtils = React.addons.TestUtils;
 
-var ButtonGroup = require("button_group");
+var ButtonGroup = require("../../lib/button-group");
 
 var chai = require("chai");
 var expect = chai.expect;
