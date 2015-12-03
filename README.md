@@ -282,12 +282,17 @@ Release git workflow:
 2. run `npm version (major|minor|patch) --no-git-tag-version`
   Note: --no-git-tag-version is passed because git flow will be tagging the release
 
-1. `git flow release finish <version-number>`
+3. `git flow release finish <version-number>`
   you will be prompted to write a message for the tag, "Release version <version-number>" should suffice, you will be writing more detail in github releases feature.
   this will tag master with `v<version-number>`
 
   this will merge release/<version-number> into master
   as well as back merge the release into development (the version numbers will then match)
+
+4. `git push && git push --tags`
+  You need to push the changes along with the associated new tag.
+
+5. Update tag information in GitHub
 
 #### Publishing
 
