@@ -7,7 +7,7 @@ var sassPaths = require('node-neat').includePaths.map(function(sassPath) {
 module.exports = {
   context: __dirname,
 
-  devtool: 'eval',
+  devtool: 'eval-source-map',
 
   entry: [
     'webpack-hot-middleware/client',
