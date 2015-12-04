@@ -33,6 +33,7 @@
     color: $info-color;
     cursor: pointer;
     font-weight: bold;
+    z-index: 3;
 
     &:hover {
       color: darken($info-color, 10%);

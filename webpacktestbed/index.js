@@ -16,7 +16,7 @@ class App extends Component {
   render() {
 
     return (
-      <Alert type='success'>Success Alert!</Alert>
+      <Alert title="Success!" key="success" showIcon={true} closeable={true}>Success Alert!</Alert>
     );
   }
 }
