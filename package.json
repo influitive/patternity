@@ -1,6 +1,6 @@
 {
   "name": "patternity",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Patternity is the pattern library and style guide for all Influitive apps",
   "main": "index.js",
   "scripts": {
