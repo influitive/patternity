@@ -1,3 +1,6 @@
+@import '_theme';
+@import '_icon';
+
 .pt-checkbox {
   display: inline-block;
   line-height: 24px;
@@ -34,11 +37,23 @@
         color: $dark-grey;
         position: absolute;
         font-size: 18px;
-        top: -4px;
-        left: -1px;
+        top: -3px;
       }
     }
   }
+
+  &.indeterminate {
+    .stylized-checkbox {
+      &:before {
+        @include ic-minus();
+        color: $dark-grey;
+        position: absolute;
+        font-size: 18px;
+        top: -3px;
+      }
+    }
+  }
+
 
   &.disabled {
     .stylized-checkbox {

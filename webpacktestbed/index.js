@@ -5,6 +5,9 @@ import { createTheme } from '../src/utils/themeable';
 
 import Button from '../lib/button2';
 
+// Import webfonts
+import '../infl-styles/_font_families_webpack.scss';
+
 require('../infl-styles/_button.scss');
 
 const theme = {
@@ -23,4 +26,3 @@ class App extends Component {
 }
 
 React.render(React.createElement(App), document.getElementById('root'))
-
