@@ -3,6 +3,8 @@ import Button from '../button2';
 import ButtonGroup from '../button-group';
 import Dropdown from '../dropdown';
 
+import classnames from 'classnames';
+
 class SplitButtonDropdown extends Component {
   static defaultProps = {
     title:               '',
@@ -50,7 +52,7 @@ class SplitButtonDropdown extends Component {
         </Button>
 
         <Button type={type}
-          classList='dropdown'
+          classList={this._getDropdownButtonClasses()}
           onClick={this._toggleDropdownOpen}
           disabled={disabled}>
           <i className="ic ic-chevron-down"></i>
@@ -70,6 +72,16 @@ class SplitButtonDropdown extends Component {
         onChange={this.props.onChange}>
         {this._populateOptions(this.props.children)}
       </Dropdown>
+    );
+  };
+
+  _getDropdownButtonClasses = () => {
+    let isActive = this.state.isDropdownOpen
+        ? 'active'
+        : '';
+    return classnames(
+      'dropdown',
+      isActive
     );
   };
 

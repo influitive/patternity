@@ -26,6 +26,7 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       .option {
         a {
           color: #fff;
+          border-bottom: 1px solid darken($warning-color, 10%);
         }
 
         &:hover {
@@ -40,6 +41,7 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       .option {
         a {
           color: #fff;
+          border-bottom: 1px solid darken($theme-color-primary, 5%);
         }
 
         &:hover {
@@ -54,6 +56,7 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       .option {
         a {
           color: #fff;
+          border-bottom: 1px solid darken($error-color, 5%);
         }
 
         &:hover {
@@ -68,6 +71,7 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       .option {
         a {
           color: #fff;
+          border-bottom: 1px solid darken($success-color, 5%);
         }
 
         &:hover {
@@ -83,6 +87,7 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       .option {
         a {
           color: $text-button-color-hover !important;
+          border-bottom: 1px solid darken(white, 10%);
         }
 
         &:hover {
@@ -101,7 +106,7 @@ $text-button-color-hover : lighten($text-button-color, 10%);
     border: 1px solid inherit;
     border-radius: $theme-border-radius;
     box-shadow: 0 1px 3px rgba(black, 0.12);
-    min-width: 150px;
+    min-width: 100%;
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -142,6 +147,8 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       padding: 5px 10px;
       text-decoration: none;
       text-align: left;
+      font-size: 0.6875em;
+      line-height: 1.2;
     }
   }
 }

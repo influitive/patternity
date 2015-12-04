@@ -168,41 +168,41 @@ button {
     }
   }
 
-  &.active {
-    background-color: lighten($lighter-grey, 2%);
+  &.active, &:active {
+    background-color: darken($lighter-grey, 2%);
     box-shadow: 0px 2px $lighter-grey;
-    border-color: $lighter-grey;
+    // border-color: $lighter-grey;
 
     &.important {
-      background-color: darken($warning-color, 2%);
-      box-shadow: 0px 2px darken($warning-color, 5%);
-      border-color: darken($warning-color, 5%);
+      background-color: darken($warning-color, 12%);
+      box-shadow: 0px 2px darken($warning-color, 15%);
+      border-color: darken($warning-color, 20%);
     }
 
     &.primary {
-      background-color: lighten($theme-color-primary, 5%);
-      box-shadow: 0px 2px $theme-color-primary;
-      border-color: $theme-color-primary;
+      background-color: darken($theme-color-primary, 5%);
+      box-shadow: 0px 2px darken($theme-color-primary, 15%);
+      border-color: darken($theme-color-primary, 20%);
     }
 
     &.danger {
-      background-color: lighten($error-color, 10%);
-      box-shadow: 0px 2px $error-color;
-      border-color: $error-color;
+      background-color: darken($error-color, 10%);
+      box-shadow: 0px 2px darken($error-color, 20%);
+      border-color: darken($error-color, 20%);
     }
 
     &.success {
-      background-color: lighten($success-color, 10%);
-      box-shadow: 0px 2px $success-color;
-      border-color: $success-color;
+      background-color: darken($success-color, 10%);
+      box-shadow: 0px 2px darken($success-color, 15%);
+      border-color: darken($success-color, 20%);
     }
 
     &.secondary {
       background-color: transparent !important;
       text-shadow: none;
       box-shadow: none;
-      color: $text-button-color-hover !important;
-      border: 1px solid $text-button-color;
+      color: darken($text-button-color, 20%) !important;
+      border: 1px solid darken($text-button-color, 20%);
     }
   }
 

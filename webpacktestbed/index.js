@@ -6,7 +6,10 @@ import ButtonDropdown from '../src/button-dropdown';
 import SplitButtonDropdown from '../src/split-button-dropdown';
 
 // Styles
-import '../infl-styles/_all.scss';
+import '../infl-styles/_icon.scss';
+import '../infl-styles/_font_families_webpack.scss';
+import '../infl-styles/_button.scss';
+// import '../infl-styles/_all.scss';
 
 class App extends Component {
 
@@ -14,14 +17,16 @@ class App extends Component {
 
     const containerStyle = {
       textAlign: 'center',
-      width: '100%',
+      width:     '100%',
       minHeight: '420px',
-      margin: '20px',
+      margin:    '20px',
     }
 
     const rowStyle = {
       verticalAlign: 'top',
       marginPadding: '10px',
+      // lineHeight:    '24px',
+      fontFamily:    'sans-serif',
     }
 
     return (
@@ -47,7 +52,7 @@ class App extends Component {
                 title="Click me"
                 type="">
                 <a href="#"><i className="ic ic-mail"></i>Opt 1</a>
-                <a href="#">Opt 2</a>
+                <a href="#">Super long Option name, option #2</a>
               </SplitButtonDropdown>
             </td>
           </tr>
@@ -71,7 +76,7 @@ class App extends Component {
                 title="Click me"
                 type="primary">
                 <a href="#"><i className="ic ic-mail"></i>Opt 1</a>
-                <a href="#">Opt 2</a>
+                <a href="#">Super long Option name, option #2</a>
               </SplitButtonDropdown>
             </td>
           </tr>
@@ -95,7 +100,7 @@ class App extends Component {
                 title="Click me"
                 type="secondary">
                 <a href="#"><i className="ic ic-mail"></i>Opt 1</a>
-                <a href="#">Opt 2</a>
+                <a href="#">Super long Option name, option #2</a>
               </SplitButtonDropdown>
             </td>
           </tr>
@@ -119,7 +124,7 @@ class App extends Component {
                 title="Click me"
                 type="success">
                 <a href="#">Opt 1</a>
-                <a href="#">Opt 2</a>
+                <a href="#">Super long Option name, option #2</a>
               </SplitButtonDropdown>
             </td>
           </tr>
@@ -143,7 +148,7 @@ class App extends Component {
                 title="Click me"
                 type="danger">
                 <a href="#"><i className="ic ic-mail"></i>Opt 1</a>
-                <a href="#">Opt 2</a>
+                <a href="#">Super long Option name, option #2</a>
               </SplitButtonDropdown>
             </td>
           </tr>
@@ -164,10 +169,10 @@ class App extends Component {
             </td>
             <td>
               <SplitButtonDropdown
-                title="Click me"
+                title="Click me and this label is big"
                 type="important">
                 <a href="#"><i className="ic ic-mail"></i>Opt 1</a>
-                <a href="#">Opt 2</a>
+                <a href="#">Super long Option name, option #2</a>
               </SplitButtonDropdown>
             </td>
           </tr>
@@ -191,7 +196,7 @@ class App extends Component {
                 title="Click me"
                 type="text">
                 <a href="#"><i className="ic ic-mail"></i>Opt 1</a>
-                <a href="#">Opt 2</a>
+                <a href="#">Super long Option name, option #2</a>
               </SplitButtonDropdown>
             </td>
           </tr>
@@ -218,7 +223,7 @@ class App extends Component {
                 type="primary"
                 disabled="true">
                 <a href="#"><i className="ic ic-mail"></i>Opt 1</a>
-                <a href="#">Opt 2</a>
+                <a href="#">Super long Option name, option #2</a>
               </SplitButtonDropdown>
             </td>
           </tr>
