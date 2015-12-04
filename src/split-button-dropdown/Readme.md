@@ -3,7 +3,7 @@ included: true
 group: Components
 ---
 ```
-	<SplitButtonDropdown type='primary' onPrimaryClick={()=>{}} buttonText='Testing here'>
+	<SplitButtonDropdown title="Click me" type='primary' onPrimaryClick={()=>{}} buttonText='Testing here'>
 		<a className="ic ic-pencil" href="javascript://">Edit</a>
 		<a className="ic ic-lock" href="javascript://">Lock</a>
 		<a className="ic ic-arrow-left" href="javascript://">Move</a>
