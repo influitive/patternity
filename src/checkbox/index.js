@@ -9,8 +9,6 @@ export default class Checkbox extends Component {
     required:      PropTypes.bool,
     error:         PropTypes.bool,
     onChange:      PropTypes.func,
-    checkboxName:  PropTypes.string,
-    checkboxLabel: PropTypes.string,
     label:         PropTypes.string,
     name:          PropTypes.string,
     value:         PropTypes.string,
@@ -22,8 +20,7 @@ export default class Checkbox extends Component {
     enabled:       true,
     isChecked:     false,
     onChange:      () => {},
-    checkboxName:  '',
-    checkboxLabel: '',
+    label:         null,
     value:         '',
     indeterminate: false,
   };
@@ -37,7 +34,8 @@ export default class Checkbox extends Component {
   };
 
   render() {
-    const { id, value, enabled, indeterminate} = this.props;
+    const { id, value, enabled, indeterminate, label, name } = this.props;
+
     return(
       <span
         id={id}
@@ -48,20 +46,20 @@ export default class Checkbox extends Component {
 
         <span
           className='stylized-checkbox'
-          ref='stylizedCheckbox'></span>
+          ref='stylizedCheckbox' />
 
         <label
           htmlFor={id}
           className="pt-checkbox-label"
           ref="label">
-          { this._label() }
-          { this._icon() }
+          {label}
+          {this._icon()}
         </label>
 
         <input
           id={id}
           ref='nativeCheckbox'
-          name={this._name()}
+          name={name}
           value={value}
           type="checkbox"
           disabled={!enabled}
@@ -97,20 +95,6 @@ export default class Checkbox extends Component {
   _handleChange = (event) => {
     this.setState({isChecked: !this.state.isChecked});
     this.props.onChange(event);
-  };
-
-  _label = () => {
-    // TODO remove checkboxLabel to conform to all other input interfaces
-    if (this.props.checkboxLabel) console.warn('checkboxLabel has been deprecated, please use label instead');
-
-    return this.props.checkboxLabel || this.props.label;
-  };
-
-  _name = () => {
-    // TODO remove checkboxName to conform to all other input interfaces
-    if (this.props.checkboxName) console.warn('checkboxName has been deprecated, please use name instead');
-
-    return this.props.checkboxName || this.props.name;
   };
 
   _icon = () => {
