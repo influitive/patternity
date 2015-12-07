@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 // Components
 import Alert from '../src/alert';
-import ButtonDropdown from '../src/button-dropdown';
-import SplitButtonDropdown from '../src/split-button-dropdown';
+import Button from '../src/button2';
+import ButtonGroup from '../src/button-group';
 
 // Styles
 import '../infl-styles/_icon.scss';
@@ -16,28 +16,15 @@ class App extends Component {
   render() {
 
     return (
-      <SplitButtonDropdown
-        title="Click me"
-        type='primary'
-        onPrimaryClick={()=>{}}
-        buttonText='Testing here'
-      >
-        <a href="javascript://">
-          <i className="ic ic-pencil" /> Edit
-        </a>
-
-        <a href="javascript://">
-          <i className="ic ic-lock" /> Lock
-        </a>
-
-        <a href="javascript://">
-          <i className="ic ic-arrow-left" /> Move
-        </a>
-
-        <a href="javascript://">
-          <i className="ic ic-trash" /> Delete
-        </a>
-      </SplitButtonDropdown>
+      <div>
+        <ButtonGroup inline={true} grouped={true}>
+          <Button type="important">First Button</Button>
+          <Button type="important">Second Button</Button>
+          <Button type="important">Third Button</Button>
+          <Button type="important">Fourth Button</Button>
+          <Button type="important">Fifth Button</Button>
+        </ButtonGroup>
+      </div>
     );
   }
 }
