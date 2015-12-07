@@ -4,8 +4,6 @@ machine:
 
 dependencies:
   pre:
-    - npm cache clean
-    - rm -rf node_modules
     - npm install -g karma-cli
     - npm install -g grunt-cli
     - sudo pip install awscli

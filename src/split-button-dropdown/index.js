@@ -96,7 +96,7 @@ class SplitButtonDropdown extends Component {
   _populateOptions = (options) => {
     return [...options].map( (opt, i) => {
       return <li ref={opt} className="option" onClick={this.props.onDropdownItemClick}>{opt}</li>
-    })
+    });
   };
 }
 

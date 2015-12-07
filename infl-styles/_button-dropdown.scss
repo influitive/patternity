@@ -136,6 +136,7 @@ $text-button-color-hover : lighten($text-button-color, 10%);
 
   .option {
     list-style-type: none;
+    margin: 0;
 
     &:hover {
       background-color: lighten($lighter-grey, 2%);
@@ -147,7 +148,6 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       padding: 5px 10px;
       text-decoration: none;
       text-align: left;
-      font-size: 0.6875em;
       line-height: 1.2;
     }
   }

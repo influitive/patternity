@@ -14,9 +14,11 @@ button {
   box-shadow: 0px 2px darken($lighter-grey, 10%);
   border-radius: $theme-border-radius;
   color: $dark-grey;
+  font-size: 15px;
+  line-height: normal;
+  margin: 0;
   padding: 8px 24px;
   position: relative;
-  margin: 0;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.15s ease-in-out;
