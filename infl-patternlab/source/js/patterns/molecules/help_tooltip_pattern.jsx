@@ -52,6 +52,12 @@ var HelpTooltipPattern = React.createClass({
         required : false,
         description : "Title of the help tooltip."
       },
+      position : {
+        type : "string",
+        defaultValue : "top",
+        required : false,
+        description : "The position of the tooltip (either top or bottom)."
+      },
       children : {
         type : "string",
         defaultValue : "[...] ",

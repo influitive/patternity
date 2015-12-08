@@ -11,13 +11,14 @@ var HelpTooltip = React.createClass({
 
   getDefaultProps: function(){
     return {
-      title : ""
+      title : "",
+      position : "top"
     };
   },
 
   render : function(){
     return (
-      <Tooltip title={this.props.title} element={<Icon icon="question-circle-o" />}>
+      <Tooltip title={this.props.title} element={<Icon icon="question-circle-o" />} position={this.props.position}>
         {this.props.children}
       </Tooltip>
     );
