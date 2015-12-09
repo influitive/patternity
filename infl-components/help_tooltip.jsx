@@ -6,7 +6,8 @@ var Tooltip = require('./tooltip.jsx');
 var HelpTooltip = React.createClass({
   displayName: 'HelpTooltip',
   propTypes : {
-    title: React.PropTypes.string
+    title: React.PropTypes.string,
+    position: React.PropTypes.string
   },
 
   getDefaultProps: function(){

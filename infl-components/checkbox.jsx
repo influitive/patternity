@@ -43,7 +43,7 @@ var Checkbox = React.createClass({
     return <span id={this.props.id} className={this._checkboxCSSClasses()}
         ref='checkbox' onClick={this._clickCheckBox} onTouchStart={this._toggleCheck}>
       <span className='stylized-checkbox' ref='stylizedCheckbox'></span>
-      <label htmlFor={this.props.id} className="pt-checkbox-label" ref="label">
+      <label htmlFor={this.props.id} className="pt-checkbox-label" ref="label" style={this._getStyle()}>
         { this._label() }
         { this._icon() }
       </label>
@@ -57,6 +57,15 @@ var Checkbox = React.createClass({
         checked={this._isChecked()}
         onChange={this._handleChange} />
     </span> ;
+  },
+
+  _getStyle: function() {
+    if (!this.props.label && !this.props.checkboxLabel && !this.props.required){
+      return {display: 'none'};
+    }
+    else {
+      return {};
+    }
   },
 
   _isChecked: function() {
