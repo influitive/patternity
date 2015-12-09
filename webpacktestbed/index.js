@@ -1,30 +1,41 @@
 import React, { Component } from 'react';
 
 // Components
-import Alert from '../src/alert';
-import Button from '../src/button2';
-import ButtonGroup from '../src/button-group';
+import Table, {Column, Cell} from '../src/table';
 
-// Styles
-import '../infl-styles/_icon.scss';
-import '../infl-styles/_font_families_webpack.scss';
-import '../infl-styles/_button.scss';
-import '../infl-styles/_alert.scss';
+var data = [{
+  id: 1,
+  name: 'name'
+}]
 
 class App extends Component {
 
   render() {
 
     return (
-      <div>
-        <ButtonGroup inline={true} grouped={true}>
-          <Button type="important">First Button</Button>
-          <Button type="important">Second Button</Button>
-          <Button type="important">Third Button</Button>
-          <Button type="important">Fourth Button</Button>
-          <Button type="important">Fifth Button</Button>
-        </ButtonGroup>
-      </div>
+      <Table
+        rowCount={data.length}
+        rowStyle={{}}
+        headerStyle={{}}>
+        <Column
+          header={<Cell>Blah</Cell>}
+          cell={function(rowIndex) {
+            return (
+              <Cell>
+                {data[rowIndex].name}
+              </Cell>
+            );
+          }}/>
+        <Column
+          header={<Cell>Blah</Cell>}
+          cell={function(rowIndex) {
+            return (
+              <Cell>
+                {data[rowIndex].name}
+              </Cell>
+            );
+          }}/>
+      </Table>
     );
   }
 }
