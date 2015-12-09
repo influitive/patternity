@@ -5,7 +5,7 @@ export default class Cell extends Component {
   render() {
     let {style, ...props} = this.props;
     return (
-      <div {...props} style={_.extend({}, style, { display: 'table-cell', width: '100%', verticalAlign: 'middle'})}>
+      <div {...props} style={_.extend({}, style, { display: 'table-cell', verticalAlign: 'middle'})}>
       </div>
     );
   }
