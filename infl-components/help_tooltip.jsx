@@ -6,18 +6,20 @@ var Tooltip = require('./tooltip.jsx');
 var HelpTooltip = React.createClass({
   displayName: 'HelpTooltip',
   propTypes : {
-    title: React.PropTypes.string
+    title: React.PropTypes.string,
+    position: React.PropTypes.string
   },
 
   getDefaultProps: function(){
     return {
-      title : ""
+      title : "",
+      position : "top"
     };
   },
 
   render : function(){
     return (
-      <Tooltip title={this.props.title} element={<Icon icon="question-circle-o" />}>
+      <Tooltip title={this.props.title} element={<Icon icon="question-circle-o" />} position={this.props.position}>
         {this.props.children}
       </Tooltip>
     );

@@ -4,8 +4,8 @@ var AlertMixin = require('./alert_mixin.js');
 var DetailedAlert = {};
 
 var Alert = React.createClass({
-  mixins: [AlertMixin],
-  displayName: 'Alert',
+  mixins:          [AlertMixin],
+  displayName:     'Alert',
   getDefaultProps: function() {
     return {
       title:     '',

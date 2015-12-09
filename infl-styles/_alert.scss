@@ -1,3 +1,5 @@
+@import '_theme';
+
 .alert-msg {
   padding: 10px 20px;
   border-radius: $theme-border-radius-2;
@@ -28,13 +30,14 @@
     position: absolute;
     right: 5px;
     top: 5px;
+    color: $info-color;
     cursor: pointer;
     font-weight: bold;
-    color: $info-color;
+    z-index: 3;
 
     &:hover {
       color: darken($info-color, 10%);
-      @include transition(color 0.5s ease-out)
+      transition: color 0.5s ease-out;
     }
   }
 

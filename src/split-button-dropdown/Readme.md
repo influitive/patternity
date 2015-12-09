@@ -3,10 +3,23 @@ included: true
 group: Components
 ---
 ```
-	<SplitButtonDropdown type='primary' onPrimaryClick={()=>{}} buttonText='Testing here'>
-		<a className="ic ic-pencil" href="javascript://">Edit</a>
-		<a className="ic ic-lock" href="javascript://">Lock</a>
-		<a className="ic ic-arrow-left" href="javascript://">Move</a>
-		<a className="ic ic-trash" href="javascript://">Delete</a>
+	<SplitButtonDropdown
+    title="Click me"
+    type='primary'
+    onPrimaryClick={()=>{}}
+    buttonText='Testing here'
+  >
+    <a href="javascript://">
+      <i className="ic ic-pencil" /> Edit
+    </a>
+    <a href="javascript://">
+      <i className="ic ic-lock" /> Lock
+    </a>
+    <a href="javascript://">
+      <i className="ic ic-arrow-left" /> Move
+    </a>
+    <a href="javascript://">
+      <i className="ic ic-trash" /> Delete
+    </a>
 	</SplitButtonDropdown>
 ```

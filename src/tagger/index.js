@@ -9,6 +9,7 @@ export default class Tagger extends Component {
     onUnTagged:   PropTypes.func.isRequired,
     placeholder:  PropTypes.string,
     validationFn: PropTypes.func,
+    breakOn:      PropTypes.any
   }
 
   static defaultProps = {

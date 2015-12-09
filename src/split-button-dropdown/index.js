@@ -3,6 +3,8 @@ import Button from '../button2';
 import ButtonGroup from '../button-group';
 import Dropdown from '../dropdown';
 
+import classnames from 'classnames';
+
 class SplitButtonDropdown extends Component {
   static defaultProps = {
     title:               '',
@@ -50,7 +52,7 @@ class SplitButtonDropdown extends Component {
         </Button>
 
         <Button type={type}
-          classList='dropdown'
+          classList={this._getDropdownButtonClasses()}
           onClick={this._toggleDropdownOpen}
           disabled={disabled}>
           <i className="ic ic-chevron-down"></i>
@@ -73,6 +75,16 @@ class SplitButtonDropdown extends Component {
     );
   };
 
+  _getDropdownButtonClasses = () => {
+    let isActive = this.state.isDropdownOpen
+        ? 'active'
+        : '';
+    return classnames(
+      'dropdown',
+      isActive
+    );
+  };
+
   _toggleDropdownOpen = (event) => {
     event.preventDefault();
     if (this.props.disabled) return;
@@ -84,7 +96,7 @@ class SplitButtonDropdown extends Component {
   _populateOptions = (options) => {
     return [...options].map( (opt, i) => {
       return <li ref={opt} className="option" onClick={this.props.onDropdownItemClick}>{opt}</li>
-    })
+    });
   };
 }
 

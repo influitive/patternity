@@ -25,15 +25,17 @@
     button,
     .button {
       margin: 0 0 5px 0;
+      border-radius: 0;
+      border-left-style: solid;
+      border-left-width: 1px;
 
       &:first-child, &.main {
-        border-radius: 0;
+        border-left: 0;
         border-top-left-radius: $theme-border-radius;
         border-bottom-left-radius: $theme-border-radius;
       }
 
       &:last-child, &.dropdown {
-       border-radius: 0;
        border-top-right-radius: $theme-border-radius;
        border-bottom-right-radius: $theme-border-radius;
       }
