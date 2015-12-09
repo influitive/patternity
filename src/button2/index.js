@@ -10,7 +10,7 @@ class Button extends Component {
     inverse:   PropTypes.bool,
     isSubmit:  PropTypes.bool,
     style:     PropTypes.object,
-    classList: PropTypes.classList,
+    classList: PropTypes.string
   }
 
   static defaultProps = {
