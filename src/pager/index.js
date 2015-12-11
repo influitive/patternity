@@ -39,17 +39,45 @@ export default class Pager extends Component {
 
   render() {
     const {currentPage} = this.props;
+    const totalPageCount = this._getTotalPageCount();
     return (
       <div className='pt-pager' {...this.props}>
-        <span className='pt-next-page' onClick={this._handleClick.bind(null, currentPage-1)}>
+        <span className={classnames('pt-previous-page', { disabled: currentPage == 1})} onClick={this._handleClick.bind(null, currentPage-1)}>
           <Icon icon='chevron-left'/>
         </span>
         {this._getPageNumbers()}
-        <span className='pt-previous-page'  onClick={this._handleClick.bind(null, currentPage+1)}>
+        <span className={classnames('pt-next-page', { disabled: currentPage == totalPageCount})}  onClick={this._handleClick.bind(null, currentPage+1)}>
           <Icon icon='chevron-right'/>
         </span>
       </div>
     );
+  }
+
+  _getPageNumbers2 = () => {
+    const { currentPage } = this.props;
+    const totalPageCount = this._getTotalPageCount();
+
+    const leftSideOfWindow = Math.max(currentPage - Math.floor(MOVING_WINDOW_SIZE/2), 1);
+    let pages = _.range(leftSideOfWindow, Math.min(leftSideOfWindow+MOVING_WINDOW_SIZE, totalPageCount)+1);
+
+    let leftFiller = _.range(1, Math.min(EDGE_WINDOW_SIZE, pages[0])+1)
+    if (pages[0] > EDGE_WINDOW_SIZE + 1) {
+      leftFiller.push(-1);
+    }
+    let rightFiller = [];
+    if ( pages[pages.length-1] < totalPageCount - EDGE_WINDOW_SIZE) {
+      rightFiller.push(-1);
+    }
+
+    rightFiller = rightFiller.concat(_.range(Math.max(currentPage + Math.floor(MOVING_WINDOW_SIZE/2), totalPageCount - EDGE_WINDOW_SIZE ), totalPageCount+1));
+
+    return leftFiller.concat(pages).concat(rightFiller).map(page => {
+      // If it's -1, it's an ellipsised section.
+      if (page === -1) {
+        return this._getEllipsis();
+      }
+      return this._getSpanForPage(page);
+    });
   }
 
   _getPageNumbers = () => {
