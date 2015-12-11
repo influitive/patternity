@@ -1,14 +1,10 @@
 .pt-pager {
-  .pt-next-page, .pt-previous-page {
-    cursor: pointer;
+  .pt-next-page, .pt-previous-page, .pt-page-element {
+    &:not(.disabled) {
+      cursor: pointer;
+    }
   }
-
-  .pt-previous-page {
-    cursor: pointer;
-  }
-
   .pt-page-element {
     padding: 0px 5px;
-    cursor: pointer;
   }
 }

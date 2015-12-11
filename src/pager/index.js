@@ -53,94 +53,77 @@ export default class Pager extends Component {
     );
   }
 
-  _getPageNumbers2 = () => {
-    const { currentPage } = this.props;
-    const totalPageCount = this._getTotalPageCount();
-
-    const leftSideOfWindow = Math.max(currentPage - Math.floor(MOVING_WINDOW_SIZE/2), 1);
-    let pages = _.range(leftSideOfWindow, Math.min(leftSideOfWindow+MOVING_WINDOW_SIZE, totalPageCount)+1);
-
-    let leftFiller = _.range(1, Math.min(EDGE_WINDOW_SIZE, pages[0])+1)
-    if (pages[0] > EDGE_WINDOW_SIZE + 1) {
-      leftFiller.push(-1);
-    }
-    let rightFiller = [];
-    if ( pages[pages.length-1] < totalPageCount - EDGE_WINDOW_SIZE) {
-      rightFiller.push(-1);
-    }
-
-    rightFiller = rightFiller.concat(_.range(Math.max(currentPage + Math.floor(MOVING_WINDOW_SIZE/2), totalPageCount - EDGE_WINDOW_SIZE ), totalPageCount+1));
-
-    return leftFiller.concat(pages).concat(rightFiller).map(page => {
-      // If it's -1, it's an ellipsised section.
-      if (page === -1) {
-        return this._getEllipsis();
-      }
-      return this._getSpanForPage(page);
-    });
-  }
-
   _getPageNumbers = () => {
-    //TODO: Optimize algorithm. Currently performs very poorly under high page numbers.
     const { currentPage } = this.props;
     const totalPageCount = this._getTotalPageCount();
+    const simulatedCurrentPage = this._getSimulatedCurrentPage(currentPage, totalPageCount);
+    const leftSideOfWindow = simulatedCurrentPage - Math.floor(MOVING_WINDOW_SIZE/2);
+    let pagesWindow = _.range(leftSideOfWindow, Math.min(leftSideOfWindow+MOVING_WINDOW_SIZE, totalPageCount));
 
-    let pages = _.range(1, totalPageCount+1);
+    const numbersLeftOfWindow = this._getNumbersLeftOfWindow(_.first(pagesWindow));
+    const numbersRightOfWindow = this._getNumbersRightOfWindow(_.last(pagesWindow), totalPageCount);
 
-    const simulatedCurrentPageIndex = this._getSimulatedCurrentPageIndex(currentPage - 1, totalPageCount);
-    this._replaceIndexesFromRight(pages, simulatedCurrentPageIndex, totalPageCount);
-    this._replaceIndexesFromLeft(pages, simulatedCurrentPageIndex);
-
-    return pages.map(page => {
-      // If it's -1, it's an ellipsised section.
-      if (page === -1) {
-        return this._getEllipsis();
-      }
-      return this._getSpanForPage(page);
-    })
-  }
-
-  _replaceIndexesFromRight = (pages, simulatedCurrentPageIndex, totalPageCount) => {
-    const secondEllipsisStartIndex = simulatedCurrentPageIndex + Math.ceil(MOVING_WINDOW_SIZE/2);
-    const secondEllipsisCount = (totalPageCount - EDGE_WINDOW_SIZE) - secondEllipsisStartIndex
-
-    // Remove and replace any pages that will be ellipsed with -1
-    if (secondEllipsisCount > 0) {
-      pages.splice(secondEllipsisStartIndex, secondEllipsisCount, -1);
+    if (_.first(pagesWindow) > _.last(numbersLeftOfWindow) + 1) {
+      numbersLeftOfWindow.push(-1);
     }
-  }
 
-  _replaceIndexesFromLeft = (pages, simulatedCurrentPageIndex) => {
-    const firstEllipsisStartIndex = EDGE_WINDOW_SIZE;
-    const firstEllipsisCount = (simulatedCurrentPageIndex - Math.floor(MOVING_WINDOW_SIZE/2)) - firstEllipsisStartIndex;
-
-    if (firstEllipsisCount > 0) {
-      pages.splice(firstEllipsisStartIndex, firstEllipsisCount, -1).length;
+    if ( _.last(pagesWindow) < _.first(numbersRightOfWindow) - 1) {
+      numbersRightOfWindow.unshift(-1);
     }
+
+    return numbersLeftOfWindow.concat(pagesWindow).concat(numbersRightOfWindow).map(
+      (page, index) => {
+        // If it's -1, it's an ellipsised section.
+        if (page === -1) {
+          return this._getEllipsis(index);
+        }
+        return this._getSpanForPage(page);
+      });
   }
 
-  _getSimulatedCurrentPageIndex = (currentPageIndex, totalPageCount) => {
+  _getNumbersLeftOfWindow = (firstPageOfWindow) => {
+    return _.range(1, Math.min(EDGE_WINDOW_SIZE+1, firstPageOfWindow));
+  }
+
+  _getNumbersRightOfWindow = (lastPageOfWindow, totalPageCount) => {
+    const startPage = Math.max(lastPageOfWindow, totalPageCount - EDGE_WINDOW_SIZE )+1;
+    return _.range(startPage, totalPageCount+1);
+  }
+
+  _getSimulatedCurrentPage = (currentPage, totalPageCount) => {
     // The simulated current page is required to make sure that we always show at least 5 numbers around
     // the current page (even if current page is in the extremes)
-    let simulatedCurrentPageIndex = currentPageIndex;
-    if (currentPageIndex < EDGE_WINDOW_SIZE) {
-      simulatedCurrentPageIndex = EDGE_WINDOW_SIZE;
+    let simulatedCurrentPage = currentPage;
+    if (currentPage < EDGE_WINDOW_SIZE + 1) {
+      simulatedCurrentPage = EDGE_WINDOW_SIZE + 1;
     }
-    else if (currentPageIndex > totalPageCount - EDGE_WINDOW_SIZE - 1) {
-      simulatedCurrentPageIndex = totalPageCount - EDGE_WINDOW_SIZE - 1;
+    else if (currentPage > totalPageCount - EDGE_WINDOW_SIZE) {
+      simulatedCurrentPage = totalPageCount - EDGE_WINDOW_SIZE;
     }
-    return simulatedCurrentPageIndex;
+    return simulatedCurrentPage;
   }
 
   _getSpanForPage = (pageNum) => {
     const {currentPage, selectedClassName} = this.props;
-    const classes = classnames('pt-page-element', currentPage === pageNum && selectedClassName );
+    const isCurrentPage = currentPage === pageNum;
+    const classes = classnames(
+      'pt-page-element',
+      isCurrentPage && 'disabled',
+      isCurrentPage && selectedClassName
+    );
 
-    return <span className={classes} onClick={this._handleClick.bind(null, pageNum)}>{pageNum}</span>;
+    return (
+      <span
+        key={`page-${pageNum}`}
+        className={classes}
+        onClick={this._handleClick.bind(null, pageNum)}>
+        {pageNum}
+      </span>
+    );
   }
 
-  _getEllipsis() {
-    return (<span>...</span>);
+  _getEllipsis(index) {
+    return (<span key={`ellipsis-${index}`}>...</span>);
   }
 
   _handleClick = (pageNum) => {
