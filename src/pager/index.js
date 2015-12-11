@@ -12,15 +12,15 @@ export default class Pager extends Component {
     /**
      * The current page number (starting at 1).
      */
-    currentPage:          PropTypes.number.isRequired,
+    currentPage: PropTypes.number.isRequired,
     /**
      * The number of items that are displayed in each page.
      */
-    perPage:              PropTypes.number,
+    perPage: PropTypes.number,
     /**
      * The total number of items that are available.
      */
-    totalItemCount:       PropTypes.number.isRequired,
+    totalItemCount: PropTypes.number.isRequired,
     /**
      * This callback is called when the user navigates to a different page. It
      * has a single argument which is the new page number.
@@ -29,7 +29,7 @@ export default class Pager extends Component {
     /**
      * The classname of the page element that is currenting displayed.
      */
-    selectedClassName:    PropTypes.string
+    selectedClassName: PropTypes.string
   };
 
   static defaultProps = {
