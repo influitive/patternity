@@ -10,21 +10,23 @@ class Button extends Component {
     inverse:   PropTypes.bool,
     isSubmit:  PropTypes.bool,
     style:     PropTypes.object,
-    classList: PropTypes.string
+    classList: PropTypes.string,
+    theme:     PropTypes.object,
+    sheet:     PropTypes.object
   }
 
   static defaultProps = {
     disabled:  false,
     inverse:   false,
     isSubmit:  false,
-    classList: null
+    classList: null,
+    sheet: { classes: {} }
   }
 
   render() {
-    const { style, disabled, onClick, children, isSubmit } = this.props;
+    const { style, disabled, type, onClick, children, isSubmit } = this.props;
 
-    return <button style={style}
-      type={isSubmit ? 'submit' : 'button'}
+    return <button type={isSubmit ? 'submit' : 'button'}
       disabled={disabled}
       className={this.getClasses()}
       onClick={onClick}>
@@ -34,6 +36,7 @@ class Button extends Component {
 
   getClasses = () => {
     const { disabled, inverse, type, children, classList, icon } = this.props;
+    const { classes } = this.props.sheet;
 
     return classNames(
       'button',
@@ -46,7 +49,8 @@ class Button extends Component {
       !disabled && {
         inverse: (type === 'secondary' || type === 'text') && inverse
       },
-      classList
+      classList,
+      classes[type]
     );
   }
 }
