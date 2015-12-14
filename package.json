@@ -1,6 +1,6 @@
 {
   "name": "patternity",
-  "version": "1.1.14",
+  "version": "1.2.0",
   "description": "Patternity is the pattern library and style guide for all Influitive apps",
   "main": "index.js",
   "scripts": {
@@ -79,6 +79,7 @@
     "is-dir": "^1.0.0",
     "isparta": "^3.1.0",
     "jasmine-core": "^2.2.0",
+    "json-loader": "^0.5.4",
     "karma": "^0.12.31",
     "karma-browserify": "^3.0.1",
     "karma-chrome-launcher": "^0.1.7",
@@ -117,12 +118,16 @@
   },
   "dependencies": {
     "classnames": "^1.1.4",
+    "color": "^0.10.1",
     "es5-shim": "^4.1.0",
     "jquery": "^1.9.1",
+    "jss": "^3.2.0",
+    "jss-nested": "^1.0.1",
     "lodash": "^3.7.0",
     "node-bourbon": "~1.2.3",
     "node-neat": "^1.7.2",
     "quill": "^0.20.1",
+    "react-jss": "^2.0.1",
     "react-quill": "^0.3.0"
   },
   "peerDependencies": {

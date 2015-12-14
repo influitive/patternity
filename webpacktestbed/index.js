@@ -1,43 +1,25 @@
 import React, { Component } from 'react';
 
-// Components
-import Table, {Column, Cell} from '../src/table';
+import { createTheme, ThemeComponent } from '../src/utils/themeable';
 
-var data = [{
-  id: 1,
-  name: 'name'
-}]
+import Button from '../src/button2';
+import ThemeButton from '../src/button2/theme-button';
+
+require('../infl-styles/_button.scss');
+
+const theme = {
+  themeColorPrimary: 'orange'
+};
+
+const Theme = createTheme(theme);
 
 class App extends Component {
-
   render() {
-
-    return (
-      <Table
-        rowCount={data.length}
-        rowStyle={{}}
-        headerStyle={{}}>
-        <Column
-          header={<Cell>Blah</Cell>}
-          cell={function(rowIndex) {
-            return (
-              <Cell>
-                {data[rowIndex].name}
-              </Cell>
-            );
-          }}/>
-        <Column
-          header={<Cell>Blah</Cell>}
-          cell={function(rowIndex) {
-            return (
-              <Cell>
-                {data[rowIndex].name}
-              </Cell>
-            );
-          }}/>
-      </Table>
-    );
+    return <div>
+      <ThemeButton type="primary">Hello There Bob</ThemeButton>
+      <Button type="primary">NonTheme</Button>
+    </div>;
   }
 }
 
-React.render(<App/>, document.getElementById('root'));
+React.render(React.createElement(Theme(App)), document.getElementById('root'));
