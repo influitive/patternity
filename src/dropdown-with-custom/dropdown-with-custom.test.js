@@ -9,12 +9,12 @@ global.document = {};
 
 test('<DropdownWithCustom />', t => {
 
-  let { instance, result } = shallow(<DropdownWithCustom onChange={()=>{}}>
+  let { instance, result } = shallow(<DropdownWithCustom value="chocolate" onChange={()=>{}}>
     <option value="chocolate">Chocolate</option>
     <option value="vanilla">Vanilla</option>
   </DropdownWithCustom>);
 
-  t.equal(result.type, 'select', 'should be a select form control');
+  t.equal(result.type.displayName, 'SelectDropdown', 'should be a select form control');
   t.equal(result.props.children.length, 3, 'should have three child elements');
 
   t.deepEqual(result.props.children.map(e => e.type), ['option', 'option', 'option'], 'should be option elements');
@@ -36,7 +36,7 @@ test('<DropdownWithCustom />', t => {
     let { instance, result } = shallow(<DropdownWithCustom value="candy cane">
       <option value="candy cane">Candy Cane</option>
     </DropdownWithCustom>);
-    st.equal(result.type, 'select', 'should be a select element');
+    st.equal(result.type.displayName, 'SelectDropdown', 'should be a select element');
     st.equal(result.props.value, 'candy cane', 'should be the specified value');
     st.equal(result.props.children.length, 2, 'should have two child elements');
     st.end();
@@ -62,7 +62,7 @@ test('<DropdownWithCustom />', t => {
     instance.props.onCleared();
     console.log(result);
 
-    st.equal(result.type, 'select', 'should be a select element');
+    st.equal(result.type.displayName, 'SelectDropdown', 'should be a select element');
     st.equal(result.props.value, '', 'should reset the value');
     st.end();
   });
@@ -72,6 +72,18 @@ test('<DropdownWithCustom />', t => {
     const change = () => st.pass();
     let { instance } = shallow(<DropdownWithCustom onChange={change} />);
     instance.props.onChange();
+    st.end();
+  });
+
+  t.test('spreading the props', (st) => {
+    let { instance, result } = shallow(<DropdownWithCustom value="chocolate" placeholder="monkey" name="george">
+      <option value="chocolate">Chocolate</option>
+      <option value="vanilla">Vanilla</option>
+    </DropdownWithCustom>);
+
+    st.equal(result.props.placeholder, 'monkey', 'should override the default placeholder');
+    st.equal(result.props.name, 'george', 'should set the "name" attribute if provided');
+
     st.end();
   });
 

@@ -22,13 +22,14 @@ export default class DropdownWithCustom extends Component {
     let { value } = this.props;
     if (this.state.custom) {
       value = value === CUSTOM ? '' : value;
-      return <TextInput type="text" value={value}
-                        placeholder="Enter a custom value"
+      return <TextInput placeholder="Enter a custom value"
+                        {...this.props}
+                        value={value}
                         clearable={true}
                         onChange={this.props.onChange}
                         onCleared={this._reset} autofocus={true} />;
     }
-    return <Select title={false} value={value} onChange={this._onSelectChange}>
+    return <Select {...this.props} value={value} onChange={this._onSelectChange}>
       {this._children()}
     </Select>;
   }
