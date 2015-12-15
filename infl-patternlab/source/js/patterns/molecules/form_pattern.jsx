@@ -88,6 +88,12 @@ var FormPattern = React.createClass({
         defaultValue : "",
         required : false,
         description : "one of '_blank', '_self', '_parent', '_top'"
+      },
+      onSubmit: {
+        type: 'function',
+        defaultValue: 'function() {}',
+        required: false,
+        description: 'Callback called when the form submits'
       }
     };
   }

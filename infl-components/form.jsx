@@ -1,3 +1,6 @@
+/*eslint react/no-multi-comp:0 */
+// TODO: Fixup multiple components per file
+
 var React = require('react');
 
 var Form = React.createClass({
@@ -11,7 +14,8 @@ var Form = React.createClass({
       method:        '',
       name:          '',
       novalidate:    true,
-      target:        ''
+      target:        '',
+      onSubmit:      function() {}
     };
   },
 
@@ -42,7 +46,8 @@ var Form = React.createClass({
       '_parent',
       '_top',
       ''
-    ])
+    ]),
+    onSubmit: React.PropTypes.func
   },
 
   componentDidMount: function() {
@@ -58,7 +63,8 @@ var Form = React.createClass({
       encType={this.props.enctype}
       method={this.props.method}
       name={this.props.name}
-      target={this.props.target}>
+      target={this.props.target}
+      onSubmit={this.props.onSubmit}>
         {this.props.children}
     </form>;
   },
