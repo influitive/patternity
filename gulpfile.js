@@ -60,16 +60,6 @@ gulp.task('influicons', function() {
         }))
         .pipe(gulp.dest('infl-styles/'));
 
-      // generate the patternity influicons-list.js file used by "icons_pattern.jsx"
-      gulp.src('infl-icons/templates/influicons-list.js')
-        .pipe(consolidate('lodash', {
-          glyphs:    codepoints,
-          fontName:  'influicons',
-          fontPath:  'infl-fonts/',
-          className: 'ic'
-        }))
-        .pipe(gulp.dest('infl-patternlab/source/js/patterns/atoms/'));
-
       // generate the patternity readme file for icon
       gulp.src('infl-icons/templates/icon.readme.md')
         .pipe(consolidate('lodash', {
