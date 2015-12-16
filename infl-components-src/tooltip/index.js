@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-const merge = require('lodash/object/merge');
+const _ = require('lodash');
 const $ = require('jquery');
 
 const Icon = require('../icon');
@@ -127,7 +127,7 @@ export default class Tooltip extends Component {
   }
 
   _determineContentStyle = () =>{
-    return merge(this.styles.popover.content, this.props.style.content);
+    return _.merge(this.styles.popover.content, this.props.style.content);
   }
 
   _tooltipElement = () => {

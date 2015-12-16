@@ -70,13 +70,13 @@ class SelectDropdown extends React.Component {
 
   _selectedOption() {
     if (this.refs && this.refs.select) {
-      const select = React.findDOMNode(this.refs.select);
+      const select = this.refs.select;
       return select.options[select.selectedIndex];
     }
   }
 
   _setTitle() {
-    const title = React.findDOMNode(this.refs.title);
+    const title = this.refs.title;
 
     title.textContent = this._getSelectedOptionText();
   }
