@@ -75,7 +75,7 @@ class Popover extends Component {
               targetAttachment: `${targetAttachment}`,
               constraints: [
                 {
-                  to: 'scrollParent',
+                  to: 'window',                  
                   pin: true
                 }
               ]
