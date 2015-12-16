@@ -24,7 +24,7 @@ class AccordionBody extends Component {
 
   applyRealMaxHeight = () => {
     if (!this.props.open) return;
-    const detailsHeight = this.refs.details.getDOMNode().offsetHeight;
+    const detailsHeight = this.refs.details.offsetHeight;
     if (detailsHeight !== this.state.maxHeight) this.setState({maxHeight: detailsHeight});
   }
 

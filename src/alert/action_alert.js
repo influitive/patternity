@@ -35,12 +35,20 @@ var ActionAlert = React.createClass({
           <span>{this.props.title}</span>
         </h4>
         <AlertAction onClick={this.props.action.onClick} title={this.props.action.title} />
-        <div className="alert-body" ref="body">
-          {this.props.children}
-        </div>
+        { this._renderBody() }
       </div>
     );
   },
+  _renderBody: function() {
+    if (!this.props.children) {
+      return null;
+    }
+    return (
+      <div className="alert-body" ref="body">
+        {this.props.children}
+      </div>
+    );
+  }
 });
 
 var AlertAction = React.createClass({
