@@ -1,65 +1,110 @@
-const React = require('react');
+import React, {Component, PropTypes} from 'react';
 const merge = require('lodash/object/merge');
 const $ = require('jquery');
 
 const Icon = require('../icon');
 const Popover = require('../../lib/popover');
 
-const Tooltip = React.createClass({
-  displayName: 'Tooltip',
 
-  propTypes: {
-    title:             React.PropTypes.string,
-    element:           React.PropTypes.node.isRequired,
-    position:          React.PropTypes.oneOf(['top', 'bottom']),
-    isClickable:       React.PropTypes.bool,
-    containerSelector: React.PropTypes.string,
-    onOpen:            React.PropTypes.func,
+class CloseTooltip extends Component { // eslint-disable-line react/no-multi-comp
+  static propTypes = {
+    onClick:   React.PropTypes.func.isRequired,
+    showClose: React.PropTypes.bool
+  }
 
-    style: React.PropTypes.shape({
+  static defaultProps = {
+    showClose: false
+  }
+
+  render() {
+    return this._showClose();
+  }
+
+  _showClose = () => {
+    if (!this.props.showClose) {
+      return null;
+    }
+
+    return this._closeButton();
+  }
+
+  _closeButton = () => {
+    return (
+      <span
+          className='close'
+          onClick={this.props.onClick}
+          ref="close"
+          style={this.styles.close}>
+        <Icon icon='times' />
+      </span>
+    );
+  }
+
+  styles = {
+    close: {
+      float:      'right',
+      fontSize:   '20px',
+      color:      '#fff',
+      opacity:    '1',
+      cursor:     'pointer',
+      display:    'block',
+      textShadow: 'none',
+      fontWeight: 'normal'
+    }
+  }
+}
+
+export default class Tooltip extends Component {
+
+  static propTypes = {
+    title:             PropTypes.string,
+    element:           PropTypes.node.isRequired,
+    position:          PropTypes.oneOf(['top', 'bottom']),
+    isClickable:       PropTypes.bool,
+    containerSelector: PropTypes.string,
+    onOpen:            PropTypes.func,
+
+    style: PropTypes.shape({
       content: {
-        minWidth: React.PropTypes.string.isRequired,
-        padding:  React.PropTypes.string.isRequired,
-        fontSize: React.PropTypes.string.isRequired
+        minWidth: PropTypes.string.isRequired,
+        padding:  PropTypes.string.isRequired,
+        fontSize: PropTypes.string.isRequired
       }
     })
-  },
+  }
 
-  getDefaultProps: function() {
-    return {
-      title:             '',
-      position:          'top',
-      isClickable:       true,
-      containerSelector: 'body',
-      onOpen:            function() {},
+  static defaultProps = {
+    title:             '',
+    position:          'top',
+    isClickable:       true,
+    containerSelector: 'body',
+    onOpen:            function() {},
 
-      style: {
-        content: {
-          minWidth: '300px',
-          padding:  '13px 13px 26px 13px',
-          fontSize: '13px'
-        }
+    style: {
+      content: {
+        minWidth: '300px',
+        padding:  '13px 13px 26px 13px',
+        fontSize: '13px'
       }
-    };
-  },
+    }
+  }
 
-  getInitialState: function() {
-    return {
-      showTooltip: false,
-      showClose:   false,
-      wasClicked:  false
-    };
-  },
+  state = {
+    showTooltip: false,
+    showClose:   false,
+    wasClicked:  false
+  }
 
-  componentDidMount: function() {
+
+  componentDidMount() {
     $('body').click(this._closeTooltip);
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     $('body').off('click', this._closeTooltip);
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <span className="pt-tooltip" ref="tooltip">
         <Popover
@@ -79,13 +124,13 @@ const Tooltip = React.createClass({
         </Popover>
       </span>
     );
-  },
+  }
 
-  _determineContentStyle: function() {
+  _determineContentStyle = () =>{
     return merge(this.styles.popover.content, this.props.style.content);
-  },
+  }
 
-  _tooltipElement: function() {
+  _tooltipElement = () => {
     return (
       <span className="tool-tip-element"
           onClick={this._clickTooltip}
@@ -96,9 +141,9 @@ const Tooltip = React.createClass({
         {this.props.element}
       </span>
     );
-  },
+  }
 
-  _hoverToggleTooltip: function(shouldShow) {
+  _hoverToggleTooltip = (shouldShow) => {
     if (!this.state.wasClicked) {
       this._updateState({
         showTooltip: !this.state.showTooltip,
@@ -106,15 +151,15 @@ const Tooltip = React.createClass({
         wasClicked:  false
       });
     }
-  },
+  }
 
-  _clickTooltip: function(event) {
+  _clickTooltip = (event) => {
     if (this.props.isClickable) {
       this._showTooltip(event);
     }
-  },
+  }
 
-  _showTooltip: function(event) {
+  _showTooltip = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
@@ -123,21 +168,21 @@ const Tooltip = React.createClass({
       showClose:   true,
       wasClicked:  true
     });
-  },
+  }
 
-  _closeTooltip: function(event) {
+  _closeTooltip = (event) => {
     this._updateState({
       showTooltip: false,
       showClose:   false,
       wasClicked:  false
     });
-  },
+  }
 
-  _updateState: function(newState) {
+  _updateState = (newState)  =>{
     this.setState(newState);
-  },
+  }
 
-  styles: {
+  styles = {
     popover: {
       popover2: {
         background:  'rgba(68, 68, 68, 0.9)',
@@ -162,56 +207,4 @@ const Tooltip = React.createClass({
       }
     }
   }
-});
-
-const CloseTooltip = React.createClass({ // eslint-disable-line react/no-multi-comp
-  propTypes: {
-    onClick:   React.PropTypes.func.isRequired,
-    showClose: React.PropTypes.bool
-  },
-
-  getDefaultProps: function() {
-    return {
-      showClose: false
-    };
-  },
-
-  render: function() {
-    return this._showClose();
-  },
-
-  _showClose: function() {
-    if (!this.props.showClose) {
-      return null;
-    }
-
-    return this._closeButton();
-  },
-
-  _closeButton: function() {
-    return (
-      <span
-          className='close'
-          onClick={this.props.onClick}
-          ref="close"
-          style={this.styles.close}>
-        <Icon icon='times' />
-      </span>
-    );
-  },
-
-  styles: {
-    close: {
-      float:      'right',
-      fontSize:   '20px',
-      color:      '#fff',
-      opacity:    '1',
-      cursor:     'pointer',
-      display:    'block',
-      textShadow: 'none',
-      fontWeight: 'normal'
-    }
-  }
-});
-
-module.exports = Tooltip;
+}

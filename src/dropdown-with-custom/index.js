@@ -1,18 +1,23 @@
 import React, { Component, PropTypes, Addons } from 'react';
 import flatten from 'lodash/array/flatten';
 
-var TextInput = require('../../infl-components/text_input.jsx');
-var Select    = require('../../infl-components/select_dropdown.jsx');
+import TextInput from '../../lib/text_input';
+import Select    from '../../lib/select_dropdown';
 
 const CUSTOM = '__custom__';
 
 export default class DropdownWithCustom extends Component {
+  static propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func
+  }
+
   static defaultProps = {
     value: '',
     onChange: () => {}
-  };
+  }
 
-  state = { custom: this._values().indexOf(this.props.value) === -1 };
+  state = { custom: this._values().indexOf(this.props.value) === -1 }
 
   componentWillReceiveProps(nextProps) {
     this.setState({ value: nextProps.value });

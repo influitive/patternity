@@ -8,6 +8,7 @@ var watch = require('gulp-watch');
 var postScss = require('postcss-scss');
 var postcss = require('gulp-postcss');
 var rucksack = require('rucksack-css');
+var rename = require("gulp-rename");
 
 function adustIconNames(codepoints) {
   return codepoints.map(function(codepoint) {
@@ -74,7 +75,8 @@ gulp.task('influicons', function() {
         .pipe(consolidate('lodash', {
           glyphs:    codepoints
         }))
-        .pipe(gulp.dest('infl-components-examples/'));
+        .pipe(rename("Readme.md"))
+        .pipe(gulp.dest('infl-components-src/icon/'));
     })
     .pipe(gulp.dest('infl-fonts/'));
 });

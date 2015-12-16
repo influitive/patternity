@@ -20,7 +20,8 @@ class Popover extends Component {
           return new Error('Cannot use border with transparent background');
         }
       }
-    })
+    }),
+    className:          PropTypes.string
   }
 
   static defaultProps = {

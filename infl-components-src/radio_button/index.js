@@ -25,7 +25,7 @@ class RadioButton extends React.Component {
   }
 
   state = {
-    isChecked: props.isChecked
+    isChecked: this.props.isChecked
   }
 
   componentWillReceiveProps(newProps) {
