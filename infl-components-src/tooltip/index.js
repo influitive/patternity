@@ -186,7 +186,7 @@ export default class Tooltip extends Component {
     popover: {
       popover2: {
         background:  'rgba(68, 68, 68, 0.9)',
-        borderColor: 'rgba(68, 68, 68, 0.9)',
+        borderColor: '',
       },
       content: {
         color:    '#fff',
