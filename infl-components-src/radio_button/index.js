@@ -58,7 +58,7 @@ class RadioButton extends React.Component {
 
   _clickRadioButton = () => {
     if (this.props.enabled) {
-      React.findDOMNode(this.refs.nativeRadioButton).click();
+      this.refs.nativeRadioButton.click();
     }
   }
 
