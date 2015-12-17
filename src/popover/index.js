@@ -15,9 +15,8 @@ class Popover extends Component {
     style: PropTypes.shape({
       background:  PropTypes.string.isRequired,
       borderColor: function(props, propName) {
-        const { background, borderColor } = props;
-        borderColor = borderColor || '';
-        if (borderColor.length > 0 && /rgba/.test(background)) {
+        let borderColor = props.borderColor || '';
+        if (borderColor.length > 0 && /rgba/.test(props.background)) {
           return new Error('Cannot use border with transparent background');
         }
       }
@@ -99,9 +98,8 @@ class Popover extends Component {
   }
 
   _shouldHaveBorder() {
-    const { borderColor, background } = this.props.style;
-    borderColor = borderColor || '';
-    return borderColor.length > 0 && /rgba/.test(background);
+    let borderColor = this.props.style.borderColor || '';
+    return borderColor.length > 0 && /rgba/.test(this.props.style.background);
   }
 }
 
