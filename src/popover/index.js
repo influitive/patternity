@@ -37,8 +37,8 @@ class Popover extends Component {
     className:          ''
   }
 
-  componentDidUpdate() {
-    if (this.props.isOpen) {
+  componentDidUpdate(prevProps) {
+    if (this.props.isOpen && prevProps.isOpen !== this.props.isOpen) {
       this.props.onOpen();
     }
   }
