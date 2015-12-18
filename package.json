@@ -128,6 +128,7 @@
     "node-bourbon": "~1.2.3",
     "node-neat": "^1.7.2",
     "quill": "^0.20.1",
+    "react-addons-test-utils": "^0.14.3",
     "react-jss": "^2.0.1",
     "react-quill": "^0.3.0",
     "react-tether": "^0.1.2"
