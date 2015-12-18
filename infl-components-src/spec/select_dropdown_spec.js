@@ -55,18 +55,5 @@ describe('SelectDropdown Component', function() {
 
       expect(titleNode.textContent).to.eq("option 3");
     });
-
-    it('setting new props selects the corresponding option', function() {
-      const titleNode  = React.findDOMNode(subject.refs.title);
-      const selectNode = React.findDOMNode(subject.refs.select);
-
-      expect(titleNode.textContent).to.eq("option 3");
-
-      subject.setProps({ value: 'value6' });
-
-      expect(selectNode.value).to.eq('value6');
-      expect(selectNode.selectedIndex).to.eq(5);
-      expect(titleNode.textContent).to.eq("option 6");
-    });
   });
 });

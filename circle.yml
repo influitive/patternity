@@ -10,6 +10,9 @@ dependencies:
     - bundle install
   override:
     - npm install --no-spin
+test:
+  override:
+    - npm run test-circleci
 deployment:
   experimental:
     branch: development
