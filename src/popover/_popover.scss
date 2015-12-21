@@ -1,5 +1,6 @@
 .tether-element{
-  z-index: 9999;
+  // Make sure this is always above or equal to guider z-index.
+  z-index: 100000005;
 }
 
 .pt-popover { //replace namespacing with css modules
