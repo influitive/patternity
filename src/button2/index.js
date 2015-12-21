@@ -5,7 +5,7 @@ class Button extends Component {
   static propTypes = {
     icon:      PropTypes.string,
     type:      PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
-    onClick:   PropTypes.func.isRequired,
+    onClick:   PropTypes.func,
     disabled:  PropTypes.bool,
     inverse:   PropTypes.bool,
     isSubmit:  PropTypes.bool,
@@ -24,7 +24,7 @@ class Button extends Component {
   }
 
   render() {
-    const { style, disabled, type, onClick, children, isSubmit } = this.props;
+    const { disabled, onClick, children, isSubmit } = this.props;
 
     return <button type={isSubmit ? 'submit' : 'button'}
       disabled={disabled}
