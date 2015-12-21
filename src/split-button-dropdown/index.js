@@ -25,21 +25,21 @@ class SplitButtonDropdown extends Component {
     options:             PropTypes.array,
     onDropdownItemClick: PropTypes.func,
     style:               PropTypes.shape({
-      borderColor: function(props, propName) {
+      borderColor: function(props) {
         const { type } = props;
         if (type != 'secondary') {
           return new Error('Cannot use border with non-secondary type.');
         }
       }
-    }),
+    })
   }
 
   state = {
-    isDropdownOpen: false,
+    isDropdownOpen: false
   };
 
   render() {
-    const { icon, type, onButtonClick, disabled, onDropdownItemClick, title, children } = this.props;
+    const { icon, type, onButtonClick, disabled, title } = this.props;
 
     return (
       <ButtonGroup grouped={true} classList='button-split button-dropdown'>
@@ -61,7 +61,7 @@ class SplitButtonDropdown extends Component {
         { this._getDropdown() }
       </ButtonGroup>
     );
-  };
+  }
 
   _getDropdown = () => {
     if (this.props.disabled || !this.state.isDropdownOpen) return null;
@@ -95,7 +95,7 @@ class SplitButtonDropdown extends Component {
 
   _populateOptions = (options) => {
     return [...options].map( (opt, i) => {
-      return <li ref={opt} className="option" onClick={this.props.onDropdownItemClick}>{opt}</li>
+      return <li ref={opt} key={i} className="option" onClick={this.props.onDropdownItemClick}>{opt}</li>
     });
   };
 }
