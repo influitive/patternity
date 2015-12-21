@@ -10,12 +10,8 @@ Patternity is using the nodejs version of patternlab.io.  Additional documentati
 Install patternity as a node module.
 
 ```
-  npm install --save patternity<@version:optional>
+  npm install --save git://github.com/influitive/patternity.git#development
 ```
-
-Note: be sure to install releases from npm, as these are versioned.
-  if you install from influitive/patternity you will get the latest master, which may include
-  breaking changes
 
 # Compilation
 
@@ -228,78 +224,14 @@ Reference:
 
 #### Component Readmes
 
-Each component can have it's own Readme.md file. New components located in ```src``` will have their Readme.md in their component directory. Older components have their readmes located in ```infl-components-examples``` and the directory looks exactly like infl-components except the files end in ```.readme.md``` instead.
-
-## Publish & Release
-
-Strict semantic versioning:
-
-1. Any change that breaks an existing api should bump the Major version
-2. Any added functionality should change the minor version
-3. Patch versions are reserved for changes transparent to the end user
-
-**Do not break this convention.**
-
-#### Git convention
-##Use git flow
-1. if you don't have it installed you can `brew install git-flow`
-2. you can also do git-flow style manually, just remember to merge master back into dev after a release
-3. git flow setup:
-4. `git flow init`
-5. accept the default for the first option (master)
-6. enter development for the second option (branch name for next release)
-7. set version tag prefix to 'v'
-8. accept defaults for all other options
-
-Feature git workflow:
-1. `git flow feature start <feature-name>`
-  this will create a new branch named feature/<feature-name>
-
-develop you feature here and when it's done do:
-
-2. `git flow feature finish <feature-name>`
-  this merges your feature into development
-
-Hotfix worflow
-
-1. `git flow hotfix start <version-number>`
-  this will create a new branch named hotfix/<version-number>
-  develop your hotfix here and when it's done do:
-2. `git flow hotfix finish <version-number>`
-  this merges your hotfix into master
-
-  and tags the commit with 'v<version-number>'
-
-  master is then back-merged into development
-
-Release git workflow:
-
-1. `git flow release start <version-number>`
-  this will create a new branch named release/<version-number>
-
-  example `git flow release start 1.0.62`
-
-2. run `npm version (major|minor|patch) --no-git-tag-version`
-  Note: --no-git-tag-version is passed because git flow will be tagging the release
-
-3. `git flow release finish <version-number>`
-  you will be prompted to write a message for the tag, "Release version <version-number>" should suffice, you will be writing more detail in github releases feature.
-  this will tag master with `v<version-number>`
-
-  this will merge release/<version-number> into master
-  as well as back merge the release into development (the version numbers will then match)
-
-4. `git push && git push --tags`
-  You need to push the changes along with the associated new tag.
-
-5. Update tag information in GitHub
-
-#### Publishing
-
-Once you have master at your desired release state, you can run `npm publish` to publish to the npm registry
+Each component can have it's own Readme.md file. All components (in ```infl-components-src``` or ```src```) will have their Readme.md in their component directory.
 
 #### Patternlab
 
 Patternlab resides [here](https://github.com/influitive/patternlab).
 
 The pattern lab is built automatically by circleci. Results for old pattern lab are available at http://patternity.internal.influitive.com. The new pattern lab can be found at http://patternity.experimental.influitive.com.
+
+#### Development inside of the Hub
+
+Testing with Patternity should be as easy as running ```npm link``` in patternity and ```npm link patternity``` in hub but sometimes the hub's webpack doesn't quite pick up the changes. To resolve that, make sure to remove ```assets: npm run webpack:dev``` from Procfile-dev and run that in a seperate terminal.
