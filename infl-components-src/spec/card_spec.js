@@ -1,5 +1,7 @@
 const es5Shim   = require('es5-shim'), React     = require('react'), expect    = require('chai').expect, TestUtils = require('react/addons').addons.TestUtils;
 
+const ReactDOM = require('react-dom');
+
 const Card = require('cards/card');
 
 describe('Card Component', function() {
@@ -12,7 +14,7 @@ describe('Card Component', function() {
     }
 
     function populateTestRefs(){
-      cardElement = React.findDOMNode(subject.refs.card);
+      cardElement = ReactDOM.findDOMNode(subject.refs.card);
     }
 
     it('will render the card component', function () {
@@ -40,7 +42,7 @@ describe('Card Component', function() {
     }
 
     function populateTestRefs(){
-      cardContainerElement = React.findDOMNode(subject.refs.container);
+      cardContainerElement = ReactDOM.findDOMNode(subject.refs.container);
     }
 
     it('will render the card component', function () {

@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const classNames = require('classnames');
 
 class Checkbox extends React.Component {
@@ -82,7 +83,7 @@ class Checkbox extends React.Component {
 
   _clickCheckBox = () => {
     if (this.props.enabled) {
-      React.findDOMNode(this.refs.nativeCheckbox).click();
+      ReactDOM.findDOMNode(this.refs.nativeCheckbox).click();
     }
   }
 

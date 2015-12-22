@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const classNames = require('classnames');
 
 class ToggleSwitch extends React.Component {
@@ -63,7 +64,7 @@ class ToggleSwitch extends React.Component {
     event.preventDefault();
     event.stopPropagation();
     if (this.props.enabled) {
-      React.findDOMNode(this.refs.checkbox).click();
+      ReactDOM.findDOMNode(this.refs.checkbox).click();
     }
   }
 
