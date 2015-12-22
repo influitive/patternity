@@ -135,6 +135,6 @@
     "tap-spec": "^4.1.0"
   },
   "peerDependencies": {
-    "react": "^0.14.2"
+    "react": "^0.14.3"
   }
 }
