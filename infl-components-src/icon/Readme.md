@@ -455,6 +455,41 @@ let onMouseLeave = (e) => {
     <div style={titleStyle}>graduation-cap</div>
   </div>
     
+  <div style={iconGroupStyle} className='IconDescription' id="stage-quiz">
+    <Icon icon="stage-quiz" />
+    <div style={titleStyle}>stage-quiz</div>
+  </div>
+    
+  <div style={iconGroupStyle} className='IconDescription' id="quiz-correct">
+    <Icon icon="quiz-correct" />
+    <div style={titleStyle}>quiz-correct</div>
+  </div>
+    
+  <div style={iconGroupStyle} className='IconDescription' id="quiz-incorrect">
+    <Icon icon="quiz-incorrect" />
+    <div style={titleStyle}>quiz-incorrect</div>
+  </div>
+    
+  <div style={iconGroupStyle} className='IconDescription' id="move">
+    <Icon icon="move" />
+    <div style={titleStyle}>move</div>
+  </div>
+    
+  <div style={iconGroupStyle} className='IconDescription' id="share-google">
+    <Icon icon="share-google" />
+    <div style={titleStyle}>share-google</div>
+  </div>
+    
+  <div style={iconGroupStyle} className='IconDescription' id="android">
+    <Icon icon="android" />
+    <div style={titleStyle}>android</div>
+  </div>
+    
+  <div style={iconGroupStyle} className='IconDescription' id="apple">
+    <Icon icon="apple" />
+    <div style={titleStyle}>apple</div>
+  </div>
+    
   <div style={iconGroupStyle} className='IconDescription' id="coins-old">
     <Icon icon="coins-old" />
     <div style={titleStyle}>coins-old</div>
