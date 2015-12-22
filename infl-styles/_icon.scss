@@ -835,12 +835,82 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-stage-quiz:before {
   content: "\E054"
+}
+
+@mixin ic-stage-quiz() {
+  font-family: 'influicons';
+  content: "\E054"
+}
+
+
+.ic.ic-quiz-correct:before {
+  content: "\E055"
+}
+
+@mixin ic-quiz-correct() {
+  font-family: 'influicons';
+  content: "\E055"
+}
+
+
+.ic.ic-quiz-incorrect:before {
+  content: "\E056"
+}
+
+@mixin ic-quiz-incorrect() {
+  font-family: 'influicons';
+  content: "\E056"
+}
+
+
+.ic.ic-move:before {
+  content: "\E057"
+}
+
+@mixin ic-move() {
+  font-family: 'influicons';
+  content: "\E057"
+}
+
+
+.ic.ic-share-google:before {
+  content: "\E058"
+}
+
+@mixin ic-share-google() {
+  font-family: 'influicons';
+  content: "\E058"
+}
+
+
+.ic.ic-android:before {
+  content: "\E059"
+}
+
+@mixin ic-android() {
+  font-family: 'influicons';
+  content: "\E059"
+}
+
+
+.ic.ic-apple:before {
+  content: "\E05A"
+}
+
+@mixin ic-apple() {
+  font-family: 'influicons';
+  content: "\E05A"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E05B"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E054"
+  content: "\E05B"
 }
 
