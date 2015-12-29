@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { createTheme, ThemeComponent } from '../src/utils/themeable';
-
-import Button from '../src/button2';
-import ThemeButton from '../src/button2/theme-button';
-
-require('../infl-styles/_button.scss');
-
-const theme = {
-  themeColorPrimary: 'orange'
-};
-
-const Theme = createTheme(theme);
+import SplitButtonDropdown from '../src/split-button-dropdown';
+import '../infl-styles/_button.scss';
+import '../infl-styles/_icon.scss';
 
 class App extends Component {
   render() {
     return <div>
-      <ThemeButton type="primary">Hello There Bob</ThemeButton>
-      <Button type="primary">NonTheme</Button>
+      <SplitButtonDropdown title="hello">
+        <a href="$">Hell</a>
+        <a href="$">Hell</a>
+        <a href="$">Hell</a>
+        <a href="$">Hell</a>
+        <a href="$">Hell</a>
+      </SplitButtonDropdown>
     </div>;
   }
 }
 
-React.render(React.createElement(Theme(App)), document.getElementById('root'))
+ReactDOM.render(<App/>, document.getElementById('root'))
+

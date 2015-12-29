@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 export default class Tag extends Component {
   render() {
@@ -10,7 +10,7 @@ export default class Tag extends Component {
         <span className="icon" onClick={this._unTag} >&times;</span>
       </li>
     );
-  };
+  }
 
   _unTag = () => {
     this.props.unTag(this.props.tag)

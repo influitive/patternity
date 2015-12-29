@@ -18,7 +18,7 @@ class SaveButton extends Component {
   }
 
   render() {
-    const { saveStatus, onClick } = this.props;
+    const { onClick } = this.props;
     const status = this.buttonStatus();
     return <span className="pt-save-button">
       <Button2

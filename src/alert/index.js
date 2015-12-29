@@ -1,8 +1,6 @@
 var React = require('react');
 var AlertMixin = require('./alert_mixin.js');
 
-var DetailedAlert = {};
-
 var Alert = React.createClass({
   mixins:          [AlertMixin],
   displayName:     'Alert',
@@ -43,7 +41,8 @@ var Alert = React.createClass({
   },
 
   render: function() {
-    return <div className={'alert-msg ' + this.props.type + ' ' + this._hasIconClass() + ' ' + this._showAlert()} ref='alert'>
+    return <div className={`alert-msg ${this.props.type} ${this._hasIconClass()} ${this._showAlert()}`}
+      ref="alert">
       {this._closeable()}
       {this._getTitleRender()}
       <div className='alert-body' ref='body'>

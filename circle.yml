@@ -12,6 +12,7 @@ dependencies:
     - npm install --no-spin
 test:
   override:
+    - npm run lint:check
     - npm run test-circleci
 deployment:
   experimental:

@@ -15,7 +15,8 @@
     "postinstall": "npm run babel",
     "fonts": "gulp influicons",
     "create": "gulp create-component",
-    "lint": "eslint .; exit 0",
+    "lint": "eslint ./src; exit 0",
+    "lint:check": "eslint ./src",
     "githooks": "cd .git/hooks && ln -s ../../.githooks/commit-msg ./commit-msg && cd -",
     "newcomp": "babel-node .newcomponent.js"
   },

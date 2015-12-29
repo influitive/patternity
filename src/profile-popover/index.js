@@ -18,7 +18,7 @@ class ProfilePopover extends Component {
   }
 
   render() {
-    const { children, onOpen, trigger, user, defaultImage, underAvatar, loading } = this.props;
+    const { children, onOpen, user, defaultImage, underAvatar, loading } = this.props;
 
     return <div className={`profile-popover-wrapper${loading ? ' loader' : ''}`}>
       <Popover

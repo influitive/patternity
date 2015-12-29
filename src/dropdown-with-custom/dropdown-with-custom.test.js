@@ -9,7 +9,7 @@ global.document = {};
 
 test('<DropdownWithCustom />', t => {
 
-  let { instance, result } = shallow(<DropdownWithCustom value="chocolate" onChange={()=>{}}>
+  let { result } = shallow(<DropdownWithCustom value="chocolate" onChange={()=>{}}>
     <option value="chocolate">Chocolate</option>
     <option value="vanilla">Vanilla</option>
   </DropdownWithCustom>);
@@ -18,12 +18,16 @@ test('<DropdownWithCustom />', t => {
   t.equal(result.props.children.length, 3, 'should have three child elements');
 
   t.deepEqual(result.props.children.map(e => e.type), ['option', 'option', 'option'], 'should be option elements');
-  t.equal(result.props.children[2].props.children, 'Enter a custom value...', 'last child should be the custom selector');
+  t.equal(
+    result.props.children[2].props.children,
+    'Enter a custom value...',
+    'last child should be the custom selector'
+  );
 
   // Replacing the field
 
   t.test('selecting the "custom" option', (st) => {
-    let { instance, result } = shallow(<DropdownWithCustom value="__custom__"></DropdownWithCustom>);
+    let { result } = shallow(<DropdownWithCustom value="__custom__"></DropdownWithCustom>);
     st.equal(result.type.displayName, 'TextInput', 'should replace select with a Patternity TextInput');
     st.equal(result.props.type, 'text', 'should be a text field');
     st.equal(result.props.placeholder, 'Enter a custom value', 'should have placeholder text');
@@ -33,7 +37,7 @@ test('<DropdownWithCustom />', t => {
   });
 
   t.test('when the value matches the value of any of the child options', (st) => {
-    let { instance, result } = shallow(<DropdownWithCustom value="candy cane">
+    let { result } = shallow(<DropdownWithCustom value="candy cane">
       <option value="candy cane">Candy Cane</option>
     </DropdownWithCustom>);
     st.equal(result.type.displayName, 'SelectDropdown', 'should be a select element');
@@ -43,7 +47,7 @@ test('<DropdownWithCustom />', t => {
   });
 
   t.test('when the value does not match the value of any of the child options', (st) => {
-    let { instance, result } = shallow(<DropdownWithCustom value="santa">
+    let { result } = shallow(<DropdownWithCustom value="santa">
       <option value="candy cane">Candy Cane</option>
       <option value="rudolph">Reindeer friends</option>
       <option value="snowman">Frosty</option>
@@ -76,7 +80,7 @@ test('<DropdownWithCustom />', t => {
   });
 
   t.test('spreading the props', (st) => {
-    let { instance, result } = shallow(<DropdownWithCustom value="chocolate" placeholder="monkey" name="george">
+    let { result } = shallow(<DropdownWithCustom value="chocolate" placeholder="monkey" name="george">
       <option value="chocolate">Chocolate</option>
       <option value="vanilla">Vanilla</option>
     </DropdownWithCustom>);

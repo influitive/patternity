@@ -1,4 +1,4 @@
-import { Component, PropTypes} from 'react';
+import { Component } from 'react';
 
 export default class Tag extends Component {
 
@@ -6,7 +6,7 @@ export default class Tag extends Component {
     return 'pt-tag';
   }
 
-  render(){
+  render() {
     return <span className={this.getClassNames()}>{this.props.children}</span>
   }
 }

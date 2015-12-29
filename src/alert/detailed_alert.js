@@ -7,11 +7,11 @@ var DetailedAlert = React.createClass({
   mixins: [AlertMixin],
   getDefaultProps: function() {
     return {
-      type: "",
+      type: '',
       showIcon: false,
       closeable : false,
       showAlert : true,
-      onClose : function(){},
+      onClose : function() {},
       hideIn  : 0
     };
   },
@@ -23,9 +23,9 @@ var DetailedAlert = React.createClass({
     onClose: React.PropTypes.func,
     hideIn: React.PropTypes.number
   },
-  render : function(){
+  render : function() {
     return (
-      <div className={"alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert()} ref="alert">
+      <div className={`alert-msg ${this.props.type} ${this._hasIconClass()} ${this._showAlert()}`} ref="alert">
         {this._closeable()}
         <h4 className="alert-title" ref="title">
           {this._icon()}
@@ -40,17 +40,17 @@ var DetailedAlert = React.createClass({
 });
 
 DetailedAlert.Detail = React.createClass({
-    getDefaultProps: function() {
+  getDefaultProps: function() {
     return {
-      title: "",
-      action: "",
+      title: '',
+      action: ''
     };
   },
   propTypes : {
     title: React.PropTypes.string,
     action: React.PropTypes.node
   },
-  render : function(){
+  render : function() {
     return (
       <div className="pt-alert-detailed">
         <h4>{this.props.title}</h4>

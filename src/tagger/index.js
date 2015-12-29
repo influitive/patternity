@@ -20,11 +20,11 @@ export default class Tagger extends Component {
   }
 
   state = {
-    currentTag: '',
+    currentTag: ''
   }
 
   render() {
-    const { tags, placeholder, onUnTagged, children } = this.props;
+    const { placeholder } = this.props;
     const { currentTag } = this.state;
 
     return <div className="pt-tagger">

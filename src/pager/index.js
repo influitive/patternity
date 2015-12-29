@@ -42,11 +42,13 @@ export default class Pager extends Component {
     const totalPageCount = this._getTotalPageCount();
     return (
       <div className='pt-pager' {...this.props}>
-        <span className={classnames('pt-previous-page', { disabled: currentPage == 1})} onClick={this._handleClick.bind(null, currentPage-1)}>
+        <span className={classnames('pt-previous-page', { disabled: currentPage == 1})}
+          onClick={this._handleClick.bind(null, currentPage-1)}>
           <Icon icon='chevron-left'/>
         </span>
         {this._getPageNumbers()}
-        <span className={classnames('pt-next-page', { disabled: currentPage == totalPageCount})}  onClick={this._handleClick.bind(null, currentPage+1)}>
+        <span className={classnames('pt-next-page', { disabled: currentPage == totalPageCount})}
+          onClick={this._handleClick.bind(null, currentPage+1)}>
           <Icon icon='chevron-right'/>
         </span>
       </div>
@@ -127,7 +129,7 @@ export default class Pager extends Component {
   }
 
   _handleClick = (pageNum) => {
-    const { currentPage, onPageChangeCallback } = this.props;
+    const { currentPage } = this.props;
     const shouldChange = pageNum > 0 &&
       pageNum <= this._getTotalPageCount() &&
       pageNum !== currentPage;
