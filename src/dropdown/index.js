@@ -1,4 +1,4 @@
-import React, { Component, PropTypes, Addons } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class Dropdown extends Component {
 
@@ -8,8 +8,8 @@ export default class Dropdown extends Component {
     type:      PropTypes.string,
     children:  PropTypes.oneOf([PropTypes.array, PropTypes.string]),
     onChange:  PropTypes.func.isRequired,
-    open:      PropTypes.bool,
-  };
+    open:      PropTypes.bool
+  }
 
   static defaultProps = {
     children:  '',
@@ -17,31 +17,28 @@ export default class Dropdown extends Component {
     classList: '',
     ref:       'dropdown',
     open:      false
-  };
+  }
 
   state = {
-    maxHeight: 0,
-  };
+    maxHeight: 0
+  }
 
   componentDidMount() {
     setInterval(this._applyRealMaxHeight(), 20);
-  };
+  }
 
   render() {
-    const { children, classList, open, ref } = this.props;
-    const { maxHeight } = this.state;
+    const { children, classList, ref } = this.props;
 
     return (
-      <ul
-        className={this._getClasses(classList)}
-        ref={ref}>
+      <ul className={this._getClasses(classList)} ref={ref}>
         {this._renderChildren(children)}
       </ul>
     );
-  };
+  }
 
   _applyRealMaxHeight = () => {
-    const detailsHeight = this.refs[this.props.ref].getDOMNode().offsetHeight;
+    const detailsHeight = this.refs[this.props.ref].offsetHeight;
     if (detailsHeight !== this.state.maxHeight) this.setState({maxHeight: detailsHeight});
   };
 

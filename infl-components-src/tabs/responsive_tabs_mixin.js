@@ -1,4 +1,4 @@
-const React = require('react');
+const ReactDOM = require('react-dom');
 const $ = require('jquery');
 
 const ResponsiveTabsMixin = {
@@ -16,7 +16,7 @@ const ResponsiveTabsMixin = {
   },
 
   _adjustTabsForScreenSize: function() {
-    const tabs = React.findDOMNode(this.refs.tabs);
+    const tabs = ReactDOM.findDOMNode(this.refs.tabs);
     const visibleTabs = this._visibleTabs(tabs.children);
     if (!tabs.firstChild) return;
 
@@ -96,7 +96,7 @@ const ResponsiveTabsMixin = {
   },
 
   _addLastTabStyling: function() {
-    const tabMenu = React.findDOMNode(this.refs.tabs);
+    const tabMenu = ReactDOM.findDOMNode(this.refs.tabs);
     const tabs = tabMenu.querySelectorAll('.pt-tab');
 
     for (let i=0; i < tabs.length; i++) {
