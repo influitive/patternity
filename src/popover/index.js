@@ -14,14 +14,14 @@ class Popover extends Component {
 
     style: PropTypes.shape({
       background:  PropTypes.string.isRequired,
-      borderColor: function(props, propName) {
+      borderColor: function(props) {
         let borderColor = props.borderColor || '';
         if (borderColor.length > 0 && /rgba/.test(props.background)) {
           return new Error('Cannot use border with transparent background');
         }
       }
     }),
-    className:          PropTypes.string
+    className: PropTypes.string
   }
 
   static defaultProps = {
@@ -44,30 +44,29 @@ class Popover extends Component {
   }
 
   render() {
-    let attachment, targetAttachment, offset;
-    switch(this.props.position){
-      case 'top':
-        attachment = 'bottom middle';
-        targetAttachment = 'top middle';
-        break;
-      case 'bottom':
-        attachment = 'top middle';
-        targetAttachment = 'bottom middle';
-        break;
-      case 'left':
-        attachment = 'middle right';
-        targetAttachment = 'middle left';
-        break;
-      case 'right':
-        attachment = 'middle left';
-        targetAttachment = 'middle right';
-        break;
+    let attachment, targetAttachment;
+    switch (this.props.position) {
+    case 'top':
+      attachment = 'bottom middle';
+      targetAttachment = 'top middle';
+      break;
+    case 'bottom':
+      attachment = 'top middle';
+      targetAttachment = 'bottom middle';
+      break;
+    case 'left':
+      attachment = 'middle right';
+      targetAttachment = 'middle left';
+      break;
+    case 'right':
+      attachment = 'middle left';
+      targetAttachment = 'middle right';
+      break;
     }
     return (
       <span>
         {this._getElement()}
-        {
-          this.props.isOpen &&
+        {this.props.isOpen &&
           <TetherElement
             target={this.refs.element}
             options={{
@@ -93,7 +92,7 @@ class Popover extends Component {
     );
   }
 
-  _getElement(){
+  _getElement() {
     return React.cloneElement(this.props.element, { ref: 'element' });
   }
 

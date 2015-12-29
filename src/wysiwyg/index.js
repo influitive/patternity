@@ -11,7 +11,7 @@ export default class Wysiwyg extends Component {
     defaultValue:      PropTypes.string,
     readOnly:          PropTypes.bool,
     modules:           PropTypes.object,
-    toolbar:           PropTypes.oneOfType([ PropTypes.array, PropTypes.oneOf([false]), ]),
+    toolbar:           PropTypes.oneOfType([ PropTypes.array, PropTypes.oneOf([false]) ]),
     formats:           PropTypes.array,
     styles:            PropTypes.oneOfType([ PropTypes.object, PropTypes.oneOf([false]) ]),
     theme:             PropTypes.string,
@@ -32,8 +32,8 @@ export default class Wysiwyg extends Component {
       '.ql-editor': {
         'min-height': '200px',
         'height':     '100%'
-      },
-    },
+      }
+    }
   };
 
   colours = [
@@ -52,13 +52,13 @@ export default class Wysiwyg extends Component {
   ];
 
   TOOLBAR_ITEMS = [
-    { label: 'Formats', type:  'group', items: [
-      { label:'Font', type:'font', items: [
-        { label:'Sans Serif', value:'sans-serif' },
-        { label:'Serif', value:'serif' },
-        { label:'Monospace', value:'monospace' }
+    { label: 'Formats', type: 'group', items: [
+      { label: 'Font', type: 'font', items: [
+        { label: 'Sans Serif', value: 'sans-serif' },
+        { label: 'Serif', value: 'serif' },
+        { label: 'Monospace', value: 'monospace' }
       ]},
-      { type:'separator' },
+      { type: 'separator' },
       { label: 'Size', type:  'size', items: [
         { label: 'Normal', value: '13px' },
         { label: 'Small', value: '10px' },
@@ -89,12 +89,11 @@ export default class Wysiwyg extends Component {
       { type: 'bullet', label: 'Bullet' },
       { type: 'separator' },
       { type: 'list', label: 'List' }
-    ]},
+    ]}
   ];
 
 
   render() {
-    const { value } = this.props;
     const onChange = this.props.onChange
       ? flowRight(this.props.onChange, this._replaceItalics)
       : () => {};
@@ -107,7 +106,7 @@ export default class Wysiwyg extends Component {
         <div key="editor" ref="editor" className="quill-contents"dangerouslySetInnerHTML={{__html: this.props.value}} />
       </ReactQuill>
     );
-  };
+  }
 
   //TODO (Rohan): Remove this hack when react-quill supports addFormat
   _replaceItalics = str => str.split('i>').join('em>');

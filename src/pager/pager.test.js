@@ -6,7 +6,7 @@ import Pager from './index.js';
 
 test('Default modal container renders properly', t => {
 
-  const { instance, result } = shallow(<Pager />);
+  const { result } = shallow(<Pager />);
 
   t.equal(result.type, 'div', 'should be a div');
 

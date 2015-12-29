@@ -6,7 +6,7 @@ import Wysiwyg from './index.js';
 
 test.skip('Default modal container renders properly', t => {
 
-  const { instance, result } = shallow(<Wysiwyg />);
+  const { result } = shallow(<Wysiwyg />);
 
   t.equal(result.type, 'element', 'should be an element');
 

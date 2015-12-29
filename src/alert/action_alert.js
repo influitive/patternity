@@ -5,14 +5,14 @@ var ActionAlert = React.createClass({
   mixins: [AlertMixin],
   getDefaultProps: function() {
     return {
-      type: "info",
+      type: 'info',
       showIcon: false,
       showAlert : true,
-      onClose : function(){},
+      onClose : function() {},
       hideIn  : 0,
       action : {
-        onClick : function(){},
-        title : ""
+        onClick : function() {},
+        title : ''
       }
     };
   },
@@ -24,12 +24,12 @@ var ActionAlert = React.createClass({
     hideIn: React.PropTypes.number,
     action: React.PropTypes.object
   },
-  componentWillMount : function(){
+  componentWillMount : function() {
     delete AlertMixin._closeable;
   },
-  render : function(){
+  render : function() {
     return (
-      <div className={"alert-msg " + this.props.type + " " + this._hasIconClass() + " " + this._showAlert()} ref="alert">
+      <div className={`alert-msg ${this.props.type} ${this._hasIconClass()} ${this._showAlert()}`} ref="alert">
         <h4 className="alert-title" ref="title">
           {this._icon()}
           <span>{this.props.title}</span>
@@ -55,15 +55,15 @@ var AlertAction = React.createClass({
   displayName : 'Alert.Action',
   getDefaultProps: function() {
     return {
-      title: "",
-      onClick : function(){}
+      title: '',
+      onClick : function() {}
     };
   },
   propTypes : {
     title: React.PropTypes.string,
     onClick : React.PropTypes.func
   },
-  render : function(){
+  render : function() {
     return (
       <div className="pt-alert-action">
         <button className="secondary" onClick={this.props.onClick}>

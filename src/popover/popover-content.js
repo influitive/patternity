@@ -26,7 +26,7 @@ class PopoverContent extends Component {
       top:         null,
       left:        null
     },
-    className: '',
+    className: ''
   }
 
   render() {

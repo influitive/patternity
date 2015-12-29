@@ -25,7 +25,7 @@ export default class ButtonDropdown extends Component {
     disabled:      PropTypes.bool,
 
     style: PropTypes.shape({
-      borderColor: function(props, propName) {
+      borderColor: function(props) {
         const { type } = props;
         if (type != 'secondary') {
           return new Error('Cannot use border with non-secondary type.');
@@ -35,11 +35,11 @@ export default class ButtonDropdown extends Component {
   }
 
   state = {
-    isDropdownOpen: false,
+    isDropdownOpen: false
   }
 
   render() {
-    const { style, disabled, type, title, children } = this.props;
+    const { disabled, type, title } = this.props;
 
     const buttonDropClasses = this.state.isDropdownOpen
       ? 'button-dropdown show'
@@ -59,7 +59,7 @@ export default class ButtonDropdown extends Component {
         { this._getDropdown() }
       </ButtonGroup>
     );
-  };
+  }
 
   _getDropdown = () => {
     if (this.props.disabled || !this.state.isDropdownOpen) return null;

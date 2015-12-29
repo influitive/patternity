@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import Row from './table-row';
 import Header from './table-header';
 
-export default class Table extends Component{
+export default class Table extends Component {
   static propTypes: {
     rowCount: PropTypes.number.isRequired,
     rowStyle: PropTypes.object,
@@ -22,7 +22,7 @@ export default class Table extends Component{
 
   _renderHeader = () => {
     return (
-      React.Children.map(this.props.children, function(column, index){
+      React.Children.map(this.props.children, function(column, index) {
         return React.cloneElement(column.props.header, {key: `table-header-cell-${index}`});
       })
     );
@@ -31,11 +31,11 @@ export default class Table extends Component{
   _renderRows = () => {
     let rows = [];
     let row = null;
-    for(var i=0; i<this.props.rowCount; i++){
+    for (var i=0; i<this.props.rowCount; i++) {
 
-      row = React.Children.map(this.props.children, function(col, index){
+      row = React.Children.map(this.props.children, function(col, index) {
         let cell = col.props.cell(i);
-        return React.cloneElement(cell, {key: "cell-"+index});
+        return React.cloneElement(cell, {key: 'cell-'+index});
       });
       rows.push(this._renderRow(row, i));
     }
@@ -43,6 +43,6 @@ export default class Table extends Component{
   }
 
   _renderRow = (row, index) => {
-    return (<Row key={"row-" + index} style={this.props.rowStyle}>{row}</Row>);
+    return (<Row key={'row-' + index} style={this.props.rowStyle}>{row}</Row>);
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component, PropTypes, Addons } from 'react';
+import React, { Component, PropTypes } from 'react';
 import flatten from 'lodash/array/flatten';
 
 import TextInput from '../../lib/text_input';
