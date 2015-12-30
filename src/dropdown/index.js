@@ -6,8 +6,8 @@ export default class Dropdown extends Component {
     ref:       PropTypes.string,
     classList: PropTypes.string,
     type:      PropTypes.string,
-    children:  PropTypes.oneOf([PropTypes.array, PropTypes.string]),
-    onChange:  PropTypes.func.isRequired,
+    children:  PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    onChange:  PropTypes.func,
     open:      PropTypes.bool
   }
 
@@ -16,7 +16,8 @@ export default class Dropdown extends Component {
     type:      '',
     classList: '',
     ref:       'dropdown',
-    open:      false
+    open:      false,
+    onChange:  () => {}
   }
 
   state = {
