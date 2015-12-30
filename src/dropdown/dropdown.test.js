@@ -2,7 +2,7 @@ import test from 'tape-catch';
 import React from 'react';
 
 import shallow from '../../testUtils/shallow';
-import Dropdown from './index.js';
+import { Dropdown } from './index.js';
 
 test('<Dropdown />', t => {
 
