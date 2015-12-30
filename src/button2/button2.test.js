@@ -2,7 +2,7 @@ import test from 'tape-catch';
 import React from 'react';
 
 import shallow from '../../testUtils/shallow';
-import Button from './index.js';
+import { Button } from './index.js';
 
 test('button2', (t) => {
   const click = () => true;

@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-class Button extends Component {
+import { ThemeComponent } from '../utils/themeable';
+import mapping from './theme';
+
+export class Button extends Component {
   static propTypes = {
     icon:      PropTypes.string,
     type:      PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
@@ -11,7 +14,6 @@ class Button extends Component {
     isSubmit:  PropTypes.bool,
     style:     PropTypes.object,
     classList: PropTypes.string,
-    theme:     PropTypes.object,
     sheet:     PropTypes.object
   }
 
@@ -55,4 +57,4 @@ class Button extends Component {
   }
 }
 
-export default Button;
+export default ThemeComponent(Button, mapping);

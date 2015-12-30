@@ -1,8 +1,6 @@
 import { darken, lighten } from '../utils/colors.js';
-import { ThemeComponent } from '../utils/themeable';
-import Button from './index.js';
 
-function mapping(theme) {
+export default function(theme) {
   const { themeColorPrimary } = theme;
 
   return {
@@ -17,6 +15,3 @@ function mapping(theme) {
     }
   }
 }
-
-
-export default ThemeComponent(Button, mapping);

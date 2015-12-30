@@ -25,10 +25,11 @@ export const createTheme = theme => ComposedComponent =>
 export const ThemeComponent = (ComposedComponent, mappingFunc) =>
   class ThemeApply extends Component {
     static contextTypes = {
-      patternityTheme: React.PropTypes.object.isRequired
+      patternityTheme: React.PropTypes.object
     }
 
     render() {
+      if (!this.context || !this.context.patternityTheme) return <ComposedComponent {...this.props} />;
       return React.createElement(useSheet(ComposedComponent, mappingFunc(this.context.patternityTheme)), this.props);
     }
   };

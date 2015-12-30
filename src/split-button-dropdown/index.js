@@ -61,7 +61,8 @@ class SplitButtonDropdown extends Component {
     return (
       <Dropdown
         type={this.props.type}
-        onChange={this.props.onChange}>
+        onChange={this.props.onChange}
+        open={true}>
         {this._populateOptions(this.props.children)}
       </Dropdown>
     );

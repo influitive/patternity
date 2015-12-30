@@ -24,10 +24,8 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       background-color: darken($warning-color, 5%);
 
       .option {
-        a {
-          color: #fff;
-          border-bottom: 1px solid darken($warning-color, 10%);
-        }
+        color: #fff;
+        border-bottom: 1px solid darken($warning-color, 10%);
 
         &:hover {
           background-color: darken($warning-color, 2%);
@@ -39,10 +37,8 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       background-color: $theme-color-primary;
 
       .option {
-        a {
-          color: #fff;
-          border-bottom: 1px solid darken($theme-color-primary, 5%);
-        }
+        color: #fff;
+        border-bottom: 1px solid darken($theme-color-primary, 5%);
 
         &:hover {
           background-color: lighten($theme-color-primary, 5%);
@@ -54,10 +50,8 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       background-color: $error-color;
 
       .option {
-        a {
-          color: #fff;
-          border-bottom: 1px solid darken($error-color, 5%);
-        }
+        color: #fff;
+        border-bottom: 1px solid darken($error-color, 5%);
 
         &:hover {
           background-color: lighten($error-color, 10%);
@@ -69,10 +63,8 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       background-color: $success-color;
 
       .option {
-        a {
-          color: #fff;
-          border-bottom: 1px solid darken($success-color, 5%);
-        }
+        color: #fff;
+        border-bottom: 1px solid darken($success-color, 5%);
 
         &:hover {
           background-color: lighten($success-color, 10%);
@@ -85,17 +77,12 @@ $text-button-color-hover : lighten($text-button-color, 10%);
       border: 1px solid $text-button-color;
 
       .option {
-        a {
-          color: $text-button-color-hover !important;
-          border-bottom: 1px solid darken(white, 10%);
-        }
+        color: $text-button-color-hover !important;
+        border-bottom: 1px solid darken(white, 10%);
 
         &:hover {
           background-color: #fff;
-
-          a {
-            color: darken($text-button-color, 20%) !important;
-          }
+          color: darken($text-button-color, 20%) !important;
         }
       }
     }
