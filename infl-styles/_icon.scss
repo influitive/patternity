@@ -885,22 +885,32 @@
 }
 
 
-.ic.ic-apple:before {
+.ic.ic-android:before {
   content: "\E059"
+}
+
+@mixin ic-android() {
+  font-family: 'influicons';
+  content: "\E059"
+}
+
+
+.ic.ic-apple:before {
+  content: "\E05A"
 }
 
 @mixin ic-apple() {
   font-family: 'influicons';
-  content: "\E059"
+  content: "\E05A"
 }
 
 
 .ic.ic-coins-old:before {
-  content: "\E05A"
+  content: "\E05B"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E05A"
+  content: "\E05B"
 }
 

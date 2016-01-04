@@ -110,5 +110,6 @@
 .ic.ic-quiz-incorrect:before { content: "\E056" }
 .ic.ic-move:before { content: "\E057" }
 .ic.ic-share-google:before { content: "\E058" }
-.ic.ic-apple:before { content: "\E059" }
-.ic.ic-coins-old:before { content: "\E05A" }
+.ic.ic-android:before { content: "\E059" }
+.ic.ic-apple:before { content: "\E05A" }
+.ic.ic-coins-old:before { content: "\E05B" }

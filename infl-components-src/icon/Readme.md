@@ -480,6 +480,11 @@ let onMouseLeave = (e) => {
     <div style={titleStyle}>share-google</div>
   </div>
     
+  <div style={iconGroupStyle} className='IconDescription' id="android">
+    <Icon icon="android" />
+    <div style={titleStyle}>android</div>
+  </div>
+    
   <div style={iconGroupStyle} className='IconDescription' id="apple">
     <Icon icon="apple" />
     <div style={titleStyle}>apple</div>
