@@ -12,7 +12,7 @@ export default class ButtonGroup extends Component {
   static propTypes = {
     layout:    PropTypes.oneOf(['inline', 'stacked']),
     grouped:   PropTypes.bool,
-    classList: PropTypes.string,
+    classList: PropTypes.string
   };
 
   render() {
@@ -21,7 +21,7 @@ export default class ButtonGroup extends Component {
         {this.props.children}
       </div>
     );
-  };
+  }
 
   _returnClasses = () => {
     const { layout, grouped, classList } = this.props;
@@ -30,4 +30,4 @@ export default class ButtonGroup extends Component {
     return classNames('button-group ', layoutGroup, classList);
   };
 
-};
+}

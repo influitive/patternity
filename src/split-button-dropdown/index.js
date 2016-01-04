@@ -23,15 +23,7 @@ class SplitButtonDropdown extends Component {
     onButtonClick:       PropTypes.func.isRequired,
     disabled:            PropTypes.bool,
     options:             PropTypes.array,
-    onDropdownItemClick: PropTypes.func,
-    style:               PropTypes.shape({
-      borderColor: function(props) {
-        const { type } = props;
-        if (type != 'secondary') {
-          return new Error('Cannot use border with non-secondary type.');
-        }
-      }
-    })
+    onDropdownItemClick: PropTypes.func
   }
 
   state = {
@@ -95,7 +87,7 @@ class SplitButtonDropdown extends Component {
 
   _populateOptions = (options) => {
     return [...options].map( (opt, i) => {
-      return <li ref={opt} key={i} className="option" onClick={this.props.onDropdownItemClick}>{opt}</li>
+      return React.cloneElement(opt, {ref: opt, key: i, className: 'option', onClick: this.props.onDropdownItemClick});
     });
   };
 }

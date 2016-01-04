@@ -6,7 +6,7 @@ import Button from './index.js';
 
 test('button2', (t) => {
   const click = () => true;
-  let { instance, result } = shallow(<Button disabled={true} onClick={click}>Hello</Button>);
+  let { result } = shallow(<Button disabled={true} onClick={click}>Hello</Button>);
 
   t.equal(result.type, 'button', 'should be a button');
 
@@ -23,7 +23,7 @@ test('button2', (t) => {
 
   t.equal(result.props.children, 'Hello', 'should render text child');
 
-  ({ instance, result } = shallow(<Button onClick={() => ''}><span>Hello</span><div>Goodbye</div></Button>));
+  ({ result } = shallow(<Button onClick={() => ''}><span>Hello</span><div>Goodbye</div></Button>));
   t.equal(result.props.children.length, 2, 'should render two children');
 
   const expectedChildren = [

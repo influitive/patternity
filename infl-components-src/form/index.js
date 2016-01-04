@@ -1,5 +1,7 @@
 const React = require('react');
 
+const ReactDOM = require('react-dom');
+
 class Form extends React.Component {
   componentDidMount() {
     this._determineNumberOfColumns();
@@ -22,7 +24,7 @@ class Form extends React.Component {
 
   _determineNumberOfColumns() {
     let columns = [];
-    const children = React.findDOMNode(this.refs.form).children;
+    const children = ReactDOM.findDOMNode(this.refs.form).children;
 
     //Partition the column children by FormRow and FormAction. Apply 'column-num ${length}' to each partition
     for (let i = 0; i < children.length; i++) {

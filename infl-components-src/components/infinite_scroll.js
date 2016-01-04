@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const $ = require('jquery');
 
 const Loading = require('../loading');
@@ -71,7 +72,7 @@ class InfiniteScroll extends React.Component {
   }
 
   _loadMore() {
-    const infiniteScroll = React.findDOMNode(this.refs.infiniteScroll);
+    const infiniteScroll = ReactDOM.findDOMNode(this.refs.infiniteScroll);
 
     const offsetTop = infiniteScroll.offsetTop;
     const height = infiniteScroll.clientHeight;

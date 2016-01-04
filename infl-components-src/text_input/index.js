@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const classNames = require('classnames');
 const InputIcon = require('../text/input_icon');
 const InputMessage = require('../text/input_message');
@@ -83,7 +84,7 @@ class TextInput extends React.Component {
 
   _setInputFocus(autofocus) {
     if (autofocus) {
-      React.findDOMNode(this.refs.input).focus();
+      ReactDOM.findDOMNode(this.refs.input).focus();
     }
   }
 

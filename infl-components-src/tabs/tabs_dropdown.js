@@ -1,5 +1,7 @@
 const React = require('react');
 
+const ReactDOM = require('react-dom');
+
 const BuildTabsMixin = require('./build_tabs_mixin');
 
 const TabsDropdown = React.createClass({
@@ -45,10 +47,10 @@ const TabsDropdown = React.createClass({
   },
 
   _toggleTabDropdown: function(event) {
-    if (React.findDOMNode(this.refs.selectTabTitle).classList.contains('show-dropdown')) {
-      React.findDOMNode(this.refs.selectTabTitle).classList.remove('show-dropdown');
+    if (ReactDOM.findDOMNode(this.refs.selectTabTitle).classList.contains('show-dropdown')) {
+      ReactDOM.findDOMNode(this.refs.selectTabTitle).classList.remove('show-dropdown');
     } else {
-      React.findDOMNode(this.refs.selectTabTitle).classList.add('show-dropdown');
+      ReactDOM.findDOMNode(this.refs.selectTabTitle).classList.add('show-dropdown');
     }
   }
 });

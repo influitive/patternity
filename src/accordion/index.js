@@ -24,7 +24,7 @@ class Accordion extends Component {
     sections:            PropTypes.array.isRequired,
     uniqueIdentifier:    PropTypes.string,
     initialSectionIndex: validateIndex,
-    openSectionIndex:    validateIndex,
+    openSectionIndex:    validateIndex
   }
 
   static defaultProps = {

@@ -1,4 +1,5 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 const $ = require('jquery');
 
 const ClearAll = require('./clear_all');
@@ -151,14 +152,14 @@ const MultiSelect = React.createClass({
   },
 
   _adjustPopoverSize: function() {
-    const popover = React.findDOMNode(this.refs.popover);
-    const multiSelectContainer = React.findDOMNode(this.refs.multiSelectContainer);
+    const popover = ReactDOM.findDOMNode(this.refs.popover);
+    const multiSelectContainer = ReactDOM.findDOMNode(this.refs.multiSelectContainer);
     popover.style.width = multiSelectContainer.offsetWidth + 'px';
   },
 
   _adjustPopoverPosition: function() {
-    const popover = React.findDOMNode(this.refs.popover);
-    const multiSelectContainer = React.findDOMNode(this.refs.multiSelectContainer);
+    const popover = ReactDOM.findDOMNode(this.refs.popover);
+    const multiSelectContainer = ReactDOM.findDOMNode(this.refs.multiSelectContainer);
     popover.style.top = (multiSelectContainer.clientHeight - 1) + 'px';
   },
 
