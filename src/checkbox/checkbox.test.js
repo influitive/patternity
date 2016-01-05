@@ -2,11 +2,11 @@ import test from 'tape-catch';
 import React from 'react';
 
 import shallow from '../../testUtils/shallow';
-import checkbox from './index.js';
+import Checkbox from './index.js';
 
-test('Default modal container renders properly', t => {
+test('Checkbox: Default modal container renders properly', (t) => {
 
-  const { instance, result } = shallow(<checkbox />);
+  let { result } = shallow(<Checkbox />);
 
   t.equal(result.type, 'span', 'should be a span');
 

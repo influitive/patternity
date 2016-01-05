@@ -14,18 +14,22 @@ export default class Checkbox extends Component {
     label:         PropTypes.string,
     name:          PropTypes.string,
     value:         PropTypes.string,
-    indeterminate: PropTypes.bool,
+    indeterminate: PropTypes.bool
   };
 
   static defaultProps = {
     id:            '',
     enabled:       true,
     isChecked:     false,
+    required:      false,
+    error:         false,
     onChange:      () => {},
     checkboxName:  '',
     checkboxLabel: '',
+    label:         '',
+    name:          '',
     value:         '',
-    indeterminate: false,
+    indeterminate: false
   };
 
   state = {
@@ -34,10 +38,10 @@ export default class Checkbox extends Component {
 
   componentDidMount() {
     React.findDOMNode(this).indeterminate = this.props.indeterminate && !this._isChecked();
-  };
+  }
 
   render() {
-    const { id, value, enabled, indeterminate} = this.props;
+    const { id, value, enabled } = this.props;
     return(
       <span
         id={id}
@@ -51,9 +55,9 @@ export default class Checkbox extends Component {
           ref='stylizedCheckbox'></span>
 
         <label
-          htmlFor={id}
-          className="pt-checkbox-label"
-          ref="label">
+            htmlFor={id}
+            className="pt-checkbox-label"
+            ref="label">
           { this._label() }
           { this._icon() }
         </label>
@@ -72,7 +76,7 @@ export default class Checkbox extends Component {
       </span>
     );
 
-  };
+  }
 
   _isChecked = () => {
     return this.props.isChecked;
