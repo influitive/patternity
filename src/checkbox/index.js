@@ -12,7 +12,7 @@ export default class Checkbox extends Component {
     label:         PropTypes.string,
     name:          PropTypes.string,
     value:         PropTypes.string,
-    indeterminate: PropTypes.bool,
+    indeterminate: PropTypes.bool
   };
 
   static defaultProps = {
@@ -22,7 +22,7 @@ export default class Checkbox extends Component {
     onChange:      () => {},
     label:         null,
     value:         '',
-    indeterminate: false,
+    indeterminate: false
   };
 
   state = {
@@ -31,10 +31,10 @@ export default class Checkbox extends Component {
 
   componentDidMount() {
     React.findDOMNode(this).indeterminate = this.props.indeterminate && !this._isChecked();
-  };
+  }
 
   render() {
-    const { id, value, enabled, indeterminate, label, name } = this.props;
+    const { id, value, enabled, label, name } = this.props;
 
     return(
       <span
@@ -70,7 +70,7 @@ export default class Checkbox extends Component {
       </span>
     );
 
-  };
+  }
 
   _isChecked = () => {
     return this.props.isChecked;
