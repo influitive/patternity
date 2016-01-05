@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+
 import classNames from 'classnames';
 
 export default class Checkbox extends Component {
@@ -37,7 +39,7 @@ export default class Checkbox extends Component {
   };
 
   componentDidMount() {
-    React.findDOMNode(this).indeterminate = this.props.indeterminate && !this._isChecked();
+    ReactDOM.findDOMNode(this).indeterminate = this.props.indeterminate && !this._isChecked();
   }
 
   render() {
