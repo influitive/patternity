@@ -37,7 +37,8 @@ export default class Checkbox extends Component {
   };
 
   render() {
-    const { id, value, enabled, indeterminate} = this.props;
+    const { id, value, enabled, indeterminate, label, name } = this.props;
+
     return(
       <span
         id={id}
