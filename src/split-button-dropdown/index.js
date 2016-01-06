@@ -11,7 +11,6 @@ class SplitButtonDropdown extends Component {
     icon:                '',
     type:                'primary',
     disabled:            false,
-    style:               {},
     options:             [],
     onDropdownItemClick: () => {}
   }

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import TetherElement from 'react-tether'
 import PopoverContent from './popover-content';
-
+import PopoverArrow from './popover-arrow';
 //import style from './_popover.scss';
 
 class Popover extends Component {
@@ -64,9 +64,12 @@ class Popover extends Component {
       break;
     }
     return (
-      <span>
+      <span style={{position: 'relative', display: 'inline-block'}}>
         {this._getElement()}
-        {this.props.isOpen &&
+        { this.props.isOpen &&
+          this._getArrowElement()
+        }
+        { this.props.isOpen &&
           <TetherElement
             target={this.refs.element}
             options={{
@@ -75,7 +78,7 @@ class Popover extends Component {
               constraints: [
                 {
                   to: 'window',
-                  pin: true
+                  pin: ['left','right']
                 }
               ]
             }}
@@ -92,11 +95,20 @@ class Popover extends Component {
     );
   }
 
-  _getElement() {
+  _getElement = () => {
     return React.cloneElement(this.props.element, { ref: 'element' });
   }
 
-  _shouldHaveBorder() {
+  _getArrowElement = () => {
+    return (
+      <PopoverArrow
+        position={this.props.position}
+        shouldHaveBorder={this._shouldHaveBorder()}
+        style={this.props.style}/>
+    );
+  }
+
+  _shouldHaveBorder = () => {
     let borderColor = this.props.style.borderColor || '';
     return borderColor.length > 0 && /rgba/.test(this.props.style.background);
   }

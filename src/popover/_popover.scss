@@ -3,30 +3,11 @@
   z-index: 100000005;
 }
 
-.pt-popover { //replace namespacing with css modules
-
-  .pt-popover-content {
-    box-sizing: border-box;
-    color:        #000;
-    font-size:    13px;
-    //display:      block;
-    border-style: solid;
-    border-width: 1px;
-    border-color: transparent;
-    //position: relative;
-
-    & > * {
-      box-sizing: border-box;
-      max-width: 100%;
-    }
-  }
-
-  .pt-popover-arrow-container {
-    position:   absolute;
-    font-size: 0px;
-    line-height: normal;
-    width: auto;
-  }
+.pt-popover-arrow-container {
+  position:   absolute;
+  font-size: 0px;
+  line-height: normal;
+  width: auto;
 
   .pt-popover-arrow {
     position:      relative;
@@ -41,14 +22,8 @@
   }
 
   &.top {
-    .pt-popover-content {
-      margin-bottom: 10px;
-    }
-
-    .pt-popover-arrow-container {
-      bottom: 0px;
-      left: calc(50% - 10px);
-    }
+    top: -10px;
+    left: calc(50% - 10px);
 
     .pt-popover-arrow {
       border-top:    10px solid #ccc;
@@ -69,14 +44,8 @@
   }
 
   &.bottom {
-    .pt-popover-content {
-      margin-top: 10px;
-    }
-
-    .pt-popover-arrow-container {
-      left: calc(50% - 10px);
-      top: 0px;
-    }
+    left: calc(50% - 10px);
+    bottom: -10px;
 
     .pt-popover-arrow {
       border-bottom: 10px solid #ccc;
@@ -98,14 +67,8 @@
   }
 
   &.left {
-    .pt-popover-content {
-      margin-right: 10px;
-    }
-
-    .pt-popover-arrow-container {
-      right: 10px;
-      top: calc(50% - 10px);
-    }
+    left: -10px;
+    top: calc(50% - 10px);
 
     .pt-popover-arrow {
       border-left: 10px solid #ccc;
@@ -128,13 +91,8 @@
   }
 
   &.right {
-    .pt-popover-content {
-      margin-left: 10px;
-    }
-
-    .pt-popover-arrow-container {
-      top: calc(50% - 10px);
-    }
+    top: calc(50% - 10px);
+    right: 0px;
 
     .pt-popover-arrow {
       border-right: 10px solid #ccc;
@@ -153,6 +111,49 @@
           left: 0px;
         }
       }
+    }
+  }
+}
+
+.pt-popover { //replace namespacing with css modules
+
+  .pt-popover-content {
+    box-sizing: border-box;
+    color:        #000;
+    font-size:    13px;
+    //display:      block;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    //position: relative;
+
+    & > * {
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+  }
+
+  &.top {
+    .pt-popover-content {
+      margin-bottom: 10px;
+    }
+  }
+
+  &.bottom {
+    .pt-popover-content {
+      margin-top: 10px;
+    }
+  }
+
+  &.left {
+    .pt-popover-content {
+      margin-right: 10px;
+    }
+  }
+
+  &.right {
+    .pt-popover-content {
+      margin-left: 10px;
     }
   }
 }

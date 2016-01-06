@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import PopoverArrow from './popover-arrow';
-
 class PopoverContent extends Component {
   static propTypes = {
     position: PropTypes.oneOf([
@@ -32,11 +30,6 @@ class PopoverContent extends Component {
   render() {
     return (
       <div className={`pt-popover ${this.props.position}`} ref="popover" style={this._popoverPositioningStyle()}>
-        <PopoverArrow
-            position={this.props.position}
-            shouldHaveBorder={this.props.shouldHaveBorder}
-            style={this.props.style}
-            ref="arrow"/>
         <div className="pt-popover-content" ref="content" style={this._contentStyle()}>
           {this.props.children}
         </div>
