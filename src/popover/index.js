@@ -21,7 +21,8 @@ class Popover extends Component {
         }
       }
     }),
-    className: PropTypes.string
+    className: PropTypes.string,
+    hasShadow: PropTypes.bool
   }
 
   static defaultProps = {
@@ -34,7 +35,8 @@ class Popover extends Component {
       borderColor: '#ccc',
       background:  'white'
     },
-    className:          ''
+    className:          '',
+    hasShadow:          false
   }
 
   componentDidUpdate(prevProps) {
@@ -86,7 +88,8 @@ class Popover extends Component {
             <PopoverContent
               position={this.props.position}
               shouldHaveBorder={this._shouldHaveBorder()}
-              style={this.props.style}>
+              style={this.props.style}
+              hasShadow={this.props.hasShadow} >
               {this.props.children}
             </PopoverContent>
           </TetherElement>
