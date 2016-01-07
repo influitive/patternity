@@ -59,7 +59,7 @@ export default class Pager extends Component {
     const { currentPage } = this.props;
     const totalPageCount = this._getTotalPageCount();
     const simulatedCurrentPage = this._getSimulatedCurrentPage(currentPage, totalPageCount);
-    const leftSideOfWindow = simulatedCurrentPage - Math.floor(MOVING_WINDOW_SIZE/2);
+    const leftSideOfWindow = Math.max(1, simulatedCurrentPage - Math.floor(MOVING_WINDOW_SIZE/2));
     let pagesWindow = _.range(leftSideOfWindow, Math.min(leftSideOfWindow+MOVING_WINDOW_SIZE, totalPageCount));
 
     const numbersLeftOfWindow = this._getNumbersLeftOfWindow(_.first(pagesWindow));
