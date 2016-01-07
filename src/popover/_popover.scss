@@ -1,6 +1,8 @@
+$popover-z-index: 100000005;
+
 .tether-element{
   // Make sure this is always above or equal to guider z-index.
-  z-index: 100000005;
+  z-index: $popover-z-index;
 }
 
 .pt-popover-arrow-container {
@@ -8,6 +10,7 @@
   font-size: 0px;
   line-height: normal;
   width: auto;
+  z-index: $popover-z-index + 1;
 
   .pt-popover-arrow {
     position:      relative;

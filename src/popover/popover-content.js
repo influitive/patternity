@@ -12,8 +12,11 @@ class PopoverContent extends Component {
 
     style: PropTypes.shape({
       background:  PropTypes.string.isRequired,
-      borderColor: PropTypes.string.isRequired
-    })
+      borderColor: PropTypes.string.isRequired,
+      top:         PropTypes.any,
+      left:        PropTypes.any
+    }),
+    hasShadow: PropTypes.bool
   }
 
   static defaultProps = {
@@ -24,7 +27,8 @@ class PopoverContent extends Component {
       top:         null,
       left:        null
     },
-    className: ''
+    className: '',
+    hasShadow: false
   }
 
   render() {
@@ -49,7 +53,8 @@ class PopoverContent extends Component {
 
     return {
       borderColor: borderColor,
-      background:  this.props.style.background
+      background:  this.props.style.background,
+      boxShadow: this.props.hasShadow ? '5px 5px 15px rgba(136, 136, 136, 0.44)' : null
     };
   }
 }
