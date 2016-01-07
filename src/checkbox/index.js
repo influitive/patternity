@@ -42,6 +42,12 @@ export default class Checkbox extends Component {
     ReactDOM.findDOMNode(this).indeterminate = this.props.indeterminate && !this._isChecked();
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      isChecked: newProps.isChecked
+    });
+  }
+
   render() {
     const { id, value, enabled } = this.props;
     return(
@@ -59,7 +65,8 @@ export default class Checkbox extends Component {
         <label
             htmlFor={id}
             className="pt-checkbox-label"
-            ref="label">
+            ref="label"
+            style={this._getStyle()}>
           { this._label() }
           { this._icon() }
         </label>
@@ -78,6 +85,15 @@ export default class Checkbox extends Component {
       </span>
     );
 
+  }
+
+  _getStyle() {
+    if (!this.props.label && !this.props.checkboxLabel && !this.props.required){
+      return {display: 'none'};
+    }
+    else {
+      return {};
+    }
   }
 
   _isChecked = () => {
