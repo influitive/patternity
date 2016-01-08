@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import classNames from 'classnames';
 
-export default class Checkbox extends Component {
+class Checkbox extends Component {
   static propTypes = {
     id:            PropTypes.string,
     enabled:       PropTypes.bool,
@@ -140,3 +140,27 @@ export default class Checkbox extends Component {
     return <span className='required-icon ic ic-asterisk'></span>
   };
 }
+
+class Group extends Component {
+  static defaultProps = {
+    id:     '',
+    layout: 'inline'
+  };
+
+  static propTypes = {
+    id:     PropTypes.string,
+    layout: PropTypes.string
+  };
+
+  render() {
+    return (
+      <span className={'pt-checkbox-group ' + this.props.layout} id={this.props.id} ref='group'>
+        {this.props.children}
+      </span>
+    );
+  }
+}
+
+Checkbox.Group = Group;
+
+export default Checkbox;

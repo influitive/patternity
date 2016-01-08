@@ -3,7 +3,7 @@ const React  = require('react/addons');
 const ReactTestUtils = React.addons.TestUtils;
 const simulate  = ReactTestUtils.Simulate;
 
-const Checkbox = require('checkbox');
+const Checkbox = require('../../lib/checkbox');
 
 const chai = require('chai');
 const sinon = require('sinon');
