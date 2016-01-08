@@ -22,7 +22,8 @@ class Popover extends Component {
       }
     }),
     className: PropTypes.string,
-    hasShadow: PropTypes.bool
+    hasShadow: PropTypes.bool,
+    onClickOut: PropTypes.func
   }
 
   static defaultProps = {
@@ -36,7 +37,8 @@ class Popover extends Component {
       background:  'white'
     },
     className:          '',
-    hasShadow:          false
+    hasShadow:          false,
+    onClickOut:         null
   }
 
   componentDidUpdate(prevProps) {
@@ -46,7 +48,63 @@ class Popover extends Component {
   }
 
   render() {
+    return (
+      <span style={{position: 'relative', display: 'inline-block'}}>
+        {this._getElement()}
+        {this._getPopoverElement()}
+      </span>
+    );
+  }
+
+  _getElement = () => {
+    return React.cloneElement(this.props.element, { ref: 'element' });
+  }
+
+  _getPopoverElement = () => {
+    if ( !this.props.isOpen )
+      return null;
+    return (
+      <span>
+        {this._getBackDropElement()}
+        {this._getArrowElement()}
+        {this._getTetherElement()}
+      </span>
+    );
+  }
+
+  _getArrowElement = () => {
+    return (
+      <PopoverArrow
+        position={this.props.position}
+        shouldHaveBorder={this._shouldHaveBorder()}
+        style={this.props.style}/>
+    );
+  }
+
+  _getBackDropElement = () => {
+    if ( !this.props.onClickOut )
+      return null;
+    return (
+      <div className='pt-popover-backdrop'
+        onClick={this._handleBackDropClick}>
+      </div>
+    );
+  }
+
+  _getTetherElement = () => {
+    return (
+      <TetherElement
+        target={this.refs.element}
+        options={this._getTetherOptions()}
+      >
+        {this._getPopoverContent()}
+      </TetherElement>
+    );
+  }
+
+  _getTetherOptions = () => {
     let attachment, targetAttachment;
+
     switch (this.props.position) {
     case 'top':
       attachment = 'bottom middle';
@@ -65,55 +123,39 @@ class Popover extends Component {
       targetAttachment = 'middle right';
       break;
     }
-    return (
-      <span style={{position: 'relative', display: 'inline-block'}}>
-        {this._getElement()}
-        { this.props.isOpen &&
-          this._getArrowElement()
+
+    return {
+      attachment: attachment,
+      targetAttachment: targetAttachment,
+      constraints: [
+        {
+          to: 'window',
+          pin: ['left','right']
         }
-        { this.props.isOpen &&
-          <TetherElement
-            target={this.refs.element}
-            options={{
-              attachment: `${attachment}`,
-              targetAttachment: `${targetAttachment}`,
-              constraints: [
-                {
-                  to: 'window',
-                  pin: ['left','right']
-                }
-              ]
-            }}
-          >
-            <PopoverContent
-              position={this.props.position}
-              shouldHaveBorder={this._shouldHaveBorder()}
-              style={this.props.style}
-              hasShadow={this.props.hasShadow} >
-              {this.props.children}
-            </PopoverContent>
-          </TetherElement>
-        }
-      </span>
-    );
+      ]
+    };
   }
 
-  _getElement = () => {
-    return React.cloneElement(this.props.element, { ref: 'element' });
-  }
-
-  _getArrowElement = () => {
+  _getPopoverContent = () => {
+    let {position, style, hasShadow, children} = this.props;
     return (
-      <PopoverArrow
-        position={this.props.position}
+      <PopoverContent
+        position={position}
         shouldHaveBorder={this._shouldHaveBorder()}
-        style={this.props.style}/>
+        style={style}
+        hasShadow={hasShadow}>
+        {children}
+      </PopoverContent>
     );
   }
 
   _shouldHaveBorder = () => {
     let borderColor = this.props.style.borderColor || '';
     return borderColor.length > 0 && /rgba/.test(this.props.style.background);
+  }
+
+  _handleBackDropClick = () => {
+    this.props.onClickOut();
   }
 }
 
