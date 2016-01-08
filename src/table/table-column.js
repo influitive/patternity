@@ -8,7 +8,7 @@ export default class Column extends Component {
 
   render() {
     return (
-      <span></span>
+      <span className="pt-table-column"></span>
     );
   }
 }

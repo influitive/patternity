@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     let {style, ...props} = this.props;
     return (
-      <div {...props} style={_.extend({}, style, { display: 'table-header-group', width: '100%'})}>
+      <div className="pt-table-header" {...props} style={_.extend({}, style, { display: 'table-header-group', width: '100%'})}>
       </div>
     );
   }

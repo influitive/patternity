@@ -11,7 +11,7 @@ export default class Table extends Component {
 
   render() {
     return (
-      <div style={{display: 'table', width: '100%', borderCollapse: 'collapse'}}>
+      <div className="pt-table" style={{display: 'table', width: '100%', borderCollapse: 'collapse'}}>
         <Header style={this.props.headerStyle}>
           {this._renderHeader()}
         </Header>
