@@ -88,7 +88,7 @@ export default class Checkbox extends Component {
   }
 
   _getStyle() {
-    if (!this.props.label && !this.props.checkboxLabel && !this.props.required){
+    if (!this.props.label && !this.props.checkboxLabel && !this.props.required) {
       return {display: 'none'};
     }
     else {
