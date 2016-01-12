@@ -134,8 +134,8 @@ export default class Tooltip extends Component {
     return (
       <span className="tool-tip-element"
           onClick={this._clickTooltip}
-          onMouseOver={this._hoverToggleTooltip}
-          onMouseOut={this._hoverToggleTooltip}
+          onMouseOver={this._handleMouseOver}
+          onMouseOut={this._handleMouseOut}
           ref="element"
           style={this.styles.element}>
         {this.props.element}
@@ -143,10 +143,18 @@ export default class Tooltip extends Component {
     );
   }
 
-  _hoverToggleTooltip = (shouldShow) => {
+  _handleMouseOver = () => {
+    this._updateState({
+      showTooltip: true,
+      showClose:   false,
+      wasClicked:  false
+    });
+  }
+
+  _handleMouseOut = () => {
     if (!this.state.wasClicked) {
       this._updateState({
-        showTooltip: !this.state.showTooltip,
+        showTooltip: false,
         showClose:   false,
         wasClicked:  false
       });
