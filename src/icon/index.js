@@ -1,6 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
 
+import './font_families_webpack.scss';
+import './icon.scss';
+
 class Icon extends Component {
   static propTypes = {
     icon:      PropTypes.string.isRequired,
