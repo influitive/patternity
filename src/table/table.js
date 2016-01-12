@@ -4,8 +4,8 @@ import Header from './table-header';
 
 export default class Table extends Component {
   static propTypes: {
-    rowCount: PropTypes.number.isRequired,
-    rowStyle: PropTypes.object,
+    rowCount:    PropTypes.number.isRequired,
+    rowStyle:    PropTypes.object,
     headerStyle: PropTypes.object
   }
 

@@ -5,7 +5,9 @@ export default class Row extends Component {
   render() {
     let {style, ...props} = this.props;
     return (
-      <div className="pt-table-row" {...props} style={_.extend({}, style, { display: 'table-row', width: '100%'})}>
+      <div
+        className="pt-table-row" {...props}
+        style={_.extend({ display: 'table-row', width: '100%'}, style)}>
       </div>
     );
   }
