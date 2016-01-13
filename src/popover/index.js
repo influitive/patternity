@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import TetherElement from 'react-tether'
 import PopoverContent from './popover-content';
 import PopoverArrow from './popover-arrow';
-//import style from './_popover.scss';
+
+import './_popover.scss';
 
 class Popover extends Component {
   static propTypes = {

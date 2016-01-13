@@ -3,6 +3,8 @@ import React, { Component, PropTypes } from 'react';
 import ProfilePopoverContent from './profile-popover-content';
 import Popover from '../popover';
 
+import './profile-popover.scss';
+
 class ProfilePopover extends Component {
   static propTypes = {
     user:         PropTypes.object.isRequired,

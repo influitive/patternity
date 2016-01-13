@@ -1,3 +1,4 @@
+// TODO: Deprecate this button
 const React = require('react');
 
 const buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'text'];

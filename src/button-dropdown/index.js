@@ -3,6 +3,8 @@ import Button from '../button2';
 import ButtonGroup from '../button-group';
 import Dropdown from '../dropdown';
 
+import './button-dropdown.scss';
+
 export default class ButtonDropdown extends Component {
   static defaultProps = {
     title:         '',

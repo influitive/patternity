@@ -1,7 +1,4 @@
-@import '_theme';
-@import '_button-dropdown';
-@import '_button-group';
-@import '_button-split';
+@import '../shared-scss/theme';
 
 $text-button-color : $medium-grey;
 $text-button-color-hover : lighten($text-button-color, 10%);

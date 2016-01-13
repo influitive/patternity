@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import classNames from 'classnames';
 
+import './checkbox.scss';
+
 class Checkbox extends Component {
   static propTypes = {
     id:            PropTypes.string,

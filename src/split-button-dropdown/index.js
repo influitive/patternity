@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import Button from '../button2';
 import ButtonGroup from '../button-group';
+import Icon from '../icon';
 import Dropdown from '../dropdown';
+
+import './button-split.scss';
 
 import classnames from 'classnames';
 
@@ -46,7 +49,7 @@ class SplitButtonDropdown extends Component {
           classList={this._getDropdownButtonClasses()}
           onClick={this._toggleDropdownOpen}
           disabled={disabled}>
-          <i className="ic ic-chevron-down"></i>
+          <Icon icon="chevron-down" />
         </Button>
 
         { this._getDropdown() }

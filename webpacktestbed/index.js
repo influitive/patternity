@@ -10,8 +10,6 @@ import SplitButtonDropdown from '../lib/split-button-dropdown';
 
 // Import webfonts
 
-require('../infl-styles/_button.scss');
-
 const theme = {
   themeColorPrimary: 'orange'
 };

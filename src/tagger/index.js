@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import Tag from './tag.js';
 
+import './tagger.scss';
+
 export default class Tagger extends Component {
 
   static propTypes = {

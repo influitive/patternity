@@ -1,6 +1,8 @@
 const React = require('react');
-
 const ReactDOM = require('react-dom');
+
+import './form.scss';
+import './form_layout.scss';
 
 class Form extends React.Component {
   componentDidMount() {

@@ -58,7 +58,7 @@ gulp.task('influicons', function() {
           fontPath:  'infl-fonts/',
           className: 'ic'
         }))
-        .pipe(gulp.dest('infl-styles/'));
+        .pipe(gulp.dest('src/icon/'));
 
       // generate the patternity readme file for icon
       gulp.src('infl-icons/templates/icon.readme.md')
@@ -66,7 +66,7 @@ gulp.task('influicons', function() {
           glyphs:    codepoints
         }))
         .pipe(rename("Readme.md"))
-        .pipe(gulp.dest('infl-components-src/icon/'));
+        .pipe(gulp.dest('src/icon/'));
     })
     .pipe(gulp.dest('infl-fonts/'));
 });
@@ -75,8 +75,7 @@ gulp.task('copy-lib-styles', function() {
   return gulp.src('src/**/*.scss')
     .pipe(postcss([rucksack({autoprefixer: true})], {syntax: postScss}))
     .pipe(header('/* COPIED FROM \'../src\' DO NOT EDIT */\n'))
-    .pipe(flatten())
-    .pipe(gulp.dest('infl-styles'));
+    .pipe(gulp.dest('lib'));
 });
 
 gulp.task('watch-scss', function() {
