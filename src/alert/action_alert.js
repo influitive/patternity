@@ -1,3 +1,4 @@
+// TODO: Stop using mixins, convert to es6
 var React = require('react');
 var AlertMixin = require('./alert_mixin.js');
 

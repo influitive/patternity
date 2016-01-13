@@ -139,6 +139,7 @@ class Checkbox extends Component {
 
   _icon = () => {
     if (!this.props.required) return;
+    // TODO: Replace with proper icon component
     return <span className='required-icon ic ic-asterisk'></span>
   };
 }

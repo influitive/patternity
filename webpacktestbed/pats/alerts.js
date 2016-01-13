@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Alert from '../../lib/alert';
+import Alert from '../alert';
 
 export default class AlertPat extends Component {
   render() {

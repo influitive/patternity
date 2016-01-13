@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Icon from '../../lib/icon';
+import Icon from '../icon';
 import classnames from 'classnames';
 import _ from 'lodash';
 

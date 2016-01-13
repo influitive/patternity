@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import flatten from 'lodash/array/flatten';
 
-import TextInput from '../../lib/text_input';
-import Select    from '../../lib/select_dropdown';
+import TextInput from '../text_input';
+import Select    from '../select_dropdown';
 
 const CUSTOM = '__custom__';
 

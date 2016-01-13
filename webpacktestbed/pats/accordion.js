@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Accordion from '../../lib/accordion';
+import Accordion from '../accordion';
 import '../../infl-styles/_accordion.scss';
 
 class Add extends Component {
