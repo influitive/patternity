@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { createTheme } from '../src/utils/themeable';
 
+import * as imports from '../lib';
+
 import Icon from '../src/icon';
 
 import Button from '../lib/button2';

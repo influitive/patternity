@@ -1,0 +1,44 @@
+@import '../shared-scss/theme';
+
+$text-button-color : $medium-grey;
+$text-button-color-hover : lighten($text-button-color, 10%);
+
+.button-split {
+
+  .button,
+  button {
+    vertical-align: top;
+
+    .ic {
+      position: relative;
+      top: 2px;
+      font-size: 22px;
+    }
+
+    &.dropdown {
+      padding: 4px 10px;
+      border-left-width: 1px;
+      border-left-style: solid;
+
+      &.text {
+        border: 0;
+      }
+
+      &.secondary {
+        left: -1px;
+        border-right-width: 1px;
+      }
+    }
+
+    &.main {
+      border-top-left-radius: $theme-border-radius;
+      border-bottom-left-radius: $theme-border-radius;
+    }
+
+    &:after {
+      margin-right: 0 !important;
+      position: static;
+      border: 0;
+    }
+  }
+}

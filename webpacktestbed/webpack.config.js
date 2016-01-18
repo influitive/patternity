@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 var sassPaths = require('node-neat').includePaths.map(function(sassPath) {
   return 'includePaths[]=' + sassPath;
@@ -22,18 +24,24 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('style.css'),
+    new OptimizeCssAssetsPlugin({
+      cssProcessor: require('cssnano'),
+      cssProcessorOptions: { discardComments: { removeAll: true} },
+      canPrint: true
+    })
   ],
 
   module: {
     loaders: [
       {
         test:   /\.css$/,
-        loader: 'style!css',
+        loader: 'style!css'
       },
       {
         test:   /\.scss$/,
-        loader: 'style!css!sass?outputStyle=expanded&' + sassPaths,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?outputStyle=expanded&' + sassPaths)
       },
       {
         test:    /\.jsx?$/,

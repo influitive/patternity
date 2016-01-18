@@ -1,0 +1,10 @@
+@import '../shared-scss/theme';
+
+.pt-remaining-length {
+  display: block;
+  text-align: right;
+}
+
+.pt-remaining-length.negative {
+  color: $error-color;
+}

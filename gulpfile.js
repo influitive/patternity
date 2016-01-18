@@ -1,14 +1,12 @@
 var gulp = require('gulp');
-var gulpReplace = require('gulp-replace');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
-var header = require('gulp-header');
 var flatten = require('gulp-flatten');
 var watch = require('gulp-watch');
 var postScss = require('postcss-scss');
 var postcss = require('gulp-postcss');
 var rucksack = require('rucksack-css');
-var rename = require("gulp-rename");
+var rename = require('gulp-rename');
 
 function adustIconNames(codepoints) {
   return codepoints.map(function(codepoint) {
@@ -27,7 +25,7 @@ gulp.task('influicons', function() {
       centerHorizontally: true,
       normalize:          true
     }))
-    .on('codepoints', function(codepoints, options) {
+    .on('codepoints', function(codepoints) {
       codepoints = adustIconNames(codepoints);
 
       // generate a static CSS demo file
@@ -65,7 +63,7 @@ gulp.task('influicons', function() {
         .pipe(consolidate('lodash', {
           glyphs:    codepoints
         }))
-        .pipe(rename("Readme.md"))
+        .pipe(rename('Readme.md'))
         .pipe(gulp.dest('src/icon/'));
     })
     .pipe(gulp.dest('infl-fonts/'));
@@ -74,8 +72,9 @@ gulp.task('influicons', function() {
 gulp.task('copy-lib-styles', function() {
   return gulp.src('src/**/*.scss')
     .pipe(postcss([rucksack({autoprefixer: true})], {syntax: postScss}))
-    .pipe(header('/* COPIED FROM \'../src\' DO NOT EDIT */\n'))
-    .pipe(gulp.dest('lib'));
+    .pipe(gulp.dest('lib'))
+    .pipe(flatten())
+    .pipe(gulp.dest('infl-styles'));
 });
 
 gulp.task('watch-scss', function() {

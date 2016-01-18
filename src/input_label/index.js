@@ -1,7 +1,5 @@
 const React = require('react');
 
-import './input_label.scss';
-
 class InputLabel extends React.Component {
   static displayName = 'InputLabel'
 

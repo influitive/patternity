@@ -1,0 +1,198 @@
+@import '../shared-scss/theme';
+
+.alert-msg {
+  padding: 10px 20px;
+  border-radius: $theme-border-radius-2;
+  background-color: lighten($info-color, 55%);
+  position: relative;
+  color: $info-color;
+
+  &.hide {
+    display: none;
+  }
+
+  h4 {
+    margin: 0px;
+    line-height: 35px;
+    font-size: 16px;
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  .alert-icon {
+    margin-right: 10px;
+  }
+
+  .close {
+    padding: 10px;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    color: $info-color;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 3;
+
+    &:hover {
+      color: darken($info-color, 10%);
+      -webkit-transition: color 0.5s ease-out;
+      transition: color 0.5s ease-out;
+    }
+  }
+
+  .alert-body {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em; // prevents cut off text
+  }
+
+  &.hasIcon {
+    .alert-body {
+      padding-left: 26px;
+
+      .detailed {
+        margin-left: -26px;
+      }
+    }
+  }
+
+  &.warning {
+    background-color: lighten($warning-color, 45%);
+    color: darken($warning-color, 10%);
+
+    .close {
+      color: darken($warning-color, 10%);
+
+      &:hover {
+        color: darken($warning-color, 15%);
+      }
+    }
+
+    .pt-alert-action {
+      button {
+        border-color: darken($warning-color, 10%);
+        color: darken($warning-color, 10%) !important;
+
+        &:hover {
+          border-color: darken($warning-color, 15%);
+          color: darken($warning-color, 15%) !important;
+        }
+      }
+    }
+  }
+
+  &.success {
+    background-color: lighten($success-color, 40%);
+    color: darken($success-color, 15%);
+
+    .close {
+      color: darken($success-color, 15%);
+
+      &:hover {
+        color : darken($success-color, 10%);
+      }
+    }
+
+    .pt-alert-action {
+      button {
+        border-color: darken($success-color, 15%);
+        color: darken($success-color, 15%) !important;
+
+        &:hover {
+          border-color: darken($success-color, 10%);
+          color: darken($success-color, 10%) !important;
+        }
+      }
+    }
+  }
+
+  &.error {
+    background-color: lighten($error-color, 40%);
+    color: $error-color;
+
+    .close {
+      color: $error-color;
+
+      &:hover {
+        color : darken($error-color, 10%);
+      }
+    }
+
+    .pt-alert-action {
+      button {
+        border-color: $error-color;
+        color: $error-color !important;
+
+        &:hover {
+          border-color: darken($error-color, 10%);
+          color: darken($error-color, 10%) !important;
+        }
+      }
+    }
+  }
+
+  .pt-alert-action {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 3;
+
+    button {
+      border-color: $info-color;
+      color: $info-color !important;
+
+      &:hover {
+        border-color: lighten($info-color, 2%);
+        color: lighten($info-color, 2%) !important;
+      }
+    }
+
+    & + .alert-body {
+      padding-right: 40%;
+      min-height: 12px;
+    }
+  }
+
+  .pt-alert-detailed {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    color: $darker-grey;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+
+    h4 {
+        margin-bottom: 1.33em;
+    }
+
+    .pt-alert-detailed-action {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $info-color;
+    }
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .alert-msg {
+    .pt-alert-action {
+      bottom: 15px;
+      left: 46px;
+      right: auto;
+      top: auto;
+
+      & + .alert-body {
+        padding-right: 0px;
+        padding-bottom: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// TODO: either import this in all files or...export it from patternity, we would then require('patternity');
+@font-face {
+  font-family: "influicons";
+  src: url('../../infl-fonts/influicons.eot');
+  src: url('../../infl-fonts/influicons.eot?#iefix') format('eot'),
+    url('../../infl-fonts/influicons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

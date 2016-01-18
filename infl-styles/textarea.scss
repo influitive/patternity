@@ -1,0 +1,15 @@
+.pt-textarea {
+  textarea {
+    height: 5em;
+  }
+
+  &.autoexpand {
+    textarea {
+      height: 3em;
+
+      &:focus {
+        height: 5em;
+      }
+    }
+  }
+}
