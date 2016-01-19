@@ -1,6 +1,6 @@
 const React = require('react');
 
-import '~patternity/src/shared-scss/infl_base.scss';
+import '../shared-scss/infl_base.scss';
 
 class PanelLeftSideBar extends React.Component {
   static displayName = 'PanelLeftSideBar'
