@@ -1,7 +1,7 @@
 @import 'bourbon';
 @import 'neat';
-@import '../shared-scss/theme';
-@import '../shared-scss/infl_base.scss';
+@import '~patternity/src/shared-scss/theme';
+@import '~patternity/src/shared-scss/infl_base.scss';
 
 .panel-sidebar {
   box-sizing: border-box;

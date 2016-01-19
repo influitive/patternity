@@ -1,4 +1,4 @@
-@import '../shared-scss/theme';
+@import '~patternity/src/shared-scss/theme';
 
 $text-button-color : $medium-grey;
 $text-button-color-hover : lighten($text-button-color, 10%);
