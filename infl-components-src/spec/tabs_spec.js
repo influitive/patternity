@@ -53,7 +53,7 @@
 //
 //  context('Tabs', function() {
 //    it('renders the tabs with the selected tab open', function() {
-//      var subjectNode = React.findDOMNode(subject);
+//      var subjectNode = ReactDOM.findDOMNode(subject);
 //      expect(subjectNode.tagName).to.eq('NAV');
 //
 //      var tabs = document.querySelectorAll('LI.pt-tab');

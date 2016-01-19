@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 const simulate  = ReactTestUtils.Simulate;
 
@@ -21,9 +22,9 @@ describe('Checkbox Component', function() {
   }
 
   function populateTestRefs(){
-    checkboxElement = React.findDOMNode(subject.refs.checkbox);
-    checkboxNative  = React.findDOMNode(subject.refs.nativeCheckbox);
-    checkboxLabel   = React.findDOMNode(subject.refs.label);
+    checkboxElement = ReactDOM.findDOMNode(subject.refs.checkbox);
+    checkboxNative  = ReactDOM.findDOMNode(subject.refs.nativeCheckbox);
+    checkboxLabel   = ReactDOM.findDOMNode(subject.refs.label);
   }
 
   it('will render the button dropdown', function() {
@@ -122,7 +123,7 @@ describe('Checkbox Component', function() {
 
     function renderCheckboxGroup(checkboxGroupComponent){
       subject = ReactTestUtils.renderIntoDocument(checkboxGroupComponent);
-      checkboxGroupElement = React.findDOMNode(subject.refs.group);
+      checkboxGroupElement = ReactDOM.findDOMNode(subject.refs.group);
     }
 
     it('will render the button dropdown', function() {

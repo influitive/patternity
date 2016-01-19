@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 export default class Ellipsis extends Component {
   static propTypes = {
@@ -29,7 +30,7 @@ export default class Ellipsis extends Component {
 
   _resetText = (maxLinesChanged) => {
     if (maxLinesChanged) {
-      let textElement = React.findDOMNode(this.refs.text);
+      let textElement = ReactDOM.findDOMNode(this.refs.text);
       textElement.innerHTML = this.props.text;
     }
   }
@@ -40,7 +41,7 @@ export default class Ellipsis extends Component {
 
   _applyEllipsis = () => {
     if (this.props.maxLines > 0) {
-      let ellipsisElement = React.findDOMNode(this.refs.ellipsis);
+      let ellipsisElement = ReactDOM.findDOMNode(this.refs.ellipsis);
 
       let lineHeight = this._getLineHeight(ellipsisElement);
       ellipsisElement.style.maxHeight = (lineHeight * this.props.maxLines) + 'px';
@@ -59,14 +60,14 @@ export default class Ellipsis extends Component {
   }
 
   _isTextOutOfBounds() {
-    let textElement = React.findDOMNode(this.refs.text);
-    let ellipsisElement = React.findDOMNode(this.refs.ellipsis);
+    let textElement = ReactDOM.findDOMNode(this.refs.text);
+    let ellipsisElement = ReactDOM.findDOMNode(this.refs.ellipsis);
 
     return textElement.getBoundingClientRect().height > ellipsisElement.getBoundingClientRect().height + 2;
   }
 
   _shrinkText = () => {
-    let textElement = React.findDOMNode(this.refs.text);
+    let textElement = ReactDOM.findDOMNode(this.refs.text);
     let text = this._removeLastWord(textElement);
     textElement.innerHTML = text;
     this._applyEllipsisToText();

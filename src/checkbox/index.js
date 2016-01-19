@@ -113,7 +113,7 @@ class Checkbox extends Component {
 
   _clickCheckBox = () => {
     if (!this.props.enabled) return;
-    React.findDOMNode(this.refs.nativeCheckbox).click();
+    ReactDOM.findDOMNode(this.refs.nativeCheckbox).click();
   };
 
   _handleChange = (event) => {
