@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 
 const Popover = require('../../lib/popover');
@@ -8,12 +9,6 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const $ = window.jQuery || require('jquery');
-
-if (!React.findDOMNode) {
-  React.findDOMNode = function(n) {
-    return n.getDOMNode();
-  }
-}
 
 xdescribe('Popover Component', function() {
 
@@ -38,7 +33,7 @@ xdescribe('Popover Component', function() {
   xit('the contents of the popover are only rendered when needed', function() {
     render();
 
-    const node = React.findDOMNode(subject);
+    const node = ReactDOM.findDOMNode(subject);
 
     const link = $(node).find('.popoverlink').get(0);
     expect(link).to.exist;
@@ -47,7 +42,7 @@ xdescribe('Popover Component', function() {
 
 //    var menu = $(node).find('.pt-popovermenu').get(0);
 //    expect(menu).to.exist;
-//    expect(React.findDOMNode(menu).childNodes.length).to.eq(1);
+//    expect(ReactDOM.findDOMNode(menu).childNodes.length).to.eq(1);
 //    ReactTestUtils.Simulate.click(link);
 
   });

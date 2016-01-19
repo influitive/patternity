@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 const simulate  = ReactTestUtils.Simulate;
 const simulateNative = ReactTestUtils.SimulateNative;
@@ -22,7 +23,7 @@ describe('Loading Component', function() {
   }
 
   function populateTestRefs(){
-    loadingElement = React.findDOMNode(subject.refs.loading);
+    loadingElement = ReactDOM.findDOMNode(subject.refs.loading);
   }
 
   it('will render the loading component', function() {

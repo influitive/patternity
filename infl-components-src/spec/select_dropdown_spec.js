@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 
 const SelectDropdown = require('select_dropdown');
@@ -32,15 +33,15 @@ describe('SelectDropdown Component', function() {
 
   context('SelectDropdown', function() {
     it('renders a span with a select inside it', function() {
-      const subjectNode = React.findDOMNode(subject);
+      const subjectNode = ReactDOM.findDOMNode(subject);
       expect(subjectNode.tagName).to.eq('SPAN');
 
-      const selectNode = React.findDOMNode(subject.refs.select);
+      const selectNode = ReactDOM.findDOMNode(subject.refs.select);
       expect(selectNode.tagName).to.eq('SELECT');
     });
 
     it('renders the children with the correct child element selected', function() {
-      const selectNode = React.findDOMNode(subject.refs.select);
+      const selectNode = ReactDOM.findDOMNode(subject.refs.select);
       expect(selectNode.childNodes[0].id).to.eq('group1');
       expect(selectNode.childNodes[0].childNodes.length).to.eq(3);
       expect(selectNode.childNodes[1].id).to.eq('group2');
@@ -51,7 +52,7 @@ describe('SelectDropdown Component', function() {
       expect(selectNode.childNodes[0].childNodes[1].selected).to.eq(false);
       expect(selectNode.childNodes[0].childNodes[2].selected).to.eq(true);  // yeah, baby!
 
-      const titleNode = React.findDOMNode(subject.refs.title);
+      const titleNode = ReactDOM.findDOMNode(subject.refs.title);
 
       expect(titleNode.textContent).to.eq("option 3");
     });

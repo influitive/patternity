@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 const simulate  = ReactTestUtils.Simulate;
 
@@ -25,7 +26,7 @@ describe('Content Component', function() {
         <p>test</p>
       </Content>
     );
-    contentElement = React.findDOMNode(subject.refs.contentPannel);
+    contentElement = ReactDOM.findDOMNode(subject.refs.contentPannel);
     expect(contentElement.className).to.contain("panel-content");
   });
 
@@ -36,7 +37,7 @@ describe('Content Component', function() {
           <p>test</p>
         </Content>
       );
-      contentInnerPannelElement = React.findDOMNode(subject.refs.contentInnerPannel);
+      contentInnerPannelElement = ReactDOM.findDOMNode(subject.refs.contentInnerPannel);
       expect(contentInnerPannelElement).to.exist;
     });
 
@@ -55,7 +56,7 @@ describe('Content Component', function() {
           <p>test</p>
         </Content>
       );
-      contentInnerPannelElement = React.findDOMNode(subject.refs.contentInnerPannel);
+      contentInnerPannelElement = ReactDOM.findDOMNode(subject.refs.contentInnerPannel);
       expect(contentInnerPannelElement.childElementCount).to.equal(1);
     });
 
@@ -77,7 +78,7 @@ describe('Content Component', function() {
           <p>test</p>
         </Content>
       );
-      contentElement = React.findDOMNode(subject.refs.contentPannel);
+      contentElement = ReactDOM.findDOMNode(subject.refs.contentPannel);
       expect(contentElement.className).not.to.contain("no-colour");
     });
 
@@ -87,7 +88,7 @@ describe('Content Component', function() {
           <p>test</p>
         </Content>
       );
-      contentElement = React.findDOMNode(subject.refs.contentPannel);
+      contentElement = ReactDOM.findDOMNode(subject.refs.contentPannel);
       expect(contentElement.className).not.to.contain("no-colour");
     });
 
@@ -97,7 +98,7 @@ describe('Content Component', function() {
           <p>test</p>
         </Content>
       );
-      contentElement = React.findDOMNode(subject.refs.contentPannel);
+      contentElement = ReactDOM.findDOMNode(subject.refs.contentPannel);
       expect(contentElement.className).to.contain("no-colour");
     });
   });

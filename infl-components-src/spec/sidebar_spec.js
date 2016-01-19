@@ -60,7 +60,7 @@ describe('Sidebar', function() {
     xit('will NOT have the message if one is not passed', function () {
       const subject = TestUtils.renderIntoDocument(<SidebarHeading {...heading} />);
 
-      // expect(React.findDOMNode(subject.refs.heading).lastChild.firstChild.nodeValue).to.equal(message);
+      // expect(ReactDOM.findDOMNode(subject.refs.heading).lastChild.firstChild.nodeValue).to.equal(message);
     });
 
     it('will have the message if one is passed', function () {
@@ -144,4 +144,3 @@ describe('Sidebar', function() {
     });
   });
 });
-
