@@ -1,6 +1,6 @@
 @import 'bourbon';
 @import 'neat';
-@import './theme.scss';
+@import '~patternity/lib/shared-scss/theme.scss';
 // turn off anti-aliasing for these elements
 ul.dropdown-menu, UL.nav {
   -webkit-font-smoothing: auto;
