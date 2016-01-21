@@ -20,36 +20,23 @@ const tests = `import test from 'tape-catch';
 import React from 'react';
 
 import shallow from '../../testUtils/shallow';
-import ${name} from './index.js';
+import ${classname} from './index.js';
 
 test('Default modal container renders properly', t => {
 
-  const { instance, result } = shallow(<${name} />);
+  const { instance, result } = shallow(<${classname} />);
 
   t.equal(result.type, 'div', 'should be a div');
 
   t.end();
 });`
 
-const js = `import React, { Component, PropTypes } from 'react';
+const js = `import React, { Component } from 'react';
 
-// Component File Template
 export default class ${classname} extends Component {
-  state = {
-
-  };
-
-  static propTypes = {
-
-  };
-
-  static defaultProps = {
-
-  };
-
   render() {
-
-  };
+    return <div></div>;
+  }
 }`;
 
 // Readme Template

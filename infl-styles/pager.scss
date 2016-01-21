@@ -1,11 +1,6 @@
-/* COPIED FROM '../src' DO NOT EDIT */
-.pt-pager {
-  .pt-next-page, .pt-previous-page, .pt-page-element {
-    &:not(.disabled) {
-      cursor: pointer;
-    }
-  }
-  .pt-page-element {
+.pt-pager .pt-next-page:not(.disabled), .pt-pager .pt-previous-page:not(.disabled), .pt-pager .pt-page-element:not(.disabled) {
+    cursor: pointer;
+}
+.pt-pager .pt-page-element {
     padding: 0px 5px;
-  }
 }

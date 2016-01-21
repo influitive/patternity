@@ -1,4 +1,3 @@
-/* COPIED FROM '../src' DO NOT EDIT */
 $spacing-default: 12px;
 $spacing-small: 6px;
 $dimension-spacing-small: .5em;
@@ -9,26 +8,14 @@ $dimension-spacing-small: .5em;
 }
 .user-profile {
   margin-top: $dimension-spacing-small;
-
-  .user-name {
-    color: $theme-color-primary;
-    font-size: 1.6em;
-    // line-height: 1.6em;
-    display: block;
-  }
-
-  .user-position {
-    font-weight: bold;
-    font-size: 1.2em;
-    // line-height: 1.2em;
-    display: block;
-  }
-
-  .user-detail {
-    float: left;
-    margin-top: 0.2em;
-    margin-bottom: $spacing-default;
-  }
+}
+.user-profile .user-name {color: $theme-color-primary;font-size: 1.6em;
+  // line-height: 1.6em;display: block;
+}
+.user-profile .user-position {font-weight: bold;font-size: 1.2em;
+  // line-height: 1.2em;display: block;
+}
+.user-profile .user-detail {float: left;margin-top: 0.2em;margin-bottom: $spacing-default;
 }
 
 .user-image {
@@ -37,12 +24,9 @@ $dimension-spacing-small: .5em;
   float: left;
   margin-right: $spacing-default;
   margin-bottom: $spacing-default;
+}
 
-  img {
-    width: 64px;
-    height: 64px;
-    border-radius: 100%;
-  }
+.user-image img {width: 64px;height: 64px;border-radius: 100%;
 }
 
 .popover-user-profile {
@@ -50,11 +34,11 @@ $dimension-spacing-small: .5em;
   // padding: 6px 12px 12px;
   color: #666;
   width: 300px;
-  // box-sizing: border-box;
+}
 
-  hr {
-    clear: both;
-  }
+// box-sizing: border-box;
+
+.popover-user-profile hr {clear: both;
 }
 
 .profile-popover-link {
