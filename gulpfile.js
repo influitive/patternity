@@ -7,6 +7,7 @@ var postScss = require('postcss-scss');
 var postcss = require('gulp-postcss');
 var rucksack = require('rucksack-css');
 var rename = require('gulp-rename');
+var replace = require('gulp-replace');
 
 function adustIconNames(codepoints) {
   return codepoints.map(function(codepoint) {
@@ -74,6 +75,7 @@ gulp.task('copy-lib-styles', function() {
     .pipe(postcss([rucksack({autoprefixer: true})], {syntax: postScss}))
     .pipe(gulp.dest('lib'))
     .pipe(flatten())
+    .pipe(replace(/~patternity\/([a-z\-\_]+\/)*/g, ''))
     .pipe(gulp.dest('infl-styles'));
 });
 
