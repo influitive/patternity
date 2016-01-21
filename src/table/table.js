@@ -23,7 +23,9 @@ export default class Table extends Component {
   _renderHeader = () => {
     return (
       React.Children.map(this.props.children, function(column, index) {
-        return React.cloneElement(column.props.header, {key: `table-header-cell-${index}`});
+        if(column) {
+          return React.cloneElement(column.props.header, {key: `table-header-cell-${index}`});
+        }
       })
     );
   }
@@ -34,8 +36,10 @@ export default class Table extends Component {
     for (var i=0; i<this.props.rowCount; i++) {
 
       row = React.Children.map(this.props.children, function(col, index) {
-        let cell = col.props.cell(i);
-        return React.cloneElement(cell, {key: 'cell-'+index});
+        if(col) {
+          let cell = col.props.cell(i);
+          return React.cloneElement(cell, {key: 'cell-'+index});
+        }
       });
       rows.push(this._renderRow(row, i));
     }
