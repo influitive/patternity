@@ -1,9 +1,4 @@
-/* COPIED FROM '../src' DO NOT EDIT */
-.pt-save-button {
-  .ic-circle-empty:before {
-    -webkit-animation: ptSaveButtonPulse 1s infinite;
-            animation: ptSaveButtonPulse 1s infinite;
-  }
+.pt-save-button .ic-circle-empty:before { -webkit-animation: ptSaveButtonPulse 1s infinite; animation: ptSaveButtonPulse 1s infinite;
 }
 
 @-webkit-keyframes ptSaveButtonPulse {

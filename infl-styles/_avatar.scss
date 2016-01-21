@@ -1,14 +1,12 @@
-/* COPIED FROM '../src' DO NOT EDIT */
 .avatar-image {
   display: block;
   margin: auto auto 0.5em;
   border-radius: 100%;
   max-width: 100%;
   border: 1px solid rgba(180,180,180,0.5);
-
-  &.inline {
-    float: none;
-    display: inline-block;
-    text-align: left;
-  }
+}
+.avatar-image.inline {
+  float: none;
+  display: inline-block;
+  text-align: left;
 }

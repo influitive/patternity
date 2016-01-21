@@ -1,76 +1,32 @@
-/* COPIED FROM '../src' DO NOT EDIT */
 $spacing-large: 1.5em;
 $transition-in-time: 0.5s;
 $transition-out-time: 0.5s;
 .accordion {
   padding: 0;
-  .accordion-section {
-    margin-bottom: 1px;
-    list-style-type: none;
-  }
-  .section-heading {
-    background-color: #ccc;
-    font-size: 1.1em;
-    overflow: hidden;
-    margin: 0;
-    font-weight: normal;
-    padding: 10px;
-    color: #333;
-    cursor: pointer;
-    &.open {
-      .edit-section {
-        opacity: 0;
-        -webkit-transition: opacity $transition-out-time ease-in-out;
-        transition: opacity $transition-out-time ease-in-out;
-      }
-    }
-    &.open + .section-details {
-      .section-details-inner {
-        opacity: 1;
-        -webkit-transition: all $transition-out-time ease-in-out;
-        transition: all $transition-out-time ease-in-out;
-      }
-    }
-    &.disabled {
-      color: #999;
-      cursor: auto;
-      opacity: 1;
-      &:hover {
-        background-color: #ccc;
-      }
-      &:hover + .section-details {
-        border-color: #ccc;
-      }
-    }
-    &:hover {
-      background-color: #e2e2e2;
-      -webkit-transition: background-color $transition-out-time ease-in-out;
-      transition: background-color $transition-out-time ease-in-out;
-    }
-    &:hover + .section-details {
-      border-color: #e2e2e2;
-    }
-  }
-  .section-details {
-    border: 1px solid #ccc;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height $transition-out-time ease-out;
-    transition: max-height $transition-out-time ease-out;
-    .open & {
-      -webkit-transition: max-height $transition-out-time ease-in-out;
-      transition: max-height $transition-out-time ease-in-out;
-    }
-    .section-details-inner {
-      .open & {
-        opacity: 1;
-        -webkit-transition: all $transition-out-time ease-in-out;
-        transition: all $transition-out-time ease-in-out;
-      }
-      padding: $spacing-large;
-      opacity: 0;
-      -webkit-transition: all $transition-in-time ease-in-out;
-      transition: all $transition-in-time ease-in-out;
-    }
-  }
+}
+.accordion .accordion-section {margin-bottom: 1px;list-style-type: none;
+}
+.accordion .section-heading {background-color: #ccc;font-size: 1.1em;overflow: hidden;margin: 0;font-weight: normal;padding: 10px;color: #333;cursor: pointer;
+}
+.accordion .section-heading.open .edit-section {opacity: 0;-webkit-transition: opacity $transition-out-time ease-in-out;transition: opacity $transition-out-time ease-in-out;
+}
+.accordion .section-heading.open + .section-details .section-details-inner {opacity: 1;-webkit-transition: all $transition-out-time ease-in-out;transition: all $transition-out-time ease-in-out;
+}
+.accordion .section-heading.disabled {color: #999;cursor: auto;opacity: 1;
+}
+.accordion .section-heading.disabled:hover {background-color: #ccc;
+}
+.accordion .section-heading.disabled:hover + .section-details {border-color: #ccc;
+}
+.accordion .section-heading:hover {background-color: #e2e2e2;-webkit-transition: background-color $transition-out-time ease-in-out;transition: background-color $transition-out-time ease-in-out;
+}
+.accordion .section-heading:hover + .section-details {border-color: #e2e2e2;
+}
+.accordion .section-details {border: 1px solid #ccc;max-height: 0;overflow: hidden;-webkit-transition: max-height $transition-out-time ease-out;transition: max-height $transition-out-time ease-out;
+}
+.open .accordion .section-details {-webkit-transition: max-height $transition-out-time ease-in-out;transition: max-height $transition-out-time ease-in-out;
+}
+.accordion .section-details .section-details-inner {padding: $spacing-large;opacity: 0;-webkit-transition: all $transition-in-time ease-in-out;transition: all $transition-in-time ease-in-out;
+}
+.open .accordion .section-details .section-details-inner {opacity: 1;-webkit-transition: all $transition-out-time ease-in-out;transition: all $transition-out-time ease-in-out;
 }

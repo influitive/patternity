@@ -1,39 +1,36 @@
-/* COPIED FROM '../src' DO NOT EDIT */
 
-.pt-tagger {
-  input {
-    padding: 5px;
-    width: 100%;
-  }
+.pt-tagger input {
+  padding: 5px;
+  width: 100%;
 }
 
 .pt-tagger-taglist {
   overflow: hidden;
   list-style: none;
   padding: 0;
+}
 
-  li {
-    float: left;
-    padding: 5px 20px 5px 5px;
-    margin: 0 2px 2px 0;
-    background: #ddd;
-    border: 1px solid #ccc;
-    position: relative;
-  }
+.pt-tagger-taglist li {
+  float: left;
+  padding: 5px 20px 5px 5px;
+  margin: 0 2px 2px 0;
+  background: #ddd;
+  border: 1px solid #ccc;
+  position: relative;
+}
 
-  span.icon {
-    position: absolute;
-    right: 2px;
-    top: 0;
-    color: #999;
+.pt-tagger-taglist span.icon {
+  position: absolute;
+  right: 2px;
+  top: 0;
+  color: #999;
+}
 
-    &:hover {
-      color: #555;
-      cursor: pointer;
-    }
-  }
+.pt-tagger-taglist span.icon:hover {
+  color: #555;
+  cursor: pointer;
+}
 
-  .ic-times:hover {
-    cursor: pointer;
-  }
+.pt-tagger-taglist .ic-times:hover {
+  cursor: pointer;
 }
