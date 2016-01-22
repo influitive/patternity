@@ -1,7 +1,5 @@
 const React = require('react');
 
-import './sidebar.scss';
-
 class Sidebar extends React.Component {
   render() {
     return (

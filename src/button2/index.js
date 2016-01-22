@@ -4,8 +4,6 @@ import classNames from 'classnames';
 import { ThemeComponent } from '../utils/themeable';
 import mapping from './theme';
 
-import './button.scss';
-
 export class Button extends Component {
   static propTypes = {
     icon:      PropTypes.string,

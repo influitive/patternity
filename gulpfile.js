@@ -75,6 +75,9 @@ gulp.task('copy-lib-styles', function() {
     .pipe(postcss([rucksack({autoprefixer: true})], {syntax: postScss}))
     .pipe(gulp.dest('lib'))
     .pipe(flatten())
+    .pipe(rename({
+      prefix: '_'
+    }))
     .pipe(replace(/~patternity\/([a-z\-\_]+\/)*/g, ''))
     .pipe(gulp.dest('infl-styles'));
 });

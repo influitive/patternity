@@ -1,8 +1,6 @@
 import React, { Component, PropTypes} from 'react';
 import classNames from 'classnames';
 
-import './recommended-length.scss';
-
 export default class RecommendedLength extends Component {
   state = {
     remainingLength: this.props.recommendedLength

@@ -3,8 +3,6 @@ import Icon from '../icon';
 import classnames from 'classnames';
 import _ from 'lodash';
 
-import './pager.scss';
-
 const MOVING_WINDOW_SIZE = 5;
 const EDGE_WINDOW_SIZE = 2;
 

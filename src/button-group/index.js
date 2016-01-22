@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-import './button-group.scss';
-
 export default class ButtonGroup extends Component {
 
   static defaultProps = {

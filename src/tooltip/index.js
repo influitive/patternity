@@ -2,8 +2,6 @@ import React, {Component, PropTypes} from 'react';
 const _ = require('lodash');
 const $ = require('jquery');
 
-import './tooltip.scss';
-
 const Icon = require('../icon');
 const Popover = require('../popover');
 

@@ -2,8 +2,6 @@ const React   = require('react');
 
 const ButtonGroup = require('../button-group');
 
-import './card.scss';
-
 class Card extends React.Component {
   render() {
     return (

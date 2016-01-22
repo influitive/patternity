@@ -4,8 +4,6 @@ import ButtonGroup from '../button-group';
 import Icon from '../icon';
 import Dropdown from '../dropdown';
 
-import './button-split.scss';
-
 import classnames from 'classnames';
 
 class SplitButtonDropdown extends Component {

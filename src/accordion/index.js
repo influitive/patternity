@@ -3,8 +3,6 @@ import React, { Component, PropTypes } from 'react';
 import AccordionBody from './accordion-body';
 import AccordionHeader from './accordion-header';
 
-import './accordion.scss';
-
 // import style from './_accordion.scss';
 
 const validateIndex = (props, propName) => {

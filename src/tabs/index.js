@@ -5,8 +5,6 @@ const TabsMenu = require('./tabs_menu');
 const TabsDropdown = require('./tabs_dropdown');
 const TabSections = require('./tab_sections');
 
-import './tabs.scss';
-
 const Tabs = React.createClass({
   mixins: [ResponsiveTabsMixin],
 

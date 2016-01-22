@@ -4,8 +4,6 @@ const classNames = require('classnames');
 const InputIcon = require('../text/input_icon');
 const InputMessage = require('../text/input_message');
 
-import './textarea.scss';
-
 class TextAreaContainer extends React.Component {
   static defaultProps = {
     id:       '',

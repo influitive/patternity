@@ -1,7 +1,5 @@
 const React = require('react');
 
-import './stats_bar.scss';
-
 class StatsBar extends React.Component {
   static defaultProps = {
     statType: 'points',

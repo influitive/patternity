@@ -1,7 +1,5 @@
 const $ = require('jquery');
 
-import './animations.scss';
-
 const Animate = function() {
   function run(element, animation, infinite, animationEndCallback) {
     infinite = infinite || false;

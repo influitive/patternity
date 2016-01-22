@@ -1,7 +1,5 @@
 const React   = require('react');
 
-import './loading.scss';
-
 class Loading extends React.Component {
   static displayName = 'Loading'
 

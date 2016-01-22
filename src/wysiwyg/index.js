@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import ReactQuill, { Toolbar } from 'react-quill';
 import flowRight from 'lodash/function/flowRight';
 
-import './wysiwyg.scss';
-
 export default class Wysiwyg extends Component {
   static propTypes = {
     id:                PropTypes.string,

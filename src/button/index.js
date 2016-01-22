@@ -3,8 +3,6 @@ const React = require('react');
 
 const buttonTypes = ['primary', 'secondary', 'important', 'success', 'danger', 'text'];
 
-import '../button2/button.scss';
-
 class Button extends React.Component {
   static displayName = 'Button';
 

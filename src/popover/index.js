@@ -3,8 +3,6 @@ import TetherElement from 'react-tether'
 import PopoverContent from './popover-content';
 import PopoverArrow from './popover-arrow';
 
-import './popover.scss';
-
 class Popover extends Component {
   static propTypes = {
     isOpen:            PropTypes.bool.isRequired,

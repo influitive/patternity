@@ -2,8 +2,6 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const $ = require('jquery');
 
-import './multi_select.scss';
-
 const ClearAll = require('./clear_all');
 const NativeSelect = require('./native_select');
 const SelectedOptions = require('./selected_options');

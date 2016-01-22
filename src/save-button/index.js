@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import forIn from 'lodash/object/forIn';
 
-import './save-button.scss';
 import Button2 from '../button2';
 
 class SaveButton extends Component {

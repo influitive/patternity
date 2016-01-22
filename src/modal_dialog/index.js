@@ -2,8 +2,6 @@ const React = require('react');
 const $ = require('jquery');
 const classNames = require('classnames');
 
-import './modal_dialog.scss';
-
 class ModalDialog extends React.Component {
   static displayName = 'ModalDialog'
 

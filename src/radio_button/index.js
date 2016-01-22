@@ -1,8 +1,6 @@
 const React = require('react');
 const classNames = require('classnames');
 
-import './radio_button.scss';
-
 class RadioButton extends React.Component {
   static displayName = 'RadioButton'
 

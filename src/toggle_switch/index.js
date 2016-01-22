@@ -2,8 +2,6 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const classNames = require('classnames');
 
-import './toggle_switch.scss';
-
 class ToggleSwitch extends React.Component {
   static displayName = 'ToggleSwitch'
 

@@ -1,7 +1,5 @@
 const React = require('react');
 
-import '../shared-scss/infl_base.scss';
-
 class PanelLeftSideBar extends React.Component {
   static displayName = 'PanelLeftSideBar'
 
