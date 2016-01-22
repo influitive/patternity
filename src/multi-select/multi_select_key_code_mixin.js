@@ -1,4 +1,3 @@
-const React = require('react');
 const isEmpty = require('lodash/lang/isEmpty');
 
 const DOWN_ARROW_KEY_CODE = 40;
@@ -9,7 +8,15 @@ const DELETE_KEY_CODE = 46;
 const ESCAPE_KEY_CODE = 27;
 const TAB_KEY_CODE = 9;
 
-const acceptedKeyCodes = [DOWN_ARROW_KEY_CODE, UP_ARROW_KEY_CODE, ENTER_KEY_CODE, BACK_SPACE_KEY_CODE, DELETE_KEY_CODE, ESCAPE_KEY_CODE, TAB_KEY_CODE];
+const acceptedKeyCodes = [
+  DOWN_ARROW_KEY_CODE,
+  UP_ARROW_KEY_CODE,
+  ENTER_KEY_CODE,
+  BACK_SPACE_KEY_CODE,
+  DELETE_KEY_CODE,
+  ESCAPE_KEY_CODE,
+  TAB_KEY_CODE
+];
 
 const MultiSelectKeyCodeMixin = {
   _handleKeyDown: function(event) {

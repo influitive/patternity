@@ -51,14 +51,14 @@ class MultiSelectOption extends React.Component {
     });
   }
 
-  _handleMouseOver = (event) => {
+  _handleMouseOver = () => {
     this.props.onOptionHasFocus({
       name:  this.props.name,
       value: this.props.value
     });
   }
 
-  _handleMouseOut = (event) => {
+  _handleMouseOut = () => {
     this.props.onOptionHasFocus({});
   }
 }

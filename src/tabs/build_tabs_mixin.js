@@ -4,12 +4,14 @@ const BuildTabsMixin = {
   _buildTabs: function(onClick) {
     const that = this;
     return React.Children.map(this.props.tabs, function(tab, index) {
-      return <InternalTab title={tab.props.title} id={tab.props.id} onClick={onClick} key={index} index={index} tabIsOpen={that._isTabOpen(index)} />;
+      return <InternalTab title={tab.props.title} id={tab.props.id}
+        onClick={onClick} key={index} index={index}
+        tabIsOpen={that._isTabOpen(index)} />;
     });
   },
   _isTabOpen: function(index) {
     return (this.props.openTabIndex === index);
-  },
+  }
 };
 
 class InternalTab extends React.Component {

@@ -18,7 +18,8 @@ class Loading extends React.Component {
   }
   render() {
     return (
-      <span className={'loading-spinner ' + this.props.size + ' ' + this.props.type + ' ' + this._isModal() + ' ' + this._isInline()} ref='loading'></span>
+      <span className={`loading-spinner ${this.props.size} ${this.props.type} ${this._isModal()} ${this._isInline()}`}
+        ref='loading'></span>
     );
   }
 

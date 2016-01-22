@@ -21,22 +21,18 @@ const Animate = function() {
   }
 
   function isAnimationSupported() {
-    let animation = false, animationstring = 'animation', keyframeprefix = '', pfx = '';
-    const domPrefixes = 'Webkit Moz O ms Khtml'.split(' '), elm = document.createElement('div');
+    let animation = false;
+    const domPrefixes = 'Webkit Moz O ms Khtml'.split(' ');
+    const elm = document.createElement('div');
 
     if (elm.style.animationName !== undefined) {
-      animation = true;
+      return true;
     }
 
-    if (animation === false) {
-      for (let i = 0; i < domPrefixes.length; i++) {
-        if (elm.style[domPrefixes[i] + 'AnimationName'] !== undefined) {
-          pfx = domPrefixes[i];
-          animationstring = pfx + 'Animation';
-          keyframeprefix = '-' + pfx.toLowerCase() + '-';
-          animation = true;
-          break;
-        }
+    for (let i = 0; i < domPrefixes.length; i++) {
+      if (elm.style[domPrefixes[i] + 'AnimationName'] !== undefined) {
+        animation = true;
+        break;
       }
     }
 

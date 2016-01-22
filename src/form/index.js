@@ -115,7 +115,7 @@ Form.Column = React.createClass({
 Form.Row = React.createClass({
   getDefaultProps: function() {
     return {
-      inputSize: 'large',
+      inputSize: 'large'
     };
   },
 
@@ -142,7 +142,7 @@ Form.Title = React.createClass({
   getDefaultProps: function() {
     return {
       title:   '',
-      actions: null,
+      actions: null
     };
   },
 
@@ -166,9 +166,7 @@ Form.Title = React.createClass({
 
 Form.Section = React.createClass({
   getDefaultProps: function() {
-    return {
-      hideDivider: false,
-    };
+    return { hideDivider: false };
   },
 
   propTypes: {

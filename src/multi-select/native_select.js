@@ -21,7 +21,7 @@ class NativeSelect extends React.Component {
   }
 
   _buildSelectedValues() {
-    return this.props.selectedOptions.map(function(option, index) {
+    return this.props.selectedOptions.map(function(option) {
       return option.value;
     });
   }

@@ -20,7 +20,7 @@ class InfiniteScroll extends React.Component {
     hasMore:         React.PropTypes.bool,
     threshold:       React.PropTypes.number,
     resetPageCount:  React.PropTypes.bool,
-    pageNumberStart: React.PropTypes.number,
+    pageNumberStart: React.PropTypes.number
   }
 
   componentDidMount() {

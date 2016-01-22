@@ -12,7 +12,10 @@ class SelectedOptions extends React.Component {
   render() {
     return <div className="selected-options">
       {this._buildSelectedOptions()}
-      <input type="text" ref="typeAhead" className="type-ahead" id="type-ahead" name="typeAhead" value={this.props.typeAhead} onChange={this.props.handleTypeAheadChange} />
+      <input type="text" ref="typeAhead"
+        className="type-ahead" id="type-ahead"
+        name="typeAhead" value={this.props.typeAhead}
+        onChange={this.props.handleTypeAheadChange} />
     </div>;
   }
 

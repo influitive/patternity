@@ -40,7 +40,8 @@ const Tabs = React.createClass({
   },
   render: function() {
     return <nav className="pt-tabs" key={this.props.key}>
-      <TabsMenu ref="tabs" tabs={this.props.children} openTabIndex={this._selectedIndex()} onChange={this._onTabChange} />
+      <TabsMenu ref="tabs" tabs={this.props.children}
+        openTabIndex={this._selectedIndex()} onChange={this._onTabChange} />
       <TabsDropdown tabs={this.props.children} openTabIndex={this._selectedIndex()} onChange={this._onTabChange} />
       <TabSections tabs={this.props.children} openTabIndex={this._selectedIndex()} />
     </nav>;

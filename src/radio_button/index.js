@@ -35,7 +35,8 @@ class RadioButton extends React.Component {
   }
 
   render() {
-    return <span id={this.props.id} className={this._radioCSSClasses()} onClick={this._clickRadioButton} ref="radioButton">
+    return <span id={this.props.id} className={this._radioCSSClasses()}
+        onClick={this._clickRadioButton} ref="radioButton">
       <input disabled={!this.props.enabled}
           type="radio"
           ref="nativeRadioButton"

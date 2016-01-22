@@ -178,7 +178,7 @@ export default class Tooltip extends Component {
     });
   }
 
-  _closeTooltip = (event) => {
+  _closeTooltip = () => {
     this._updateState({
       showTooltip: false,
       showClose:   false,
@@ -194,7 +194,7 @@ export default class Tooltip extends Component {
     popover: {
       popover2: {
         background:  'rgba(68, 68, 68, 0.9)',
-        borderColor: '',
+        borderColor: ''
       },
       content: {
         color:    '#fff',

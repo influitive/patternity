@@ -46,7 +46,7 @@ const TabsDropdown = React.createClass({
     this._toggleTabDropdown();
   },
 
-  _toggleTabDropdown: function(event) {
+  _toggleTabDropdown: function() {
     if (ReactDOM.findDOMNode(this.refs.selectTabTitle).classList.contains('show-dropdown')) {
       ReactDOM.findDOMNode(this.refs.selectTabTitle).classList.remove('show-dropdown');
     } else {

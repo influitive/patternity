@@ -144,7 +144,6 @@ const MultiSelect = React.createClass({
       modifiedOptions[i].filteredOption = false;
     }
 
-    const that = this;
     this.setState({
       options:       modifiedOptions,
       focusedOption: modifiedOptions[0]
