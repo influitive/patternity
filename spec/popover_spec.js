@@ -2,7 +2,7 @@
 const React  = require('react/addons');
 const ReactTestUtils = React.addons.TestUtils;
 
-const Popover = require('../popover');
+const Popover = require('popover');
 
 const chai = require('chai');
 const expect = chai.expect;

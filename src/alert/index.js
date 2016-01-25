@@ -2,8 +2,6 @@
 var React = require('react');
 var AlertMixin = require('./alert_mixin.js');
 
-require('./alert.scss');
-
 var Alert = React.createClass({
   mixins:          [AlertMixin],
   displayName:     'Alert',

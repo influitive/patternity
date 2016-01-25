@@ -6,7 +6,7 @@ const TestUtils = React.addons.TestUtils;
 const _         = require('lodash');
 const simulate  = TestUtils.Simulate;
 
-const Accordion = require('../accordion');
+const Accordion = require('accordion');
 
 describe('Accordion', function() {
   function buildSectionData(index) {

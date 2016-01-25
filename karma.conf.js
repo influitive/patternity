@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'infl-components-src/spec/*.js'
+      'spec/*.js'
     ],
 
     plugins: [
@@ -32,7 +32,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'infl-components-src/**/*.js':  [ 'browserify' ]
+      'src/**/*.js':  [ 'babel', 'browserify' ],
+      'spec/*.js': [ 'browserify' ]
     },
 
     browserify: {
@@ -41,7 +42,7 @@ module.exports = function(config) {
       extensions: ['.js', '.jsx'],
       paths: [
         './node_modules',
-        './infl-components-src'
+        './src'
       ]
     },
 

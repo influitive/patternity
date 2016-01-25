@@ -2,7 +2,7 @@ const es5Shim   = require('es5-shim'), React     = require('react'), expect    =
 
 const ReactDOM = require('react-dom');
 
-const Alert = require('../alert');
+const Alert = require('alert');
 
 describe('Alert', function() {
   let title, body, alertIconClass;

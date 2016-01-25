@@ -2,7 +2,7 @@
 const React  = require('react/addons');
 const ReactTestUtils = React.addons.TestUtils;
 
-const ButtonGroup = require('../button-group');
+const ButtonGroup = require('button-group');
 
 const chai = require('chai');
 const expect = chai.expect;
