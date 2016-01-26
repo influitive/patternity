@@ -63,14 +63,8 @@ export default class Tooltip extends Component {
     isClickable:       PropTypes.bool,
     containerSelector: PropTypes.string,
     onOpen:            PropTypes.func,
-
-    style: PropTypes.shape({
-      content: {
-        minWidth: PropTypes.string.isRequired,
-        padding:  PropTypes.string.isRequired,
-        fontSize: PropTypes.string.isRequired
-      }
-    })
+    // The prop should be a shape with a shape inside but React 0.14 doesn't support this.
+    style: PropTypes.object
   }
 
   static defaultProps = {
