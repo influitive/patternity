@@ -3,10 +3,17 @@ import Row from './table-row';
 import Header from './table-header';
 
 export default class Table extends Component {
-  static propTypes: {
+  static propTypes = {
     rowCount:    PropTypes.number.isRequired,
     rowStyle:    PropTypes.object,
-    headerStyle: PropTypes.object
+    headerStyle: PropTypes.object,
+    selectedRows: PropTypes.array
+  }
+
+  static defaultProps = {
+    rowStyle: {},
+    headerStyle: {},
+    selectedRows: []
   }
 
   render() {
@@ -47,6 +54,14 @@ export default class Table extends Component {
   }
 
   _renderRow = (row, index) => {
-    return (<Row key={'row-' + index} style={this.props.rowStyle}>{row}</Row>);
+    return (
+      <Row key={'row-' + index} className={"pt-table-row" + this._selectedRow(index)} style={this.props.rowStyle}>
+        {row}
+      </Row>
+    );
+  }
+
+  _selectedRow = (index) => {
+    return this.props.selectedRows.indexOf(index) > -1 ? " selected" : "";
   }
 }

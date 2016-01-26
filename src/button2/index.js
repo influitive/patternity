@@ -7,7 +7,7 @@ import mapping from './theme';
 export class Button extends Component {
   static propTypes = {
     icon:      PropTypes.string,
-    type:      PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text']),
+    type:      PropTypes.oneOf(['primary', 'secondary', 'important', 'success', 'danger', 'text', '']),
     onClick:   PropTypes.func,
     disabled:  PropTypes.bool,
     inverse:   PropTypes.bool,
