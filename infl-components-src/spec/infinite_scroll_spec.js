@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 
 const InfiniteScroll = require('components/infinite_scroll');
@@ -12,7 +13,7 @@ describe('Infinite Scroll Component', function() {
 
   beforeEach(function() {
     subject = ReactTestUtils.renderIntoDocument(<InfiniteScroll loadMore={function(){}} hasMore={false} />);
-    infiniteScrollElement = React.findDOMNode(subject.refs.infiniteScroll);
+    infiniteScrollElement = ReactDOM.findDOMNode(subject.refs.infiniteScroll);
   });
 
   it('renders infinite scroll component', function() {

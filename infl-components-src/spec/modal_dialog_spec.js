@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 const simulate  = ReactTestUtils.Simulate;
 const simulateNative = ReactTestUtils.SimulateNative;
@@ -24,9 +25,9 @@ describe('Modal Dialog Component', function() {
   }
 
   function populateTestRefs(){
-    modalDialogElement = React.findDOMNode(subject.refs.modalDialog);
-    closeElement = React.findDOMNode(subject.refs.close);
-    modalElement = React.findDOMNode(subject.refs.modal);
+    modalDialogElement = ReactDOM.findDOMNode(subject.refs.modalDialog);
+    closeElement = ReactDOM.findDOMNode(subject.refs.close);
+    modalElement = ReactDOM.findDOMNode(subject.refs.modal);
   }
 
   function buildModalDialog(config){

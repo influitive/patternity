@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 
 const StatsBar = require('stats_bar');
@@ -17,7 +18,7 @@ describe('Stats Bar Component', function() {
     }
 
     function populateTestRefs(){
-      statsBarElement = React.findDOMNode(subject.refs.statsBar);
+      statsBarElement = ReactDOM.findDOMNode(subject.refs.statsBar);
     }
 
     it('will render the stats bar', function() {
@@ -62,9 +63,9 @@ describe('Stats Bar Component', function() {
     }
 
     function populateTestRefs(){
-      statElement = React.findDOMNode(subject.refs.stat);
-      statTitleElement = React.findDOMNode(subject.refs.title);
-      statValueElement = React.findDOMNode(subject.refs.value);
+      statElement = ReactDOM.findDOMNode(subject.refs.stat);
+      statTitleElement = ReactDOM.findDOMNode(subject.refs.title);
+      statValueElement = ReactDOM.findDOMNode(subject.refs.value);
     }
 
     it('will render the stats bar stat', function() {

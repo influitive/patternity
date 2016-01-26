@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM  = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 
 const ButtonGroup = require('../../lib/button-group');
@@ -13,7 +14,7 @@ describe('Button Group Component', function() {
 
   function renderButtonGroup(buttonGroupComponent){
     subject = ReactTestUtils.renderIntoDocument(buttonGroupComponent);
-    buttonGroupElement = React.findDOMNode(subject.refs.buttonGroup);
+    buttonGroupElement = ReactDOM.findDOMNode(subject.refs.buttonGroup);
   }
 
   it('will render the button group', function() {

@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 const simulate  = ReactTestUtils.Simulate;
 const simulateNative = ReactTestUtils.SimulateNative;
@@ -22,9 +23,9 @@ describe('Radio Button Component', function() {
   }
 
   function populateTestRefs(){
-    radioButtonElement = React.findDOMNode(subject.refs.radioButton);
-    nativeRadioButtonElement = React.findDOMNode(subject.refs.nativeRadioButton);
-    labelElement = React.findDOMNode(subject.refs.label);
+    radioButtonElement = ReactDOM.findDOMNode(subject.refs.radioButton);
+    nativeRadioButtonElement = ReactDOM.findDOMNode(subject.refs.nativeRadioButton);
+    labelElement = ReactDOM.findDOMNode(subject.refs.label);
   }
 
   it('will render the radio button component', function() {

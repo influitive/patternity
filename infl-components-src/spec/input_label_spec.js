@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 const simulate  = ReactTestUtils.Simulate;
 const simulateNative = ReactTestUtils.SimulateNative;
@@ -23,8 +24,8 @@ describe('Input Label Component', function() {
   }
 
   function populateTestRefs(){
-    inputLabelElement = React.findDOMNode(subject.refs.inputLabel);
-    labelElement = React.findDOMNode(subject.refs.label);
+    inputLabelElement = ReactDOM.findDOMNode(subject.refs.inputLabel);
+    labelElement = ReactDOM.findDOMNode(subject.refs.label);
   }
 
   it('will render the input label component', function() {

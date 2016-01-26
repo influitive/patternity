@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 const simulate  = ReactTestUtils.Simulate;
 const simulateNative = ReactTestUtils.SimulateNative;
@@ -22,12 +23,12 @@ xdescribe('Tooltip Component', function() {
   }
 
   function populateTestRefs(){
-    tooltipElement = React.findDOMNode(subject.refs.tooltip);
-    tipElement = React.findDOMNode(subject.refs.tip);
-    closeElement = React.findDOMNode(subject.refs.close);
-    titleElement = React.findDOMNode(subject.refs.title);
-    elementElement = React.findDOMNode(subject.refs.element);
-    detailsElement = React.findDOMNode(subject.refs.tip);
+    tooltipElement = ReactDOM.findDOMNode(subject.refs.tooltip);
+    tipElement = ReactDOM.findDOMNode(subject.refs.tip);
+    closeElement = ReactDOM.findDOMNode(subject.refs.close);
+    titleElement = ReactDOM.findDOMNode(subject.refs.title);
+    elementElement = ReactDOM.findDOMNode(subject.refs.element);
+    detailsElement = ReactDOM.findDOMNode(subject.refs.tip);
   }
 
   function simulateMouseOver(from, to) {

@@ -1,5 +1,6 @@
 /* jshint expr:true */
 const React  = require('react/addons');
+const ReactDOM = require('react-dom');
 const ReactTestUtils = React.addons.TestUtils;
 
 const Icon = require('icon');
@@ -12,7 +13,7 @@ describe('Icon Component', function() {
 
   beforeEach(function() {
     subject = ReactTestUtils.renderIntoDocument(<Icon icon={'remove'} />);
-    iconElement = React.findDOMNode(subject.refs.icon);
+    iconElement = ReactDOM.findDOMNode(subject.refs.icon);
   });
 
   context('influitive icon', function() {
