@@ -13,12 +13,13 @@ const theme = {
   themeColorPrimary: 'orange'
 };
 
-const Theme = createTheme(theme);
+let selectedRows = [0, 2];
 
 class App extends Component {
   render() {
     return <div>
-      <ButtonDropdown title="test" options={[<a>fdsf</a>, <a>fdsf</a>]}>        
+
+      <ButtonDropdown title="test" options={[<a>fdsf</a>, <a>fdsf</a>]}>
       </ButtonDropdown>
     </div>;
   }
