@@ -55,13 +55,13 @@ export default class Table extends Component {
 
   _renderRow = (row, index) => {
     return (
-      <Row key={'row-' + index} className={"pt-table-row" + this._selectedRow(index)} style={this.props.rowStyle}>
+      <Row key={'row-' + index} className={'pt-table-row' + this._selectedRow(index)} style={this.props.rowStyle}>
         {row}
       </Row>
     );
   }
 
   _selectedRow = (index) => {
-    return this.props.selectedRows.indexOf(index) > -1 ? " selected" : "";
+    return this.props.selectedRows.indexOf(index) > -1 ? ' selected' : '';
   }
 }
