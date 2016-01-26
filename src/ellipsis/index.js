@@ -30,7 +30,7 @@ export default class Ellipsis extends Component {
 
   _resetText = (maxLinesChanged) => {
     if (maxLinesChanged) {
-      let textElement = ReactDOM.findDOMNode(this.refs.text);
+      let textElement = this.refs.text;
       textElement.innerHTML = this.props.text;
     }
   }
@@ -41,7 +41,7 @@ export default class Ellipsis extends Component {
 
   _applyEllipsis = () => {
     if (this.props.maxLines > 0) {
-      let ellipsisElement = ReactDOM.findDOMNode(this.refs.ellipsis);
+      let ellipsisElement = this.refs.ellipsis;
 
       let lineHeight = this._getLineHeight(ellipsisElement);
       ellipsisElement.style.maxHeight = (lineHeight * this.props.maxLines) + 'px';
@@ -60,14 +60,14 @@ export default class Ellipsis extends Component {
   }
 
   _isTextOutOfBounds() {
-    let textElement = ReactDOM.findDOMNode(this.refs.text);
-    let ellipsisElement = ReactDOM.findDOMNode(this.refs.ellipsis);
+    let textElement = this.refs.text;
+    let ellipsisElement = this.refs.ellipsis;
 
     return textElement.getBoundingClientRect().height > ellipsisElement.getBoundingClientRect().height + 2;
   }
 
   _shrinkText = () => {
-    let textElement = ReactDOM.findDOMNode(this.refs.text);
+    let textElement = this.refs.text;
     let text = this._removeLastWord(textElement);
     textElement.innerHTML = text;
     this._applyEllipsisToText();

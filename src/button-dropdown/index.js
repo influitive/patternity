@@ -26,6 +26,9 @@ export default class ButtonDropdown extends Component {
 
     style: PropTypes.shape({
       borderColor: function(props) {
+        // Not required.
+        if (!props.borderColor)
+          return;
         const { type } = props;
         if (type != 'secondary') {
           return new Error('Cannot use border with non-secondary type.');
