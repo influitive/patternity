@@ -89,7 +89,7 @@
     "testling": "^1.7.1",
     "url-loader": "^0.5.7",
     "watchify": "^3.5.0",
-    "webpack": "^1.12.0",
+    "webpack": "^1.12.12",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-dev-server": "^1.10.1",
     "webpack-hot-middleware": "^2.2.0"
