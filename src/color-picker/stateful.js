@@ -14,8 +14,11 @@ export default class StatefulColorPicker extends Component {
     /**
      * Positioning of popup ColorPicker.
      */
-    position: PropTypes.oneOf(['top', 'bottom', 'left', 'right'])
-
+    position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+    /**
+     * The type of color picker. Popover will show a clickable color swatch.
+     */
+    type: PropTypes.oneOf(['popover', 'inline'])
   };
 
   static defaultProps = {
@@ -32,6 +35,7 @@ export default class StatefulColorPicker extends Component {
     const color = this.state.color ? this.state.color : this.props.initialColor;
     return (
       <ColorPicker
+        type={this.props.type}
         isOpen={this.state.isOpen}
         color={color}
         onChange={this._handleChange}
