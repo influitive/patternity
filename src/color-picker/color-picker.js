@@ -14,57 +14,69 @@ export default class ColorPicker extends Component {
      */
     onChange: PropTypes.func,
     /**
-     * Display popup or not
+     * The type of color picker. Popover will show a clickable color swatch.
+     */
+    type: PropTypes.oneOf(['popover', 'inline']),
+    /**
+     * Display popup or not. Only applicable for type:popover
      */
     isOpen:  PropTypes.bool,
     /**
-     * Calls when clicking the swatch
+     * Calls when clicking the swatch. Only applicable for type:popover
      */
     onSwatchClick:  PropTypes.func,
     /**
-     * Positioning of popup ColorPicker.
+     * Positioning of popup ColorPicker. Only applicable for type:popover
      */
     position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     /**
-     * Called when a click occurs outside of ColorPicker
+     * Called when a click occurs outside of ColorPicker. Only applicable for type:popover
      */
     onClickOut: PropTypes.func
 
   };
 
   static defaultProps = {
-    color:   'purple',
-    onChange: () => {},
-    isOpen:  false,
+    type:          'popover',
+    color:         'purple',
+    onChange:      () => {},
+    isOpen:        false,
     onSwatchClick: () => {},
-    position: 'bottom',
-    onClickOut: null
+    position:      'bottom',
+    onClickOut:    null
   };
 
-
-  pickerType = 'chrome';
-
   render() {
+    if (this.props.type == 'inline' ) {
+      return this._renderPicker();
+    }
+
     return (
       <span>
         <Popover element={this._getSwatch()}
           position={this.props.position}
           isOpen={this.props.isOpen}
           onClickOut={this.props.onClickOut}>
-          <ReactColorPicker
-            type={this.pickerType}
-            color={this.props.color}
-            display={true}
-            onChangeComplete={this._handleChangeComplete}
-            positionCSS={this.styles.colorPickerOverrides}/>
+          {this._renderPicker()}
         </Popover>
       </span>
     );
   }
 
+  _renderPicker = () => {
+    return (
+      <ReactColorPicker
+            type='chrome'
+            color={this.props.color}
+            display={true}
+            onChangeComplete={this._handleChangeComplete}
+            positionCSS={this.styles.colorPickerOverrides}/>
+    );
+  };
+
   _handleChangeComplete = (color) => {
     this.props.onChange('#' + color.hex);
-  }
+  };
 
   styles = {
     color: {
