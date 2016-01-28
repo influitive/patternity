@@ -64,13 +64,19 @@ export default class ColorPicker extends Component {
   }
 
   _renderPicker = () => {
+    let {type, color} = this.props;
+    let pickerProps = {
+      type: 'chrome',
+      color: color,
+      onChangeComplete: this._handleChangeComplete,
+      positionCSS: this.styles.colorPickerOverrides
+    };
+    if (type != 'inline') {
+      pickerProps.display = true;
+    }
+
     return (
-      <ReactColorPicker
-            type='chrome'
-            color={this.props.color}
-            display={true}
-            onChangeComplete={this._handleChangeComplete}
-            positionCSS={this.styles.colorPickerOverrides}/>
+      <ReactColorPicker {...pickerProps}/>
     );
   };
 
