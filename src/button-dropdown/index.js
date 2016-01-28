@@ -10,9 +10,10 @@ export default class ButtonDropdown extends Component {
     options:       [],
     children:      [],
     alignDropdown: 'left',
-    onChange:      () => {},
+    onClick:      () => {},
     style:         {},
-    disabled:      false
+    disabled:      false,
+    isOpen:        false
   }
 
   static propTypes = {
@@ -21,8 +22,9 @@ export default class ButtonDropdown extends Component {
     options:       PropTypes.array,
     children:      PropTypes.array,
     alignDropdown: PropTypes.oneOf([ 'left', 'right' ]),
-    onChange:      PropTypes.func,
+    onClick:       PropTypes.func,
     disabled:      PropTypes.bool,
+    isOpen:        PropTypes.bool,
 
     style: PropTypes.shape({
       borderColor: function(props) {
@@ -37,14 +39,10 @@ export default class ButtonDropdown extends Component {
     })
   }
 
-  state = {
-    isDropdownOpen: false
-  }
-
   render() {
     const { disabled, type, title } = this.props;
 
-    const buttonDropClasses = this.state.isDropdownOpen
+    const buttonDropClasses = this.props.isOpen
       ? 'button-dropdown show'
       : 'button-dropdown';
 
@@ -52,7 +50,7 @@ export default class ButtonDropdown extends Component {
       <ButtonGroup classList={buttonDropClasses}>
         <Button
           classList={this._getButtonClasses(type)}
-          onClick={this._toggleDropdownOptions}
+          onClick={this.props.onClick}
           ref='button'
           disabled={disabled}>
           {title}
@@ -65,12 +63,11 @@ export default class ButtonDropdown extends Component {
   }
 
   _getDropdown = () => {
-    if (this.props.disabled || !this.state.isDropdownOpen) return null;
+    if (this.props.disabled || !this.props.isOpen) return null;
 
     return (
       <Dropdown
-        type={this.props.type}
-        onChange={this.props.onChange}>
+        type={this.props.type} >
         {this._populateOptions()}
       </Dropdown>
     );
@@ -83,25 +80,9 @@ export default class ButtonDropdown extends Component {
     return classList;
   };
 
-  _toggleDropdownOptions = (event)  => {
-    event.preventDefault();
-    if (this.props.disabled) return;
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
   _populateOptions = () => {
     return this.props.children.length > 0
       ? [...this.props.children]
       : [...this.props.options];
   };
-
-  _handleChange = (key) => {
-    this.props.onChange(key);
-    this.setState({
-      isDropdownOpen: false
-    });
-  };
-
 }
