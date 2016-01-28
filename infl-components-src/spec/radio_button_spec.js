@@ -43,19 +43,19 @@ describe('Radio Button Component', function() {
     it('will be enabled by default', function() {
       renderRadioButton(<RadioButton></RadioButton>);
       expect(radioButtonElement.className).not.to.contain("disabled");
-      expect(nativeRadioButtonElement.hasAttribute("disabled")).not.to.be.ok();
+      expect(nativeRadioButtonElement.hasAttribute("disabled")).not.to.be.ok;
     });
 
     it('will be enabled when enabled is true', function() {
       renderRadioButton(<RadioButton enabled={true}></RadioButton>);
       expect(radioButtonElement.className).not.to.contain("disabled");
-      expect(nativeRadioButtonElement.hasAttribute("disabled")).not.to.be.ok();
+      expect(nativeRadioButtonElement.hasAttribute("disabled")).not.to.be.ok;
     });
 
     it('will be disabled when enabled is false', function() {
       renderRadioButton(<RadioButton enabled={false}></RadioButton>);
       expect(radioButtonElement.className).to.contain("disabled");
-      expect(nativeRadioButtonElement.hasAttribute("disabled")).to.be.ok();
+      expect(nativeRadioButtonElement.hasAttribute("disabled")).to.be.ok;
     });
   });
 
@@ -86,17 +86,17 @@ describe('Radio Button Component', function() {
 
     it('will render unchecked by default', function () {
       renderRadioButton(<RadioButton></RadioButton>);
-      expect(nativeRadioButtonElement.hasAttribute("checked")).to.not.be.ok();
+      expect(nativeRadioButtonElement.hasAttribute("checked")).to.not.be.ok;
     });
 
     it('will render unchecked when isChecked is false', function () {
       renderRadioButton(<RadioButton isChecked={false}></RadioButton>);
-      expect(nativeRadioButtonElement.hasAttribute("checked")).to.not.be.ok();
+      expect(nativeRadioButtonElement.hasAttribute("checked")).to.not.be.ok;
     });
 
     it('will render checked when isChecked is true', function () {
       renderRadioButton(<RadioButton isChecked={true}></RadioButton>);
-      expect(nativeRadioButtonElement.hasAttribute("checked")).to.be.ok();
+      expect(nativeRadioButtonElement.hasAttribute("checked")).to.be.ok;
     });
 
     it('will updated checked when new prop value for isChecked is passed', function () {
