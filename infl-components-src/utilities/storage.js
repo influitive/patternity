@@ -5,7 +5,11 @@ const Storage = function() {
   }
 
   function setItem(key, value) {
-    window.localStorage.setItem(key, JSON.stringify(value));
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch(e) {
+      console.warn('Private browsing is preventing the app from running correctly.  Turn off private browsing for the best experience.');
+    }
   }
 
   function removeItem(key) {
