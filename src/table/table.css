@@ -1,0 +1,12 @@
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  overflow: hidden;
+  max-width: 100%;
+  margin: auto;
+}

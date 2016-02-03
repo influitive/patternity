@@ -1,0 +1,11 @@
+.id-cell {
+  display: flex;
+}
+
+.name-cell {
+  composes: id-cell;
+}
+
+.desc-cell {
+
+}

@@ -74,7 +74,7 @@ gulp.task('influicons', function() {
 });
 
 gulp.task('copy-lib-styles', function() {
-  return gulp.src('src/**/*.scss')
+  return gulp.src(['src/**/*.scss', 'src/**/*.css'])
     .pipe(postcss([rucksack({autoprefixer: true}), nested(), lost(), minmax()], {syntax: postScss}))
     .pipe(gulp.dest('lib'))
     .pipe(flatten())

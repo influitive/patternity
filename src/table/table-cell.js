@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import _ from 'lodash';
+import classnames from 'classnames';
 
 export default class Cell extends Component {
+
   render() {
-    let {style, ...props} = this.props;
+    let {className, ...props} = this.props;
+
     return (
-      <div
-        className="pt-table-cell" {...props}
-        style={_.extend({ display: 'table-cell', verticalAlign: 'middle'}, style)}>
+      <div className={classnames('pt-table-cell', className)} {...props}>
       </div>
     );
   }

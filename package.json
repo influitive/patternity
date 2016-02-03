@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.1",
     "babel-eslint": "^4.0.5",
     "babel-tape-runner": "^1.2.0",
     "babelify": "^6.3.0",
@@ -70,7 +71,10 @@
     "karma-jasmine": "^0.3.5",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^1.0.0",
+    "lost": "^6.7.1",
     "mocha": "^2.4.4",
+    "postcss-loader": "^0.8.0",
+    "precss": "^1.4.0",
     "react": "^0.14.3",
     "react-addons-test-utils": "^0.14.3",
     "react-dom": "^0.14.3",
@@ -125,6 +129,7 @@
     "node-bourbon": "~1.2.3",
     "node-neat": "^1.7.2",
     "node-sass": "^3.2.0",
+    "postcss": "^5.0.14",
     "postcss-media-minmax": "^2.1.1",
     "postcss-nested": "^1.0.0",
     "postcss-scss": "^0.1.2",

@@ -2,6 +2,8 @@ import React, {Component, PropTypes} from 'react';
 import Row from './table-row';
 import Header from './table-header';
 
+import styles from 'css?modules!./table.css';
+
 export default class Table extends Component {
   static propTypes = {
     rowCount:    PropTypes.number.isRequired,
@@ -18,7 +20,7 @@ export default class Table extends Component {
 
   render() {
     return (
-      <div className="pt-table" style={{display: 'table', width: '100%', borderCollapse: 'collapse'}}>
+      <div className={styles.base}>
         <Header style={this.props.headerStyle}>
           {this._renderHeader()}
         </Header>
@@ -31,7 +33,10 @@ export default class Table extends Component {
     return (
       React.Children.map(this.props.children, function(column, index) {
         if (column) {
-          return React.cloneElement(column.props.header, {key: `table-header-cell-${index}`});
+          return React.cloneElement(column.props.header,
+            {
+              key: `table-header-cell-${index}`
+            });
         }
       })
     );
@@ -44,7 +49,7 @@ export default class Table extends Component {
 
       row = React.Children.map(this.props.children, function(col, index) {
         if (col) {
-          let cell = col.props.cell(i);
+          const cell = col.props.cell(i);
           return React.cloneElement(cell, {key: 'cell-'+index});
         }
       });
@@ -55,7 +60,7 @@ export default class Table extends Component {
 
   _renderRow = (row, index) => {
     return (
-      <Row key={'row-' + index} className={'pt-table-row' + this._selectedRow(index)} style={this.props.rowStyle}>
+      <Row key={'row-' + index} className={this._selectedRow(index)} style={this.props.rowStyle}>
         {row}
       </Row>
     );

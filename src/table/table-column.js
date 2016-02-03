@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import {Component, PropTypes} from 'react';
 
 export default class Column extends Component {
   static propTypes = {
@@ -7,8 +7,6 @@ export default class Column extends Component {
   }
 
   render() {
-    return (
-      <span className="pt-table-column"></span>
-    );
+    return null;
   }
 }
