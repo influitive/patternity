@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import _ from 'lodash';
+import classnames from 'classnames';
+import classes from 'style!css?modules&localIdentName=[name]__[local]___[hash:base64:5]!./table.css';
 
 export default class Row extends Component {
   render() {
-    let {style, ...props} = this.props;
+    let {style, className, ...props} = this.props;
     return (
       <div
-        className="pt-table-row" {...props}
-        style={_.extend({ display: 'table-row', width: '100%'}, style)}>
+        className={classnames('pt-table-row', classes.row, className)} {...props}
+        style={ style }>
       </div>
     );
   }
