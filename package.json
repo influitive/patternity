@@ -44,7 +44,7 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^4.0.5",
+    "babel-eslint": "^4.1.7",
     "babel-tape-runner": "^1.2.0",
     "babelify": "^6.3.0",
     "browserify": "^8.1.3",
