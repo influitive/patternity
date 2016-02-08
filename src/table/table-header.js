@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import _ from 'lodash';
+import classnames from 'classnames';
+import classes from 'css?modules!./table.css';
 
 export default class Header extends Component {
   render() {
-    let {style, ...props} = this.props;
+    let {className, ...props} = this.props;
     return (
       <div
-        className="pt-table-header" {...props}
-        style={_.extend({ display: 'table-header-group', width: '100%'}, style)}>
+        className={classnames('pt-table-header',classes.row, className)} {...props}>
       </div>
     );
   }
