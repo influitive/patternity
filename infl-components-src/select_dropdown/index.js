@@ -22,7 +22,6 @@ class SelectDropdown extends React.Component {
     disabled: false,
     children: [],
     onChange: function() {},
-    message:  '',
     id:       ''
   }
 
@@ -82,6 +81,9 @@ class SelectDropdown extends React.Component {
   }
 
   _buildMessage() {
+    if ( !this.props.message )
+      return null;
+
     if (typeof this.props.message === 'string') {
       return (<span className="input-message">{this.props.message}</span>);
     } else {
