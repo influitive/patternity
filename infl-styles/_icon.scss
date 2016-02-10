@@ -905,12 +905,22 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-video:before {
   content: "\E05B"
+}
+
+@mixin ic-video() {
+  font-family: 'influicons';
+  content: "\E05B"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E05C"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E05B"
+  content: "\E05C"
 }
 
