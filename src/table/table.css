@@ -6,6 +6,5 @@
 
 .row {
   display: flex;
-  overflow: hidden;
   max-width: 100%;
 }
