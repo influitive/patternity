@@ -113,4 +113,5 @@
 .ic.ic-android:before { content: "\E059" }
 .ic.ic-apple:before { content: "\E05A" }
 .ic.ic-video:before { content: "\E05B" }
-.ic.ic-coins-old:before { content: "\E05C" }
+.ic.ic-refresh:before { content: "\E05C" }
+.ic.ic-coins-old:before { content: "\E05D" }
