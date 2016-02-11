@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import classnames from 'classnames';
-import classes from 'css?modules!./table.css';
+import classes from '../../infl-styles/table.css';
 
 export default class Header extends Component {
   render() {

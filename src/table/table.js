@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import Row from './table-row';
 import Header from './table-header';
 
-import styles from 'css?modules!./table.css';
+import classes from '../../infl-styles/table.css';
 
 export default class Table extends Component {
   static propTypes = {
@@ -20,7 +20,7 @@ export default class Table extends Component {
 
   render() {
     return (
-      <div className={styles.base}>
+      <div className={classes.table}>
         <Header style={this.props.headerStyle}>
           {this._renderHeader()}
         </Header>
@@ -28,6 +28,7 @@ export default class Table extends Component {
       </div>
     );
   }
+
 
   _renderHeader = () => {
     return (
