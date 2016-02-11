@@ -3,7 +3,6 @@ import React from 'react';
 import shallow from '../../testUtils/shallow';
 
 import Tagger from './index.js';
-import Tag from './tag.js';
 
 global.document = {};
 
@@ -27,21 +26,4 @@ test('<Tagger /> methods', t => {
   const e = { target: { value: 'string,hello, bob'}};
   instance._handleChange(e);
 
-});
-
-test('<Tag /> methods', t => {
-  t.plan(3);
-  const tag = 'TestTag';
-  const onUnTagged = (arg) => {
-    t.equal(arg, tag, 'Pass in TestTag');
-    t.pass('calls onUnTagged');
-  };
-
-  let { instance, result } = shallow(
-    <Tag tag={tag} unTag={onUnTagged} />
-  );
-
-  t.equal(result.type, 'li', 'should be a list element');
-
-  instance._unTag();
 });

@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< 33ea029974b6f794f6126b75de6b72ce60147328
 import classes from '!!style!css?modules!./test.css';
 import Table, {Column, Cell} from '../src/table';
+=======
 
-let items = [
-  {
-    id: 0,
-    name: "yeah",
-    description: "what the?"
-  },
-  {
-    id: 1,
-    name: "yeah 1",
-    description: "what the?"
-  },
-  {
-    id: 2,
-    name: "yeah 2",
-    description: "what the?"
-  }
-];
+import Tagger from '../lib/tagger';
+>>>>>>> Make tag a seperate component from tagger
 
-let selectedRows = [0, 2];
+import '../infl-styles/_tagger.scss';
+import '../infl-fonts/influicons.css';
+import '../infl-fonts/influicons.eot';
 
 class App extends Component {
+<<<<<<< 33ea029974b6f794f6126b75de6b72ce60147328
+=======
+  state = {
+    tags: ['tag1', 'tag2']
+  }
+>>>>>>> Make tag a seperate component from tagger
 
   render() {
     console.log(classes);
     return <div>
+<<<<<<< 33ea029974b6f794f6126b75de6b72ce60147328
       <Table
         rowCount={items.length}
         rowStyle={{borderBottomColor: 'rgb(221, 221, 221)', borderBottomStyle: 'solid', borderBottomWidth: '1px'}}
@@ -60,7 +56,23 @@ class App extends Component {
           }}
           />
       </Table>
+=======
+      <Tagger tags={this.getTags()} onTagged={this.tagIt}/>
+>>>>>>> Make tag a seperate component from tagger
     </div>;
+  }
+
+  getTags = () => {
+    if (this.state)
+      return this.state.tags;
+    else
+      return [];
+  }
+
+  tagIt = (tag) => {
+    let cTags = this.state.tags || [];
+    cTags.push(tag);
+    this.setState({tags: cTags});
   }
 }
 

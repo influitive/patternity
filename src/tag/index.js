@@ -1,12 +1,30 @@
-import { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import Icon from '../../lib/icon';
 
 export default class Tag extends Component {
+  static props = {
+    unTag: PropTypes.func
+  }
 
-  getClassNames = () => {
-    return 'pt-tag';
+  static defaultProps = {
+    unTag: () => {}
   }
 
   render() {
-    return <span className={this.getClassNames()}>{this.props.children}</span>
+    const { tag } = this.props;
+
+    return (
+      <li key={tag} className="pt-tag">
+      {tag}
+        <span className='pt-tag-close' onClick={this._unTag}>
+          <Icon icon='close' />
+        </span>
+      </li>
+    );
   }
+
+  _unTag = () => {
+    const { tag, id } = this.props;
+    this.props.unTag(id || tag)
+  };
 }

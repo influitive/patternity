@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import Tag from './tag.js';
+import Tag from '../tag';
 
 export default class Tagger extends Component {
 
   static propTypes = {
     tags:         PropTypes.arrayOf(PropTypes.string),
-    onTagged:     PropTypes.func.isRequired,
-    onUnTagged:   PropTypes.func.isRequired,
+    onTagged:     PropTypes.func,
+    onUnTagged:   PropTypes.func,
     placeholder:  PropTypes.string,
     validationFn: PropTypes.func,
     breakOn:      PropTypes.any
@@ -14,6 +14,8 @@ export default class Tagger extends Component {
 
   static defaultProps = {
     tags:         [],
+    onTagged: () => {},
+    onUnTagged: () => {},
     breakOn:      /(\s|,)/g,
     placeholder:  'Please enter a value...',
     validationFn: () => true
