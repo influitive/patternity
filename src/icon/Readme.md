@@ -495,6 +495,11 @@ let onMouseLeave = (e) => {
     <div style={titleStyle}>video</div>
   </div>
     
+  <div style={iconGroupStyle} className='IconDescription' id="refresh">
+    <Icon icon="refresh" />
+    <div style={titleStyle}>refresh</div>
+  </div>
+    
   <div style={iconGroupStyle} className='IconDescription' id="coins-old">
     <Icon icon="coins-old" />
     <div style={titleStyle}>coins-old</div>
