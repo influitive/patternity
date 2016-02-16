@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import TetherElement from 'react-tether'
+import TetherComponent from 'react-tether'
 import PopoverContent from './popover-content';
 import PopoverArrow from './popover-arrow';
 //import style from './_popover.scss';
@@ -49,30 +49,32 @@ class Popover extends Component {
 
   render() {
     return (
-      <span style={{position: 'relative', display: 'inline-block'}}>
-        {this._getElement()}
-        {this._getPopoverElement()}
+      <span style={{position: 'relative'}}>
+        {this._getTetherElement()}
+        {this._getArrowElement()}
       </span>
     );
   }
 
   _getElement = () => {
-    return React.cloneElement(this.props.element, { ref: 'element' });
+    return(
+      <span>
+        {this.props.element}
+      </span>
+    );
   }
 
   _getPopoverElement = () => {
     if ( !this.props.isOpen )
       return null;
     return (
-      <span>
-        {this._getBackDropElement()}
-        {this._getArrowElement()}
-        {this._getTetherElement()}
-      </span>
+        this._getPopoverContent()
     );
   }
 
   _getArrowElement = () => {
+    if ( !this.props.isOpen )
+      return null;
     return (
       <PopoverArrow
         position={this.props.position}
@@ -85,20 +87,17 @@ class Popover extends Component {
     if ( !this.props.onClickOut )
       return null;
     return (
-      <div className='pt-popover-backdrop'
-        onClick={this._handleBackDropClick}>
-      </div>
+      null
     );
   }
 
   _getTetherElement = () => {
+    const tetherOptions = this._getTetherOptions();
     return (
-      <TetherElement
-        target={this.refs.element}
-        options={this._getTetherOptions()}
-      >
-        {this._getPopoverContent()}
-      </TetherElement>
+      <TetherComponent {...tetherOptions}>
+        {this._getElement()}
+        {this._getPopoverElement()}
+      </TetherComponent>
     );
   }
 
@@ -107,12 +106,12 @@ class Popover extends Component {
 
     switch (this.props.position) {
     case 'top':
-      attachment = 'bottom middle';
-      targetAttachment = 'top middle';
+      attachment = 'bottom center';
+      targetAttachment = 'top center';
       break;
     case 'bottom':
-      attachment = 'top middle';
-      targetAttachment = 'bottom middle';
+      attachment = 'top center';
+      targetAttachment = 'bottom center';
       break;
     case 'left':
       attachment = 'middle right';
