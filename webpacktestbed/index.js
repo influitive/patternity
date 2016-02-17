@@ -16,11 +16,23 @@ const theme = {
 const Theme = createTheme(theme);
 
 class App extends Component {
+  state = {
+    isOpen: false
+  }
+
   render() {
     return <div>
-      <ButtonDropdown title="test" options={[<a>fdsf</a>, <a>fdsf</a>]}>        
+      <ButtonDropdown title="test" onClick={this._handleClick} isOpen={this.state.isOpen}>
+        <a>fdsf</a>
+        <a>fdsf</a>
       </ButtonDropdown>
     </div>;
+  }
+
+  _handleClick = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
   }
 }
 
