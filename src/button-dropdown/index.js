@@ -90,15 +90,9 @@ export default class ButtonDropdown extends Component {
 
   _populateOptions = () => {
     return React.Children.count(this.props.children) > 0
-      ? this._makeChildrenArray()
-      : [...this.props.options];
+      ? this.props.children
+      : this.props.options;
   };
-
-  _makeChildrenArray = () => {
-    return React.Children.count(this.props.children) === 1
-    ? [this.props.children]
-    : this.props.children;
-  }
 
   _handleChange = (key) => {
     this.props.onChange(key);
