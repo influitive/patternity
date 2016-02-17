@@ -18,10 +18,7 @@ const Theme = createTheme(theme);
 class App extends Component {
   render() {
     return <div>
-      <ButtonDropdown title="test">
-        <a>fdsf</a>
-        <a>fdsf</a>
-        <a>fdsf</a>
+      <ButtonDropdown title="test" options={[<a>fdsf</a>, <a>fdsf</a>]}>        
       </ButtonDropdown>
     </div>;
   }
