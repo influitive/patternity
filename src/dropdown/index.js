@@ -9,7 +9,7 @@ export class Dropdown extends Component {
     ref:       PropTypes.string,
     classList: PropTypes.string,
     type:      PropTypes.string,
-    children:  PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    children:  PropTypes.oneOfType([PropTypes.array, PropTypes.string, PropTypes.node]),
     onChange:  PropTypes.func,
     sheet:     PropTypes.object
   }
@@ -40,7 +40,7 @@ export class Dropdown extends Component {
   };
 
   _renderChildren = (children) => {
-    if (children.length === 0) return null;
+    if (React.Children.count(children) === 0) return null;
 
     return React.Children.map(children, (opt, i) => {
       return <li className="option" key={opt + '-' + i} ref={opt}>{opt}</li>

@@ -20,7 +20,7 @@ export default class ButtonDropdown extends Component {
     title:         PropTypes.string,
     type:          PropTypes.oneOf([ 'success', 'danger', 'primary', 'important', 'secondary', '' ]),
     options:       PropTypes.array,
-    children:      PropTypes.array,
+    children:      PropTypes.node,
     alignDropdown: PropTypes.oneOf([ 'left', 'right' ]),
     onClick:       PropTypes.func,
     disabled:      PropTypes.bool,
@@ -81,8 +81,8 @@ export default class ButtonDropdown extends Component {
   };
 
   _populateOptions = () => {
-    return this.props.children.length > 0
-      ? [...this.props.children]
-      : [...this.props.options];
+    return React.Children.count(this.props.children) > 0
+      ? this.props.children
+      : this.props.options;
   };
 }
