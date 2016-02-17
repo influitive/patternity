@@ -11,7 +11,6 @@ class Popover extends Component {
     containerSelector: PropTypes.string,
     element:           PropTypes.any.isRequired,
     onOpen:            PropTypes.func,
-
     style: PropTypes.shape({
       background:  PropTypes.string.isRequired,
       borderColor: function(props) {
@@ -31,7 +30,6 @@ class Popover extends Component {
     position:          'top',
     containerSelector: 'body',
     onOpen:            function() {},
-
     style: {
       borderColor: '#ccc',
       background:  'white'
@@ -42,9 +40,7 @@ class Popover extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.isOpen && prevProps.isOpen !== this.props.isOpen) {
-      this.props.onOpen();
-    }
+    if (this.props.isOpen && prevProps.isOpen !== this.props.isOpen) this.props.onOpen();
   }
 
   render() {
@@ -57,37 +53,22 @@ class Popover extends Component {
   }
 
   _getElement = () => {
-    return(
-      <span>
-        {this.props.element}
-      </span>
-    );
+    return <span>{this.props.element}</span>;
   }
 
   _getPopoverElement = () => {
-    if ( !this.props.isOpen )
-      return null;
-    return (
-        this._getPopoverContent()
-    );
+    if (!this.props.isOpen) return null;
+    return this._getPopoverContent();
   }
 
   _getArrowElement = () => {
-    if ( !this.props.isOpen )
-      return null;
+    if (!this.props.isOpen) return null;
+
     return (
       <PopoverArrow
         position={this.props.position}
         shouldHaveBorder={this._shouldHaveBorder()}
         style={this.props.style}/>
-    );
-  }
-
-  _getBackDropElement = () => {
-    if ( !this.props.onClickOut )
-      return null;
-    return (
-      null
     );
   }
 
