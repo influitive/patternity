@@ -131,7 +131,7 @@ class Popover extends Component {
 
   _shouldHaveBorder = () => {
     let borderColor = this.props.style.borderColor || '';
-    return borderColor.length > 0 && /rgba/.test(this.props.style.background);
+    return borderColor && !/rgba/.test(this.props.style.background);
   }
 
   _handleBackDropClick = () => {
