@@ -60,7 +60,7 @@ gulp.task('influicons', function() {
           fontPath:  'infl-fonts/',
           className: 'ic'
         }))
-        .pipe(gulp.dest('src/icon/'));
+        .pipe(gulp.dest('infl-styles/'));
 
       // generate the patternity readme file for icon
       gulp.src('infl-icons/templates/icon.readme.md')
