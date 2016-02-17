@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-
 import { createTheme } from '../src/utils/themeable';
 import ButtonDropdown from '../src/button-dropdown';
 
@@ -14,12 +13,15 @@ const theme = {
   themeColorPrimary: 'orange'
 };
 
+const Theme = createTheme(theme);
 
 class App extends Component {
-
   render() {
     return <div>
-      <ButtonDropdown title="test" options={[<a>fdsf</a>, <a>fdsf</a>]}>
+      <ButtonDropdown title="test">
+        <a>fdsf</a>
+        <a>fdsf</a>
+        <a>fdsf</a>
       </ButtonDropdown>
     </div>;
   }
