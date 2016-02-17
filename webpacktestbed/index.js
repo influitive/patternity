@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import { createTheme } from '../src/utils/themeable';
-
-import Button from '../lib/button2';
+import ButtonDropdown from '../src/button-dropdown';
 
 // Import webfonts
-import '../infl-styles/_font_families_webpack.scss';
+// import '../infl-styles/_font_families_webpack.scss';
 
 require('../infl-styles/_button.scss');
 
@@ -19,10 +18,13 @@ const Theme = createTheme(theme);
 class App extends Component {
   render() {
     return <div>
-      <Button type="primary">Hello There Bob</Button>
-      <Button type="primary">NonTheme</Button>
+      <ButtonDropdown title="test">
+        <a>fdsf</a>
+        <a>fdsf</a>
+        <a>fdsf</a>
+      </ButtonDropdown>
     </div>;
   }
 }
 
-React.render(React.createElement(App), document.getElementById('root'))
+ReactDOM.render(React.createElement(App), document.getElementById('root'));

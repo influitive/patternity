@@ -24,8 +24,6 @@ export class Dropdown extends Component {
 
   render() {
     const { children, classList, ref } = this.props;
-    console.log(this.props.sheet.classes);
-
     return (
       <ul className={this._getClasses(classList)} ref={ref}>
         {this._renderChildren(children)}
