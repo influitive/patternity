@@ -78,7 +78,7 @@ class Popover extends Component {
   }
 
   _getBackDropElement = () => {
-    if (!this.props.onClickOut) return null;
+    if (!this.props.onClickOut || !this.props.isOpen) return null;
 
     return (
       <div className='pt-popover-backdrop'
