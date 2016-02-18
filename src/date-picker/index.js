@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import DateTime from 'react-datetime';
-import classes from './date-picker.scss';
+import classes from './date-picker.css';
 
 // This component really just extends react-datetime
 // found at https://github.com/arqex/react-datetime.
