@@ -52,7 +52,7 @@ class PopoverContent extends Component {
     const borderColor = this.props.shouldHaveBorder ? this.props.style.borderColor : 'transparent';
 
     return {
-      borderColor: borderColor,
+      border: `1px solid ${borderColor}`,
       background:  this.props.style.background,
       boxShadow: this.props.hasShadow ? '5px 5px 15px rgba(136, 136, 136, 0.44)' : null
     };
