@@ -32,6 +32,10 @@ module.exports = {
         loader: 'style!css!sass?outputStyle=expanded&' + sassPaths,
       },
       {
+        test:   /\.css$/,
+        loader: 'style!css?modules',
+      },
+      {
         test:    /\.jsx?$/,
         exclude: [/(node_modules)/, /(react-overlays)/],
         loaders: ['babel']

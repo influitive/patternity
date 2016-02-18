@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import DateTime from 'react-datetime';
-import classes from './date-picker.css';
+import styles from '../../infl-styles/date-picker.css';
 
 // This component really just extends react-datetime
 // found at https://github.com/arqex/react-datetime.
@@ -38,7 +38,7 @@ export default class DatePicker extends Component {
   render() {
     const {showTime, isOpen, ...otherProps} = this.props;
 
-    return <div class={classes.wrapper}>
+    return <div className={styles.scope}>
       <DateTime
               timeFormat={showTime}
               {...otherProps}

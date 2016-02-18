@@ -1,7 +1,10 @@
-/*!
+.scope {
+:global {
+
+/**
  * https://github.com/arqex/react-datetime
  */
-.wrapper {
+
 
   .rdt {
     position: relative;
@@ -200,4 +203,5 @@
     font-size: 1.2em;
     margin-top: 37px;
   }
+}
 }
