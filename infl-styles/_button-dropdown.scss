@@ -7,6 +7,15 @@ $text-button-color-hover : lighten($text-button-color, 10%);
   position: relative;
   display: inline-block;
 
+  .button-dropdown-backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
   .button,
   button {
     &.button-with-text {
@@ -139,4 +148,3 @@ $text-button-color-hover : lighten($text-button-color, 10%);
     }
   }
 }
-

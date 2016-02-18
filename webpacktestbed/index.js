@@ -13,8 +13,12 @@ class App extends Component {
 
   render() {
     return <div>
-      <ButtonDropdown title="test" onClick={this._handleClick} isOpen={this.state.isOpen}>
-        <a>fdsf</a>
+      <ButtonDropdown
+          title="test"
+          onClick={this._handleClick}
+          isOpen={this.state.isOpen}
+          onClickOut={this._handleClickOut}>
+        <a onClick={this._alert}>fdsf</a>
         <a>fdsf</a>
       </ButtonDropdown>
     </div>;
@@ -24,6 +28,16 @@ class App extends Component {
     this.setState({
       isOpen: !this.state.isOpen
     })
+  }
+
+  _handleClickOut = () => {
+    this.setState({
+      isOpen: false
+    })
+  }
+
+  _alert = () => {
+    alert('test');
   }
 }
 
