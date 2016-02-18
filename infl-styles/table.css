@@ -16,5 +16,6 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
   max-width: 100%;
 }

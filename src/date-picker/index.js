@@ -19,7 +19,8 @@ export default class DatePicker extends Component {
     inputProps:    PropTypes.object,
     isValidDate:   PropTypes.func,
     closeOnSelect: PropTypes.bool,
-    showTime:      PropTypes.bool
+    showTime:      PropTypes.bool,
+    dateFormat:    PropTypes.string
   }
 
 
@@ -31,6 +32,7 @@ export default class DatePicker extends Component {
     onBlur:        ()=>{},
     inputProps:    {},
     isValidDate:   ()=>{ return true;},
+    closeOnSelect: true,
     showTime:      false,
     dateFormat:    'YYYY-MM-DD'
   }
