@@ -1,33 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
-import { createTheme } from '../src/utils/themeable';
-import ButtonDropdown from '../src/button-dropdown';
-
-require('../infl-styles/_button.scss');
+import DatePicker from '../src/date-picker';
 
 class App extends Component {
-  state = {
-    isOpen: false
-  }
 
   render() {
-    return <div>
-      <ButtonDropdown
-          title="test"
-          onClick={this._handleClick}
-          isOpen={this.state.isOpen}
-          onClickOut={this._handleClickOut}>
-        <a onClick={this._alert}>fdsf</a>
-        <a>fdsf</a>
-      </ButtonDropdown>
-    </div>;
-  }
-
-  _handleClick = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
+    return (
+      <DatePicker showTime={true} onChange={(date)=>{console.log(date);}}/>
+    );
   }
 
   _handleClickOut = () => {
