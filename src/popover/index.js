@@ -53,7 +53,12 @@ class Popover extends Component {
   }
 
   _getElement = () => {
-    return <span>{this.props.element}</span>;
+    return (
+      <span>
+        {this._getBackDropElement()}
+        {this.props.element}
+      </span>
+    );
   }
 
   _getPopoverElement = () => {
@@ -69,6 +74,16 @@ class Popover extends Component {
         position={this.props.position}
         shouldHaveBorder={this._shouldHaveBorder()}
         style={this.props.style}/>
+    );
+  }
+
+  _getBackDropElement = () => {
+    if (!this.props.onClickOut) return null;
+
+    return (
+      <div className='pt-popover-backdrop'
+        onClick={this._handleBackDropClick}>
+      </div>
     );
   }
 
