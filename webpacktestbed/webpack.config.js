@@ -22,7 +22,8 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.IgnorePlugin(/^\.\/locale$/, [/\/moment$/])
   ],
 
   module: {
@@ -30,6 +31,10 @@ module.exports = {
       {
         test:   /\.scss$/,
         loader: 'style!css!sass?outputStyle=expanded&' + sassPaths,
+      },
+      {
+        test:   /\.css$/,
+        loader: 'style!css?modules',
       },
       {
         test:    /\.jsx?$/,
