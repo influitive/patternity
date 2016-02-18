@@ -13,7 +13,8 @@ export default class ButtonDropdown extends Component {
     onClick:      () => {},
     style:         {},
     disabled:      false,
-    isOpen:        false
+    isOpen:        false,
+    onClickOut:    null
   }
 
   static propTypes = {
@@ -25,6 +26,7 @@ export default class ButtonDropdown extends Component {
     onClick:       PropTypes.func,
     disabled:      PropTypes.bool,
     isOpen:        PropTypes.bool,
+    onClickOut:    PropTypes.func,
 
     style: PropTypes.shape({
       borderColor: function(props) {
@@ -58,7 +60,19 @@ export default class ButtonDropdown extends Component {
         </Button>
 
         { this._getDropdown() }
+
+        { this._renderClickOut()}
       </ButtonGroup>
+    );
+  }
+
+  _renderClickOut = () => {
+    if (!this.props.onClickOut || this.props.onClickOut && !this.props.isOpen) return null;
+
+    return (
+      <div className="button-dropdown-backdrop"
+        onClick={this.props.onClickOut}>
+      </div>
     );
   }
 

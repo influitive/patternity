@@ -5,6 +5,7 @@ lib
 script/ruby/**
 ruby/**
 .DS_Store
+npm-debug*
 infl-patternlab/source/js/infl-components.js
 infl-patternlab/source/css/style.css
 react-codemod
