@@ -20,13 +20,15 @@ export default class Wysiwyg extends Component {
     onKeyDown:         PropTypes.func,
     onKeyUp:           PropTypes.func,
     onChange:          PropTypes.func,
-    onChangeSelection: PropTypes.func
+    onChangeSelection: PropTypes.func,
+    disabledToolbarOptions: PropTypes.array
   };
 
   static defaultProps = {
     id:       'wysiwyg-editor',
     readOnly: false,
     theme:    'snow',
+    disabledToolbarOptions: [],
 
     styles: {
       '.ql-editor': {
@@ -58,7 +60,7 @@ export default class Wysiwyg extends Component {
         { label: 'Serif', value: 'serif' },
         { label: 'Monospace', value: 'monospace' }
       ]},
-      { type: 'separator' },
+      { label: 'Formats', type: 'separator' },
       { label: 'Size', type:  'size', items: [
         { label: 'Normal', value: '13px' },
         { label: 'Small', value: '10px' },
@@ -66,14 +68,14 @@ export default class Wysiwyg extends Component {
         { label: 'Huge', value: '32px' }
       ]}
     ]},
-    { type: 'separator' },
+    { label: 'Size', type: 'separator' },
     { label: 'Alignment', type: 'align', items: [
       { label: '', value: 'center' },
       { label: '', value: 'left' },
       { label: '', value: 'right' },
       { label: '', value: 'justify' }
     ]},
-    { type: 'space' },
+    { label: 'Alignment', type: 'space' },
     { label: 'Text', type:  'group', items: [
       { type: 'bold', label: 'Bold' },
       { type: 'italic', label: 'Italic' },
@@ -102,10 +104,19 @@ export default class Wysiwyg extends Component {
 
     return (
       <ReactQuill {...props} theme="snow">
-        <Toolbar key="toolbar" ref="toolbar" items={this.TOOLBAR_ITEMS} />
+        <Toolbar key="toolbar" ref="toolbar" items={this.getToolbarOptions()} />
         <div key="editor" ref="editor" className="quill-contents"dangerouslySetInnerHTML={{__html: this.props.value}} />
       </ReactQuill>
     );
+  }
+
+  getToolbarOptions = () => {
+    const disabledItems = this.props.disabledToolbarOptions
+    const toolbarOptions = this.TOOLBAR_ITEMS
+
+    return toolbarOptions.filter((item) => {
+      return disabledItems.indexOf(item.label) == -1;
+    });
   }
 
   //TODO (Rohan): Remove this hack when react-quill supports addFormat
