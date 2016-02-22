@@ -59,7 +59,7 @@ export default class Tooltip extends Component {
   static propTypes = {
     title:             PropTypes.string,
     element:           PropTypes.node.isRequired,
-    position:          PropTypes.oneOf(['top', 'bottom']),
+    position:          PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     isClickable:       PropTypes.bool,
     containerSelector: PropTypes.string,
     onOpen:            PropTypes.func,
