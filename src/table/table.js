@@ -6,16 +6,18 @@ import classes from '../../infl-styles/table.css';
 
 export default class Table extends Component {
   static propTypes = {
-    rowCount:    PropTypes.number.isRequired,
-    rowStyle:    PropTypes.object,
-    headerStyle: PropTypes.object,
-    selectedRows: PropTypes.array
+    rowCount:       PropTypes.number.isRequired,
+    rowStyle:       PropTypes.object,
+    headerStyle:    PropTypes.object,
+    selectedRows:   PropTypes.array,
+    rowReplacement: PropTypes.func
   }
 
   static defaultProps = {
     rowStyle: {},
     headerStyle: {},
-    selectedRows: []
+    selectedRows: [],
+    rowReplacement: () => { return false;}
   }
 
   render() {
@@ -46,14 +48,18 @@ export default class Table extends Component {
   _renderRows = () => {
     let rows = [];
     let row = null;
-    for (var i=0; i<this.props.rowCount; i++) {
+    const {rowCount, children, rowReplacement} = this.props;
 
-      row = React.Children.map(this.props.children, function(col, index) {
-        if (col) {
-          const cell = col.props.cell(i);
-          return React.cloneElement(cell, {key: 'cell-'+index});
-        }
-      });
+    for (var i=0; i<rowCount; i++) {
+      row = rowReplacement(i);
+      if (!row) {
+        row = React.Children.map(children, function(col, index) {
+          if (col) {
+            const cell = col.props.cell(i);
+            return React.cloneElement(cell, {key: 'cell-'+index});
+          }
+        });
+      }
       rows.push(this._renderRow(row, i));
     }
     return rows;
