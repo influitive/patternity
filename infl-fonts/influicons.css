@@ -114,4 +114,5 @@
 .ic.ic-apple:before { content: "\E05A" }
 .ic.ic-video:before { content: "\E05B" }
 .ic.ic-refresh:before { content: "\E05C" }
-.ic.ic-coins-old:before { content: "\E05D" }
+.ic.ic-process-list:before { content: "\E05D" }
+.ic.ic-coins-old:before { content: "\E05E" }

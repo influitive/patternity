@@ -925,12 +925,22 @@
 }
 
 
-.ic.ic-coins-old:before {
+.ic.ic-process-list:before {
   content: "\E05D"
+}
+
+@mixin ic-process-list() {
+  font-family: 'influicons';
+  content: "\E05D"
+}
+
+
+.ic.ic-coins-old:before {
+  content: "\E05E"
 }
 
 @mixin ic-coins-old() {
   font-family: 'influicons';
-  content: "\E05D"
+  content: "\E05E"
 }
 
