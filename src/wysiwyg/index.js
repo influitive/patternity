@@ -105,7 +105,7 @@ export default class Wysiwyg extends Component {
     return (
       <ReactQuill {...props} theme="snow">
         <Toolbar key="toolbar" ref="toolbar" items={this.getToolbarOptions()} />
-        <div key="editor" ref="editor" className="quill-contents"dangerouslySetInnerHTML={{__html: this.props.value}} />
+        <div key="editor" ref="editor" className="quill-contents" dangerouslySetInnerHTML={{__html: this.props.value}} />
       </ReactQuill>
     );
   }
@@ -119,6 +119,8 @@ export default class Wysiwyg extends Component {
     });
   }
 
-  //TODO (Rohan): Remove this hack when react-quill supports addFormat
-  _replaceItalics = str => str.split('i>').join('em>');
+  //TODO: Remove this hack when react-quill supports addFormat
+  _replaceItalics = (text) => {
+    return text.replace('<i>', '<em>').replace('</i>', '</em>')
+  }
 }
