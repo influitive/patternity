@@ -115,7 +115,7 @@
     "es5-shim": "^4.1.0",
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
-    "gulp-consolidate": "^0.1.2",
+    "gulp-consolidate": "^0.2.0",
     "gulp-debug": "^2.1.2",
     "gulp-flatten": "^0.2.0",
     "gulp-header": "^1.7.1",
