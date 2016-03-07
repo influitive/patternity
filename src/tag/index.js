@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Icon from '../../lib/icon';
 
 export default class Tag extends Component {
-  static props = {
+  static propTypes = {
     unTag: PropTypes.func
   }
 
