@@ -6,7 +6,7 @@ import styles from '../../infl-styles/date-picker.css';
 // found at https://github.com/arqex/react-datetime.
 
 export default class DatePicker extends Component {
-  static props = {
+  static propTypes = {
     value:         PropTypes.any,
     defaultValue:  PropTypes.any,
     input:         PropTypes.bool,
