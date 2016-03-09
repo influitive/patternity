@@ -93,8 +93,6 @@ class ModalDialog extends React.Component {
   }
 
   _closeDialog = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
     if (this.props.closeable && this._isClosableElement(event.target)) {
       this._dismissDialog();
     }
