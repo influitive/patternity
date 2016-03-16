@@ -32,7 +32,7 @@ class Popover extends Component {
     onOpen:            function() {},
     style: {
       borderColor: '#ccc',
-      background:  'white'
+      background:  '#fff'
     },
     className:          '',
     hasShadow:          false,
