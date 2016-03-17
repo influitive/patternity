@@ -1,7 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const classNames = require('classnames');
-const Icon = require('../icon');
 const InputIcon = require('../text/input_icon');
 const InputMessage = require('../text/input_message');
 

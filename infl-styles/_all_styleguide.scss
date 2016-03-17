@@ -1,13 +1,6 @@
 @import "dependencies_base";
 
-@font-face {
-  font-family: "influicons";
-  src: url('../infl-fonts/influicons.eot');
-  src: url('../infl-fonts/influicons.eot?#iefix') format('eot'),
-    url('../infl-fonts/influicons.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import 'infl-icons/icon';
 
 .PreviewArea, .tether-element {
   @import "avatar";

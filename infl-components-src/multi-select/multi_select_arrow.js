@@ -1,6 +1,6 @@
 const React = require('react');
 
-const Icon = require('../icon');
+import { Icon } from 'infl-icons';
 
 class MultiSelectArrow extends React.Component {
   static displayName = 'MultiSelectArrow'
