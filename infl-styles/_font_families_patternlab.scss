@@ -35,9 +35,9 @@
 
 @font-face {
   font-family: "influicons";
-  src: url('../fonts/influicons.eot');
-  src: url('../fonts/influicons.eot?#iefix') format('eot'),
-    url('../fonts/influicons.woff') format('woff');
+  src: url('../node_modules/infl-icons/lib/fonts/influicons.eot');
+  src: url('../node_modules/infl-icons/lib/fonts/influicons.eot?#iefix') format('eot'),
+    url('../node_modules/infl-icons/lib/fonts/influicons.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

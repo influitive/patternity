@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Icon from '../../lib/icon';
+import { Icon } from 'infl-icons';
 
 export default class Tag extends Component {
   static propTypes = {

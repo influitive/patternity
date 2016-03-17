@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 const _ = require('lodash');
 const $ = require('jquery');
 
-const Icon = require('../icon');
+import { Icon } from 'infl-icons';
 const Popover = require('../../lib/popover');
 
 
