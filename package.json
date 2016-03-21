@@ -120,7 +120,7 @@
     "gulp-flatten": "^0.2.0",
     "gulp-header": "^1.7.1",
     "gulp-iconfont": "^1.0.0",
-    "gulp-iconfont-css": "^0.0.9",
+    "gulp-iconfont-css": "^2.1.0",
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.0.0",
     "gulp-rename": "^1.2.2",
