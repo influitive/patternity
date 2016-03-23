@@ -1,12 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import Icon from '../../lib/icon';
 import classnames from 'classnames';
-import _ from 'lodash';
 import Button from '../../lib/button2';
 import SelectDropDown from '../../lib/select_dropdown';
-
-const MOVING_WINDOW_SIZE = 5;
-const EDGE_WINDOW_SIZE = 2;
 
 export default class SimplifiedPager extends Component {
 
@@ -70,7 +65,7 @@ export default class SimplifiedPager extends Component {
     const totalPageCount = this._getTotalPageCount();
     let pages = [];
 
-    for(let i = 1; i <= totalPageCount; i++) {
+    for (let i = 1; i <= totalPageCount; i++) {
       pages.push(
         <option value={i} key={i}>Page {i}</option>
       );
