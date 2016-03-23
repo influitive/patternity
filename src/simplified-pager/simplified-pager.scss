@@ -1,0 +1,55 @@
+@import '../../infl-styles/_icon.scss';
+@import '../../infl-styles/_theme.scss';
+@import '../../infl-styles/_form.scss';
+@import '../../infl-styles/_button.scss';
+
+@font-face {
+  font-family: "influicons";
+  src: url('../../infl-fonts/influicons.eot');
+  src: url('../../infl-fonts/influicons.eot?#iefix') format('eot'),
+    url('../../infl-fonts/influicons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.pt-simplified-pager {
+  text-align: center;
+
+  .pt-select  {
+    width: 50%;
+
+    .select-box {
+      width: calc(100% - 60px);
+    }
+  }
+
+  .pt-next-page, .pt-previous-page {
+    font-size: 25px;
+    padding: 5px 15px;
+    vertical-align: top;
+
+    &.secondary {
+      border-color: $light-grey;
+    }
+
+    &.button {
+      &.ic:before {
+        margin: 0px;
+      }
+    }
+
+    &.disabled {
+      background-color: #ffffff !important;
+      box-shadow: none !important;
+      border: 1px solid $lighter-grey !important;
+      color: $lighter-grey !important;
+    }
+
+    &:not(.disabled) {
+      cursor: pointer;
+    }
+  }
+  .pt-page-element {
+    padding: 0px 5px;
+  }
+}
