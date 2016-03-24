@@ -1,16 +1,6 @@
 @import '../../infl-styles/_icon.scss';
-@import '../../infl-styles/_theme.scss';
 @import '../../infl-styles/_form.scss';
 @import '../../infl-styles/_button.scss';
-
-@font-face {
-  font-family: "influicons";
-  src: url('../../infl-fonts/influicons.eot');
-  src: url('../../infl-fonts/influicons.eot?#iefix') format('eot'),
-    url('../../infl-fonts/influicons.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 .pt-simplified-pager {
   text-align: center;
