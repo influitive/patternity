@@ -1,44 +1,32 @@
-@import '../../infl-styles/_icon.scss';
-@import '../../infl-styles/_form.scss';
-@import '../../infl-styles/_button.scss';
-
 .pt-simplified-pager {
   text-align: center;
 }
-
 .pt-simplified-pager .pt-select  {
   width: 50%;
 }
-
 .pt-simplified-pager .pt-select .select-box {
   width: calc(100% - 60px);
 }
-
 .pt-simplified-pager .pt-next-page, .pt-simplified-pager .pt-previous-page {
   font-size: 25px;
   padding: 5px 15px;
   vertical-align: top;
 }
-
 .pt-simplified-pager .pt-next-page.secondary, .pt-simplified-pager .pt-previous-page.secondary {
   border-color: $light-grey;
 }
-
 .pt-simplified-pager .pt-next-page.button.ic:before, .pt-simplified-pager .pt-previous-page.button.ic:before {
   margin: 0px;
 }
-
 .pt-simplified-pager .pt-next-page.disabled, .pt-simplified-pager .pt-previous-page.disabled {
   background-color: #ffffff !important;
   box-shadow: none !important;
   border: 1px solid $lighter-grey !important;
   color: $lighter-grey !important;
 }
-
 .pt-simplified-pager .pt-next-page:not(.disabled), .pt-simplified-pager .pt-previous-page:not(.disabled) {
   cursor: pointer;
 }
-
 .pt-simplified-pager .pt-page-element {
   padding: 0px 5px;
 }
