@@ -45,7 +45,7 @@ class Popover extends Component {
 
   render() {
     return (
-      <span style={{position: 'relative'}}>
+      <span style={{position: 'relative', display: 'inline-block'}}>
         {this._getTetherElement()}
         {this._getArrowElement()}
       </span>
