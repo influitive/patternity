@@ -1,6 +1,6 @@
 const React = require('react');
 
-const Icon = require('../icon');
+import { Icon } from 'infl-icons';
 
 class ClearAll extends React.Component {
   static displayName = 'ClearAll'

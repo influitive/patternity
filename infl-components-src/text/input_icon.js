@@ -1,5 +1,5 @@
 const React = require('react');
-const Icon = require('../icon');
+import { Icon } from 'infl-icons';
 
 class InputIcon extends React.Component {
   static propTypes = {

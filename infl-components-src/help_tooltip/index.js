@@ -1,6 +1,6 @@
 const React = require('react');
 
-const Icon = require('../icon');
+const Icon = require('infl-icons').Icon;
 const Tooltip = require('../tooltip');
 
 class HelpTooltip extends React.Component {
