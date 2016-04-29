@@ -1,5 +1,7 @@
 {
-  "stage": 0,
-  "loose": ["es6.modules"],
-  "optional": ["spec.protoToAssign"]
+  "presets": [
+    "es2015",
+    "react",
+    "stage-0"
+  ]
 }
