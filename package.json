@@ -93,7 +93,7 @@
     "strictify": "^0.2.0",
     "style-loader": "^0.12.4",
     "tape": "^4.2.2",
-    "tape-babel-css-modules": "1.2.0",
+    "tape-babel-css-modules": "git://github.com/justinsisley/tape-babel-css-modules.git",
     "tape-catch": "^1.0.4",
     "testling": "^1.7.1",
     "url-loader": "^0.5.7",
