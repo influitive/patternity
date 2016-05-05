@@ -7,13 +7,14 @@ import Button2 from '../button2';
 class SaveButton extends Component {
   static propTypes = {
     saveStatus: PropTypes.oneOf(['unsaved', 'saved', 'saving', 'error']).isRequired,
-    onClick:    PropTypes.func,
+    onClick: PropTypes.func,
+    disabled: PropTypes.bool,
 
     customText: PropTypes.shape({
       unsaved: PropTypes.string,
-      saved:   PropTypes.string,
-      saving:  PropTypes.string,
-      error:   PropTypes.string
+      saved: PropTypes.string,
+      saving: PropTypes.string,
+      error: PropTypes.string
     })
   }
 
@@ -22,6 +23,7 @@ class SaveButton extends Component {
     const status = this.buttonStatus();
     return <span className="pt-save-button">
       <Button2
+        disabled={this.props.disabled}
         onClick={onClick}
         type={status.type}
         icon={status.icon}>
