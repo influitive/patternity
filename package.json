@@ -89,7 +89,7 @@
     "sass-loader": "^2.0.1",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
-    "skin-deep": "^0.13.0",
+    "skin-deep": "^0.16.0",
     "strictify": "^0.2.0",
     "style-loader": "^0.12.4",
     "tape": "^4.2.2",
