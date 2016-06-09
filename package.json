@@ -122,7 +122,7 @@
     "gulp-postcss": "^6.0.0",
     "gulp-replace": "^0.5.4",
     "gulp-watch": "^4.3.5",
-    "jquery": "^1.9.1",
+    "jquery": "^3.0.0",
     "jss": "^3.2.0",
     "jss-nested": "^1.0.1",
     "lodash": "^3.7.0",
