@@ -86,7 +86,7 @@
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.0",
     "reactify": "^1.0.0",
-    "sass-loader": "^2.0.1",
+    "sass-loader": "^3.2.1",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "skin-deep": "^0.13.0",
