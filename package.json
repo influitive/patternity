@@ -53,7 +53,7 @@
     "chalk": "^1.1.1",
     "css-loader": "^0.19.0",
     "css-modulesify": "^0.17.0",
-    "eslint": "^1.2.0",
+    "eslint": "^3.0.0",
     "eslint-plugin-react": "^3.2.2",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.2",
