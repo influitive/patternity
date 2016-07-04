@@ -105,7 +105,7 @@
   },
   "dependencies": {
     "babel": "^5.8.34",
-    "babel-core": "^5.8.23",
+    "babel-core": "^6.5.0",
     "babel-loader": "^5.4.0",
     "babel-plugin-react-display-name": "^2.0.0",
     "babel-plugin-react-transform": "^1.0.5",
