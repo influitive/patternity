@@ -72,7 +72,7 @@
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^1.0.0",
     "lost": "^6.7.1",
-    "mocha": "^2.4.4",
+    "mocha": "^3.0.0",
     "postcss": "^5.0.16",
     "postcss-loader": "^0.8.0",
     "postcss-modules-extract-imports": "^1.0.0",
