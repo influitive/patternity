@@ -69,7 +69,7 @@
     "karma-browserify": "^3.0.1",
     "karma-chrome-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.5",
-    "karma-mocha": "^0.1.10",
+    "karma-mocha": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.0",
     "lost": "^6.7.1",
     "mocha": "^2.4.4",
