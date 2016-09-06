@@ -110,7 +110,7 @@
     "babel-plugin-react-display-name": "^2.0.0",
     "babel-plugin-react-transform": "^1.0.5",
     "babel-runtime": "^5.8.20",
-    "classnames": "^1.1.4",
+    "classnames": "^2.2.5",
     "color": "^0.10.1",
     "es5-shim": "^4.1.0",
     "gulp": "^3.9.0",
