@@ -91,7 +91,7 @@
     "sinon-chai": "^2.8.0",
     "skin-deep": "^0.13.0",
     "strictify": "^0.2.0",
-    "style-loader": "^0.12.4",
+    "style-loader": "^0.13.1",
     "tape": "^4.2.2",
     "tape-babel-css-modules": "1.2.0",
     "tape-catch": "^1.0.4",
