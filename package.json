@@ -79,7 +79,7 @@
     "postcss-modules-local-by-default": "^1.0.1",
     "postcss-modules-scope": "^1.0.0",
     "precss": "^1.4.0",
-    "react": "^0.14.3",
+    "react": "^15.0.0",
     "react-addons-test-utils": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-hot-loader": "^1.2.9",
