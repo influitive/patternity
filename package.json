@@ -101,7 +101,7 @@
     "webpack": "^1.12.12",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-dev-server": "^1.10.1",
-    "webpack-hot-middleware": "^2.2.0"
+    "webpack-hot-middleware": "^2.7.1"
   },
   "dependencies": {
     "babel": "^5.8.34",
