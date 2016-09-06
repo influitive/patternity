@@ -142,7 +142,7 @@
     "react-jss": "^2.0.1",
     "react-quill": "^0.4.0",
     "react-tether": "^0.5.2",
-    "redbox-react": "^1.1.0",
+    "redbox-react": "^1.2.7",
     "rucksack-css": "^0.8.2",
     "tap-bail": "0.0.0",
     "tap-pessimist": "^1.0.1",
