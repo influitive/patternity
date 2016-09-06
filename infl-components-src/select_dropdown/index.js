@@ -1,4 +1,5 @@
 const React = require('react');
+const cn = require('classnames');
 
 class SelectDropdown extends React.Component {
   static displayName = 'SelectDropdown'
@@ -35,7 +36,10 @@ class SelectDropdown extends React.Component {
 
   render() {
     return (
-      <span className={'pt-select '  + this._isDisabled()} id={this.props.id}>
+      <span className={cn( 'pt-select', {      
+          'is-disabled': this.props.disabled,
+          'is-error': this.props.error
+        })} id={this.props.id}>
         <span className="select-box" ref="select-wrapper">
 
           <span className="title" ref="title"></span>
@@ -49,10 +53,6 @@ class SelectDropdown extends React.Component {
         {this._buildMessage()}
       </span>
     );
-  }
-
-  _isDisabled() {
-    return this.props.disabled ? 'is-disabled' : '';
   }
 
   _handleChange = (e) => {
