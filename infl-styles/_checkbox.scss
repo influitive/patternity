@@ -36,9 +36,9 @@
         @include ic-check();
         color: $dark-grey;
         position: absolute;
-        font-size: 18px;
+        font-size: 12px;
         top: -3px;
-        left: -2.5px;
+        left: 2.5px;
       }
     }
   }
@@ -49,9 +49,9 @@
         @include ic-minus();
         color: $dark-grey;
         position: absolute;
-        font-size: 18px;
+        font-size: 12px;
         top: -3px;
-        left: -2.5px;
+        left: 2.5px;
       }
     }
   }
