@@ -123,7 +123,7 @@
     "gulp-replace": "^0.5.4",
     "gulp-watch": "^4.3.5",
     "jquery": "^1.9.1",
-    "jss": "^3.2.0",
+    "jss": "^5.5.1",
     "jss-nested": "^1.0.1",
     "lodash": "^3.7.0",
     "lost": "^6.7.1",
