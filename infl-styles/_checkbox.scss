@@ -37,7 +37,6 @@
       &:before {
         @include ic-check();
         color: $dark-grey;
-        position: absolute;
         font-size: 12px;
       }
     }
@@ -48,7 +47,6 @@
       &:before {
         @include ic-minus();
         color: $dark-grey;
-        position: absolute;
         font-size: 12px;
       }
     }
