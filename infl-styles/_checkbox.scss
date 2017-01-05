@@ -37,7 +37,10 @@
       &:before {
         @include ic-check();
         color: $dark-grey;
+        position: absolute;
         font-size: 12px;
+        top: -2px;
+        left: 2.5px;
       }
     }
   }
@@ -47,7 +50,10 @@
       &:before {
         @include ic-minus();
         color: $dark-grey;
+        position: absolute;
         font-size: 12px;
+        top: -2px;
+        left: 2.5px;
       }
     }
   }
