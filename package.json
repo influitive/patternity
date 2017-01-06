@@ -104,8 +104,8 @@
     "webpack-hot-middleware": "^2.2.0"
   },
   "dependencies": {
-    "babel-cli": "^6.7.7",
-    "babel-core": "^6.7.7",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-react-display-name": "^2.0.0",
