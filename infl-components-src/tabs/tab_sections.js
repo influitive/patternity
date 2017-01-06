@@ -55,4 +55,4 @@ class InternalTabContent extends React.Component {
   }
 }
 
-export default TabSections;
+module.exports = TabSections;
