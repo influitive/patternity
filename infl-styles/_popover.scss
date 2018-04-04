@@ -5,11 +5,6 @@ $popover-z-index: 100000005;
   z-index: $popover-z-index;
 }
 
-.tether-target {
-  display: inline-block;
-}
-
-
 .pt-popover-backdrop {
   position: fixed;
   top: 0px;
