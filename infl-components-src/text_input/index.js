@@ -74,9 +74,18 @@ class TextInput extends React.Component {
   render() {
     return <span className={this._determineInputStyling()}>
       <InputIcon type={this.props.type} required={this.props.required}/>
-      <input readOnly={this.props.readOnly} required={this.props.required} type={this.props.type} value={this.state.value}
-             placeholder={this.props.placeholder} name={this.props.name} id={this.props.id}
-             pattern={this.props.pattern} disabled={this.props.disabled} onChange={this._handleChange} ref="input"/>
+      <input 
+        readOnly={this.props.readOnly}
+        required={this.props.required}
+        type={this.props.type}
+        value={this.state.value}   
+        placeholder={this.props.placeholder}
+        name={this.props.name}
+        id={this.props.id}
+        pattern={this.props.pattern}
+        disabled={this.props.disabled}
+        onChange={this._handleChange}
+        ref="input" />
       <InputAction clearable={this.props.clearable} help={this.props.help} onCleared={this._clearInputValue}/>
       <InputMessage message={this.props.message}/>
     </span>;
