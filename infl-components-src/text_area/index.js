@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const classNames = require('classnames');
+const R = require('ramda');
 const InputIcon = require('../text/input_icon');
 const InputMessage = require('../text/input_message');
 
@@ -90,9 +91,17 @@ class TextArea extends React.Component {
   }
 
   render() {
+    const inputProps = R.omit([
+      'autofocus',
+      'autoexpand',
+      'message',
+      'error',
+      'valid'
+    ], this.props);
+
     return (
       <TextAreaContainer {...this.props} classNames={this._classNames()}>
-        <textarea {...this.props} ref="input" />
+        <textarea {...inputProps} ref="input" />
       </TextAreaContainer>
     );
   }
