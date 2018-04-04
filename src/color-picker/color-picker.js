@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ChromePicker } from 'react-color';
+import ReactColorPicker from 'react-color';
 import Popover from '../../lib/popover';
 import _ from 'lodash';
 
@@ -66,22 +66,22 @@ export default class ColorPicker extends Component {
   _renderPicker = () => {
     let {type, color} = this.props;
     let pickerProps = {
+      type: 'chrome',
       color: color,
-      onChangeComplete: this._handleChangeComplete
+      onChangeComplete: this._handleChangeComplete,
+      positionCSS: this.styles.colorPickerOverrides
     };
     if (type != 'inline') {
       pickerProps.display = true;
     }
 
     return (
-      <div style={this.styles.colorPickerOverrides}>
-        <ChromePicker {...pickerProps}/>
-      </div>
+      <ReactColorPicker {...pickerProps}/>
     );
   };
 
   _handleChangeComplete = (color) => {
-    this.props.onChange(color.hex);
+    this.props.onChange('#' + color.hex);
   };
 
   styles = {
