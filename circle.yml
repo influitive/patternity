@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 6.6.0
+    version: 0.12.7
 
 dependencies:
   pre:
@@ -9,7 +9,7 @@ dependencies:
     - sudo pip install awscli
     - bundle install
   override:
-    - npm install
+    - npm install --no-spin
 test:
   override:
     - npm run lint:check
