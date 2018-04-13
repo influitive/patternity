@@ -12,7 +12,7 @@
     "babel": "babel {src,infl-components-src} --out-dir lib --ignore *.test.js && gulp copy-lib-styles",
     "babel-watch": "babel {src,infl-components-src} -w --out-dir lib & gulp watch-scss",
     "testbed": "node ./webpacktestbed/devServer.js",
-    "prepublish": "npm run babel",
+    "postinstall": "npm run babel",
     "create": "gulp create-component",
     "lint": "eslint ./src; exit 0",
     "lint:check": "eslint ./src",
