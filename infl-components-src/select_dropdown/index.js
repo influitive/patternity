@@ -36,15 +36,21 @@ class SelectDropdown extends React.Component {
 
   render() {
     return (
-      <span className={cn( 'pt-select', {      
-          'is-disabled': this.props.disabled,
-          'is-error': this.props.error
-        })} id={this.props.id}>
+      <span className={cn( 'pt-select', {
+        'is-disabled': this.props.disabled,
+        'is-error': this.props.error
+      })} id={this.props.id}>
         <span className="select-box" ref="select-wrapper">
 
           <span className="title" ref="title"></span>
-          <select className="default" name={this.props.name} ref="select"
-            disabled={this.props.disabled} onChange={this._handleChange} value={this.props.value}>
+          <select
+            className="default"
+            name={this.props.name}
+            ref="select"
+            disabled={this.props.disabled}
+            onChange={this._handleChange}
+            value={this.props.value}
+            id={this.props.id+'-select'}>
             {this.props.children}
           </select>
 
