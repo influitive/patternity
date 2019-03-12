@@ -22,7 +22,7 @@ export default class Ellipsis extends Component {
   render() {
     return (
       <div ref="ellipsis" style={this._getTextStyle()}>
-        <div ref="text">{this.props.text}</div>
+        <div style={{ wordBreak: 'break-word' }} ref="text">{this.props.text}</div>
       </div>
     );
   }
@@ -77,8 +77,9 @@ export default class Ellipsis extends Component {
       return '';
     }
 
-    let text = textElement.childNodes[0].nodeValue;
-    let lastIndex = text.lastIndexOf(' ');
-    return text.substring(0, lastIndex) + '...';
+    var text = textElement.childNodes[0].nodeValue;
+
+    const remIndex = Math.max(Math.round(text.length * .10), 6);
+    return text.slice(0, -remIndex) + '...';
   }
 }
