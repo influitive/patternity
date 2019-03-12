@@ -22,7 +22,7 @@ export default class Ellipsis extends Component {
   render() {
     return (
       <div ref="ellipsis" style={this._getTextStyle()}>
-        <div style={{ wordBreak: 'break-word' }} ref="text">{this.props.text}</div>
+        <div style={{ wordWrap: 'break-word' }} ref="text">{this.props.text}</div>
       </div>
     );
   }
