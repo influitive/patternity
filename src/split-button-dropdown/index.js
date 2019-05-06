@@ -83,7 +83,7 @@ class SplitButtonDropdown extends Component {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
-  }.bind(this);
+  };
 
   _populateOptions = (options) => {
     return [...options].map( (opt, i) => {
