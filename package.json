@@ -74,7 +74,7 @@
     "lost": "^6.7.1",
     "mocha": "^2.4.4",
     "postcss": "^5.0.16",
-    "postcss-loader": "^0.8.0",
+    "postcss-loader": "^0.13.0",
     "postcss-modules-extract-imports": "^1.0.0",
     "postcss-modules-local-by-default": "^1.0.1",
     "postcss-modules-scope": "^1.0.0",
