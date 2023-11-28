@@ -118,7 +118,7 @@ const MultiSelect = React.createClass({
 
   _addHideEvent: function() {
     const that = this;
-    $(window).click(function() {
+    $(window).on('click', function() {
       that._hideOptions();
     });
   },

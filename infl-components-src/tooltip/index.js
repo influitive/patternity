@@ -91,7 +91,7 @@ export default class Tooltip extends Component {
 
 
   componentDidMount() {
-    $('body').click(this._closeTooltip);
+    $('body').on('click', this._closeTooltip);
   }
 
   componentWillUnmount() {

@@ -56,7 +56,7 @@ class InfiniteScroll extends React.Component {
 
   _addScrollEventListener() {
     if (!this.addWindowSrollEvent || !this.props.hasMore) return;
-    $(window).scroll(this._onWindowScroll);
+    $(window).on('scroll', this._onWindowScroll);
     this.addWindowSrollEvent = false;
   }
 
