@@ -12,7 +12,7 @@ const ResponsiveTabsMixin = {
   },
 
   _addWindowResizeEvent: function() {
-    $(window).resize(this._adjustTabsForScreenSize);
+    $(window).on('resize', this._adjustTabsForScreenSize);
   },
 
   _adjustTabsForScreenSize: function() {
